@@ -35,6 +35,7 @@ chapters:
 - chapters/13-process-workflow-och-arendehantering.md
 - chapters/14-regler-och-beslut.md
 - chapters/15-data-och-informationshantering.md
+- chapters/16-analys-sokning-och-ai.md
 exports:
   epub:
     enabled: true

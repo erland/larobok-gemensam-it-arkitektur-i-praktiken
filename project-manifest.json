@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev20.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev22.zip",
   "chapters": {
-    "count": 15,
+    "count": 16,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -17,28 +17,24 @@
       "chapters/12-interaktion-presentation-och-kanaler.md": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0",
       "chapters/13-process-workflow-och-arendehantering.md": "85b059902cd187f58c6c29496272d8ef2e10bbdb22d2eee04e9ebc4074c484d9",
       "chapters/14-regler-och-beslut.md": "db480550bfa2489805d87ec3893c47e908b966c4a44e9dbad18a6bac2dceb1bd",
-      "chapters/15-data-och-informationshantering.md": "a77149d854be283c57161a2f82d127ee42e7c7e7681ece33d462f5b0c71764e3"
+      "chapters/15-data-och-informationshantering.md": "a77149d854be283c57161a2f82d127ee42e7c7e7681ece33d462f5b0c71764e3",
+      "chapters/16-analys-sokning-och-ai.md": "8759a9c037ba10b455189af4efe4387eb12c91f316ebad9531b7d42e3f6b0ea9"
     },
-    "latest": 15
+    "latest": 16
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "README.md",
-      "book.yaml",
-      "chapters/15-data-och-informationshantering.md",
-      "docs/faktakontroll.md",
-      "docs/kapitelplan.md",
-      "docs/projektstatus.md",
+      "chapters/16-analys-sokning-och-ai.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 15 – Data- och informationshantering och synkroniserade projektstatus/exportordning",
-    "source_revision": 19
+    "operation": "Rättade kapitel 16:s H1-format enligt projektvalidatorn",
+    "source_revision": 21
   },
-  "parent_revision": 19,
+  "parent_revision": 21,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 20,
+  "revision": 22,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -56,7 +52,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "07789db02a964a1a18b62decffe8ec0112f937d6bef3e5dbc52ff6742babc063"
+      "sha256": "01439efa4a7e38ff786f797f6e082f0879bd92699dfb53d4cdf3d3183b7f0899"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -71,8 +67,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1883,
-      "sha256": "8ba0c7edb6a4d4f7d24ec6026462f6e4ae75eef2010ce548c8191b2737758abf"
+      "bytes": 1922,
+      "sha256": "df001e7543c385c18217676dd9238328907a7500db569e06696ea190bee4fd1f"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -138,6 +134,10 @@
       "bytes": 28422,
       "sha256": "a77149d854be283c57161a2f82d127ee42e7c7e7681ece33d462f5b0c71764e3"
     },
+    "chapters/16-analys-sokning-och-ai.md": {
+      "bytes": 30802,
+      "sha256": "8759a9c037ba10b455189af4efe4387eb12c91f316ebad9531b7d42e3f6b0ea9"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -159,8 +159,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 3838,
-      "sha256": "f56847b97b38a033a28b711673fe207d86f8e5d5dfcc2c19d438eb5a42a95a10"
+      "bytes": 4252,
+      "sha256": "b2cda171ca95b5d6092453bef251dd7a9ef30bfd5112fceedd260811b4a51f13"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -175,16 +175,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20282,
-      "sha256": "42d15d1c5600d2b37cda432303a1aef8be949130a45f6d14c746fa0e1e7a3b8c"
+      "bytes": 20295,
+      "sha256": "1deb1c8c5643053171a34bf41c7a76e2c5b7e24380c900a41dddfe463dc46480"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 6608,
-      "sha256": "c2f106415f72e34aa8646e1fd95f8b2aac2e947876ec77e93d4c427028db2e36"
+      "bytes": 7002,
+      "sha256": "0d1e3af494c717de4f0f4b46beb24cdb1e11c211b8cb89bef83c6f0e970d3c10"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -668,7 +668,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "35ad4979921bf7790140c3b492fa1d3da19d5ec39931ceb08f5932a0cc664bf2"
+      "sha256": "7519f4b06e5961c3587f358091ff6da1b381effb00e6b16d971b311500873b01"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -691,8 +691,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 17352,
-      "sha256": "ea2709b66f377c1e967b7d792542cce0bebedd74e9ce02f8979bae10788889df"
+      "bytes": 17965,
+      "sha256": "5074590714fd776503d4ba6d954b39b48b222d6e860661f134f8b1aedd8d1931"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -715,5 +715,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T19:34:06Z"
+  "updated_at": "2026-08-18T19:39:50Z"
 }

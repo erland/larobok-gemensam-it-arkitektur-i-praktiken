@@ -121,7 +121,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 16: Analys, sökning och AI
 - Kärnfråga: Hur skiljer sig sökning, BI, ML och generativ AI – och hur kombineras de ansvarsfullt?
 - Centralt innehåll: indexering, BI, ML, LLM, RAG, human-in-the-loop, informationsgrundning och AI-specifika kvalitetsfrågor.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 17: Integration och kommunikation
 - Kärnfråga: Hur väljer man mellan API, meddelanden, events, filutbyte och strukturerat informationsutbyte?
