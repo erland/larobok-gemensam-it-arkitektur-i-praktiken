@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev23.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev24.zip",
   "chapters": {
-    "count": 17,
+    "count": 18,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -19,28 +19,29 @@
       "chapters/14-regler-och-beslut.md": "db480550bfa2489805d87ec3893c47e908b966c4a44e9dbad18a6bac2dceb1bd",
       "chapters/15-data-och-informationshantering.md": "a77149d854be283c57161a2f82d127ee42e7c7e7681ece33d462f5b0c71764e3",
       "chapters/16-analys-sokning-och-ai.md": "8759a9c037ba10b455189af4efe4387eb12c91f316ebad9531b7d42e3f6b0ea9",
-      "chapters/17-integration-och-kommunikation.md": "7adc47395277bb7f37b6d32e0e3c3be413e3feac35e9b3af5ac1ce1447a144ea"
+      "chapters/17-integration-och-kommunikation.md": "7adc47395277bb7f37b6d32e0e3c3be413e3feac35e9b3af5ac1ce1447a144ea",
+      "chapters/18-identitet-och-tillit.md": "fd919e9f732c4023d71bc505e7999825168af7e865e874e6275f962f0b019a4c"
     },
-    "latest": 17
+    "latest": 18
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/17-integration-och-kommunikation.md",
+      "chapters/18-identitet-och-tillit.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 17 – Integration och kommunikation och synkroniserade projektstatus/exportordning",
-    "source_revision": 22
+    "operation": "Skrev kapitel 18 – Identitet och tillit, verifierade aktuella identitetsstandarder och synkroniserade projektstatus/exportordning",
+    "source_revision": 23
   },
-  "parent_revision": 22,
+  "parent_revision": 23,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 23,
+  "revision": 24,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -58,7 +59,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "4ef6f748d89428a877a64dc65f976940805e9d297a9d3a4e1d60aa0b292322cb"
+      "sha256": "af24e1b7d111da4baf57e3b663aa1a76c25f8f338fc8f495f4b2aa4abfd81847"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -73,8 +74,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1969,
-      "sha256": "62658e49b6b2ddafb2a3830520521077d7924456ec15dbf7f260ef0a66f33226"
+      "bytes": 2007,
+      "sha256": "37427415e87114533d1daef4097b1ba0eed64fb73254b0e1da14d04e5a43dd01"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -148,6 +149,10 @@
       "bytes": 27824,
       "sha256": "7adc47395277bb7f37b6d32e0e3c3be413e3feac35e9b3af5ac1ce1447a144ea"
     },
+    "chapters/18-identitet-och-tillit.md": {
+      "bytes": 29992,
+      "sha256": "fd919e9f732c4023d71bc505e7999825168af7e865e874e6275f962f0b019a4c"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -169,8 +174,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 4578,
-      "sha256": "2e93740aac99ff941e39f60a616010ac433913446e6b19f275b133e48fbe4cfb"
+      "bytes": 5091,
+      "sha256": "067d4f86ed9d4d231d4c686cb77f1efb4a789cc2502e3e7648752cd4f69b53dd"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -185,16 +190,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20308,
-      "sha256": "db4158eb7bb2b0c0b248b7e8b1fe4163a4a3f921cef7b33b0869ad0d2107e6d8"
+      "bytes": 20321,
+      "sha256": "03f11d2eb7450f050181f7f61effbdabc6080f51fcc5d9e87483cd729fbab794"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 7465,
-      "sha256": "68f9d5a1649001e39106f86229f841c67297495797e1ca525e574c54ebffc788"
+      "bytes": 7931,
+      "sha256": "7f5986a5e68f17fb9e4d212d19d1c226cc366784852e8d43579f72a895d6c790"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -678,7 +683,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "3dab231a96d0a53bab4ff73fc4dba18e67cb734ebcb4bc6ef5f2278dfed3b42a"
+      "sha256": "a7dbd7fdbd7aa8398ec298ef3941c7af9f688f165b6a19b4b9b5a9d95167018c"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -701,8 +706,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 18320,
-      "sha256": "a10c3ca35191bba0ea567400139ba12f26c2bdf1367247c46dacdd233cee05b3"
+      "bytes": 18700,
+      "sha256": "abdee15feabcf9395dc440e926278c7b0663d50dd791805d524379dcbc072052"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -725,5 +730,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T19:44:35Z"
+  "updated_at": "2026-08-18T19:49:41Z"
 }

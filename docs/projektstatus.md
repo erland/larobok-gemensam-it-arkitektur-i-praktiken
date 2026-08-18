@@ -32,7 +32,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 15 | Data- och informationshantering | Första utkast | Teknisk datahantering, lagring, konsistens, härledda kopior, cache, historik, retention, schemaevolution, migrering och återställningsbehov etablerade. |
 | 16 | Analys, sökning och AI | Första utkast | Sökning, BI/analys, ML, generativ AI, RAG, human-in-the-loop, utvärdering, agentrisker och ansvarsnivåer etablerade. |
 | 17 | Integration och kommunikation | Första utkast | Synkron/asynkron kommunikation, API, messaging, events, filutbyte, kontrakt, leveransbeteende, koppling, felhantering och ansvarsnivåer etablerade. |
-| 18–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 18 | Identitet och tillit | Första utkast | Autentisering/auktorisation, workforce identity, federation, tjänsteidentitet, PKI, secrets, privilegierad åtkomst, tokenhantering och identitetslivscykel etablerade. |
+| 19–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -64,4 +65,5 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.
 
 - Kapitel 17 – Integration och kommunikation är skapat som första utkast och etablerar val mellan API, messaging, events, filutbyte och dataförflyttning samt kontraktslivscykel, koppling, felhantering och gemensamma integrationsplattformstjänster.
-- Nästa planerade kapitel är kapitel 18 – Identitet och tillit.
+- Kapitel 18 – Identitet och tillit är skapat som första utkast och etablerar autentisering/auktorisation, federation, workforce identity, tjänsteidentiteter, PKI, secrets, privilegierad åtkomst och explicita tillitsrelationer.
+- Nästa planerade kapitel är kapitel 19 – Applikationsexekvering och runtime.

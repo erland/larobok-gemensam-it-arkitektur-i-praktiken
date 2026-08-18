@@ -131,7 +131,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 18: Identitet och tillit
 - Kärnfråga: Hur byggs tillit mellan människor, tjänster och organisationer?
 - Centralt innehåll: workforce identity, federation, service identity, PKI, secrets, autentisering, auktorisation och trust boundaries.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 19: Applikationsexekvering och runtime
 - Kärnfråga: Vad behöver en organisation erbjuda för att köra applikationer standardiserat men flexibelt?

@@ -37,6 +37,7 @@ chapters:
 - chapters/15-data-och-informationshantering.md
 - chapters/16-analys-sokning-och-ai.md
 - chapters/17-integration-och-kommunikation.md
+- chapters/18-identitet-och-tillit.md
 exports:
   epub:
     enabled: true
