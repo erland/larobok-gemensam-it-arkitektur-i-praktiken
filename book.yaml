@@ -22,6 +22,7 @@ chapters:
 - chapters/02-en-arkitektur-av-flera-lager.md
 - chapters/03-behov-fore-teknik.md
 - chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md
+- chapters/05-arkitekturbeslut-och-trade-offs.md
 exports:
   epub:
     enabled: true

@@ -52,7 +52,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Hur gör man explicita, spårbara och omprövningsbara arkitekturbeslut?
 - Centralt innehåll: alternativ, beslutskriterier, trade-offs, ADR, riskacceptans, konsekvenser, teknisk skuld och omprövningsdatum.
 - Avgränsning: fokuserar på beslutets form och resonemang, inte organisatorisk governance eller standardernas livscykel.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 6: Arkitekturprinciper som beslutsstöd
 - Kärnfråga: Hur används principer för att skapa konsekvens utan att ersätta arkitektens bedömning?
