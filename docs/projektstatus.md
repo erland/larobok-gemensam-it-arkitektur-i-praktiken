@@ -16,7 +16,8 @@ Skrivfas – del I påbörjad
 |---:|---|---|---|
 | 0 | Inledning | Första utkast | Ska slutredigeras när resten av boken är färdig. |
 | 1 | Varför gemensam IT-arkitektur? | Första utkast | Problem- och målbild etablerad; slutredigeras efter del I. |
-| 2–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 2 | En arkitektur av flera lager | Första utkast | Helhetsmodell, abstraktionsnivåer, förändringstakt och spårbarhet etablerade. |
+| 3–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -31,8 +32,8 @@ Skrivfas – del I påbörjad
 ## Nästa rekommenderade steg
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
-- Kapitel 1 – Varför gemensam IT-arkitektur? är skapat som första utkast.
-- Skriv Kapitel 2 – En arkitektur av flera lager.
+- Kapitel 1–2 är skapade som första utkast.
+- Skriv Kapitel 3 – Behov före teknik.
 - När del I är färdig: gör en gemensam överlapps- och terminologikontroll av kapitel 1–7.
 - När del I skrivs ska kapitel 7 göra etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

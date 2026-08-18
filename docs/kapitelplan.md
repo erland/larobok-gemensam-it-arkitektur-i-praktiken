@@ -33,7 +33,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Hur hänger behov, kvaliteter, förmågor, mönster, plattformar, standarder, byggblock och produkter ihop?
 - Centralt innehåll: metamodell, abstraktionsnivåer, stabilitet över tid, spårbarhet, relationer mellan modellens artefakter.
 - Avgränsning: presenterar helhetsmodellen; respektive artefakttyp fördjupas senare.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 3: Behov före teknik
 - Kärnfråga: Hur undviker man att dagens teknikplattform blir morgondagens verksamhetskrav?
