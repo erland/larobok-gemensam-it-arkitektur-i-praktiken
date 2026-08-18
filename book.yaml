@@ -5,7 +5,8 @@ language: sv
 book_kind: factbook
 book_type: subject_overview
 difficulty: advanced
-audience: IT-arkitekter, plattformsansvariga, tekniska ledare, produktägare och andra som utformar eller styr gemensam IT-arkitektur i större organisationer och myndigheter.
+audience: IT-arkitekter, plattformsansvariga, tekniska ledare, produktägare och andra som utformar eller styr gemensam IT-arkitektur
+  i större organisationer och myndigheter.
 edition: '1'
 version: '0.1'
 date: '2026-08-18'
@@ -14,7 +15,8 @@ publisher: ''
 cover_image: ''
 identifier: ''
 subject: Gemensam IT-arkitektur, förmågor, plattformar, standarder, lösningsmönster och referensarkitekturer
-description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktureras från behov och kvalitetskrav via IT-förmågor och lösningsmönster till plattformstjänster, standarder och referensarkitekturer.
+description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktureras från behov och kvalitetskrav via IT-förmågor
+  och lösningsmönster till plattformstjänster, standarder och referensarkitekturer.
 project_slug: gemensam-it-arkitektur-i-praktiken
 chapters:
 - chapters/00-inledning.md
@@ -24,6 +26,7 @@ chapters:
 - chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md
 - chapters/05-arkitekturbeslut-och-trade-offs.md
 - chapters/06-arkitekturprinciper-som-beslutsstod.md
+- chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
 exports:
   epub:
     enabled: true

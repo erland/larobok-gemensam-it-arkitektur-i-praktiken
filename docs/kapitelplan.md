@@ -66,7 +66,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Rekommenderad etableringsordning: förstå återkommande behov och constraints → formulera gemensamma principer och kvalitetsdimensioner → skapa en tillräckligt bra första förmågekarta → avgränsa ansvar och beroenden → utse förmågeansvar → prioritera vilka förmågor som behöver fördjupas först → utveckla mönster, plattformstjänster och standarder inom förmågorna → identifiera tvärgående referensarkitekturer → följ upp, lär och justera modellen.
 - Ansvarsprincip: gemensam nivå äger spelplanen och sådant som måste vara konsekvent över flera förmågor; förmågeansvar utvecklar innehåll och erbjudanden inom sitt område; lösnings-/produktteam kombinerar och tillämpar byggstenarna för konkreta verksamhetsbehov.
 - Avgränsning: introducerar etablerings- och ansvarmodellen. Kapitel 8–11 fördjupar förmågebegrepp, gemensamhet, domängränser och information; kapitel 37 behandlar långsiktig governance, förvaltning, avsteg och evolution.
-- Status: planerad
+- Status: första utkast skapat
 
 # Del II – Från verksamhet till gemensamma IT-förmågor
 

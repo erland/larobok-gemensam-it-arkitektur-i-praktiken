@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I påbörjad
+Skrivfas – del I komplett i första utkast
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -21,7 +21,8 @@ Skrivfas – del I påbörjad
 | 4 | Kvalitetsattribut som arkitekturens drivkrafter | Första utkast | Kravkedja, kvalitetsattributsscenarier, tolv kvalitetsdimensioner, RTO/RPO, trade-offs och verifiering etablerade. |
 | 5 | Arkitekturbeslut och trade-offs | Första utkast | Beslutsdrivare, alternativ, trade-offs, ADR, riskacceptans, teknisk skuld, reversibilitet och omprövning etablerade. |
 | 6 | Arkitekturprinciper som beslutsstöd | Första utkast | Principers roll, egenskaper hos användbara principer, tio gemensamma exempel, nivåindelning och relation till beslut, standarder och plattformar etablerade. |
-| 7–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 7 | Att etablera modellen – ordning, ansvar och iteration | Första utkast | Nio-stegs etableringssekvens, tredelad ansvarmodell, beslutets räckvidd, top-down/bottom-up och iterativ etablering etablerade. |
+| 8–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -36,8 +37,8 @@ Skrivfas – del I påbörjad
 ## Nästa rekommenderade steg
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
-- Kapitel 1–6 är skapade som första utkast.
-- Skriv Kapitel 7 – Att etablera modellen: ordning, ansvar och iteration.
-- När del I är färdig: gör en gemensam överlapps- och terminologikontroll av kapitel 1–7.
-- När del I skrivs ska kapitel 7 göra etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
+- Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.
+- Gör en gemensam överlapps- och terminologikontroll av kapitel 1–7 innan del II skrivs.
+- Därefter: skriv Kapitel 8 – Vad är en IT-förmåga?
+- Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

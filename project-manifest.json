@@ -1,34 +1,36 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev11.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev12.zip",
   "chapters": {
-    "count": 6,
+    "count": 7,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
       "chapters/03-behov-fore-teknik.md": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013",
       "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": "ea5d8ae026099bf6ffdd1341fea6b59c966a3ae929d481e1ed8a93fb220245f5",
       "chapters/05-arkitekturbeslut-och-trade-offs.md": "1e82f7ddfb29f64ccf1102243cb818ba52cfa5fe6386e0b4fed3c0f735e5948f",
-      "chapters/06-arkitekturprinciper-som-beslutsstod.md": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a"
+      "chapters/06-arkitekturprinciper-som-beslutsstod.md": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a",
+      "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "2b1f4318ef6f679e1bb61924bbc72c230e7f3f4df04d2403253d9be453e85ead"
     },
-    "latest": 6
+    "latest": 7
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/06-arkitekturprinciper-som-beslutsstod.md",
+      "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md",
+      "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 6 – Arkitekturprinciper som beslutsstöd och synkroniserade projektstatus/exportordning",
-    "source_revision": 10
+    "operation": "Skrev kapitel 7 om etableringsordning, ansvar och iteration; slutförde del I i första utkast",
+    "source_revision": 11
   },
-  "parent_revision": 10,
+  "parent_revision": 11,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 11,
+  "revision": 12,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -46,7 +48,7 @@
     },
     "README.md": {
       "bytes": 904,
-      "sha256": "5c0b8883682dc3fceceac00bf6081fb03524763a8e606ba36e2b3a55116a5557"
+      "sha256": "2ee3a2481e8f4e2d9bd859a702005c82ae197bf4cdb707a11dd580c3306c0847"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -61,8 +63,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1421,
-      "sha256": "3a6072e1a63f7b276d0026a59dee9649498180dba89c08248fa4883f5efba7cf"
+      "bytes": 1493,
+      "sha256": "6fb3b9f3b36bedfc2d237e2fb66ec74c9cfb400fa86cb7b7bc7e91d74ebe3146"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -92,6 +94,10 @@
       "bytes": 28668,
       "sha256": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a"
     },
+    "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": {
+      "bytes": 24980,
+      "sha256": "2b1f4318ef6f679e1bb61924bbc72c230e7f3f4df04d2403253d9be453e85ead"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -113,8 +119,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 1860,
-      "sha256": "22b5b6a731b7b151c433b0f7c3917ca9b1758112d2153d06b14879c43e5b0e12"
+      "bytes": 1977,
+      "sha256": "4d4ed2d99768e883b328b4582ab40885bae57cd908d6e0e918588f4b868379c7"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -129,16 +135,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20165,
-      "sha256": "ce89a2fea6eb36b65eabf5d9551bdb20202e2b352dc5e2574f3c50749393c8d7"
+      "bytes": 20178,
+      "sha256": "d41b0419dca76abb0cbfd1596ce9b59495c49e5442c984807d57d53fc32403db"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 2667,
-      "sha256": "1c9636aec9220b4e7402a1e791aed9105fa0637150de7ed2ae69ab72e50aadd6"
+      "bytes": 2899,
+      "sha256": "737353de83fac20a8006ef499ac73a5230da18dd6f422f251f4be73c2e84e341"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -622,7 +628,7 @@
     },
     "project-index.md": {
       "bytes": 826,
-      "sha256": "0aad05137e96939bdb1ecb67f93d2dde9b08661bb9e01d4d710bb3cae50a6cc3"
+      "sha256": "eac177a7c4158fb34a44be824031bdeacdfdad02add1fbb265edba20dcecb50d"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -645,8 +651,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 13611,
-      "sha256": "38a6e1187a71e35e0c7d97890ef62c201a40cbeb3a64bdedab921f67e1f3fed9"
+      "bytes": 13984,
+      "sha256": "d8af73d78f990e9a2160d2ce1a570a60de0539adceac59a41b646f33c76b839d"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -669,5 +675,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:21:50Z"
+  "updated_at": "2026-08-18T17:26:21Z"
 }

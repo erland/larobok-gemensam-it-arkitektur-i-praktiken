@@ -11,4 +11,4 @@
 | F-006 | Kapitel 18 | Identitetsprotokoll och PKI-relaterade fakta ska verifieras mot aktuella standardspecifikationer. | Öppen | IETF/OpenID/W3C där relevant. |
 | F-007 | Kapitel 21 | Software supply chain, CI/CD och artifact-signering ska verifieras mot aktuella standarder och ramverk. | Öppen | Hög förändringstakt. |
 | F-008 | Kapitel 31–32 | Standard- och tekniklivscykelmodellen ska skilja mellan bokförslag och externa normer. | Öppen | Undvik att presentera intern modell som universell standard. |
-| F-009 | Kapitel 7 och 37 | Markera tydligt vad som är bokens rekommenderade etablerings-/governancemodell och vad som hämtas från externa ramverk eller källor. | Öppen | Undvik att presentera den tredelade ansvarsnivån eller etableringssekvensen som universell standard. |
+| F-009 | Kapitel 7 och 37 | Markera tydligt vad som är bokens rekommenderade etablerings-/governancemodell och vad som hämtas från externa ramverk eller källor. | Delvis verifierad 2026-08-18 | Kapitel 7 markerar uttryckligen nio-stegssekvensen och den tredelade ansvarmodellen som bokens rekommenderade arbetssätt, inte universell standard. Slutkontroll återstår när kapitel 37 skrivs. |
