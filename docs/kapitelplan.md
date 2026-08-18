@@ -116,7 +116,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur väljer man lagrings- och datahanteringsmekanismer efter informationsbehov och kvalitetskrav?
 - Centralt innehåll: relationsdata, objektlagring, cache, historik, retention, konsistens, kopior och återställningsbehov.
 - Avgränsning: bygger på kapitel 11 och fokuserar på den tekniska förmågan, inte begrepps- eller informationsmodellering.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 16: Analys, sökning och AI
 - Kärnfråga: Hur skiljer sig sökning, BI, ML och generativ AI – och hur kombineras de ansvarsfullt?

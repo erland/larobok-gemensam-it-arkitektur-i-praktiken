@@ -3,7 +3,7 @@
 Detta är bokprojektet för faktaboken **Gemensam IT-arkitektur i praktiken**. Projektet är skapat från Lärobokskaparens kanoniska projektmall.
 
 ## Nuvarande läge
-Projektet befinner sig i skrivfas. Bokspecifikation, kapitelplan, källpolicy, terminologi och innehålls-canon är etablerade, och kapitel 1–14 är skapade som första utkast. Det ursprungliga arkitekturmaterialet ligger som arbetsunderlag under `docs/underlag/gemensam-it-arkitektur/` och exporteras inte som boktext.
+Projektet befinner sig i skrivfas. Bokspecifikation, kapitelplan, källpolicy, terminologi och innehålls-canon är etablerade, och kapitel 1–15 är skapade som första utkast. Det ursprungliga arkitekturmaterialet ligger som arbetsunderlag under `docs/underlag/gemensam-it-arkitektur/` och exporteras inte som boktext.
 
 ## Arbetsflöde
 1. Förfina planen vid behov.

@@ -34,6 +34,7 @@ chapters:
 - chapters/12-interaktion-presentation-och-kanaler.md
 - chapters/13-process-workflow-och-arendehantering.md
 - chapters/14-regler-och-beslut.md
+- chapters/15-data-och-informationshantering.md
 exports:
   epub:
     enabled: true
