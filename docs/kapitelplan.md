@@ -58,7 +58,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Hur används principer för att skapa konsekvens utan att ersätta arkitektens bedömning?
 - Centralt innehåll: principers syfte, egenskaper hos användbara principer, behov före teknik, standardiserade erbjudanden, separation mellan stabil arkitektur och föränderlig teknik, säkerhet och driftbarhet som inbyggda egenskaper.
 - Avgränsning: handlar om principerna som styrsignal; mandat, avsteg, förvaltning och governance behandlas samlat i kapitel 37.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 7: Att etablera modellen – ordning, ansvar och iteration
 - Kärnfråga: I vilken ordning bör en organisation etablera gemensam IT-arkitektur, och vilka beslut hör hemma på gemensam nivå, förmågenivå respektive lösningsnivå?

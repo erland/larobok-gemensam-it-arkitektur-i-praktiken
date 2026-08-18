@@ -1,33 +1,34 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev10.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev11.zip",
   "chapters": {
-    "count": 5,
+    "count": 6,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
       "chapters/03-behov-fore-teknik.md": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013",
       "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": "ea5d8ae026099bf6ffdd1341fea6b59c966a3ae929d481e1ed8a93fb220245f5",
-      "chapters/05-arkitekturbeslut-och-trade-offs.md": "1e82f7ddfb29f64ccf1102243cb818ba52cfa5fe6386e0b4fed3c0f735e5948f"
+      "chapters/05-arkitekturbeslut-och-trade-offs.md": "1e82f7ddfb29f64ccf1102243cb818ba52cfa5fe6386e0b4fed3c0f735e5948f",
+      "chapters/06-arkitekturprinciper-som-beslutsstod.md": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a"
     },
-    "latest": 5
+    "latest": 6
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/05-arkitekturbeslut-och-trade-offs.md",
+      "chapters/06-arkitekturprinciper-som-beslutsstod.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 5 – Arkitekturbeslut och trade-offs och synkroniserade projektstatus/exportordning",
-    "source_revision": 9
+    "operation": "Skrev kapitel 6 – Arkitekturprinciper som beslutsstöd och synkroniserade projektstatus/exportordning",
+    "source_revision": 10
   },
-  "parent_revision": 9,
+  "parent_revision": 10,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 10,
+  "revision": 11,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -45,7 +46,7 @@
     },
     "README.md": {
       "bytes": 904,
-      "sha256": "01ffcd4287db6165b0354db40c2fbb1e36491f23e7c6c0dacd0cf44ce36ee986"
+      "sha256": "5c0b8883682dc3fceceac00bf6081fb03524763a8e606ba36e2b3a55116a5557"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -60,8 +61,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1368,
-      "sha256": "bf07e31d01ce1b9016fe3c500dbd31e71c5db0552235c323e77a767f84fe9043"
+      "bytes": 1421,
+      "sha256": "3a6072e1a63f7b276d0026a59dee9649498180dba89c08248fa4883f5efba7cf"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -86,6 +87,10 @@
     "chapters/05-arkitekturbeslut-och-trade-offs.md": {
       "bytes": 27660,
       "sha256": "1e82f7ddfb29f64ccf1102243cb818ba52cfa5fe6386e0b4fed3c0f735e5948f"
+    },
+    "chapters/06-arkitekturprinciper-som-beslutsstod.md": {
+      "bytes": 28668,
+      "sha256": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a"
     },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
@@ -124,16 +129,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20152,
-      "sha256": "35c469a7634f2b8d8c1a47e4a42ae3b4ee020d7e334665e524bd0c9d3d40e598"
+      "bytes": 20165,
+      "sha256": "ce89a2fea6eb36b65eabf5d9551bdb20202e2b352dc5e2574f3c50749393c8d7"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 2428,
-      "sha256": "f4a0fb3ba9098b67262fe0ce9aed9dc893be5e86452468b5440063c1b4b6cf8e"
+      "bytes": 2667,
+      "sha256": "1c9636aec9220b4e7402a1e791aed9105fa0637150de7ed2ae69ab72e50aadd6"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -617,7 +622,7 @@
     },
     "project-index.md": {
       "bytes": 826,
-      "sha256": "4d2e34e3430fe1bd73ecf6a583aace359fe468994cbb295e8b7ff6390c0cd9bc"
+      "sha256": "0aad05137e96939bdb1ecb67f93d2dde9b08661bb9e01d4d710bb3cae50a6cc3"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -640,8 +645,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 13269,
-      "sha256": "c23c3ba147d94d0684d11c3e3f3e04d323982b40687f665efdb2c373ec05f509"
+      "bytes": 13611,
+      "sha256": "38a6e1187a71e35e0c7d97890ef62c201a40cbeb3a64bdedab921f67e1f3fed9"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -664,5 +669,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:17:58Z"
+  "updated_at": "2026-08-18T17:21:50Z"
 }

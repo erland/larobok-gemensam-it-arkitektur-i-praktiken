@@ -23,6 +23,7 @@ chapters:
 - chapters/03-behov-fore-teknik.md
 - chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md
 - chapters/05-arkitekturbeslut-och-trade-offs.md
+- chapters/06-arkitekturprinciper-som-beslutsstod.md
 exports:
   epub:
     enabled: true
