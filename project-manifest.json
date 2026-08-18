@@ -1,30 +1,31 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev7.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev8.zip",
   "chapters": {
-    "count": 2,
+    "count": 3,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
-      "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4"
+      "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
+      "chapters/03-behov-fore-teknik.md": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013"
     },
-    "latest": 2
+    "latest": 3
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/02-en-arkitektur-av-flera-lager.md",
+      "chapters/03-behov-fore-teknik.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 2 – En arkitektur av flera lager och synkroniserade projektstatus/exportordning",
-    "source_revision": 6
+    "operation": "Skrev kapitel 3 – Behov före teknik och synkroniserade projektstatus/exportordning",
+    "source_revision": 7
   },
-  "parent_revision": 6,
+  "parent_revision": 7,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 7,
+  "revision": 8,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -42,7 +43,7 @@
     },
     "README.md": {
       "bytes": 904,
-      "sha256": "4d1c8c2d9726f3918b86c44bc8a484e0db20bde686d0da329d8217d128ac0692"
+      "sha256": "003b378bc3c1b1552f3895175eddc1def9ffed147b689cec36880d0e10b81212"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -57,8 +58,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1219,
-      "sha256": "a97cf830afc45794cb02a1bb9c2469b72ae059e74bd44050e1ed26867be1f299"
+      "bytes": 1254,
+      "sha256": "a606cb7b3ecca0bd8df8233c0ac4dd8c0824dc866120ce01fee9d8cc487e1347"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -71,6 +72,10 @@
     "chapters/02-en-arkitektur-av-flera-lager.md": {
       "bytes": 25611,
       "sha256": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4"
+    },
+    "chapters/03-behov-fore-teknik.md": {
+      "bytes": 22793,
+      "sha256": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013"
     },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
@@ -109,16 +114,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20113,
-      "sha256": "836bd168659faa3dbf062cdc1cfa71b95ed9273f31bbae936ead637d3eefe26f"
+      "bytes": 20126,
+      "sha256": "766c1df91e8245ee52d1080843ec9aef23f916a99cfb3b3c459117d070c46444"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 1888,
-      "sha256": "8d7265e60806f14d9f99ed11ca7cf6e95cca90a3fa8d5d869a4918869ed72bf8"
+      "bytes": 2072,
+      "sha256": "e38926770f91e7c8bdf9f0e5fb443f20f13fe7f658ba89165306656ef243f3cd"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -602,7 +607,7 @@
     },
     "project-index.md": {
       "bytes": 824,
-      "sha256": "c57ff47fa7d49a63dc83c535c1732044a442b72017a84a34294ab58944de1be9"
+      "sha256": "bad9459a70432a1b53650336a8dc0df65245912b849a457307e91af21be644a5"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -625,8 +630,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 12191,
-      "sha256": "7626dff1b84499cce4e928cebc5d56317d449478498314dd84015a965539322f"
+      "bytes": 12495,
+      "sha256": "bfb8f609c8d36dac4d815d99197b5f18eceee92c4af9d6b4dba8d0b32bbd4ac8"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -649,5 +654,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:03:27Z"
+  "updated_at": "2026-08-18T17:07:51Z"
 }

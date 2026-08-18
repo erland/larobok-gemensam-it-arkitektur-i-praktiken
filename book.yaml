@@ -20,6 +20,7 @@ chapters:
 - chapters/00-inledning.md
 - chapters/01-varfor-gemensam-it-arkitektur.md
 - chapters/02-en-arkitektur-av-flera-lager.md
+- chapters/03-behov-fore-teknik.md
 exports:
   epub:
     enabled: true

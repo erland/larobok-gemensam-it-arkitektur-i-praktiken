@@ -39,7 +39,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Hur undviker man att dagens teknikplattform blir morgondagens verksamhetskrav?
 - Centralt innehåll: behovsanalys, constraints, produktoberoende krav, mål kontra medel, teknikskuld och path dependency.
 - Avgränsning: behandlar hur problemet formuleras före arkitekturval; kvalitetskrav behandlas i kapitel 4.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 4: Kvalitetsattribut som arkitekturens drivkrafter
 - Kärnfråga: Hur översätts verksamhetskonsekvenser till mätbara kvalitetskrav och arkitekturdrivare?
