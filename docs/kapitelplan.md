@@ -79,7 +79,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Vilka egenskaper motiverar en gemensam förmåga eller tjänst?
 - Centralt innehåll: skalfördelar, risk, kompetens, interoperabilitet, standardisering, differentiering, centralisering kontra federation.
 - Avgränsning: avgör *vad* som lämpar sig för gemensamt ansvar; kapitel 28–30 behandlar *hur* ett gemensamt tekniskt erbjudande utformas.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 10: Domäner, ansvar och gränser
 - Kärnfråga: Vilka arkitekturfrågor löses inte av en gemensam förmågekarta?

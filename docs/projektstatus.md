@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I komplett och del II påbörjad i första utkast
+Skrivfas – del I komplett och del II pågår i första utkast
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -23,7 +23,8 @@ Skrivfas – del I komplett och del II påbörjad i första utkast
 | 6 | Arkitekturprinciper som beslutsstöd | Första utkast | Principers roll, egenskaper hos användbara principer, tio gemensamma exempel, nivåindelning och relation till beslut, standarder och plattformar etablerade. |
 | 7 | Att etablera modellen – ordning, ansvar och iteration | Första utkast | Nio-stegs etableringssekvens, tredelad ansvarmodell, beslutets räckvidd, top-down/bottom-up och iterativ etablering etablerade. |
 | 8 | Vad är en IT-förmåga? | Första utkast | Distinktion mellan gemensam IT-förmåga, verksamhetsförmåga, tjänst, produkt, team, kompetens och kapacitet etablerad. |
-| 9–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 9 | När något bör vara gemensamt | Första utkast | Bedömningsmodell för gemensamt, federerat och lokalt ansvar etablerad med skala, risk, kompetens, interoperabilitet, standardiserbarhet och differentiering som centrala drivkrafter. |
+| 10–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -41,6 +42,7 @@ Skrivfas – del I komplett och del II påbörjad i första utkast
 - Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.
 - Gemensam överlapps- och terminologikontroll av kapitel 1–7 är genomförd inför del II; inga omskrivningar av del I bedömdes nödvändiga.
 - Kapitel 8 – Vad är en IT-förmåga? är skapat som första utkast och etablerar den precisa begreppsgrunden för förmågedelen.
-- Nästa steg: skriv Kapitel 9 – När något bör vara gemensamt.
+- Kapitel 9 – När något bör vara gemensamt är skapat som första utkast och etablerar kriterier för gemensamt, federerat och lokalt ansvar.
+- Nästa steg: skriv Kapitel 10 – Domäner, ansvar och gränser.
 - Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

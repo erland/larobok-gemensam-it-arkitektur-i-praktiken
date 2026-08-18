@@ -28,6 +28,7 @@ chapters:
 - chapters/06-arkitekturprinciper-som-beslutsstod.md
 - chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
 - chapters/08-vad-ar-en-it-formaga.md
+- chapters/09-nar-nagot-bor-vara-gemensamt.md
 exports:
   epub:
     enabled: true

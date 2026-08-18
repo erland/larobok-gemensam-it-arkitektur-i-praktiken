@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev13.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev14.zip",
   "chapters": {
-    "count": 8,
+    "count": 9,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -10,28 +10,28 @@
       "chapters/05-arkitekturbeslut-och-trade-offs.md": "1e82f7ddfb29f64ccf1102243cb818ba52cfa5fe6386e0b4fed3c0f735e5948f",
       "chapters/06-arkitekturprinciper-som-beslutsstod.md": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a",
       "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "2b1f4318ef6f679e1bb61924bbc72c230e7f3f4df04d2403253d9be453e85ead",
-      "chapters/08-vad-ar-en-it-formaga.md": "c4fa7685d778cee19ca3cb5943431a23efd812121035c699b62a2f5669edf50c"
+      "chapters/08-vad-ar-en-it-formaga.md": "c4fa7685d778cee19ca3cb5943431a23efd812121035c699b62a2f5669edf50c",
+      "chapters/09-nar-nagot-bor-vara-gemensamt.md": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576"
     },
-    "latest": 8
+    "latest": 9
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/08-vad-ar-en-it-formaga.md",
-      "docs/faktakontroll.md",
+      "chapters/09-nar-nagot-bor-vara-gemensamt.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Genomförde del I-konsistenskontroll och skrev kapitel 8 – Vad är en IT-förmåga?; påbörjade del II",
-    "source_revision": 12
+    "operation": "Skrev kapitel 9 – När något bör vara gemensamt och synkroniserade projektstatus/exportordning",
+    "source_revision": 13
   },
-  "parent_revision": 12,
+  "parent_revision": 13,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 13,
+  "revision": 14,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -49,7 +49,7 @@
     },
     "README.md": {
       "bytes": 904,
-      "sha256": "575b44bf7b77dfc934bd26eac4cbf0fe388cf3ef5ee801600e5cdeb861508956"
+      "sha256": "696b52998c673e119a531042c41c3497587189dd51d630ff4b3785b73c2ba721"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -64,8 +64,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1531,
-      "sha256": "dec3be425118c88083a4d1d4b8ae59cc97a79f50a8ddcf47ca79a1c5dbf1bca3"
+      "bytes": 1577,
+      "sha256": "ff88e06f13c3ee116e5f4341c15fc6ed33d61e3ec55dd4e2344aaa4618d2e5e5"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -102,6 +102,10 @@
     "chapters/08-vad-ar-en-it-formaga.md": {
       "bytes": 21954,
       "sha256": "c4fa7685d778cee19ca3cb5943431a23efd812121035c699b62a2f5669edf50c"
+    },
+    "chapters/09-nar-nagot-bor-vara-gemensamt.md": {
+      "bytes": 23456,
+      "sha256": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576"
     },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
@@ -140,16 +144,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20191,
-      "sha256": "583c024da6d7fca3fbc43358ce40edc9b56856ff14d31e9d488626e63a2d002d"
+      "bytes": 20204,
+      "sha256": "540d34834350ff6e3fb0db5ca9c98e8735218913d4e26016dd3e154a2975bd6d"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 3293,
-      "sha256": "93212cc8d526ce3d940db36255fa974b72dd33fa113d16f8024e50b4bf85cdf1"
+      "bytes": 3680,
+      "sha256": "f1ee8b626991cd2082b840f56a72a2ac8e4d09d9c74a8d0a553ce3a5bec9f0dd"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -633,7 +637,7 @@
     },
     "project-index.md": {
       "bytes": 826,
-      "sha256": "c8a970264a0a94e479dfd862d01e03ff2bac7aa0d9482bf6df33a895dab5fc6c"
+      "sha256": "37ebde551df6c0f0dd3c311c038267fe6f2a39dd8f522996d2567c7819e37491"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -656,8 +660,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 14338,
-      "sha256": "c6eb9485d65cbc579556a1769c973b321204b3e30e3be34866a608068c95cc38"
+      "bytes": 14668,
+      "sha256": "fb777afd6dfb0ab53fd4849ad1dec916750f2a3062ff6077611f4c7f9048c9fb"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -680,5 +684,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:30:58Z"
+  "updated_at": "2026-08-18T17:36:36Z"
 }

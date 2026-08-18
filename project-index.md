@@ -5,13 +5,13 @@
 - book_kind: factbook
 - book_type: subject_overview
 - Project-id: c9f8f383-f0bc-4fba-8270-629463a8398f
-- Revision: 13
-- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev13.zip
+- Revision: 14
+- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev14.zip
 
 ## Kapitel
 - Inledning: första utkast
 - Planerade kapitel: 37
-- Skapade huvudkapitel: 8
+- Skapade huvudkapitel: 9
 
 ## Faktakontroll
 - Policy: `docs/kallpolicy.md`
@@ -27,4 +27,4 @@
 - PDF: ej skapad
 
 ## Synkkontroll
-`book.yaml`, bokspecifikation, kapitelplan, projektstatus och innehålls-canon beskriver samma bokprofil och projektläge. Kapitel 1–8 ingår i exportordningen.
+`book.yaml`, bokspecifikation, kapitelplan, projektstatus och innehålls-canon beskriver samma bokprofil och projektläge. Kapitel 1–9 ingår i exportordningen.
