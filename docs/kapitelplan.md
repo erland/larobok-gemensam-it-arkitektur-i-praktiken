@@ -100,7 +100,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 12: Interaktion, presentation och kanaler
 - Kärnfråga: Hur skapas konsekventa, tillgängliga och förändringsbara användargränssnitt över flera kanaler?
 - Centralt innehåll: webb, design system, kanalstrategi, BFF som möjlig lösningsstruktur, tillgänglighet och klientansvar.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 13: Process, workflow och ärendehantering
 - Kärnfråga: När behövs processmotor, workflow eller case management – och när räcker vanlig domänlogik?

@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I komplett och del II pågår i första utkast
+Skrivfas – del I och II kompletta i första utkast; del III pågår
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -26,7 +26,8 @@ Skrivfas – del I komplett och del II pågår i första utkast
 | 9 | När något bör vara gemensamt | Första utkast | Bedömningsmodell för gemensamt, federerat och lokalt ansvar etablerad med skala, risk, kompetens, interoperabilitet, standardiserbarhet och differentiering som centrala drivkrafter. |
 | 10 | Domäner, ansvar och gränser | Första utkast | Domänansvar, bounded context, cohesion/coupling, informationsägarskap och gränsen mellan gemensamma mekanismer och verksamhetslogik etablerade. |
 | 11 | Information och data som arkitekturella ingångsvärden | Första utkast | Informationsbehov, semantik, informationsmodell, informationsägarskap, auktoritativ källa, master-/referensdata, data contracts, klassning och livscykel etablerade. |
-| 12–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 12 | Interaktion, presentation och kanaler | Första utkast | Användningssituation, kanalval, design system, klientansvar, tillgänglighet, klient/backend-gräns, BFF som möjlig struktur, säkerhet och tekniklivscykel etablerade. |
+| 13–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -48,6 +49,8 @@ Skrivfas – del I komplett och del II pågår i första utkast
 - Kapitel 10 – Domäner, ansvar och gränser är skapat som första utkast och etablerar skillnaden mellan gemensamma IT-förmågor och verksamhetsdomäner samt principer för ansvar, bounded contexts och coupling.
 - Kapitel 11 – Information och data som arkitekturella ingångsvärden är skapat som första utkast och etablerar semantik, informationsägarskap, auktoritativa källor, data contracts, klassning och livscykel före tekniska lagringsval.
 - Del II är därmed komplett i första utkast.
-- Nästa steg: gör en kort överlapps- och terminologikontroll av kapitel 8–11 inför del III och skriv därefter Kapitel 12 – Interaktion, presentation och kanaler.
+- Kort överlapps- och terminologikontroll av kapitel 8–11 är genomförd inför del III; inga omskrivningar bedömdes nödvändiga.
+- Kapitel 12 – Interaktion, presentation och kanaler är skapat som första utkast och inleder del III med gemensamma principer för användningssituation, kanalval, design system, klientarkitektur och ansvar mot andra förmågor.
+- Nästa steg: skriv Kapitel 13 – Process, workflow och ärendehantering.
 - Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

@@ -31,6 +31,7 @@ chapters:
 - chapters/09-nar-nagot-bor-vara-gemensamt.md
 - chapters/10-domaner-ansvar-och-granser.md
 - chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md
+- chapters/12-interaktion-presentation-och-kanaler.md
 exports:
   epub:
     enabled: true

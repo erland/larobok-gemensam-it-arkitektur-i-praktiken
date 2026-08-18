@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev16.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev17.zip",
   "chapters": {
-    "count": 11,
+    "count": 12,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -13,27 +13,29 @@
       "chapters/08-vad-ar-en-it-formaga.md": "c4fa7685d778cee19ca3cb5943431a23efd812121035c699b62a2f5669edf50c",
       "chapters/09-nar-nagot-bor-vara-gemensamt.md": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576",
       "chapters/10-domaner-ansvar-och-granser.md": "bcdf4d159e372c8a78f12a9231ea34492c7a34a63018ee8a880b2d9ae518996a",
-      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "3fa5565d6baffe862a5a440c5d90aad36c96962e0603d190546c4a86ff550588"
+      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "3fa5565d6baffe862a5a440c5d90aad36c96962e0603d190546c4a86ff550588",
+      "chapters/12-interaktion-presentation-och-kanaler.md": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0"
     },
-    "latest": 11
+    "latest": 12
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md",
+      "chapters/12-interaktion-presentation-och-kanaler.md",
+      "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 11 – Information och data som arkitekturella ingångsvärden; slutförde del II i första utkast och synkroniserade projektstatus/exportordning",
-    "source_revision": 15
+    "operation": "Genomförde del II-konsistenskontroll och skrev kapitel 12 – Interaktion, presentation och kanaler; påbörjade del III och verifierade WCAG-begrepp mot W3C",
+    "source_revision": 16
   },
-  "parent_revision": 15,
+  "parent_revision": 16,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 16,
+  "revision": 17,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -51,7 +53,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "51bd734044ea506568eb13f3b95d8eab5faf639cb6c33a88ff6b5217f2ae08b5"
+      "sha256": "76b10ce934042aab101da903b23e0f778575eaf42226a4e1db78d1e1e8bfe548"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -66,8 +68,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1692,
-      "sha256": "e62bca3318803208a10d9f0e12079189a1388f48937a78b877742904a357e883"
+      "bytes": 1746,
+      "sha256": "bd93d1e56e541101de730a35a54891b77453b3496cd908b40e3b19a556125e46"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -117,6 +119,10 @@
       "bytes": 25139,
       "sha256": "3fa5565d6baffe862a5a440c5d90aad36c96962e0603d190546c4a86ff550588"
     },
+    "chapters/12-interaktion-presentation-och-kanaler.md": {
+      "bytes": 28513,
+      "sha256": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -138,8 +144,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 2415,
-      "sha256": "3c73ee4d049e48e15e93b2c1e21e64df49b35af688b9e41ccf2d730d122a1f3d"
+      "bytes": 2745,
+      "sha256": "e51ed96354995e36992f446b5762b51b29dd60b852ef0ef48128110807307849"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -154,16 +160,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20230,
-      "sha256": "9bcca942bf4d67d88e51aa576430728a55f3aa56a10ea18056fc3f8154424f6b"
+      "bytes": 20243,
+      "sha256": "4f835e49dd6bcd506cad5eb4b65c416cbdfa9dd35ff4559a8076d2e5a9e8e2a7"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 4746,
-      "sha256": "6e98f842589999a470b38cf11cb185c72e9a474d352736338ec7e6ba67842732"
+      "bytes": 5261,
+      "sha256": "c44ddcaa93bc7c8df171ac9c7ad0b4bf37e2c1ca8dcba63baf2d20462b9485c7"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -647,7 +653,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "f1b52741d8d2786759665342de9632a78f5b4ace99052b790529eac18fa62dc3"
+      "sha256": "b64d9ed2a9e4ce4c8d1f4e63466671eabef02a1c308088c1373c0d5844caa49a"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -670,8 +676,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 15470,
-      "sha256": "436c6df9ee01c13946f0fdd9c9be15293e2d95270ff89fd0f83e4a2263c7da9c"
+      "bytes": 15893,
+      "sha256": "95d37f255b3867415c1d9612ae9610a230e82e87d15a2e69f228588cee6ee5a9"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -694,5 +700,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:52:11Z"
+  "updated_at": "2026-08-18T17:58:02Z"
 }
