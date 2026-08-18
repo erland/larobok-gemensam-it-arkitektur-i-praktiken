@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I komplett i första utkast
+Skrivfas – del I komplett och del II påbörjad i första utkast
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -22,7 +22,8 @@ Skrivfas – del I komplett i första utkast
 | 5 | Arkitekturbeslut och trade-offs | Första utkast | Beslutsdrivare, alternativ, trade-offs, ADR, riskacceptans, teknisk skuld, reversibilitet och omprövning etablerade. |
 | 6 | Arkitekturprinciper som beslutsstöd | Första utkast | Principers roll, egenskaper hos användbara principer, tio gemensamma exempel, nivåindelning och relation till beslut, standarder och plattformar etablerade. |
 | 7 | Att etablera modellen – ordning, ansvar och iteration | Första utkast | Nio-stegs etableringssekvens, tredelad ansvarmodell, beslutets räckvidd, top-down/bottom-up och iterativ etablering etablerade. |
-| 8–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 8 | Vad är en IT-förmåga? | Första utkast | Distinktion mellan gemensam IT-förmåga, verksamhetsförmåga, tjänst, produkt, team, kompetens och kapacitet etablerad. |
+| 9–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -38,7 +39,8 @@ Skrivfas – del I komplett i första utkast
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
 - Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.
-- Gör en gemensam överlapps- och terminologikontroll av kapitel 1–7 innan del II skrivs.
-- Därefter: skriv Kapitel 8 – Vad är en IT-förmåga?
+- Gemensam överlapps- och terminologikontroll av kapitel 1–7 är genomförd inför del II; inga omskrivningar av del I bedömdes nödvändiga.
+- Kapitel 8 – Vad är en IT-förmåga? är skapat som första utkast och etablerar den precisa begreppsgrunden för förmågedelen.
+- Nästa steg: skriv Kapitel 9 – När något bör vara gemensamt.
 - Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

@@ -27,6 +27,7 @@ chapters:
 - chapters/05-arkitekturbeslut-och-trade-offs.md
 - chapters/06-arkitekturprinciper-som-beslutsstod.md
 - chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
+- chapters/08-vad-ar-en-it-formaga.md
 exports:
   epub:
     enabled: true

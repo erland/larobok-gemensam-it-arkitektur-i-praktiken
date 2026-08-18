@@ -73,7 +73,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 ## Kapitel 8: Vad är en IT-förmåga?
 - Kärnfråga: Vad betyder förmåga i detta sammanhang och hur skiljer den sig från verksamhetsförmåga, tjänst och produkt?
 - Centralt innehåll: verksamhetsförmåga, gemensam IT-förmåga, capability map, tjänst, produkt, stabilitet och ansvar.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 9: När något bör vara gemensamt
 - Kärnfråga: Vilka egenskaper motiverar en gemensam förmåga eller tjänst?
