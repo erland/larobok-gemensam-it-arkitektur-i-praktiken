@@ -1,0 +1,30 @@
+title: Gemensam IT-arkitektur i praktiken
+subtitle: Från behov och förmågor till mönster, plattformar, standarder och referensarkitekturer
+author: Erland Lindmark
+language: sv
+book_kind: factbook
+book_type: subject_overview
+difficulty: advanced
+audience: IT-arkitekter, plattformsansvariga, tekniska ledare, produktägare och andra som utformar eller styr gemensam IT-arkitektur i större organisationer och myndigheter.
+edition: '1'
+version: '0.1'
+date: '2026-08-18'
+rights: All rights reserved
+publisher: ''
+cover_image: ''
+identifier: ''
+subject: Gemensam IT-arkitektur, förmågor, plattformar, standarder, lösningsmönster och referensarkitekturer
+description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktureras från behov och kvalitetskrav via IT-förmågor och lösningsmönster till plattformstjänster, standarder och referensarkitekturer.
+project_slug: gemensam-it-arkitektur-i-praktiken
+chapters:
+- chapters/00-inledning.md
+- chapters/01-varfor-gemensam-it-arkitektur.md
+exports:
+  epub:
+    enabled: true
+    include_text_toc: false
+    toc_depth: 1
+  pdf:
+    enabled: true
+    include_toc_before_introduction: true
+    toc_depth: 3

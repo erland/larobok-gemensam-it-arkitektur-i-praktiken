@@ -1,0 +1,648 @@
+{
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev6.zip",
+  "chapters": {
+    "count": 1,
+    "hashes": {
+      "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad"
+    },
+    "latest": 1
+  },
+  "created_at": "2026-08-18T15:51:17Z",
+  "last_operation": {
+    "changed_files": [
+      "README.md",
+      "book.yaml",
+      "chapters/01-varfor-gemensam-it-arkitektur.md",
+      "docs/kapitelplan.md",
+      "docs/projektstatus.md",
+      "project-index.md"
+    ],
+    "operation": "Skrev kapitel 1 – Varför gemensam IT-arkitektur? och synkroniserade projektstatus/exportordning",
+    "source_revision": 5
+  },
+  "parent_revision": 5,
+  "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
+  "project_slug": "gemensam-it-arkitektur-i-praktiken",
+  "revision": 6,
+  "schema_version": 1,
+  "template": false,
+  "tracked_files": {
+    ".github/workflows/01-validate.yml": {
+      "bytes": 292,
+      "sha256": "56c504376f59ec4a5a7ab59ab29be43784f636f832af5c6e98f14b694c15afb7"
+    },
+    ".github/workflows/02-build-preview.yml": {
+      "bytes": 1182,
+      "sha256": "2390e20542efb337aa312a1e757ff019d313632de429895fa98fccb12b0e4c92"
+    },
+    ".github/workflows/03-release.yml": {
+      "bytes": 1621,
+      "sha256": "9fb16c36e2ce0a677f66cf26931f07accfcb60eeabbb8cc77d7d926d424b2c82"
+    },
+    "README.md": {
+      "bytes": 899,
+      "sha256": "0e06a601f6edffe674d9341e4b738db49d4964365b45a48367c7adec51d92287"
+    },
+    "assets/cover/README.md": {
+      "bytes": 55,
+      "sha256": "9ae0299913b2c9ecc17c81203421c3f106ff095fbdea0985f449d2fb562b7c10"
+    },
+    "assets/image-prompts/README.md": {
+      "bytes": 71,
+      "sha256": "b50a8f92cd321ad174fb2991e1d2e9f931ae67bcd5a84b94957dea4fcef2cf9a"
+    },
+    "assets/images/README.md": {
+      "bytes": 91,
+      "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
+    },
+    "book.yaml": {
+      "bytes": 1173,
+      "sha256": "753a136e2c444de2a588546a163979dc0a63bd2d0d7769de315460b257307352"
+    },
+    "chapters/00-inledning.md": {
+      "bytes": 2188,
+      "sha256": "24891672aadaf23e010427c37951c7273d12b67d86acab9d9dcd973720e5ad97"
+    },
+    "chapters/01-varfor-gemensam-it-arkitektur.md": {
+      "bytes": 26274,
+      "sha256": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad"
+    },
+    "chapters/kapitelmall-faktabok.md": {
+      "bytes": 337,
+      "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
+    },
+    "chapters/kapitelmall-larobok.md": {
+      "bytes": 291,
+      "sha256": "84280ff1d5ca1f3743a8103d6e3342030e7055293ef947c7b2d07002287a7957"
+    },
+    "code/README.md": {
+      "bytes": 56,
+      "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
+    },
+    "docs/bokspecifikation.md": {
+      "bytes": 5330,
+      "sha256": "52197a8b95be8fc4ee3e4e17bc36bfed0ab1dc2b033622f52b1f21493e6d5429"
+    },
+    "docs/export-guide.md": {
+      "bytes": 563,
+      "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
+    },
+    "docs/faktakontroll.md": {
+      "bytes": 1632,
+      "sha256": "167d9a8816ad3ce84ebe87918b0098802a383d24caf91777ffba261470bf2e61"
+    },
+    "docs/illustration-plan.md": {
+      "bytes": 525,
+      "sha256": "56713ed54b475615319a55bb52c5fe5c86a51abab5b33bea6919658d0d407970"
+    },
+    "docs/innehalls-canon.md": {
+      "bytes": 3825,
+      "sha256": "000029be7760031a10150d8f9d85586337b762222a3f6f0a19411071bc4a7367"
+    },
+    "docs/kallpolicy.md": {
+      "bytes": 1524,
+      "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
+    },
+    "docs/kapitelplan.md": {
+      "bytes": 20100,
+      "sha256": "8a08cff5c126bcd5583c8e99c67519ca964550c61a62172a40d5c232d921bde0"
+    },
+    "docs/kapitelplansanalys.md": {
+      "bytes": 4644,
+      "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
+    },
+    "docs/projektstatus.md": {
+      "bytes": 1791,
+      "sha256": "845cc6581daeed5a1d0d141b1ae0ab127691cf0548f86ee4f71e6d044f64ce80"
+    },
+    "docs/quality-checklist.md": {
+      "bytes": 980,
+      "sha256": "96b59bfb755f511c92aff36c352f7d12c3edc0750af549cc1adb6ba2443bd195"
+    },
+    "docs/terminologi.md": {
+      "bytes": 1513,
+      "sha256": "5e6428d6e57b9ca63f5d95b5b793f45014a7e4230a6f2f441913ee49208a2ef2"
+    },
+    "docs/underlag/README.md": {
+      "bytes": 315,
+      "sha256": "b70adbf6288c8b867206abbe97f19b905f59050105eaf5c9eaf57f349d0c5ab2"
+    },
+    "docs/underlag/gemensam-it-arkitektur/README.md": {
+      "bytes": 2882,
+      "sha256": "05c3e354429773b65f9e5d906b63f80c2735f204d5f8f05b606c9ce58edfa93d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/STATUS.md": {
+      "bytes": 1398,
+      "sha256": "986a18fc6a37822271fae195b64415fd61004f9d197d262ba0c1da9848219942"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/01-interaktion-presentation-kanaler.md": {
+      "bytes": 33727,
+      "sha256": "aefa1b0e700a8019ecb0bb0160b86f00febb15d28fbeee8b3f958c90dc7714ad"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/02-process-workflow-arendehantering.md": {
+      "bytes": 20167,
+      "sha256": "8d71a3d1eab0d24c36bf243cf2ab237f16fccbb5b0183dd254f246fd34cce08a"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/03-regler-och-beslut.md": {
+      "bytes": 16586,
+      "sha256": "36224ad46e9110ff3d80485988e6db7de67e3656ef598e59b8cd9ac32419b565"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/04-data-och-informationshantering.md": {
+      "bytes": 20113,
+      "sha256": "b064c1856719600439c3615985c119666a77e6a9c2f4d3ee83870be6891decd7"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/05-analys-sokning-ai.md": {
+      "bytes": 20251,
+      "sha256": "5fddb83d14cdd1c6553c01660672ee659ad501b7139ed8c4a99dcc5346cb60b4"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/06-integration-och-kommunikation.md": {
+      "bytes": 21926,
+      "sha256": "3b0a1466d8266123eddfac95411705e2d421a337e6471072c3cbda4215eadd96"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/07-identitet-och-tillit.md": {
+      "bytes": 17673,
+      "sha256": "e04cf52b4b15190f16a0e77ae126576547bf65da40af7f11aa8242752b8b29d0"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/08-applikationsexekvering-runtime.md": {
+      "bytes": 19587,
+      "sha256": "8157e20200e01e25e3fdf4231e8d960236effe6152e44a6fc96cd9134f464fee"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/09-driftbarhet-motstandskraft.md": {
+      "bytes": 19339,
+      "sha256": "25946099e62f1aa5651ba63ab486878d9d8c8c713f25a226fc1ba7968b3a6da0"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/10-programvaruutveckling-leverans.md": {
+      "bytes": 19997,
+      "sha256": "96b15e37e7f8bf64d4148429e75558322120319f17c70877c2e50b06f3685966"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/11-arbetsplats-samarbete-produktivitet.md": {
+      "bytes": 20551,
+      "sha256": "0451b9f4381a5424394bc6e35009583402e5e7a252e9c90a97b9c7d5fa5958f5"
+    },
+    "docs/underlag/gemensam-it-arkitektur/formagor/README.md": {
+      "bytes": 1535,
+      "sha256": "1a51911040a2e93bd5cabb8a14ee1f2516f136dccc948ffd501c3ba8b7c74a71"
+    },
+    "docs/underlag/gemensam-it-arkitektur/mallar/formagedokument.md": {
+      "bytes": 3716,
+      "sha256": "d1344375f202de38dba864710c2bab24f830dbd1b6edd55751bc9ece1332d768"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/01-backend-for-frontend.md": {
+      "bytes": 1569,
+      "sha256": "189d71801d0a87eb0bb6e46868944137c3da5b3e2e5ef0d96f1bbccfaf42ece3"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/02-asynkron-meddelandekommunikation.md": {
+      "bytes": 1095,
+      "sha256": "99b44171c087572b5514690669857dede489565079f8e0023eee9faebe1263ce"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/03-publicera-prenumerera.md": {
+      "bytes": 999,
+      "sha256": "1c5c9f643c732a6a3df08dcb58cb34ffce415230fbe90b4fa423933491ae2e0c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/04-human-workflow.md": {
+      "bytes": 1100,
+      "sha256": "08c39cd90511850add8ae9975ea520b4f67974bc1cad425493de6944cc189929"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/05-externaliserade-verksamhetsregler.md": {
+      "bytes": 961,
+      "sha256": "735f3eaf812fedbe0f98298b575b08c99ff3cd4d48151cedf0e9d8136d3c77d8"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/06-system-of-record-och-harledda-kopior.md": {
+      "bytes": 901,
+      "sha256": "fd1afe680f832aa8411d52056dade528fad81b589de14085406c28d148c78e70"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/07-cache-aside.md": {
+      "bytes": 794,
+      "sha256": "ad9528bceca5c92a921f340e63a9e5030dc6fe13c1963931a13e32d23741afdd"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/08-rag.md": {
+      "bytes": 986,
+      "sha256": "09a84732637ede98ac69e0076f100085b55f80b4de2bbd087a8d6be1fc15078d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/09-ai-med-mansklig-kontroll.md": {
+      "bytes": 934,
+      "sha256": "67f9fc75e4cd7b63f9a867d495ce35af6336d2effe7229be13cd6da47b5f449e"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/10-tjansteidentitet.md": {
+      "bytes": 872,
+      "sha256": "ab9e6cb84d7240f8bca258135daa7c13d0aa112f6eb86db17c24beea220d9806"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/11-containeriserad-stateless-tjanst.md": {
+      "bytes": 845,
+      "sha256": "2a7e2382a915a17504adf558886b5cfd4e36454e114dbcaf11c90b53348acbdc"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/12-build-once-promote-many.md": {
+      "bytes": 787,
+      "sha256": "2a50708face6f62c41f0195ea708139bd5d4ce03d56557146b5c45d68065a290"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/13-observability-for-distribuerade-tjanster.md": {
+      "bytes": 873,
+      "sha256": "3a3fdc567ba028904849cc6eda41f9dde747579242b1cc33a94f745f12245f3c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/14-backup-och-verifierad-aterstallning.md": {
+      "bytes": 766,
+      "sha256": "036ece61dd7f25eefb26459911dde97eb152282753d6c81db57e4ab68f7d699c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/15-kontrollerad-samarbetsyta.md": {
+      "bytes": 774,
+      "sha256": "febdacb510f33e14756bdd77f67c06c2dda46f26cbe4eddd742d3cc740242c42"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/README.md": {
+      "bytes": 3430,
+      "sha256": "9133d506d73f65289ee01b08e1983bc2c1c4bb03f29f6d71bd4a4f70c99e2c4a"
+    },
+    "docs/underlag/gemensam-it-arkitektur/monster/formagekopplingar.md": {
+      "bytes": 1126,
+      "sha256": "fb53ef391deed0ac990e2bf3f05578fc5ac604314732225153b84f70aa4d13ef"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/01-web-application-framework.md": {
+      "bytes": 1458,
+      "sha256": "60820e7e3e18438d6e8cb4d1c77458c758d7ff6b0b2554f725aa6f13cc97540b"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/02-design-system.md": {
+      "bytes": 740,
+      "sha256": "580a2b056ad6a8b966f903a9f1f3b644dd5f010f4d96221ced86602805b7bfbc"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/03-workflow-process-platform.md": {
+      "bytes": 981,
+      "sha256": "3943f85e6dc7acb074a8a1cde6b6794719d05548517882272ee67cd93ae891a2"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/04-case-management-platform.md": {
+      "bytes": 684,
+      "sha256": "ddd065aa8f6156c7a1d8a1ee4c1cae8ad923195cb9b192a2ee54cfa5dd95eddf"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/05-business-rules-platform.md": {
+      "bytes": 651,
+      "sha256": "b22ba7ff4b65718d2949293ff8e55eceae88e9992c2f37e2bdcea128052057ad"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/06-relationell-databastjanst.md": {
+      "bytes": 973,
+      "sha256": "900d77fb6496327147452b1a893c1ee77adb988559b5e285d900d90ee3141eae"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/07-object-storage-service.md": {
+      "bytes": 740,
+      "sha256": "3e88c68972a75fb57a6599ddd1f8ecaafaee9044c9651e5c8268fc8207e96adb"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/08-cache-service.md": {
+      "bytes": 632,
+      "sha256": "2249aebdaff441d4bd7fe7632d877414edaf2b2b65d43a3fdedd83ed66bc58e5"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/09-search-indexing-service.md": {
+      "bytes": 761,
+      "sha256": "46014a62284472b478bf8694024a2cde212f8ed588b3f2e5cce8ec6268d36146"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/10-bi-reporting-service.md": {
+      "bytes": 510,
+      "sha256": "d1dc31145feab75d3e6ba9d5feb30bce6c2f7578fa4fd95d7002d238296057d5"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/11-managed-llm-service.md": {
+      "bytes": 820,
+      "sha256": "965d17e6e4351175b556ea18e4943fb4f70f9aff99318e243f25b0a0dca602c6"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/12-rag-knowledge-service.md": {
+      "bytes": 656,
+      "sha256": "a80cb3586f67696832686c684cd3ed751771bd99ebd4ef090c39ced1b42f991f"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/13-api-management.md": {
+      "bytes": 700,
+      "sha256": "7eabf3265db0539cf38be29d2dafaa50922907a5c93989eb66f7c9a84f0a0bb0"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/14-enterprise-messaging.md": {
+      "bytes": 583,
+      "sha256": "03379dfecede5a91b3303c242ba1b480d7611999de7d0e0d012b288d7ea57c45"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/15-data-integration-etl.md": {
+      "bytes": 547,
+      "sha256": "3ffbbcfe37e670f2bade366a4c323c78c7fb55f237886283f2cd8ce9c4ff5278"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/16-secure-government-connectivity.md": {
+      "bytes": 595,
+      "sha256": "f511704f9e14b13c0b54afff00cb5f7fb7e3a96b7df7c1c2189b8f4eb5b59be5"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/17-structured-government-exchange.md": {
+      "bytes": 594,
+      "sha256": "378d5e010d140a7d6aad3d3d0f765acc0b6e32a0d981db7434482da7f21929ba"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/18-workforce-identity.md": {
+      "bytes": 504,
+      "sha256": "7704a7bfba7e48d5a55e29c7d691f30a276387858b053185f4d3bf96e8b2ffed"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/19-service-identity.md": {
+      "bytes": 597,
+      "sha256": "dc01d528fbf025725e4bd0d0645b3c8507a98636e665a292c6491cc1903b4815"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/20-pki-certificate-service.md": {
+      "bytes": 387,
+      "sha256": "30720bf674a58237ccd0e8339d52b2010853cc6249c35ba4773019fb633fe45e"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/21-secrets-management.md": {
+      "bytes": 510,
+      "sha256": "bcd4a80c154252cf9295ef93da585bb6c6649eb7d5c2dd8bc2d1c1b7b2cf4a32"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/22-container-application-platform.md": {
+      "bytes": 805,
+      "sha256": "404a88f54b8c6ae3ab411cebb1b9a00b9c28a218a86777773fcffa4f69604403"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/23-java-application-runtime.md": {
+      "bytes": 447,
+      "sha256": "445930473da7cc7ac6d3690c4ddadc1cfa94f809afb628599cf6995a7192307d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/24-virtual-machine-runtime.md": {
+      "bytes": 508,
+      "sha256": "eb3b7d65cdb14385a39d32714e05b782552aa8e3844b0467b042325fff4a8921"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/25-central-logging-service.md": {
+      "bytes": 463,
+      "sha256": "d36818c4d5919d9fcf861104c2aa6961ab2ab038d74ffa0f0507037fd86a63f8"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/26-monitoring-tracing-service.md": {
+      "bytes": 483,
+      "sha256": "09fb0f086b4fc9c04fac972527e34f41a42db119e784eb7f479a961a0427eed3"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/27-backup-recovery-service.md": {
+      "bytes": 608,
+      "sha256": "28f9e4034c15fb3986b8eefd00eaa21cc9727b793bb729716264227e7d1f1948"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/28-source-code-management.md": {
+      "bytes": 428,
+      "sha256": "2db7579307a469758a29bbe305798388e617c5e7e0617401024df1a260423372"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/29-ci-cd-platform.md": {
+      "bytes": 638,
+      "sha256": "8a9ef495785be29e8e2c65d9a625d57bc504d315277782481975ec2df77c27c6"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/30-artifact-repository.md": {
+      "bytes": 496,
+      "sha256": "b95e20d5f07e5b3edaef419d760e3162ba4f78dc1528b17d558b49ad7c3864ff"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/31-developer-tooling.md": {
+      "bytes": 424,
+      "sha256": "04d68d22ef538ef75da9a06eef4a4a1b88728e3de7de4a77dae93c42d0ae4452"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/32-productivity-suite.md": {
+      "bytes": 483,
+      "sha256": "dd9e58ee6c6f0033a4f2be675bca9ad4ddd26752d40e7c7b7da271fbce8a5b00"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/33-collaboration-workspace.md": {
+      "bytes": 498,
+      "sha256": "71416821b1f0b101778d2578b324c304e4f4eea2ebae38ad15d134f63f7721bd"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/34-productivity-ai-assistant.md": {
+      "bytes": 619,
+      "sha256": "edb5b78bbbd820f1248c574ae23d52b4c3d7412af46ca1816e49f9fc1569ff29"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/35-low-code-productivity-platform.md": {
+      "bytes": 777,
+      "sha256": "7ef40564cd61ce9736352b1d3ae57c8b1b5a25ca0a7ecf44126845ddd461eec4"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/README.md": {
+      "bytes": 5908,
+      "sha256": "0ca46b404cc60907fa0dde33a9e78399b75a3cdf11225c05a71b374ddd897d67"
+    },
+    "docs/underlag/gemensam-it-arkitektur/plattformar/formagekopplingar.md": {
+      "bytes": 1391,
+      "sha256": "edbf74b890a8b3c60d8b207b82f5bfd082afb2532fe7fc891daffdd03c6925ca"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/01-internt-handlaggningsstod.md": {
+      "bytes": 2874,
+      "sha256": "7579e6bf80356633e0b7b5496119074a8e7922b1e0ccdb20cdaadbf6da6acd67"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/02-publik-e-tjanst.md": {
+      "bytes": 2385,
+      "sha256": "38e78b2244118fa54f6923f97d3fc6c50055e6212b0ba4493c1ead0ad266a2c6"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/03-integrationsintensivt-verksamhetssystem.md": {
+      "bytes": 2133,
+      "sha256": "16163ad4f368c62e3675ba828ec317a6ddc0310754b33cc964105dd6f8dd0beb"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/04-informationsutbyte-med-annan-myndighet.md": {
+      "bytes": 1969,
+      "sha256": "3ece922c21aa77b75f4b4572ce55d778f0deba94698b2e3b08e3d811b08f8260"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/05-containerbaserad-tjanst.md": {
+      "bytes": 2005,
+      "sha256": "7d9017ae55ff422c0834591db10a37f445933bb97aaddaa220df284453a0ab33"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/06-ai-baserat-verksamhetsstod.md": {
+      "bytes": 2025,
+      "sha256": "8ee52b917d4763d1586b010ed8dfde9db2da46480c8c2df722ccbe3fb743a817"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/07-digital-arbetsplats.md": {
+      "bytes": 1961,
+      "sha256": "628fefdb14a0f6001b884e86b13f0389cba4a05eafdd2c61158ec362ea24761d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/README.md": {
+      "bytes": 2273,
+      "sha256": "be5895fea0ca0cc482b7275c1ef4f1579a8d881890f925d3359afecd52b24a9d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/referensarkitekturer/formagekopplingar.md": {
+      "bytes": 788,
+      "sha256": "57bcfe422458e3d148aa0a7ed4514764c0580387e870b6da81b0c2aa0fc4af6c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/slutlig-korsgranskning.md": {
+      "bytes": 10849,
+      "sha256": "bb7810d20d4c0555bad22b9adbeb5387b3f4a9c5e845f1d8fefe9cd365291b59"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/01-web-frontend-standard.md": {
+      "bytes": 836,
+      "sha256": "236989d3ac642804875c5197522db4b66f2e6e141fb3bba5d1d7b9f2ad0cb674"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/02-api-standard.md": {
+      "bytes": 929,
+      "sha256": "94f1b2dbfc35755d36b0804d51551ae3c35a024f8fda109b8bd06cc169f133bc"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/03-messaging-event-standard.md": {
+      "bytes": 818,
+      "sha256": "3ffcae5e3433833c09d35980ed4f775ff665c465c2fba32647a38be957dbba69"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/04-identitetsprotokoll-standard.md": {
+      "bytes": 833,
+      "sha256": "c3a465a1ad473fa7988f0fc3531a8df48184f9635c3ffa9255679f40ec74f212"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/05-service-identity-standard.md": {
+      "bytes": 655,
+      "sha256": "2dd2f041f13e3281257da53446381d588fe753cb7bd1f9753361b05a8c8d8953"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/06-secrets-standard.md": {
+      "bytes": 529,
+      "sha256": "fc4ce3c3a4169397311bc332bc737febfc5e556891e0be96e64529b399e34391"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/07-java-persistence-standard.md": {
+      "bytes": 661,
+      "sha256": "24948fdcc3d3e10fee977f285165f23956361d4d583e6e51bcc38793f3b45d92"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/08-relationsdatabas-produktstandard.md": {
+      "bytes": 685,
+      "sha256": "6e9ce03fb2a100d7dc0f0f3e43a3da20460cc448490916211128f2cdeb38a45f"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/09-object-storage-realisering-standard.md": {
+      "bytes": 566,
+      "sha256": "59d396d4ee58aae82e29d890b7884aad19a0cf9626393b03975dfa349f3407dd"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/10-search-platform-standard.md": {
+      "bytes": 490,
+      "sha256": "34861602057ab10920a246b46d358b7c12c6b6bcb2fa6a6aca91c1ec1e01205c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/11-bi-platform-standard.md": {
+      "bytes": 490,
+      "sha256": "6386462b1290a03449ab9687d6e7f559e99fe07103bb504f1832f8df7173f823"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/12-container-standard.md": {
+      "bytes": 703,
+      "sha256": "b5b5a4b7c70f2c0245b3514ce77e3556ae03fc421fe54480d32858edf36a015f"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/13-openshift-produktstandard.md": {
+      "bytes": 550,
+      "sha256": "bd8dd4ddd70513eb5d2905fbb24948776a5dea9431d5cb94f1bb44dbb6d76248"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/14-java-runtime-produktstandard.md": {
+      "bytes": 552,
+      "sha256": "4847819afd453adff4e8b28d3230a5874144c8066e9b3559dbaad69fe5ce1d98"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/15-linux-os-produktstandard.md": {
+      "bytes": 489,
+      "sha256": "a39267a3407ff8c32a9321d30abe172fc6a86cdd45541ff58e2321584c758d60"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/16-ci-cd-produktstandard.md": {
+      "bytes": 511,
+      "sha256": "815701cbdfedc62302f8ac066bd6dd6ccd8537ae2fb67ef1e04856c44b062286"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/17-developer-tooling-standard.md": {
+      "bytes": 480,
+      "sha256": "8696bda857b6ec3d15ba6bb99ee02dd8223cbf8e0ea2b5b163b6bc6a5618098c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/18-git-repository-standard.md": {
+      "bytes": 553,
+      "sha256": "00250ccde8fcb57a4b7bc511b14cc9ec6d51faae6d7962df591de8603f9da65e"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/19-release-version-standard.md": {
+      "bytes": 650,
+      "sha256": "7856f630ec0c818b0d6bb8140a688e69b43fd81a14f833aac9cf3f4d49bdd32f"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/20-observability-standard.md": {
+      "bytes": 827,
+      "sha256": "07cbd6c2792ca73d4020bf590c54d47f115e6036a95c38454bfcdfb716b23e0e"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/21-backup-recovery-standard.md": {
+      "bytes": 690,
+      "sha256": "d18a325cc2315254158d36134eaf64aad84ce4ae953455f8ecdbbbdf1e976cef"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/22-m365-produktstandard.md": {
+      "bytes": 616,
+      "sha256": "35b8971adbb935c300911e7618180ca3bed35a6219de0ff70b7bb6506037bf1b"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/23-power-platform-governance-standard.md": {
+      "bytes": 789,
+      "sha256": "d25acba9575a5a6dfa115dbc744e467d79f071cbfe050002711728ded0ddf294"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/24-teknisk-kommunikationsstandard.md": {
+      "bytes": 688,
+      "sha256": "0a1d5452ab094aa4f27d499dae55c4de03788fa2aa086f988e0c5bfd9f57de9d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/25-sgsi-shs-produktstandard.md": {
+      "bytes": 760,
+      "sha256": "ee33a370b2226da91d8f8d0378271b1ee28abef644f5506f9cc369e737f694d7"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/README.md": {
+      "bytes": 4922,
+      "sha256": "501b0937b174db5d2b059c0c43a71ac41eb8fef4d2d8a97e45ac3eab6947e64d"
+    },
+    "docs/underlag/gemensam-it-arkitektur/standarder/formagekopplingar.md": {
+      "bytes": 1052,
+      "sha256": "d5363279b4f278309c5d23babadd24de40e6b0a90453bcb33c8671e6fe956c25"
+    },
+    "docs/underlag/gemensam-it-arkitektur/styrning/begreppsmodell.md": {
+      "bytes": 2799,
+      "sha256": "2f0d49b8ffcb037759a5b183c9c8a5f6f9f2e972acaa79615070661deb79a40a"
+    },
+    "docs/underlag/gemensam-it-arkitektur/styrning/dokumentations-och-styrmodell.md": {
+      "bytes": 3480,
+      "sha256": "bf540506e29d77874d02c45c03b00372b31a82d303558b384c3698ff073feae3"
+    },
+    "docs/underlag/gemensam-it-arkitektur/styrning/gemensamma-arkitekturprinciper.md": {
+      "bytes": 3070,
+      "sha256": "7fc45b11483f7689117e8807e8f96c2e206b2ba2fcecc4b02ab9e36905fbd327"
+    },
+    "docs/underlag/gemensam-it-arkitektur/styrning/krav-och-kvalitetsdimensioner.md": {
+      "bytes": 2912,
+      "sha256": "163ce19234c813f17051d4218986b9f9a438abeeb9b6c82680ec891f67cf9e7c"
+    },
+    "docs/underlag/gemensam-it-arkitektur/teknisk-dokumentation/README.md": {
+      "bytes": 147,
+      "sha256": "fdee4ec7035ef072a8fa86e04ba6d6929eb7f96c36ebe0f849f6f3c11114de14"
+    },
+    "docs/underlag/gemensam-it-arkitektur/utvecklingsplan.md": {
+      "bytes": 3763,
+      "sha256": "03bf0cabcb9d8c54cfaca0089c38ad451323b5757598e7dfd96c7250b9d5d1a1"
+    },
+    "docs/underlagsanalys.md": {
+      "bytes": 2084,
+      "sha256": "4f11fafd8d3820180d3673a7f8d68a1f613804c2e138c2c7b40c213e21647d42"
+    },
+    "examples/README.md": {
+      "bytes": 71,
+      "sha256": "3f3e5d2ac0800028ddb7bf134d332ed4b5ff3b629246b221606a014c05d5f550"
+    },
+    "exercises/README.md": {
+      "bytes": 85,
+      "sha256": "ba26bddfad8c4db99c5c8dd518f96af7dcf1c4a6264dd355f5d227940e55ec6b"
+    },
+    "exports/README.md": {
+      "bytes": 105,
+      "sha256": "abaaec6a496f86407595ef68af33ab4abe94a9a03c7f4410d1a0c51815db0c89"
+    },
+    "exports/exportlogg.md": {
+      "bytes": 93,
+      "sha256": "f46cb68df4c310e24d7ceb62ba1f6c4eed5c6bb9ff11c7c5ff85dd33b3094d58"
+    },
+    "project-index.md": {
+      "bytes": 820,
+      "sha256": "2757943fc4b64f45248b5b0310597ef13491d53c94309adf04c4d50096b0a330"
+    },
+    "publishing/build-notes.md": {
+      "bytes": 439,
+      "sha256": "41ea9b200a768f1f55a5fd86ee6a278907f994274ca548cf742225579e50202c"
+    },
+    "publishing/epub.css": {
+      "bytes": 350,
+      "sha256": "8016551bc5a88d2038f541bd128116eaf0deda049be24065adab956de34e9866"
+    },
+    "publishing/fix-epub-after-pandoc.py": {
+      "bytes": 3337,
+      "sha256": "223e8f4fb24813ecdf687db1fea7fe2a272af8f4a9ac1ad254ac01c9c03bd3a2"
+    },
+    "publishing/pdf-filter.lua": {
+      "bytes": 811,
+      "sha256": "cfe827087f31a1b3200ff7324303771e7844a55dcf6b0182c3363b47e06fbf04"
+    },
+    "publishing/pdf-template.tex": {
+      "bytes": 2449,
+      "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
+    },
+    "revision-log.md": {
+      "bytes": 11866,
+      "sha256": "b174199e1ef06da818a978ae49ae186a6c71bc38cf2574c7eaec69a4f21e17b9"
+    },
+    "scripts/build_book.py": {
+      "bytes": 1314,
+      "sha256": "1a8a390ab62eaac664220a17c631cb57350d0bca648ac9fc9fb61ec142c53255"
+    },
+    "scripts/export-book.py": {
+      "bytes": 6470,
+      "sha256": "325f442bdc05e4c6d37b23c23a8cf066acd30b9d884fef711baaf9eaf3d401b1"
+    },
+    "scripts/export-book.sh": {
+      "bytes": 89,
+      "sha256": "cfb607edff8c8da14ec86e89352efabe27a06807666fc722ea4594e19de62b31"
+    },
+    "scripts/project_integrity.py": {
+      "bytes": 6443,
+      "sha256": "97f26bb87bf257e431128c520e00f21005ca81b7ba719c14a56e6325a0926170"
+    },
+    "scripts/validate_project.py": {
+      "bytes": 2852,
+      "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
+    }
+  },
+  "updated_at": "2026-08-18T16:40:15Z"
+}
