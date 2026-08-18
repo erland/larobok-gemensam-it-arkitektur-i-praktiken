@@ -40,6 +40,7 @@ chapters:
 - chapters/18-identitet-och-tillit.md
 - chapters/19-applikationsexekvering-och-runtime.md
 - chapters/20-driftbarhet-och-motstandskraft.md
+- chapters/21-programvaruutveckling-och-leverans.md
 exports:
   epub:
     enabled: true

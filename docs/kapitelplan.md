@@ -147,7 +147,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 21: Programvaruutveckling och leverans
 - Kärnfråga: Hur skapas en säker och reproducerbar väg från kod till produktion?
 - Centralt innehåll: SCM, CI/CD, artifacts, software supply chain, build once/promote many och developer experience.
-- Status: planerad
+- Avgränsning: kapitel 19 behandlar exekveringsmiljön och kapitel 20 driftbarhet/recovery; detta kapitel behandlar förändringskedjan från källkod till verifierad och spårbar deployment.
+- Status: första utkast skapat
 
 ## Kapitel 22: Arbetsplats, samarbete och produktivitet
 - Kärnfråga: Hur styrs en gemensam digital arbetsplats utan att låsa innovation eller skapa informationsrisker?

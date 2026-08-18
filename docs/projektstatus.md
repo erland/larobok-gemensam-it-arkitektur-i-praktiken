@@ -35,7 +35,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 18 | Identitet och tillit | Första utkast | Autentisering/auktorisation, workforce identity, federation, tjänsteidentitet, PKI, secrets, privilegierad åtkomst, tokenhantering och identitetslivscykel etablerade. |
 | 19 | Applikationsexekvering och runtime | Första utkast | Workload-egenskaper, container/VM/runtimeprofiler, stateless/stateful, resursprofil, skalning, isolering, konfiguration, portabilitet och livscykel etablerade. |
 | 20 | Driftbarhet och motståndskraft | Första utkast | Observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling etablerade. |
-| 20–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 21 | Programvaruutveckling och leverans | Första utkast | SCM, reproducerbara builds, CI/CD, artefakter, build once/promote many, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer etablerade. |
+| 22–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -70,4 +71,5 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Kapitel 18 – Identitet och tillit är skapat som första utkast och etablerar autentisering/auktorisation, federation, workforce identity, tjänsteidentiteter, PKI, secrets, privilegierad åtkomst och explicita tillitsrelationer.
 - Kapitel 19 – Applikationsexekvering och runtime är skapat som första utkast och etablerar workload-baserat runtimeval, container/VM/runtimeprofiler, stateless/stateful, resursprofilering, isolering, portabilitet och separata livscykler för applikation och plattform.
 - Kapitel 20 – Driftbarhet och motståndskraft är skapat som första utkast och etablerar observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling.
-- Nästa planerade kapitel är kapitel 21 – Programvaruutveckling och leverans.
+- Kapitel 21 – Programvaruutveckling och leverans är skapat som första utkast och etablerar SCM, reproducerbara builds, CI/CD, artefaktflöde, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer.
+- Nästa planerade kapitel är kapitel 22 – Arbetsplats, samarbete och produktivitet.
