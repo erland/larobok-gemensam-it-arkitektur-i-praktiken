@@ -85,7 +85,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Vilka arkitekturfrågor löses inte av en gemensam förmågekarta?
 - Centralt innehåll: domänarkitektur, bounded context, cohesion, coupling, ownership, lokalt kontra gemensamt ansvar.
 - Avgränsning: handlar om verksamhets- och lösningsgränser, inte den gemensamma plattformens tjänstegränser.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 11: Information och data som arkitekturella ingångsvärden
 - Kärnfråga: Hur kopplas informationsbehov, semantik, informationsägarskap och datans livscykel till arkitekturen innan lagringsteknik väljs?

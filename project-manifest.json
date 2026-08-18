@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev14.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev15.zip",
   "chapters": {
-    "count": 9,
+    "count": 10,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -11,27 +11,29 @@
       "chapters/06-arkitekturprinciper-som-beslutsstod.md": "05cca9a81840ea5343f305f4978d2ee32a718f99f48f8e1f6654df92e844004a",
       "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "2b1f4318ef6f679e1bb61924bbc72c230e7f3f4df04d2403253d9be453e85ead",
       "chapters/08-vad-ar-en-it-formaga.md": "c4fa7685d778cee19ca3cb5943431a23efd812121035c699b62a2f5669edf50c",
-      "chapters/09-nar-nagot-bor-vara-gemensamt.md": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576"
+      "chapters/09-nar-nagot-bor-vara-gemensamt.md": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576",
+      "chapters/10-domaner-ansvar-och-granser.md": "bcdf4d159e372c8a78f12a9231ea34492c7a34a63018ee8a880b2d9ae518996a"
     },
-    "latest": 9
+    "latest": 10
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/09-nar-nagot-bor-vara-gemensamt.md",
+      "chapters/10-domaner-ansvar-och-granser.md",
+      "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 9 – När något bör vara gemensamt och synkroniserade projektstatus/exportordning",
-    "source_revision": 13
+    "operation": "Skrev kapitel 10 – Domäner, ansvar och gränser, verifierade centrala DDD-begrepp och synkroniserade projektstatus/exportordning",
+    "source_revision": 14
   },
-  "parent_revision": 13,
+  "parent_revision": 14,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 14,
+  "revision": 15,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -48,8 +50,8 @@
       "sha256": "9fb16c36e2ce0a677f66cf26931f07accfcb60eeabbb8cc77d7d926d424b2c82"
     },
     "README.md": {
-      "bytes": 904,
-      "sha256": "696b52998c673e119a531042c41c3497587189dd51d630ff4b3785b73c2ba721"
+      "bytes": 905,
+      "sha256": "2450cee141dafc4fbba0bf6672b661029faa9795519d3e958f69aefe96089df0"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -64,8 +66,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1577,
-      "sha256": "ff88e06f13c3ee116e5f4341c15fc6ed33d61e3ec55dd4e2344aaa4618d2e5e5"
+      "bytes": 1621,
+      "sha256": "08b852fc22f679b2cc63c36d5611b1b91120e9c3aba0468fec20d1e99b484223"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -107,6 +109,10 @@
       "bytes": 23456,
       "sha256": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576"
     },
+    "chapters/10-domaner-ansvar-och-granser.md": {
+      "bytes": 27762,
+      "sha256": "bcdf4d159e372c8a78f12a9231ea34492c7a34a63018ee8a880b2d9ae518996a"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -128,8 +134,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 2125,
-      "sha256": "973e1712f62a14d635940d4b02d2358154c23d477f1504751681fcce29a6fe9f"
+      "bytes": 2415,
+      "sha256": "3c73ee4d049e48e15e93b2c1e21e64df49b35af688b9e41ccf2d730d122a1f3d"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -144,16 +150,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20204,
-      "sha256": "540d34834350ff6e3fb0db5ca9c98e8735218913d4e26016dd3e154a2975bd6d"
+      "bytes": 20217,
+      "sha256": "9f085dd3ec99c49814d903d924a09579a49c799915324280798d18ef94303eb5"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 3680,
-      "sha256": "f1ee8b626991cd2082b840f56a72a2ac8e4d09d9c74a8d0a553ce3a5bec9f0dd"
+      "bytes": 4128,
+      "sha256": "5f96203bcfe03196eb1f575780f1c37ab177b5a457e534c7b85cea190f77a279"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -636,8 +642,8 @@
       "sha256": "f46cb68df4c310e24d7ceb62ba1f6c4eed5c6bb9ff11c7c5ff85dd33b3094d58"
     },
     "project-index.md": {
-      "bytes": 826,
-      "sha256": "37ebde551df6c0f0dd3c311c038267fe6f2a39dd8f522996d2567c7819e37491"
+      "bytes": 822,
+      "sha256": "373d3d5549cb18c69aca47e70906c570d9cd89ad39eb0c46be8aa11d4cbc817d"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -660,8 +666,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 14668,
-      "sha256": "fb777afd6dfb0ab53fd4849ad1dec916750f2a3062ff6077611f4c7f9048c9fb"
+      "bytes": 15054,
+      "sha256": "070102052ea2b5becb58c81bb7b44756a29c46e63b2679ab47a25d1d44672807"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -684,5 +690,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:36:36Z"
+  "updated_at": "2026-08-18T17:44:36Z"
 }

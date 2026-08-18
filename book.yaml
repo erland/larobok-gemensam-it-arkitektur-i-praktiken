@@ -29,6 +29,7 @@ chapters:
 - chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
 - chapters/08-vad-ar-en-it-formaga.md
 - chapters/09-nar-nagot-bor-vara-gemensamt.md
+- chapters/10-domaner-ansvar-och-granser.md
 exports:
   epub:
     enabled: true
