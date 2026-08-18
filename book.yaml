@@ -38,6 +38,7 @@ chapters:
 - chapters/16-analys-sokning-och-ai.md
 - chapters/17-integration-och-kommunikation.md
 - chapters/18-identitet-och-tillit.md
+- chapters/19-applikationsexekvering-och-runtime.md
 exports:
   epub:
     enabled: true

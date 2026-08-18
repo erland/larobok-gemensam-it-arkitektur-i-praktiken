@@ -136,7 +136,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 19: Applikationsexekvering och runtime
 - Kärnfråga: Vad behöver en organisation erbjuda för att köra applikationer standardiserat men flexibelt?
 - Centralt innehåll: containers, JVM/runtime, virtuella maskiner, stateless/stateful, isolation, runtime-ansvar och portabilitet.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 20: Driftbarhet och motståndskraft
 - Kärnfråga: Hur designas system som går att förstå, återställa och hålla i drift?
