@@ -27,7 +27,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 10 | Domäner, ansvar och gränser | Första utkast | Domänansvar, bounded context, cohesion/coupling, informationsägarskap och gränsen mellan gemensamma mekanismer och verksamhetslogik etablerade. |
 | 11 | Information och data som arkitekturella ingångsvärden | Första utkast | Informationsbehov, semantik, informationsmodell, informationsägarskap, auktoritativ källa, master-/referensdata, data contracts, klassning och livscykel etablerade. |
 | 12 | Interaktion, presentation och kanaler | Första utkast | Användningssituation, kanalval, design system, klientansvar, tillgänglighet, klient/backend-gräns, BFF som möjlig struktur, säkerhet och tekniklivscykel etablerade. |
-| 13–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 13 | Process, workflow och ärendehantering | Första utkast | Långlivade processer, human tasks, case management, process-/domängräns, orkestrering/koreografi, versionshantering och återupptagning etablerade. |
+| 14–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -51,6 +52,7 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Del II är därmed komplett i första utkast.
 - Kort överlapps- och terminologikontroll av kapitel 8–11 är genomförd inför del III; inga omskrivningar bedömdes nödvändiga.
 - Kapitel 12 – Interaktion, presentation och kanaler är skapat som första utkast och inleder del III med gemensamma principer för användningssituation, kanalval, design system, klientarkitektur och ansvar mot andra förmågor.
-- Nästa steg: skriv Kapitel 13 – Process, workflow och ärendehantering.
+- Kapitel 13 – Process, workflow och ärendehantering är skapat som första utkast och etablerar gränsen mellan vanlig domänlogik och explicit processhantering, långlivat tillstånd, human tasks, case management och processorkestrering.
+- Nästa steg: skriv Kapitel 14 – Regler och beslut.
 - Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.

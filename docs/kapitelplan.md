@@ -105,7 +105,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 13: Process, workflow och ärendehantering
 - Kärnfråga: När behövs processmotor, workflow eller case management – och när räcker vanlig domänlogik?
 - Centralt innehåll: workflow, human tasks, case management, state, långlivade processer, orkestrering kontra domänansvar.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 14: Regler och beslut
 - Kärnfråga: När bör verksamhetsregler externaliseras och hur hålls beslut begripliga och spårbara?

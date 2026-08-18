@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev17.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev18.zip",
   "chapters": {
-    "count": 12,
+    "count": 13,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -14,28 +14,30 @@
       "chapters/09-nar-nagot-bor-vara-gemensamt.md": "81a63593963ea5e59081f178f3d6843a6c59e40714db6c8772cc1a236425d576",
       "chapters/10-domaner-ansvar-och-granser.md": "bcdf4d159e372c8a78f12a9231ea34492c7a34a63018ee8a880b2d9ae518996a",
       "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "3fa5565d6baffe862a5a440c5d90aad36c96962e0603d190546c4a86ff550588",
-      "chapters/12-interaktion-presentation-och-kanaler.md": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0"
+      "chapters/12-interaktion-presentation-och-kanaler.md": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0",
+      "chapters/13-process-workflow-och-arendehantering.md": "85b059902cd187f58c6c29496272d8ef2e10bbdb22d2eee04e9ebc4074c484d9"
     },
-    "latest": 12
+    "latest": 13
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/12-interaktion-presentation-och-kanaler.md",
+      "chapters/13-process-workflow-och-arendehantering.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
-      "project-index.md"
+      "project-index.md",
+      "revision-log.md"
     ],
-    "operation": "Genomförde del II-konsistenskontroll och skrev kapitel 12 – Interaktion, presentation och kanaler; påbörjade del III och verifierade WCAG-begrepp mot W3C",
-    "source_revision": 16
+    "operation": "Skrev kapitel 13 – Process, workflow och ärendehantering",
+    "source_revision": 17
   },
-  "parent_revision": 16,
+  "parent_revision": 17,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 17,
+  "revision": 18,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -53,7 +55,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "76b10ce934042aab101da903b23e0f778575eaf42226a4e1db78d1e1e8bfe548"
+      "sha256": "2b290e00966119867f7533ab48dd09b743738dfe4069e3b724e3a5c9ffd178d0"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -68,8 +70,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1746,
-      "sha256": "bd93d1e56e541101de730a35a54891b77453b3496cd908b40e3b19a556125e46"
+      "bytes": 1800,
+      "sha256": "2ef8160375c0d5b1144f364a1e7f787e6d9975b7dab0f2b964edb2acecbdced5"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -123,6 +125,10 @@
       "bytes": 28513,
       "sha256": "9847e3a80cc6d64a0ecd98545bfefe8b4cdedc2e8a52b6997ccff92fc19e33c0"
     },
+    "chapters/13-process-workflow-och-arendehantering.md": {
+      "bytes": 30820,
+      "sha256": "85b059902cd187f58c6c29496272d8ef2e10bbdb22d2eee04e9ebc4074c484d9"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -144,8 +150,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 2745,
-      "sha256": "e51ed96354995e36992f446b5762b51b29dd60b852ef0ef48128110807307849"
+      "bytes": 3135,
+      "sha256": "57bcd01f7df1ff2c145b665e9886f48823db92ae14fa53ac8836a75af8cec766"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -160,16 +166,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20243,
-      "sha256": "4f835e49dd6bcd506cad5eb4b65c416cbdfa9dd35ff4559a8076d2e5a9e8e2a7"
+      "bytes": 20256,
+      "sha256": "790f55d0c4e4cfca41dc4424db7e00819c56af8905c79b9125eb19493879304e"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 5261,
-      "sha256": "c44ddcaa93bc7c8df171ac9c7ad0b4bf37e2c1ca8dcba63baf2d20462b9485c7"
+      "bytes": 5701,
+      "sha256": "24299c79b2c12ba759e7947d12fdd58263c6e1a490ebf8546d1674ea92bd90fc"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -653,7 +659,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "b64d9ed2a9e4ce4c8d1f4e63466671eabef02a1c308088c1373c0d5844caa49a"
+      "sha256": "46038376e5fbc02159eb3e1a8c26063badb68efc1c2adea63cdc3b37e0f94448"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -676,8 +682,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 15893,
-      "sha256": "95d37f255b3867415c1d9612ae9610a230e82e87d15a2e69f228588cee6ee5a9"
+      "bytes": 16638,
+      "sha256": "b0dd68e0c49373c44c4ef3861c2f7c8bba0919d6bfb968f9f5e7aa9889bb8d01"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -700,5 +706,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:58:02Z"
+  "updated_at": "2026-08-18T18:03:13Z"
 }
