@@ -4,7 +4,7 @@
 | ID | Kapitel/område | Kontrollpunkt | Status | Källa/kommentar |
 |---|---|---|---|---|
 | F-001 | Hela boken | Säkerställ konsekvent distinktion mellan verksamhetsförmåga och gemensam IT-förmåga. | Öppen | Terminologi/canon etablerad. |
-| F-002 | Kapitel 4 | Verifiera definitioner och exempel för kvalitetsattribut mot etablerade arkitekturkällor. | Öppen | Bör göras vid kapitelskrivning. |
+| F-002 | Kapitel 4 | Verifiera definitioner och exempel för kvalitetsattribut mot etablerade arkitekturkällor. | Verifierad 2026-08-18 | Kontrollerat mot SEI:s Quality Attribute Workshop-material och kvalitetsattributsscenarier, ISO/IEC 25010:2023:s produktkvalitetsmodell samt NIST SP 800-34 Rev. 1 för RTO/RPO. Bokens tolv dimensioner markeras uttryckligen som eget arbetsramverk. |
 | F-003 | Kapitel 10 | Verifiera DDD-begrepp mot original-/auktoritativa källor. | Öppen | Bounded context, ownership, coupling/cohesion. |
 | F-004 | Kapitel 14 | Verifiera DMN/regelrelaterade standardpåståenden. | Öppen | OMG/primärkälla. |
 | F-005 | Kapitel 16 | AI/RAG-fakta och rekommendationer ska verifieras nära skriv- och publiceringstidpunkt. | Öppen | Hög tidskänslighet. |

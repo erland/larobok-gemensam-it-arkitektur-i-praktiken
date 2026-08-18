@@ -46,7 +46,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Centralt innehåll: tillgänglighet, kontinuitet, prestanda, skalbarhet, säkerhet, spårbarhet, interoperabilitet, användbarhet, förvaltningsbarhet, livscykel och kostnad.
 - Fördjupning: quality attribute scenarios, prioritering och konflikt mellan kvaliteter, från konsekvens till verifierbart krav.
 - Avgränsning: förklarar kravkedjan; enskilda förmågekapitel beskriver hur vissa kvaliteter realiseras tekniskt och ska inte upprepa kravmetoden.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 5: Arkitekturbeslut och trade-offs
 - Kärnfråga: Hur gör man explicita, spårbara och omprövningsbara arkitekturbeslut?

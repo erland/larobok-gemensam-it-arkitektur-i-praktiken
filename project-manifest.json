@@ -1,31 +1,33 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev8.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev9.zip",
   "chapters": {
-    "count": 3,
+    "count": 4,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
-      "chapters/03-behov-fore-teknik.md": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013"
+      "chapters/03-behov-fore-teknik.md": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013",
+      "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": "ea5d8ae026099bf6ffdd1341fea6b59c966a3ae929d481e1ed8a93fb220245f5"
     },
-    "latest": 3
+    "latest": 4
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/03-behov-fore-teknik.md",
+      "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md",
+      "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 3 – Behov före teknik och synkroniserade projektstatus/exportordning",
-    "source_revision": 7
+    "operation": "Skrev kapitel 4 – Kvalitetsattribut som arkitekturens drivkrafter, verifierade kvalitetsbegrepp mot etablerade källor och synkroniserade projektstatus/exportordning",
+    "source_revision": 8
   },
-  "parent_revision": 7,
+  "parent_revision": 8,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 8,
+  "revision": 9,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -43,7 +45,7 @@
     },
     "README.md": {
       "bytes": 904,
-      "sha256": "003b378bc3c1b1552f3895175eddc1def9ffed147b689cec36880d0e10b81212"
+      "sha256": "8b0a8f2d0d6de30c4d66afda0e89fb4d4d896acb852986faa28b2ce5974fe71e"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -58,8 +60,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 1254,
-      "sha256": "a606cb7b3ecca0bd8df8233c0ac4dd8c0824dc866120ce01fee9d8cc487e1347"
+      "bytes": 1319,
+      "sha256": "ee0b50d3a3e9e6e98e5160b8ea13c89476107270cee8524a481233537ff564ad"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -76,6 +78,10 @@
     "chapters/03-behov-fore-teknik.md": {
       "bytes": 22793,
       "sha256": "e56e70b512b453ee062834048588e329fcd2f918dc335a521cc3c32200cd4013"
+    },
+    "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": {
+      "bytes": 30248,
+      "sha256": "ea5d8ae026099bf6ffdd1341fea6b59c966a3ae929d481e1ed8a93fb220245f5"
     },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
@@ -98,8 +104,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 1632,
-      "sha256": "167d9a8816ad3ce84ebe87918b0098802a383d24caf91777ffba261470bf2e61"
+      "bytes": 1860,
+      "sha256": "22b5b6a731b7b151c433b0f7c3917ca9b1758112d2153d06b14879c43e5b0e12"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -114,16 +120,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20126,
-      "sha256": "766c1df91e8245ee52d1080843ec9aef23f916a99cfb3b3c459117d070c46444"
+      "bytes": 20139,
+      "sha256": "7e5b487b345d880e794bee52491e100f42f5bc1c5b5b2c009082db576d0a851c"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 2072,
-      "sha256": "e38926770f91e7c8bdf9f0e5fb443f20f13fe7f658ba89165306656ef243f3cd"
+      "bytes": 2246,
+      "sha256": "11e2f60262ca25e2fa35e8965c566de8cb95043e698b6a107687e966fa227dc4"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -607,7 +613,7 @@
     },
     "project-index.md": {
       "bytes": 824,
-      "sha256": "bad9459a70432a1b53650336a8dc0df65245912b849a457307e91af21be644a5"
+      "sha256": "5a7f14d2d1aedd8454167f7df7c42a2d36f866f0ef23753054af6d5ba76b3d28"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -630,8 +636,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 12495,
-      "sha256": "bfb8f609c8d36dac4d815d99197b5f18eceee92c4af9d6b4dba8d0b32bbd4ac8"
+      "bytes": 12936,
+      "sha256": "5610923d8d31aa9b57e9e5dfc769b79140399ae9aef53b81c675a7ecb3c5fc0b"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -654,5 +660,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T17:07:51Z"
+  "updated_at": "2026-08-18T17:14:08Z"
 }

@@ -21,6 +21,7 @@ chapters:
 - chapters/01-varfor-gemensam-it-arkitektur.md
 - chapters/02-en-arkitektur-av-flera-lager.md
 - chapters/03-behov-fore-teknik.md
+- chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md
 exports:
   epub:
     enabled: true
