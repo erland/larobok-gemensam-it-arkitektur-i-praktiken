@@ -126,7 +126,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 17: Integration och kommunikation
 - Kärnfråga: Hur väljer man mellan API, meddelanden, events, filutbyte och strukturerat informationsutbyte?
 - Centralt innehåll: synkront, asynkront, pub/sub, API, messaging, kontrakt, koppling och ansvar.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 18: Identitet och tillit
 - Kärnfråga: Hur byggs tillit mellan människor, tjänster och organisationer?

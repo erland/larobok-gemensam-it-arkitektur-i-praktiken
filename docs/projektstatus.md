@@ -31,7 +31,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 14 | Regler och beslut | Första utkast | Externalisering, beslutstabeller, DMN, beslutstjänster, versions-/giltighetsmodell, spårbarhet, förklarbarhet, test/simulering och gränsen mot process, domänlogik och AI etablerade. |
 | 15 | Data- och informationshantering | Första utkast | Teknisk datahantering, lagring, konsistens, härledda kopior, cache, historik, retention, schemaevolution, migrering och återställningsbehov etablerade. |
 | 16 | Analys, sökning och AI | Första utkast | Sökning, BI/analys, ML, generativ AI, RAG, human-in-the-loop, utvärdering, agentrisker och ansvarsnivåer etablerade. |
-| 17–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 17 | Integration och kommunikation | Första utkast | Synkron/asynkron kommunikation, API, messaging, events, filutbyte, kontrakt, leveransbeteende, koppling, felhantering och ansvarsnivåer etablerade. |
+| 18–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -59,6 +60,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Kapitel 14 – Regler och beslut är skapat som första utkast och etablerar gränsen mellan lokal domänlogik och explicit beslutslogik, samt externalisering, DMN, versionering, förklarbarhet och regelägarskap.
 - Kapitel 15 – Data- och informationshantering är skapat som första utkast och etablerar den tekniska dataförmågan: lagringsval, konsistens, kopior, cache, historik, retention, schemaevolution, migrering och återställningsbehov.
 - Kapitel 16 – Analys, sökning och AI är skapat som första utkast och etablerar skillnaderna mellan sökning, analys, ML och generativ AI samt RAG, utvärdering, mänsklig kontroll och AI-specifik förvaltning.
-- Nästa steg: skriv Kapitel 17 – Integration och kommunikation.
 - Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
 - Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.
+
+- Kapitel 17 – Integration och kommunikation är skapat som första utkast och etablerar val mellan API, messaging, events, filutbyte och dataförflyttning samt kontraktslivscykel, koppling, felhantering och gemensamma integrationsplattformstjänster.
+- Nästa planerade kapitel är kapitel 18 – Identitet och tillit.
