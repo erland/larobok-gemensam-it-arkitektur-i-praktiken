@@ -91,7 +91,7 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Hur kopplas informationsbehov, semantik, informationsägarskap och datans livscykel till arkitekturen innan lagringsteknik väljs?
 - Centralt innehåll: informationsmodell, begrepp, informationsägarskap, datamodell, system of record, master- och referensdata, data contracts, klassning och livscykel.
 - Avgränsning: handlar om informationens mening och ansvar. Kapitel 15 behandlar den tekniska förmågan för lagring, kopior, cache, historik, konsistens och retention.
-- Status: planerad
+- Status: första utkast skapat
 
 # Del III – De gemensamma IT-förmågorna
 
