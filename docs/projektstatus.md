@@ -34,6 +34,7 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 17 | Integration och kommunikation | Första utkast | Synkron/asynkron kommunikation, API, messaging, events, filutbyte, kontrakt, leveransbeteende, koppling, felhantering och ansvarsnivåer etablerade. |
 | 18 | Identitet och tillit | Första utkast | Autentisering/auktorisation, workforce identity, federation, tjänsteidentitet, PKI, secrets, privilegierad åtkomst, tokenhantering och identitetslivscykel etablerade. |
 | 19 | Applikationsexekvering och runtime | Första utkast | Workload-egenskaper, container/VM/runtimeprofiler, stateless/stateful, resursprofil, skalning, isolering, konfiguration, portabilitet och livscykel etablerade. |
+| 20 | Driftbarhet och motståndskraft | Första utkast | Observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling etablerade. |
 | 20–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
@@ -68,4 +69,5 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Kapitel 17 – Integration och kommunikation är skapat som första utkast och etablerar val mellan API, messaging, events, filutbyte och dataförflyttning samt kontraktslivscykel, koppling, felhantering och gemensamma integrationsplattformstjänster.
 - Kapitel 18 – Identitet och tillit är skapat som första utkast och etablerar autentisering/auktorisation, federation, workforce identity, tjänsteidentiteter, PKI, secrets, privilegierad åtkomst och explicita tillitsrelationer.
 - Kapitel 19 – Applikationsexekvering och runtime är skapat som första utkast och etablerar workload-baserat runtimeval, container/VM/runtimeprofiler, stateless/stateful, resursprofilering, isolering, portabilitet och separata livscykler för applikation och plattform.
-- Nästa planerade kapitel är kapitel 20 – Driftbarhet och motståndskraft.
+- Kapitel 20 – Driftbarhet och motståndskraft är skapat som första utkast och etablerar observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling.
+- Nästa planerade kapitel är kapitel 21 – Programvaruutveckling och leverans.

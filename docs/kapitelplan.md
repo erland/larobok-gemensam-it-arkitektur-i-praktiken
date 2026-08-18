@@ -142,7 +142,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur designas system som går att förstå, återställa och hålla i drift?
 - Centralt innehåll: observability, backup, restore, SLO, failure modes, resilience, kontinuitet och operativ återkoppling.
 - Avgränsning: kapitel 4 definierar kvalitetskraven; detta kapitel behandlar förmågor och mekanismer för att realisera och verifiera dem.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 21: Programvaruutveckling och leverans
 - Kärnfråga: Hur skapas en säker och reproducerbar väg från kod till produktion?

@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev26.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev27.zip",
   "chapters": {
-    "count": 19,
+    "count": 20,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -21,23 +21,29 @@
       "chapters/16-analys-sokning-och-ai.md": "8759a9c037ba10b455189af4efe4387eb12c91f316ebad9531b7d42e3f6b0ea9",
       "chapters/17-integration-och-kommunikation.md": "7adc47395277bb7f37b6d32e0e3c3be413e3feac35e9b3af5ac1ce1447a144ea",
       "chapters/18-identitet-och-tillit.md": "fd919e9f732c4023d71bc505e7999825168af7e865e874e6275f962f0b019a4c",
-      "chapters/19-applikationsexekvering-och-runtime.md": "26c4ba1dea1d9148d6f1e6722345ff0ed895923dd5b59ec5e4d8eac274208129"
+      "chapters/19-applikationsexekvering-och-runtime.md": "26c4ba1dea1d9148d6f1e6722345ff0ed895923dd5b59ec5e4d8eac274208129",
+      "chapters/20-driftbarhet-och-motstandskraft.md": "cfcf2e36d8fbc0cf8e13796915525fc7fc9c350193fb3b573e0e4eeb655715c8"
     },
-    "latest": 19
+    "latest": 20
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/19-applikationsexekvering-och-runtime.md",
+      "README.md",
+      "book.yaml",
+      "chapters/20-driftbarhet-och-motstandskraft.md",
+      "docs/faktakontroll.md",
+      "docs/kapitelplan.md",
+      "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Rättade kapitel 19:s H1-format enligt projektvalidatorn",
-    "source_revision": 25
+    "operation": "Skrev kapitel 20 – Driftbarhet och motståndskraft och synkroniserade projektstatus/exportordning",
+    "source_revision": 26
   },
-  "parent_revision": 25,
+  "parent_revision": 26,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 26,
+  "revision": 27,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -55,7 +61,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "f4dfee15257da4fb67c827beb50091bcf35a33c6e1c7dd11ed7dd1c3b7aae46c"
+      "sha256": "ec1e950b2c8313fce4ee0dda671dd29e03cc21bc468cc3d8c66e688376255fb2"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -70,8 +76,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2059,
-      "sha256": "15abf53db6eb2608918c87fa43f22f96ad0f6db149b31e8fdfae2e07b07f98c5"
+      "bytes": 2107,
+      "sha256": "ae279d0f5bedabb23c5d5e4aa4ce0944fbf8b5abe801ccdf91fc31c286352c87"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -153,6 +159,10 @@
       "bytes": 26881,
       "sha256": "26c4ba1dea1d9148d6f1e6722345ff0ed895923dd5b59ec5e4d8eac274208129"
     },
+    "chapters/20-driftbarhet-och-motstandskraft.md": {
+      "bytes": 32450,
+      "sha256": "cfcf2e36d8fbc0cf8e13796915525fc7fc9c350193fb3b573e0e4eeb655715c8"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -174,8 +184,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 5470,
-      "sha256": "b4293c24b8a5c5cc38a62241540a4fc141f6e085775858915831c64be240cceb"
+      "bytes": 5775,
+      "sha256": "ca263f9b287c7835be71873b9560ad94d5b7e5302669bd0a297b6d32a80c30fc"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -190,16 +200,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20334,
-      "sha256": "41ed747a7e67ea598e0abd4290504b5d36bb7e9dccd4a97f1dcd89c567700b48"
+      "bytes": 20347,
+      "sha256": "c5e1d4df7caecf355fe931ba6b759503e4e4c56769f50986a3ba66684950c9a9"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 8425,
-      "sha256": "bf3038e17123a458b4866878763d5340b9eff37cf75157d274b2a109c49d0907"
+      "bytes": 8854,
+      "sha256": "79f7c5b4780b8b29aee48692d73fc402b6ae183aab8886e41c73c3c2ae79864d"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -683,7 +693,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "a1f88e85f2c4d71ee3086b49efd4aa3e5e5028b74bc27612168a9e2cb7afde3e"
+      "sha256": "3fe58cc8c9c2e7b39238fa804b0d5fd7ab5eec55288332d02237601c8bd8533c"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -706,8 +716,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 19285,
-      "sha256": "aef83c4b2d2db5557bbc1f8c58f62a03dda0edb0fd293b31f40e60a21d113e5c"
+      "bytes": 19643,
+      "sha256": "767d010fd10b0667de773dd04ac93fac969185a8bf0b7f581bb7b12769a15284"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -730,5 +740,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T19:54:29Z"
+  "updated_at": "2026-08-18T19:59:08Z"
 }

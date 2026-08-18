@@ -39,6 +39,7 @@ chapters:
 - chapters/17-integration-och-kommunikation.md
 - chapters/18-identitet-och-tillit.md
 - chapters/19-applikationsexekvering-och-runtime.md
+- chapters/20-driftbarhet-och-motstandskraft.md
 exports:
   epub:
     enabled: true
