@@ -110,7 +110,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 14: Regler och beslut
 - Kärnfråga: När bör verksamhetsregler externaliseras och hur hålls beslut begripliga och spårbara?
 - Centralt innehåll: beslutslogik, regelmotor, DMN, versionshantering, förklarbarhet och ansvar för regler.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 15: Data- och informationshantering
 - Kärnfråga: Hur väljer man lagrings- och datahanteringsmekanismer efter informationsbehov och kvalitetskrav?

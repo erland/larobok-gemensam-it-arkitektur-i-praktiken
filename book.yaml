@@ -33,6 +33,7 @@ chapters:
 - chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md
 - chapters/12-interaktion-presentation-och-kanaler.md
 - chapters/13-process-workflow-och-arendehantering.md
+- chapters/14-regler-och-beslut.md
 exports:
   epub:
     enabled: true
