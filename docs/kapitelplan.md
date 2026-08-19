@@ -204,7 +204,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 30: Golden paths, paved roads och självservice
 - Kärnfråga: Hur styr man genom den enklaste vägen i stället för genom dokument och granskningsköer?
 - Centralt innehåll: golden paths, templates, automation, portals, policy-as-code, guardrails, escape hatches och självservice.
-- Status: planerad
+- Avgränsning: omsätter plattformsstrategin i konsumtionsvägar och exekverbara guardrails; standardernas typer och bindningsgrad fördjupas i kapitel 31.
+- Status: första utkast skapat
 
 ## Kapitel 31: Tekniska standarder och deras nivåer
 - Kärnfråga: Vad bör standardiseras – arkitektur, teknik, produkt, version eller konfiguration?

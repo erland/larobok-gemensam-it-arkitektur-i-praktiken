@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
+Skrivfas – del I–IV kompletta i första utkast; del V pågår
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -44,7 +44,8 @@ Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
 | 27 | Drift- och leveransmönster | Första utkast | Build once/promote many, observability för distribuerade tjänster, backup/verifierad återställning, releaseverifiering och sammanhängande återställningskedja etablerade. |
 | 28 | När ett byggblock blir en plattformstjänst | Första utkast | Tjänstekontrakt, ansvar, onboarding, kvalitetsprofiler, konsumtionsmodell, support, livscykel och mognad från byggblock till tjänst etablerade. |
 | 29 | Platform as a Product | Första utkast | Målgrupp, värdelöfte, developer experience, user journeys, adoption, produktmätetal, feedback, roadmap, kostnad och livscykel etablerade. |
-| 30–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 30 | Golden paths, paved roads och självservice | Första utkast | Golden paths, paved roads, templates, självservice, policy-as-code, guardrails, escape hatches, portal/katalog och mognadstrappa etablerade. |
+| 31–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -89,4 +90,5 @@ Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
 - Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.
 - Kapitel 27 – Drift- och leveransmönster är skapat som första utkast och fördjupar build once/promote many, observability för distribuerade tjänster och backup med verifierad återställning som en sammanhängande leverans- och återhämtningskedja.
 - Del IV är därmed komplett i första utkast. Kapitel 28 – När ett byggblock blir en plattformstjänst är skapat som första utkast och inleder del V genom att etablera tjänstekontrakt, ansvar, konsumtionsmodell, kvalitetsprofiler, support och livscykel som skillnaden mellan rå teknik och konsumerbart erbjudande.
-- Kapitel 29 – Platform as a Product är skapat som första utkast och etablerar målgrupper, värdelöfte, developer experience, användarresor, produktmätetal, feedbackloopar, roadmap, kostnad och plattformsproduktens livscykel. Nästa steg är kapitel 30 – Golden paths, paved roads och självservice.
+- Kapitel 29 – Platform as a Product är skapat som första utkast och etablerar målgrupper, värdelöfte, developer experience, användarresor, produktmätetal, feedbackloopar, roadmap, kostnad och plattformsproduktens livscykel.
+- Kapitel 30 – Golden paths, paved roads och självservice är skapat som första utkast och etablerar sammanhängande konsumtionsvägar, templates, självservice, guardrails, policy-as-code, escape hatches och hur styrning kan flyttas från manuella gates till förvaltade gemensamma mekanismer. Nästa steg är kapitel 31 – Tekniska standarder och deras nivåer.
