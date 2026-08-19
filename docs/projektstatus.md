@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i första utkast
+Revisionsfas – samtliga 37 huvudkapitel skrivna, helhetsrevision pass 1 och faktagranskning pass 1 genomförda
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -55,7 +55,8 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 
 ## Faktakontroll
 - Helmanusets begrepps- och konsistenspunkter är genomgångna i helhetsrevision pass 1.
-- Externa och tidskänsliga publiceringskontroller som fortfarande är öppna framgår av `docs/faktakontroll.md`.
+- Faktagranskning pass 1 av externa och tidskänsliga sakpåståenden är genomförd 2026-08-19; resultat finns i `docs/faktagranskning-pass-1.md`.
+- Endast organisationsspecifik kontext för kapitel 22 samt ett senare aktualitetspass för snabbt föränderliga standarder/ramverk återstår.
 - Senast genomgången: 2026-08-19
 
 ## Öppna beslut
@@ -65,46 +66,7 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 - Slutlig målomfattning efter att 3–5 provkapitel skrivits.
 
 ## Nästa rekommenderade steg
-- Helhetsrevision pass 1 är genomförd över hela manuset. Nästa rekommenderade steg är ett separat **publiceringsnära faktagranskningspass** för de punkter som fortfarande är öppna i `docs/faktakontroll.md`, följt av språk-/stilputs och beslut om illustrationer/källapparat.
-- Kapitelstrukturen 1–37 bedöms stabil; inga kapitel behöver slås ihop, delas eller flyttas efter helhetsrevisionen.
-- Kapitel 37 – Governance, förvaltning och evolution är skapat som första utkast. Därmed är del VI och samtliga 37 planerade huvudkapitel kompletta i första utkast. Nästa rekommenderade steg är en helhetsrevision av hela manuset med fokus på överlapp, terminologi, faktakontroll, balans och avslutande redaktionell sammanhållning.
-- Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
-- Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
-- Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.
-- Gemensam överlapps- och terminologikontroll av kapitel 1–7 är genomförd inför del II; inga omskrivningar av del I bedömdes nödvändiga.
-- Kapitel 8 – Vad är en IT-förmåga? är skapat som första utkast och etablerar den precisa begreppsgrunden för förmågedelen.
-- Kapitel 9 – När något bör vara gemensamt är skapat som första utkast och etablerar kriterier för gemensamt, federerat och lokalt ansvar.
-- Kapitel 10 – Domäner, ansvar och gränser är skapat som första utkast och etablerar skillnaden mellan gemensamma IT-förmågor och verksamhetsdomäner samt principer för ansvar, bounded contexts och coupling.
-- Kapitel 11 – Information och data som arkitekturella ingångsvärden är skapat som första utkast och etablerar semantik, informationsägarskap, auktoritativa källor, data contracts, klassning och livscykel före tekniska lagringsval.
-- Del II är därmed komplett i första utkast.
-- Kort överlapps- och terminologikontroll av kapitel 8–11 är genomförd inför del III; inga omskrivningar bedömdes nödvändiga.
-- Kapitel 12 – Interaktion, presentation och kanaler är skapat som första utkast och inleder del III med gemensamma principer för användningssituation, kanalval, design system, klientarkitektur och ansvar mot andra förmågor.
-- Kapitel 13 – Process, workflow och ärendehantering är skapat som första utkast och etablerar gränsen mellan vanlig domänlogik och explicit processhantering, långlivat tillstånd, human tasks, case management och processorkestrering.
-- Kapitel 14 – Regler och beslut är skapat som första utkast och etablerar gränsen mellan lokal domänlogik och explicit beslutslogik, samt externalisering, DMN, versionering, förklarbarhet och regelägarskap.
-- Kapitel 15 – Data- och informationshantering är skapat som första utkast och etablerar den tekniska dataförmågan: lagringsval, konsistens, kopior, cache, historik, retention, schemaevolution, migrering och återställningsbehov.
-- Kapitel 16 – Analys, sökning och AI är skapat som första utkast och etablerar skillnaderna mellan sökning, analys, ML och generativ AI samt RAG, utvärdering, mänsklig kontroll och AI-specifik förvaltning.
-- Kapitel 7 har gjort etableringsordning, ansvarssnitt och iterativt arbetssätt praktiskt tydliga.
-- Använd avgränsningsreglerna i `docs/kapitelplan.md` när kapitel skapas så att senare delar fördjupar i stället för att upprepa.
-
-- Kapitel 17 – Integration och kommunikation är skapat som första utkast och etablerar val mellan API, messaging, events, filutbyte och dataförflyttning samt kontraktslivscykel, koppling, felhantering och gemensamma integrationsplattformstjänster.
-- Kapitel 18 – Identitet och tillit är skapat som första utkast och etablerar autentisering/auktorisation, federation, workforce identity, tjänsteidentiteter, PKI, secrets, privilegierad åtkomst och explicita tillitsrelationer.
-- Kapitel 19 – Applikationsexekvering och runtime är skapat som första utkast och etablerar workload-baserat runtimeval, container/VM/runtimeprofiler, stateless/stateful, resursprofilering, isolering, portabilitet och separata livscykler för applikation och plattform.
-- Kapitel 20 – Driftbarhet och motståndskraft är skapat som första utkast och etablerar observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling.
-- Kapitel 21 – Programvaruutveckling och leverans är skapat som första utkast och etablerar SCM, reproducerbara builds, CI/CD, artefaktflöde, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer.
-- Kapitel 22 – Arbetsplats, samarbete och produktivitet är skapat som första utkast och etablerar gränsen mellan generell produktivitet och verksamhetssystem, samarbetsytors ägarskap/livscykel, extern delning, low-code-eskalering, produktivitets-AI och gemensamma arbetsplatserbjudanden. Del III är därmed komplett i första utkast.
-- Kapitel 23 – Lösningsmönster som återanvändbara beslut är skapat som första utkast och etablerar mönster som beslutsartefakt, pattern language, context/forces/consequences, variationer, anti-patterns, relationen till andra arkitekturartefakter samt urval och livscykel. Del IV är därmed påbörjad.
-- Kapitel 25 – Process-, regel- och datamönster är skapat som första utkast och fördjupar human workflow, externaliserade regler, system of record/härledda kopior och cache-aside som kombinerbara mönster med tydligt ansvar för state och felgränser.
-- Kapitel 26 – AI-, identitets- och runtime-mönster är skapat som första utkast och fördjupar RAG, mänsklig kontroll, tjänsteidentitet och containeriserad stateless tjänst som fyra separata men kombinerbara riskbegränsande mönster.
-
-- Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.
-- Kapitel 27 – Drift- och leveransmönster är skapat som första utkast och fördjupar build once/promote many, observability för distribuerade tjänster och backup med verifierad återställning som en sammanhängande leverans- och återhämtningskedja.
-- Del IV är därmed komplett i första utkast. Kapitel 28 – När ett byggblock blir en plattformstjänst är skapat som första utkast och inleder del V genom att etablera tjänstekontrakt, ansvar, konsumtionsmodell, kvalitetsprofiler, support och livscykel som skillnaden mellan rå teknik och konsumerbart erbjudande.
-- Kapitel 29 – Platform as a Product är skapat som första utkast och etablerar målgrupper, värdelöfte, developer experience, användarresor, produktmätetal, feedbackloopar, roadmap, kostnad och plattformsproduktens livscykel.
-- Kapitel 30 – Golden paths, paved roads och självservice är skapat som första utkast och etablerar sammanhängande konsumtionsvägar, templates, självservice, guardrails, policy-as-code, escape hatches och hur styrning kan flyttas från manuella gates till förvaltade gemensamma mekanismer.
-- Kapitel 31 – Tekniska standarder och deras nivåer är skapat som första utkast och etablerar standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och relationen mellan standarder, plattformar, mönster och produkter.
-- Kapitel 32 – Tekniklivscykel och kontrollerad förändring är skapat som första utkast och etablerar livscykelstatus, technology radar, produkt-/versionslivscykel, supportfönster, deprecation, sunset, migrationsansvar, experimentens exit-kriterier, tidsbegränsade undantag och faktisk retirement.
-- Kapitel 33 – Ekonomi, kostnad och kapacitet är skapat som första utkast och etablerar kostnadsdrivare, enhetskostnad, kostnadsallokering, showback/chargeback, gemensam investering, kapacitetsprofiler, prognoser, incitament och ekonomisk transparens som arkitekturell återkoppling. Del V är därmed komplett i första utkast.
-- Kapitel 34 – Vad en referensarkitektur är – och inte är är skapat som första utkast och inleder del VI genom att etablera scope, concerns/viewpoints, constraints, variation points, ansvar, spårbarhet och gränsen mot lösningsarkitektur, mönster, standarder, plattformar och templates.
-- Kapitel 35 – Från behov till lösningsarkitektur är skapat som första utkast och sammanför bokens tidigare delar till ett praktiskt arbetsflöde från behov och kvalitetsprofil via förmågor, referensarkitektur, mönster, plattformar och standarder till lokala beslut, avsteg, verifiering och återkoppling.
-- Kapitel 36 – Sju återkommande lösningsscenarier är skapat som första utkast och jämför sju återkommande lösningsklasser med samma analysram.
-- Kapitel 37 – Governance, förvaltning och evolution är skapat som första utkast och knyter ihop mandat, federerad styrning, avsteg, telemetry, documentation-as-code, mognad och organisatoriskt lärande. Del VI och hela kapitelmanuset är därmed komplett i första utkast.
+- Genomför en full **språk- och stilrevision** av hela manuset: flyt, meningslängd, svengelska, konsekventa begrepp, exempelbalans och övergångar.
+- Behåll ett kort aktualitetspass direkt före publicering för AI, identitets-/OAuth-profiler, SSDF, DMN, FinOps/FOCUS, WCAG och ISO/IEC/IEEE 42024.
+- Gör organisationsspecifik rättslig/informationsstyrande kontroll av kapitel 22 om boken senare riktas mot en bestämd myndighet eller organisation.
+- Därefter: besluta källförteckning/notapparat, illustrationer och omslag samt bygg första kompletta EPUB/PDF.

@@ -416,7 +416,7 @@ Det kan vara värdefullt att standardisera exempelvis:
 - tidsperiod,
 - allokeringsprincip.
 
-Inom FinOps finns exempelvis FOCUS, en öppen specifikation för normaliserad kostnads- och användningsdata. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att **kostnadsdata behöver ett eget informationskontrakt** om den ska kunna användas tvärs över tekniska miljöer.
+Inom FinOps finns exempelvis FOCUS, en öppen specifikation som standardiserar faktureringsdata och relaterade kostnads- och användningsbegrepp över olika datakällor. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att **ekonomiska data behöver ett eget informationskontrakt** om de ska kunna användas tvärs över tekniska miljöer.
 
 ## Kostnadsoptimering har flera nivåer
 
