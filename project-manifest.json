@@ -1,15 +1,15 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev64.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev73.zip",
   "chapters": {
     "count": 37,
     "hashes": {
-      "chapters/01-varfor-gemensam-it-arkitektur.md": "2f7e194a4ba1e074c55c873e8f6b0e770cd3b7f834869aacdaf3449350d1dc63",
-      "chapters/02-en-arkitektur-av-flera-lager.md": "a6643c6a71ca35e9c97a507464b7ff0c2999f1f09338939b35a4c38457dbd8d6",
-      "chapters/03-behov-fore-teknik.md": "45d9460fd4b68b6a6702de54f8842ae20b31a2e37151eb143c4a922478cc9fb1",
-      "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": "d6990f1f2a3369afce834b252b0d94393e743dd1b08bcd262953f7fc13f34dac",
-      "chapters/05-arkitekturbeslut-och-trade-offs.md": "d9f34c2eb50e6dae55d242212dc8d8074624046564abb9c41b032744087df54b",
-      "chapters/06-arkitekturprinciper-som-beslutsstod.md": "f9d013a11b0913890ed7c3f954ad94803108ab36b559557fee3ff6178c842e89",
-      "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "18102f13158faadbe0166064d0485a4c80688832ce81d3cc3abf666c8fc8c87a",
+      "chapters/01-varfor-gemensam-it-arkitektur.md": "6cd502a7da819310d7e1c99f695c3442227171d4ec6e146ff25f65b55e906829",
+      "chapters/02-en-arkitektur-av-flera-lager.md": "16dcee32697ba30db2834e4652affe9fd96a438712ecbdfefb923d3492d74cfd",
+      "chapters/03-behov-fore-teknik.md": "9343ebcc03c9b05e4ad312e8e8868484a7c387d102d2c8527530d6b9745e09ee",
+      "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": "4f347c31995b75c184b8fdbd51ecb5369c890484e1ba1311412f109f7a8cb7c6",
+      "chapters/05-arkitekturbeslut-och-trade-offs.md": "90a721ab9b4202c753ba80614eef991d78a6c31893dc6da102cfa45ed83b6787",
+      "chapters/06-arkitekturprinciper-som-beslutsstod.md": "a5260a064e481158917c9cd449fb39192abbddf14f960aac83bd6bfc90294baf",
+      "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "6bccff8631d99a9bc397a667c43e31d0cc29b768a5770dd42511a8aaa54ff840",
       "chapters/08-vad-ar-en-it-formaga.md": "fa1a176ad94bc255db7659d095688a90c428fa25efb3cd81a54759a35d32379f",
       "chapters/09-nar-nagot-bor-vara-gemensamt.md": "e8988ae4df25588aa9ad7b3c6c7c202ee0063df8081587756f314a580173744d",
       "chapters/10-domaner-ansvar-och-granser.md": "83ad0bce361ccc6b5d81dfd5a385dbf857e82b332994d0c8f690a8f172eb9a87",
@@ -46,16 +46,17 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "publishing/epub.css",
-      "publishing/pdf-template.tex"
+      "chapters/begreppsregister.md",
+      "docs/begreppsregister.yaml",
+      "docs/register-korsreferenssynk-pass-1.md"
     ],
-    "operation": "Tydligare kodblock i EPUB och PDF med ljusgrå bakgrund, diskret ram och förbättrad luft",
-    "source_revision": 63
+    "operation": "Synkat begreppsregister och korsreferenser mot reviderad Del I",
+    "source_revision": 72
   },
-  "parent_revision": 63,
+  "parent_revision": 72,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 64,
+  "revision": 73,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -100,32 +101,32 @@
       "sha256": "7c64c9c4941bf899780852622800b67c583563a02dd859daf48dc1e23707d817"
     },
     "chapters/01-varfor-gemensam-it-arkitektur.md": {
-      "bytes": 26209,
-      "sha256": "2f7e194a4ba1e074c55c873e8f6b0e770cd3b7f834869aacdaf3449350d1dc63"
+      "bytes": 21036,
+      "sha256": "6cd502a7da819310d7e1c99f695c3442227171d4ec6e146ff25f65b55e906829"
     },
     "chapters/02-en-arkitektur-av-flera-lager.md": {
-      "bytes": 25557,
-      "sha256": "a6643c6a71ca35e9c97a507464b7ff0c2999f1f09338939b35a4c38457dbd8d6"
+      "bytes": 20944,
+      "sha256": "16dcee32697ba30db2834e4652affe9fd96a438712ecbdfefb923d3492d74cfd"
     },
     "chapters/03-behov-fore-teknik.md": {
-      "bytes": 22804,
-      "sha256": "45d9460fd4b68b6a6702de54f8842ae20b31a2e37151eb143c4a922478cc9fb1"
+      "bytes": 18788,
+      "sha256": "9343ebcc03c9b05e4ad312e8e8868484a7c387d102d2c8527530d6b9745e09ee"
     },
     "chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md": {
-      "bytes": 30995,
-      "sha256": "d6990f1f2a3369afce834b252b0d94393e743dd1b08bcd262953f7fc13f34dac"
+      "bytes": 27762,
+      "sha256": "4f347c31995b75c184b8fdbd51ecb5369c890484e1ba1311412f109f7a8cb7c6"
     },
     "chapters/05-arkitekturbeslut-och-trade-offs.md": {
-      "bytes": 27588,
-      "sha256": "d9f34c2eb50e6dae55d242212dc8d8074624046564abb9c41b032744087df54b"
+      "bytes": 22901,
+      "sha256": "90a721ab9b4202c753ba80614eef991d78a6c31893dc6da102cfa45ed83b6787"
     },
     "chapters/06-arkitekturprinciper-som-beslutsstod.md": {
-      "bytes": 28632,
-      "sha256": "f9d013a11b0913890ed7c3f954ad94803108ab36b559557fee3ff6178c842e89"
+      "bytes": 20776,
+      "sha256": "a5260a064e481158917c9cd449fb39192abbddf14f960aac83bd6bfc90294baf"
     },
     "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": {
-      "bytes": 24976,
-      "sha256": "18102f13158faadbe0166064d0485a4c80688832ce81d3cc3abf666c8fc8c87a"
+      "bytes": 18555,
+      "sha256": "6bccff8631d99a9bc397a667c43e31d0cc29b768a5770dd42511a8aaa54ff840"
     },
     "chapters/08-vad-ar-en-it-formaga.md": {
       "bytes": 21897,
@@ -248,8 +249,8 @@
       "sha256": "c7f1d7e7399ae4309ee15c5a02a2aca51c9d00851a31f3874a9865b6691738e4"
     },
     "chapters/begreppsregister.md": {
-      "bytes": 7366,
-      "sha256": "0e9906062fdc0761c4d124412b8c4ea5e7e41d0bf65a7e49df28db7101df8b5a"
+      "bytes": 7367,
+      "sha256": "7e2325de1d92a5367e8008bb128d4822172f850926cf045158a348240ddf278b"
     },
     "chapters/del-01.md": {
       "bytes": 50,
@@ -292,12 +293,16 @@
       "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
     },
     "docs/begreppsregister.yaml": {
-      "bytes": 24181,
-      "sha256": "7c331e1ecf890c67626158556f4a06ced3962478ade07ef546bfda44ee1c031b"
+      "bytes": 24079,
+      "sha256": "f21f42b609bd489d32d9a75ec2a2e3ddceadd8e36f921227101db5eae803f0ad"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
       "sha256": "9a6941361af7f3acdd14444b379e641c71a7996d3c5a26cbc9e9b88c155fdc98"
+    },
+    "docs/del1-helhetsrevision-pass-2.md": {
+      "bytes": 3554,
+      "sha256": "a06f50a23e066b364577d82d901a35d3d5bf00f29b2cc00eb80ceec806c86370"
     },
     "docs/export-guide.md": {
       "bytes": 563,
@@ -350,6 +355,10 @@
     "docs/quality-checklist.md": {
       "bytes": 980,
       "sha256": "96b59bfb755f511c92aff36c352f7d12c3edc0750af549cc1adb6ba2443bd195"
+    },
+    "docs/register-korsreferenssynk-pass-1.md": {
+      "bytes": 2768,
+      "sha256": "e1be9d0b08bf1317c038c2066c7a8da0661c09ef5235f0e84d6be061666a4223"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -864,8 +873,8 @@
       "sha256": "796df88f81d0b53d8434d5cd16d00448cfc4d79fd15f4086e4dbaaf8213e8aa8"
     },
     "revision-log.md": {
-      "bytes": 39232,
-      "sha256": "55fa40daed6db494fe1e01640e6075d235784ba6a77b0cc62b7ced52485ea475"
+      "bytes": 42097,
+      "sha256": "c0b85d9770ee4879f65d070c71db65f5aeacd58ad987ca1b05c601de2557dd43"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -892,5 +901,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T18:15:55Z"
+  "updated_at": "2026-08-19T19:14:53Z"
 }
