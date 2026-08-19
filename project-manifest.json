@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev32.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev33.zip",
   "chapters": {
-    "count": 25,
+    "count": 26,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -27,28 +27,29 @@
       "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f",
       "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "4fe3da7ac5ff26b17dfc24dbbe2e82297b68fb5c4862d1160a5c4157934c2068",
       "chapters/24-integrations-och-kommunikationsmonster.md": "ef412722dd869bf9d9597ecab90ef58c20e73a707bb2d43d3f86dd7a9dff4d99",
-      "chapters/25-process-regel-och-datamonster.md": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989"
+      "chapters/25-process-regel-och-datamonster.md": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989",
+      "chapters/26-ai-identitets-och-runtime-monster.md": "c3e96dfe34226471110085fcf49d800c5d0374c84e1ebd9dbbdb641badaf7d7e"
     },
-    "latest": 25
+    "latest": 26
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/25-process-regel-och-datamonster.md",
+      "chapters/26-ai-identitets-och-runtime-monster.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 25 – Process-, regel- och datamönster och synkroniserade projektstatus/exportordning",
-    "source_revision": 31
+    "operation": "Skrev kapitel 26 – AI-, identitets- och runtime-mönster och synkroniserade projektstatus/exportordning",
+    "source_revision": 32
   },
-  "parent_revision": 31,
+  "parent_revision": 32,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 32,
+  "revision": 33,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -66,7 +67,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "27aa847837299c19b68e33a82ae9ec9d53ae4d9ba58376e455a023aea90ff930"
+      "sha256": "5a7cc10b7e05ae59176636623e0c96c949406b0cfe6c5df9b566b072d0f1659f"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -81,8 +82,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2378,
-      "sha256": "40e440de3d5dec61de0001cdddec26203b660fc2cd2ada5c6f5ff3118c631be7"
+      "bytes": 2429,
+      "sha256": "8c550a88c5b693a1bd7222915f99527aa530e6a728edf678b9a2a12b18b846c3"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -188,6 +189,10 @@
       "bytes": 28944,
       "sha256": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989"
     },
+    "chapters/26-ai-identitets-och-runtime-monster.md": {
+      "bytes": 28021,
+      "sha256": "c3e96dfe34226471110085fcf49d800c5d0374c84e1ebd9dbbdb641badaf7d7e"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -209,8 +214,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 7829,
-      "sha256": "e4dc3be558ef8644d06368b8bdb6964a50554210f37bc6ce093f4439b3959718"
+      "bytes": 8292,
+      "sha256": "07e86d4260b0ba9e6bf11a36f685d461bc5fa3d06b0efc875a850279561cb3a4"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -225,16 +230,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 21250,
-      "sha256": "40d8b4ab133c3c9e5d5575f77060e80e17d657d5be3d78d916cc52a04d8ff919"
+      "bytes": 21470,
+      "sha256": "ca37d58deb9c145fafbbad489d64ef22aa6841a639904c936a5afb43492eaebe"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 11384,
-      "sha256": "a32d43e55fca3c9ce0744425a0d49bf1b11cffd5296e3d5d1269484a49f08c77"
+      "bytes": 11820,
+      "sha256": "22a70f712215604b70145201b141f3d61bb9259ee2045f5ff73db4cf32ba3cb4"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -718,7 +723,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "097117775b1ecb6e7bc1a2af05aaf3657655f684f87cee0be9250e56b4c683cc"
+      "sha256": "6a011dbe6bec07db74a380b82f2ce5962776a693e7df199d78dff907e00ca9da"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -741,8 +746,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 21621,
-      "sha256": "65a4da3cd6e0a636bba24a96102f04d6b1467ac3a385125f42e71c5014974e4e"
+      "bytes": 21988,
+      "sha256": "877a6fd02e0291c0ac89f6f524aefa7e15ec4d8f4bb31733b4bf2cb054b570de"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -765,5 +770,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T05:17:45Z"
+  "updated_at": "2026-08-19T05:24:53Z"
 }

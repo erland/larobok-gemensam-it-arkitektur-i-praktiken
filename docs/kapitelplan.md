@@ -178,7 +178,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 26: AI-, identitets- och runtime-mönster
 - Kärnfråga: Vilka återkommande mönster minskar risk när AI, identitet och applikationsdrift kombineras?
 - Centralt innehåll: RAG, AI med mänsklig kontroll, service identity och containeriserad stateless tjänst.
-- Status: planerad
+- Avgränsning: kapitel 16, 18 och 19 beskriver förmågorna; detta kapitel behandlar de fyra mönstrens ansvar, risktyper, kombinationer, behörighetskedjor, felgränser och konsekvenser av ökad autonomi.
+- Status: första utkast skapat
 
 ## Kapitel 27: Drift- och leveransmönster
 - Kärnfråga: Hur byggs deployment, observability och återställning in i lösningen från början?
