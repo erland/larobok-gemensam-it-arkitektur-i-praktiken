@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev53.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev55.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,15 +46,18 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
+      ".github/workflows/02-build-preview.yml",
+      ".github/workflows/03-release.yml",
+      "project-index.md",
       "publishing/pdf-template.tex"
     ],
-    "operation": "Korrigerade PDF-fontnamn för XeLaTeX/fontspec",
-    "source_revision": 52
+    "operation": "Korrigerade Pandoc-highlighting och monospaced-font i PDF-export efter Preview-fel",
+    "source_revision": 54
   },
-  "parent_revision": 52,
+  "parent_revision": 54,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 53,
+  "revision": 55,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -63,12 +66,12 @@
       "sha256": "56c504376f59ec4a5a7ab59ab29be43784f636f832af5c6e98f14b694c15afb7"
     },
     ".github/workflows/02-build-preview.yml": {
-      "bytes": 1223,
-      "sha256": "020e98fccf5a8eab68166df50f19ad44aeda8b47be75f21420d14e98f8c8206b"
+      "bytes": 1372,
+      "sha256": "1339429de673b3e47ef212cae49a0c5e942c715cd3725bafec2821f482918ea1"
     },
     ".github/workflows/03-release.yml": {
-      "bytes": 1662,
-      "sha256": "551b691d37c793cd314c8adc0024ae191c1a6bd929e4e3c6b3e61412be8f3aa9"
+      "bytes": 1811,
+      "sha256": "4e5ccea9a8eb24782a4269a150ea9f94a003533551159c1b8da8275b27d90a09"
     },
     "README.md": {
       "bytes": 1309,
@@ -800,7 +803,7 @@
     },
     "project-index.md": {
       "bytes": 949,
-      "sha256": "3bff44a51ded11dc6a1d5217cea9c8b947e0758752488eb5fa69f56933400021"
+      "sha256": "17f9e7894b7662e7a7d4b2a244dae55843a250128738b31988649d69d4568ed4"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -819,12 +822,12 @@
       "sha256": "cfe827087f31a1b3200ff7324303771e7844a55dcf6b0182c3363b47e06fbf04"
     },
     "publishing/pdf-template.tex": {
-      "bytes": 2451,
-      "sha256": "f68a5dcc8bbba88445b95be33c498f798233cc4b0dcca0e7bfe8d92e8b443934"
+      "bytes": 2538,
+      "sha256": "2b0420016ebea38e59623d8f1eb6e8b9aeef0b3483ca0385d39b9de6a5eff3ef"
     },
     "revision-log.md": {
-      "bytes": 32223,
-      "sha256": "bd5458e05498178d8e50dbeedf64af7a8bb63ae2e6d0af2d74d68295a91e448e"
+      "bytes": 32725,
+      "sha256": "0e2d7287934cd550e74c63596fa6ce878e6db70690eaf22f416ed73976db444c"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -847,5 +850,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T11:34:44Z"
+  "updated_at": "2026-08-19T11:57:33Z"
 }

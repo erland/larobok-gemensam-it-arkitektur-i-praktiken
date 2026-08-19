@@ -19,9 +19,10 @@ jobs:
       - name: Install XeLaTeX and PDF tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern fonts-texgyre
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern fonts-texgyre fonts-dejavu-core
           fc-cache -f
           fc-list : family | grep -Fqi 'TeX Gyre Pagella' || { echo "TeX Gyre Pagella saknas efter installationen." >&2; exit 1; }
+          fc-list : family | grep -Fqi 'DejaVu Sans Mono' || { echo "DejaVu Sans Mono saknas efter installationen." >&2; exit 1; }
       - name: Build EPUB and PDF
         run: python3 scripts/build_book.py --output-dir "${RUNNER_TEMP}/book-dist"
       - name: Upload preview package
