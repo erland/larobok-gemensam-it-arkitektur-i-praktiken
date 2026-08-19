@@ -161,7 +161,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 23: Lösningsmönster som återanvändbara beslut
 - Kärnfråga: Vad gör ett lösningsmönster användbart och hur undviker man att det blir ett recept?
 - Centralt innehåll: pattern language, context, forces, consequences, variationer, anti-patterns och relationen till principer, standarder och referensarkitekturer.
-- Status: planerad
+- Avgränsning: etablerar mönsterbegreppet, dokumentationsformen, urvalskriterierna och livscykeln; kapitel 24–27 fördjupar de konkreta mönstergrupperna utan att återupprepa grundmodellen.
+- Status: första utkast skapat
 
 ## Kapitel 24: Integrations- och kommunikationsmönster
 - Kärnfråga: Hur används synkrona och asynkrona mönster för lös koppling och robust informationsöverföring?

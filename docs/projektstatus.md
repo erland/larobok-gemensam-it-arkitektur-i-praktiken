@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I och II kompletta i första utkast; del III pågår
+Skrivfas – del I–III kompletta i första utkast; del IV pågår
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -36,7 +36,8 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 | 19 | Applikationsexekvering och runtime | Första utkast | Workload-egenskaper, container/VM/runtimeprofiler, stateless/stateful, resursprofil, skalning, isolering, konfiguration, portabilitet och livscykel etablerade. |
 | 20 | Driftbarhet och motståndskraft | Första utkast | Observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling etablerade. |
 | 21 | Programvaruutveckling och leverans | Första utkast | SCM, reproducerbara builds, CI/CD, artefakter, build once/promote many, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer etablerade. |
-| 22–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 23 | Lösningsmönster som återanvändbara beslut | Första utkast | Mönster som återanvändbar beslutserfarenhet, kontext/problem/forces, konsekvenser, variationer, pattern language, anti-patterns, urval och livscykel etablerade. |
+| 24–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -73,4 +74,5 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Kapitel 20 – Driftbarhet och motståndskraft är skapat som första utkast och etablerar observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling.
 - Kapitel 21 – Programvaruutveckling och leverans är skapat som första utkast och etablerar SCM, reproducerbara builds, CI/CD, artefaktflöde, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer.
 - Kapitel 22 – Arbetsplats, samarbete och produktivitet är skapat som första utkast och etablerar gränsen mellan generell produktivitet och verksamhetssystem, samarbetsytors ägarskap/livscykel, extern delning, low-code-eskalering, produktivitets-AI och gemensamma arbetsplatserbjudanden. Del III är därmed komplett i första utkast.
-- Nästa planerade kapitel är kapitel 23 – Lösningsmönster som återanvändbara beslut.
+- Kapitel 23 – Lösningsmönster som återanvändbara beslut är skapat som första utkast och etablerar mönster som beslutsartefakt, pattern language, context/forces/consequences, variationer, anti-patterns, relationen till andra arkitekturartefakter samt urval och livscykel. Del IV är därmed påbörjad.
+- Nästa planerade kapitel är kapitel 24 – Integrations- och kommunikationsmönster.

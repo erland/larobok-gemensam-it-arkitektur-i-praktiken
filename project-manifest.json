@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev29.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev30.zip",
   "chapters": {
-    "count": 22,
+    "count": 23,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -24,28 +24,29 @@
       "chapters/19-applikationsexekvering-och-runtime.md": "26c4ba1dea1d9148d6f1e6722345ff0ed895923dd5b59ec5e4d8eac274208129",
       "chapters/20-driftbarhet-och-motstandskraft.md": "cfcf2e36d8fbc0cf8e13796915525fc7fc9c350193fb3b573e0e4eeb655715c8",
       "chapters/21-programvaruutveckling-och-leverans.md": "7e85af54cf7745aa98c5332121576ee239f598b4b7309ed92030042c7a75d142",
-      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f"
+      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f",
+      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "4fe3da7ac5ff26b17dfc24dbbe2e82297b68fb5c4862d1160a5c4157934c2068"
     },
-    "latest": 22
+    "latest": 23
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/22-arbetsplats-samarbete-och-produktivitet.md",
+      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 22 – Arbetsplats, samarbete och produktivitet; slutförde del III i första utkast och synkroniserade projektstatus/exportordning",
-    "source_revision": 28
+    "operation": "Skrev kapitel 23 – Lösningsmönster som återanvändbara beslut; påbörjade del IV och synkroniserade projektstatus/exportordning",
+    "source_revision": 29
   },
-  "parent_revision": 28,
+  "parent_revision": 29,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 29,
+  "revision": 30,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -63,7 +64,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "d3953683ed2e6c5fb5030cec5efce3786f1fd2dc4d7acc5ef68f3ed9ccf6ba03"
+      "sha256": "a812a1772c142e10ab61a4e6ce45fc628f28cf2dc6da456192161da51e1d5ced"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -78,8 +79,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2216,
-      "sha256": "e38061a0f25e08f62a7f506e68c05b467cded11f37740d18818542704d8ed296"
+      "bytes": 2275,
+      "sha256": "5857cc12d9b289b272797db762977d3f63417201cf19568981e5d6faf1ec9471"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -173,6 +174,10 @@
       "bytes": 28278,
       "sha256": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f"
     },
+    "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": {
+      "bytes": 27986,
+      "sha256": "4fe3da7ac5ff26b17dfc24dbbe2e82297b68fb5c4862d1160a5c4157934c2068"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -194,8 +199,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 6577,
-      "sha256": "579c81fc8e041824addc270554bb38721551b4fa28a062e6d7712001a486f3ce"
+      "bytes": 7008,
+      "sha256": "3f367c59dbc8cf365c50886c352ef004d3df94936df7c327b3dadcb2eb519a31"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -210,16 +215,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20809,
-      "sha256": "e7ca60515a8173ac4b18e0d638548ac98858c0a15e4daaf6903f8b1487605a8d"
+      "bytes": 21017,
+      "sha256": "280d537e712659d28cc8c87c44c18da318cd723a577c2155acb86eebaee07cc1"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 9683,
-      "sha256": "e3ceca76a89629742667c879745adcf178c5889445dff158ea2074db641d94e4"
+      "bytes": 10226,
+      "sha256": "b7fc84978b5ac9eea26666cacb03c616ae87413a3998e24f0c1a205518d5cf56"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -703,7 +708,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "43200fbe24f19709e614764c59309218d450093bfcbf1b87ce19a1845e4a1f6a"
+      "sha256": "6b962777ceaf545f35e12d12595f0bafd53dfe35071d2a555ef996012b460b3a"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -726,8 +731,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 20484,
-      "sha256": "e1ee82ffec7e27a6770625b7f6f44f65c8ea1f7afcc782624517685c04456db2"
+      "bytes": 20887,
+      "sha256": "ecca7c567364bbf6f2bc5cf9fbca2e05e102ee183c1bc1ad4ad9f887fe197462"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -750,5 +755,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T20:07:31Z"
+  "updated_at": "2026-08-19T05:03:01Z"
 }
