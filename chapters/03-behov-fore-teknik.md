@@ -26,7 +26,7 @@ Ett vanligt tecken på teknikdriven kravställning är att behov uttrycks med na
 
 Jämför följande formuleringar:
 
-> Systemet ska köras på organisationens containerplattform.
+> Systemet ska köras på organisationens *containerplattform*.
 
 med:
 

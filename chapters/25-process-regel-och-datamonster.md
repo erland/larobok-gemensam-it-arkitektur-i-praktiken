@@ -6,9 +6,9 @@ Det är också där många lösningar börjar tappa sina tydliga gränser.
 
 Kapitel 13–15 beskrev förmågorna Process, workflow och ärendehantering, Regler och beslut samt Data- och informationshantering. I det här kapitlet ligger fokus i stället på fyra återkommande lösningsmönster:
 
-- Human workflow,
-- externaliserade verksamhetsregler,
-- system of record och härledda kopior,
+- *Human workflow*,
+- *externaliserade verksamhetsregler*,
+- *system of record och härledda kopior*,
 - cache-aside.
 
 Mönstren löser olika problem. Human workflow gör långlivat arbete och mänskliga uppgifter explicita. Externaliserade regler ger vissa beslut en egen livscykel och spårbarhet. System of record med härledda kopior tydliggör vilken representation som är auktoritativ när information behöver finnas på flera ställen. Cache-aside förbättrar läsprestanda genom att låta en återskapbar kopia ligga nära användningen.

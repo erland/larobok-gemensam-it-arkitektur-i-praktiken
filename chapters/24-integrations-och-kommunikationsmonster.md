@@ -8,9 +8,9 @@ I resten av kapitlet återupprepas därför inte kapitel 17:s katalog över komm
 
 Tre mönster från bokens grundmaterial står i centrum:
 
-- Backend for Frontend,
-- asynkron meddelandekommunikation,
-- publicera/prenumerera.
+- *Backend for Frontend*,
+- *asynkron meddelandekommunikation*,
+- *publicera/prenumerera*.
 
 Runt dem behöver vi dessutom förstå sådant som idempotens, ordering, återförsök, dead-letter-hantering, korrelation och kontraktsutveckling. Dessa är inte alltid egna lösningsmönster, men de är återkommande designmekanismer som avgör om mönstren fungerar robust i praktiken.
 

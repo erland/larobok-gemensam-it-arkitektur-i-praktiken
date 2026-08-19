@@ -356,7 +356,7 @@ En standard uttrycker vilket beteende eller val organisationen har beslutat att 
 
 Exempel:
 
-- **Mönster:** Backend for Frontend.
+- **Mönster:** *Backend for Frontend*.
 - **Standard:** API-kontrakt ska följa organisationens API-konventioner.
 
 Mönstret svarar på:
@@ -599,9 +599,9 @@ Förmågeområdet bör äga de standarder som hör till det egna området.
 
 Exempel:
 
-- Integration och kommunikation äger API- och messagingstandarder.
+- *Integration och kommunikation* äger API- och messagingstandarder.
 - Identitet och tillit äger identitets- och tjänsteidentitetsstandarder.
-- Programvaruutveckling och leverans äger release-, repository- och CI/CD-relaterade standarder.
+- *Programvaruutveckling och leverans* äger release-, repository- och CI/CD-relaterade standarder.
 
 Förmågeansvaret bör också följa hur standarderna fungerar i praktiken och identifiera behov av förändring.
 

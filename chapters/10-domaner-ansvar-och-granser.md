@@ -15,7 +15,7 @@ Den berättar inte automatiskt:
 
 Detta är frågor om domäner, ansvar och gränser.
 
-De är centrala eftersom en arkitektur inte bara består av återanvändbara tekniska byggstenar. Den består också av självständiga delar som behöver ha tydligt ansvar för sin egen logik, information och förändring. Om dessa gränser är otydliga uppstår ofta en annan typ av fragmentering än den som gemensamma plattformar är avsedda att lösa: verksamhetslogik sprids mellan system, data får flera konkurrerande ägare och förändringar kräver samordning mellan allt fler team.
+De är centrala eftersom en arkitektur inte bara består av återanvändbara tekniska byggstenar. Den består också av självständiga delar som behöver ha tydligt ansvar för sin egen logik, information och förändring. Om dessa gränser är otydliga uppstår ofta en annan typ av f*rag*mentering än den som gemensamma plattformar är avsedda att lösa: verksamhetslogik sprids mellan system, data får flera konkurrerande ägare och förändringar kräver samordning mellan allt fler team.
 
 Detta kapitel behandlar därför de arkitekturproblem som inte bör lösas genom att göra ännu mer gemensamt.
 

@@ -1,6 +1,6 @@
 # 21. Programvaruutveckling och leverans
 
-Programvara blir inte verksamhetsnytta när koden är skriven. Den blir verksamhetsnytta först när organisationen på ett kontrollerat sätt kan förvandla förändrad källkod till en verifierad, spårbar och driftsatt version som går att förstå, återskapa och vid behov återställa eller ersätta. Därför är programvaruutveckling och leverans en egen gemensam IT-förmåga.
+Programvara blir inte verksamhetsnytta när koden är skriven. Den blir verksamhetsnytta först när organisationen på ett kontrollerat sätt kan förvandla förändrad källkod till en verifierad, spårbar och driftsatt version som går att förstå, återskapa och vid behov återställa eller ersätta. Därför är *programvaruutveckling och leverans* en egen gemensam IT-förmåga.
 
 Förmågan omfattar inte all teknik som utvecklare råkar använda. Den handlar om den gemensamma vägen från källkod och ändringsförslag till byggda artefakter, verifierade releaser och kontrollerad produktionssättning. Applikationens exekveringsmiljö behandlades i kapitel 19 och driftbarhet och motståndskraft i kapitel 20. Här ligger fokus i stället på själva förändringsflödet.
 

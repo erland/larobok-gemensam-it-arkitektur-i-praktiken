@@ -2,7 +2,7 @@
 
 Ett system kan vara korrekt byggt, korrekt driftsatt och ändå vara svårt att hålla fungerande över tid. Det kan sakna tillräcklig telemetri för att förstå vad som händer, ha larm som ingen kan agera på, innehålla beroenden som gör att små fel sprider sig eller ha säkerhetskopior som aldrig har provats i en verklig återställning.
 
-Driftbarhet och motståndskraft handlar därför inte bara om att ”ha övervakning” eller ”ta backup”. Förmågan handlar om att göra system begripliga under drift, möjliga att återställa och konstruerade så att fel kan hanteras utan att konsekvenserna blir större än nödvändigt.
+*Driftbarhet och motståndskraft* handlar därför inte bara om att ”ha övervakning” eller ”ta backup”. Förmågan handlar om att göra system begripliga under drift, möjliga att återställa och konstruerade så att fel kan hanteras utan att konsekvenserna blir större än nödvändigt.
 
 Kärnfrågan i kapitlet är:
 

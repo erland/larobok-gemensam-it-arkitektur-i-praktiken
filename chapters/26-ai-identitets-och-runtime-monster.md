@@ -6,10 +6,10 @@ Det gör AI till ett bra exempel på varför lösningsmönster behöver kombiner
 
 I det här kapitlet fördjupar vi fyra mönster från bokens mönsterbibliotek:
 
-- Retrieval-Augmented Generation (RAG),
-- AI med mänsklig kontroll,
+- *Retrieval-Augmented Generation (RAG)*,
+- *AI med mänsklig kontroll*,
 - tjänsteidentitet,
-- containeriserad stateless tjänst.
+- *containeriserad stateless tjänst*.
 
 Mönstren löser inte samma problem. RAG minskar kunskapsrisken genom att grunda generering i explicit informationsunderlag. Mänsklig kontroll begränsar konsekvensen av osäkra eller betydelsefulla AI-resultat. Tjänsteidentitet gör teknisk tillit och privilegier explicita. En containeriserad stateless tjänst gör exekveringen reproducerbar, skalbar och utbytbar utan att persistent verksamhetsstate binds till instansen.
 

@@ -326,8 +326,8 @@ Varje nivå svarar på en annan fråga. När nivåerna blandas ihop blir både s
 
 Bokens fortsatta fördjupning utgår från elva gemensamma IT-förmågor:
 
-1. Interaktion, presentation och kanaler,
-2. Process, workflow och ärendehantering,
+1. *Interaktion, presentation och kanaler*,
+2. *Process, workflow och ärendehantering*,
 3. Regler och beslut,
 4. Data- och informationshantering,
 5. Analys, sökning och AI,
@@ -335,7 +335,7 @@ Bokens fortsatta fördjupning utgår från elva gemensamma IT-förmågor:
 7. Identitet och tillit,
 8. Applikationsexekvering och runtime,
 9. Driftbarhet och motståndskraft,
-10. Programvaruutveckling och leverans,
+10. *Programvaruutveckling och leverans*,
 11. Arbetsplats, samarbete och produktivitet.
 
 Indelningen ska läsas som ett sammanhängande förslag för ett stödjande IT-område, inte som en universell taxonomi.

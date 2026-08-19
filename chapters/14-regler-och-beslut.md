@@ -4,7 +4,7 @@ Ett verksamhetssystem fattar ständigt beslut. Ett ärende ska kanske godkännas
 
 Det betyder inte att varje `if`-sats är en verksamhetsregel som bör externaliseras.
 
-Förmågan Regler och beslut blir relevant när själva regeln eller beslutet har en egen betydelse som behöver kunna förstås, förändras, testas, återanvändas eller spåras oberoende av den applikation som råkar exekvera det. Arkitekturfrågan är därför inte i första hand vilken regelmotor organisationen ska använda, utan vilken beslutslogik som bör behandlas som en egen förvaltningsbar artefakt och vilken logik som bör stanna i vanlig domänkod.
+Förmågan *Regler och beslut* blir relevant när själva regeln eller beslutet har en egen betydelse som behöver kunna förstås, förändras, testas, återanvändas eller spåras oberoende av den applikation som råkar exekvera det. Arkitekturfrågan är därför inte i första hand vilken regelmotor organisationen ska använda, utan vilken beslutslogik som bör behandlas som en egen förvaltningsbar artefakt och vilken logik som bör stanna i vanlig domänkod.
 
 Det är en viktig gränsdragning. För lite explicit regelhantering kan ge duplicerade regler, svår spårbarhet och långsam förändring. För mycket explicit regelhantering kan i stället skapa en central regelmonolit, indirekt kod och ett nytt plattformsberoende för logik som hade varit enklare att förstå nära domänen.
 
@@ -425,7 +425,7 @@ Ett beslut kan vara fullständigt deterministiskt men ändå fel om indata:
 - saknar nödvändig historik,
 - har förändrats mellan beslut och senare granskning.
 
-Här möter förmågan Data- och informationshantering.
+Här möter förmågan *Data- och informationshantering*.
 
 För beslut med höga spårbarhetskrav behöver man ibland kunna återskapa inte bara regeln utan även vilket beslutsunderlag som faktiskt fanns vid beslutstidpunkten.
 
@@ -644,7 +644,7 @@ Den centrala gränsdragningen är:
 
 - domänlogik äger beteenden som naturligt hör ihop med domänens modell,
 - Regler och beslut äger explicita verksamhetsbeslut som vinner på separat representation och förvaltning,
-- Process, workflow och ärendehantering äger ordning, väntan och koordinering,
+- *Process, workflow och ärendehantering* äger ordning, väntan och koordinering,
 - Integration och kommunikation äger mekanismerna för kommunikation mellan system,
 - Data- och informationshantering äger de tekniska mekanismerna för information och historik,
 - Analys, sökning och AI äger probabilistisk inferens och modeller som inte bör förväxlas med deterministiska regler.

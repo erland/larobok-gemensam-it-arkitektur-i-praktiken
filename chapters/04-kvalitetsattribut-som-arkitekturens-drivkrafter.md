@@ -250,7 +250,7 @@ Denna dimension handlar därför om användarens möjlighet att faktiskt genomf�
 - effektivitet i återkommande arbetsmoment,
 - stöd för olika användarförutsättningar och hjälpmedel.
 
-Arkitekturen påverkas bland annat genom kanalstrategi, design system, klientansvar och hur komplexitet fördelas mellan användargränssnitt och bakomliggande tjänster.
+Arkitekturen påverkas bland annat genom kanalstrategi, *design system*, klientansvar och hur komplexitet fördelas mellan användargränssnitt och bakomliggande tjänster.
 
 ### Förvaltningsbarhet och förändringsbarhet
 
@@ -475,7 +475,7 @@ Frågor kvarstår:
 - Är återställningsproceduren testad?
 - Vet verksamheten hur arbetet återupptas efter avbrottet?
 
-På samma sätt kan en containerplattform erbjuda automatisk restart utan att applikationen är motståndskraftig mot fel. En applikation som lagrar kritiskt tillstånd lokalt kan fortfarande förlora arbete när containern ersätts.
+På samma sätt kan en *containerplattform* erbjuda automatisk restart utan att applikationen är motståndskraftig mot fel. En applikation som lagrar kritiskt tillstånd lokalt kan fortfarande förlora arbete när containern ersätts.
 
 Gemensamma plattformar kan alltså möjliggöra kvaliteter, men de kan sällan garantera hela lösningens kvalitet på egen hand.
 
@@ -547,7 +547,7 @@ Det är därför kvalitetskraven behöver följas av explicita arkitekturbeslut 
 
 ## Ett sammanhängande exempel
 
-Anta att en myndighet ska införa en publik e-tjänst för en ansökan som har en tydlig sista ansökningsdag.
+Anta att en myndighet ska införa en *publik e-tjänst* för en ansökan som har en tydlig sista ansökningsdag.
 
 Det funktionella behovet är enkelt uttryckt:
 

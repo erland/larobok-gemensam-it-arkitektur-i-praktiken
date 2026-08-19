@@ -28,7 +28,7 @@ Plattformstjänst
 
 Det centrala är alltså inte bara tekniken, utan den organisatoriska och operativa inramningen runt tekniken.
 
-Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt att organisationen erbjuder en Container Application Platform. För att det ska vara ett verkligt tjänsteerbjudande behöver det exempelvis vara tydligt:
+Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt att organisationen erbjuder en *Container Application Platform*. För att det ska vara ett verkligt tjänsteerbjudande behöver det exempelvis vara tydligt:
 
 - vilka workload-typer plattformen är avsedd för,
 - vilka resursprofiler som stöds,
@@ -291,7 +291,7 @@ Om många team återkommer med samma fel kan problemet vara:
 
 Ett plattformserbjudande behöver överleva enskilda produktversioner och ibland även produktbyten.
 
-Anta att en relationell databastjänst i dag realiseras med en viss databasprodukt. Om organisationen senare byter produkt bör konsumenterna i idealfallet fortfarande känna igen de centrala tjänstebegreppen:
+Anta att en *relationell databastjänst* i dag realiseras med en viss databasprodukt. Om organisationen senare byter produkt bör konsumenterna i idealfallet fortfarande känna igen de centrala tjänstebegreppen:
 
 - databasinstans,
 - kapacitetsprofil,
@@ -368,7 +368,7 @@ En arkitektonisk plattformskatalog bör i första hand uttrycka erbjudanden som:
 - Relationell databastjänst,
 - Enterprise Messaging,
 - CI/CD Platform,
-- Search and Indexing Service,
+- *Search and Indexing Service*,
 - Productivity Suite.
 
 Produkten kan anges som aktuell realisering under erbjudandet.

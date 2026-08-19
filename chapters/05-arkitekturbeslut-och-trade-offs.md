@@ -41,7 +41,7 @@ Det viktiga ordet är realistiska. Arkitekturval görs aldrig i ett vakuum. Orga
 
 Men begränsningar ska avgränsa beslutsrymmet – inte ersätta beslutsanalysen.
 
-Om organisationen redan har en containerplattform är det ett relevant faktum. Det betyder däremot inte automatiskt att varje ny applikation bör köras där. Frågan är fortfarande om plattformens egenskaper möter lösningens behov bättre än alternativen, givet kostnad, risk och långsiktiga konsekvenser.
+Om organisationen redan har en *containerplattform* är det ett relevant faktum. Det betyder däremot inte automatiskt att varje ny applikation bör köras där. Frågan är fortfarande om plattformens egenskaper möter lösningens behov bättre än alternativen, givet kostnad, risk och långsiktiga konsekvenser.
 
 ## Ett arkitekturbeslut är mer än ett teknikval
 
@@ -406,10 +406,10 @@ Gemensamma beslut bör vara relativt få men ha hög räckvidd.
 
 Här fattas beslut om hur ett visst stödjande område ska fungera och vilka erbjudanden det ska tillhandahålla.
 
-Exempel inom Integration och kommunikation kan vara:
+Exempel inom *Integration och kommunikation* kan vara:
 
 - vilka integrationsstilar plattformen ska stödja,
-- när API management ska vara standardvägen,
+- när *API management* ska vara standardvägen,
 - vilka messaging-egenskaper som erbjuds,
 - vilka kontrakts- och versionsregler som gäller inom området.
 

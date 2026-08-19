@@ -177,7 +177,7 @@ Nästa fråga är inte vilka produkter som behövs utan vilka typer av IT-stöd 
 
 En publik e-tjänst kan exempelvis beröra:
 
-- Interaktion, presentation och kanaler,
+- *Interaktion, presentation och kanaler*,
 - Identitet och tillit,
 - Data- och informationshantering,
 - Integration och kommunikation,
@@ -188,7 +188,7 @@ En publik e-tjänst kan exempelvis beröra:
 Ett AI-baserat handläggarstöd kan dessutom beröra:
 
 - Analys, sökning och AI,
-- Process, workflow och ärendehantering,
+- *Process, workflow och ärendehantering*,
 - Regler och beslut.
 
 Syftet med denna kartläggning är inte att märka lösningen med så många förmågor som möjligt. Syftet är att upptäcka:
@@ -211,7 +211,7 @@ Det kan exempelvis vara:
 
 - publik e-tjänst,
 - internt handläggningsstöd,
-- integrationsintensivt verksamhetssystem,
+- *integrationsintensivt verksamhetssystem*,
 - informationsutbyte med extern part,
 - containerbaserad tjänst,
 - AI-baserat verksamhetsstöd,

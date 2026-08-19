@@ -131,7 +131,7 @@ Förmågeansvaret bör normalt omfatta att:
 - följa användning, brister och återkommande avsteg,
 - föreslå förändringar när området inte längre möter organisationens behov.
 
-Det är viktigt att skilja detta från produktägarskap. En produktägare kan ansvara för exempelvis en konkret API-managementprodukt. Förmågeansvaret för integration och kommunikation är bredare och ska fortfarande vara begripligt om produkten byts ut eller om flera tekniska realiseringar används parallellt.
+Det är viktigt att skilja detta från produktägarskap. En produktägare kan ansvara för exempelvis en konkret API-managementprodukt. Förmågeansvaret för *integration och kommunikation* är bredare och ska fortfarande vara begripligt om produkten byts ut eller om flera tekniska realiseringar används parallellt.
 
 ### 6. Prioritera vilka förmågor som fördjupas först
 
@@ -163,7 +163,7 @@ Det är i detta steg som den gemensamma arkitekturen börjar få konkret värde 
 
 ### 8. Identifiera tvärgående referensarkitekturer
 
-När flera förmågor utvecklats blir återkommande kombinationer synliga. En publik e-tjänst kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett internt handläggningsstöd kan kombinera workflow, regler, data, dokument, integration och observerbarhet.
+När flera förmågor utvecklats blir återkommande kombinationer synliga. En *publik e-tjänst* kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett *internt handläggningsstöd* kan kombinera workflow, regler, data, dokument, integration och observerbarhet.
 
 När samma kombination och samma arkitekturella frågor återkommer kan en referensarkitektur vara mer användbar än att varje förmåga dokumenteras separat.
 

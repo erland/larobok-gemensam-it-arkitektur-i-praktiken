@@ -50,7 +50,7 @@ De två perspektiven konkurrerar inte. En fungerande plattform behöver båda.
 
 Ordet *kund* kan kännas märkligt i en intern IT-organisation. Teamen kan kanske inte fritt välja leverantör, och plattformen finansieras inte genom en traditionell marknadstransaktion. Men kundperspektivet är ändå användbart eftersom det förskjuter uppmärksamheten från vad plattformen producerar till vilket resultat konsumenten får.
 
-För en Container Application Platform kan konsumenten exempelvis vara ett utvecklingsteam som behöver:
+För en *Container Application Platform* kan konsumenten exempelvis vara ett utvecklingsteam som behöver:
 
 - få en ny tjänst körbar,
 - kunna göra säkra releaser,
@@ -316,9 +316,9 @@ Det innebär inte att varje plattform behöver samma organisatoriska roller. Pro
 
 I bokens ansvarmodell behöver man skilja mellan förmågeområde och enskild plattformsprodukt.
 
-Förmågan Data- och informationshantering kan exempelvis omfatta flera erbjudanden:
+Förmågan *Data- och informationshantering* kan exempelvis omfatta flera erbjudanden:
 
-- relationell databastjänst,
+- *relationell databastjänst*,
 - objektlagring,
 - cache,
 - kanske andra framtida datatjänster.

@@ -6,7 +6,7 @@ I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan te
 
 Det är en annan fråga än informationsmodellering. Två verksamhetsområden kan ha väl definierade begrepp och tydligt informationsägarskap men ändå behöva helt olika tekniska mekanismer. En transaktionell ärendedatabas, ett dokumentarkiv, en cache och ett sökindex hanterar alla data, men de har olika ansvar, olika livscykel och olika krav på konsistens och återställning.
 
-Förmågan Data- och informationshantering handlar därför inte om att välja en favoritdatabas. Den handlar om att kunna översätta informationsbehov och kvalitetskrav till lämpliga lagrings- och datahanteringsmekanismer.
+Förmågan *Data- och informationshantering* handlar därför inte om att välja en favoritdatabas. Den handlar om att kunna översätta informationsbehov och kvalitetskrav till lämpliga lagrings- och datahanteringsmekanismer.
 
 En användbar grundregel är:
 
@@ -100,7 +100,7 @@ Detta illustrerar skillnaden mellan att standardisera en teknisk förmåga och a
 
 Dokument, bilder, videofiler och andra större binära objekt har andra egenskaper än transaktionella poster. De kan vara stora, relativt sällan ändras och behöva lagras kostnadseffektivt över lång tid.
 
-Objektlagring är då ofta ett lämpligt tekniskt mönster. Den kan ge:
+*Objektlagring* är då ofta ett lämpligt tekniskt mönster. Den kan ge:
 
 - skalbar lagringskapacitet,
 - enkel hantering av stora objekt,
@@ -327,7 +327,7 @@ Flera logiska databaser kan tekniskt ligga på samma förvaltade plattform. Samt
 
 Ett stödjande IT-område kan med stor fördel erbjuda standardiserade datatjänster, exempelvis:
 
-- relationell databastjänst,
+- *relationell databastjänst*,
 - objektlagring,
 - cachetjänst,
 - dokumentlagring,

@@ -1,0 +1,99 @@
+# Begreppsregister {.unnumbered}
+
+Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löptexten används sparsamt för att signalera att ett uttryck är ett definierat objekt. Hänvisningarna här visar var objektet behandlas mer utförligt; de är inte avsedda att avbryta den löpande läsningen.
+
+- *AI med mänsklig kontroll* — lösningsmönster; kapitel **26**, 23, 36, 34
+- *AI-baserat verksamhetsstöd* — referensarkitektur; kapitel **36**, 35, 34
+- *Analys, sökning och AI* — förmåga; kapitel **16**, 8, 12, 15, 35, 22
+- *API* — teknisk standard; kapitel **17**, 18, 8, 24, 2, 30
+- *API Management* — plattform/tjänst; kapitel **17**, 8, 24, 2, 28, 12
+- *Applikationsexekvering och runtime* — förmåga; kapitel **19**, 8, 2, 30, 21, 32
+- *Arbetsplats, samarbete och produktivitet* — förmåga; kapitel **22**, 8, 21
+- *Artifact Repository* — plattform/tjänst; kapitel **21**, 36
+- *Asynkron meddelandekommunikation* — lösningsmönster; kapitel **24**, 8, 2, 17, 35, 23
+- *Backend for Frontend* — lösningsmönster; kapitel **24**, 2, 12, 23, 31, 6
+- *Backup and Recovery Service* — plattform/tjänst; kapitel **20**
+- *Backup och verifierad återställning* — lösningsmönster; kapitel **27**, 2, 23
+- *Backup och återställning* — teknisk standard; kapitel **20**, 15, 11, 32, 9
+- *BI och rapportering* — teknisk standard; kapitel **16**
+- *Build once, promote many* — lösningsmönster; kapitel **27**, 2, 21, 35, 23, 26
+- *Business Intelligence and Reporting* — plattform/tjänst; kapitel **16**
+- *Business Rules Platform* — plattform/tjänst; kapitel **14**
+- *Cache Service* — plattform/tjänst; kapitel **15**
+- *Cache-aside* — lösningsmönster; kapitel **25**, 2, 15, 23, 34
+- *Case Management Platform* — plattform/tjänst; kapitel **13**
+- *Central Logging Service* — plattform/tjänst; kapitel **20**
+- *CI/CD* — teknisk standard; kapitel **21**, 18, 8, 2, 30, 28
+- *CI/CD Platform* — plattform/tjänst; kapitel **21**, 28
+- *Collaboration and Workspace Services* — plattform/tjänst; kapitel **22**
+- *Container* — teknisk standard; kapitel **19**, 18, 8, 2, 30, 28
+- *Container Application Platform* — plattform/tjänst; kapitel **19**, 2, 28, 32, 35, 31
+- *Containerbaserad tjänst* — referensarkitektur; kapitel **36**, 35, 34
+- *Containeriserad stateless tjänst* — lösningsmönster; kapitel **26**, 2, 23, 36
+- *Containerplattform* — teknisk standard; kapitel **19**, 2, 30, 28, 4, 3
+- *Data Integration / ETL* — plattform/tjänst; kapitel **17**
+- *Data- och informationshantering* — förmåga; kapitel **15**, 8, 2, 13, 11, 35
+- *Design System* — plattform/tjänst; kapitel **12**, 4, 36
+- *Developer Tooling* — plattform/tjänst; kapitel **21**
+- *Developer Tooling* — teknisk standard; kapitel **21**
+- *Digital arbetsplats* — referensarkitektur; kapitel **36**, 8, 35, 22, 34
+- *Driftbarhet och motståndskraft* — förmåga; kapitel **20**, 8, 2, 30, 12, 13
+- *Enterprise Messaging* — plattform/tjänst; kapitel **17**, 8, 24, 2, 28, 35
+- *Externaliserade verksamhetsregler* — lösningsmönster; kapitel **25**, 2, 35, 23, 36, 34
+- *Git och repository* — teknisk standard; kapitel **21**
+- *Human workflow* — lösningsmönster; kapitel **25**, 2, 35, 23, 36, 26
+- *Identitet och tillit* — förmåga; kapitel **18**, 8, 2, 30, 12, 13
+- *Identitets- och federationsprotokoll* — teknisk standard; kapitel **18**
+- *Informationsutbyte med annan myndighet* — referensarkitektur; kapitel **36**
+- *Integration och kommunikation* — förmåga; kapitel **17**, 8, 24, 2, 30, 12
+- *Integrationsintensivt verksamhetssystem* — referensarkitektur; kapitel **36**, 35, 34
+- *Interaktion, presentation och kanaler* — förmåga; kapitel **12**, 8, 2, 35, 9
+- *Internt handläggningsstöd* — referensarkitektur; kapitel **36**, 2, 12, 7, 1, 35
+- *Java Application Runtime* — plattform/tjänst; kapitel **19**
+- *Java Application Runtime* — teknisk standard; kapitel **19**
+- *Java persistence* — teknisk standard; kapitel **15**
+- *Kontrollerad samarbetsyta* — lösningsmönster; kapitel **22**, 23, 36
+- *Linux serveroperativsystem* — teknisk standard; kapitel **19**
+- *Low-Code Productivity Platform* — plattform/tjänst; kapitel **22**
+- *Managed LLM Service* — plattform/tjänst; kapitel **16**
+- *Messaging och events* — teknisk standard; kapitel **17**
+- *Metrics, Monitoring and Tracing* — plattform/tjänst; kapitel **20**
+- *Microsoft 365* — teknisk standard; kapitel **22**, 28
+- *Myndighetsgemensam kommunikation* — teknisk standard; kapitel **17**
+- *Nätverks- och tjänstekommunikation* — teknisk standard; kapitel **17**
+- *Object Storage Service* — plattform/tjänst; kapitel **15**, 35
+- *Objektlagring* — teknisk standard; kapitel **15**, 8, 2, 11, 35, 36
+- *Observerbarhet* — teknisk standard; kapitel **20**
+- *Observerbarhet för distribuerade tjänster* — lösningsmönster; kapitel **27**, 2, 35, 23, 26
+- *PKI / Certificate Service* — plattform/tjänst; kapitel **18**
+- *Power Platform governance* — teknisk standard; kapitel **22**
+- *Process, workflow och ärendehantering* — förmåga; kapitel **13**, 8, 2, 35, 25, 14
+- *Productivity AI Assistant* — plattform/tjänst; kapitel **22**, 36
+- *Productivity Suite* — plattform/tjänst; kapitel **22**, 28, 36
+- *Programvaruutveckling och leverans* — förmåga; kapitel **21**, 8, 2, 30, 19, 35
+- *Publicera/prenumerera* — lösningsmönster; kapitel **24**, 8, 2, 17, 35, 23
+- *Publik e-tjänst* — referensarkitektur; kapitel **36**, 24, 2, 12, 4, 7
+- *RAG/Knowledge Service* — plattform/tjänst; kapitel **16**, 36
+- *Regler och beslut* — förmåga; kapitel **14**, 8, 12, 13, 35, 25
+- *Relationell databastjänst* — plattform/tjänst; kapitel **15**, 8, 2, 28, 35, 29
+- *Relationella databaser* — teknisk standard; kapitel **15**
+- *Release- och versionsidentifiering* — teknisk standard; kapitel **21**
+- *Retrieval-Augmented Generation (RAG)* — lösningsmönster; kapitel **26**, 18, 8, 2, 28, 12
+- *Search and Indexing Service* — plattform/tjänst; kapitel **16**, 28
+- *Secrets* — teknisk standard; kapitel **18**, 2, 30, 28, 4, 21
+- *Secrets Management* — plattform/tjänst; kapitel **18**, 30, 28, 9, 36, 26
+- *Secure Government Connectivity* — plattform/tjänst; kapitel **17**
+- *Service Identity* — plattform/tjänst; kapitel **18**, 23, 26
+- *Service Identity* — teknisk standard; kapitel **18**, 23, 26
+- *Source Code Management* — plattform/tjänst; kapitel **21**, 36
+- *Structured Government Exchange* — plattform/tjänst; kapitel **17**
+- *System of record och härledda kopior* — lösningsmönster; kapitel **25**, 15, 11, 23
+- *Sökplattform* — teknisk standard; kapitel **16**, 11
+- *Tjänsteidentitet* — lösningsmönster; kapitel **26**, 18, 8, 2, 30, 12
+- *Virtual Machine Runtime* — plattform/tjänst; kapitel **19**
+- *Web Application Framework* — plattform/tjänst; kapitel **12**
+- *Web frontend* — teknisk standard; kapitel **12**
+- *Workflow/Process Platform* — plattform/tjänst; kapitel **13**
+- *Workforce Identity* — plattform/tjänst; kapitel **18**
+
+Fetstilt kapitelnummer anger huvudsaklig behandling. Övriga nummer visar kompletterande behandling där begreppet förekommer eller används i ett närliggande resonemang.

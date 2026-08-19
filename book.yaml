@@ -58,6 +58,7 @@ chapters:
 - chapters/36-sju-aterkommande-losningsscenarier.md
 - chapters/37-governance-forvaltning-och-evolution.md
 - chapters/kallor-och-vidare-lasning.md
+- chapters/begreppsregister.md
 exports:
   epub:
     enabled: true

@@ -8,7 +8,7 @@ Kärnfrågan i kapitlet är därför:
 
 > Vad behöver en organisation erbjuda för att applikationer och andra workloads ska kunna köras standardiserat, säkert och förvaltningsbart utan att onödigt låsa lösningarna till en viss produkt eller exekveringsmodell?
 
-Kapitlet behandlar den gemensamma IT-förmågan Applikationsexekvering och runtime. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
+Kapitlet behandlar den gemensamma IT-förmågan *Applikationsexekvering och runtime*. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
 
 ## Workloaden är utgångspunkten
 
@@ -462,8 +462,8 @@ I en större organisation är det ofta bättre att erbjuda ett begränsat antal 
 
 Exempelvis kan katalogen innehålla:
 
-- Container Application Platform för containeriserade workloads,
-- Java Application Runtime för förvaltad Java-exekvering,
+- *Container Application Platform* för containeriserade workloads,
+- *Java Application Runtime* för förvaltad Java-exekvering,
 - Virtual Machine Runtime för workloads som behöver fullare operativsystemsmiljö,
 - särskilda batch- eller funktionsprofiler när behovet motiverar det.
 

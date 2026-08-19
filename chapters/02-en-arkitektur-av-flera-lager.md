@@ -144,7 +144,7 @@ Exempel är:
 
 - Integration och kommunikation
 - Identitet och tillit
-- Applikationsexekvering och runtime
+- *Applikationsexekvering och runtime*
 - Driftbarhet och motståndskraft
 - Programvaruutveckling och leverans
 
@@ -165,7 +165,7 @@ Ett lösningsmönster är ett återanvändbart sätt att strukturera ett återko
 Exempel är:
 
 - Backend for Frontend,
-- asynkron meddelandekommunikation,
+- *asynkron meddelandekommunikation*,
 - publicera/prenumerera,
 - human workflow,
 - externaliserade verksamhetsregler,
@@ -393,7 +393,7 @@ Tjänsten behöver bland annat vara tillgänglig under definierade perioder, sky
 
 Behovet berör exempelvis:
 
-- Interaktion, presentation och kanaler
+- *Interaktion, presentation och kanaler*
 - Identitet och tillit
 - Process, workflow och ärendehantering
 - Integration och kommunikation

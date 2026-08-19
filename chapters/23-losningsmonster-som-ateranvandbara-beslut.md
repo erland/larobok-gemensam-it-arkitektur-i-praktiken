@@ -62,7 +62,7 @@ Ett mönster minskar alltså inte behovet av arkitekturtänkande. Det koncentrer
 
 Ett starkt mönster börjar inte med lösningen. Det börjar med kontexten.
 
-Kontexten beskriver den situation där problemet brukar uppstå. För ett mönster för asynkron meddelandekommunikation kan kontexten exempelvis vara att två delar av ett system behöver utbyta arbete men inte bör vara tidsmässigt beroende av att båda är tillgängliga samtidigt.
+Kontexten beskriver den situation där problemet brukar uppstå. För ett mönster för *asynkron meddelandekommunikation* kan kontexten exempelvis vara att två delar av ett system behöver utbyta arbete men inte bör vara tidsmässigt beroende av att båda är tillgängliga samtidigt.
 
 Därefter behöver problemet formuleras. Problemet är inte ”vi behöver en meddelandekö”. Det är snarare något i stil med:
 
@@ -186,7 +186,7 @@ Ett mönsterbibliotek blir därför starkare om varje mönster tydligt beskriver
 
 Verkliga arkitekturer är sällan identiska. Därför behöver mönster kunna beskriva variation points.
 
-Ta publicera/prenumerera som exempel. Grundidén är att producenter publicerar information utan att känna alla konsumenter. Men lösningen kan variera i exempelvis:
+Ta *publicera/prenumerera* som exempel. Grundidén är att producenter publicerar information utan att känna alla konsumenter. Men lösningen kan variera i exempelvis:
 
 - hur många typer av konsumenter som finns,
 - om prenumerationer är statiska eller dynamiska,
@@ -270,7 +270,7 @@ En princip uttrycker beslutsriktning.
 
 Ett mönster beskriver däremot en återkommande lösningsstruktur för en viss typ av problem.
 
-> Build once, promote many.
+> *Build once, promote many*.
 
 > Backend for Frontend.
 

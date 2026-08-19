@@ -6,9 +6,9 @@ Kapitel 20 och 21 beskrev förmågorna driftbarhet respektive leverans. Här åt
 
 I det här kapitlet fördjupar vi tre lösningsmönster från bokens mönsterbibliotek:
 
-- Build once, promote many,
-- Observerbarhet för distribuerade tjänster,
-- Backup och verifierad återställning.
+- *Build once, promote many*,
+- *Observerbarhet för distribuerade tjänster*,
+- *Backup och verifierad återställning*.
 
 De tre mönstren angriper olika problem. Build once, promote many skapar förtroende för att den artefakt som når produktion är samma artefakt som testades. Observerbarhet gör det möjligt att förstå en körande lösnings beteende över tjänste- och plattformsgränser. Backup och verifierad återställning gör det möjligt att återfå data och nödvändig konfiguration efter förlust eller korruption.
 

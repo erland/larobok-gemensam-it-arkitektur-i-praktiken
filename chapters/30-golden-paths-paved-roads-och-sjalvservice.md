@@ -20,7 +20,7 @@ Anta att organisationen erbjuder:
 - CI/CD,
 - artefaktregister,
 - containerplattform,
-- secrets management,
+- *secrets management*,
 - observerbarhet,
 - tjänsteidentitet,
 - databastjänst.
@@ -585,8 +585,8 @@ En golden path kan gå tvärs över flera gemensamma IT-förmågor.
 
 Exempelvis kan ”ny containeriserad tjänst” beröra:
 
-- Programvaruutveckling och leverans,
-- Applikationsexekvering och runtime,
+- *Programvaruutveckling och leverans*,
+- *Applikationsexekvering och runtime*,
 - Identitet och tillit,
 - Driftbarhet och motståndskraft,
 - Integration och kommunikation.

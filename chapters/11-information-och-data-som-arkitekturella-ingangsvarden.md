@@ -403,7 +403,7 @@ Förmågeansvariga behöver omsätta de gemensamma principerna till återanvänd
 Det kan exempelvis innebära:
 
 - plattformstjänster för relationsdata, objektlagring eller sökning,
-- mönster för system of record och härledda kopior,
+- mönster för *system of record och härledda kopior*,
 - standarder för schema- och kontraktshantering,
 - tjänster för master- eller referensdata där sådana faktiskt behövs,
 - datakataloger och metadatafunktioner,
@@ -508,14 +508,14 @@ Om många domäner exempelvis behöver:
 
 - hantera stora dokument,
 - söka över härledda kopior,
-- lagra relationsdata med backup och återställning,
+- lagra relationsdata med *backup och återställning*,
 - hantera gemensamma kodverk,
 - distribuera förändringar som events,
 - eller lagra historik med tydlig retention,
 
 är det inte nödvändigtvis ett tecken på att alla ska använda samma applikation.
 
-Det kan i stället vara ett tecken på att organisationen behöver gemensamma data- och informationshanteringsförmågor, integrationsförmågor och plattformstjänster.
+Det kan i stället vara ett tecken på att organisationen behöver gemensamma *data- och informationshantering*sförmågor, integrationsförmågor och plattformstjänster.
 
 Här möts del II och del III i boken.
 

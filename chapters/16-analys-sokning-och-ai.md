@@ -4,7 +4,7 @@ Samma information kan användas på helt olika sätt. En handläggare kan vilja 
 
 Alla dessa behov använder data, men de är inte samma arkitekturproblem.
 
-Det är därför missvisande att samla allt som kallas ”data och AI” i en enda teknisk lösning. Fulltextsökning, rapportering, statistisk analys, maskininlärning och generativ AI har olika syften, olika kvalitetsmått, olika risker och olika sätt att förvaltas. En gemensam förmåga för Analys, sökning och AI behöver kunna stödja flera sådana arbetssätt utan att sudda ut deras skillnader.
+Det är därför missvisande att samla allt som kallas ”data och AI” i en enda teknisk lösning. Fulltextsökning, rapportering, statistisk analys, maskininlärning och generativ AI har olika syften, olika kvalitetsmått, olika risker och olika sätt att förvaltas. En gemensam förmåga för *Analys, sökning och AI* behöver kunna stödja flera sådana arbetssätt utan att sudda ut deras skillnader.
 
 Kärnfrågan i kapitlet är:
 
@@ -654,8 +654,8 @@ Exempel på sådana erbjudanden kan vara:
 
 - Search & Indexing Service – indexering, sökning, relevansmekanismer och standardiserade driftfunktioner,
 - BI & Reporting Service – gemensam plattform för analys och rapportering,
-- Managed LLM Service – kontrollerad åtkomst till godkända språkmodeller,
-- RAG/Knowledge Service – gemensamma mekanismer för retrieval, indexering och generering över godkända kunskapskällor,
+- *Managed LLM Service* – kontrollerad åtkomst till godkända språkmodeller,
+- *RAG/Knowledge Service* – gemensamma mekanismer för retrieval, indexering och generering över godkända kunskapskällor,
 - Model Evaluation Support – gemensamma verktyg och arbetssätt för utvärdering och regressionstest.
 
 Men varje erbjudande behöver fortfarande tydliggöra:

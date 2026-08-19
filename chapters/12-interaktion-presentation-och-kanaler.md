@@ -6,7 +6,7 @@ Det kan vara en publik e-tjänst, ett internt handläggningsstöd, en mobil klie
 
 Samtidigt är användargränssnitt ett område där lokal variation lätt växer snabbt. Ett team väljer ett frontend-ramverk, ett annat skapar egna komponenter, ett tredje bygger en särskild notifieringslösning och ett fjärde etablerar en ny portalstruktur. Varje beslut kan vara rimligt i sitt lokala sammanhang, men tillsammans kan de skapa en flora av tekniker, interaktionsmönster och förvaltningsmodeller som är dyr att bära.
 
-Förmågan Interaktion, presentation och kanaler handlar därför om vad ett stödjande IT-område varaktigt behöver kunna erbjuda för att organisationens digitala gränssnitt ska bli användbara, tillgängliga, säkra, förändringsbara och kostnadseffektiva.
+Förmågan *Interaktion, presentation och kanaler* handlar därför om vad ett stödjande IT-område varaktigt behöver kunna erbjuda för att organisationens digitala gränssnitt ska bli användbara, tillgängliga, säkra, förändringsbara och kostnadseffektiva.
 
 Det betyder inte att en central funktion ska designa alla gränssnitt. Det betyder heller inte att alla kanaler ska se identiska ut eller byggas med samma teknik. Förmågan ska i stället skapa en gemensam grund där sådant som vinner på återanvändning kan standardiseras, samtidigt som verksamhetsnära team behåller ansvar för sina faktiska användare, arbetsuppgifter och funktionella behov.
 
@@ -51,7 +51,7 @@ Förmågan behöver typiskt omfatta stöd för flera typer av frågor:
 
 - webbarkitektur,
 - visuella och interaktiva designmönster,
-- design system och återanvändbara UI-komponenter,
+- *design system* och återanvändbara UI-komponenter,
 - formulär och felpresentation,
 - navigation och informationspresentation,
 - responsivitet,
@@ -251,7 +251,7 @@ Det är en viktig skillnad mellan en standardiserad förmåga och teknikmonokult
 
 ## Web Application Framework som plattformstjänst
 
-Ett gemensamt Web Application Framework kan vara ett konkret plattformserbjudande inom förmågan.
+Ett gemensamt *Web Application Framework* kan vara ett konkret plattformserbjudande inom förmågan.
 
 Erbjudandet bör dock inte definieras som namnet på ett specifikt ramverk. Dess konsumentvärde är större än så.
 

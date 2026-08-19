@@ -50,7 +50,7 @@ Detta är inte främst ett plattformsproblem. Men en gemensam IT-arkitektur beh�
 
 ### Säkerhetsmässig fragmentering
 
-Om säkerhetsmekanismer varierar kraftigt mellan lösningar blir det svårt att veta vilka skydd som faktiskt gäller. Autentisering, tjänsteidentiteter, certifikat, secrets, loggning och åtkomstkontroll kan då behöva bedömas separat i varje system.
+Om säkerhetsmekanismer varierar kraftigt mellan lösningar blir det svårt att veta vilka skydd som faktiskt gäller. Autentisering, *tjänsteidentitet*er, certifikat, secrets, loggning och åtkomstkontroll kan då behöva bedömas separat i varje system.
 
 Gemensamma säkerhetsmekanismer kan minska denna variation, men bara om de bygger på tydliga behov och ansvar. Att införa en gemensam produkt utan en gemensam säkerhetsmodell löser inte problemet.
 
@@ -115,7 +115,7 @@ Förmågetänkandet ger ett sätt att beskriva vad organisationen behöver kunna
 
 En organisation kan exempelvis behöva kunna:
 
-- hantera identitet och tillit,
+- hantera *identitet och tillit*,
 - integrera system och utbyta information,
 - köra applikationer,
 - lagra och hantera data,
@@ -239,7 +239,7 @@ Stabilitet betyder därför inte oföränderlighet. Det betyder att olika delar 
 
 Tänk dig en större organisation med tre utvecklingsinitiativ:
 
-1. ett internt handläggningsstöd,
+1. ett *internt handläggningsstöd*,
 2. en publik e-tjänst,
 3. ett system för informationsutbyte med en extern organisation.
 

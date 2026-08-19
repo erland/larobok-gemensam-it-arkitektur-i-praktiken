@@ -84,7 +84,7 @@ Det betyder inte att befintlig teknik ignoreras. Kapitel 3 visade att installera
 
 En gemensam princip bör normalt överleva fler produktgenerationer än en teknisk standard.
 
-Om organisationen byter containerplattform behöver principen ”separera stabil arkitektur från föränderlig teknik” fortfarande vara meningsfull. En princip som säger ”alla tjänster ska köras i produkt X” gör det inte.
+Om organisationen byter *containerplattform* behöver principen ”separera stabil arkitektur från föränderlig teknik” fortfarande vara meningsfull. En princip som säger ”alla tjänster ska köras i produkt X” gör det inte.
 
 Detta hänger ihop med metamodellen i kapitel 2. Ju högre upp ett artefaktslag ligger i abstraktionskedjan, desto större skäl finns att hålla det relativt oberoende av dagens realisering.
 
@@ -440,7 +440,7 @@ De skapar en gemensam beslutslogik.
 
 Ett förmågeområde kan behöva mer specifika principer som fortfarande är teknikoberoende.
 
-Integration och kommunikation kan exempelvis behöva principer om kontraktsägarskap, koppling eller när synkron respektive asynkron interaktion är lämplig.
+*Integration och kommunikation* kan exempelvis behöva principer om kontraktsägarskap, koppling eller när synkron respektive asynkron interaktion är lämplig.
 
 Dataområdet kan behöva principer om informationsägarskap, härledda kopior eller livscykel.
 

@@ -8,7 +8,7 @@ En av de viktigaste arkitekturfrågorna inom denna förmåga är därför inte *
 
 Det är först när svaret på den frågan är tydligt som tekniska val blir meningsfulla.
 
-Förmågan Process, workflow och ärendehantering handlar om att stödja verksamhetsförlopp som behöver hållas ihop över tid, ofta över flera aktiviteter, aktörer och system. Den blir särskilt relevant när tillståndet i ett flöde måste vara synligt, återupptagningsbart, spårbart eller möjligt att förändra som en sammanhängande process.
+Förmågan *Process, workflow och ärendehantering* handlar om att stödja verksamhetsförlopp som behöver hållas ihop över tid, ofta över flera aktiviteter, aktörer och system. Den blir särskilt relevant när tillståndet i ett flöde måste vara synligt, återupptagningsbart, spårbart eller möjligt att förändra som en sammanhängande process.
 
 Typiska behov är att:
 
@@ -106,7 +106,7 @@ Det ställer krav på bland annat:
 - versionshantering av processdefinitioner,
 - observerbarhet och felsökning över lång tid.
 
-Här möter processförmågan andra förmågor. Meddelanden och events hör hemma i Integration och kommunikation. Lagring av verksamhetsinformation hör hemma i Data- och informationshantering. Återstart, övervakning och felhantering berör Driftbarhet och motståndskraft. Processförmågan använder dessa mekanismer för att hålla ihop verksamhetsförloppet.
+Här möter processförmågan andra förmågor. Meddelanden och events hör hemma i *Integration och kommunikation*. Lagring av verksamhetsinformation hör hemma i Data- och informationshantering. Återstart, övervakning och felhantering berör Driftbarhet och motståndskraft. Processförmågan använder dessa mekanismer för att hålla ihop verksamhetsförloppet.
 
 ## Workflow och mänskliga arbetsuppgifter
 
@@ -212,7 +212,7 @@ Anta att en process ska avgöra om ett ärende får gå vidare. Själva flödet 
 
 > Om behörighetsprövningen är godkänd, fortsätt till registrering. Annars gå till manuell granskning.
 
-Men logiken som avgör *om behörighetsprövningen är godkänd* kan höra hemma i en domäntjänst eller i förmågan Regler och beslut.
+Men logiken som avgör *om behörighetsprövningen är godkänd* kan höra hemma i en domäntjänst eller i förmågan *Regler och beslut*.
 
 Denna separation ger flera fördelar:
 

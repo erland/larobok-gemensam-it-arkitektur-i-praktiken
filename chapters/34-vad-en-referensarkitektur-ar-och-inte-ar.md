@@ -61,8 +61,8 @@ Den beskriver exempelvis:
 - internt handläggningsstöd,
 - integrationsintensivt verksamhetssystem,
 - informationsutbyte med extern part,
-- containerbaserad tjänst,
-- AI-baserat verksamhetsstöd,
+- *containerbaserad tjänst*,
+- *AI-baserat verksamhetsstöd*,
 - digital arbetsplats.
 
 Det är lösningsklasser där tillräckligt många arkitekturfrågor återkommer för att gemensam vägledning ska ge värde.
@@ -147,7 +147,7 @@ Ett lösningsmönster fokuserar på ett återkommande designproblem.
 Exempel från tidigare kapitel är:
 
 - Backend for Frontend,
-- asynkron meddelandekommunikation,
+- *asynkron meddelandekommunikation*,
 - human workflow,
 - externaliserade verksamhetsregler,
 - cache-aside,

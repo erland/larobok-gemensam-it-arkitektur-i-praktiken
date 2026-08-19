@@ -16,3 +16,16 @@ Projektet befinner sig i revisionsfas. Bokspecifikation, kapitelplan, källpolic
 ## Källapparat
 
 Projektet använder selektiva kapitelvisa slutnoter (`[K1]`, `[K2]` …), avsnittet **Källor och vidare läsning** i relevanta kapitel samt en samlad bibliografi i `chapters/kallor-och-vidare-lasning.md`. Reglerna finns i `docs/kallpolicy.md` och källregistret i `docs/kallregister.md`.
+
+
+## Begreppsregister
+
+Boken innehåller ett alfabetiskt begreppsregister. Centrala arkitekturobjekt markeras sparsamt med kursiv stil i löptexten; navigeringen sker i registret i stället för genom kapitelhänvisningar i texten.
+
+## Paketera projektet
+
+Skapa distributions-ZIP med `scripts/package_project.py`. Skriptet exkluderar alltid `.git`, `__pycache__`, `__MACOSX`, `.DS_Store` och `*.pyc`, så att lokala Git- och arbetsfiler inte följer med leveransen.
+
+```bash
+python3 scripts/package_project.py . --output ../gemensam-it-arkitektur-i-praktiken-projekt.zip
+```

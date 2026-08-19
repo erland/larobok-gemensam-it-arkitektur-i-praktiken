@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 > Vilken kommunikationsform passar behovet – och vilken koppling mellan parterna är vi beredda att acceptera?
 
-Kapitlet handlar om den gemensamma IT-förmågan Integration och kommunikation. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering behandlades i kapitel 13. Informationsägarskap och datalivscykel behandlades i kapitel 11 och 15. Identitet och tillit kommer i kapitel 18.
+Kapitlet handlar om den gemensamma IT-förmågan *Integration och kommunikation*. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering behandlades i kapitel 13. Informationsägarskap och datalivscykel behandlades i kapitel 11 och 15. Identitet och tillit kommer i kapitel 18.
 
 ## Integration är ett beroende mellan självständiga parter
 
@@ -499,8 +499,8 @@ Men även här behöver ansvar hållas isär. Integrationsförmågan definierar 
 Ett större IT-område kan behöva flera gemensamma erbjudanden snarare än ”en integrationsplattform”. Exempel är:
 
 - API Management,
-- Enterprise Messaging,
-- Data Integration / ETL,
+- *Enterprise Messaging*,
+- *Data Integration / ETL*,
 - Managed File Transfer eller motsvarande funktion,
 - säker extern konnektivitet,
 - tjänster för strukturerat informationsutbyte.

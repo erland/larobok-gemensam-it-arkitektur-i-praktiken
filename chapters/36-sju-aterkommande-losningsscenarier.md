@@ -51,7 +51,7 @@ Det vanligaste felgreppet är att göra plattformen till verksamhetsmodell. Work
 
 ## Scenario 2: Publik e-tjänst
 
-En publik e-tjänst möter externa användare över internet. Det gör användarupplevelse, identitet, exponeringsyta och skydd av information särskilt viktiga. Samtidigt är e-tjänsten ofta bara den publika delen av en längre verksamhetsprocess.
+En *publik e-tjänst* möter externa användare över internet. Det gör användarupplevelse, identitet, exponeringsyta och skydd av information särskilt viktiga. Samtidigt är e-tjänsten ofta bara den publika delen av en längre verksamhetsprocess.
 
 ### Drivande behov
 
@@ -81,7 +81,7 @@ Ett vanligt fel är att behandla ”publik e-tjänst” som ett färdigt produkt
 
 ## Scenario 3: Integrationsintensivt verksamhetssystem
 
-I ett integrationsintensivt verksamhetssystem är kommunikation med andra system inte perifer infrastruktur utan en dominerande del av lösningens beteende. Systemet kan ha många API-beroenden, meddelandeflöden, event, filer och externa beroenden.
+I ett *integrationsintensivt verksamhetssystem* är kommunikation med andra system inte perifer infrastruktur utan en dominerande del av lösningens beteende. Systemet kan ha många API-beroenden, meddelandeflöden, event, filer och externa beroenden.
 
 ### Drivande behov
 

@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 > Hur etablerar och förvaltar vi tillit mellan människor, tjänster och organisationer utan att varje lösning bygger sin egen identitetsvärld?
 
-Kapitlet behandlar den gemensamma IT-förmågan Identitet och tillit. Fokus ligger på identiteter, autentisering, federation, tjänsteidentiteter, auktorisationsunderlag, PKI, certifikat och secrets. Säkerhet i vidare mening är däremot tvärgående. Hotmodellering, nätsegmentering, säker kodning, sårbarhetshantering och informationsskydd kan inte reduceras till identitetsförmågan.
+Kapitlet behandlar den gemensamma IT-förmågan *Identitet och tillit*. Fokus ligger på identiteter, autentisering, federation, tjänsteidentiteter, auktorisationsunderlag, PKI, certifikat och secrets. Säkerhet i vidare mening är däremot tvärgående. Hotmodellering, nätsegmentering, säker kodning, sårbarhetshantering och informationsskydd kan inte reduceras till identitetsförmågan.
 
 ## Identitet är mer än ett användarnamn
 
@@ -113,7 +113,7 @@ Därför bör tillit dokumenteras som en avsiktlig relation med ägare och livsc
 
 I större organisationer finns normalt ett behov av en gemensam identitetsdomän för den egna arbetsstyrkan. Det omfattar exempelvis anställda, konsulter och andra personer som arbetar inom organisationens miljö.
 
-En sådan workforce identity-förmåga kan ge stöd för:
+En sådan *workforce identity*-förmåga kan ge stöd för:
 
 - central autentisering,
 - single sign-on,
@@ -342,7 +342,7 @@ Ett återkommande anti-pattern är att secrets hamnar i:
 
 Problemet är inte bara risken för läckage. Det blir också svårt att rotera hemligheten, veta vilka kopior som finns och avveckla åtkomst.
 
-En gemensam secrets management-tjänst kan ge stöd för:
+En gemensam *secrets management*-tjänst kan ge stöd för:
 
 - skyddad lagring,
 - kontrollerad åtkomst,

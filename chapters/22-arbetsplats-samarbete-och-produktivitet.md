@@ -4,7 +4,7 @@ Den digitala arbetsplatsen är lätt att underskatta arkitekturellt. Ordbehandli
 
 En samarbetsyta kan börja som ett praktiskt ställe för projektfiler och gradvis utvecklas till den enda plats där viktiga beslut, avtal eller verksamhetsuppgifter finns. Ett kalkylblad kan gå från personlig analys till kritisk planeringsmodell. En enkel low-code-applikation kan bli central för en verksamhetsprocess. En AI-assistent kan få tillgång till stora mängder arbetsmaterial och göra information enklare att hitta än organisationens ursprungliga behörighets- och informationsstruktur var designad för.
 
-Förmågan Arbetsplats, samarbete och produktivitet handlar därför inte bara om vilka kontorsverktyg organisationen tillhandahåller. Den handlar om att skapa en gemensam digital arbetsmiljö där medarbetare kan arbeta effektivt utan att produktivitetsverktygen oavsiktligt blir oreglerade verksamhetssystem, parallella system of record eller genvägar runt organisationens informations- och säkerhetsprinciper.
+Förmågan *Arbetsplats, samarbete och produktivitet* handlar därför inte bara om vilka kontorsverktyg organisationen tillhandahåller. Den handlar om att skapa en gemensam digital arbetsmiljö där medarbetare kan arbeta effektivt utan att produktivitetsverktygen oavsiktligt blir oreglerade verksamhetssystem, parallella system of record eller genvägar runt organisationens informations- och säkerhetsprinciper.
 
 Den centrala arkitekturfrågan är:
 

@@ -222,7 +222,7 @@ Exempel:
 
 - gemensam CI/CD minskar tiden varje team lägger på pipelinebygge,
 - central identitetsfederation minskar lokala integrationer,
-- en standardiserad containerplattform minskar variation i drift,
+- en standardiserad *containerplattform* minskar variation i drift,
 - gemensam observerbarhet minskar felsökningstid,
 - golden paths minskar ledtid och felkonfigurationer.
 
@@ -409,7 +409,7 @@ Det kan vara värdefullt att standardisera exempelvis:
 
 - kostnadsobjekt,
 - ägare,
-- produkt-/tjänsteidentitet,
+- produkt-/*tjänsteidentitet*,
 - konsumtionsenheter,
 - miljö,
 - kostnadstyp,

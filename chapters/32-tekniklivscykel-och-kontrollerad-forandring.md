@@ -30,7 +30,7 @@ Patchnivå och konfiguration     förändras kontinuerligt
 
 Poängen är inte att varje lager alltid följer exakt denna takt. Poängen är att de inte bör vara hårt sammanbundna.
 
-Om en förmågebeskrivning säger att organisationen erbjuder ”OpenShift version X” har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken containerplattform som för närvarande är godkänd är förändringen placerad där den hör hemma.
+Om en förmågebeskrivning säger att organisationen erbjuder ”OpenShift version X” har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken *containerplattform* som för närvarande är godkänd är förändringen placerad där den hör hemma.
 
 Detta gör livscykelhantering möjlig utan att hela arkitekturmodellen behöver skrivas om vid varje teknikskifte.
 
