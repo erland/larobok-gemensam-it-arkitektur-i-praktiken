@@ -58,3 +58,4 @@
 | 53 | 2026-08-19T11:34:44Z | Korrigerade PDF-fontnamn för XeLaTeX/fontspec | `publishing/pdf-template.tex` | `gemensam-it-arkitektur-i-praktiken-projekt-rev53.zip` |
 | 54 | 2026-08-19T11:55:48Z | Korrigerade Pandoc-highlighting i PDF-mallen efter misslyckad Preview-körning | `publishing/pdf-template.tex` | `gemensam-it-arkitektur-i-praktiken-projekt-rev54.zip` |
 | 55 | 2026-08-19T11:57:33Z | Korrigerade Pandoc-highlighting och monospaced-font i PDF-export efter Preview-fel | `.github/workflows/02-build-preview.yml`, `.github/workflows/03-release.yml`, `project-index.md`, `publishing/pdf-template.tex` | `gemensam-it-arkitektur-i-praktiken-projekt-rev55.zip` |
+| 56 | 2026-08-19T13:54:58Z | Justera PDF- och EPUB-layout: TOC, rubriknumrering, titelsidor och kapitelstarter | `book.yaml`, `publishing/epub.css`, `publishing/fix-epub-after-pandoc.py`, `publishing/pdf-template.tex` | `gemensam-it-arkitektur-i-praktiken-projekt-rev56.zip` |

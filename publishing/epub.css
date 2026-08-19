@@ -6,3 +6,44 @@ img { max-width: 100%; height: auto; }
 table { border-collapse: collapse; width: 100%; }
 th, td { border: 1px solid #999; padding: 0.35em 0.5em; vertical-align: top; }
 pre { white-space: pre-wrap; padding: 0.7em; }
+
+/* Titel- och kapitelstarter */
+.titlepage {
+  text-align: center;
+  padding: 18vh 8% 0;
+  break-after: page;
+  page-break-after: always;
+}
+.titlepage h1.title {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.15;
+}
+.titlepage .subtitle {
+  margin: 1.2em auto 0;
+  max-width: 34em;
+  text-align: center;
+  font-size: 1.05em;
+}
+.titlepage .author {
+  margin-top: 10em;
+  text-align: center;
+  font-size: 1.1em;
+}
+.titlepage .date,
+.titlepage .rights {
+  display: none;
+}
+h1 .chapter-number,
+h1 .chapter-title {
+  display: block;
+}
+h1 .chapter-number {
+  margin-bottom: 0.25em;
+  font-size: 0.78em;
+  font-weight: normal;
+}
+h1 .chapter-title {
+  font-size: 1em;
+}
