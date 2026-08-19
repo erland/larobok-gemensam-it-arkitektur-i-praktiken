@@ -64,7 +64,7 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 - Slutlig målomfattning efter att 3–5 provkapitel skrivits.
 
 ## Nästa rekommenderade steg
-- Kapitel 36 – Sju återkommande lösningsscenarier är skapat som första utkast; nästa kapitel är 37 – Governance, förvaltning och evolution.
+- Kapitel 37 – Governance, förvaltning och evolution är skapat som första utkast. Därmed är del VI och samtliga 37 planerade huvudkapitel kompletta i första utkast. Nästa rekommenderade steg är en helhetsrevision av hela manuset med fokus på överlapp, terminologi, faktakontroll, balans och avslutande redaktionell sammanhållning.
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
 - Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.
@@ -103,4 +103,6 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 - Kapitel 32 – Tekniklivscykel och kontrollerad förändring är skapat som första utkast och etablerar livscykelstatus, technology radar, produkt-/versionslivscykel, supportfönster, deprecation, sunset, migrationsansvar, experimentens exit-kriterier, tidsbegränsade undantag och faktisk retirement.
 - Kapitel 33 – Ekonomi, kostnad och kapacitet är skapat som första utkast och etablerar kostnadsdrivare, enhetskostnad, kostnadsallokering, showback/chargeback, gemensam investering, kapacitetsprofiler, prognoser, incitament och ekonomisk transparens som arkitekturell återkoppling. Del V är därmed komplett i första utkast.
 - Kapitel 34 – Vad en referensarkitektur är – och inte är är skapat som första utkast och inleder del VI genom att etablera scope, concerns/viewpoints, constraints, variation points, ansvar, spårbarhet och gränsen mot lösningsarkitektur, mönster, standarder, plattformar och templates.
-- Kapitel 35 – Från behov till lösningsarkitektur är skapat som första utkast och sammanför bokens tidigare delar till ett praktiskt arbetsflöde från behov och kvalitetsprofil via förmågor, referensarkitektur, mönster, plattformar och standarder till lokala beslut, avsteg, verifiering och återkoppling. Nästa steg är kapitel 36 – Sju återkommande lösningsscenarier.
+- Kapitel 35 – Från behov till lösningsarkitektur är skapat som första utkast och sammanför bokens tidigare delar till ett praktiskt arbetsflöde från behov och kvalitetsprofil via förmågor, referensarkitektur, mönster, plattformar och standarder till lokala beslut, avsteg, verifiering och återkoppling.
+- Kapitel 36 – Sju återkommande lösningsscenarier är skapat som första utkast och jämför sju återkommande lösningsklasser med samma analysram.
+- Kapitel 37 – Governance, förvaltning och evolution är skapat som första utkast och knyter ihop mandat, federerad styrning, avsteg, telemetry, documentation-as-code, mognad och organisatoriskt lärande. Del VI och hela kapitelmanuset är därmed komplett i första utkast.

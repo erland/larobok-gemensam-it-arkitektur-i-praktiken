@@ -56,6 +56,7 @@ chapters:
 - chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
 - chapters/35-fran-behov-till-losningsarkitektur.md
 - chapters/36-sju-aterkommande-losningsscenarier.md
+- chapters/37-governance-forvaltning-och-evolution.md
 exports:
   epub:
     enabled: true

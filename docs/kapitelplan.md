@@ -250,7 +250,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur hålls förmågekarta, principer, mönster, plattformskatalog, standarder och referensarkitekturer levande utan att governance blir en flaskhals?
 - Centralt innehåll: mandat, ownership, federerad styrning, avsteg, review cadence, telemetry, adoption, documentation-as-code, feedback loops, maturity, sunset och organisatoriskt lärande.
 - Avgränsning: knyter ihop styrning och långsiktig evolution; teknikens specifika produkt-/versionslivscykel ligger i kapitel 32.
-- Status: planerad
+- Status: första utkast skapat
 
 # Avgränsningsregler för att undvika onödig upprepning
 

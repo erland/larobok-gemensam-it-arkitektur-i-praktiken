@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev44.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev45.zip",
   "chapters": {
-    "count": 36,
+    "count": 37,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -38,28 +38,29 @@
       "chapters/33-ekonomi-kostnad-och-kapacitet.md": "c5d3d9636f72aac4b951a448aa501318018e0c6e139e633b040e12ffe6a44574",
       "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": "88a90eff08db3a3d76854b09ef52c03eee9ab2ba88de63a8af194b81c3550eb4",
       "chapters/35-fran-behov-till-losningsarkitektur.md": "799d27844087c001905fbe9d5581d5b1cc390878888724862eeef72a78b7b3f3",
-      "chapters/36-sju-aterkommande-losningsscenarier.md": "97be48619684ee8586e5ffe8e7c99314387dcb5b29e434620753ca5bd6faaf7c"
+      "chapters/36-sju-aterkommande-losningsscenarier.md": "97be48619684ee8586e5ffe8e7c99314387dcb5b29e434620753ca5bd6faaf7c",
+      "chapters/37-governance-forvaltning-och-evolution.md": "a56b625e8537512e09af12e9be3351892380664a6086afd326a691b0a8f071ee"
     },
-    "latest": 36
+    "latest": 37
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/36-sju-aterkommande-losningsscenarier.md",
+      "chapters/37-governance-forvaltning-och-evolution.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 36 – Sju återkommande lösningsscenarier och synkroniserade projektstatus/exportordning",
-    "source_revision": 43
+    "operation": "Skrev kapitel 37 – Governance, förvaltning och evolution; slutförde samtliga 37 huvudkapitel i första utkast och synkroniserade projektstatus/exportordning",
+    "source_revision": 44
   },
-  "parent_revision": 43,
+  "parent_revision": 44,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 44,
+  "revision": 45,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -77,7 +78,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "89cc2daf8c8d44903e2b4f2a01a470cd6e1a32a7be055b59aa8b825cb395729d"
+      "sha256": "5e7bcd76fc5563ef1c771e548e0535aad4086063e1082423d3987deebbb8abc8"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -92,8 +93,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2954,
-      "sha256": "bde2db7453b3306e2807b8770c4c1dcd980fa509405fe0011ecb77462c613f0b"
+      "bytes": 3008,
+      "sha256": "cc250b0585ba42000c453912e6adfdac33d4bfc50096e3dfab501c1977ebbda2"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -243,6 +244,10 @@
       "bytes": 21694,
       "sha256": "97be48619684ee8586e5ffe8e7c99314387dcb5b29e434620753ca5bd6faaf7c"
     },
+    "chapters/37-governance-forvaltning-och-evolution.md": {
+      "bytes": 23843,
+      "sha256": "a56b625e8537512e09af12e9be3351892380664a6086afd326a691b0a8f071ee"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -264,8 +269,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 12645,
-      "sha256": "9641e66e9e6977f03825a31bb3fdfb25c7c4d53e81ffae6ccb3002ba9be35adc"
+      "bytes": 12847,
+      "sha256": "7e4b1c9671857a356db36978da86192f2f498aac271c02ea5dd50fd35f59429b"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -280,16 +285,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 22859,
-      "sha256": "9820683660270b750ab8bd16620f83a65cc4d7b41df75eca9c3ed9e44cdedc2f"
+      "bytes": 22872,
+      "sha256": "f938dfcd46b493a5c1eeca0423f75f72b847df1a98c6b7407eeaea7db4c7e046"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 16962,
-      "sha256": "75262a759607069dcdd71a155d129e64158a916cc9a6bd62a5603fe17dd6c22a"
+      "bytes": 17518,
+      "sha256": "158032bc35b86f06224b3c93d2f1280e993915729783ea49771ea492dcc7f029"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -773,7 +778,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "f091bd7f6ffdde9885a1d946930a25e485a80caec471a82a0f5289f853ef8df4"
+      "sha256": "e8646ae7c21b4563aeff8c06329aae55d60e7df4fdea15f2ac7ddc2b4e6c552d"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -796,8 +801,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 26029,
-      "sha256": "0d79683d0b725edb74be5cfa3df57bb1a8215b1a4ef2b045bd51fc0e6da7c939"
+      "bytes": 26454,
+      "sha256": "f48e28956ef7e24d7ef1edfdfa70510a8cc4d56c5be374e6e50d106f584ffb1d"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -820,5 +825,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T08:21:05Z"
+  "updated_at": "2026-08-19T08:29:50Z"
 }
