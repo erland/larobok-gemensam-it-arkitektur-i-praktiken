@@ -622,7 +622,7 @@ Men det betyder inte att en enda "AI-plattform" bör äga:
 
 Plattformar bör erbjuda mekanismer och väl definierade kontrakt. Mönstren hjälper lösningen att placera ansvar mellan dessa mekanismer.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 De fyra mönstren visar tydligt varför bokens tredelade ansvarmodell behövs.
 

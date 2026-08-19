@@ -51,11 +51,12 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 | 34 | Vad en referensarkitektur är – och inte är | Första utkast | Scope, viewpoints, variation points, constraints, ansvar, spårbarhet och relationen till lösningsarkitektur/mönster/standard/plattform etablerade. |
 | 35 | Från behov till lösningsarkitektur | Första utkast | Praktiskt arbetsflöde från behov och kvalitetsprofil via förmågor, referensarkitektur, mönster, plattformar och standarder till lokala beslut, verifiering, avsteg och återkoppling etablerat. |
 | 36 | Sju återkommande lösningsscenarier | Första utkast | Sju jämförbara scenarier tillämpar arbetsflödet på handläggningsstöd, publik e-tjänst, integrationsintensivt system, externt informationsutbyte, containerbaserad tjänst, AI-stöd och digital arbetsplats. |
-| 37 | Governance, förvaltning och evolution | Planerad | Ej skapad ännu. |
+| 37 | Governance, förvaltning och evolution | Helhetsreviderad – pass 1 | Governance, mandat, federerad styrning, avsteg, återkoppling, dokumentation och mognad etablerade. |
 
 ## Faktakontroll
-- Öppna verifieringspunkter: se `docs/faktakontroll.md`
-- Senast genomgången: 2026-08-18
+- Helmanusets begrepps- och konsistenspunkter är genomgångna i helhetsrevision pass 1.
+- Externa och tidskänsliga publiceringskontroller som fortfarande är öppna framgår av `docs/faktakontroll.md`.
+- Senast genomgången: 2026-08-19
 
 ## Öppna beslut
 - Omslagskoncept och eventuell omslagsbild.
@@ -64,6 +65,8 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 - Slutlig målomfattning efter att 3–5 provkapitel skrivits.
 
 ## Nästa rekommenderade steg
+- Helhetsrevision pass 1 är genomförd över hela manuset. Nästa rekommenderade steg är ett separat **publiceringsnära faktagranskningspass** för de punkter som fortfarande är öppna i `docs/faktakontroll.md`, följt av språk-/stilputs och beslut om illustrationer/källapparat.
+- Kapitelstrukturen 1–37 bedöms stabil; inga kapitel behöver slås ihop, delas eller flyttas efter helhetsrevisionen.
 - Kapitel 37 – Governance, förvaltning och evolution är skapat som första utkast. Därmed är del VI och samtliga 37 planerade huvudkapitel kompletta i första utkast. Nästa rekommenderade steg är en helhetsrevision av hela manuset med fokus på överlapp, terminologi, faktakontroll, balans och avslutande redaktionell sammanhållning.
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
@@ -92,7 +95,6 @@ Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i 
 - Kapitel 23 – Lösningsmönster som återanvändbara beslut är skapat som första utkast och etablerar mönster som beslutsartefakt, pattern language, context/forces/consequences, variationer, anti-patterns, relationen till andra arkitekturartefakter samt urval och livscykel. Del IV är därmed påbörjad.
 - Kapitel 25 – Process-, regel- och datamönster är skapat som första utkast och fördjupar human workflow, externaliserade regler, system of record/härledda kopior och cache-aside som kombinerbara mönster med tydligt ansvar för state och felgränser.
 - Kapitel 26 – AI-, identitets- och runtime-mönster är skapat som första utkast och fördjupar RAG, mänsklig kontroll, tjänsteidentitet och containeriserad stateless tjänst som fyra separata men kombinerbara riskbegränsande mönster.
-- Nästa planerade kapitel är kapitel 27 – Drift- och leveransmönster.
 
 - Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.
 - Kapitel 27 – Drift- och leveransmönster är skapat som första utkast och fördjupar build once/promote many, observability för distribuerade tjänster och backup med verifierad återställning som en sammanhängande leverans- och återhämtningskedja.

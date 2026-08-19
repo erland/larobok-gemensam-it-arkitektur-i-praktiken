@@ -555,7 +555,7 @@ Artefakttjänsten bör kunna lagra och förvalta deploybara objekt och beroenden
 
 Developer tooling kan omfatta gemensamma IDE-standarder, plugins, lokala utvecklingsverktyg, projektskapande, SDK:er och diagnostik. Värdet ligger i reducerad friktion och kompatibilitet med den gemensamma leveransvägen.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 ### Gemensam arkitekturnivå
 

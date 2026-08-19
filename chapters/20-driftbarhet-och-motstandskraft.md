@@ -627,7 +627,7 @@ Full distributed tracing kan vara rimligt för en komplex integrationskedja och 
 
 Standarden bör därför ange **miniminivåer, gemensamma kontrakt och valbara kvalitetsprofiler**, snarare än att göra maximal robusthet obligatorisk överallt.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 Driftbarhet blir särskilt tydlig när ansvarsfördelningen från kapitel 7 tillämpas.
 

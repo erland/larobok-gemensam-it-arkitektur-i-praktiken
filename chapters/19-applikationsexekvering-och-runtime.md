@@ -479,7 +479,7 @@ Varje erbjudande bör beskriva:
 
 Detta gör valet mer meningsfullt än ett rent produktval.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 Precis som i tidigare förmågekapitel behöver runtimefrågorna delas mellan gemensam arkitektur, förmågeområde och konkret lösning.
 

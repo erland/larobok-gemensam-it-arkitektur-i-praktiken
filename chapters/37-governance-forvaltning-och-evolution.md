@@ -2,6 +2,8 @@
 
 Gemensam IT-arkitektur skapar inget långsiktigt värde bara genom att dokumenteras. Förmågekartor, principer, lösningsmönster, plattformstjänster, standarder och referensarkitekturer måste användas, följas upp och förändras. Annars blir de snabbt en beskrivning av hur organisationen tänkte vid ett visst tillfälle snarare än ett fungerande beslutsstöd för hur den utvecklar sin IT.
 
+Kapitel 31 och 32 behandlade vad som standardiseras och hur teknikens livscykel styrs. Här ligger fokus i stället på **governance för hela arkitektursystemet**: mandat, ägarskap, återkoppling och hur artefakterna hålls relevanta tillsammans.
+
 Det avslutande kapitlets fråga är därför inte hur ännu en styrmodell ska konstrueras. Frågan är hur hela den modell som boken har byggt upp kan hållas levande utan att governance blir en flaskhals.
 
 Det kräver en balans. För svag styrning leder till lokal optimering, dubbelarbete, inkonsekventa standarder och plattformar som ingen kan lita på. För stark eller för centraliserad styrning leder i stället till långa beslutsvägar, dokumentationsritualer och en arkitekturfunktion som måste godkänna frågor som bättre hade kunnat avgöras nära problemet.
