@@ -12,7 +12,7 @@ version: '0.1'
 date: '2026-08-18'
 rights: All rights reserved
 publisher: ''
-cover_image: ''
+cover_image: assets/cover/gemensam-it-arkitektur-i-praktiken.png
 identifier: ''
 subject: Gemensam IT-arkitektur, förmågor, plattformar, standarder, lösningsmönster och referensarkitekturer
 description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktureras från behov och kvalitetskrav via IT-förmågor
