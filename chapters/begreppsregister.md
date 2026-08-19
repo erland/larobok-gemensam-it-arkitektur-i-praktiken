@@ -13,10 +13,10 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Asynkron meddelandekommunikation* — lösningsmönster; kapitel **24**, 8, 2, 17, 35, 23
 - *Backend for Frontend* — lösningsmönster; kapitel **24**, 2, 12, 23, 31, 6
 - *Backup and Recovery Service* — plattform/tjänst; kapitel **20**
-- *Backup och verifierad återställning* — lösningsmönster; kapitel **27**, 2, 23
+- *Backup och verifierad återställning* — lösningsmönster; kapitel **27**, 23
 - *Backup och återställning* — teknisk standard; kapitel **20**, 15, 11, 32, 9
 - *BI och rapportering* — teknisk standard; kapitel **16**
-- *Build once, promote many* — lösningsmönster; kapitel **27**, 2, 21, 35, 23, 26
+- *Build once, promote many* — lösningsmönster; kapitel **27**, 21, 35, 23, 26, 34
 - *Business Intelligence and Reporting* — plattform/tjänst; kapitel **16**
 - *Business Rules Platform* — plattform/tjänst; kapitel **14**
 - *Cache Service* — plattform/tjänst; kapitel **15**
@@ -38,7 +38,7 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Developer Tooling* — teknisk standard; kapitel **21**
 - *Digital arbetsplats* — referensarkitektur; kapitel **36**, 8, 35, 22, 34
 - *Driftbarhet och motståndskraft* — förmåga; kapitel **20**, 8, 2, 30, 12, 13
-- *Enterprise Messaging* — plattform/tjänst; kapitel **17**, 8, 24, 2, 28, 35
+- *Enterprise Messaging* — plattform/tjänst; kapitel **17**, 8, 24, 28, 35, 31
 - *Externaliserade verksamhetsregler* — lösningsmönster; kapitel **25**, 2, 35, 23, 36, 34
 - *Git och repository* — teknisk standard; kapitel **21**
 - *Human workflow* — lösningsmönster; kapitel **25**, 2, 35, 23, 36, 26
@@ -78,9 +78,9 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Relationell databastjänst* — plattform/tjänst; kapitel **15**, 8, 2, 28, 35, 29
 - *Relationella databaser* — teknisk standard; kapitel **15**
 - *Release- och versionsidentifiering* — teknisk standard; kapitel **21**
-- *Retrieval-Augmented Generation (RAG)* — lösningsmönster; kapitel **26**, 18, 8, 2, 28, 12
+- *Retrieval-Augmented Generation (RAG)* — lösningsmönster; kapitel **26**, 18, 8, 28, 12, 13
 - *Search and Indexing Service* — plattform/tjänst; kapitel **16**, 28
-- *Secrets* — teknisk standard; kapitel **18**, 2, 30, 28, 4, 21
+- *Secrets* — teknisk standard; kapitel **18**, 30, 28, 4, 21, 19
 - *Secrets Management* — plattform/tjänst; kapitel **18**, 30, 28, 9, 36, 26
 - *Secure Government Connectivity* — plattform/tjänst; kapitel **17**
 - *Service Identity* — plattform/tjänst; kapitel **18**, 23, 26

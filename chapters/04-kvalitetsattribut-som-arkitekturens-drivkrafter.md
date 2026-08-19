@@ -4,11 +4,7 @@ Två system kan erbjuda exakt samma funktion och ändå vara radikalt olika ur a
 
 Funktionslistan avslöjar inte den skillnaden.
 
-Det är därför arkitektur inte bara kan utgå från *vad* ett IT-stöd ska göra. Den måste också utgå från *hur väl*, *under vilka förutsättningar* och *med vilka konsekvenser* det ska kunna göra det.
-
-Dessa egenskaper brukar beskrivas som kvalitetsattribut eller kvalitetskrav. Exempel är tillgänglighet, prestanda, säkerhet, förändringsbarhet, interoperabilitet och återställningsförmåga. De är ofta mer arkitekturdrivande än enskilda funktioner eftersom de påverkar systemets struktur, redundans, ansvarsfördelning, teknikval och driftmodell.
-
-Ett krav som säger att en användare ska kunna lämna in ett ärende beskriver en funktion. Ett krav som säger att tjänsten ska kunna ta emot ärenden under en nationell tidskritisk period med hög belastning, utan att en enskild komponent blir en kritisk felpunkt, påverkar däremot stora delar av arkitekturen.
+Arkitektur kan därför inte bara utgå från *vad* ett IT-stöd ska göra, utan också från *hur väl*, *under vilka förutsättningar* och *med vilka konsekvenser*. Sådana egenskaper beskrivs som kvalitetsattribut eller kvalitetskrav, exempelvis tillgänglighet, prestanda, säkerhet, förändringsbarhet och återställningsförmåga. De kan påverka systemets struktur, redundans, teknikval och driftmodell mer än enskilda funktioner.
 
 Kvalitetsattribut fungerar därför som en länk mellan verksamhetskonsekvens och teknisk utformning.
 
@@ -68,28 +64,7 @@ med:
 
 Den senare formuleringen gör det möjligt att diskutera vilken återställningsförmåga, redundans och övervakning som faktiskt behövs.
 
-Samma princip gäller andra kvaliteter.
-
-I stället för:
-
-> API:t ska ha hög prestanda.
-
-kan behovet uttryckas som:
-
-> Under normal belastning ska 95 procent av förfrågningarna besvaras inom 500 millisekunder, och vid den definierade toppbelastningen får svarstiden inte överstiga den accepterade nivån för den användarprocess som API:t stödjer.
-
-I stället för:
-
-> Lösningen ska vara skalbar.
-
-kan man fråga:
-
-- Hur snabbt kan belastningen förändras?
-- Hur stor topp måste kunna hanteras?
-- Hur länge varar toppen?
-- Vad händer om kapaciteten inte räcker?
-- Är köbildning acceptabel?
-- Kan arbete skjutas upp eller måste det behandlas omedelbart?
+Samma princip gäller andra kvaliteter. Ett prestandakrav blir användbart först när svarstid kopplas till belastning och användarprocess. Skalbarhet behöver på motsvarande sätt uttryckas genom exempelvis förväntad topp, hur snabbt belastningen förändras och vad som händer om kapaciteten inte räcker.
 
 Kvalitetskravet blir då ett uttryck för ett verkligt behov, inte en allmän ambition.
 
@@ -313,61 +288,23 @@ Arkitekturarbetet börjar därför inte med att ge alla kvalitetsattribut högst
 
 ## Konflikter mellan kvaliteter är normala
 
-Kvalitetsattribut drar ofta arkitekturen i olika riktningar.
+Kvalitetsattribut drar ofta arkitekturen i olika riktningar. Mer redundans kan öka tillgänglighet men också kostnad och komplexitet. Starkare säkerhetskontroller kan påverka användbarhet eller svarstid. Caching kan förbättra prestanda men försvåra konsistens, och maximal portabilitet kan kräva att värdefulla plattformsspecifika funktioner avstås.
 
-Exempel:
+Detta är inte tecken på dålig kravställning utan en normal del av arkitekturarbetet. Här behöver analysen framför allt göra tre saker tydliga:
 
-- mer redundans kan öka tillgänglighet men också kostnad och komplexitet,
-- starkare säkerhetskontroller kan öka skydd men påverka användbarhet eller svarstid,
-- aggressiv caching kan förbättra prestanda men försvåra konsistens,
-- stark isolering kan minska spridningsrisk men göra integration och drift mer komplex,
-- mycket generell abstraktion kan förbättra återanvändning men göra en enkel lösning svårare att förstå,
-- maximal portabilitet kan kräva att plattformsspecifika funktioner med stor produktivitetsnytta avstås.
+1. vilka verksamhetskonsekvenser kvaliteterna representerar,
+2. vilken miniminivå som faktiskt krävs,
+3. vilka konflikter som behöver hanteras som explicita beslut.
 
-Detta är inte tecken på dålig kravställning. Det är själva kärnan i arkitekturella avvägningar.
-
-Om två kvaliteter konkurrerar behöver beslutet göras explicit:
-
-1. Vilka verksamhetskonsekvenser representerar de?
-2. Vilken nivå är miniminivå för respektive kvalitet?
-3. Vilken kvalitet har högst prioritet i den aktuella situationen?
-4. Vilka kostnader och risker följer av valet?
-5. Hur verifierar vi att kompromissen blev acceptabel?
-
-Nästa kapitel handlar just om hur sådana arkitekturbeslut dokumenteras och omprövas.
+Hur sådana beslut dokumenteras, motiveras och omprövas behandlas i nästa kapitel.
 
 ## Högsta möjliga kvalitet är sällan rätt mål
 
-Det är lockande att formulera generella krav som:
+Att kräva exempelvis aktiv-aktiv drift, ingen dataförlust, extrem svarstid eller maximal portabilitet överallt kan låta robust men driva stor kostnad och komplexitet utan motsvarande nytta. Kvalitetsnivån behöver i stället vara tillräcklig för verksamhetsbehovet.
 
-- alltid aktiv-aktiv drift,
-- ingen dataförlust någonsin,
-- obegränsad skalbarhet,
-- svarstid under 100 millisekunder,
-- full portabilitet mellan alla miljöer.
+Det är särskilt viktigt för gemensamma plattformstjänster. Om varje erbjudande dimensioneras för den mest extrema konsumenten blir det onödigt dyrt för alla andra. Ett bättre arbetssätt kan vara att erbjuda ett fåtal definierade kvalitetsprofiler, exempelvis en basprofil och en kritisk profil med högre redundans, kortare återställningsmål och förstärkt övervakning.
 
-Sådana mål kan låta robusta men riskerar att driva stor kostnad och komplexitet utan motsvarande nytta.
-
-Ett kvalitetskrav bör i stället vara tillräckligt högt för verksamhetsbehovet.
-
-Det är särskilt viktigt för gemensamma plattformstjänster. Om varje plattform dimensioneras för den mest extrema möjliga konsumenten blir den onödigt dyr för alla andra. Ett bättre arbetssätt kan vara att erbjuda definierade kvalitetsprofiler eller tjänstenivåer.
-
-Exempel:
-
-```text
-Basprofil
-- normal redundans
-- standardiserad backup
-- återställning inom ordinarie driftprocess
-
-Kritisk profil
-- högre redundans
-- kortare återställningsmål
-- förstärkt övervakning
-- regelbundet verifierad återställning
-```
-
-Det innebär inte att just dessa två profiler alltid är rätt. Poängen är att kvalitetsnivå kan vara en medveten del av tjänsteerbjudandet i stället för dold i plattformens implementation.
+Poängen är inte exakt vilka profiler som används, utan att kvalitetsnivån blir en medveten del av tjänsteerbjudandet i stället för dold i implementationen.
 
 ## Kvalitetskrav måste kunna verifieras
 
@@ -396,11 +333,7 @@ Om svaret saknas behöver kravet sannolikt förtydligas.
 
 ## SLO, SLA och arkitekturkrav är inte samma sak
 
-Begrepp om tjänstenivå blandas ibland ihop med kvalitetskrav.
-
-Ett SLO, service level objective, är ett mål för en observerbar tjänstenivå, exempelvis tillgänglighet eller svarstid. Ett SLA, service level agreement, är ett avtalat åtagande där tjänstenivån kan kopplas till formella konsekvenser eller ansvar.
-
-Ett arkitekturellt kvalitetskrav kan ligga bakom båda men är bredare. Förändringsbarhet, isolering eller återställningsförmåga är exempel på kvaliteter som inte alltid uttrycks bäst som en traditionell SLA-metrik.
+Begrepp om tjänstenivå blandas ibland ihop med kvalitetskrav. Ett SLO, service level objective, är ett mål för en observerbar tjänstenivå, medan ett SLA, service level agreement, är ett avtalat åtagande. Ett arkitekturellt kvalitetskrav kan ligga bakom båda men är bredare; exempelvis förändringsbarhet och återställningsförmåga uttrycks inte alltid bäst som en SLA-metrik.
 
 Det är därför bättre att se relationen som:
 
@@ -420,46 +353,19 @@ SLO och SLA är alltså möjliga operationaliseringar av vissa kvaliteter, inte 
 
 ## Kvalitetskrav på tre ansvarsnivåer
 
-Den tredelade ansvarmodell som introducerades i inledningen blir användbar även här.
+Den tredelade ansvarmodellen kan tillämpas direkt på kvalitetskraven.
 
 ### Gemensam arkitekturnivå
 
-På den gemensamma nivån bör organisationen definiera sådant som behöver vara jämförbart över flera förmågor och lösningar:
-
-- vilka kvalitetsdimensioner som alltid ska bedömas,
-- gemensamma definitioner och mätprinciper,
-- eventuella basnivåer eller tvingande miniminivåer,
-- hur verksamhetskonsekvens ska dokumenteras,
-- hur undantag och riskacceptans hanteras.
-
-Den gemensamma nivån bör däremot vara försiktig med att sätta samma extrema kvalitetsnivå för alla system.
+Den gemensamma nivån bör ange sådant som behöver vara jämförbart över flera förmågor och lösningar: vilka kvalitetsdimensioner som alltid ska bedömas, gemensamma definitioner och mätprinciper samt eventuella bas- eller miniminivåer. Den bör däremot vara försiktig med att sätta samma höga nivå för alla system.
 
 ### Förmågenivå
 
-Förmågeansvariga behöver beskriva vilka kvaliteter som är särskilt viktiga inom den egna förmågan och vilken kvalitetsprofil gemensamma erbjudanden kan leverera.
-
-Ett databaserbjudande kan exempelvis behöva beskriva backup, återställning, kapacitet och underhållsfönster. En identitetstjänst behöver beskriva tillgänglighet, säkerhet, spårbarhet och beroenden. En CI/CD-plattform behöver bland annat beskriva integritet, tillgänglighet och livscykel.
-
-Förmågenivån översätter alltså gemensamma kvalitetsdimensioner till relevanta tjänsteegenskaper.
+Förmågeansvariga översätter de gemensamma dimensionerna till egenskaper i sina erbjudanden. En databastjänst kan exempelvis behöva beskriva backup, återställning och kapacitet, medan en identitetstjänst behöver tydliggöra bland annat tillgänglighet, säkerhet och spårbarhet.
 
 ### Lösnings-/produktnivå
 
-Det konkreta teamet behöver avgöra vilken kvalitetsprofil verksamhetsbehovet kräver och hur resten av lösningen måste utformas.
-
-Att en plattform erbjuder hög tillgänglighet betyder inte automatiskt att hela systemet gör det. Ett enda oreplicerat beroende kan dominera resultatet.
-
-Lösningsteamet behöver därför analysera hela kedjan:
-
-- klient,
-- nät,
-- identitet,
-- applikation,
-- data,
-- integrationer,
-- externa beroenden,
-- drift- och återställningsprocesser.
-
-Kvalitet är en end-to-end-egenskap.
+Det konkreta teamet avgör vilken kvalitetsprofil verksamhetsbehovet kräver och analyserar hela lösningskedjan. En plattform med hög tillgänglighet gör inte automatiskt hela systemet högtillgängligt; ett enda svagt beroende kan dominera resultatet. Kvalitet är därför en end-to-end-egenskap.
 
 ## Plattformens kvalitet och lösningens kvalitet är olika saker
 
@@ -485,46 +391,13 @@ Detta bör vara tydligt i tjänstekontraktet mellan plattform och konsument:
 
 ## Kvaliteter behöver prioriteras tillsammans
 
-Ett vanligt anti-mönster är att kvalitetskrav samlas in separat av olika specialistområden:
-
-- säkerhet sätter sina krav,
-- drift sätter sina,
-- användbarhet sätter sina,
-- arkitektur sätter sina,
-- ekonomi kommer in sist.
-
-Resultatet kan bli en kravlista där alla krav betraktas som absoluta och där konflikterna upptäcks först när lösningen ska byggas.
-
-Kvalitetsanalys bör därför göras gemensamt med relevanta intressenter.
-
-En enkel workshop kan exempelvis arbeta så här:
-
-1. identifiera de viktigaste verksamhetshändelserna och konsekvenserna,
-2. formulera kvalitetsattributsscenarier,
-3. prioritera scenarierna,
-4. identifiera vilka som sannolikt driver arkitekturen,
-5. synliggöra konflikter och beroenden,
-6. dokumentera osäkerheter som behöver provas eller mätas.
-
-Det gör kvalitet till ett gemensamt beslutsunderlag i stället för en samling specialistkrav.
+Säkerhet, drift, användbarhet, arkitektur och ekonomi bör inte formulera sina kvalitetskrav isolerat. En gemensam analys behöver synliggöra verksamhetskonsekvenser, konflikter och osäkerheter innan lösningen byggs. Resultatet ska vara ett gemensamt beslutsunderlag, inte en stapel av specialistkrav som alla behandlas som absoluta.
 
 ## När kraven är osäkra
 
-I tidiga faser finns sällan exakta svar på allt.
+I tidiga faser finns sällan exakta svar på allt. Det är inte ett skäl att hoppa över kvalitetsanalysen, utan att uttrycka osäkerheten. En osäker belastningsprognos kan exempelvis dokumenteras som ett antagande som ska kapacitetstestas tidigt, och ett preliminärt RTO som något som måste verifieras före produktionssättning.
 
-Det är inte ett skäl att hoppa över kvalitetsanalysen. Det är ett skäl att uttrycka osäkerheten.
-
-Exempel:
-
-> Förväntad topp är 5 000 samtidiga sessioner, men prognosen är osäker. Arkitekturen ska därför kunna kapacitetstestas tidigt och skala minst till det dubbla utan strukturell redesign.
-
-eller:
-
-> Verksamheten bedömer att ett avbrott på upp till två timmar kan hanteras manuellt, men konsekvensanalysen är ännu inte fastställd. RTO behandlas därför som ett öppet arkitekturantagande som ska verifieras före produktionssättning.
-
-Detta är bättre än att hitta på falsk precision.
-
-Arkitektur arbetar alltid med osäkerhet. Moget arbete gör antagandena synliga och ger dem en omprövningspunkt.
+Det är bättre än falsk precision. Moget arkitekturarbete gör antaganden synliga och ger dem en omprövningspunkt.
 
 ## Från kvalitetskrav till arkitekturella taktiker
 

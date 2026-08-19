@@ -99,8 +99,6 @@ concepts:
   - 15
   marked_chapters:
   - 5
-  - 6
-  - 7
   - 13
   - 17
   - 31
@@ -166,7 +164,6 @@ concepts:
   - 35
   - 20
   - 31
-  - 6
   marked_chapters:
   - 8
   - 21
@@ -289,7 +286,6 @@ concepts:
   related_chapters:
   - 18
   - 8
-  - 2
   - 28
   - 12
   - 13
@@ -321,7 +317,6 @@ concepts:
   - 30
   - 12
   - 15
-  - 7
   - 1
   marked_chapters:
   - 1
@@ -343,7 +338,6 @@ concepts:
   primary_chapter: 27
   source: docs/underlag/gemensam-it-arkitektur/monster/12-build-once-promote-many.md
   related_chapters:
-  - 2
   - 21
   - 35
   - 23
@@ -370,7 +364,6 @@ concepts:
   primary_chapter: 27
   source: docs/underlag/gemensam-it-arkitektur/monster/14-backup-och-verifierad-aterstallning.md
   related_chapters:
-  - 2
   - 23
   marked_chapters:
   - 27
@@ -499,9 +492,7 @@ concepts:
   - 12
   - 7
   - 32
-  - 1
   marked_chapters:
-  - 5
 - id: plattformar-14
   term: Enterprise Messaging
   type: Plattform/tjänst
@@ -510,7 +501,6 @@ concepts:
   related_chapters:
   - 8
   - 24
-  - 2
   - 28
   - 35
   - 31
@@ -745,7 +735,6 @@ concepts:
   primary_chapter: 18
   source: docs/underlag/gemensam-it-arkitektur/standarder/06-secrets-standard.md
   related_chapters:
-  - 2
   - 30
   - 28
   - 4
@@ -810,7 +799,6 @@ concepts:
   - 28
   - 4
   - 3
-  - 7
   marked_chapters: []
 - id: standarder-13
   term: Containerplattform
@@ -823,14 +811,12 @@ concepts:
   - 28
   - 4
   - 3
-  - 7
   - 32
   - 9
   marked_chapters:
   - 3
   - 4
   - 5
-  - 6
   - 32
   - 33
 - id: standarder-14
@@ -858,7 +844,6 @@ concepts:
   - 2
   - 30
   - 28
-  - 4
   - 15
   - 7
   marked_chapters: []
@@ -946,7 +931,6 @@ concepts:
   - 34
   marked_chapters:
   - 1
-  - 7
 - id: referensarkitekturer-02
   term: Publik e-tjänst
   type: Referensarkitektur
@@ -963,7 +947,6 @@ concepts:
   - 34
   marked_chapters:
   - 4
-  - 7
   - 36
 - id: referensarkitekturer-03
   term: Integrationsintensivt verksamhetssystem

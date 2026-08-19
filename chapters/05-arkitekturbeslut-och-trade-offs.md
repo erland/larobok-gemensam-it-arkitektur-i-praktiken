@@ -81,51 +81,17 @@ Ju högre dessa faktorer är, desto större värde finns i att göra beslutet ex
 
 ## Det finns nästan alltid flera dimensioner samtidigt
 
-Ett vanligt misstag är att jämföra alternativ längs en enda axel.
+Ett vanligt misstag är att jämföra alternativ längs en enda axel. En integrationsström kan exempelvis byggas med synkrona API-anrop eller asynkron meddelandehantering. Frågan är då inte bara vilket alternativ som är mest robust.
 
-Anta att en organisation behöver välja hur en ny integrationsström ska byggas. Ett alternativ är synkrona API-anrop och ett annat är asynkron meddelandehantering.
+Valet påverkar samtidigt bland annat svarstid, koppling i tid, felhantering, observerbarhet, dataordning, testbarhet, kompetensbehov och driftansvar. Asynkron kommunikation kan tåla att mottagaren tillfälligt är nere, men introducerar frågor om exempelvis idempotens, ordering och korrelation. Synkron kommunikation kan vara enklare att förstå men skapar hårdare tillgänglighetsberoenden.
 
-Det är lätt att fråga:
-
-> Vilket alternativ är mest robust?
-
-Men robusthet är bara en dimension. Valet påverkar också:
-
-- svarstider,
-- koppling i tid mellan systemen,
-- felhantering,
-- observerbarhet,
-- dataordning,
-- utvecklingskomplexitet,
-- testbarhet,
-- kompetensbehov,
-- driftansvar,
-- felsökning,
-- användarupplevelse.
-
-Den asynkrona lösningen kan tåla att mottagaren tillfälligt är nere, men den introducerar samtidigt frågor om idempotens, ordering, dead-letter-hantering och korrelation. Det synkrona alternativet kan vara enklare att förstå men skapa hårdare beroende mellan tillgängligheten i två tjänster.
-
-Arkitektens uppgift är därför inte att hitta den egenskap där ett alternativ är starkast, utan att förstå vilken kombination av egenskaper som bäst motsvarar den prioriterade kravbilden.
+Arkitektens uppgift är därför att bedöma kombinationen av egenskaper mot den prioriterade kravbilden, inte att hitta den dimension där ett alternativ råkar vara starkast.
 
 ## Avvägning betyder inte kompromiss i negativ mening
 
-Ordet kompromiss kan ge intrycket att arkitekturen blir sämre än den borde vara. Avvägning är ett mer precist sätt att tänka.
+En avvägning innebär att en förbättring i en egenskap kan medföra kostnader eller konsekvenser i en annan. Mer isolering kan ge högre operativ komplexitet. Mer återanvändning kan ge starkare koppling. Strikt standardisering kan minska variationskostnaden men också begränsa lokalt handlingsutrymme. Hög portabilitet kan minska leverantörslåsning men göra värdefulla plattformsspecifika funktioner svårare att använda.
 
-En avvägning innebär att förbättring av en egenskap kan ha kostnader eller konsekvenser för andra egenskaper.
-
-Exempel:
-
-- mer isolering kan ge högre kostnad och större operativ komplexitet,
-- mer återanvändning kan ge starkare koppling mellan konsumenter,
-- strikt standardisering kan ge lägre variationskostnad men minska lokalt handlingsutrymme,
-- mer cache kan ge bättre svarstid men svårare konsistenshantering,
-- fler distribuerade tjänster kan ge självständigare leverans men öka behovet av observerbarhet och robust integration,
-- stark portabilitet kan minska leverantörslåsning men hindra användning av värdefulla plattformsspecifika funktioner,
-- mer detaljerad auditloggning kan öka spårbarheten men också kostnad, datavolym och integritetsrisk.
-
-Det finns alltså sällan en arkitektur som maximerar alla kvaliteter samtidigt.
-
-Det gör prioriteringen från föregående kapitel central. Om organisationen inte vet vilka kvaliteter som är viktigast blir avvägning-diskussionen lätt en kamp mellan personliga teknikpreferenser.
+Det finns därför sällan en arkitektur som maximerar alla kvaliteter samtidigt. Prioriteringen från föregående kapitel blir avgörande: utan tydliga prioriteringar riskerar avvägningen att reduceras till personliga teknikpreferenser.
 
 ## Gör beslutskriterierna synliga före valet
 
@@ -222,112 +188,19 @@ Den andra texten gör två saker som den första saknar: den beskriver varför v
 
 ## ADR är beslutshistorik, inte dokumentationsritual
 
-Det är lätt att göra ADR till ännu en obligatorisk mall. Då riskerar man att skapa hundratals dokument som ingen använder.
+ADR ger störst värde för beslut som är betydelsefulla, svåra att förstå i efterhand, innehåller tydliga avvägningar, bygger på osäkra antaganden eller är kostsamma att reversera. För mindre beslut kan kod, konfiguration eller vanlig teknisk dokumentation räcka.
 
-ADR ger störst värde för beslut som är:
-
-- betydelsefulla,
-- svåra att förstå i efterhand,
-- kontroversiella eller innehåller tydliga avvägningar,
-- beroende av antaganden som kan ändras,
-- svåra eller kostsamma att reversera,
-- viktiga för flera team eller framtida förvaltare.
-
-För mindre beslut kan kod, konfiguration eller vanlig teknisk dokumentation räcka.
-
-Principen bör vara:
+En bra tumregel är:
 
 > Dokumentera beslut där förlusten av beslutslogiken skulle vara kostsam.
 
-Det är en bättre styrsignal än att försöka definiera exakt vilka tekniktyper som alltid måste få en ADR.
+Beslutet bör också ha en begriplig livscykel. En enkel statusmodell – exempelvis Föreslaget, Accepterat, Ersatt och Utgånget – gör det möjligt att bevara historiken utan att äldre beslut ser ut att fortfarande gälla. Det är värdefullt eftersom ett äldre beslut kan ha varit helt rimligt under dåvarande förutsättningar.
 
-## Status gör beslutets livscykel begriplig
+Konsekvenserna ska beskrivas öppet, även de negativa. Om en gemensam managed LLM-tjänst exempelvis ger gemensam säkerhetsmodell, kostnadsuppföljning och loggning kan samma beslut samtidigt skapa beroende av plattformens prioriteringar eller bromsa tillgången till leverantörsspecifika funktioner. Att dokumentera nackdelarna försvagar inte beslutet; det gör det möjligt att följa upp det.
 
-Arkitekturbeslut är inte eviga sanningar. En enkel statusmodell hjälper till att skilja aktuella beslut från historik.
+Riskacceptans och medveten teknisk skuld är på samma sätt beslut, inte undantag från beslutsprocessen. Om en första version exempelvis accepteras utan full redundans eller med en temporär punkt-till-punkt-integration bör det framgå varför, vilken konsekvens som accepteras, vilka kompensatoriska åtgärder som finns och när frågan ska tas upp igen. Då blir framtida kostnad och risk synliga i stället för att döljas i lösningen.
 
-Exempel:
-
-- Föreslaget – alternativet diskuteras men är inte beslutat.
-- Accepterat – beslutet gäller.
-- Ersatt – ett senare beslut har tagit dess plats.
-- Utgånget – beslutet är inte längre relevant.
-
-I vissa organisationer kan ytterligare statusar behövas, men för många räcker en enkel modell.
-
-Det viktiga är att inte skriva om historiken så att det ser ut som om organisationen alltid tänkte som den gör idag. Ett äldre beslut kan ha varit helt rimligt när det fattades även om det senare ersatts.
-
-Den historiken är värdefull. Den visar vilka antaganden som ändrades och hjälper organisationen undvika att återupprepa samma diskussion utan ny information.
-
-## Konsekvenser måste dokumenteras, även de negativa
-
-En beslutsnotering som bara beskriver fördelar är ofta ett tecken på att beslutet redan var emotionellt taget innan analysen började.
-
-Varje arkitekturbeslut bör försöka synliggöra både positiva och negativa konsekvenser.
-
-Anta att en organisation väljer en gemensam managed LLM-tjänst i stället för att låta varje team integrera direkt med valfri modellleverantör.
-
-Positiva konsekvenser kan vara:
-
-- gemensam säkerhets- och avtalsmodell,
-- central kostnadsuppföljning,
-- enhetlig loggning,
-- lägre integrationskostnad för konsumenterna.
-
-Negativa konsekvenser kan vara:
-
-- långsammare tillgång till vissa nya modellfunktioner,
-- beroende av den gemensamma plattformens prioriteringar,
-- risk att ett gemensamt API döljer viktiga leverantörsspecifika möjligheter,
-- större konsekvens om den gemensamma tjänsten får problem.
-
-Att skriva ned nackdelarna gör inte beslutet svagare. Det gör det ärligare och skapar underlag för framtida uppföljning.
-
-## Riskacceptans är också ett beslut
-
-Ibland finns inget alternativ som uppfyller alla krav inom tillgänglig tid och budget. Organisationen kan då behöva acceptera en risk.
-
-Det viktiga är att riskacceptansen inte blir osynlig.
-
-Exempel:
-
-> Den första versionen saknar automatisk failover mellan två datacenter. Den beräknade återställningstiden kan därför överskrida önskad nivå vid ett fullständigt datacenterbortfall. Risken accepteras för lansering eftersom verksamheten kan använda manuellt reservförfarande under den begränsade införandeperioden. Beslutet ska omprövas före nästa expansionsfas.
-
-Det är bättre än att låta arkitekturdokumentationen ge sken av att kvalitetskravet är uppfyllt.
-
-Riskacceptans bör göra åtminstone följande synligt:
-
-- vilken risk som accepteras,
-- varför den accepteras,
-- vilken konsekvens den kan få,
-- vilka kompensatoriska åtgärder som finns,
-- vem som har mandat att acceptera den,
-- när den ska omprövas.
-
-Mandatfrågan hör organisatoriskt hemma i governance, som behandlas senare. Men själva riskresonemanget är en del av arkitekturbeslutet.
-
-## Teknisk skuld kan vara medveten
-
-Teknisk skuld beskrivs ofta som något som bara uppstår när utvecklare tar genvägar. Det är för snävt.
-
-En organisation kan medvetet välja en lösning som är billigare eller snabbare idag trots att den skapar en framtida kostnad. Det kan vara rationellt.
-
-Exempel:
-
-- en temporär punkt-till-punkt-integration för att klara en tidskritisk migrering,
-- en äldre runtime som behålls tills en större modernisering genomförs,
-- manuella driftsmoment under en pilotperiod,
-- begränsad redundans i en tjänst som ännu har låg verksamhetskritikalitet.
-
-Problemet uppstår när den framtida kostnaden inte längre är synlig.
-
-En medveten arkitekturell skuld bör därför dokumenteras med:
-
-- varför skulden tas,
-- vilken konsekvens den har,
-- vilka signaler som visar att den behöver lösas,
-- eventuell tidsgräns eller omprövningspunkt.
-
-Då blir skulden en del av den strategiska beslutsportföljen i stället för ett dolt problem.
+För beslut som bygger på tydliga antaganden är det också värdefullt att skriva ned själva antagandet. Om ett plattformsval exempelvis bara är rimligt under en viss lastnivå eller så länge en viss leverantörsfunktion finns kvar kan den informationen vara viktigare för framtida omprövning än en lång beskrivning av mötet där beslutet fattades.
 
 ## Beslut behöver omprövningsvillkor
 
@@ -386,49 +259,15 @@ Det är särskilt viktigt i gemensam IT-arkitektur. Ett beslut som bara påverka
 
 ## Beslut på olika nivåer
 
-Bokens tredelning mellan gemensam nivå, förmågenivå och lösnings-/produktnivå är också användbar för arkitekturbeslut.
+Bokens tre ansvarsnivåer hjälper också till att placera beslut rätt.
 
-### Gemensam arkitekturnivå
+På **gemensam arkitekturnivå** hör beslut hemma som behöver vara konsekventa över flera förmågor eller lösningar, exempelvis övergripande identitetsmodell eller gemensamma kvalitetsdimensioner.
 
-Här hör beslut hemma som behöver vara konsekventa över flera förmågor eller lösningar.
+På **förmågenivå** fattas beslut om hur ett visst område ska fungera och vilka erbjudanden det ska tillhandahålla, exempelvis vilka integrationsstilar eller kontraktsregler som stöds inom *Integration och kommunikation*.
 
-Exempel:
+På **lösnings-/produktnivå** fattas beslut för ett specifikt verksamhetsbehov, exempelvis om en viss integration ska vara synkron eller asynkron eller hur en tjänst partitionerar sin data.
 
-- vilken övergripande identitetsmodell organisationen använder,
-- hur tekniska standarder klassificeras,
-- vilka kvalitetsdimensioner som ska användas gemensamt,
-- vilken princip som gäller för produkt kontra stabil arkitektur,
-- hur tvärgående informationsutbyte ska hanteras.
-
-Gemensamma beslut bör vara relativt få men ha hög räckvidd.
-
-### Förmågenivå
-
-Här fattas beslut om hur ett visst stödjande område ska fungera och vilka erbjudanden det ska tillhandahålla.
-
-Exempel inom *Integration och kommunikation* kan vara:
-
-- vilka integrationsstilar plattformen ska stödja,
-- när *API management* ska vara standardvägen,
-- vilka messaging-egenskaper som erbjuds,
-- vilka kontrakts- och versionsregler som gäller inom området.
-
-Förmågebeslut ska ligga inom de gemensamma ramarna men får vara betydligt mer tekniskt konkreta.
-
-### Lösnings-/produktnivå
-
-Här fattas beslut för ett specifikt verksamhetsbehov.
-
-Exempel:
-
-- om just denna integration ska vara synkron eller asynkron,
-- hur just denna tjänst partitionerar sin data,
-- vilken kontinuitetsprofil lösningen behöver,
-- hur en viss domän delas upp i komponenter.
-
-Det är viktigt att beslut inte lyfts högre än nödvändigt. Ett lokalt val ska inte göras till organisationsstandard bara för att det fungerade i ett projekt.
-
-Det omvända gäller också: ett beslut som skapar beroenden för många team bör inte döljas som ett lokalt implementationsval.
+Beslut bör inte lyftas högre än nödvändigt, men inte heller döljas som lokala implementationer om de skapar beroenden för många team.
 
 ## Ett konkret exempel: delad databas eller separata dataägarskap
 
@@ -472,7 +311,7 @@ Det går inte att avgöra utan sammanhang.
 
 Om funktionerna i praktiken tillhör samma sammanhållna domän, förändras tillsammans och kräver stark transaktionell konsistens kan en gemensam datamodell vara rimlig. Om de har olika ägare, olika förändringstakt och tydliga domängränser kan separata dataägarskap vara viktigare.
 
-Avvägning-analysen gör alltså inte beslutet automatiskt. Den gör orsakerna till beslutet synliga.
+Avvägningsanalysen gör alltså inte beslutet automatiskt. Den gör orsakerna till beslutet synliga.
 
 ## Undvik falsk precision i beslutsmatriser
 
@@ -519,7 +358,7 @@ Starkare mål:
 
 > Verifiera om produkt X kan hantera den definierade meddelandevolymen med accepterad latenstid och om plattformsorganisationen kan observera och felsöka flödet med befintliga verktyg.
 
-En prototyp utan beslutskriterier riskerar bara att visa att tekniken går att starta. En prototyp kopplad till en osäkerhet kan däremot minska beslutsrisken.
+En prototyp utan beslutskriterier riskerar bara att visa att tekniken går att starta. En prototyp kopplad till en osäkerhet kan däremot minska beslutsrisken. Resultatet bör därför återföras till beslutet som evidens: vilken hypotes testades, vad observerades och hur påverkade det jämförelsen mellan alternativen? På så sätt blir prototypen en del av beslutsunderlaget i stället för ett parallellt teknikexperiment.
 
 ## Beslutslogg och arkitekturdiagram fyller olika funktioner
 
@@ -543,20 +382,9 @@ Det är denna förståelse beslutshistoriken ger.
 
 ## När ett beslut blir en standard
 
-Ett lokalt arkitekturbeslut och en teknisk standard är inte samma sak.
+Ett lokalt arkitekturbeslut är inte automatiskt en teknisk standard. För att generaliseras behöver beslutet motsvara ett återkommande behov, ha tillräckligt likartade kvalitetskrav i flera sammanhang och ge en tydlig gemensam nytta, exempelvis skalfördelar eller riskreduktion.
 
-Om ett team beslutar att använda ett visst mönster eller en viss produkt betyder det inte att hela organisationen bör göra samma sak.
-
-För att ett lokalt beslut ska kunna generaliseras behöver man fråga:
-
-- Är behovet återkommande i flera domäner?
-- Är kvalitetskraven tillräckligt lika?
-- Finns skalfördelar eller riskreduktion i att göra valet gemensamt?
-- Har lösningen bevisats i flera relevanta sammanhang?
-- Är konsekvenserna för andra team förstådda?
-- Finns förvaltningskapacitet för ett gemensamt erbjudande?
-
-Detta är en viktig koppling till bokens senare delar. Lösningsmönster, plattformstjänster och standarder bör växa fram ur återkommande beslutssituationer, inte ur önskan att katalogisera så mycket teknik som möjligt.
+Det behöver också finnas förvaltningskapacitet och förståelse för konsekvenserna för andra team. Lösningsmönster, plattformstjänster och standarder bör därför växa fram ur återkommande beslutssituationer, inte ur önskan att katalogisera teknik.
 
 ## Beslut ska kunna förstås utan mötesminnet
 
@@ -617,27 +445,17 @@ Processen kan vara omfattande för ett organisationsgemensamt beslut och mycket 
 
 ## Vad ett bra beslut inte behöver vara
 
-Ett bra arkitekturbeslut behöver inte vara perfekt.
+Ett bra arkitekturbeslut behöver inte vara perfekt eller bygga på fullständig konsensus. Det behöver vara rimligt och spårbart.
 
-Det behöver inte heller innebära fullständig konsensus. Ibland är alternativen genuint jämnstarka och någon med mandat behöver välja.
+Det innebär att problemet är rätt formulerat, de viktigaste drivarna och alternativen är kända, avvägningar och risker är synliga och beslutet går att förstå och ompröva när förutsättningarna ändras.
 
-Ett bra beslut kännetecknas snarare av att:
-
-- problemet är rätt formulerat,
-- de viktigaste drivarna är kända,
-- relevanta alternativ har övervägts,
-- avvägningar är synliga,
-- antaganden och risker är ärligt beskrivna,
-- beslutet är begripligt för andra,
-- det går att ompröva när förutsättningarna ändras.
-
-Detta flyttar fokus från frågan:
+Den viktigaste frågan är därför inte:
 
 > Valde vi den bästa tekniken?
 
-mot en bättre fråga:
+utan:
 
-> Fattade vi ett rimligt och spårbart beslut utifrån den information och de prioriteringar vi hade?
+> Fattade vi ett rimligt beslut utifrån den information och de prioriteringar vi hade?
 
 ## Från beslut till gemensam riktning
 
@@ -663,4 +481,4 @@ Det kan bli:
 
 Det är så gemensam arkitektur kan växa fram ur verkliga behov utan att reduceras till central teori.
 
-Nästa kapitel behandlar arkitekturprinciper – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och avvägning-analys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.
+Nästa kapitel behandlar arkitekturprinciper – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och avvägningsanalys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.
