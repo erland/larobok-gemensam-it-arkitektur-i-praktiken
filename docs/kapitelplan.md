@@ -167,7 +167,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 24: Integrations- och kommunikationsmönster
 - Kärnfråga: Hur används synkrona och asynkrona mönster för lös koppling och robust informationsöverföring?
 - Centralt innehåll: BFF, messaging, pub/sub, idempotens, ordering, retries, dead-letter, korrelation och kontraktsutveckling.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 25: Process-, regel- och datamönster
 - Kärnfråga: Hur kombineras workflow, regler, system of record, härledda kopior och cache utan otydligt ansvar?
