@@ -4,7 +4,7 @@ Gemensam IT-arkitektur behöver mer än principer, mönster och plattformstjäns
 
 Det är standardernas uppgift.
 
-Men ordet **standard** används ofta så brett att det tappar precision. En organisation kan kalla allt från ett API-format till en specifik produktversion, en krypteringsinställning eller ett rekommenderat utvecklingsverktyg för ”standard”. Resultatet blir lätt en katalog där beslut med helt olika syfte, stabilitet och bindningsgrad blandas ihop.
+Men ordet standard används ofta så brett att det tappar precision. En organisation kan kalla allt från ett API-format till en specifik produktversion, en krypteringsinställning eller ett rekommenderat utvecklingsverktyg för ”standard”. Resultatet blir lätt en katalog där beslut med helt olika syfte, stabilitet och bindningsgrad blandas ihop.
 
 En fungerande standardmodell behöver därför svara på flera frågor samtidigt:
 
@@ -16,7 +16,7 @@ En fungerande standardmodell behöver därför svara på flera frågor samtidigt
 - Var hanteras produktversioner och detaljerad konfiguration?
 - Hur hanteras undantag och förändring?
 
-Det centrala är inte att maximera antalet standarder. Det är att **standardisera där gemensam variation skapar mer kostnad, risk eller friktion än nytta**.
+Det centrala är inte att maximera antalet standarder. Det är att standardisera där gemensam variation skapar mer kostnad, risk eller friktion än nytta.
 
 ## Standardisering är ett medel, inte ett mål
 
@@ -73,7 +73,7 @@ Det är en viktig orsak till att nivåerna bör separeras.
 
 ## Arkitektur- och teknikstandard
 
-En **arkitektur- och teknikstandard** uttrycker relativt stabila regler eller konventioner för hur en teknisk förmåga ska realiseras eller hur lösningar ska samverka.
+En arkitektur- och teknikstandard uttrycker relativt stabila regler eller konventioner för hur en teknisk förmåga ska realiseras eller hur lösningar ska samverka.
 
 Exempel kan vara:
 
@@ -89,13 +89,13 @@ Denna typ av standard bör helst överleva ett produktbyte.
 
 En API-standard som bara fungerar så länge organisationen använder en viss gatewayprodukt ligger sannolikt för nära produkt- eller konfigurationsnivån.
 
-En bra arkitekturstandard beskriver i stället **vilka egenskaper och kontrakt som ska vara gemensamma**.
+En bra arkitekturstandard beskriver i stället vilka egenskaper och kontrakt som ska vara gemensamma.
 
 Det gör standarden stabil och låter plattformar och produkter utvecklas bakom den.
 
 ## Produktstandard
 
-En **produktstandard** anger vilken produktfamilj, tjänst eller teknisk realisering som organisationen rekommenderar eller godkänner för ett visst behov.
+En produktstandard anger vilken produktfamilj, tjänst eller teknisk realisering som organisationen rekommenderar eller godkänner för ett visst behov.
 
 Exempel:
 
@@ -139,7 +139,7 @@ Då kan produkten senare bytas utan att förmågan eller tjänstekontraktet mås
 
 ## Versions- och supportstandard
 
-En **versions- och supportstandard** anger vilka konkreta versioner som är tillåtna, rekommenderade eller på väg att avvecklas.
+En versions- och supportstandard anger vilka konkreta versioner som är tillåtna, rekommenderade eller på väg att avvecklas.
 
 Det är mer dynamisk information än en stabil arkitekturstandard.
 
@@ -161,7 +161,7 @@ Kapitel 32 fördjupar denna livscykelmodell.
 
 ## Konfigurationsstandard
 
-En **konfigurationsstandard** ligger ännu närmare den tekniska realiseringen.
+En konfigurationsstandard ligger ännu närmare den tekniska realiseringen.
 
 Exempel:
 
@@ -186,7 +186,7 @@ Men de förändras ofta snabbare och behöver därför hanteras i andra artefakt
 - plattformsprofiler,
 - automation.
 
-Ju mer detaljerad en standard är, desto större är också möjligheten att **göra den exekverbar** i stället för att bara dokumentera den.
+Ju mer detaljerad en standard är, desto större är också möjligheten att göra den exekverbar i stället för att bara dokumentera den.
 
 En konfigurationsregel som kan valideras automatiskt bör ofta flytta närmare pipeline eller plattform än ett manuellt dokument.
 
@@ -218,11 +218,11 @@ Det är bättre att skilja dem åt.
 
 En standard kan exempelvis vara:
 
-- **obligatorisk**,
-- **rekommenderad**,
-- **godkänd**, men inte förstahandsval,
-- **under utvärdering**,
-- **på väg att avvecklas**.
+- obligatorisk,
+- rekommenderad,
+- godkänd, men inte förstahandsval,
+- under utvärdering,
+- på väg att avvecklas.
 
 Detta gör det möjligt att uttrycka en mer nyanserad teknikstyrning.
 
@@ -284,7 +284,7 @@ När flera system måste kommunicera behöver de kunna dela vissa antaganden:
 
 Det är inte nödvändigt att standardisera systemens interna implementation för att uppnå interoperabilitet.
 
-Tvärtom är en viktig arkitekturprincip att standardisera **gränssnittet där gemensamhet krävs** och lämna intern implementation friare där variation inte skadar helheten.
+Tvärtom är en viktig arkitekturprincip att standardisera gränssnittet där gemensamhet krävs och lämna intern implementation friare där variation inte skadar helheten.
 
 Detta kan sammanfattas som:
 
@@ -316,7 +316,7 @@ Men en formulering som:
 
 En bättre standard kan uttrycka vilka signaler, metadata och korrelationsmekanismer som ska finnas och därefter låta en plattformsprofil eller policy kontrollera dem automatiskt.
 
-Det knyter direkt till kapitel 30: en mogen paved road gör många standarder **inbyggda i konsumtionsvägen**.
+Det knyter direkt till kapitel 30: en mogen paved road gör många standarder inbyggda i konsumtionsvägen.
 
 ## Standarder och plattformar måste stödja varandra
 
@@ -356,7 +356,7 @@ En standard uttrycker vilket beteende eller val organisationen har beslutat att 
 
 Exempel:
 
-- **Mönster:** Backend for Frontend.
+- **Mönster:** *Backend for Frontend*.
 - **Standard:** API-kontrakt ska följa organisationens API-konventioner.
 
 Mönstret svarar på:
@@ -391,7 +391,7 @@ Separationen behövs för att varje artefakt ska kunna förändras i rätt takt.
 
 ## Produktstandarder bör kopplas till tjänster
 
-En produktstandard är mest begriplig när det är tydligt **vilken tjänst eller vilket behov produkten realiserar**.
+En produktstandard är mest begriplig när det är tydligt vilken tjänst eller vilket behov produkten realiserar.
 
 I stället för:
 
@@ -491,7 +491,7 @@ Tvärtom finns det flera legitima orsaker:
 - ett externt krav,
 - en övergångsperiod under migrering.
 
-Men undantag bör vara **medvetna beslut**, inte osynliga avvikelser.
+Men undantag bör vara medvetna beslut, inte osynliga avvikelser.
 
 Ett undantag bör därför normalt innehålla:
 
@@ -523,7 +523,7 @@ Om många lösningar begär samma undantag bör standardägaren fråga:
 - tekniklandskapet har förändrats,
 - standardens rationale inte längre gäller.
 
-Undantag är därför också **telemetri för arkitekturstyrningen**.
+Undantag är därför också telemetri för arkitekturstyrningen.
 
 Samma tanke har återkommit genom boken: lokal erfarenhet ska kunna förbättra den gemensamma modellen.
 
@@ -549,7 +549,7 @@ En produktstandard bör exempelvis kunna motiveras med:
 - vilka kostnader ett byte skulle medföra,
 - när beslutet ska omprövas.
 
-Det är inte samma sak som att ständigt byta teknik. Stabilitet har ett värde. Men stabilitet bör vara ett **medvetet arkitekturval**, inte resultatet av att ingen längre vet varför standarden finns.
+Det är inte samma sak som att ständigt byta teknik. Stabilitet har ett värde. Men stabilitet bör vara ett medvetet arkitekturval, inte resultatet av att ingen längre vet varför standarden finns.
 
 ## Experiment behöver en egen väg
 
@@ -572,7 +572,7 @@ Ett experiment kan få andra krav än en produktionstjänst, men behöver samtid
 - vad krävs för att tekniken ska gå vidare?
 - vem ansvarar för städning om försöket avslutas?
 
-På så sätt kan organisationen både **standardisera produktion** och **skapa en kontrollerad väg för lärande**.
+På så sätt kan organisationen både standardisera produktion och skapa en kontrollerad väg för lärande.
 
 Detta leder naturligt till nästa kapitel om tekniklivscykel.
 
@@ -599,9 +599,9 @@ Förmågeområdet bör äga de standarder som hör till det egna området.
 
 Exempel:
 
-- Integration och kommunikation äger API- och messagingstandarder.
+- *Integration och kommunikation* äger API- och messagingstandarder.
 - Identitet och tillit äger identitets- och tjänsteidentitetsstandarder.
-- Programvaruutveckling och leverans äger release-, repository- och CI/CD-relaterade standarder.
+- *Programvaruutveckling och leverans* äger release-, repository- och CI/CD-relaterade standarder.
 
 Förmågeansvaret bör också följa hur standarderna fungerar i praktiken och identifiera behov av förändring.
 
@@ -615,28 +615,28 @@ Den lokala lösningen ska:
 - begära undantag när det finns verkliga skäl,
 - ge återkoppling när standarden skapar onödig friktion.
 
-Detta gör standardisering till ett **federerat ansvar inom gemensamma ramar** snarare än en central lista som en liten grupp försöker detaljförvalta.
+Detta gör standardisering till ett federerat ansvar inom gemensamma ramar snarare än en central lista som en liten grupp försöker detaljförvalta.
 
 ## En praktisk analysordning
 
 När organisationen överväger att skapa eller ändra en teknisk standard kan följande frågor användas:
 
-1. **Vilken variation försöker vi kontrollera?**
-2. **Vilken gemensam konsekvens orsakar variationen?**
-3. **Behöver vi standardisera gränssnittet, produkten, versionen eller konfigurationen?**
-4. **Vilken bindningsgrad är proportionerlig?**
-5. **Kan standarden överleva ett produktbyte?**
-6. **Vilken plattform eller golden path hjälper konsumenten att följa den?**
-7. **Hur verifieras efterlevnad?**
-8. **Hur hanteras legitima undantag?**
-9. **Vem äger standarden?**
-10. **Vilken signal säger att den bör omprövas eller avvecklas?**
+1. Vilken variation försöker vi kontrollera?
+2. Vilken gemensam konsekvens orsakar variationen?
+3. Behöver vi standardisera gränssnittet, produkten, versionen eller konfigurationen?
+4. Vilken bindningsgrad är proportionerlig?
+5. Kan standarden överleva ett produktbyte?
+6. Vilken plattform eller golden path hjälper konsumenten att följa den?
+7. Hur verifieras efterlevnad?
+8. Hur hanteras legitima undantag?
+9. Vem äger standarden?
+10. Vilken signal säger att den bör omprövas eller avvecklas?
 
 Om dessa frågor inte går att besvara är det ofta för tidigt att kalla beslutet en gemensam standard.
 
 ## Från standardkatalog till kontrollerad variation
 
-Det viktigaste skiftet är att se standarder som ett sätt att **styra variation**, inte som ett sätt att maximera likformighet.
+Det viktigaste skiftet är att se standarder som ett sätt att styra variation, inte som ett sätt att maximera likformighet.
 
 En bra standardmodell gör därför tre saker samtidigt:
 

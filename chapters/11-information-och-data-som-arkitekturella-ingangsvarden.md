@@ -6,7 +6,7 @@ Först väljs en applikationsstruktur, sedan en integrationsmodell och därefter
 
 Men problemet är ofta inte i första hand tekniskt.
 
-Det handlar om att **informationens mening, ansvar och livscykel inte har behandlats som arkitekturella ingångsvärden**.
+Det handlar om att informationens mening, ansvar och livscykel inte har behandlats som arkitekturella ingångsvärden.
 
 Detta kapitel flyttar därför fokus ett steg tillbaka. Innan vi frågar vilken databas, sökmotor eller lagringsmodell som ska användas behöver vi förstå:
 
@@ -26,9 +26,9 @@ Det är först därefter som den tekniska datahanteringen kan utformas på ett h
 
 Orden *information* och *data* används ofta som synonymer. För arkitekturarbete är det dock användbart att skilja dem åt.
 
-**Data** är representationen: värden, attribut, dokument, meddelanden, poster och andra strukturer som kan lagras och överföras.
+Data är representationen: värden, attribut, dokument, meddelanden, poster och andra strukturer som kan lagras och överföras.
 
-**Information** är den betydelse som dessa data får i ett sammanhang.
+Information är den betydelse som dessa data får i ett sammanhang.
 
 Ett datumfält med värdet `2026-08-18` är data. Om värdet betyder ansökningsdatum, beslutsdatum, giltighetsdatum eller senast verifierad tidpunkt är en informationsfråga.
 
@@ -95,12 +95,12 @@ Problemet är då inte att API-designen varit dålig. Problemet är att organisa
 
 Begreppsarbete behöver därför svara på två olika frågor:
 
-1. **Vilka begrepp måste ha gemensam betydelse över flera domäner?**
-2. **Vilka begrepp får legitimt betyda olika saker i olika bounded contexts?**
+1. Vilka begrepp måste ha gemensam betydelse över flera domäner?
+2. Vilka begrepp får legitimt betyda olika saker i olika bounded contexts?
 
 Det första kan kräva gemensamma definitioner, referensdata eller kontrakt. Det andra kräver tydliga gränser och explicita översättningar.
 
-Målet är inte en enda universell informationsmodell för hela organisationen. Målet är att skapa **tillräckligt gemensam semantik där samverkan kräver det och tillräcklig lokal frihet där verksamhetskontexterna faktiskt skiljer sig**.
+Målet är inte en enda universell informationsmodell för hela organisationen. Målet är att skapa tillräckligt gemensam semantik där samverkan kräver det och tillräcklig lokal frihet där verksamhetskontexterna faktiskt skiljer sig.
 
 ## Informationsmodell och datamodell fyller olika funktioner
 
@@ -134,7 +134,7 @@ Det minskar också risken att en gammal databasstruktur blir organisationens de 
 
 Kapitel 10 behandlade ägarskap som en del av domängränser. Här behöver vi gå ett steg djupare.
 
-Informationsägarskap betyder inte bara att ett visst system råkar lagra en uppgift. Det handlar om **mandat och ansvar för informationens betydelse och kvalitet**.
+Informationsägarskap betyder inte bara att ett visst system råkar lagra en uppgift. Det handlar om mandat och ansvar för informationens betydelse och kvalitet.
 
 Ett informationsägarskap kan behöva omfatta ansvar för:
 
@@ -163,22 +163,22 @@ Det betyder inte nödvändigtvis att:
 - systemet måste ha den bästa sökfunktionen,
 - eller systemet måste vara tekniskt centralt.
 
-Det betyder att det finns en **utsedd källa vars uppgift betraktas som normerande när flera representationer skiljer sig åt**.
+Det betyder att det finns en utsedd källa vars uppgift betraktas som normerande när flera representationer skiljer sig åt.
 
 Det är därför användbart att skilja mellan:
 
-- **auktoritativ källa** – den källa som äger sanningen för ett visst informationsområde,
-- **härledd kopia** – data som replikerats eller transformerats för ett annat användningsfall,
-- **cache** – temporär kopia för prestanda eller tillgänglighet,
-- **analytisk kopia** – data som anpassats för rapportering eller analys,
-- **sökindex** – representation optimerad för sökning,
-- **arkiv** – representation som bevaras för historik eller regelkrav.
+- auktoritativ källa – den källa som äger sanningen för ett visst informationsområde,
+- härledd kopia – data som replikerats eller transformerats för ett annat användningsfall,
+- cache – temporär kopia för prestanda eller tillgänglighet,
+- analytisk kopia – data som anpassats för rapportering eller analys,
+- sökindex – representation optimerad för sökning,
+- arkiv – representation som bevaras för historik eller regelkrav.
 
 Arkitekturen behöver vara tydlig med vilken roll varje representation har.
 
 Om en sökplattform exempelvis innehåller en kopia av kundinformation för att möjliggöra snabb fritextsökning bör den inte automatiskt bli den plats där kundinformationen ändras. Sökindexet är en härledd representation, inte den auktoritativa källan.
 
-Detta låter enkelt men blir snabbt svårt i stora systemlandskap där data flyttats och kopierats under många år. Där kan ett viktigt arkitekturarbete vara att återetablera **tydligt ägarskap och auktoritet**, inte att försöka eliminera alla kopior.
+Detta låter enkelt men blir snabbt svårt i stora systemlandskap där data flyttats och kopierats under många år. Där kan ett viktigt arkitekturarbete vara att återetablera tydligt ägarskap och auktoritet, inte att försöka eliminera alla kopior.
 
 ## En uppgift kan ha flera legitima sanningar
 
@@ -196,7 +196,7 @@ Den precisionen är viktigare än sloganen att det bara ska finnas ”en sanning
 
 ## Masterdata och referensdata
 
-Två informationskategorier som ofta blir gemensamma är **masterdata** och **referensdata**.
+Två informationskategorier som ofta blir gemensamma är masterdata och referensdata.
 
 Masterdata beskriver relativt stabila kärnobjekt som används av flera processer eller system, exempelvis organisationer, personer, produkter, platser eller avtal – beroende på verksamhetens natur.
 
@@ -221,7 +221,7 @@ Teknik kan inte ersätta informationsgovernance.
 
 När information passerar en domängräns behövs ett explicit kontrakt.
 
-Ett **datakontrakt** kan beskrivas som en överenskommelse mellan producent och konsument om hur data exponeras och vilka egenskaper konsumenten får förlita sig på.
+Ett datakontrakt kan beskrivas som en överenskommelse mellan producent och konsument om hur data exponeras och vilka egenskaper konsumenten får förlita sig på.
 
 Kontraktet kan omfatta mer än bara schema.
 
@@ -239,7 +239,7 @@ Det kan exempelvis beskriva:
 - ägarskap och kontaktvägar,
 - samt hur förändringar och avveckling kommuniceras.
 
-Det gör datakontrakt till en nära släkting till API-kontrakt och eventkontrakt, men med tydligare fokus på **den information som konsumeras**.
+Det gör datakontrakt till en nära släkting till API-kontrakt och eventkontrakt, men med tydligare fokus på den information som konsumeras.
 
 Poängen är inte att varje intern tabell ska bli ett formellt avtal. Poängen är att information som används över en ansvargräns inte bör vara beroende av outtalade antaganden.
 
@@ -306,7 +306,7 @@ Om ett beslut exempelvis baserades på en viss uppgift behöver organisationen i
 
 På motsvarande sätt kan ”spara allt för säkerhets skull” vara lika problematiskt som att radera för tidigt. Onödig information ökar kostnader, komplexitet, säkerhetsrisk och ansvar.
 
-Retention bör därför vara ett **medvetet informationsbeslut som sedan realiseras tekniskt**, inte en bieffekt av att lagringsutrymmet är billigt.
+Retention bör därför vara ett medvetet informationsbeslut som sedan realiseras tekniskt, inte en bieffekt av att lagringsutrymmet är billigt.
 
 ## Kopior är inte automatiskt ett arkitekturfel
 
@@ -348,7 +348,7 @@ Auktoritativ källa
 
 Varje gren har ett syfte och ett ansvar.
 
-Kapitel 15 kommer att fördjupa hur sådana kopior, cachemekanismer, historik och konsistensmodeller kan realiseras tekniskt. Här räcker det att etablera att beslutet om **varför en kopia finns och vilken roll den har** måste tas innan tekniken väljs.
+Kapitel 15 kommer att fördjupa hur sådana kopior, cachemekanismer, historik och konsistensmodeller kan realiseras tekniskt. Här räcker det att etablera att beslutet om varför en kopia finns och vilken roll den har måste tas innan tekniken väljs.
 
 ## Gemensam informationsmodell eller federerad semantik?
 
@@ -360,7 +360,7 @@ Den ena är att varje system definierar sina begrepp själv. Det ger lokal frihe
 
 Den andra är att försöka skapa en enda fullständig organisationsgemensam modell som alla måste följa. Det kan skapa konsistens men riskerar att bli tungstyrt, långsamt och dåligt anpassat till domänspecifika behov.
 
-Mellan dessa ytterligheter finns en mer praktisk modell: **federerad semantik**.
+Mellan dessa ytterligheter finns en mer praktisk modell: federerad semantik.
 
 Den innebär att:
 
@@ -372,7 +372,7 @@ Den innebär att:
 
 Det ligger nära bokens övergripande ansvarmodell.
 
-Gemensam nivå bör inte försöka äga all information. Den bör äga de **spelregler, gemensamma begrepp och kontraktsprinciper som krävs för att flera domäner ska kunna samverka**.
+Gemensam nivå bör inte försöka äga all information. Den bör äga de spelregler, gemensamma begrepp och kontraktsprinciper som krävs för att flera domäner ska kunna samverka.
 
 Domänerna bör äga sin verksamhetsnära semantik.
 
@@ -403,7 +403,7 @@ Förmågeansvariga behöver omsätta de gemensamma principerna till återanvänd
 Det kan exempelvis innebära:
 
 - plattformstjänster för relationsdata, objektlagring eller sökning,
-- mönster för system of record och härledda kopior,
+- mönster för *system of record och härledda kopior*,
 - standarder för schema- och kontraktshantering,
 - tjänster för master- eller referensdata där sådana faktiskt behövs,
 - datakataloger och metadatafunktioner,
@@ -508,18 +508,18 @@ Om många domäner exempelvis behöver:
 
 - hantera stora dokument,
 - söka över härledda kopior,
-- lagra relationsdata med backup och återställning,
+- lagra relationsdata med *backup och återställning*,
 - hantera gemensamma kodverk,
 - distribuera förändringar som events,
 - eller lagra historik med tydlig retention,
 
 är det inte nödvändigtvis ett tecken på att alla ska använda samma applikation.
 
-Det kan i stället vara ett tecken på att organisationen behöver gemensamma **data- och informationshanteringsförmågor, integrationsförmågor och plattformstjänster**.
+Det kan i stället vara ett tecken på att organisationen behöver gemensamma *data- och informationshantering*sförmågor, integrationsförmågor och plattformstjänster.
 
 Här möts del II och del III i boken.
 
-Domän- och informationsanalysen beskriver **vad som behöver vara sant om informationen**. Förmågemodellen beskriver **vilket återanvändbart stöd organisationen behöver kunna erbjuda för att göra detta möjligt**.
+Domän- och informationsanalysen beskriver vad som behöver vara sant om informationen. Förmågemodellen beskriver vilket återanvändbart stöd organisationen behöver kunna erbjuda för att göra detta möjligt.
 
 ## Sammanfattning
 

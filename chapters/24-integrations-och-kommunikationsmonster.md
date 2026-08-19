@@ -1,6 +1,6 @@
 # 24. Integrations- och kommunikationsmönster
 
-Integration är sällan svårt därför att två system inte kan utbyta bytes. Det svåra är att låta två självständiga delar samarbeta utan att deras livscykler, fel, belastning och interna modeller växer ihop mer än nödvändigt. Därför är integrationsmönster i första hand mönster för **beroenden**. De hjälper oss att bestämma vem som känner till vem, när parterna måste vara tillgängliga samtidigt, vilket ansvar som ligger i kontraktet och vad som händer när något går fel.
+Integration är sällan svårt därför att två system inte kan utbyta bytes. Det svåra är att låta två självständiga delar samarbeta utan att deras livscykler, fel, belastning och interna modeller växer ihop mer än nödvändigt. Därför är integrationsmönster i första hand mönster för beroenden. De hjälper oss att bestämma vem som känner till vem, när parterna måste vara tillgängliga samtidigt, vilket ansvar som ligger i kontraktet och vad som händer när något går fel.
 
 Kapitel 17 beskrev integrations- och kommunikationsförmågan och valen mellan exempelvis API, messaging, events, filutbyte och dataförflyttning. Här ligger fokus på en annan nivå. Vi ska se hur återkommande lösningsstrukturer kan användas för att hantera dessa behov. Mönstren är inte konkurrerande tekniker som man väljer en gång för hela organisationen. De är svar på olika krafter och kombineras ofta i samma lösning.
 
@@ -8,31 +8,31 @@ I resten av kapitlet återupprepas därför inte kapitel 17:s katalog över komm
 
 Tre mönster från bokens grundmaterial står i centrum:
 
-- Backend for Frontend,
-- asynkron meddelandekommunikation,
-- publicera/prenumerera.
+- *Backend for Frontend*,
+- *asynkron meddelandekommunikation*,
+- *publicera/prenumerera*.
 
 Runt dem behöver vi dessutom förstå sådant som idempotens, ordering, återförsök, dead-letter-hantering, korrelation och kontraktsutveckling. Dessa är inte alltid egna lösningsmönster, men de är återkommande designmekanismer som avgör om mönstren fungerar robust i praktiken.
 
 ## Börja med den koppling du är beredd att acceptera
 
-Ett integrationsval skapar alltid någon form av koppling. Målet är därför inte ”ingen koppling”, utan **medveten och kontrollerad koppling**.
+Ett integrationsval skapar alltid någon form av koppling. Målet är därför inte ”ingen koppling”, utan medveten och kontrollerad koppling.
 
 Parter kan bland annat kopplas genom:
 
-- **tid** – måste båda vara tillgängliga samtidigt?
-- **identitet** – måste producenten känna till en viss konsument?
-- **kontrakt** – hur starkt är parterna bundna till samma format och semantik?
-- **sekvens** – måste saker inträffa i en viss ordning?
-- **tillgänglighet** – sprids ett fel i den ena parten direkt till den andra?
-- **kapacitet** – måste båda kunna hantera samma belastningstopp samtidigt?
-- **förändring** – behöver en ändring hos den ena samordnas med den andra?
+- tid – måste båda vara tillgängliga samtidigt?
+- identitet – måste producenten känna till en viss konsument?
+- kontrakt – hur starkt är parterna bundna till samma format och semantik?
+- sekvens – måste saker inträffa i en viss ordning?
+- tillgänglighet – sprids ett fel i den ena parten direkt till den andra?
+- kapacitet – måste båda kunna hantera samma belastningstopp samtidigt?
+- förändring – behöver en ändring hos den ena samordnas med den andra?
 
 Detta ger en bättre utgångspunkt än frågor som ”ska vi använda REST eller Kafka?”. Tekniken kan realisera ett valt mönster, men den avgör inte vilket beroende verksamheten faktiskt behöver.
 
 En synkron begäran kan vara rätt när den som anropar inte kan fortsätta utan ett omedelbart svar. Asynkron messaging kan vara rätt när arbete får utföras senare och tillgänglighetstoppar behöver absorberas. Publicera/prenumerera kan vara rätt när producenten ska uttrycka ett faktum utan att styra vilka andra delar som reagerar på det.
 
-Mönstret bör alltså väljas efter **önskad relation mellan parterna**, inte efter vilken plattform organisationen råkar ha.
+Mönstret bör alltså väljas efter önskad relation mellan parterna, inte efter vilken plattform organisationen råkar ha.
 
 ## Backend for Frontend – ett kanalnära ansvarslager
 
@@ -57,7 +57,7 @@ BFF-lagret kan exempelvis:
 - isolera klienten från interna tjänstegränser,
 - ge webb, mobil och andra kanaler olika kontrakt när deras behov faktiskt skiljer sig.
 
-Mönstrets kärna är inte att varje frontend ska få en egen backendkomponent. Kärnan är att **kanalspecifika behov får ett tydligt hem** när ett generiskt backendgränssnitt annars skulle bli för brett eller klienten skulle behöva förstå för mycket av backendlandskapet.
+Mönstrets kärna är inte att varje frontend ska få en egen backendkomponent. Kärnan är att kanalspecifika behov får ett tydligt hem när ett generiskt backendgränssnitt annars skulle bli för brett eller klienten skulle behöva förstå för mycket av backendlandskapet.
 
 ### Krafter som BFF balanserar
 
@@ -79,7 +79,7 @@ Ett vanligt misslyckande är att lägga all ”bekväm” logik i BFF-lagret. D�
 
 Då har kanalgränsen blivit en oavsiktlig domängräns.
 
-En användbar tumregel är att fråga om logiken finns därför att **just denna klient eller kanal behöver den**. Om samma regel måste gälla oavsett kanal hör den normalt hemma längre in i lösningen.
+En användbar tumregel är att fråga om logiken finns därför att just denna klient eller kanal behöver den. Om samma regel måste gälla oavsett kanal hör den normalt hemma längre in i lösningen.
 
 ### Ett BFF per behov – inte per organisationsruta
 
@@ -141,7 +141,7 @@ En operation är idempotent i praktisk integrationsmening när samma logiska beg
 
 Om kommandot ”Registrera betalning” levereras två gånger ska det exempelvis inte automatiskt skapa två betalningar. Lösningen kan behöva ett stabilt meddelande- eller operations-id och en mekanism som känner igen redan behandlade operationer.
 
-Idempotens är inte detsamma som att ignorera alla dubbletter. I vissa domäner kan två till synes identiska händelser vara två verkliga verksamhetshändelser. Det är därför den **logiska identiteten** för operationen som behöver modelleras, inte bara dess payload.
+Idempotens är inte detsamma som att ignorera alla dubbletter. I vissa domäner kan två till synes identiska händelser vara två verkliga verksamhetshändelser. Det är därför den logiska identiteten för operationen som behöver modelleras, inte bara dess payload.
 
 ## Återförsök – återförsök bara sådant som kan lyckas senare
 
@@ -175,7 +175,7 @@ Robust återförsök behöver därför normalt ta ställning till:
 
 När ett meddelande inte kan behandlas efter tillåtna försök behöver det ofta flyttas åt sidan så att resten av flödet kan fortsätta. Detta beskrivs ofta som dead-letter-hantering.
 
-Det viktiga är inte den tekniska dead-letter-kön i sig. Det viktiga är **vad organisationen gör med misslyckade meddelanden**.
+Det viktiga är inte den tekniska dead-letter-kön i sig. Det viktiga är vad organisationen gör med misslyckade meddelanden.
 
 En dead-letter-mekanism behöver därför kopplas till frågor som:
 
@@ -220,7 +220,7 @@ Producent → Event ├→ Konsument B
 
 Producenten behöver inte känna till alla konsumenter. Nya konsumenter kan tillkomma utan att producenten byggs om för varje mottagare.
 
-Detta är en stark egenskap när händelsen uttrycker ett **redan inträffat faktum**, exempelvis:
+Detta är en stark egenskap när händelsen uttrycker ett redan inträffat faktum, exempelvis:
 
 - `ÄrendeRegistrerat`,
 - `BeslutFattat`,
@@ -258,7 +258,7 @@ Lös koppling på runtime-nivå får alltså inte förväxlas med frånvaro av k
 
 ## Meddelande, kommando och event behöver hållas isär
 
-Asynkron teknik kan bära flera olika semantiska former. Två särskilt viktiga är **kommando** och **event**.
+Asynkron teknik kan bära flera olika semantiska former. Två särskilt viktiga är kommando och event.
 
 Ett kommando uttrycker ungefär:
 
@@ -290,10 +290,10 @@ Det kan finnas flera relevanta identiteter samtidigt. Ett `correlation-id` för 
 
 En robust lösning skiljer därför mellan:
 
-- **meddelandets identitet** – vilket enskilt meddelande är detta?
-- **operationens identitet** – vilken logisk begäran representeras?
-- **verksamhetskorrelation** – vilket ärende eller aggregat hör det till?
-- **teknisk trace-korrelation** – hur följs exekveringskedjan i observerbarhetsverktyg?
+- meddelandets identitet – vilket enskilt meddelande är detta?
+- operationens identitet – vilken logisk begäran representeras?
+- verksamhetskorrelation – vilket ärende eller aggregat hör det till?
+- teknisk trace-korrelation – hur följs exekveringskedjan i observerbarhetsverktyg?
 
 Om alla dessa pressas in i ett enda fält blir betydelsen snabbt oklar.
 
@@ -387,7 +387,7 @@ En robust lösning kan exempelvis kombinera:
 
 Ur verksamhetens perspektiv kan detta ge den önskade effekten utan att hela den distribuerade kedjan måste lova ett absolut ”exakt en gång”-beteende.
 
-Poängen är inte att en viss leveranssemantik alltid är rätt, utan att **verksamhetseffekten ska beskrivas först** och den tekniska mekanismen därefter.
+Poängen är inte att en viss leveranssemantik alltid är rätt, utan att verksamhetseffekten ska beskrivas först och den tekniska mekanismen därefter.
 
 ## Fel ska isoleras men inte döljas
 
@@ -566,4 +566,4 @@ Integrations- och kommunikationsmönster handlar om att forma beroenden mellan s
 
 Mönstrens värde avgörs dock av detaljerna runt omkring dem. Idempotens, återförsök, dead-letter-hantering, ordering, korrelation och kontraktsutveckling är avgörande för om en lösning blir robust eller bara mer distribuerad.
 
-Det viktigaste är därför inte att standardisera ett enda integrationssätt. Det är att skapa ett gemensamt språk för **vilken relation man vill ha**, vilka krafter som behöver balanseras och vilka konsekvenser varje mönster medför. När detta kombineras med gemensamma plattformstjänster och guardrails kan lösningsteamen återanvända arkitekturell erfarenhet utan att förlora domänansvar och lokal beslutskraft.
+Det viktigaste är därför inte att standardisera ett enda integrationssätt. Det är att skapa ett gemensamt språk för vilken relation man vill ha, vilka krafter som behöver balanseras och vilka konsekvenser varje mönster medför. När detta kombineras med gemensamma plattformstjänster och guardrails kan lösningsteamen återanvända arkitekturell erfarenhet utan att förlora domänansvar och lokal beslutskraft.

@@ -6,7 +6,7 @@ Det kan vara en publik e-tjänst, ett internt handläggningsstöd, en mobil klie
 
 Samtidigt är användargränssnitt ett område där lokal variation lätt växer snabbt. Ett team väljer ett frontend-ramverk, ett annat skapar egna komponenter, ett tredje bygger en särskild notifieringslösning och ett fjärde etablerar en ny portalstruktur. Varje beslut kan vara rimligt i sitt lokala sammanhang, men tillsammans kan de skapa en flora av tekniker, interaktionsmönster och förvaltningsmodeller som är dyr att bära.
 
-Förmågan **Interaktion, presentation och kanaler** handlar därför om vad ett stödjande IT-område varaktigt behöver kunna erbjuda för att organisationens digitala gränssnitt ska bli användbara, tillgängliga, säkra, förändringsbara och kostnadseffektiva.
+Förmågan *Interaktion, presentation och kanaler* handlar därför om vad ett stödjande IT-område varaktigt behöver kunna erbjuda för att organisationens digitala gränssnitt ska bli användbara, tillgängliga, säkra, förändringsbara och kostnadseffektiva.
 
 Det betyder inte att en central funktion ska designa alla gränssnitt. Det betyder heller inte att alla kanaler ska se identiska ut eller byggas med samma teknik. Förmågan ska i stället skapa en gemensam grund där sådant som vinner på återanvändning kan standardiseras, samtidigt som verksamhetsnära team behåller ansvar för sina faktiska användare, arbetsuppgifter och funktionella behov.
 
@@ -51,7 +51,7 @@ Förmågan behöver typiskt omfatta stöd för flera typer av frågor:
 
 - webbarkitektur,
 - visuella och interaktiva designmönster,
-- design system och återanvändbara UI-komponenter,
+- *design system* och återanvändbara UI-komponenter,
 - formulär och felpresentation,
 - navigation och informationspresentation,
 - responsivitet,
@@ -84,11 +84,11 @@ Detta är förmågestöd. Den faktiska verksamhetsupplevelsen måste fortfarande
 
 Interaktionsförmågan ligger nära nästan alla andra förmågor i boken. Därför är gränsdragningen viktig.
 
-Ett användargränssnitt kan exempelvis visa ett ärende, men **ärendehanteringen** tillhör inte interaktionsförmågan. Ett formulär kan ge återkoppling om en verksamhetsregel, men den **auktoritativa regeln** hör hemma i förmågan Regler och beslut. En klient kan initiera sökning, men själva **söktjänsten och indexeringen** hör hemma i Analys, sökning och AI.
+Ett användargränssnitt kan exempelvis visa ett ärende, men ärendehanteringen tillhör inte interaktionsförmågan. Ett formulär kan ge återkoppling om en verksamhetsregel, men den auktoritativa regeln hör hemma i förmågan Regler och beslut. En klient kan initiera sökning, men själva söktjänsten och indexeringen hör hemma i Analys, sökning och AI.
 
-Samma princip gäller för identitet. Interaktionsförmågan behöver beskriva hur inloggning, sessioner, utloggning och behörighetsfel möter användaren. Men autentisering, federation, tjänsteidentitet och andra tillitsmekanismer tillhör **Identitet och tillit**.
+Samma princip gäller för identitet. Interaktionsförmågan behöver beskriva hur inloggning, sessioner, utloggning och behörighetsfel möter användaren. Men autentisering, federation, tjänsteidentitet och andra tillitsmekanismer tillhör Identitet och tillit.
 
-På motsvarande sätt kan en frontend konsumera API:er, men API management, meddelandekommunikation och integrationskontrakt hör hemma i **Integration och kommunikation**.
+På motsvarande sätt kan en frontend konsumera API:er, men API management, meddelandekommunikation och integrationskontrakt hör hemma i Integration och kommunikation.
 
 Den praktiska gränsen kan formuleras så här:
 
@@ -127,7 +127,7 @@ Det innebär inte att all logik ska flyttas från frontend. Interaktionslogik h�
 - optimistisk återkoppling,
 - och presentation av valideringsresultat.
 
-Frågan är alltså inte om klienten får innehålla logik, utan **vilken typ av logik den får vara auktoritativ för**.
+Frågan är alltså inte om klienten får innehålla logik, utan vilken typ av logik den får vara auktoritativ för.
 
 ## Design system som gemensamt erbjudande
 
@@ -163,7 +163,7 @@ En komponent kan vara tillgänglig och väl utformad i sig men användas på ett
 
 Därför är ansvarsfördelningen viktig:
 
-**Förmågeområdet** kan äga komponenter, designprinciper och gemensamma interaktionsmönster. **Lösningsteamet** äger hur dessa används för att skapa en fungerande upplevelse i den faktiska verksamhetskontexten.
+Förmågeområdet kan äga komponenter, designprinciper och gemensamma interaktionsmönster. Lösningsteamet äger hur dessa används för att skapa en fungerande upplevelse i den faktiska verksamhetskontexten.
 
 ## Tillgänglighet behöver byggas in i förmågan
 
@@ -245,13 +245,13 @@ Mer klientkomplexitet ger inte bara fler funktioner. Den för också med sig kos
 - fler tester,
 - och ibland svårare felsökning.
 
-Därför bör organisationens standardiserade webberbjudande vara en **rekommenderad väg när behovet passar**, inte ett krav att varje webbsida byggs med samma applikationsramverk.
+Därför bör organisationens standardiserade webberbjudande vara en rekommenderad väg när behovet passar, inte ett krav att varje webbsida byggs med samma applikationsramverk.
 
 Det är en viktig skillnad mellan en standardiserad förmåga och teknikmonokultur.
 
 ## Web Application Framework som plattformstjänst
 
-Ett gemensamt Web Application Framework kan vara ett konkret plattformserbjudande inom förmågan.
+Ett gemensamt *Web Application Framework* kan vara ett konkret plattformserbjudande inom förmågan.
 
 Erbjudandet bör dock inte definieras som namnet på ett specifikt ramverk. Dess konsumentvärde är större än så.
 
@@ -292,7 +292,7 @@ En klient behöver nästan alltid hämta, skicka eller förändra information i 
 
 I vissa lösningar är ett direkt API-kontrakt fullt tillräckligt. Att lägga till ytterligare ett lager skulle bara skapa mer kod, drift och livscykel.
 
-I andra situationer kan ett **Backend for Frontend**, BFF, vara lämpligt.
+I andra situationer kan ett Backend for Frontend, BFF, vara lämpligt.
 
 Ett BFF kan exempelvis:
 
@@ -523,7 +523,7 @@ Det kan innebära en kombination av:
 
 Det är först när stödet är lättare att använda än att uppfinna en lokal variant som standardisering på allvar börjar ge effekt.
 
-Detta är också en viktig övergång till senare delar av boken. Förmågan beskriver **vad organisationen behöver kunna erbjuda stöd inom**. Lösningsmönstren beskriver senare **återkommande sätt att strukturera lösningar**. Plattformstjänsterna beskriver **konsumerbara erbjudanden** och standarderna anger **vilken variation som organisationen vill styra**.
+Detta är också en viktig övergång till senare delar av boken. Förmågan beskriver vad organisationen behöver kunna erbjuda stöd inom. Lösningsmönstren beskriver senare återkommande sätt att strukturera lösningar. Plattformstjänsterna beskriver konsumerbara erbjudanden och standarderna anger vilken variation som organisationen vill styra.
 
 ## Sammanfattning
 
@@ -545,7 +545,7 @@ Några centrala principer är:
 
 Förmågan visar därmed tydligt hur den gemensamma arkitekturmodellen är tänkt att fungera. Organisationen standardiserar inte användarupplevelsen genom att centralt designa varje tjänst. Den skapar i stället gemensamma byggstenar, principer och rekommenderade vägar som gör det lättare för lokala lösningsteam att skapa bra och långsiktigt hållbara gränssnitt.
 
-I nästa kapitel flyttas fokus från användarens interaktion till sådant som ofta pågår över längre tid bakom gränssnittet: **processer, workflow och ärendehantering**.
+I nästa kapitel flyttas fokus från användarens interaktion till sådant som ofta pågår över längre tid bakom gränssnittet: processer, workflow och ärendehantering.
 
 ## Källor och vidare läsning
 

@@ -4,7 +4,7 @@ En modell för gemensam IT-arkitektur blir inte användbar bara för att begrepp
 
 Det är lätt att föreställa sig arbetet som en sekvens där organisationen först ritar den perfekta förmågekartan, därefter definierar alla lösningsmönster, sedan specificerar plattformarna, beslutar standarderna och slutligen låter projekten börja använda dem. Ett sådant upplägg ser rationellt ut på papperet men riskerar att bli både långsamt och verklighetsfrånvänt. Arkitekturen behöver formas av faktiska behov och erfarenheter samtidigt som den skapar ett gemensamt sammanhang som lokala beslut kan förhålla sig till.
 
-Det här kapitlet presenterar därför bokens **rekommenderade arbetssätt** för att etablera modellen. Det är inte en universell standard och inte en process som måste följas mekaniskt. Syftet är att ge en praktisk ordning och en ansvarsfördelning som minskar risken för två vanliga ytterligheter: central detaljstyrning och oberoende lokal optimering.
+Det här kapitlet presenterar därför bokens rekommenderade arbetssätt för att etablera modellen. Det är inte en universell standard och inte en process som måste följas mekaniskt. Syftet är att ge en praktisk ordning och en ansvarsfördelning som minskar risken för två vanliga ytterligheter: central detaljstyrning och oberoende lokal optimering.
 
 Den bärande tanken är enkel:
 
@@ -29,7 +29,7 @@ Etableringen bör i stället börja med frågor som:
 - var finns kompetens eller infrastruktur som är rationell att dela?
 - vilka delar behöver vara lokalt differentierade för att verksamheten ska kunna utvecklas snabbt?
 
-Det betyder inte att det befintliga landskapet ignoreras. Befintliga investeringar, avtal, kompetenser och tekniska beroenden är verkliga begränsningar. Men de ska beskriva **förutsättningarna för förändring**, inte definiera vilka behov organisationen har.
+Det betyder inte att det befintliga landskapet ignoreras. Befintliga investeringar, avtal, kompetenser och tekniska beroenden är verkliga begränsningar. Men de ska beskriva förutsättningarna för förändring, inte definiera vilka behov organisationen har.
 
 Den distinktionen från kapitel 3 blir särskilt viktig under etableringen. Ett konstaterande som ”vi har en central integrationsplattform” är inte samma sak som ”vi behöver förmåga till säker, spårbar och förändringsbar kommunikation mellan system”. Det första beskriver en realisering. Det andra beskriver något organisationen behöver kunna åstadkomma även den dag dagens produkt har ersatts.
 
@@ -84,7 +84,7 @@ Här bör ambitionen vara liten men användbar. En organisation som försöker b
 
 Nästa steg är att beskriva vilka typer av stöd organisationens gemensamma IT-område varaktigt behöver kunna erbjuda.
 
-Nyckelorden är **tillräckligt bra första**. Förmågekartan behöver vara stabil nog för att ge struktur, men inte så detaljerad att månader används till att avgöra exakt var varje teknisk mekanism hör hemma.
+Nyckelorden är tillräckligt bra första. Förmågekartan behöver vara stabil nog för att ge struktur, men inte så detaljerad att månader används till att avgöra exakt var varje teknisk mekanism hör hemma.
 
 En första karta kan exempelvis identifiera områden som interaktion, process, regler, data, integration, identitet, runtime, driftbarhet och programvaruleverans. Det viktiga i detta läge är inte att bevisa att indelningen är den enda möjliga. Det viktiga är att varje område beskriver ett begripligt och relativt långlivat ansvar som går att fördjupa.
 
@@ -110,7 +110,7 @@ För varje förmåga behöver därför några grundfrågor besvaras:
 - vilka beslut behöver koordineras med andra områden?
 - vilka konsumenter förväntas använda stödet?
 
-Gränserna behöver inte vara perfekta. De behöver vara **diskuterbara**. En oklar gräns som är explicit dokumenterad är ofta lättare att hantera än två områden som båda antar att den andre ansvarar för frågan.
+Gränserna behöver inte vara perfekta. De behöver vara diskuterbara. En oklar gräns som är explicit dokumenterad är ofta lättare att hantera än två områden som båda antar att den andre ansvarar för frågan.
 
 Detta gäller särskilt tvärgående frågor. Säkerhet, kontinuitet, observerbarhet, informationshantering och livscykel går inte alltid att stoppa in i en enda organisatorisk låda. Det centrala blir då att skilja på vem som sätter gemensamma krav, vem som tillhandahåller mekanismer och vem som tillämpar dem i en konkret lösning.
 
@@ -131,7 +131,7 @@ Förmågeansvaret bör normalt omfatta att:
 - följa användning, brister och återkommande avsteg,
 - föreslå förändringar när området inte längre möter organisationens behov.
 
-Det är viktigt att skilja detta från produktägarskap. En produktägare kan ansvara för exempelvis en konkret API-managementprodukt. Förmågeansvaret för integration och kommunikation är bredare och ska fortfarande vara begripligt om produkten byts ut eller om flera tekniska realiseringar används parallellt.
+Det är viktigt att skilja detta från produktägarskap. En produktägare kan ansvara för exempelvis en konkret API-managementprodukt. Förmågeansvaret för *integration och kommunikation* är bredare och ska fortfarande vara begripligt om produkten byts ut eller om flera tekniska realiseringar används parallellt.
 
 ### 6. Prioritera vilka förmågor som fördjupas först
 
@@ -153,7 +153,7 @@ Det är ofta bättre att fördjupa tre viktiga förmågor så att de faktiskt hj
 
 När ett förmågeområde prioriterats kan detaljarbetet börja. Här blir separationen mellan artefakttyperna från kapitel 2 viktig.
 
-Ett återkommande lösningsproblem kan beskrivas som ett **lösningsmönster**. Ett tekniskt behov som många team behöver konsumera kan paketeras som en **plattformstjänst**. Ett beslut som behöver vara konsekvent för interoperabilitet, risk eller förvaltning kan uttryckas som en **standard**.
+Ett återkommande lösningsproblem kan beskrivas som ett lösningsmönster. Ett tekniskt behov som många team behöver konsumera kan paketeras som en plattformstjänst. Ett beslut som behöver vara konsekvent för interoperabilitet, risk eller förvaltning kan uttryckas som en standard.
 
 De tre artefakterna ska inte ersätta varandra.
 
@@ -163,7 +163,7 @@ Det är i detta steg som den gemensamma arkitekturen börjar få konkret värde 
 
 ### 8. Identifiera tvärgående referensarkitekturer
 
-När flera förmågor utvecklats blir återkommande kombinationer synliga. En publik e-tjänst kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett internt handläggningsstöd kan kombinera workflow, regler, data, dokument, integration och observerbarhet.
+När flera förmågor utvecklats blir återkommande kombinationer synliga. En *publik e-tjänst* kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett *internt handläggningsstöd* kan kombinera workflow, regler, data, dokument, integration och observerbarhet.
 
 När samma kombination och samma arkitekturella frågor återkommer kan en referensarkitektur vara mer användbar än att varje förmåga dokumenteras separat.
 
@@ -187,7 +187,7 @@ Detta är inte bara förvaltningsdata. Det är arkitektursignaler.
 
 Om fem produktteam bygger samma lokala mekanism kan det vara tecken på ett saknat gemensamt erbjudande. Om ingen använder en standardiserad plattform kan problemet ligga i plattformens användbarhet, kostnadsmodell eller leveranstid snarare än i teamens följsamhet. Om samma avsteg godkänns om och om igen kan standarden vara felkalibrerad.
 
-Arkitekturen behöver därför mäta mer än efterlevnad. Den behöver mäta **friktion och nytta**.
+Arkitekturen behöver därför mäta mer än efterlevnad. Den behöver mäta friktion och nytta.
 
 ## Tre ansvarsnivåer
 
@@ -263,7 +263,7 @@ Om beslut alltid flyttas uppåt blir den gemensamma nivån överlastad och lång
 
 Etableringen behöver därför röra sig i två riktningar samtidigt.
 
-**Top-down** behövs för att skapa sammanhang:
+Top-down behövs för att skapa sammanhang:
 
 - gemensamma mål och begränsningar,
 - principer,
@@ -272,7 +272,7 @@ Etableringen behöver därför röra sig i två riktningar samtidigt.
 - ansvarssnitt,
 - spelregler för gemensamma artefakter.
 
-**Bottom-up** behövs för att skapa realism:
+Bottom-up behövs för att skapa realism:
 
 - faktiska problem i produktteam,
 - återkommande lokala mönster,
@@ -339,7 +339,7 @@ Det viktigaste är att delarna hänger ihop. En mindre modell där ett lösnings
 
 Etableringen bör också kunna upptäcka när beslut hamnat på fel nivå.
 
-Några typiska signaler på **för hög centralisering** är:
+Några typiska signaler på för hög centralisering är:
 
 - små lokala teknikbeslut kräver central behandling,
 - arkitekturforum blir köer för godkännande,
@@ -347,7 +347,7 @@ Några typiska signaler på **för hög centralisering** är:
 - lösningsteam väntar på centrala besked i frågor där de själva har bäst kunskap,
 - gemensamma plattformar används trots att de inte möter behovet eftersom avsteg är för svåra.
 
-Typiska signaler på **för låg samordning** är:
+Typiska signaler på för låg samordning är:
 
 - samma problem löses på många olika sätt utan tydlig anledning,
 - interoperabilitet kräver specialanpassning mellan varje par av system,
@@ -374,13 +374,13 @@ En mognare modell kännetecknas snarare av att:
 - artefakter kan förändras utan att hela modellen behöver ritas om,
 - lokala erfarenheter påverkar gemensamma beslut.
 
-Det är därför rimligt att se arkitekturmognad som **förmågan att fatta bättre sammanhängande beslut över tid**, inte som hur komplett ett dokumentbibliotek är.
+Det är därför rimligt att se arkitekturmognad som förmågan att fatta bättre sammanhängande beslut över tid, inte som hur komplett ett dokumentbibliotek är.
 
 ## Från etablering till fördjupning
 
 Del I har nu byggt upp bokens grundmodell. Vi har gått från problemet med fragmentering och lokal optimering, via lager och spårbarhet, till behov, kvalitetsattribut, arkitekturbeslut och principer. I detta kapitel har dessa delar satts in i en praktisk etableringsordning och en ansvarmodell.
 
-Nästa fråga blir mer precis: **vad är egentligen en gemensam IT-förmåga?**
+Nästa fråga blir mer precis: vad är egentligen en gemensam IT-förmåga?
 
 För att kunna använda förmågekartan som den stabila delen av arkitekturen behöver vi skilja den från verksamhetsförmågor, tjänster, plattformar, organisatoriska team och produkter. Vi behöver också förstå varför vissa saker lämpar sig för gemensamt ansvar medan andra bör ligga nära verksamhetsdomänen.
 

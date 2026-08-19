@@ -2,7 +2,7 @@
 
 Arkitektur handlar sällan om att hitta ett alternativ som är bäst i alla avseenden. Ofta finns flera lösningar som skulle fungera, men de fungerar bra på olika sätt. En lösning kan ge hög förändringstakt men större operativ komplexitet. En annan kan vara enklare att drifta men ge svagare isolering mellan verksamhetsdelar. En tredje kan vara billigast att införa men svårare att lämna senare.
 
-Det arkitektoniska arbetet består därför inte bara i att beskriva en målbild. Det består också i att göra **medvetna val mellan konkurrerande egenskaper**, tydliggöra varför valet gjordes och göra det möjligt att ompröva beslutet när förutsättningarna förändras.
+Det arkitektoniska arbetet består därför inte bara i att beskriva en målbild. Det består också i att göra medvetna val mellan konkurrerande egenskaper, tydliggöra varför valet gjordes och göra det möjligt att ompröva beslutet när förutsättningarna förändras.
 
 Ett arkitekturbeslut behöver kunna besvara åtminstone fyra frågor:
 
@@ -11,7 +11,7 @@ Ett arkitekturbeslut behöver kunna besvara åtminstone fyra frågor:
 3. Vilka konsekvenser och avvägningar innebär alternativen?
 4. Varför är det valda alternativet rimligt i just denna kontext?
 
-Det är först när dessa frågor är synliga som arkitekturen blir spårbar som **beslutslogik**, inte bara som ett tillstånd i ett diagram.
+Det är först när dessa frågor är synliga som arkitekturen blir spårbar som beslutslogik, inte bara som ett tillstånd i ett diagram.
 
 Detta kapitel behandlar hur arkitekturbeslut kan göras explicita, jämförbara och omprövningsbara. Fokus ligger på själva beslutets form och resonemang. Hur organisationen ger mandat, hanterar avsteg och förvaltar styrningen över tid behandlas senare i boken.
 
@@ -37,11 +37,11 @@ Arkitekturbeslut
 Konsekvenser och uppföljning
 ```
 
-Det viktiga ordet är **realistiska**. Arkitekturval görs aldrig i ett vakuum. Organisationen kan redan ha investerat i plattformar, kompetens, avtal, driftsmodeller och säkerhetsmekanismer. Lagstiftning, informationsklassning eller externa integrationskrav kan begränsa möjliga alternativ. Tid, budget och tillgång till kompetens gör detsamma.
+Det viktiga ordet är realistiska. Arkitekturval görs aldrig i ett vakuum. Organisationen kan redan ha investerat i plattformar, kompetens, avtal, driftsmodeller och säkerhetsmekanismer. Lagstiftning, informationsklassning eller externa integrationskrav kan begränsa möjliga alternativ. Tid, budget och tillgång till kompetens gör detsamma.
 
 Men begränsningar ska avgränsa beslutsrymmet – inte ersätta beslutsanalysen.
 
-Om organisationen redan har en containerplattform är det ett relevant faktum. Det betyder däremot inte automatiskt att varje ny applikation bör köras där. Frågan är fortfarande om plattformens egenskaper möter lösningens behov bättre än alternativen, givet kostnad, risk och långsiktiga konsekvenser.
+Om organisationen redan har en *containerplattform* är det ett relevant faktum. Det betyder däremot inte automatiskt att varje ny applikation bör köras där. Frågan är fortfarande om plattformens egenskaper möter lösningens behov bättre än alternativen, givet kostnad, risk och långsiktiga konsekvenser.
 
 ## Ett arkitekturbeslut är mer än ett teknikval
 
@@ -54,7 +54,7 @@ Uttrycket arkitekturbeslut associeras lätt med val som:
 
 Sådana beslut kan vara arkitekturella, men tekniken i sig avgör inte om beslutet är ett arkitekturbeslut.
 
-Ett beslut är arkitekturellt när det har **betydande och svårreversibla konsekvenser** för struktur, kvaliteter, ansvar, beroenden eller framtida handlingsutrymme.
+Ett beslut är arkitekturellt när det har betydande och svårreversibla konsekvenser för struktur, kvaliteter, ansvar, beroenden eller framtida handlingsutrymme.
 
 Exempel kan vara:
 
@@ -70,12 +70,12 @@ Ett litet bibliotek som kan bytas på en eftermiddag behöver sällan ett formel
 
 Det är därför praktiskt att bedöma beslut efter bland annat:
 
-- **räckvidd** – hur många lösningar eller team påverkas,
-- **livslängd** – hur länge beslutet förväntas gälla,
-- **reversibilitet** – hur dyrt eller svårt det är att ändra,
-- **kvalitetspåverkan** – vilka viktiga kvalitetsattribut som påverkas,
-- **beroenden** – vilka organisatoriska eller tekniska låsningar som skapas,
-- **risk** – vad konsekvensen blir om antagandet bakom beslutet visar sig felaktigt.
+- räckvidd – hur många lösningar eller team påverkas,
+- livslängd – hur länge beslutet förväntas gälla,
+- reversibilitet – hur dyrt eller svårt det är att ändra,
+- kvalitetspåverkan – vilka viktiga kvalitetsattribut som påverkas,
+- beroenden – vilka organisatoriska eller tekniska låsningar som skapas,
+- risk – vad konsekvensen blir om antagandet bakom beslutet visar sig felaktigt.
 
 Ju högre dessa faktorer är, desto större värde finns i att göra beslutet explicit.
 
@@ -105,7 +105,7 @@ Men robusthet är bara en dimension. Valet påverkar också:
 
 Den asynkrona lösningen kan tåla att mottagaren tillfälligt är nere, men den introducerar samtidigt frågor om idempotens, ordering, dead-letter-hantering och korrelation. Det synkrona alternativet kan vara enklare att förstå men skapa hårdare beroende mellan tillgängligheten i två tjänster.
 
-Arkitektens uppgift är därför inte att hitta den egenskap där ett alternativ är starkast, utan att förstå **vilken kombination av egenskaper som bäst motsvarar den prioriterade kravbilden**.
+Arkitektens uppgift är därför inte att hitta den egenskap där ett alternativ är starkast, utan att förstå vilken kombination av egenskaper som bäst motsvarar den prioriterade kravbilden.
 
 ## Avvägning betyder inte kompromiss i negativ mening
 
@@ -189,7 +189,7 @@ Om ett beslut bygger på att belastningen sannolikt aldrig överstiger en viss n
 
 ## Architecture Decision Records
 
-Ett vanligt sätt att dokumentera arkitekturbeslut är ett **Architecture Decision Record**, ofta förkortat ADR.
+Ett vanligt sätt att dokumentera arkitekturbeslut är ett Architecture Decision Record, ofta förkortat ADR.
 
 Grundidén är enkel: varje betydelsefullt beslut får en liten, självständig beslutsnotering som bevarar kontexten och resonemanget.
 
@@ -218,7 +218,7 @@ En bättre notering förklarar:
 
 > Tjänsten behöver transaktionell konsistens mellan de centrala informationsobjekten, etablerad backup/restore enligt den definierade kontinuitetsprofilen och stöd från befintlig driftorganisation. Tre alternativ utvärderades. Produkt X valdes eftersom den möter de prioriterade kraven och redan erbjuds som förvaltad databastjänst. Beslutet innebär samtidigt beroende av plattformens versionscykel och vissa leverantörsspecifika driftmekanismer.
 
-Den andra texten gör två saker som den första saknar: den beskriver **varför** valet gjordes och **vilka konsekvenser** som accepterades.
+Den andra texten gör två saker som den första saknar: den beskriver varför valet gjordes och vilka konsekvenser som accepterades.
 
 ## ADR är beslutshistorik, inte dokumentationsritual
 
@@ -237,7 +237,7 @@ För mindre beslut kan kod, konfiguration eller vanlig teknisk dokumentation rä
 
 Principen bör vara:
 
-> Dokumentera beslut där **förlusten av beslutslogiken** skulle vara kostsam.
+> Dokumentera beslut där förlusten av beslutslogiken skulle vara kostsam.
 
 Det är en bättre styrsignal än att försöka definiera exakt vilka tekniktyper som alltid måste få en ADR.
 
@@ -247,10 +247,10 @@ Arkitekturbeslut är inte eviga sanningar. En enkel statusmodell hjälper till a
 
 Exempel:
 
-- **Föreslaget** – alternativet diskuteras men är inte beslutat.
-- **Accepterat** – beslutet gäller.
-- **Ersatt** – ett senare beslut har tagit dess plats.
-- **Utgånget** – beslutet är inte längre relevant.
+- Föreslaget – alternativet diskuteras men är inte beslutat.
+- Accepterat – beslutet gäller.
+- Ersatt – ett senare beslut har tagit dess plats.
+- Utgånget – beslutet är inte längre relevant.
 
 I vissa organisationer kan ytterligare statusar behövas, men för många räcker en enkel modell.
 
@@ -331,7 +331,7 @@ Då blir skulden en del av den strategiska beslutsportföljen i stället för et
 
 ## Beslut behöver omprövningsvillkor
 
-En av de mest värdefulla uppgifterna i en beslutsnotering är ofta **när beslutet inte längre ska betraktas som självklart**.
+En av de mest värdefulla uppgifterna i en beslutsnotering är ofta när beslutet inte längre ska betraktas som självklart.
 
 Det behöver inte vara ett kalenderdatum. Omprövning kan triggas av händelser.
 
@@ -380,7 +380,7 @@ För ett svårreversibelt beslut bör organisationen i stället investera mer i:
 - exit-planering,
 - oberoende granskning.
 
-Det innebär att beslutsprocessen bör vara **proportionerlig mot konsekvensen av att ha fel**.
+Det innebär att beslutsprocessen bör vara proportionerlig mot konsekvensen av att ha fel.
 
 Det är särskilt viktigt i gemensam IT-arkitektur. Ett beslut som bara påverkar en lösning kan vara relativt enkelt att korrigera. Ett gemensamt plattformsbeslut som hundra system bygger på kan skapa mycket stor framtida tröghet.
 
@@ -406,10 +406,10 @@ Gemensamma beslut bör vara relativt få men ha hög räckvidd.
 
 Här fattas beslut om hur ett visst stödjande område ska fungera och vilka erbjudanden det ska tillhandahålla.
 
-Exempel inom Integration och kommunikation kan vara:
+Exempel inom *Integration och kommunikation* kan vara:
 
 - vilka integrationsstilar plattformen ska stödja,
-- när API management ska vara standardvägen,
+- när *API management* ska vara standardvägen,
 - vilka messaging-egenskaper som erbjuds,
 - vilka kontrakts- och versionsregler som gäller inom området.
 
@@ -472,7 +472,7 @@ Det går inte att avgöra utan sammanhang.
 
 Om funktionerna i praktiken tillhör samma sammanhållna domän, förändras tillsammans och kräver stark transaktionell konsistens kan en gemensam datamodell vara rimlig. Om de har olika ägare, olika förändringstakt och tydliga domängränser kan separata dataägarskap vara viktigare.
 
-Avvägning-analysen gör alltså inte beslutet automatiskt. Den gör **orsakerna till beslutet synliga**.
+Avvägning-analysen gör alltså inte beslutet automatiskt. Den gör orsakerna till beslutet synliga.
 
 ## Undvik falsk precision i beslutsmatriser
 
@@ -490,7 +490,7 @@ Exempel:
 
 Att multiplicera och summera dessa siffror kan hjälpa diskussionen, men resultatet är inte en naturvetenskaplig sanning. Både vikter och poäng bygger på bedömningar.
 
-En beslutsmatris bör därför användas som **samtals- och analysverktyg**, inte som en maskin som fattar beslutet.
+En beslutsmatris bör därför användas som samtals- och analysverktyg, inte som en maskin som fattar beslutet.
 
 Särskilt absoluta krav måste hanteras separat. Ett alternativ som inte klarar ett nödvändigt informationsskyddskrav ska inte kunna vinna genom att samla fler poäng på lägre kostnad och bättre utvecklarupplevelse.
 
@@ -507,7 +507,7 @@ När ett beslut bygger på osäkerhet kring exempelvis:
 - kompatibilitet,
 - produktmognad,
 
-kan en begränsad **proof of concept**, spike eller teknisk prototyp vara billigare än lång argumentation.
+kan en begränsad proof of concept, spike eller teknisk prototyp vara billigare än lång argumentation.
 
 Syftet bör då vara att testa en konkret hypotes.
 
@@ -523,9 +523,9 @@ En prototyp utan beslutskriterier riskerar bara att visa att tekniken går att s
 
 ## Beslutslogg och arkitekturdiagram fyller olika funktioner
 
-Ett arkitekturdiagram visar ofta **vad** lösningen består av och hur delar relaterar.
+Ett arkitekturdiagram visar ofta vad lösningen består av och hur delar relaterar.
 
-En beslutslogg visar **varför** strukturen blev sådan.
+En beslutslogg visar varför strukturen blev sådan.
 
 De ersätter inte varandra.
 
@@ -556,7 +556,7 @@ För att ett lokalt beslut ska kunna generaliseras behöver man fråga:
 - Är konsekvenserna för andra team förstådda?
 - Finns förvaltningskapacitet för ett gemensamt erbjudande?
 
-Detta är en viktig koppling till bokens senare delar. Lösningsmönster, plattformstjänster och standarder bör växa fram ur **återkommande beslutssituationer**, inte ur önskan att katalogisera så mycket teknik som möjligt.
+Detta är en viktig koppling till bokens senare delar. Lösningsmönster, plattformstjänster och standarder bör växa fram ur återkommande beslutssituationer, inte ur önskan att katalogisera så mycket teknik som möjligt.
 
 ## Beslut ska kunna förstås utan mötesminnet
 
@@ -663,4 +663,4 @@ Det kan bli:
 
 Det är så gemensam arkitektur kan växa fram ur verkliga behov utan att reduceras till central teori.
 
-Nästa kapitel behandlar **arkitekturprinciper** – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och avvägning-analys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.
+Nästa kapitel behandlar arkitekturprinciper – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och avvägning-analys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.

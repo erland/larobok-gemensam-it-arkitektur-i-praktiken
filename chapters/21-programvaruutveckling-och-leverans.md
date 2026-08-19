@@ -1,10 +1,10 @@
 # 21. Programvaruutveckling och leverans
 
-Programvara blir inte verksamhetsnytta när koden är skriven. Den blir verksamhetsnytta först när organisationen på ett kontrollerat sätt kan förvandla förändrad källkod till en verifierad, spårbar och driftsatt version som går att förstå, återskapa och vid behov återställa eller ersätta. Därför är programvaruutveckling och leverans en egen gemensam IT-förmåga.
+Programvara blir inte verksamhetsnytta när koden är skriven. Den blir verksamhetsnytta först när organisationen på ett kontrollerat sätt kan förvandla förändrad källkod till en verifierad, spårbar och driftsatt version som går att förstå, återskapa och vid behov återställa eller ersätta. Därför är *programvaruutveckling och leverans* en egen gemensam IT-förmåga.
 
 Förmågan omfattar inte all teknik som utvecklare råkar använda. Den handlar om den gemensamma vägen från källkod och ändringsförslag till byggda artefakter, verifierade releaser och kontrollerad produktionssättning. Applikationens exekveringsmiljö behandlades i kapitel 19 och driftbarhet och motståndskraft i kapitel 20. Här ligger fokus i stället på själva förändringsflödet.
 
-Det centrala arkitekturproblemet är att leveransflödet både måste ge **hög förändringstakt** och **hög kontroll**. En organisation som försöker skapa kontroll genom manuella steg får ofta långsamma, svårreproducerade och personberoende leveranser. En organisation som försöker skapa hastighet genom att ta bort kontroller riskerar i stället att göra produktion till testmiljö. Den gemensamma förmågan behöver därför göra den säkra och reproducerbara vägen till den enklaste vägen.
+Det centrala arkitekturproblemet är att leveransflödet både måste ge hög förändringstakt och hög kontroll. En organisation som försöker skapa kontroll genom manuella steg får ofta långsamma, svårreproducerade och personberoende leveranser. En organisation som försöker skapa hastighet genom att ta bort kontroller riskerar i stället att göra produktion till testmiljö. Den gemensamma förmågan behöver därför göra den säkra och reproducerbara vägen till den enklaste vägen.
 
 ## Från kod till körande förändring är en sammanhängande kedja
 
@@ -88,7 +88,7 @@ Det betyder inte bara att utvecklarupplevelsen är dålig. Det betyder att organ
 
 ## Build once, promote many
 
-En av de viktigaste principerna i ett kontrollerat leveransflöde är att **bygga artefakten en gång och föra samma artefakt vidare mellan miljöerna**.
+En av de viktigaste principerna i ett kontrollerat leveransflöde är att bygga artefakten en gång och föra samma artefakt vidare mellan miljöerna.
 
 En vanlig men riskfylld modell är:
 
@@ -174,7 +174,7 @@ En kontroll som alltid ignoreras eller rutinmässigt kringgås skapar inte säke
 
 ## CD kan betyda två olika saker
 
-Förkortningen CD används både för **continuous delivery** och **continuous driftsättning**.
+Förkortningen CD används både för continuous delivery och continuous driftsättning.
 
 Continuous delivery innebär normalt att programvaran hålls i ett tillstånd där en verifierad version kan produktionssättas genom ett kontrollerat beslut.
 
@@ -239,7 +239,7 @@ Det kan fungera hundra gånger. Men processen har då inget starkt svar på frå
 
 Automatisering ersätter inte ansvar eller granskning. Den gör den beslutade processen reproducerbar.
 
-Därför är målet inte ”automation till varje pris”, utan att **automatisera återkommande mekanik och reservera mänskligt omdöme för de beslut där det faktiskt tillför värde**.
+Därför är målet inte ”automation till varje pris”, utan att automatisera återkommande mekanik och reservera mänskligt omdöme för de beslut där det faktiskt tillför värde.
 
 ## Kvalitetssäkring behöver ligga längs hela flödet
 
@@ -269,7 +269,7 @@ Exempel på kontroller är:
 - policykontroll,
 - driftsättning smoke tests.
 
-Det avgörande är inte maximalt antal kontroller. En mogen pipeline använder **rätt kontroller på rätt plats** och ger snabb återkoppling när något misslyckas.
+Det avgörande är inte maximalt antal kontroller. En mogen pipeline använder rätt kontroller på rätt plats och ger snabb återkoppling när något misslyckas.
 
 ## Software supply chain gör byggkedjan till en tillitskedja
 
@@ -284,7 +284,7 @@ En modern applikation består sällan bara av den kod organisationen själv skri
 - pipelinekomponenter,
 - publicerade artefakter.
 
-Därför är leveranskedjan också en **software supply chain**.
+Därför är leveranskedjan också en software supply chain.
 
 Det räcker inte att applikationskoden är korrekt om en angripare kan manipulera ett beroende, byggmiljön eller artefakten efter byggning.
 
@@ -370,7 +370,7 @@ Verifiering före användning
 
 Om organisationen signerar alla containerimages men produktionsplattformen aldrig verifierar signaturen blir kontrollen huvudsakligen kosmetisk.
 
-Sigstore[K4]-ekosystemet är ett exempel på moderna mekanismer för signering och verifiering av programvaruarterfakter. Det viktiga arkitekturbegreppet är dock inte ett specifikt verktyg utan kedjan **producera bevis → skydda beviset → verifiera beviset → verkställ policy**.
+Sigstore[K4]-ekosystemet är ett exempel på moderna mekanismer för signering och verifiering av programvaruarterfakter. Det viktiga arkitekturbegreppet är dock inte ett specifikt verktyg utan kedjan producera bevis → skydda beviset → verifiera beviset → verkställ policy.
 
 ## Secrets hör inte hemma i pipelinekoden
 
@@ -392,7 +392,7 @@ Detta är ett bra exempel på hur förmågorna samverkar: leveransförmågan kon
 
 ## Promotion är ett beslut om samma artefakt
 
-En vanlig missuppfattning är att en release ”flyttas” mellan miljöer. Egentligen är det ofta bättre att tänka att **samma artefakt får tillåtelse att användas i en ny miljö**.
+En vanlig missuppfattning är att en release ”flyttas” mellan miljöer. Egentligen är det ofta bättre att tänka att samma artefakt får tillåtelse att användas i en ny miljö.
 
 Exempel:
 
@@ -443,7 +443,7 @@ Att kunna gå tillbaka till föregående version låter som en självklar säker
 - tillstånd,
 - irreversible data.
 
-Därför behöver leveransstrategin ibland utformas för **roll-forward** snarare än ren rollback.
+Därför behöver leveransstrategin ibland utformas för roll-forward snarare än ren rollback.
 
 Ett enkelt exempel är en bakåtkompatibel databasmigrering där den gamla och nya applikationsversionen kan köras under en övergångsperiod. Om ett fel upptäcks kan en korrigerad applikationsversion då levereras utan att databasen först måste återställas.
 
@@ -477,7 +477,7 @@ Det betyder att utvecklarupplevelse inte bara är bekvämlighet. Den påverkar:
 - kognitiv belastning,
 - möjlighet att uppgradera gemensamma arbetssätt.
 
-En stark plattforms- och leveransförmåga bör därför erbjuda en **paved road** eller golden path: ett välstött standardflöde som är lättare att använda än att bygga motsvarande mekanismer själv.
+En stark plattforms- och leveransförmåga bör därför erbjuda en paved road eller golden path: ett välstött standardflöde som är lättare att använda än att bygga motsvarande mekanismer själv.
 
 Exempel kan vara:
 
@@ -650,18 +650,18 @@ Den gemensamma vägen är så låst att legitima behov inte kan hanteras. Teamen
 
 När ett utvecklingsområde ska etablera eller förbättra sin leveransväg kan följande ordning användas:
 
-1. **Identifiera vad som ska levereras.** Vilka typer av artefakter och målmiljöer finns?
-2. **Kartlägg förändringskedjan.** Från commit till produktion: vilka steg finns och vilka är manuella?
-3. **Definiera spårbarhetsbehovet.** Vad måste kunna kopplas från körande version tillbaka till källa och build?
-4. **Bestäm byggprincipen.** Hur görs bygget reproducerbart och hur separeras miljökonfiguration?
-5. **Definiera kvalitetsgrindar.** Vilka tester och kontroller behövs utifrån risk?
-6. **Analysera supply chain.** Vilka externa beroenden, byggverktyg och register behöver kunna betros och följas upp?
-7. **Definiera artefaktflödet.** Hur versionssätts, lagras och promoveras artefakter?
-8. **Bestäm identitets- och secretsmodell.** Vilka tekniska identiteter får göra vad?
-9. **Välj driftsättning- och återställningsstrategi.** Hur begränsas förändringsrisk och hur hanteras fel?
-10. **Skapa standardvägen.** Vilka delar kan plattformiseras och återanvändas för flera team?
-11. **Mät friktion och effekt.** Var väntar teamen, var sker manuella ingrepp och vilka kontroller ger verkligt värde?
-12. **Förbättra gemensamma byggstenar utifrån användningen.** Återkommande speciallösningar är signaler om att standardvägen behöver utvecklas.
+1. Identifiera vad som ska levereras. Vilka typer av artefakter och målmiljöer finns?
+2. Kartlägg förändringskedjan. Från commit till produktion: vilka steg finns och vilka är manuella?
+3. Definiera spårbarhetsbehovet. Vad måste kunna kopplas från körande version tillbaka till källa och build?
+4. Bestäm byggprincipen. Hur görs bygget reproducerbart och hur separeras miljökonfiguration?
+5. Definiera kvalitetsgrindar. Vilka tester och kontroller behövs utifrån risk?
+6. Analysera supply chain. Vilka externa beroenden, byggverktyg och register behöver kunna betros och följas upp?
+7. Definiera artefaktflödet. Hur versionssätts, lagras och promoveras artefakter?
+8. Bestäm identitets- och secretsmodell. Vilka tekniska identiteter får göra vad?
+9. Välj driftsättning- och återställningsstrategi. Hur begränsas förändringsrisk och hur hanteras fel?
+10. Skapa standardvägen. Vilka delar kan plattformiseras och återanvändas för flera team?
+11. Mät friktion och effekt. Var väntar teamen, var sker manuella ingrepp och vilka kontroller ger verkligt värde?
+12. Förbättra gemensamma byggstenar utifrån användningen. Återkommande speciallösningar är signaler om att standardvägen behöver utvecklas.
 
 Denna ordning gör att CI/CD inte börjar som en verktygsupphandling. Den börjar i vad organisationen faktiskt behöver kunna leverera och kontrollera.
 
@@ -688,9 +688,9 @@ Driftbarhet och motståndskraft
 
 Återkopplingen är viktig. Incidenter, prestandaproblem och återställningssvårigheter bör påverka både applikationens arkitektur och leveransvägens kontroller.
 
-En stark leveransförmåga gör alltså mer än att flytta kod snabbt. Den gör förändring **spårbar, reproducerbar, verifierbar och säker nog för den verksamhetsrisk som förändringen innebär**.
+En stark leveransförmåga gör alltså mer än att flytta kod snabbt. Den gör förändring spårbar, reproducerbar, verifierbar och säker nog för den verksamhetsrisk som förändringen innebär.
 
-I nästa kapitel lämnar vi den tekniska leveranskedjan och går till den elfte och sista gemensamma IT-förmågan: **Arbetsplats, samarbete och produktivitet**. Där blir arkitekturfrågan annorlunda. Fokus ligger mindre på egenutvecklad programvara och mer på hur en gemensam digital arbetsmiljö kan standardiseras, styras och utvecklas utan att skapa informationsrisker eller kväva lokal produktivitet.
+I nästa kapitel lämnar vi den tekniska leveranskedjan och går till den elfte och sista gemensamma IT-förmågan: Arbetsplats, samarbete och produktivitet. Där blir arkitekturfrågan annorlunda. Fokus ligger mindre på egenutvecklad programvara och mer på hur en gemensam digital arbetsmiljö kan standardiseras, styras och utvecklas utan att skapa informationsrisker eller kväva lokal produktivitet.
 
 ## Källor och vidare läsning
 

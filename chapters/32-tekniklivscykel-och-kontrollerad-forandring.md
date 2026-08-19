@@ -4,7 +4,7 @@ Tekniska standarder behöver stabilitet för att skapa värde. Samtidigt är nä
 
 Det skapar en grundläggande spänning. Om organisationen byter riktning för ofta blir den gemensamma arkitekturen instabil och dyr. Om den förändras för långsamt blir standarderna i stället ett hinder som håller kvar lösningarna i teknik som inte längre är ändamålsenlig.
 
-Tekniklivscykel handlar därför inte om att alltid välja det nyaste. Den handlar om att **förändra teknikportföljen med tillräcklig framförhållning, tydliga beslut och kontrollerade övergångar**.
+Tekniklivscykel handlar därför inte om att alltid välja det nyaste. Den handlar om att förändra teknikportföljen med tillräcklig framförhållning, tydliga beslut och kontrollerade övergångar.
 
 Det är också viktigt att skilja detta från den bredare governancefrågan. I det här kapitlet ligger fokus på livscykeln för tekniker, produkter, versioner och närliggande standarder. Hur hela arkitekturmodellen förvaltas, hur mandat organiseras och hur gemensam governance fungerar över tid behandlas i kapitel 37.
 
@@ -28,9 +28,9 @@ Produkt och huvudversion        förändras snabbare
 Patchnivå och konfiguration     förändras kontinuerligt
 ```
 
-Poängen är inte att varje lager alltid följer exakt denna takt. Poängen är att de **inte bör vara hårt sammanbundna**.
+Poängen är inte att varje lager alltid följer exakt denna takt. Poängen är att de inte bör vara hårt sammanbundna.
 
-Om en förmågebeskrivning säger att organisationen erbjuder ”OpenShift version X” har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken containerplattform som för närvarande är godkänd är förändringen placerad där den hör hemma.
+Om en förmågebeskrivning säger att organisationen erbjuder ”OpenShift version X” har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken *containerplattform* som för närvarande är godkänd är förändringen placerad där den hör hemma.
 
 Detta gör livscykelhantering möjlig utan att hela arkitekturmodellen behöver skrivas om vid varje teknikskifte.
 
@@ -40,13 +40,13 @@ En organisation behöver kunna uttrycka mer än bara ”standard” eller ”int
 
 En praktisk livscykelmodell kan exempelvis innehålla följande tillstånd:
 
-1. **Utforskas** – tekniken undersöks men är inte rekommenderad för normal produktion.
-2. **Utvärderas** – tekniken prövas kontrollerat i pilot eller begränsad användning.
-3. **Godkänd** – tekniken får användas under angivna villkor, men är inte nödvändigtvis förstahandsval.
-4. **Rekommenderad** – tekniken är ett aktivt förstahandsval inom definierad kontext.
-5. **Begränsad** – ny användning bör normalt inte startas, men befintliga lösningar kan fortsätta under vissa villkor.
-6. **Deprecated** – tekniken ska inte användas för nyutveckling och befintliga användare behöver planera migration.
-7. **Retired** – tekniken är avvecklad som gemensamt stödd väg.
+1. Utforskas – tekniken undersöks men är inte rekommenderad för normal produktion.
+2. Utvärderas – tekniken prövas kontrollerat i pilot eller begränsad användning.
+3. Godkänd – tekniken får användas under angivna villkor, men är inte nödvändigtvis förstahandsval.
+4. Rekommenderad – tekniken är ett aktivt förstahandsval inom definierad kontext.
+5. Begränsad – ny användning bör normalt inte startas, men befintliga lösningar kan fortsätta under vissa villkor.
+6. Deprecated – tekniken ska inte användas för nyutveckling och befintliga användare behöver planera migration.
+7. Retired – tekniken är avvecklad som gemensamt stödd väg.
 
 Detta är en praktisk modell för boken, inte en universell industristandard. Organisationen kan välja andra namn eller fler nivåer. Det viktiga är att statusen besvarar en praktisk fråga:
 
@@ -77,7 +77,7 @@ En punkt i en radar kan säga *vilken riktning* organisationen har valt. Den fö
 - hur migrering ska ske,
 - vem som äger beslutet.
 
-Radarn fungerar därför bäst som **navigerings- och kommunikationsyta** ovanpå mer precisa artefakter.
+Radarn fungerar därför bäst som navigerings- och kommunikationsyta ovanpå mer precisa artefakter.
 
 ```text
 Technology radar
@@ -101,10 +101,10 @@ Ta en relationsdatabastjänst som exempel.
 
 Organisationen kan samtidigt ha:
 
-- **relationsdatabas** som långsiktigt relevant teknikprincip,
-- en **gemensam relationsdatabastjänst** som aktiv plattformstjänst,
-- en viss **databasprodukt** som rekommenderad realisering,
-- produktens **huvudversion 16** som stödd,
+- relationsdatabas som långsiktigt relevant teknikprincip,
+- en gemensam relationsdatabastjänst som aktiv plattformstjänst,
+- en viss databasprodukt som rekommenderad realisering,
+- produktens huvudversion 16 som stödd,
 - huvudversion 14 som på väg ut ur support,
 - specifika patchnivåer som hanteras operativt.
 
@@ -137,7 +137,7 @@ När en version närmar sig slutet av sitt underhåll förändras lösningens ri
 - kostnaden för särskild support,
 - återställnings- och kontinuitetsförmåga.
 
-Därför bör end-of-life och end-of-support användas som **framåtblickande arkitektursignaler**, inte som datum som upptäcks först när de passerats.
+Därför bör end-of-life och end-of-support användas som framåtblickande arkitektursignaler, inte som datum som upptäcks först när de passerats.
 
 En mogen livscykelprocess frågar exempelvis:
 
@@ -193,7 +193,7 @@ Ett deprecationbeslut bör normalt kunna besvara:
 - Vem ansvarar för anpassning i konsumerande lösningar?
 - Hur följs migrationen upp?
 
-Detta gör deprecation till ett **styrt övergångstillstånd** i stället för en etikett på en katalogpost.
+Detta gör deprecation till ett styrt övergångstillstånd i stället för en etikett på en katalogpost.
 
 ## Sunset behöver vara ett verkligt datum eller villkor
 
@@ -245,7 +245,7 @@ Samtidigt kan konsumenterna behöva:
 - verifiera prestanda,
 - planera produktionssättning.
 
-Därför bör en migrationsplan tydligt skilja mellan **enablement** och **adoption**.
+Därför bör en migrationsplan tydligt skilja mellan enablement och adoption.
 
 Plattformen kan möjliggöra migrationen, men det innebär inte att alla konsumenter automatiskt är migrerade.
 
@@ -305,7 +305,7 @@ Exempel på sådana egenskaper är:
 
 Detta betyder inte att all teknik måste vara utbytbar utan kostnad. Den typen av full abstraktion kan bli dyr och minska nyttan av plattformen.
 
-Målet är snarare **kontrollerbar förändringskostnad**.
+Målet är snarare kontrollerbar förändringskostnad.
 
 ## Versioner bör inte leva för evigt
 
@@ -428,7 +428,7 @@ För att gå från utvärdering till bredare användning kan organisationen beh�
 
 Vilka kriterier som är relevanta beror på tekniken. En IDE-plugin behöver inte samma analys som en databasplattform.
 
-Principen är proportionalitet: **ju större gemensam konsekvens tekniken får, desto starkare behöver introduktionsbeslutet vara**.
+Principen är proportionalitet: ju större gemensam konsekvens tekniken får, desto starkare behöver introduktionsbeslutet vara.
 
 ## Teknisk skuld kan vara ett medvetet övergångstillstånd
 
@@ -440,8 +440,8 @@ Problemet uppstår när övergången saknar slutpunkt.
 
 Det är därför användbart att skilja mellan:
 
-- **avsiktlig övergångsskuld** – gammal teknik finns kvar under en planerad migration,
-- **permanent oavsiktlig variation** – gammal teknik lever vidare utan aktivt beslut.
+- avsiktlig övergångsskuld – gammal teknik finns kvar under en planerad migration,
+- permanent oavsiktlig variation – gammal teknik lever vidare utan aktivt beslut.
 
 Den första kan vara sund. Den andra tenderar att växa.
 
@@ -469,7 +469,7 @@ Ett sådant undantag bör beskriva:
 - hur länge undantaget gäller,
 - vilket nästa beslutstillfälle är.
 
-Det är viktigt att undantaget **inte automatiskt flyttar den gemensamma teknikens status bakåt**. En gammal version kan vara deprecated även om vissa konsumenter har godkända övergångsundantag.
+Det är viktigt att undantaget inte automatiskt flyttar den gemensamma teknikens status bakåt. En gammal version kan vara deprecated även om vissa konsumenter har godkända övergångsundantag.
 
 ## Avveckling är mer än att sluta supportera
 
@@ -489,7 +489,7 @@ En faktisk avveckling kan kräva att organisationen:
 - uppdaterar referensarkitekturer och standardkatalog,
 - dokumenterar vad som ersatt tekniken.
 
-Det finns alltså en skillnad mellan **beslutad retirement** och **tekniskt slutförd retirement**.
+Det finns alltså en skillnad mellan beslutad retirement och tekniskt slutförd retirement.
 
 Det bör gå att se vilken av dessa två punkter som avses.
 
@@ -552,7 +552,7 @@ Ett möjligt förlopp är:
 - artefakter och pipelines har städats,
 - endast historisk dokumentation återstår där den behövs.
 
-På detta sätt blir livscykeln inte bara en katalogstatus utan en **förändring i den faktiska konsumtionsupplevelsen**.
+På detta sätt blir livscykeln inte bara en katalogstatus utan en förändring i den faktiska konsumtionsupplevelsen.
 
 ## Kostnaden för förändring behöver synliggöras
 
@@ -626,21 +626,21 @@ De behöver:
 - begära tidsbegränsat undantag när migration inte är rimlig,
 - ge återkoppling om migrationsproblem och dolda beroenden.
 
-Det gör tekniklivscykeln till ett **delat ansvar med tydliga gränser**, inte ett centralt uppgraderingsprojekt som någon annan förväntas lösa.
+Det gör tekniklivscykeln till ett delat ansvar med tydliga gränser, inte ett centralt uppgraderingsprojekt som någon annan förväntas lösa.
 
 ## En praktisk livscykelprocess
 
 En återkommande process kan beskrivas i nio steg:
 
-1. **Observera** – följ supportfönster, problem, nya behov och teknikutveckling.
-2. **Identifiera drivkraft** – vilket problem eller vilken risk motiverar förändring?
-3. **Utvärdera** – pröva kandidater mot behov, kvalitetskrav och konsekvenser.
-4. **Besluta status** – välj exempelvis utvärderad, godkänd eller rekommenderad.
-5. **Produktifiera vägen** – uppdatera standard, plattform, golden path och dokumentation.
-6. **Annons­era övergång** – publicera deprecation, supportfönster och målstatus med framförhållning.
-7. **Migrera** – möjliggör och följ adoption hos konsumenterna.
-8. **Verifiera retirement** – säkerställ att beroenden, data, artefakter och driftmekanismer är avvecklade.
-9. **Lär** – använd erfarenheter för att förbättra nästa teknikskifte.
+1. Observera – följ supportfönster, problem, nya behov och teknikutveckling.
+2. Identifiera drivkraft – vilket problem eller vilken risk motiverar förändring?
+3. Utvärdera – pröva kandidater mot behov, kvalitetskrav och konsekvenser.
+4. Besluta status – välj exempelvis utvärderad, godkänd eller rekommenderad.
+5. Produktifiera vägen – uppdatera standard, plattform, golden path och dokumentation.
+6. Annons­era övergång – publicera deprecation, supportfönster och målstatus med framförhållning.
+7. Migrera – möjliggör och följ adoption hos konsumenterna.
+8. Verifiera retirement – säkerställ att beroenden, data, artefakter och driftmekanismer är avvecklade.
+9. Lär – använd erfarenheter för att förbättra nästa teknikskifte.
 
 Processen behöver inte vara tung för varje teknik. Förändringens räckvidd bör styra hur formell den behöver vara.
 
@@ -692,18 +692,18 @@ Det skapar ett styrglapp där teamen förväntas följa en standard de praktiskt
 
 När en teknik eller produkt behöver förändra livscykelstatus kan följande frågor användas:
 
-1. **Vilken artefakt förändras?** Teknik, produkt, version, plattformstjänst eller standard?
-2. **Vad driver förändringen?** Support, säkerhet, kvalitet, kostnad, behov eller strategisk riktning?
-3. **Vilka konsumenter och beroenden påverkas?**
-4. **Vilken målstatus ska tekniken få?**
-5. **Finns en rekommenderad ersättare eller krävs fortsatt utvärdering?**
-6. **Vilka kvalitetskrav måste den nya vägen verifiera?**
-7. **Vad behöver plattformen göra för att möjliggöra förändringen?**
-8. **Vad behöver konsumerande lösningar göra?**
-9. **Vilket supportfönster och vilket sunsetvillkor är rimligt?**
-10. **Hur hanteras legitima undantag?**
-11. **Hur mäts faktisk migration och kvarvarande användning?**
-12. **Vilka artefakter och automationer måste uppdateras när statusen ändras?**
+1. Vilken artefakt förändras? Teknik, produkt, version, plattformstjänst eller standard?
+2. Vad driver förändringen? Support, säkerhet, kvalitet, kostnad, behov eller strategisk riktning?
+3. Vilka konsumenter och beroenden påverkas?
+4. Vilken målstatus ska tekniken få?
+5. Finns en rekommenderad ersättare eller krävs fortsatt utvärdering?
+6. Vilka kvalitetskrav måste den nya vägen verifiera?
+7. Vad behöver plattformen göra för att möjliggöra förändringen?
+8. Vad behöver konsumerande lösningar göra?
+9. Vilket supportfönster och vilket sunsetvillkor är rimligt?
+10. Hur hanteras legitima undantag?
+11. Hur mäts faktisk migration och kvarvarande användning?
+12. Vilka artefakter och automationer måste uppdateras när statusen ändras?
 
 Om organisationen inte kan besvara dessa frågor är det ofta för tidigt att kommunicera en definitiv retirement eller att göra den nya tekniken till gemensam standard.
 
@@ -711,7 +711,7 @@ Om organisationen inte kan besvara dessa frågor är det ofta för tidigt att ko
 
 Målet med tekniklivscykel är inte maximal förändringstakt. Det är inte heller maximal stabilitet.
 
-Målet är **förutsägbar förändring**.
+Målet är förutsägbar förändring.
 
 En välfungerande modell gör det möjligt att samtidigt säga:
 

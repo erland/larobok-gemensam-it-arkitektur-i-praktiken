@@ -2,11 +2,11 @@
 
 Arkitekturval kostar pengar. Det är självklart, men ekonomin behandlas ändå ofta som något som kommer efter arkitekturen: först utformas lösningen, sedan försöker någon förstå vad den kostar och därefter startar ett separat optimeringsarbete.
 
-Det är ett svagt arbetssätt. Kostnad är inte bara en följd av arkitektur. **Kostnadsstruktur är en del av arkitekturen.** Val av redundans, datalagring, integrationsform, kapacitetsmarginal, licensmodell, plattform, återställningsnivå och graden av standardisering formar både den direkta kostnaden och organisationens långsiktiga förändringskostnad.
+Det är ett svagt arbetssätt. Kostnad är inte bara en följd av arkitektur. Kostnadsstruktur är en del av arkitekturen. Val av redundans, datalagring, integrationsform, kapacitetsmarginal, licensmodell, plattform, återställningsnivå och graden av standardisering formar både den direkta kostnaden och organisationens långsiktiga förändringskostnad.
 
 Samtidigt blir ekonomisk styrning farlig om den reduceras till att minimera utgifter. Den billigaste lösningen per månad kan ge högre risk, sämre användbarhet, längre ledtid eller större framtida migreringskostnad. Ett arkitekturbeslut behöver därför väga kostnad tillsammans med övriga kvalitetsattribut.
 
-Detta kapitel handlar om hur ekonomi och kapacitet kan bli **arkitekturella styrsignaler** utan att de tar över besluten. FinOps används som ett relevant inspirationsområde, men kapitlets modell är bredare än publik molnekonomi. Samma grundfrågor finns för datacenter, SaaS, licenser, AI-tjänster och interna plattformar.
+Detta kapitel handlar om hur ekonomi och kapacitet kan bli arkitekturella styrsignaler utan att de tar över besluten. FinOps används som ett relevant inspirationsområde, men kapitlets modell är bredare än publik molnekonomi. Samma grundfrågor finns för datacenter, SaaS, licenser, AI-tjänster och interna plattformar.
 
 ## Kostnad är ett kvalitetsattribut – men inte ett ensamt mål
 
@@ -50,7 +50,7 @@ Anta att en plattform kostar tio miljoner kronor per år. Det säger inte om kos
 - specialistbemanning,
 - leverantörsbundna avgifter.
 
-För arkitekturarbete är **kostnadsdrivaren** ofta viktigare än totalsumman.
+För arkitekturarbete är kostnadsdrivaren ofta viktigare än totalsumman.
 
 En användbar kostnadsmodell bör därför försöka besvara två frågor:
 
@@ -81,7 +81,7 @@ Total kostnad växer ofta när verksamheten växer. Det behöver inte innebära 
 
 Anta att kostnaden för en digital tjänst ökar från 1 miljon till 1,5 miljoner kronor samtidigt som antalet genomförda ärenden fördubblas. Den totala kostnaden har ökat med 50 procent, men kostnaden per ärende har minskat.
 
-Därför behövs **enhetskostnader**.
+Därför behövs enhetskostnader.
 
 Exempel kan vara:
 
@@ -147,7 +147,7 @@ Otydliga delade resurser, gemensamma databaser och tekniska plattformar utan kon
 
 ## Showback före chargeback
 
-Två återkommande begrepp är **showback** och **chargeback**.
+Två återkommande begrepp är showback och chargeback.
 
 I bokens användning betyder showback att konsumtion och kostnader synliggörs för den ansvariga parten utan att kostnaden nödvändigtvis bokförs vidare internt. Chargeback innebär att kostnaden också fördelas ekonomiskt till konsumenten enligt en intern modell.
 
@@ -170,7 +170,7 @@ Chargeback skapar dessutom ett ekonomiskt incitament, men också mer komplexitet
 
 Därför bör chargeback införas först när kostnadsmodellen är tillräckligt begriplig och incitamenten har analyserats.
 
-**Ekonomisk transparens kräver inte automatiskt intern fakturering.**
+Ekonomisk transparens kräver inte automatiskt intern fakturering.
 
 ## Gemensamma plattformar har både fasta och rörliga kostnader
 
@@ -222,11 +222,11 @@ Exempel:
 
 - gemensam CI/CD minskar tiden varje team lägger på pipelinebygge,
 - central identitetsfederation minskar lokala integrationer,
-- en standardiserad containerplattform minskar variation i drift,
+- en standardiserad *containerplattform* minskar variation i drift,
 - gemensam observerbarhet minskar felsökningstid,
 - golden paths minskar ledtid och felkonfigurationer.
 
-Om man enbart mäter den direkta plattformskostnaden kan dessa tjänster framstå som dyra. En bättre ekonomisk bedömning inkluderar **undviket duplicerat arbete och reducerad koordinationskostnad**.
+Om man enbart mäter den direkta plattformskostnaden kan dessa tjänster framstå som dyra. En bättre ekonomisk bedömning inkluderar undviket duplicerat arbete och reducerad koordinationskostnad.
 
 Det innebär inte att alla gemensamma investeringar är lönsamma. En plattform som få använder kan tvärtom bli en dyr central speciallösning. Poängen är att kostnadsanalysen måste jämföra med ett realistiskt alternativ.
 
@@ -276,13 +276,13 @@ Marginal kan behövas för:
 - osäker prognos,
 - skalningsfördröjning.
 
-Det ekonomiska problemet uppstår när marginalen är **omedveten** eller större än den risk den ska hantera.
+Det ekonomiska problemet uppstår när marginalen är omedveten eller större än den risk den ska hantera.
 
 Man kan tänka i tre lager:
 
-1. **Normal kapacitet** – förväntad löpande belastning.
-2. **Planerad reserv** – marginal för variation och fel.
-3. **Exceptionell beredskap** – kapacitet för särskilda scenarier.
+1. Normal kapacitet – förväntad löpande belastning.
+2. Planerad reserv – marginal för variation och fel.
+3. Exceptionell beredskap – kapacitet för särskilda scenarier.
 
 Dessa bör inte blandas ihop.
 
@@ -388,7 +388,7 @@ Det blir bättre beslutsstöd.
 
 FinOps har vuxit fram som ett sätt att föra samman teknik, ekonomi och verksamhet kring variabel teknikförbrukning. Den aktuella FinOps Framework[K1] beskriver bland annat arbete med kostnads- och användningsförståelse, värde, optimering, forecast, unit economics och arkitektur-/workload placement.
 
-För den här boken är den viktigaste lärdomen inte ett specifikt FinOps-processflöde. Det är principen att **ekonomiska data måste komma till de personer som kan påverka de tekniska besluten**.
+För den här boken är den viktigaste lärdomen inte ett specifikt FinOps-processflöde. Det är principen att ekonomiska data måste komma till de personer som kan påverka de tekniska besluten.
 
 Det kräver samarbete mellan exempelvis:
 
@@ -409,14 +409,14 @@ Det kan vara värdefullt att standardisera exempelvis:
 
 - kostnadsobjekt,
 - ägare,
-- produkt-/tjänsteidentitet,
+- produkt-/*tjänsteidentitet*,
 - konsumtionsenheter,
 - miljö,
 - kostnadstyp,
 - tidsperiod,
 - allokeringsprincip.
 
-Inom FinOps finns exempelvis FOCUS[K2], en öppen specifikation som standardiserar faktureringsdata och relaterade kostnads- och användningsbegrepp över olika datakällor. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att **ekonomiska data behöver ett eget informationskontrakt** om de ska kunna användas tvärs över tekniska miljöer.
+Inom FinOps finns exempelvis FOCUS[K2], en öppen specifikation som standardiserar faktureringsdata och relaterade kostnads- och användningsbegrepp över olika datakällor. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att ekonomiska data behöver ett eget informationskontrakt om de ska kunna användas tvärs över tekniska miljöer.
 
 ## Kostnadsoptimering har flera nivåer
 
@@ -475,7 +475,7 @@ Exempel:
 - teknisk variation,
 - många unika supportmodeller.
 
-Detta kan beskrivas som **organisatorisk och operativ kostnad**.
+Detta kan beskrivas som organisatorisk och operativ kostnad.
 
 En teknisk komponent med låg licenskostnad kan bli dyr om varje team måste bygga egen automation, egen observerbarhet och egen supportkompetens. En dyrare plattformstjänst kan därför ge lägre total kostnad om den reducerar friktionen tillräckligt mycket.
 
@@ -527,7 +527,7 @@ Här ligger ansvar för att göra tjänsternas ekonomi begriplig:
 - effektiviseringsarbete,
 - investeringsfärdplan.
 
-Plattformsteamet behöver kunna förklara både **vad plattformen kostar** och **vilket arbete eller vilken risk den hjälper organisationen att undvika**.
+Plattformsteamet behöver kunna förklara både vad plattformen kostar och vilket arbete eller vilken risk den hjälper organisationen att undvika.
 
 ### Lösnings-/produktnivå
 
@@ -584,22 +584,22 @@ System dimensioneras mot tekniska maxvärden utan koppling till faktisk efterfr�
 
 När kostnad och kapacitet ska vägas in i ett arkitekturbeslut kan följande ordning användas:
 
-1. **Identifiera verksamhetsnytta och kvalitetsprofil.** Vad måste lösningen faktiskt åstadkomma?
-2. **Beskriv efterfrågan.** Vilken volym, variation och tillväxt förväntas?
-3. **Identifiera kostnadsdrivare.** Vilka tekniska egenskaper skapar huvuddelen av kostnaden?
-4. **Välj relevanta konsumtionsenheter.** Vad kan följas som enhetskostnad?
-5. **Gör kostnaden allokerbar.** Finns tydliga ägare och konsumtionsgränser?
-6. **Analysera kapacitetsmarginal.** Vilken reserv behövs och varför?
-7. **Jämför realistiska alternativ.** Inkludera både direkt och större indirekt kostnad.
-8. **Granska incitament.** Vilket beteende skapar finansierings- och debiteringsmodellen?
-9. **Automatisera återkoppling.** Gör kostnad och kapacitet synliga nära de tekniska besluten.
-10. **Ompröva när enhetskostnad eller efterfrågan förändras.** Ekonomin är en löpande arkitektursignal.
+1. Identifiera verksamhetsnytta och kvalitetsprofil. Vad måste lösningen faktiskt åstadkomma?
+2. Beskriv efterfrågan. Vilken volym, variation och tillväxt förväntas?
+3. Identifiera kostnadsdrivare. Vilka tekniska egenskaper skapar huvuddelen av kostnaden?
+4. Välj relevanta konsumtionsenheter. Vad kan följas som enhetskostnad?
+5. Gör kostnaden allokerbar. Finns tydliga ägare och konsumtionsgränser?
+6. Analysera kapacitetsmarginal. Vilken reserv behövs och varför?
+7. Jämför realistiska alternativ. Inkludera både direkt och större indirekt kostnad.
+8. Granska incitament. Vilket beteende skapar finansierings- och debiteringsmodellen?
+9. Automatisera återkoppling. Gör kostnad och kapacitet synliga nära de tekniska besluten.
+10. Ompröva när enhetskostnad eller efterfrågan förändras. Ekonomin är en löpande arkitektursignal.
 
 Detta är inte en separat ekonomiprocess vid sidan av arkitekturen. Det är ett sätt att göra arkitekturbeslut mer fullständiga.
 
 ## Ekonomisk transparens är en arkitekturell förmåga
 
-En mogen gemensam IT-arkitektur gör inte bara teknik återanvändbar. Den gör också **konsekvenserna av teknikval begripliga**.
+En mogen gemensam IT-arkitektur gör inte bara teknik återanvändbar. Den gör också konsekvenserna av teknikval begripliga.
 
 Det innebär att en plattformskonsument kan förstå:
 
@@ -611,11 +611,11 @@ Det innebär att en plattformskonsument kan förstå:
 
 Det innebär också att plattforms- och arkitekturansvariga kan se när ett mönster, en standard eller en tjänst skapar orimlig kostnad i större skala.
 
-Kostnadsdata blir då inte ett kontrollsystem vid sidan av arkitekturen. Den blir **feedback till arkitekturen**.
+Kostnadsdata blir då inte ett kontrollsystem vid sidan av arkitekturen. Den blir feedback till arkitekturen.
 
 Det är den viktigaste principen i detta kapitel:
 
-> **Kostnad ska vara synlig där tekniska beslut fattas, men alltid tolkas tillsammans med värde, risk och övriga kvalitetskrav.**
+> Kostnad ska vara synlig där tekniska beslut fattas, men alltid tolkas tillsammans med värde, risk och övriga kvalitetskrav.
 
 Med detta är bokens del om plattformar, standarder och teknikstyrning komplett. Nästa del flyttar perspektivet från enskilda artefakter till hur de kombineras i referensarkitekturer och konkreta lösningsarkitekturer.
 

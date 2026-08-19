@@ -3,7 +3,7 @@
 Detta är bokprojektet för faktaboken **Gemensam IT-arkitektur i praktiken**. Projektet är skapat från Lärobokskaparens kanoniska projektmall.
 
 ## Nuvarande läge
-Projektet befinner sig i revisionsfas. Bokspecifikation, kapitelplan, källpolicy, terminologi och innehålls-canon är etablerade, kapitel 1–37 är skrivna och hela manuset har genomgått helhetsrevision pass 1, faktagranskning pass 1 och språk- och stilrevision pass 1. Det ursprungliga arkitekturmaterialet ligger som arbetsunderlag under `docs/underlag/gemensam-it-arkitektur/` och exporteras inte som boktext.
+Projektet befinner sig i revisionsfas. Bokspecifikation, kapitelplan, källpolicy, terminologi och innehålls-canon är etablerade, kapitel 1–37 är skrivna och hela manuset har genomgått helhetsrevision pass 1, faktagranskning pass 1, språk- och stilrevision pass 1 samt typografirevision pass 1. Det ursprungliga arkitekturmaterialet ligger som arbetsunderlag under `docs/underlag/gemensam-it-arkitektur/` och exporteras inte som boktext.
 
 ## Arbetsflöde
 1. Förfina planen vid behov.
@@ -16,3 +16,16 @@ Projektet befinner sig i revisionsfas. Bokspecifikation, kapitelplan, källpolic
 ## Källapparat
 
 Projektet använder selektiva kapitelvisa slutnoter (`[K1]`, `[K2]` …), avsnittet **Källor och vidare läsning** i relevanta kapitel samt en samlad bibliografi i `chapters/kallor-och-vidare-lasning.md`. Reglerna finns i `docs/kallpolicy.md` och källregistret i `docs/kallregister.md`.
+
+
+## Begreppsregister
+
+Boken innehåller ett alfabetiskt begreppsregister. Centrala arkitekturobjekt markeras sparsamt med kursiv stil i löptexten; navigeringen sker i registret i stället för genom kapitelhänvisningar i texten.
+
+## Paketera projektet
+
+Skapa distributions-ZIP med `scripts/package_project.py`. Skriptet exkluderar alltid `.git`, `__pycache__`, `__MACOSX`, `.DS_Store` och `*.pyc`, så att lokala Git- och arbetsfiler inte följer med leveransen.
+
+```bash
+python3 scripts/package_project.py . --output ../gemensam-it-arkitektur-i-praktiken-projekt.zip
+```

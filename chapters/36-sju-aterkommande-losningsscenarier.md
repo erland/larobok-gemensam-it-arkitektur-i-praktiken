@@ -4,24 +4,24 @@ En arkitekturmodell blir inte särskilt värdefull om den bara fungerar som taxo
 
 Syftet är inte att presentera sju färdiga lösningar. Två system som båda är publika e-tjänster kan behöva mycket olika arkitektur beroende på informationsklassning, transaktionsvolym, tillgänglighetskrav och integrationer. På samma sätt kan två handläggningsstöd skilja sig radikalt i hur mycket explicit workflow, regelhantering och dokumenthantering de behöver.
 
-Scenarierna ska i stället läsas som **arkitekturella startpunkter**. De visar vilka frågor som ofta blir viktiga, vilka förmågor som typiskt aktiveras och vilka mönster eller plattformstjänster som brukar vara relevanta. Varje konkret lösning måste fortfarande verifiera sina egna behov och dokumentera sina egna beslut.
+Scenarierna ska i stället läsas som arkitekturella startpunkter. De visar vilka frågor som ofta blir viktiga, vilka förmågor som typiskt aktiveras och vilka mönster eller plattformstjänster som brukar vara relevanta. Varje konkret lösning måste fortfarande verifiera sina egna behov och dokumentera sina egna beslut.
 
 ## Samma analysram för alla scenarier
 
 För att scenarierna ska gå att jämföra används samma sex frågor:
 
-1. **Vad driver lösningen?** Vilket behov eller vilken situation gör scenariot särskilt?
-2. **Vilka kvalitetsattribut dominerar?** Vad måste lösningen vara särskilt bra på?
-3. **Vilka förmågor blir centrala?** Vilka gemensamma IT-förmågor behöver kunna stödja lösningen?
-4. **Vilka mönster och plattformstjänster blir typiska?** Vilka återanvändbara beslut är sannolika kandidater?
-5. **Vilka val måste fortfarande göras lokalt?** Vad kan referensarkitekturen inte avgöra?
-6. **Vilket är det vanligaste felgreppet?** Var finns risken att en bra startpunkt förvandlas till ett dåligt recept?
+1. Vad driver lösningen? Vilket behov eller vilken situation gör scenariot särskilt?
+2. Vilka kvalitetsattribut dominerar? Vad måste lösningen vara särskilt bra på?
+3. Vilka förmågor blir centrala? Vilka gemensamma IT-förmågor behöver kunna stödja lösningen?
+4. Vilka mönster och plattformstjänster blir typiska? Vilka återanvändbara beslut är sannolika kandidater?
+5. Vilka val måste fortfarande göras lokalt? Vad kan referensarkitekturen inte avgöra?
+6. Vilket är det vanligaste felgreppet? Var finns risken att en bra startpunkt förvandlas till ett dåligt recept?
 
 Den gemensamma ramen gör också en annan sak tydlig: samma komponent kan vara central i ett scenario och perifer i ett annat. En workflowmotor är till exempel ofta viktig i ett handläggningsstöd men normalt ointressant i en enkel containerbaserad teknisk tjänst. En containerplattform kan däremot vara central som runtime i båda fallen utan att därmed definiera lösningens verksamhetsarkitektur.
 
 ## Scenario 1: Internt handläggningsstöd
 
-Ett internt handläggningsstöd används av medarbetare som arbetar med ärenden, uppgifter, beslut, dokument och informationsutbyte över tid. Det karakteristiska är inte att det finns ett webbgränssnitt, utan att verksamhetsarbetet ofta har **lång livslängd, explicit status, ansvarsförflyttning och krav på historik**.
+Ett internt handläggningsstöd används av medarbetare som arbetar med ärenden, uppgifter, beslut, dokument och informationsutbyte över tid. Det karakteristiska är inte att det finns ett webbgränssnitt, utan att verksamhetsarbetet ofta har lång livslängd, explicit status, ansvarsförflyttning och krav på historik.
 
 ### Drivande behov
 
@@ -51,7 +51,7 @@ Det vanligaste felgreppet är att göra plattformen till verksamhetsmodell. Work
 
 ## Scenario 2: Publik e-tjänst
 
-En publik e-tjänst möter externa användare över internet. Det gör användarupplevelse, identitet, exponeringsyta och skydd av information särskilt viktiga. Samtidigt är e-tjänsten ofta bara den publika delen av en längre verksamhetsprocess.
+En *publik e-tjänst* möter externa användare över internet. Det gör användarupplevelse, identitet, exponeringsyta och skydd av information särskilt viktiga. Samtidigt är e-tjänsten ofta bara den publika delen av en längre verksamhetsprocess.
 
 ### Drivande behov
 
@@ -81,7 +81,7 @@ Ett vanligt fel är att behandla ”publik e-tjänst” som ett färdigt produkt
 
 ## Scenario 3: Integrationsintensivt verksamhetssystem
 
-I ett integrationsintensivt verksamhetssystem är kommunikation med andra system inte perifer infrastruktur utan en dominerande del av lösningens beteende. Systemet kan ha många API-beroenden, meddelandeflöden, event, filer och externa beroenden.
+I ett *integrationsintensivt verksamhetssystem* är kommunikation med andra system inte perifer infrastruktur utan en dominerande del av lösningens beteende. Systemet kan ha många API-beroenden, meddelandeflöden, event, filer och externa beroenden.
 
 ### Drivande behov
 
@@ -109,7 +109,7 @@ Det klassiska felgreppet är att integrationsplattformen blir ett centralt lager
 
 ## Scenario 4: Informationsutbyte med annan myndighet eller extern organisation
 
-Detta scenario liknar det integrationsintensiva systemet men har en viktig extra dimension: **ansvar och tillit korsar organisationsgränsen**. Tekniska kontrakt behöver därför kombineras med tydliga överenskommelser om ansvar, kvittens, felhantering och förändring.
+Detta scenario liknar det integrationsintensiva systemet men har en viktig extra dimension: ansvar och tillit korsar organisationsgränsen. Tekniska kontrakt behöver därför kombineras med tydliga överenskommelser om ansvar, kvittens, felhantering och förändring.
 
 ### Drivande behov
 
@@ -137,7 +137,7 @@ Ett vanligt fel är att anta att en gemensam transporttjänst också definierar 
 
 ## Scenario 5: Containerbaserad tjänst
 
-En containerbaserad tjänst är annorlunda än de föregående scenarierna eftersom den framför allt beskriver **en teknisk realiseringsklass**, inte en verksamhetslösningstyp. Den är därför ett bra test på att arkitekturmodellen klarar olika abstraktionsnivåer.
+En containerbaserad tjänst är annorlunda än de föregående scenarierna eftersom den framför allt beskriver en teknisk realiseringsklass, inte en verksamhetslösningstyp. Den är därför ett bra test på att arkitekturmodellen klarar olika abstraktionsnivåer.
 
 ### Drivande behov
 
@@ -173,7 +173,7 @@ Behovet kan vara snabbare informationsinhämtning, bättre sökning, stöd vid k
 
 ### Dominerande kvaliteter
 
-Spårbarhet, verifierbarhet, informationsskydd, regelefterlevnad, kvalitet och kostnad blir centrala. I många fall är frågan om **hur fel får lösningen ha** viktigare än modellens nominella kapacitet.
+Spårbarhet, verifierbarhet, informationsskydd, regelefterlevnad, kvalitet och kostnad blir centrala. I många fall är frågan om hur fel får lösningen ha viktigare än modellens nominella kapacitet.
 
 ### Centrala förmågor
 
@@ -239,17 +239,17 @@ De sju scenarierna delar många byggstenar men skiljer sig i vad som driver arki
 
 Flera slutsatser återkommer.
 
-För det första är **en plattform aldrig hela arkitekturen**. Containerplattformen löser exekveringsfrågan men inte verksamhetsgränserna. Produktivitetssviten löser samarbetsbehov men inte system-of-record-frågan. AI-plattformen löser modellåtkomst men inte tillitsfrågan.
+För det första är en plattform aldrig hela arkitekturen. Containerplattformen löser exekveringsfrågan men inte verksamhetsgränserna. Produktivitetssviten löser samarbetsbehov men inte system-of-record-frågan. AI-plattformen löser modellåtkomst men inte tillitsfrågan.
 
-För det andra är **samma mönster olika viktigt i olika sammanhang**. Tjänsteidentitet och observerbarhet förekommer i många scenarier eftersom de är tvärgående mekanismer. Human workflow är däremot starkt situationsberoende. Att något finns i en referensarkitektur betyder därför inte att det ska användas i varje instans.
+För det andra är samma mönster olika viktigt i olika sammanhang. Tjänsteidentitet och observerbarhet förekommer i många scenarier eftersom de är tvärgående mekanismer. Human workflow är däremot starkt situationsberoende. Att något finns i en referensarkitektur betyder därför inte att det ska användas i varje instans.
 
-För det tredje blir **kvalitetsprofilen den viktigaste differentieraren mellan två lösningar inom samma scenario**. Två publika e-tjänster kan se lika ut funktionellt men behöva olika identitetsnivå, tillgänglighet, redundans och loggning. Två AI-stöd kan använda samma modell men kräva helt olika mänsklig kontroll beroende på konsekvensen av ett fel.
+För det tredje blir kvalitetsprofilen den viktigaste differentieraren mellan två lösningar inom samma scenario. Två publika e-tjänster kan se lika ut funktionellt men behöva olika identitetsnivå, tillgänglighet, redundans och loggning. Två AI-stöd kan använda samma modell men kräva helt olika mänsklig kontroll beroende på konsekvensen av ett fel.
 
 För det fjärde visar scenarierna varför ansvar behöver ligga på flera nivåer. Den gemensamma arkitekturen definierar språk, principer, standarder och återanvändbara startpunkter. Förmåge- och plattformsansvariga utvecklar de tjänster och mönster som återkommer. Lösningsteamet bär ansvaret för den konkreta kvalitetsprofilen och för att välja, kombinera eller avvika medvetet.
 
 ## Referensarkitektur som hypotes, inte facit
 
-Det är lockande att se en välskriven referensarkitektur som ett svar. En mer användbar syn är att se den som en **förkvalificerad hypotes**:
+Det är lockande att se en välskriven referensarkitektur som ett svar. En mer användbar syn är att se den som en förkvalificerad hypotes:
 
 > För den här typen av behov brukar dessa förmågor, ansvar, mönster och plattformar vara relevanta. Verifiera dem mot den konkreta situationen.
 
@@ -257,4 +257,4 @@ Det gör två typer av återkoppling viktiga. Om många lösningar av samma typ 
 
 En levande referensarkitektur bör därför mätas mot verklig användning. Den ska kunna förändras när tekniken, verksamhetsbehoven eller de gemensamma plattformarna förändras. Den ska också kunna förlora delar när en tidigare komplicerad fråga blivit en självklar plattformsförmåga.
 
-Detta leder direkt till bokens avslutande kapitel. När förmågekarta, principer, mönster, plattformstjänster, standarder och referensarkitekturer väl finns är huvudfrågan inte hur de produceras en gång. Huvudfrågan är **hur hela systemet hålls levande, relevant och användbart utan att governance blir en flaskhals**.
+Detta leder direkt till bokens avslutande kapitel. När förmågekarta, principer, mönster, plattformstjänster, standarder och referensarkitekturer väl finns är huvudfrågan inte hur de produceras en gång. Huvudfrågan är hur hela systemet hålls levande, relevant och användbart utan att governance blir en flaskhals.

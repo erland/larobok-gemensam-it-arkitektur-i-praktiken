@@ -32,7 +32,7 @@ Produkt / version / konfiguration
 
 Modellen ska inte läsas som att varje behov måste passera exakt ett objekt i varje lager. Verkligheten är mer komplex. Ett behov kan beröra flera förmågor. Ett lösningsmönster kan spänna över flera förmågor. En plattformstjänst kan realisera delar av flera mönster. En standard kan gälla flera plattformar. Samma produkt kan användas som byggblock i flera olika tjänster.
 
-Poängen är i stället att lagren representerar **olika frågor**.
+Poängen är i stället att lagren representerar olika frågor.
 
 - Behov svarar på vad verksamheten eller IT-stödet behöver kunna uppnå.
 - Krav och kvalitetsattribut uttrycker vilka egenskaper lösningen måste ha.
@@ -138,13 +138,13 @@ Kapitel 4 fördjupar hur kvalitetsattribut formuleras, prioriteras och används 
 
 När behov och kvalitetskrav återkommer i många lösningar behöver organisationen kunna strukturera vilket stöd IT-området ska erbjuda. Där kommer förmågorna in.
 
-En förmåga beskriver **vad det stödjande IT-området behöver kunna erbjuda stöd för**, utan att förmågan binds till en viss produkt eller implementation.
+En förmåga beskriver vad det stödjande IT-området behöver kunna erbjuda stöd för, utan att förmågan binds till en viss produkt eller implementation.
 
 Exempel är:
 
 - Integration och kommunikation
 - Identitet och tillit
-- Applikationsexekvering och runtime
+- *Applikationsexekvering och runtime*
 - Driftbarhet och motståndskraft
 - Programvaruutveckling och leverans
 
@@ -165,7 +165,7 @@ Ett lösningsmönster är ett återanvändbart sätt att strukturera ett återko
 Exempel är:
 
 - Backend for Frontend,
-- asynkron meddelandekommunikation,
+- *asynkron meddelandekommunikation*,
 - publicera/prenumerera,
 - human workflow,
 - externaliserade verksamhetsregler,
@@ -174,7 +174,7 @@ Exempel är:
 - build once, promote many,
 - observerbarhet för distribuerade tjänster.
 
-Mönster är viktiga eftersom de bevarar mer än tekniska komponenter. De bevarar **erfarenheten av hur ett problem bör tänkas igenom**.
+Mönster är viktiga eftersom de bevarar mer än tekniska komponenter. De bevarar erfarenheten av hur ett problem bör tänkas igenom.
 
 Ett mönster för asynkron kommunikation kan exempelvis påminna arkitekten om idempotens, ordering, återförsök, dead-letter-hantering, korrelation och versionshantering. Dessa frågor finns kvar även om den konkreta meddelandeprodukten byts ut.
 
@@ -303,7 +303,7 @@ En referensarkitektur för en publik e-tjänst kan exempelvis behöva beskriva:
 - säkerhetskrav,
 - relevanta standarder och ansvarssnitt.
 
-Den är alltså inte en ny förmåga och inte heller ett enskilt mönster. Den är en **komposition** av flera delar för en återkommande lösningstyp.
+Den är alltså inte en ny förmåga och inte heller ett enskilt mönster. Den är en komposition av flera delar för en återkommande lösningstyp.
 
 Referensarkitekturen är samtidigt inte en färdig lösningsarkitektur. En konkret e-tjänst måste fortfarande ta hänsyn till sitt verksamhetsbehov, sin informationsmodell, sina specifika kvalitetskrav och sina beroenden. Referensarkitekturen minskar startsträckan och ger en etablerad grund, men ersätter inte lösningsarkitektens analys.
 
@@ -369,7 +369,7 @@ Det centrala är relationerna.
 
 En förmåga bör kunna peka på relevanta mönster och plattformstjänster. En plattformstjänst bör kunna visa vilken förmåga den stödjer och vilka kvalitetsnivåer den erbjuder. En standard bör kunna förklaras genom vilket problem eller vilken tjänst den styr. En referensarkitektur bör kunna visa vilka delar den kombinerar.
 
-Det är därför mer korrekt att se arkitekturen som ett **nät av relaterade artefakter** än som en bokhylla med fristående dokument.
+Det är därför mer korrekt att se arkitekturen som ett nät av relaterade artefakter än som en bokhylla med fristående dokument.
 
 I en enkel modell kan relationerna beskrivas med länkar och tabeller. I en större organisation kan samma struktur senare representeras i ett arkitekturregister, en grafdatabas eller ett dokumentationsverktyg. Verktyget är dock sekundärt. Om relationerna är otydliga hjälper inte ett mer avancerat verktyg.
 
@@ -381,44 +381,44 @@ Om arbetet börjar på produktnivå kan diskussionen snabbt handla om vilket fro
 
 Med den lagerindelade modellen kan resonemanget i stället börja högre upp.
 
-**1. Behov**
+1. Behov
 
 Företag ska kunna identifiera sig, lämna uppgifter, få kvittens och senare se status för sina ärenden.
 
-**2. Kvalitetskrav**
+2. Kvalitetskrav
 
 Tjänsten behöver bland annat vara tillgänglig under definierade perioder, skydda känslig information, ge spårbarhet för inlämnade uppgifter och klara en uppskattad toppbelastning.
 
-**3. Förmågor**
+3. Förmågor
 
 Behovet berör exempelvis:
 
-- Interaktion, presentation och kanaler
+- *Interaktion, presentation och kanaler*
 - Identitet och tillit
 - Process, workflow och ärendehantering
 - Integration och kommunikation
 - Data- och informationshantering
 - Driftbarhet och motståndskraft
 
-**4. Mönster**
+4. Mönster
 
 Beroende på lösning kan exempelvis Backend for Frontend, tjänsteidentitet, asynkron meddelandekommunikation och observerbarhet för distribuerade tjänster vara relevanta.
 
-**5. Plattformstjänster**
+5. Plattformstjänster
 
 Organisationens gemensamma erbjudanden kan sedan ge konkreta alternativ: identitetstjänst, API Management, relationsdatabastjänst, containerplattform och central loggning.
 
-**6. Standarder**
+6. Standarder
 
 API-standard, identitetsprotokoll, observerbarhetsstandard, containerstandard och release-standard kan begränsa den tekniska variationen.
 
-**7. Produkter och konfiguration**
+7. Produkter och konfiguration
 
 Först här behöver den konkreta realiseringen bli fullt specifik: produkt, version, miljö och konfiguration.
 
 Detta innebär inte att processen alltid sker strikt uppifrån och ner. Ett existerande plattformserbjudande kan påverka vad som är ekonomiskt rimligt. En teknisk begränsning kan vara verklig och behöva tas med som begränsning. Ett proof of concept kan visa att ett antagande var fel.
 
-Men lagerindelningen gör det möjligt att se **vilken typ av information som påverkar vilken typ av beslut**. Det minskar risken att en lokal produktbegränsning omärkligt omvandlas till ett generellt arkitekturkrav.
+Men lagerindelningen gör det möjligt att se vilken typ av information som påverkar vilken typ av beslut. Det minskar risken att en lokal produktbegränsning omärkligt omvandlas till ett generellt arkitekturkrav.
 
 ## En modell för navigering, inte ett nytt vattenfall
 
@@ -428,7 +428,7 @@ Så är den inte avsedd.
 
 I praktiken sker arbetet iterativt. När en plattform utvecklas upptäcks nya kvalitetsbehov. När ett lösningsmönster används i flera projekt kan en ny standard behövas. När en referensarkitektur prövas kan gränsen mellan två förmågor behöva justeras. När en produkt når slutet av sin livscykel kan ett plattformserbjudande behöva realiseras på ett nytt sätt.
 
-Modellen beskriver därför **logiska beroenden och abstraktionsnivåer**, inte en engångssekvens.
+Modellen beskriver därför logiska beroenden och abstraktionsnivåer, inte en engångssekvens.
 
 Det är en viktig distinktion:
 
@@ -470,24 +470,24 @@ Det är just denna kombination som gör lagerindelningen värdefull. Den gör f�
 
 ## Begrepp att känna till
 
-**Behov** – något verksamheten eller ett IT-stöd behöver kunna uppnå.
+Behov – något verksamheten eller ett IT-stöd behöver kunna uppnå.
 
-**Krav** – en egenskap eller ett resultat som måste uppfyllas.
+Krav – en egenskap eller ett resultat som måste uppfyllas.
 
-**Kvalitetsattribut** – en tvärgående egenskap som exempelvis säkerhet, tillgänglighet, prestanda eller förvaltningsbarhet.
+Kvalitetsattribut – en tvärgående egenskap som exempelvis säkerhet, tillgänglighet, prestanda eller förvaltningsbarhet.
 
-**Förmåga** – en generell typ av IT-stöd som det stödjande IT-området behöver kunna erbjuda, oberoende av viss produkt.
+Förmåga – en generell typ av IT-stöd som det stödjande IT-området behöver kunna erbjuda, oberoende av viss produkt.
 
-**Lösningsmönster** – ett återanvändbart sätt att strukturera ett återkommande arkitekturproblem.
+Lösningsmönster – ett återanvändbart sätt att strukturera ett återkommande arkitekturproblem.
 
-**Plattformstjänst** – ett konkret återanvändbart erbjudande som ett utvecklingsområde kan konsumera.
+Plattformstjänst – ett konkret återanvändbart erbjudande som ett utvecklingsområde kan konsumera.
 
-**Teknisk standard** – ett gemensamt beslutat teknikval eller en teknisk konvention.
+Teknisk standard – ett gemensamt beslutat teknikval eller en teknisk konvention.
 
-**Tekniskt byggblock** – en generisk teknisk beståndsdel som används för att realisera en eller flera tjänster.
+Tekniskt byggblock – en generisk teknisk beståndsdel som används för att realisera en eller flera tjänster.
 
-**Produkt** – en konkret teknisk implementation.
+Produkt – en konkret teknisk implementation.
 
-**Referensarkitektur** – en sammanhängande rekommenderad struktur för en viss typ av lösning eller IT-stöd.
+Referensarkitektur – en sammanhängande rekommenderad struktur för en viss typ av lösning eller IT-stöd.
 
-**Spårbarhet** – möjligheten att följa sambandet mellan behov, krav, arkitekturval och teknisk realisering.
+Spårbarhet – möjligheten att följa sambandet mellan behov, krav, arkitekturval och teknisk realisering.

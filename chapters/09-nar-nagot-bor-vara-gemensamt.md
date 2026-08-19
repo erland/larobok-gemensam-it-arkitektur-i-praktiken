@@ -12,7 +12,7 @@ utan snarare:
 
 > Vilka behov är så återkommande, riskfyllda eller beroende av gemensam samordning att organisationen tjänar på att bära ett gemensamt ansvar för dem?
 
-Detta kapitel introducerar en beslutsmodell för den frågan. Fokus ligger på **vad som lämpar sig för gemensamt ansvar**. Hur ett gemensamt tekniskt erbjudande senare utformas som plattformstjänst, produkt eller självservice behandlas i del V.
+Detta kapitel introducerar en beslutsmodell för den frågan. Fokus ligger på vad som lämpar sig för gemensamt ansvar. Hur ett gemensamt tekniskt erbjudande senare utformas som plattformstjänst, produkt eller självservice behandlas i del V.
 
 ## Gemensamt ansvar är inte samma sak som central produktion
 
@@ -22,10 +22,10 @@ En organisation kan ha ett gemensamt ansvar för exempelvis identitet, API-princ
 
 Det innebär att man bör skilja mellan åtminstone fyra frågor:
 
-1. **Behöver området ha gemensamma regler eller mål?**
-2. **Behöver organisationen erbjuda en gemensam tjänst eller plattform?**
-3. **Behöver realiseringen skötas av en central organisatorisk enhet?**
-4. **Vilken variation bör vara tillåten nära lösningen?**
+1. Behöver området ha gemensamma regler eller mål?
+2. Behöver organisationen erbjuda en gemensam tjänst eller plattform?
+3. Behöver realiseringen skötas av en central organisatorisk enhet?
+4. Vilken variation bör vara tillåten nära lösningen?
 
 Dessa frågor har inte alltid samma svar.
 
@@ -33,7 +33,7 @@ Identitetsfederation är ett tydligt exempel. Organisationen kan behöva gemensa
 
 På motsvarande sätt kan organisationen ha en gemensam standard för loggformat och spårbarhet, en gemensam loggplattform och ändå låta varje produktteam äga vilka verksamhetshändelser som är meningsfulla att logga.
 
-**Gemensamt ansvar handlar därför främst om sammanhang, kompatibilitet och uthållighet – inte om organisationsform.**
+Gemensamt ansvar handlar därför främst om sammanhang, kompatibilitet och uthållighet – inte om organisationsform.
 
 ## Sex frågor som hjälper till att bedöma gemensamhet
 
@@ -41,12 +41,12 @@ Det finns ingen enskild matematisk gräns för när något bör vara gemensamt. 
 
 I den här boken används sex huvudfrågor:
 
-1. Finns tydliga **skalfördelar**?
-2. Finns **risker eller styrkrav** som behöver hanteras konsekvent?
-3. Kräver området **specialiserad kompetens** som inte rimligen kan dupliceras överallt?
-4. Finns ett starkt behov av **interoperabilitet och gemensamma kontrakt**?
-5. Är problemet **återkommande och tillräckligt likartat** mellan flera konsumenter?
-6. Finns det samtidigt ett behov av **lokal differentiering** som gör full centralisering olämplig?
+1. Finns tydliga skalfördelar?
+2. Finns risker eller styrkrav som behöver hanteras konsekvent?
+3. Kräver området specialiserad kompetens som inte rimligen kan dupliceras överallt?
+4. Finns ett starkt behov av interoperabilitet och gemensamma kontrakt?
+5. Är problemet återkommande och tillräckligt likartat mellan flera konsumenter?
+6. Finns det samtidigt ett behov av lokal differentiering som gör full centralisering olämplig?
 
 De fem första frågorna talar ofta för ökad gemensamhet. Den sjätte fungerar som motvikt. Det är sällan klokt att optimera enbart för återanvändning om det sker på bekostnad av verksamhetens behov av variation.
 
@@ -70,7 +70,7 @@ Typiska områden där skalfördelar kan vara betydande är:
 
 Men skala är inte bara en kostnadsfråga. Ett gemensamt erbjudande kan också göra en avancerad lösning praktiskt tillgänglig för fler team. Ett enskilt produktteam kanske inte har resurser att bygga en robust certifikatlivscykel, självservice för secrets eller avancerad observerbarhet. Om detta finns som gemensamt erbjudande kan teamet konsumera en högre kvalitet än det rimligen hade kunnat skapa självt.
 
-Samtidigt finns en viktig gräns: **skalfördelar uppstår bara när behoven faktiskt är tillräckligt lika**.
+Samtidigt finns en viktig gräns: skalfördelar uppstår bara när behoven faktiskt är tillräckligt lika.
 
 Om ett gemensamt erbjudande kräver så många specialfall att varje konsument ändå måste ha en unik lösning kan den tänkta skalfördelen försvinna. Då kan en gemensam standard eller ett gemensamt kontrakt vara mer värdefullt än en enda gemensam teknisk tjänst.
 
@@ -90,7 +90,7 @@ Gemensamhet kan då motiveras av behovet att:
 - minska antalet unika säkerhetslösningar,
 - ge en tydlig ansvarspunkt för kritiska mekanismer.
 
-Det betyder inte att varje säkerhetsbeslut ska centraliseras. Snarare bör organisationen fråga vilken del av risken som är **systemisk**.
+Det betyder inte att varje säkerhetsbeslut ska centraliseras. Snarare bör organisationen fråga vilken del av risken som är systemisk.
 
 Ett produktteam kan till exempel själv behöva avgöra vilka data en viss roll får se. Men organisationen kan samtidigt behöva en gemensam mekanism för autentisering, gemensamma krav på stark autentisering och gemensamma protokoll för identitetsöverföring.
 
@@ -115,7 +115,7 @@ Om varje team måste bygga upp full specialistkompetens blir organisationen båd
 
 Ett gemensamt förmågeområde kan i stället koncentrera specialistkompetensen och göra den konsumerbar genom dokumenterade tjänster, standarder och stödformer.
 
-Här finns dock en viktig balans. Specialistkompetens får inte bli en exklusiv kunskapsö som gör alla andra beroende av manuella beställningar. Ett moget gemensamt område försöker i stället **produktifiera expertisen**:
+Här finns dock en viktig balans. Specialistkompetens får inte bli en exklusiv kunskapsö som gör alla andra beroende av manuella beställningar. Ett moget gemensamt område försöker i stället produktifiera expertisen:
 
 ```text
 Specialistkunskap
@@ -131,7 +131,7 @@ Det gemensamma området skapar då hävstång på sin kompetens i stället för 
 
 ## Interoperabilitet – när flera måste kunna förstå varandra
 
-Det starkaste argumentet för gemensamhet är ibland inte effektivitet utan **interoperabilitet**.
+Det starkaste argumentet för gemensamhet är ibland inte effektivitet utan interoperabilitet.
 
 Två system som ska utbyta information kan inte var för sig bestämma helt olika kontrakt och ändå förvänta sig friktionsfri samverkan. Samma sak gäller identiteter, meddelanden, events, loggkorrelation, tidsformat, kodverk och många andra gränssnitt.
 
@@ -143,7 +143,7 @@ Detta leder till en viktig princip:
 
 Det är en annan situation än ett rent internt implementationsval. Ett team kan ofta själv välja hur en intern algoritm organiseras. Men API-kontraktet mot andra team eller tjänster kan behöva följa gemensamma regler eftersom konsekvensen annars bärs av flera parter.
 
-Interoperabilitet är därför ett tydligt exempel på varför **gemensam standard** och **gemensam plattform** är olika saker. Organisationen kan behöva ett gemensamt API-format utan att varje API måste köras genom samma gateway. Den kan behöva ett gemensamt eventkontrakt utan att alla domäner måste använda exakt samma interna programmeringsmodell.
+Interoperabilitet är därför ett tydligt exempel på varför gemensam standard och gemensam plattform är olika saker. Organisationen kan behöva ett gemensamt API-format utan att varje API måste köras genom samma gateway. Den kan behöva ett gemensamt eventkontrakt utan att alla domäner måste använda exakt samma interna programmeringsmodell.
 
 ## Återkommande likartade behov – när återanvändning faktiskt är möjlig
 
@@ -163,7 +163,7 @@ Om svaret däremot är att varje konsument behöver unik processlogik, unik data
 
 Detta är särskilt relevant för verksamhetsnära plattformar som workflow, case management, regler och analys. Där kan det finnas gemensamma tekniska byggblock, men den verksamhetsmässiga betydelsen behöver ofta ligga nära domänen.
 
-Ett bra gemensamt erbjudande försöker därför hitta **minsta men värdefulla gemensamma nämnare**, inte maximal funktionell täckning.
+Ett bra gemensamt erbjudande försöker därför hitta minsta men värdefulla gemensamma nämnare, inte maximal funktionell täckning.
 
 ## Differentiering – när lokal variation är själva poängen
 
@@ -246,7 +246,7 @@ Ett centraliserat erbjudande kan skapa:
 - svårigheter att prioritera mellan många olika behov,
 - teknisk inlåsning om en gemensam plattform blir obligatorisk för länge.
 
-Detta betyder inte att gemensamma plattformar är fel, utan att deras nytta måste jämföras med **samordningskostnaden**.
+Detta betyder inte att gemensamma plattformar är fel, utan att deras nytta måste jämföras med samordningskostnaden.
 
 En gemensam lösning som sparar tio team fem timmars arbete per år men kräver ett helt centralt team för att förvaltas är knappast en skalfördel. En gemensam lösning som däremot minskar säkerhetsrisk, gör återställning verifierbar och eliminerar hundratals lokala speciallösningar kan vara mycket värdefull även om plattformsteamet i sig är kostsamt.
 
@@ -278,11 +278,11 @@ eller:
 
 > Teamen är autonoma, alltså ska allt vara lokalt.
 
-Båda missar arkitekturens verkliga fråga: **var behöver beroenden och ansvar samordnas för att helheten ska fungera?**
+Båda missar arkitekturens verkliga fråga: var behöver beroenden och ansvar samordnas för att helheten ska fungera?
 
 ## Bedöm förmågan och tjänsten separat
 
-En särskilt viktig distinktion är att en gemensam **förmåga** inte automatiskt innebär en gemensam **plattformstjänst**.
+En särskilt viktig distinktion är att en gemensam förmåga inte automatiskt innebär en gemensam plattformstjänst.
 
 Organisationen kan behöva ett gemensamt ansvar för *Interaktion, presentation och kanaler* utan att erbjuda en enda frontendplattform. Förmågeområdet kan i stället äga designsystem, tillgänglighetsstandarder, kanalprinciper och vissa återanvändbara komponenter.
 
@@ -321,11 +321,11 @@ Det innebär inte att förmågeansvarig ska fatta alla lokala beslut. Rollen är
 
 Detta knyter tillbaka till ansvarmodellen från kapitel 7:
 
-- den **gemensamma arkitekturen** definierar spelplanen,
-- **förmågeområdet** utvecklar det gemensamma stödet inom sitt område,
-- **lösnings- och produktteamen** tillämpar och kombinerar stödet i konkreta verksamhetslösningar.
+- den gemensamma arkitekturen definierar spelplanen,
+- förmågeområdet utvecklar det gemensamma stödet inom sitt område,
+- lösnings- och produktteamen tillämpar och kombinerar stödet i konkreta verksamhetslösningar.
 
-Frågan om gemensamhet avgör alltså inte vem som skriver varje rad kod. Den avgör **på vilken nivå organisationen behöver bära ett sammanhållet ansvar**.
+Frågan om gemensamhet avgör alltså inte vem som skriver varje rad kod. Den avgör på vilken nivå organisationen behöver bära ett sammanhållet ansvar.
 
 ## Gemensamhet ska kunna omprövas
 
@@ -375,7 +375,7 @@ Men plattformsteamet kan inte veta vilka verksamhetsmått som visar om en ansök
 
 ## En tumregel för beslutets nivå
 
-Ett användbart sätt att sammanfatta kapitlet är att låta **konsekvensens räckvidd** styra beslutets nivå.
+Ett användbart sätt att sammanfatta kapitlet är att låta konsekvensens räckvidd styra beslutets nivå.
 
 Om ett beslut främst påverkar ett enda teams implementation bör det normalt kunna fattas lokalt.
 
@@ -399,7 +399,7 @@ Konsekvens över flera förmågor eller hela organisationen
 Gemensam arkitektur
 ```
 
-Målet är inte maximal centralisering. Målet är att **lägga ansvaret på den lägsta nivå som fortfarande kan bära hela konsekvensen av beslutet**.
+Målet är inte maximal centralisering. Målet är att lägga ansvaret på den lägsta nivå som fortfarande kan bära hela konsekvensen av beslutet.
 
 ## Sammanfattning
 
@@ -416,6 +416,6 @@ Gemensamt ansvar är främst motiverat när flera av följande gäller:
 
 Samtidigt måste organisationen skydda den variation som skapar verkligt verksamhetsvärde. Därför är federerade modeller ofta lika viktiga som helt centrala tjänster.
 
-Den avgörande frågan är inte om en teknik ska vara central eller lokal, utan **vilket ansvar som måste hållas ihop på vilken nivå**.
+Den avgörande frågan är inte om en teknik ska vara central eller lokal, utan vilket ansvar som måste hållas ihop på vilken nivå.
 
 I nästa kapitel flyttas perspektivet från gemensamhet till gränser. En förmågekarta kan visa vilka tekniska stödområden organisationen behöver bära ansvar för, men den löser inte frågan om hur verksamhetsdomäner, dataägarskap och lösningsansvar ska avgränsas. Det kräver ett kompletterande domänperspektiv.

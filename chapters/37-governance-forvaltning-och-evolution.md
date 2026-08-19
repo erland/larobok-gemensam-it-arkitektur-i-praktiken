@@ -2,7 +2,7 @@
 
 Gemensam IT-arkitektur skapar inget långsiktigt värde bara genom att dokumenteras. Förmågekartor, principer, lösningsmönster, plattformstjänster, standarder och referensarkitekturer måste användas, följas upp och förändras. Annars blir de snabbt en beskrivning av hur organisationen tänkte vid ett visst tillfälle snarare än ett fungerande beslutsstöd för hur den utvecklar sin IT.
 
-Kapitel 31 och 32 behandlade vad som standardiseras och hur teknikens livscykel styrs. Här ligger fokus i stället på **governance för hela arkitektursystemet**: mandat, ägarskap, återkoppling och hur artefakterna hålls relevanta tillsammans.
+Kapitel 31 och 32 behandlade vad som standardiseras och hur teknikens livscykel styrs. Här ligger fokus i stället på governance för hela arkitektursystemet: mandat, ägarskap, återkoppling och hur artefakterna hålls relevanta tillsammans.
 
 Det avslutande kapitlets fråga är därför inte hur ännu en styrmodell ska konstrueras. Frågan är hur hela den modell som boken har byggt upp kan hållas levande utan att governance blir en flaskhals.
 
@@ -344,7 +344,7 @@ Det kan innebära statusar som exempelvis:
 
 Exakta statusnamn är mindre viktiga än att användaren kan förstå vad som fortfarande är giltigt och vad som inte är det.
 
-Teknikens produkt- och versionslivscykel behandlades i kapitel 32. Här handlar avveckling om den **arkitekturella artefakten** och dess plats i beslutsmodellen.
+Teknikens produkt- och versionslivscykel behandlades i kapitel 32. Här handlar avveckling om den arkitekturella artefakten och dess plats i beslutsmodellen.
 
 ## Mognad bör mätas i effekt, inte dokumentmängd
 
@@ -403,15 +403,15 @@ Utan en sådan mekanism upprepar organisationen samma lärande lokalt. Med en fu
 
 Hela kapitlet kan sammanfattas i en återkommande arbetscykel.
 
-1. **Definiera mandat.** Var tydlig med vem som äger varje typ av beslut och artefakt.
-2. **Publicera den gemensamma spelplanen.** Principer, standarder, tjänster och referensarkitekturer ska vara lätta att hitta och förstå.
-3. **Gör standardvägen enkel.** Flytta återkommande beslut till plattformar, golden paths och automatiserade guardrails.
-4. **Låt lokala team fatta lokala beslut.** Eskalera bara när konsekvensen motiverar det.
-5. **Dokumentera betydelsefulla avsteg.** Koppla dem till behov, risk och omprövning.
-6. **Samla telemetri och feedback.** Mät användning, friktion, incidenter, kostnad och återkommande undantag.
-7. **Granska signaler, inte bara kalendern.** Prioritera de artefakter där verkligheten visar förändringsbehov.
-8. **Förbättra eller avveckla.** Uppdatera standarder, mönster, plattformar och referensarkitekturer när de inte längre fungerar.
-9. **Återför lärandet.** Gör erfarenheten återanvändbar för nästa lösning.
+1. Definiera mandat. Var tydlig med vem som äger varje typ av beslut och artefakt.
+2. Publicera den gemensamma spelplanen. Principer, standarder, tjänster och referensarkitekturer ska vara lätta att hitta och förstå.
+3. Gör standardvägen enkel. Flytta återkommande beslut till plattformar, golden paths och automatiserade guardrails.
+4. Låt lokala team fatta lokala beslut. Eskalera bara när konsekvensen motiverar det.
+5. Dokumentera betydelsefulla avsteg. Koppla dem till behov, risk och omprövning.
+6. Samla telemetri och feedback. Mät användning, friktion, incidenter, kostnad och återkommande undantag.
+7. Granska signaler, inte bara kalendern. Prioritera de artefakter där verkligheten visar förändringsbehov.
+8. Förbättra eller avveckla. Uppdatera standarder, mönster, plattformar och referensarkitekturer när de inte längre fungerar.
+9. Återför lärandet. Gör erfarenheten återanvändbar för nästa lösning.
 
 Cykeln har ingen slutpunkt. Det är själva poängen.
 

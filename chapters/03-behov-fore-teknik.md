@@ -12,7 +12,7 @@ utan:
 
 Det senare är inte alltid fel. En befintlig plattform kan vara både rationell och kostnadseffektiv att återanvända. Problemet uppstår när dess egenskaper omärkligt får definiera behovet. Då blir dagens teknik lätt morgondagens kravbild.
 
-Principen **behov före teknik** handlar därför inte om att ignorera teknik, kostnad eller befintliga investeringar. Den handlar om att hålla isär tre saker som ofta blandas samman:
+Principen behov före teknik handlar därför inte om att ignorera teknik, kostnad eller befintliga investeringar. Den handlar om att hålla isär tre saker som ofta blandas samman:
 
 1. vad organisationen försöker uppnå,
 2. vilka verkliga begränsningar som måste respekteras,
@@ -26,7 +26,7 @@ Ett vanligt tecken på teknikdriven kravställning är att behov uttrycks med na
 
 Jämför följande formuleringar:
 
-> Systemet ska köras på organisationens containerplattform.
+> Systemet ska köras på organisationens *containerplattform*.
 
 med:
 
@@ -65,15 +65,15 @@ Arkitekturval
 Teknisk lösning
 ```
 
-**Målet** beskriver vad organisationen vill åstadkomma. Exempelvis att företag ska kunna hantera ett ärende digitalt utan manuell kontakt.
+Målet beskriver vad organisationen vill åstadkomma. Exempelvis att företag ska kunna hantera ett ärende digitalt utan manuell kontakt.
 
-**Behovet** beskriver vad verksamheten eller IT-stödet behöver kunna göra för att nå målet. Exempelvis att företag kan identifiera sig, lämna uppgifter och följa ärendets status.
+Behovet beskriver vad verksamheten eller IT-stödet behöver kunna göra för att nå målet. Exempelvis att företag kan identifiera sig, lämna uppgifter och följa ärendets status.
 
-**Kravet** gör delar av behovet mer precisa eller verifierbara. Exempelvis att en inlämning ska kunna spåras, att vissa uppgifter måste skyddas och att tjänsten ska klara en definierad belastning.
+Kravet gör delar av behovet mer precisa eller verifierbara. Exempelvis att en inlämning ska kunna spåras, att vissa uppgifter måste skyddas och att tjänsten ska klara en definierad belastning.
 
-**Arkitekturvalet** beskriver hur problemet struktureras. Exempelvis separation mellan kanal och domänlogik, asynkron hantering av vissa händelser eller användning av en gemensam identitetstjänst.
+Arkitekturvalet beskriver hur problemet struktureras. Exempelvis separation mellan kanal och domänlogik, asynkron hantering av vissa händelser eller användning av en gemensam identitetstjänst.
 
-**Den tekniska lösningen** konkretiserar valet i produkter, versioner, konfiguration och implementation.
+Den tekniska lösningen konkretiserar valet i produkter, versioner, konfiguration och implementation.
 
 I praktiken sker arbetet inte linjärt. Ett proof of concept kan visa att ett krav är orimligt dyrt. En säkerhetsbegränsning kan påverka lösningsutrymmet. En befintlig plattform kan göra en viss lösning betydligt billigare än alternativen.
 
@@ -105,7 +105,7 @@ Det går att driva principen behov före teknik för långt.
 
 En organisation som låtsas att befintlig teknik, kompetens, kostnad och driftmiljö inte existerar riskerar att skapa arkitektur som är teoretiskt ren men praktiskt orealistisk.
 
-Därför behöver man skilja mellan **behov** och **begränsningar** (*constraints*).
+Därför behöver man skilja mellan behov och begränsningar (*constraints*).
 
 En begränsning är en verklig begränsning av lösningsutrymmet. Exempel kan vara:
 
@@ -154,7 +154,7 @@ När det är tydligt kan tekniken återintroduceras med ett bättre beslutsunder
 
 ## Path dependency: när historien begränsar framtiden
 
-Stora IT-miljöer byggs lager för lager. Ett tidigare beslut påverkar vilka beslut som senare upplevs som möjliga. Detta brukar beskrivas som **path dependency**: vägen man redan har tagit formar framtida alternativ.
+Stora IT-miljöer byggs lager för lager. Ett tidigare beslut påverkar vilka beslut som senare upplevs som möjliga. Detta brukar beskrivas som path dependency: vägen man redan har tagit formar framtida alternativ.
 
 Ett exempel är en organisation som tidigt standardiserar på en viss integrationsplattform. Under åren byggs kompetens, driftprocesser, övervakning, säkerhetskontroller och hundratals integrationer runt den. När nya behov uppstår är plattformen inte längre bara en teknisk produkt. Den har blivit en del av organisationens sätt att arbeta.
 
@@ -187,7 +187,7 @@ Teknikskuld kan också finnas i:
 - beroenden som saknar tydlig ägare,
 - gamla begränsningar som fortsätter gälla trots att deras ursprungliga orsak har försvunnit.
 
-Detta kan kallas **arkitekturell teknikskuld**: tidigare lösningsval minskar handlingsutrymmet och gör förändring dyrare.
+Detta kan kallas arkitekturell teknikskuld: tidigare lösningsval minskar handlingsutrymmet och gör förändring dyrare.
 
 Behov före teknik hjälper inte genom att automatiskt ta bort sådan skuld. Däremot gör principen det lättare att se den.
 
@@ -315,11 +315,11 @@ Behovsdriven arkitektur är därför inte bara en metod för att välja teknik. 
 
 Principen får olika innebörd beroende på var i organisationen den används.
 
-På **gemensam arkitekturnivå** handlar den om att definiera långlivade förmågor, principer och kvalitetsdimensioner utan att göra dem onödigt beroende av en viss produktgeneration.
+På gemensam arkitekturnivå handlar den om att definiera långlivade förmågor, principer och kvalitetsdimensioner utan att göra dem onödigt beroende av en viss produktgeneration.
 
-På **förmågenivå** handlar den om att utveckla mönster, plattformserbjudanden och standarder utifrån återkommande konsumentbehov. Förmågeansvaret bör kunna förklara vilket problem varje gemensamt erbjudande löser och vilka begränsningar det har.
+På förmågenivå handlar den om att utveckla mönster, plattformserbjudanden och standarder utifrån återkommande konsumentbehov. Förmågeansvaret bör kunna förklara vilket problem varje gemensamt erbjudande löser och vilka begränsningar det har.
 
-På **lösnings-/produktnivå** handlar den om att utgå från det konkreta verksamhetsbehovet och välja bland gemensamma byggstenar där de passar, samtidigt som avvikelser motiveras utifrån behov och kvaliteter snarare än preferens.
+På lösnings-/produktnivå handlar den om att utgå från det konkreta verksamhetsbehovet och välja bland gemensamma byggstenar där de passar, samtidigt som avvikelser motiveras utifrån behov och kvaliteter snarare än preferens.
 
 Detta är ett första exempel på den tredelade ansvarmodell som fördjupas i kapitel 7.
 
@@ -349,19 +349,19 @@ Tekniken kan alltså initiera förändringen utan att ensam definiera målbilden
 
 Före ett större tekniskt beslut kan följande frågor användas som enkel kontroll:
 
-1. **Vilket behov försöker vi lösa?**
+1. Vilket behov försöker vi lösa?
    Kan det beskrivas utan produktnamn eller implementationsdetaljer?
 
-2. **Vilka egenskaper är avgörande?**
+2. Vilka egenskaper är avgörande?
    Vad måste vara sant för att lösningen ska vara användbar, säker och förvaltningsbar?
 
-3. **Vilka begränsningar är verkliga?**
+3. Vilka begränsningar är verkliga?
    Vilka begränsningar kommer från juridik, säkerhet, externa parter, tid, ekonomi eller befintliga beroenden?
 
-4. **Vilka delar är bara vana eller preferens?**
+4. Vilka delar är bara vana eller preferens?
    Finns det antaganden som följer av historiska val snarare än dagens behov?
 
-5. **Vad händer om tekniken byts ut?**
+5. Vad händer om tekniken byts ut?
    Är behov, krav och arkitekturellt resonemang fortfarande begripliga?
 
 Om dessa frågor kan besvaras blir teknikvalet normalt både tydligare och lättare att ompröva.
@@ -423,18 +423,18 @@ Det är själva poängen med att lägga behov före teknik: inte att göra arkit
 
 ## Begrepp att känna till
 
-**Behov** – något verksamheten eller IT-stödet behöver kunna uppnå.
+Behov – något verksamheten eller IT-stödet behöver kunna uppnå.
 
-**Mål** – ett önskat verksamhets- eller organisationsresultat som behov och lösningar ska bidra till.
+Mål – ett önskat verksamhets- eller organisationsresultat som behov och lösningar ska bidra till.
 
-**Begränsning** – en verklig begränsning av lösningsutrymmet, exempelvis juridik, säkerhetskrav, externa beroenden, tid eller ekonomi.
+Begränsning – en verklig begränsning av lösningsutrymmet, exempelvis juridik, säkerhetskrav, externa beroenden, tid eller ekonomi.
 
-**Teknikoberoende krav** – krav som beskriver nödvändiga egenskaper utan onödig bindning till en viss produkt eller implementation.
+Teknikoberoende krav – krav som beskriver nödvändiga egenskaper utan onödig bindning till en viss produkt eller implementation.
 
-**Path dependency** – att tidigare val formar vilka framtida alternativ som är praktiskt eller ekonomiskt möjliga.
+Path dependency – att tidigare val formar vilka framtida alternativ som är praktiskt eller ekonomiskt möjliga.
 
-**Teknikskuld** – framtida kostnad eller minskat handlingsutrymme som följer av tidigare tekniska beslut, genvägar eller kvarvarande beroenden.
+Teknikskuld – framtida kostnad eller minskat handlingsutrymme som följer av tidigare tekniska beslut, genvägar eller kvarvarande beroenden.
 
-**Arkitekturval** – ett beslut om hur en lösning struktureras för att möta behov och krav.
+Arkitekturval – ett beslut om hur en lösning struktureras för att möta behov och krav.
 
-**Realisering** – den konkreta implementationen av ett arkitekturval i teknik, produkt, version och konfiguration.
+Realisering – den konkreta implementationen av ett arkitekturval i teknik, produkt, version och konfiguration.

@@ -2,13 +2,13 @@
 
 Det är lätt att kalla något för en plattform därför att det är centralt installerat, tekniskt avancerat eller används av flera team. Men central infrastruktur är inte automatiskt en plattformstjänst. Ett kluster, en databasmotor, en meddelandebroker eller ett identitetssystem kan vara viktiga tekniska byggblock utan att vara ett konsumtionsbart erbjudande.
 
-Skillnaden uppstår först när organisationen kan svara tydligt på frågor som: **Vad får konsumenten? Vilket problem löser tjänsten? Hur ansluter man sig? Vilka kvaliteter kan man räkna med? Vad ansvarar konsumenten själv för? Vad händer när något går fel? Hur utvecklas och avvecklas tjänsten?**
+Skillnaden uppstår först när organisationen kan svara tydligt på frågor som: Vad får konsumenten? Vilket problem löser tjänsten? Hur ansluter man sig? Vilka kvaliteter kan man räkna med? Vad ansvarar konsumenten själv för? Vad händer när något går fel? Hur utvecklas och avvecklas tjänsten?
 
 Det här kapitlet handlar om den övergången. Det handlar alltså inte i första hand om vilken teknik som ligger under en plattform, utan om vad som krävs för att göra tekniska byggblock till ett förvaltat, begripligt och återanvändbart tjänsteerbjudande.
 
 ## Från teknisk komponent till konsumerbart erbjudande
 
-Ett tekniskt byggblock är något en lösning kan byggas av. Det kan vara en databasmotor, en containerorkestrator, ett certifikatsystem, en meddelandebroker eller en loggplattform. Ett plattformserbjudande är däremot något ett team kan **konsumera med förutsägbart ansvar och förutsägbara egenskaper**.
+Ett tekniskt byggblock är något en lösning kan byggas av. Det kan vara en databasmotor, en containerorkestrator, ett certifikatsystem, en meddelandebroker eller en loggplattform. Ett plattformserbjudande är däremot något ett team kan konsumera med förutsägbart ansvar och förutsägbara egenskaper.
 
 Skillnaden kan beskrivas så här:
 
@@ -28,7 +28,7 @@ Plattformstjänst
 
 Det centrala är alltså inte bara tekniken, utan den organisatoriska och operativa inramningen runt tekniken.
 
-Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt att organisationen erbjuder en **Container Application Platform**. För att det ska vara ett verkligt tjänsteerbjudande behöver det exempelvis vara tydligt:
+Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt att organisationen erbjuder en *Container Application Platform*. För att det ska vara ett verkligt tjänsteerbjudande behöver det exempelvis vara tydligt:
 
 - vilka workload-typer plattformen är avsedd för,
 - vilka resursprofiler som stöds,
@@ -39,7 +39,7 @@ Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt
 - vilka tillgänglighets- och supportnivåer som gäller,
 - vilka delar konsumentteamet själv måste bygga och förvalta.
 
-Utan detta har man främst **central infrastruktur med lokala integrationsproblem**.
+Utan detta har man främst central infrastruktur med lokala integrationsproblem.
 
 ## Ett plattformserbjudande behöver ha ett tydligt syfte
 
@@ -53,7 +53,7 @@ Ett tjänsteerbjudande behöver snarare säga något i stil med:
 
 > Vi erbjuder en förvaltad exekveringsmiljö för containeriserade applikationer med standardiserad driftsättning, grundläggande observerbarhet, nätverksintegration, identitetsintegration och definierade resursprofiler.
 
-Skillnaden är viktig. Den första formuleringen börjar med produkten. Den andra börjar med **konsumentens behov och den kapacitet som erbjuds**.
+Skillnaden är viktig. Den första formuleringen börjar med produkten. Den andra börjar med konsumentens behov och den kapacitet som erbjuds.
 
 Det här följer samma princip som tidigare delar av boken: behov före teknik. Ett erbjudande bör därför kunna beskrivas utan att produktnamnet är dess huvudsakliga identitet.
 
@@ -77,22 +77,22 @@ När en teknisk komponent blir en tjänst uppstår ett kontrakt mellan den som t
 
 Ett användbart tjänstekontrakt bör åtminstone svara på följande frågor:
 
-1. **Vilket behov löser tjänsten?**
-2. **Vilka användningsfall stöds?**
-3. **Vilka användningsfall stöds uttryckligen inte?**
-4. **Vad ansvarar plattformsområdet för?**
-5. **Vad ansvarar konsumenten för?**
-6. **Vilka kvaliteter erbjuds?**
-7. **Hur ansluter eller beställer man tjänsten?**
-8. **Hur ser support- och incidentvägen ut?**
-9. **Hur hanteras förändringar och avveckling?**
-10. **Vilka kostnader eller kvoter är relevanta?**
+1. Vilket behov löser tjänsten?
+2. Vilka användningsfall stöds?
+3. Vilka användningsfall stöds uttryckligen inte?
+4. Vad ansvarar plattformsområdet för?
+5. Vad ansvarar konsumenten för?
+6. Vilka kvaliteter erbjuds?
+7. Hur ansluter eller beställer man tjänsten?
+8. Hur ser support- och incidentvägen ut?
+9. Hur hanteras förändringar och avveckling?
+10. Vilka kostnader eller kvoter är relevanta?
 
 Det är ofta just frånvaron av dessa svar som gör att en central teknisk miljö upplevs som svår att använda.
 
 ## Konsumentansvar och plattformsansvar måste mötas
 
-Ett vanligt misslyckande är att plattformsteamet beskriver vad plattformen gör men inte vad den **inte** gör. Då flyttas ansvar i praktiken mellan team under incidenter och förändringar.
+Ett vanligt misslyckande är att plattformsteamet beskriver vad plattformen gör men inte vad den inte gör. Då flyttas ansvar i praktiken mellan team under incidenter och förändringar.
 
 Ta en API Management-tjänst som exempel. Plattformen kan ansvara för:
 
@@ -118,7 +118,7 @@ Ett bra plattformserbjudande hittar en användbar gräns mellan dessa två ytter
 
 ## Plattformen ska abstrahera återkommande komplexitet
 
-En av de viktigaste anledningarna att skapa en plattformstjänst är att **ta bort komplexitet som inte ger konsumentteamet konkurrens- eller verksamhetsfördelar**.
+En av de viktigaste anledningarna att skapa en plattformstjänst är att ta bort komplexitet som inte ger konsumentteamet konkurrens- eller verksamhetsfördelar.
 
 Ett team som bygger ett handläggningssystem behöver sannolikt förstå sin domänmodell, sina processer och sina kvalitetskrav. Det bör däremot inte behöva bli expert på exempelvis:
 
@@ -129,7 +129,7 @@ Ett team som bygger ett handläggningssystem behöver sannolikt förstå sin dom
 - hur backend för observerbarhet skalas,
 - hur underliggande noder livscykelhanteras.
 
-Plattformens uppgift är inte nödvändigtvis att dölja all teknisk komplexitet. Det skulle kunna skapa farliga abstraktioner. Uppgiften är att **äga den komplexitet som med fördel kan bäras gemensamt** och exponera ett kontrakt som är tillräckligt enkelt för konsumenten men tillräckligt transparent för välgrundade arkitekturbeslut.
+Plattformens uppgift är inte nödvändigtvis att dölja all teknisk komplexitet. Det skulle kunna skapa farliga abstraktioner. Uppgiften är att äga den komplexitet som med fördel kan bäras gemensamt och exponera ett kontrakt som är tillräckligt enkelt för konsumenten men tillräckligt transparent för välgrundade arkitekturbeslut.
 
 Det kan beskrivas som:
 
@@ -147,7 +147,7 @@ Konsumentens lösningsansvar
 
 Om varje anslutning till en plattform kräver ett möte, ett manuellt ärende, handskrivna konfigurationsfiler och flera veckors koordinering finns ett återanvändbart tekniskt erbjudande, men konsumtionsmodellen är fortfarande svag.
 
-Självservice betyder inte att allt måste vara öppet och omedelbart. Det betyder att den normala konsumtionsvägen är **förutsägbar, dokumenterad och så automatiserad som riskbilden tillåter**.
+Självservice betyder inte att allt måste vara öppet och omedelbart. Det betyder att den normala konsumtionsvägen är förutsägbar, dokumenterad och så automatiserad som riskbilden tillåter.
 
 Exempel på självservice kan vara:
 
@@ -197,7 +197,7 @@ Om onboarding slutar när kontot skapats har plattformen bara löst en del av ko
 
 ## Kvalitetsprofiler gör erbjudandet begripligt
 
-Ett plattformserbjudande bör inte bara lista funktioner. Det behöver också beskriva **vilka kvaliteter konsumenten kan bygga sin lösning på**.
+Ett plattformserbjudande bör inte bara lista funktioner. Det behöver också beskriva vilka kvaliteter konsumenten kan bygga sin lösning på.
 
 För en databastjänst kan det exempelvis vara relevant att beskriva profiler för:
 
@@ -218,7 +218,7 @@ För en containerplattform kan andra egenskaper vara centrala:
 - loggretention,
 - support för persistent storage.
 
-Det är inte nödvändigt att varje konsument får ett individuellt SLA. Tvärtom är standardiserade **service tiers eller kvalitetsprofiler** ofta bättre, eftersom de gör kostnad och driftmodell mer förutsägbar.
+Det är inte nödvändigt att varje konsument får ett individuellt SLA. Tvärtom är standardiserade service tiers eller kvalitetsprofiler ofta bättre, eftersom de gör kostnad och driftmodell mer förutsägbar.
 
 Exempel:
 
@@ -228,7 +228,7 @@ Exempel:
 | Kritisk | högre redundans | förstärkt | utökad | centrala verksamhetssystem |
 | Experiment | lägre garanti | begränsad | best effort | prototyp och utvärdering |
 
-Tabellen är ett illustrativt exempel, inte en universell profilmodell. Poängen är att kvalitetsnivån blir en **del av erbjudandet**, inte något som varje lösning försöker förhandla fram efteråt.
+Tabellen är ett illustrativt exempel, inte en universell profilmodell. Poängen är att kvalitetsnivån blir en del av erbjudandet, inte något som varje lösning försöker förhandla fram efteråt.
 
 ## Tjänstenivåer utan falsk precision
 
@@ -238,9 +238,9 @@ Ett plattformsteam kan exempelvis lova en viss tillgänglighet för databastjän
 
 Det är därför viktigt att skilja mellan:
 
-- **plattformens service level**,
-- **konsumentens applikations-SLO**,
-- **verksamhetens end-to-end-behov**.
+- plattformens service level,
+- konsumentens applikations-SLO,
+- verksamhetens end-to-end-behov.
 
 De hänger ihop men är inte samma sak.
 
@@ -259,7 +259,7 @@ Konsumtionsmodellen beskriver hur konsumenten faktiskt använder tjänsten. Den 
 - SDK eller framework,
 - kombinationer av flera vägar.
 
-Det viktiga är inte att välja en viss kanal som standard, utan att konsumtionen är **reproducerbar och går att förstå över tid**.
+Det viktiga är inte att välja en viss kanal som standard, utan att konsumtionen är reproducerbar och går att förstå över tid.
 
 Om plattformen endast kan användas genom att en enskild specialist gör manuella ändringar på konsumentens vägnar är plattformen svår att skala organisatoriskt, även om den underliggande tekniken skalar utmärkt.
 
@@ -276,7 +276,7 @@ En fungerande supportmodell behöver bland annat tydliggöra:
 - vilka tider och responstider som gäller,
 - hur återkommande problem återförs till produktutvecklingen.
 
-Det sista är särskilt viktigt. Support är inte bara en kostnad. Supportärenden är **data om plattformens användbarhet**.
+Det sista är särskilt viktigt. Support är inte bara en kostnad. Supportärenden är data om plattformens användbarhet.
 
 Om många team återkommer med samma fel kan problemet vara:
 
@@ -291,7 +291,7 @@ Om många team återkommer med samma fel kan problemet vara:
 
 Ett plattformserbjudande behöver överleva enskilda produktversioner och ibland även produktbyten.
 
-Anta att en relationell databastjänst i dag realiseras med en viss databasprodukt. Om organisationen senare byter produkt bör konsumenterna i idealfallet fortfarande känna igen de centrala tjänstebegreppen:
+Anta att en *relationell databastjänst* i dag realiseras med en viss databasprodukt. Om organisationen senare byter produkt bör konsumenterna i idealfallet fortfarande känna igen de centrala tjänstebegreppen:
 
 - databasinstans,
 - kapacitetsprofil,
@@ -324,9 +324,9 @@ Detta blir särskilt viktigt när standard- och tekniklivscykel fördjupas i sen
 
 En vanlig förenkling är att anta att ett tjänsteerbjudande alltid motsvarar en produktinstallation. Så behöver det inte vara.
 
-Ett erbjudande som **Relationell databastjänst** kan exempelvis ha flera profiler eller realiseringar därför att olika workload-typer har olika begränsningar. Ett identitetserbjudande kan kombinera katalog, federation, PKI och secrets management. Ett observerbarhetserbjudande kan bestå av flera byggblock för loggar, mätvärden och tracing.
+Ett erbjudande som Relationell databastjänst kan exempelvis ha flera profiler eller realiseringar därför att olika workload-typer har olika begränsningar. Ett identitetserbjudande kan kombinera katalog, federation, PKI och secrets management. Ett observerbarhetserbjudande kan bestå av flera byggblock för loggar, mätvärden och tracing.
 
-Tjänsten är då den stabilare **konsumtions- och ansvarsenheten** ovanpå dessa komponenter.
+Tjänsten är då den stabilare konsumtions- och ansvarsenheten ovanpå dessa komponenter.
 
 Det omvända gäller också: en stor produkt kan realisera flera tjänsteerbjudanden. En produktivitetsplattform eller low-code-plattform kan till exempel stödja samarbete, dokumenthantering, automation och applikationsutveckling. Det betyder inte att allt bör beskrivas som ett enda odifferentierat erbjudande.
 
@@ -368,7 +368,7 @@ En arkitektonisk plattformskatalog bör i första hand uttrycka erbjudanden som:
 - Relationell databastjänst,
 - Enterprise Messaging,
 - CI/CD Platform,
-- Search and Indexing Service,
+- *Search and Indexing Service*,
 - Productivity Suite.
 
 Produkten kan anges som aktuell realisering under erbjudandet.
@@ -391,7 +391,7 @@ Det finns alltså ett gemensamt tekniskt byggblock. Men konsumenten vet kanske i
 - när versionen uppgraderas,
 - vem som ansvarar för indexering och schemaförändringar.
 
-För att utveckla detta till **Relationell databastjänst** kan organisationen definiera:
+För att utveckla detta till Relationell databastjänst kan organisationen definiera:
 
 1. stödda databasprofiler,
 2. tydliga konsument- och plattformsansvar,
@@ -466,7 +466,7 @@ Support, tjänstenivåer, observerbarhet, incidenthantering och livscykel är in
 
 Erbjudandet utvecklas aktivt utifrån konsumenternas behov, användningsdata, adoption och återkommande friktion.
 
-Den sista nivån leder direkt vidare till nästa kapitel om **Platform as a Product**.
+Den sista nivån leder direkt vidare till nästa kapitel om Platform as a Product.
 
 ## Ansvar på tre nivåer
 
@@ -541,16 +541,16 @@ SLA eller SLO skrivs för att tjänsten ska se mogen ut men plattformsteamet sak
 
 När ett tekniskt byggblock övervägs som gemensam plattformstjänst kan följande ordning användas:
 
-1. **Identifiera det återkommande konsumentbehovet.** Vilken friktion eller risk upprepas i flera lösningar?
-2. **Definiera tjänstens avsedda användningsfall.** Vad ska erbjudandet göra lättare?
-3. **Avgränsa vad tjänsten inte är.** Vilket ansvar ska ligga kvar hos domänen och konsumenten?
-4. **Definiera tjänstekontraktet.** Vad får konsumenten och vad måste konsumenten själv leverera?
-5. **Bestäm kvalitetsprofiler.** Vilka nivåer av tillgänglighet, kapacitet, recovery, säkerhet eller support är relevanta?
-6. **Utforma konsumtionsvägen.** Hur beställs, provisioneras, ändras och avvecklas tjänsten?
-7. **Designa operativ modell.** Support, observerbarhet, incidenter, kapacitet och tjänstenivåer.
-8. **Separera tjänst från realisering.** Vilka tekniska byggblock och produkter används i dag, och vilka delar av kontraktet bör överleva ett framtida produktbyte?
-9. **Mät faktisk användbarhet.** Användning, ledtid, fel, supportärenden och återkommande avsteg visar om tjänsten fungerar.
-10. **Pröva om tjänsten fortfarande bör vara gemensam.** Gemensamt ansvar är ett arkitekturbeslut som kan behöva omprövas.
+1. Identifiera det återkommande konsumentbehovet. Vilken friktion eller risk upprepas i flera lösningar?
+2. Definiera tjänstens avsedda användningsfall. Vad ska erbjudandet göra lättare?
+3. Avgränsa vad tjänsten inte är. Vilket ansvar ska ligga kvar hos domänen och konsumenten?
+4. Definiera tjänstekontraktet. Vad får konsumenten och vad måste konsumenten själv leverera?
+5. Bestäm kvalitetsprofiler. Vilka nivåer av tillgänglighet, kapacitet, recovery, säkerhet eller support är relevanta?
+6. Utforma konsumtionsvägen. Hur beställs, provisioneras, ändras och avvecklas tjänsten?
+7. Designa operativ modell. Support, observerbarhet, incidenter, kapacitet och tjänstenivåer.
+8. Separera tjänst från realisering. Vilka tekniska byggblock och produkter används i dag, och vilka delar av kontraktet bör överleva ett framtida produktbyte?
+9. Mät faktisk användbarhet. Användning, ledtid, fel, supportärenden och återkommande avsteg visar om tjänsten fungerar.
+10. Pröva om tjänsten fortfarande bör vara gemensam. Gemensamt ansvar är ett arkitekturbeslut som kan behöva omprövas.
 
 ## Centrala fakta
 
@@ -563,7 +563,7 @@ När ett tekniskt byggblock övervägs som gemensam plattformstjänst kan följa
 - Produkt och plattformstjänst bör hållas isär: produkten är en realisering av tjänsten.
 - En plattformstjänst kan bestå av flera tekniska byggblock, och en produkt kan realisera flera tjänster.
 - Det är inte alltid rätt att skapa en plattformstjänst; ibland är en standard, ett mönster eller ett referensbyggblock tillräckligt.
-- När ett erbjudande utvecklas aktivt utifrån konsumentbehov och användningsdata närmar det sig **Platform as a Product**, vilket är nästa steg i modellen.
+- När ett erbjudande utvecklas aktivt utifrån konsumentbehov och användningsdata närmar det sig Platform as a Product, vilket är nästa steg i modellen.
 
 ## Källor och vidare läsning
 

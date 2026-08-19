@@ -30,7 +30,7 @@ Verifiering, leverans och återkoppling
 
 Kedjan ska inte läsas som ett vattenfall där varje steg måste vara fullständigt innan nästa börjar. I verkligheten rör sig arkitekten fram och tillbaka mellan dem. Ett plattformsval kan synliggöra ett kvalitetsproblem. Ett domänbeslut kan förändra vilka integrationer som behövs. Ett proof of concept kan visa att ett antagande var fel.
 
-Det centrala är inte sekventiell perfektion utan **spårbarhet mellan varför, vad och hur**.
+Det centrala är inte sekventiell perfektion utan spårbarhet mellan varför, vad och hur.
 
 ## Börja med beslutssituationen, inte med arkitekturartefakten
 
@@ -59,7 +59,7 @@ Arkitekturarbetets omfattning bör därför vara proportionerlig mot exempelvis:
 
 Detta knyter an till principen från kapitel 5: analysens djup ska stå i proportion till beslutets räckvidd och reversibilitet.
 
-Ett initiativ behöver alltså inte producera fler artefakter bara för att det kallas arkitektur. Det behöver skapa **tillräcklig evidens för de beslut som faktiskt spelar roll**.
+Ett initiativ behöver alltså inte producera fler artefakter bara för att det kallas arkitektur. Det behöver skapa tillräcklig evidens för de beslut som faktiskt spelar roll.
 
 ## Steg 1: formulera behovet utan att gömma lösningen i frågan
 
@@ -173,11 +173,11 @@ Den skillnaden hjälper initiativet att både respektera verkligheten och undvik
 
 ## Steg 4: hitta berörda förmågor och ansvar
 
-Nästa fråga är inte vilka produkter som behövs utan **vilka typer av IT-stöd lösningen behöver**.
+Nästa fråga är inte vilka produkter som behövs utan vilka typer av IT-stöd lösningen behöver.
 
 En publik e-tjänst kan exempelvis beröra:
 
-- Interaktion, presentation och kanaler,
+- *Interaktion, presentation och kanaler*,
 - Identitet och tillit,
 - Data- och informationshantering,
 - Integration och kommunikation,
@@ -188,7 +188,7 @@ En publik e-tjänst kan exempelvis beröra:
 Ett AI-baserat handläggarstöd kan dessutom beröra:
 
 - Analys, sökning och AI,
-- Process, workflow och ärendehantering,
+- *Process, workflow och ärendehantering*,
 - Regler och beslut.
 
 Syftet med denna kartläggning är inte att märka lösningen med så många förmågor som möjligt. Syftet är att upptäcka:
@@ -201,7 +201,7 @@ Syftet med denna kartläggning är inte att märka lösningen med så många fö
 
 Här blir förmågekartan ett navigeringsverktyg.
 
-Den säger inte hur systemet ska byggas. Den hjälper initiativet att hitta **rätt frågor och rätt ägare**.
+Den säger inte hur systemet ska byggas. Den hjälper initiativet att hitta rätt frågor och rätt ägare.
 
 ## Steg 5: pröva relevant referensarkitektur
 
@@ -211,7 +211,7 @@ Det kan exempelvis vara:
 
 - publik e-tjänst,
 - internt handläggningsstöd,
-- integrationsintensivt verksamhetssystem,
+- *integrationsintensivt verksamhetssystem*,
 - informationsutbyte med extern part,
 - containerbaserad tjänst,
 - AI-baserat verksamhetsstöd,
@@ -223,9 +223,9 @@ Den ska prövas mot initiativets faktiska behov.
 
 En praktisk start är att klassificera innehållet i tre grupper:
 
-1. **Direkt tillämpligt** – delar som passar utan särskild anpassning.
-2. **Tillämpligt med variation** – samma arkitekturidé men annan konkret utformning.
-3. **Ej tillämpligt eller avvikande** – där initiativets behov eller begränsningar motiverar annan lösning.
+1. Direkt tillämpligt – delar som passar utan särskild anpassning.
+2. Tillämpligt med variation – samma arkitekturidé men annan konkret utformning.
+3. Ej tillämpligt eller avvikande – där initiativets behov eller begränsningar motiverar annan lösning.
 
 Detta gör referensarkitekturen till beslutsunderlag snarare än mall.
 
@@ -363,7 +363,7 @@ Exempel:
 - egen stateless tjänst eller funktionsexekvering,
 - lokal sökindexering eller gemensam söktjänst.
 
-Där behöver arkitekten formulera alternativ som är **reellt genomförbara**.
+Där behöver arkitekten formulera alternativ som är reellt genomförbara.
 
 Ett skenalternativ tillför inget.
 
@@ -711,7 +711,7 @@ golden path eller standard
 
 Detta är en central del av den iterativa modellen från kapitel 7.
 
-Den gemensamma arkitekturen ska alltså inte bara styra lösningarna. **Lösningarna ska förbättra den gemensamma arkitekturen.**
+Den gemensamma arkitekturen ska alltså inte bara styra lösningarna. Lösningarna ska förbättra den gemensamma arkitekturen.
 
 ## Ett sammanhängande exempel: publik e-tjänst
 
@@ -789,7 +789,7 @@ Anta att en myndighet ska skapa en ny publik tjänst där företag kan lämna en
 
 Det äldre handläggningssystemet kan endast ta emot nattlig filimport för en viss del av processen. Avsteget dokumenteras och ges ett omprövningsvillkor kopplat till systemets planerade modernisering.
 
-I detta exempel är lösningsarkitekturen inte en kopia av referensarkitekturen. Den är en **spårbar konkretisering** av den, kombinerad med faktiska behov, kvalitetsdrivare, plattformserbjudanden och lokala beslut.
+I detta exempel är lösningsarkitekturen inte en kopia av referensarkitekturen. Den är en spårbar konkretisering av den, kombinerad med faktiska behov, kvalitetsdrivare, plattformserbjudanden och lokala beslut.
 
 ## En praktisk arbetsordning
 
@@ -836,7 +836,7 @@ När organisationen mognar kan mer av kunskapen flyttas till:
 
 Då blir arkitekturen mindre beroende av att enskilda personer känner till alla dokument.
 
-Det långsiktiga målet är inte fler arkitekturdokument. Det är att göra **goda arkitekturbeslut lättare att fatta, lättare att återanvända och lättare att verifiera**.
+Det långsiktiga målet är inte fler arkitekturdokument. Det är att göra goda arkitekturbeslut lättare att fatta, lättare att återanvända och lättare att verifiera.
 
 ## Sammanfattning
 

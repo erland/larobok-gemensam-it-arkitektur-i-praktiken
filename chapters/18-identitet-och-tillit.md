@@ -8,15 +8,15 @@ En lokal användartabell kan verka enkel i ett enskilt system. Ett statiskt lös
 
 Kärnfrågan i kapitlet är:
 
-> **Hur etablerar och förvaltar vi tillit mellan människor, tjänster och organisationer utan att varje lösning bygger sin egen identitetsvärld?**
+> Hur etablerar och förvaltar vi tillit mellan människor, tjänster och organisationer utan att varje lösning bygger sin egen identitetsvärld?
 
-Kapitlet behandlar den gemensamma IT-förmågan **Identitet och tillit**. Fokus ligger på identiteter, autentisering, federation, tjänsteidentiteter, auktorisationsunderlag, PKI, certifikat och secrets. Säkerhet i vidare mening är däremot tvärgående. Hotmodellering, nätsegmentering, säker kodning, sårbarhetshantering och informationsskydd kan inte reduceras till identitetsförmågan.
+Kapitlet behandlar den gemensamma IT-förmågan *Identitet och tillit*. Fokus ligger på identiteter, autentisering, federation, tjänsteidentiteter, auktorisationsunderlag, PKI, certifikat och secrets. Säkerhet i vidare mening är däremot tvärgående. Hotmodellering, nätsegmentering, säker kodning, sårbarhetshantering och informationsskydd kan inte reduceras till identitetsförmågan.
 
 ## Identitet är mer än ett användarnamn
 
 I vardagligt språk används identitet ofta som synonym till ett användarkonto. Arkitektoniskt behöver begreppet vara bredare.
 
-En digital identitet är en representation av ett **subjekt** eller en **aktör** som behöver kunna kännas igen i ett digitalt sammanhang. Det kan exempelvis vara:
+En digital identitet är en representation av ett subjekt eller en aktör som behöver kunna kännas igen i ett digitalt sammanhang. Det kan exempelvis vara:
 
 - en anställd,
 - en extern användare,
@@ -31,11 +31,11 @@ Identiteten behöver inte innehålla all information om aktören. Den behöver i
 
 Det är därför viktigt att skilja mellan:
 
-- **identitet** – vem eller vad aktören representerar,
-- **konto** – en teknisk representation i ett visst system eller en viss identitetsdomän,
-- **credential** – något som används för att bevisa eller stödja ett påstående om identiteten,
-- **attribut** – egenskaper som kan beskriva identiteten,
-- **session eller token** – en tidsbegränsad representation som kan användas efter en autentiserings- eller auktorisationsprocess.
+- identitet – vem eller vad aktören representerar,
+- konto – en teknisk representation i ett visst system eller en viss identitetsdomän,
+- credential – något som används för att bevisa eller stödja ett påstående om identiteten,
+- attribut – egenskaper som kan beskriva identiteten,
+- session eller token – en tidsbegränsad representation som kan användas efter en autentiserings- eller auktorisationsprocess.
 
 Om dessa blandas ihop blir livscykeln snabbt svår att förstå. En person kan exempelvis ha en stabil organisatorisk identitet men flera konton, autentiseringsmetoder och aktiva sessioner. En tjänst kan ha en logisk identitet men få kortlivade credentials dynamiskt i varje körmiljö.
 
@@ -45,11 +45,11 @@ En av de viktigaste distinktionerna i identitetsarkitekturen är skillnaden mell
 
 Autentisering svarar i princip på:
 
-> **Vem eller vad är aktören?**
+> Vem eller vad är aktören?
 
 Auktorisation svarar på:
 
-> **Vad får den autentiserade aktören göra i detta sammanhang?**
+> Vad får den autentiserade aktören göra i detta sammanhang?
 
 Skillnaden är enkel att formulera men viktig i designen.
 
@@ -107,13 +107,13 @@ Varje sådan relation behöver svar på frågor som:
 - Hur hanteras incidenter?
 - Vem ansvarar för att relationen fortfarande är korrekt?
 
-Därför bör tillit dokumenteras som en **avsiktlig relation med ägare och livscykel**, inte som ett historiskt tekniskt undantag som råkar fungera.
+Därför bör tillit dokumenteras som en avsiktlig relation med ägare och livscykel, inte som ett historiskt tekniskt undantag som råkar fungera.
 
 ## Människors identiteter och workforce identity
 
 I större organisationer finns normalt ett behov av en gemensam identitetsdomän för den egna arbetsstyrkan. Det omfattar exempelvis anställda, konsulter och andra personer som arbetar inom organisationens miljö.
 
-En sådan workforce identity-förmåga kan ge stöd för:
+En sådan *workforce identity*-förmåga kan ge stöd för:
 
 - central autentisering,
 - single sign-on,
@@ -135,7 +135,7 @@ Om varje system i stället skapar egna lokala användarkonton uppstår flera par
 - incidenthantering måste göras i många system,
 - revision och spårbarhet blir svårare.
 
-Principen **gemensam identitet före lokal identitet** är därför ofta en bra utgångspunkt när det gemensamma erbjudandet faktiskt stödjer målgruppen och kvalitetskraven.
+Principen gemensam identitet före lokal identitet är därför ofta en bra utgångspunkt när det gemensamma erbjudandet faktiskt stödjer målgruppen och kvalitetskraven.
 
 Det innebär inte att alla applikationer saknar lokal användarrepresentation. Ett system kan behöva lagra domänspecifika inställningar eller interna identifierare. Men den lokala representationen bör då kopplas till en gemensamt förvaltad identitet i stället för att bli en ny fristående autentiseringsvärld.
 
@@ -161,9 +161,9 @@ En identitetsplattform kan automatisera mycket av detta, men endast om den kan l
 
 Det är därför viktigt att skilja mellan:
 
-- **auktoritativ person- och organisationsinformation**, exempelvis från HR- eller organisationssystem,
-- **identitetslivscykel**, som omsätter informationen till digitala identiteter och konton,
-- **behörighetslivscykel**, som avgör vilken åtkomst identiteten ska få i olika sammanhang.
+- auktoritativ person- och organisationsinformation, exempelvis från HR- eller organisationssystem,
+- identitetslivscykel, som omsätter informationen till digitala identiteter och konton,
+- behörighetslivscykel, som avgör vilken åtkomst identiteten ska få i olika sammanhang.
 
 Att en person arbetar på en viss organisatorisk enhet betyder inte automatiskt att personen ska få alla behörigheter som kan associeras med enheten.
 
@@ -215,7 +215,7 @@ Extern identitetsleverantör
 Mottagande tjänst
 ```
 
-Det centrala arkitekturproblemet är inte bara protokollet. Det är **trustmodellen**.
+Det centrala arkitekturproblemet är inte bara protokollet. Det är trustmodellen.
 
 Man behöver förstå:
 
@@ -265,7 +265,7 @@ Ett vanligt anti-pattern är att sådana komponenter använder:
 
 Det gör ansvar, spårbarhet och avveckling svåra.
 
-Ett bättre mönster är **tjänsteidentitet**:
+Ett bättre mönster är tjänsteidentitet:
 
 ```text
 Tjänst A ── egen identitet ──▶ Tjänst B
@@ -289,7 +289,7 @@ En backend-tjänst kan agera i två principiellt olika roller.
 
 Exempelvis hämtar en schemalagd komponent information för att uppdatera ett index.
 
-Då bör tjänsten normalt använda sin **egen tjänsteidentitet**.
+Då bör tjänsten normalt använda sin egen tjänsteidentitet.
 
 ### Tjänsten agerar för en användares räkning
 
@@ -299,7 +299,7 @@ Då kan den bakomliggande tjänsten behöva information om användarkontexten el
 
 Det är farligt att blanda modellerna. Om en användartoken okritiskt skickas vidare genom många tjänster kan privilegier spridas längre än avsett. Om allt i stället görs med backendens tjänsteidentitet kan den bakomliggande användarkontexten försvinna.
 
-Arkitekturen behöver därför uttryckligen avgöra **vem som agerar i vems ansvar**.
+Arkitekturen behöver därför uttryckligen avgöra vem som agerar i vems ansvar.
 
 ## PKI och certifikat – teknisk tillit med livscykel
 
@@ -342,7 +342,7 @@ Ett återkommande anti-pattern är att secrets hamnar i:
 
 Problemet är inte bara risken för läckage. Det blir också svårt att rotera hemligheten, veta vilka kopior som finns och avveckla åtkomst.
 
-En gemensam secrets management-tjänst kan ge stöd för:
+En gemensam *secrets management*-tjänst kan ge stöd för:
 
 - skyddad lagring,
 - kontrollerad åtkomst,
@@ -351,7 +351,7 @@ En gemensam secrets management-tjänst kan ge stöd för:
 - tidsbegränsad distribution,
 - separation mellan miljöer.
 
-Men den bästa långsiktiga lösningen är ofta att **minska mängden långlivade secrets**. Om en workload kan få en kortlivad identitet från sin runtimeplattform är det ofta bättre än att lägga ett statiskt lösenord i ett centralt valv och sedan distribuera det.
+Men den bästa långsiktiga lösningen är ofta att minska mängden långlivade secrets. Om en workload kan få en kortlivad identitet från sin runtimeplattform är det ofta bättre än att lägga ett statiskt lösenord i ett centralt valv och sedan distribuera det.
 
 Secrets management och service identity är därför närliggande men olika förmågor: den ena skyddar hemliga credentials, den andra försöker göra identiteten och credential-livscykeln mer explicit och automatiserad.
 
@@ -424,7 +424,7 @@ Särskilt för externa användare behöver man skilja på två frågor:
 1. Hur vet vi vilken verklig person eller organisation den digitala identiteten representerar?
 2. Hur verifierar vi vid ett senare tillfälle att den som försöker logga in kontrollerar rätt autentiseringsmedel?
 
-Den första frågan handlar om **identity proofing** eller identitetssäkring vid etableringen av identiteten. Den andra handlar om autentisering.
+Den första frågan handlar om identity proofing eller identitetssäkring vid etableringen av identiteten. Den andra handlar om autentisering.
 
 En tekniskt stark autentisering kan alltså inte kompensera för en svag eller felaktig ursprunglig identitetskoppling.
 
@@ -442,7 +442,7 @@ Det betyder dock inte att identitetsplattformen ensam realiserar Zero Trust. Nä
 
 För förmågemodellen är lärdomen därför främst:
 
-> **Implicit tillit bör ersättas med explicita, verifierbara och förvaltade tillitsrelationer där konsekvensen motiverar det.**
+> Implicit tillit bör ersättas med explicita, verifierbara och förvaltade tillitsrelationer där konsekvensen motiverar det.
 
 Det ligger väl i linje med identitetsförmågan utan att göra den till synonym med hela säkerhetsarkitekturen.
 
@@ -655,7 +655,7 @@ Bra identitetsarkitektur gör det möjligt att svara på frågor som:
 
 Det är först när dessa frågor kan besvaras som identitet går från att vara en inloggningsfunktion till att bli en verklig gemensam IT-förmåga.
 
-I nästa kapitel flyttas fokus till den miljö där många av dessa identiteter faktiskt används: **hur applikationer och workloads exekveras standardiserat, isolerat och portabelt i en gemensam runtimeförmåga.**
+I nästa kapitel flyttas fokus till den miljö där många av dessa identiteter faktiskt används: hur applikationer och workloads exekveras standardiserat, isolerat och portabelt i en gemensam runtimeförmåga.
 
 ## Källor och vidare läsning
 

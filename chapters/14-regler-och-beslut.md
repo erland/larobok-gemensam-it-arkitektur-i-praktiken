@@ -4,7 +4,7 @@ Ett verksamhetssystem fattar ständigt beslut. Ett ärende ska kanske godkännas
 
 Det betyder inte att varje `if`-sats är en verksamhetsregel som bör externaliseras.
 
-Förmågan **Regler och beslut** blir relevant när själva regeln eller beslutet har en egen betydelse som behöver kunna förstås, förändras, testas, återanvändas eller spåras oberoende av den applikation som råkar exekvera det. Arkitekturfrågan är därför inte i första hand vilken regelmotor organisationen ska använda, utan **vilken beslutslogik som bör behandlas som en egen förvaltningsbar artefakt och vilken logik som bör stanna i vanlig domänkod**.
+Förmågan *Regler och beslut* blir relevant när själva regeln eller beslutet har en egen betydelse som behöver kunna förstås, förändras, testas, återanvändas eller spåras oberoende av den applikation som råkar exekvera det. Arkitekturfrågan är därför inte i första hand vilken regelmotor organisationen ska använda, utan vilken beslutslogik som bör behandlas som en egen förvaltningsbar artefakt och vilken logik som bör stanna i vanlig domänkod.
 
 Det är en viktig gränsdragning. För lite explicit regelhantering kan ge duplicerade regler, svår spårbarhet och långsam förändring. För mycket explicit regelhantering kan i stället skapa en central regelmonolit, indirekt kod och ett nytt plattformsberoende för logik som hade varit enklare att förstå nära domänen.
 
@@ -16,10 +16,10 @@ Dessa villkor är inte nödvändigtvis samma typ av regel.
 
 Det är användbart att skilja mellan åtminstone fyra kategorier:
 
-1. **lokal programlogik** – tekniska och domännära villkor som hör ihop med komponentens implementation,
-2. **verksamhetsregler** – explicita villkor med verksamhetsbetydelse,
-3. **verksamhetsbeslut** – ett resultat som härleds från ett eller flera fakta och regler,
-4. **tekniska policyer** – styrning av exempelvis access, routing, resursanvändning eller säkerhet.
+1. lokal programlogik – tekniska och domännära villkor som hör ihop med komponentens implementation,
+2. verksamhetsregler – explicita villkor med verksamhetsbetydelse,
+3. verksamhetsbeslut – ett resultat som härleds från ett eller flera fakta och regler,
+4. tekniska policyer – styrning av exempelvis access, routing, resursanvändning eller säkerhet.
 
 Anta att ett system innehåller följande logik:
 
@@ -40,7 +40,7 @@ så försök igen enligt återförsökspolicy
 
 Det är också en regel i vardagligt språk, men den hör inte hemma i förmågan Regler och beslut. Det är teknisk resilienslogik.
 
-Det första steget är alltså att **klassificera vilken sorts logik det faktiskt är**.
+Det första steget är alltså att klassificera vilken sorts logik det faktiskt är.
 
 ## Ett beslut är mer än en regel
 
@@ -93,7 +93,7 @@ Externalisering blir särskilt intressant när flera av följande gäller:
 - regler behöver testas oberoende av hela applikationen,
 - flera organisatoriska delar behöver tillämpa samma beslut konsekvent.
 
-Det viktiga är inte att regler *kan* externaliseras, utan att externaliseringen förbättrar **förståelighet, förändringsbarhet, återanvändning eller spårbarhet**.
+Det viktiga är inte att regler *kan* externaliseras, utan att externaliseringen förbättrar förståelighet, förändringsbarhet, återanvändning eller spårbarhet.
 
 En enkel lokal regel som endast används i en domänkomponent och förändras tillsammans med resten av koden vinner ofta inget på att flyttas ut.
 
@@ -128,7 +128,7 @@ Det gemensamma kan då vara:
 
 Det verksamhetsmässiga ägarskapet för respektive regelverk förblir däremot där regeln hör hemma.
 
-Detta följer samma princip som för andra gemensamma IT-förmågor: **gemensam mekanism behöver inte innebära centraliserad verksamhetslogik**.
+Detta följer samma princip som för andra gemensamma IT-förmågor: gemensam mekanism behöver inte innebära centraliserad verksamhetslogik.
 
 ## Regel eller processvillkor?
 
@@ -181,7 +181,7 @@ Vanlig kod är ofta bäst när:
 - separat regelrepresentation inte tillför begriplighet,
 - testning i kod ger tillräcklig säkerhet.
 
-Explicit regelhantering blir starkare när regelverket i sig är en **förvaltningsvärd artefakt**.
+Explicit regelhantering blir starkare när regelverket i sig är en förvaltningsvärd artefakt.
 
 Det är därför ofta bättre att externalisera ett komplext avgiftsregelverk med giltighetsperioder och historisk spårbarhet än ett enkelt villkor som säkerställer att en domänoperation inte kan utföras på ett redan avslutat objekt.
 
@@ -205,7 +205,7 @@ En beslutstabell kan göra samma logik mer överskådlig:
 | Låg risk | Högt | Nej | Utökad kontroll |
 | Valfri | Valfritt | Ja | Särskild kontroll |
 
-Poängen är inte tabellen i sig. Poängen är att **representationen passar den typ av beslut som ska förstås och förvaltas**.
+Poängen är inte tabellen i sig. Poängen är att representationen passar den typ av beslut som ska förstås och förvaltas.
 
 För vissa beslut passar ett beslutsträd bättre. För andra en beräkning, en sammansatt beslutsmodell eller vanlig kod.
 
@@ -279,10 +279,10 @@ Anta att en avgiftsregel förändras den 1 januari. Ett ärende som inkom den 20
 
 Då behöver arkitekturen skilja mellan exempelvis:
 
-- **modellversion** – vilken teknisk version av beslutsmodellen som används,
-- **giltighetsperiod** – när regeln verksamhetsmässigt gäller,
-- **driftsättningstidpunkt** – när versionen blev tekniskt tillgänglig,
-- **beslutstidpunkt** – när ett konkret beslut exekverades.
+- modellversion – vilken teknisk version av beslutsmodellen som används,
+- giltighetsperiod – när regeln verksamhetsmässigt gäller,
+- driftsättningstidpunkt – när versionen blev tekniskt tillgänglig,
+- beslutstidpunkt – när ett konkret beslut exekverades.
 
 Dessa är inte samma sak.
 
@@ -425,7 +425,7 @@ Ett beslut kan vara fullständigt deterministiskt men ändå fel om indata:
 - saknar nödvändig historik,
 - har förändrats mellan beslut och senare granskning.
 
-Här möter förmågan **Data- och informationshantering**.
+Här möter förmågan *Data- och informationshantering*.
 
 För beslut med höga spårbarhetskrav behöver man ibland kunna återskapa inte bara regeln utan även vilket beslutsunderlag som faktiskt fanns vid beslutstidpunkten.
 
@@ -636,22 +636,22 @@ Tekniken kan förändras över tid. Förmågan består så länge organisationen
 
 ## Sammanfattning
 
-Regler och beslut bör behandlas som en egen IT-förmåga när beslutslogiken har ett värde och en livscykel som motiverar att den kan **förstås, testas, förändras, återanvändas eller spåras oberoende av en enskild applikations implementation**.
+Regler och beslut bör behandlas som en egen IT-förmåga när beslutslogiken har ett värde och en livscykel som motiverar att den kan förstås, testas, förändras, återanvändas eller spåras oberoende av en enskild applikations implementation.
 
 Det innebär inte att all villkorslogik ska externaliseras.
 
 Den centrala gränsdragningen är:
 
-- **domänlogik** äger beteenden som naturligt hör ihop med domänens modell,
-- **Regler och beslut** äger explicita verksamhetsbeslut som vinner på separat representation och förvaltning,
-- **Process, workflow och ärendehantering** äger ordning, väntan och koordinering,
-- **Integration och kommunikation** äger mekanismerna för kommunikation mellan system,
-- **Data- och informationshantering** äger de tekniska mekanismerna för information och historik,
-- **Analys, sökning och AI** äger probabilistisk inferens och modeller som inte bör förväxlas med deterministiska regler.
+- domänlogik äger beteenden som naturligt hör ihop med domänens modell,
+- Regler och beslut äger explicita verksamhetsbeslut som vinner på separat representation och förvaltning,
+- *Process, workflow och ärendehantering* äger ordning, väntan och koordinering,
+- Integration och kommunikation äger mekanismerna för kommunikation mellan system,
+- Data- och informationshantering äger de tekniska mekanismerna för information och historik,
+- Analys, sökning och AI äger probabilistisk inferens och modeller som inte bör förväxlas med deterministiska regler.
 
 Externalisering ska därför vara ett medvetet arkitekturbeslut, inte en reflex. En regelmotor skapar värde först när den gör regelverket lättare att äga, förstå och förändra än motsvarande kodlösning.
 
-Nästa kapitel går vidare till **Data- och informationshantering**. Där flyttas fokus från *hur ett beslut uttrycks* till *hur tekniska mekanismer för lagring, konsistens, historik, retention, cache och kopior väljs utifrån informationens behov och kvalitetskrav*.
+Nästa kapitel går vidare till Data- och informationshantering. Där flyttas fokus från *hur ett beslut uttrycks* till *hur tekniska mekanismer för lagring, konsistens, historik, retention, cache och kopior väljs utifrån informationens behov och kvalitetskrav*.
 
 ## Källor och vidare läsning
 

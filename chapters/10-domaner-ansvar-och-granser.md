@@ -13,11 +13,11 @@ Den berättar inte automatiskt:
 - hur beroenden mellan olika delar av verksamheten bör hanteras,
 - eller hur man undviker att gemensamma plattformar börjar ta över verksamhetens eget ansvar.
 
-Detta är frågor om **domäner, ansvar och gränser**.
+Detta är frågor om domäner, ansvar och gränser.
 
-De är centrala eftersom en arkitektur inte bara består av återanvändbara tekniska byggstenar. Den består också av självständiga delar som behöver ha tydligt ansvar för sin egen logik, information och förändring. Om dessa gränser är otydliga uppstår ofta en annan typ av fragmentering än den som gemensamma plattformar är avsedda att lösa: verksamhetslogik sprids mellan system, data får flera konkurrerande ägare och förändringar kräver samordning mellan allt fler team.
+De är centrala eftersom en arkitektur inte bara består av återanvändbara tekniska byggstenar. Den består också av självständiga delar som behöver ha tydligt ansvar för sin egen logik, information och förändring. Om dessa gränser är otydliga uppstår ofta en annan typ av f*rag*mentering än den som gemensamma plattformar är avsedda att lösa: verksamhetslogik sprids mellan system, data får flera konkurrerande ägare och förändringar kräver samordning mellan allt fler team.
 
-Detta kapitel behandlar därför de arkitekturproblem som **inte bör lösas genom att göra ännu mer gemensamt**.
+Detta kapitel behandlar därför de arkitekturproblem som inte bör lösas genom att göra ännu mer gemensamt.
 
 ## Två kartor som svarar på olika frågor
 
@@ -62,11 +62,11 @@ Det innebär att samma verksamhetsdomän ofta använder flera gemensamma IT-för
       └───────────────────────────────────┘
 ```
 
-Detta är en viktig distinktion genom resten av boken: **gemensamma förmågor beskriver återanvändbart stöd; domäner beskriver verksamhetsnära ansvar**.
+Detta är en viktig distinktion genom resten av boken: gemensamma förmågor beskriver återanvändbart stöd; domäner beskriver verksamhetsnära ansvar.
 
 ## Domänen som ansvarsyta
 
-Ordet *domän* används på många sätt. I detta sammanhang är det mest användbart att se en domän som en **sammanhängande ansvarsyta** kring ett visst problemområde.
+Ordet *domän* används på många sätt. I detta sammanhang är det mest användbart att se en domän som en sammanhängande ansvarsyta kring ett visst problemområde.
 
 En domän kännetecknas ofta av att den har:
 
@@ -79,13 +79,13 @@ En domän kännetecknas ofta av att den har:
 
 Det betyder inte att en domän måste motsvara en organisatorisk enhet. En avdelning kan innehålla flera domäner och en domän kan sträcka sig över flera organisatoriska enheter.
 
-Det betyder inte heller att en domän automatiskt ska bli en applikation eller mikrotjänst. Domänen beskriver först och främst **ansvaret och problemet**. Den tekniska realiseringen är ett senare beslut.
+Det betyder inte heller att en domän automatiskt ska bli en applikation eller mikrotjänst. Domänen beskriver först och främst ansvaret och problemet. Den tekniska realiseringen är ett senare beslut.
 
 Detta är samma grundprincip som tidigare i boken: behov och ansvar bör förstås innan tekniken väljs.
 
 ## Bounded context – när ett begrepp behöver en tydlig betydelse
 
-Ett användbart begrepp från Domain-Driven Design är *bounded context*.[K1] Det kan på svenska beskrivas som ett **avgränsat sammanhang där en viss modell och terminologi har en bestämd betydelse**.
+Ett användbart begrepp från Domain-Driven Design är *bounded context*.[K1] Det kan på svenska beskrivas som ett avgränsat sammanhang där en viss modell och terminologi har en bestämd betydelse.
 
 Det är särskilt värdefullt i större organisationer eftersom samma ord ofta betyder olika saker i olika verksamhetsområden.
 
@@ -105,7 +105,7 @@ Detta blir särskilt viktigt i nästa kapitel, där information och data behandl
 
 ## Cohesion – sådant som förändras tillsammans bör höra ihop
 
-En bra gräns samlar sådant som har stark **cohesion**, alltså inre sammanhållning.
+En bra gräns samlar sådant som har stark cohesion, alltså inre sammanhållning.
 
 Det kan exempelvis vara funktioner, regler och data som:
 
@@ -123,11 +123,11 @@ Om två komponenter ständigt behöver förändras tillsammans kan det vara ett 
 
 Omvänt kan en stor lösning innehålla delar som nästan aldrig behöver förändras tillsammans. Då kan en uppdelning i tydligare domäner eller moduler minska samordningsbehovet.
 
-Hög cohesion innebär alltså inte att allt ska ligga i samma tekniska process eller kodbas. Det betyder att arkitekturen bör **respektera vilka delar som konceptuellt hör ihop**.
+Hög cohesion innebär alltså inte att allt ska ligga i samma tekniska process eller kodbas. Det betyder att arkitekturen bör respektera vilka delar som konceptuellt hör ihop.
 
 ## Coupling – kostnaden för beroenden
 
-Om cohesion handlar om sammanhållning inom en gräns handlar **coupling** om beroendet mellan gränser.
+Om cohesion handlar om sammanhållning inom en gräns handlar coupling om beroendet mellan gränser.
 
 Alla system har beroenden. Målet är därför inte noll coupling, utan att beroenden ska vara:
 
@@ -153,7 +153,7 @@ Detta är en viktig motvikt till återanvändning. En gemensam komponent kan min
 
 Återanvändning är därför inte gratis.
 
-En bra gemensam arkitektur försöker återanvända sådant som är **stabilt och generellt**, medan verksamhetsnära variation får stanna nära sin domän.
+En bra gemensam arkitektur försöker återanvända sådant som är stabilt och generellt, medan verksamhetsnära variation får stanna nära sin domän.
 
 ## Ägarskap måste vara tydligare än åtkomst
 
@@ -161,11 +161,11 @@ Ett vanligt arkitekturproblem uppstår när flera system kan läsa och skriva sa
 
 Det är viktigt att skilja mellan:
 
-- vem som **äger betydelsen** av informationen,
-- vem som är **system of record** eller auktoritativ källa,
-- vem som får **ändra** den,
-- vem som får **läsa eller kopiera** den,
-- och vem som ansvarar för **kvalitet och livscykel**.
+- vem som äger betydelsen av informationen,
+- vem som är system of record eller auktoritativ källa,
+- vem som får ändra den,
+- vem som får läsa eller kopiera den,
+- och vem som ansvarar för kvalitet och livscykel.
 
 Att ett system tekniskt kan skriva i en tabell betyder inte att det bör ha rätt att ändra informationens verksamhetsmässiga innebörd.
 
@@ -299,7 +299,7 @@ Detta gör båda domänerna friare att förändras internt.
 
 Principen är viktig eftersom organisationer annars lätt skapar en ”enterprise canonical model” som alla system måste anpassa sig till. En sådan modell kan vara värdefull för vissa stabila, verkligt gemensamma begrepp och kodverk, men blir problematisk om den försöker ersätta all lokal semantik.
 
-Målet är inte maximal enhetlighet. Målet är **tillräcklig gemensam förståelse vid gränsen**.
+Målet är inte maximal enhetlighet. Målet är tillräcklig gemensam förståelse vid gränsen.
 
 ## Integrationsgränsen är en del av domändesignen
 
@@ -349,7 +349,7 @@ Otydliga gränser skapar därför motsatsen till autonomi. Teamet måste fråga 
 
 Detta leder till en viktig paradox:
 
-> **Tydliga gränser begränsar vissa lokala val men ökar den praktiska friheten inom gränsen.**
+> Tydliga gränser begränsar vissa lokala val men ökar den praktiska friheten inom gränsen.
 
 Ett team som äger sin domänmodell, sina regler och sin interna implementation kan förändra mycket snabbt om gränssnitten mot omvärlden är stabila. Ett team som delar databas och verksamhetslogik med fem andra team kan ha stor formell frihet men mycket liten faktisk autonomi.
 
@@ -367,7 +367,7 @@ Ett federerat ansvar kan då innebära:
 - gemensamma kontrakt för utbyte,
 - och ett forum där förändringar i gränssnitt eller gemensam semantik samordnas.
 
-Federation är alltså inte kompromiss i betydelsen otydlighet. Tvärtom kräver en federerad modell ofta **ännu tydligare gränser och ansvar** än en central modell.
+Federation är alltså inte kompromiss i betydelsen otydlighet. Tvärtom kräver en federerad modell ofta ännu tydligare gränser och ansvar än en central modell.
 
 ## Anti-pattern: den centrala allt-i-allo-tjänsten
 
@@ -386,7 +386,7 @@ Den kan börja som en enkel gemensam kundtjänst men får med tiden ansvar för:
 - sökning,
 - och verksamhetsregler.
 
-På pappret ser detta ut som återanvändning. I praktiken blir tjänsten ofta en **organisatorisk flaskhals och semantisk monolit**.
+På pappret ser detta ut som återanvändning. I praktiken blir tjänsten ofta en organisatorisk flaskhals och semantisk monolit.
 
 Alla domäner behöver förändra den. Ingen enskild domän kan längre utvecklas utan att samordna sig med centraltjänsten. Tjänstens datamodell fylls med specialfall och begrepp som betyder olika saker för olika konsumenter.
 
@@ -409,7 +409,7 @@ Det kan vara effektivt i början. Man slipper API:er, meddelanden och duplicerin
 
 När Domän A ändrar en tabell kan Domän B gå sönder. När båda behöver ändra samma kolumn blir ägarskapet oklart. Databasens tekniska struktur börjar styra verksamhetens gränser.
 
-Det innebär inte att varje modul alltid behöver en separat fysisk databas. Det viktiga är att **det logiska ägarskapet och åtkomsten är tydligt avgränsade**.
+Det innebär inte att varje modul alltid behöver en separat fysisk databas. Det viktiga är att det logiska ägarskapet och åtkomsten är tydligt avgränsade.
 
 Två moduler kan ligga i samma databasinstans men ändå använda separata scheman och endast kommunicera genom definierade gränssnitt. Omvänt kan två tjänster ha separata databaser men ändå vara starkt kopplade om de ständigt måste samordna sina modeller och releaser.
 
@@ -471,7 +471,7 @@ När en ny lösning eller ett nytt verksamhetsområde ska designas kan följande
 
 Denna ordning kompletterar den gemensamma arkitekturmodell som etablerats tidigare i boken.
 
-Gemensam arkitektur svarar på vilka byggstenar och ramar som organisationen kan återanvända. Domänanalysen svarar på **vilket ansvar som ska byggas med dem**.
+Gemensam arkitektur svarar på vilka byggstenar och ramar som organisationen kan återanvända. Domänanalysen svarar på vilket ansvar som ska byggas med dem.
 
 Båda perspektiven behövs.
 
@@ -527,7 +527,7 @@ Tecken på att en gräns bör omprövas kan vara:
 
 Det motsatta kan också inträffa. Två områden som separerats kan visa sig ha så stark cohesion att uppdelningen skapar mer koordinering än självständighet.
 
-Arkitekturens mål är därför inte maximalt antal gränser, utan **gränser som gör ansvar och förändring begripliga**.
+Arkitekturens mål är därför inte maximalt antal gränser, utan gränser som gör ansvar och förändring begripliga.
 
 ## Sammanfattning
 
@@ -548,7 +548,7 @@ De viktigaste principerna i kapitlet är:
 - autonomi kräver tydliga ansvarssnitt,
 - och domängränser ska behandlas som prövbara arkitekturhypoteser, inte som eviga sanningar.
 
-I nästa kapitel flyttas fokus från själva ansvarssnitten till det som passerar genom dem: **information och data som arkitekturella ingångsvärden**. Där blir frågan vem som äger ett begrepp, en informationsmängd eller en auktoritativ källa ännu mer konkret – innan vi senare går vidare till den tekniska förmågan för lagring och datahantering.
+I nästa kapitel flyttas fokus från själva ansvarssnitten till det som passerar genom dem: information och data som arkitekturella ingångsvärden. Där blir frågan vem som äger ett begrepp, en informationsmängd eller en auktoritativ källa ännu mer konkret – innan vi senare går vidare till den tekniska förmågan för lagring och datahantering.
 
 ## Källor och vidare läsning
 

@@ -2,15 +2,15 @@
 
 ## Från informationsbehov till teknisk datahantering
 
-I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan teknik väljs. Det kapitlet svarade på frågor som *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Här tar vi nästa steg. Frågan är **hur informationen ska realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid**.
+I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan teknik väljs. Det kapitlet svarade på frågor som *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Här tar vi nästa steg. Frågan är hur informationen ska realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid.
 
 Det är en annan fråga än informationsmodellering. Två verksamhetsområden kan ha väl definierade begrepp och tydligt informationsägarskap men ändå behöva helt olika tekniska mekanismer. En transaktionell ärendedatabas, ett dokumentarkiv, en cache och ett sökindex hanterar alla data, men de har olika ansvar, olika livscykel och olika krav på konsistens och återställning.
 
-Förmågan **Data- och informationshantering** handlar därför inte om att välja en favoritdatabas. Den handlar om att kunna översätta informationsbehov och kvalitetskrav till lämpliga lagrings- och datahanteringsmekanismer.
+Förmågan *Data- och informationshantering* handlar därför inte om att välja en favoritdatabas. Den handlar om att kunna översätta informationsbehov och kvalitetskrav till lämpliga lagrings- och datahanteringsmekanismer.
 
 En användbar grundregel är:
 
-> **Välj inte lagringsteknik först. Beskriv först informationens roll, livslängd, åtkomstmönster, konsistensbehov, volym, skyddsbehov och återställningskrav.**
+> Välj inte lagringsteknik först. Beskriv först informationens roll, livslängd, åtkomstmönster, konsistensbehov, volym, skyddsbehov och återställningskrav.
 
 Detta är behov-före-teknik-principen tillämpad specifikt på persistent och härledd data. Informationssemantiken från kapitel 11 tas här som ett ingångsvärde och återförklaras därför inte.
 
@@ -41,7 +41,7 @@ En bättre fråga är:
 
 ## System of record och härledda kopior
 
-När samma information förekommer på flera ställen är det centralt att skilja mellan **auktoritativ källa** och **härledd kopia**.
+När samma information förekommer på flera ställen är det centralt att skilja mellan auktoritativ källa och härledd kopia.
 
 Ett system of record, eller en auktoritativ källa, är den plats vars tillstånd gäller när flera representationer skiljer sig åt. Det betyder inte nödvändigtvis att all information måste ligga i ett enda system. Tvärtom kan olika domäner vara auktoritativa för olika informationsmängder.
 
@@ -55,7 +55,7 @@ En härledd kopia kan exempelvis vara:
 - en lokal kopia av referensdata,
 - data i en analysplattform.
 
-Kopior är alltså inte ett problem i sig. Många skalbara och användbara system är beroende av kopior. Problemet uppstår när kopians **syfte, källa och återuppbyggnadsstrategi är oklara**.
+Kopior är alltså inte ett problem i sig. Många skalbara och användbara system är beroende av kopior. Problemet uppstår när kopians syfte, källa och återuppbyggnadsstrategi är oklara.
 
 För varje viktig kopia bör man därför kunna svara på fyra frågor:
 
@@ -80,7 +80,7 @@ Det betyder inte att all strukturerad data måste vara relationell. Men när ver
 
 Ett exempel kan vara en utbetalning som består av ett beslut, ett belopp, en mottagare och en bokföringspost. Om dessa förändringar måste betraktas som en sammanhängande enhet kan en transaktionell mekanism vara viktigare än maximal horisontell skalbarhet.
 
-Det centrala är därför inte SQL som teknik, utan **vilka konsistens- och transaktionsbehov verksamheten har**.
+Det centrala är därför inte SQL som teknik, utan vilka konsistens- och transaktionsbehov verksamheten har.
 
 ### Databasen bör inte bli integrationsyta
 
@@ -92,7 +92,7 @@ En frestande genväg är att låta flera oberoende applikationer läsa och skriv
 - behörighetsmodellen blir svårare,
 - domängränser suddas ut.
 
-En gemensam relationsdatabastjänst kan därför vara mycket värdefull som **plattformserbjudande**, samtidigt som en gemensam databas mellan oberoende system ofta är en dålig **integrationsmodell**.
+En gemensam relationsdatabastjänst kan därför vara mycket värdefull som plattformserbjudande, samtidigt som en gemensam databas mellan oberoende system ofta är en dålig integrationsmodell.
 
 Detta illustrerar skillnaden mellan att standardisera en teknisk förmåga och att centralisera verksamhetsdata.
 
@@ -100,7 +100,7 @@ Detta illustrerar skillnaden mellan att standardisera en teknisk förmåga och a
 
 Dokument, bilder, videofiler och andra större binära objekt har andra egenskaper än transaktionella poster. De kan vara stora, relativt sällan ändras och behöva lagras kostnadseffektivt över lång tid.
 
-Objektlagring är då ofta ett lämpligt tekniskt mönster. Den kan ge:
+*Objektlagring* är då ofta ett lämpligt tekniskt mönster. Den kan ge:
 
 - skalbar lagringskapacitet,
 - enkel hantering av stora objekt,
@@ -125,7 +125,7 @@ Objektlagring ska inte heller förväxlas med ett dokumenthanteringssystem. Ett 
 
 Cache används för att minska svarstid eller avlasta en bakomliggande källa. Den är särskilt användbar när samma data läses ofta men förändras mer sällan.
 
-Men cache innebär nästan alltid en ny fråga: **hur länge får kopian vara fel?**
+Men cache innebär nästan alltid en ny fråga: hur länge får kopian vara fel?
 
 Det är där cachearkitekturen börjar. Viktiga frågor är exempelvis:
 
@@ -137,11 +137,11 @@ Det är där cachearkitekturen börjar. Viktiga frågor är exempelvis:
 - Ska cache kunna byggas om automatiskt?
 - Innehåller cachen skyddsvärd information?
 
-Ett vanligt mönster är **cache-aside**. Applikationen läser först från cache. Om värdet saknas hämtas det från auktoritativ källa och läggs i cachen. Mönstret är enkelt, men ställer krav på hur utgången data hanteras.
+Ett vanligt mönster är cache-aside. Applikationen läser först från cache. Om värdet saknas hämtas det från auktoritativ källa och läggs i cachen. Mönstret är enkelt, men ställer krav på hur utgången data hanteras.
 
 En viktig princip är:
 
-> **Cache ska normalt inte vara den enda plats där verksamhetskritisk persistent information finns.**
+> Cache ska normalt inte vara den enda plats där verksamhetskritisk persistent information finns.
 
 Om förlust av cachen innebär permanent informationsförlust är den inte längre bara en cache.
 
@@ -175,11 +175,11 @@ Detta är en brygga mot kapitel 17 om integration och kommunikation, där meddel
 
 Begreppen historik, audit och backup blandas ofta ihop.
 
-**Historik** behövs när verksamheten vill förstå hur informationen förändrats över tid. Det kan handla om tidigare versioner, giltighetsperioder eller statusförändringar.
+Historik behövs när verksamheten vill förstå hur informationen förändrats över tid. Det kan handla om tidigare versioner, giltighetsperioder eller statusförändringar.
 
-**Auditdata** behövs när man vill kunna svara på vem eller vad som utförde en förändring, när den skedde och eventuellt varför.
+Auditdata behövs när man vill kunna svara på vem eller vad som utförde en förändring, när den skedde och eventuellt varför.
 
-**Backup** är en återställningsmekanism för att hantera teknisk förlust eller korruption.
+Backup är en återställningsmekanism för att hantera teknisk förlust eller korruption.
 
 En backup är därför normalt inte en lämplig verksamhetsfunktion för att visa hur ett ärende såg ut för tre månader sedan. Och en auditlogg är inte automatiskt en tillräcklig backupstrategi.
 
@@ -209,7 +209,7 @@ Det kan innebära att lösningen behöver:
 - dokumentera undantag och legal hold-liknande situationer där gallring tillfälligt stoppas,
 - verifiera att gallring faktiskt genomförts där det krävs.
 
-Det viktiga är att livscykeln gäller **hela informationslandskapet**. Om originalet gallras men samma information ligger kvar i cache, analyskopior och testmiljöer är livscykeln inte konsekvent hanterad.
+Det viktiga är att livscykeln gäller hela informationslandskapet. Om originalet gallras men samma information ligger kvar i cache, analyskopior och testmiljöer är livscykeln inte konsekvent hanterad.
 
 ## Schemaförändringar är en del av systemets livscykel
 
@@ -267,7 +267,7 @@ Frågan bör i stället börja med konsekvensen:
 - Hur hanteras beroenden mellan flera datakällor?
 - Hur verifieras att backupen faktiskt går att använda?
 
-Här möts dataförmågan och förmågan **Driftbarhet och motståndskraft**. Dataområdet behöver uttrycka vad informationen kräver. Den gemensamma driftförmågan kan sedan erbjuda backup-, replikerings- och återställningstjänster som uppfyller olika profiler.
+Här möts dataförmågan och förmågan Driftbarhet och motståndskraft. Dataområdet behöver uttrycka vad informationen kräver. Den gemensamma driftförmågan kan sedan erbjuda backup-, replikerings- och återställningstjänster som uppfyller olika profiler.
 
 Detta är ett bra exempel på varför förmågekartan inte innebär isolerade silor. Ett informationskrav kan behöva realiseras av flera förmågor tillsammans.
 
@@ -277,8 +277,8 @@ Replikering kan höja tillgängligheten genom att flera kopior finns samtidigt. 
 
 Backup och replikering har därför olika syften:
 
-- **replikering** hjälper främst vid komponent- eller platsfel och kan stödja tillgänglighet,
-- **backup** hjälper till att återgå till ett tidigare korrekt tillstånd efter förlust eller korruption.
+- replikering hjälper främst vid komponent- eller platsfel och kan stödja tillgänglighet,
+- backup hjälper till att återgå till ett tidigare korrekt tillstånd efter förlust eller korruption.
 
 En robust lösning kan behöva båda.
 
@@ -296,7 +296,7 @@ Viktiga frågor är exempelvis:
 - Får data lämna en viss miljö eller jurisdiktion?
 - Hur hanteras data i backup, repliker och testmiljöer?
 
-Identitet, autentisering och tjänsteidentitet behandlas i kapitel 18. Här är poängen att dataförmågan måste **uttrycka skyddsbehovet och se till att skyddet omfattar hela datans livscykel**, inte bara den primära databasen.
+Identitet, autentisering och tjänsteidentitet behandlas i kapitel 18. Här är poängen att dataförmågan måste uttrycka skyddsbehovet och se till att skyddet omfattar hela datans livscykel, inte bara den primära databasen.
 
 ## Testdata är också dataarkitektur
 
@@ -319,7 +319,7 @@ Kapitel 10 etablerade att domängränser och ansvar är viktigare än en organis
 
 Verksamhetsdata bör i regel ägas nära den domän eller tjänst som ansvarar för dess betydelse och förändring. Det minskar risken att flera oberoende lösningar börjar skriva direkt i samma data och därmed blir hårt kopplade.
 
-Det innebär inte ”en fysisk databas per mikrotjänst” som dogm. Principen handlar om **ägarskap och förändringsmandat**, inte om antal serverinstanser.
+Det innebär inte ”en fysisk databas per mikrotjänst” som dogm. Principen handlar om ägarskap och förändringsmandat, inte om antal serverinstanser.
 
 Flera logiska databaser kan tekniskt ligga på samma förvaltade plattform. Samtidigt kan en stor monolitisk applikation ha flera tydliga domänansvar trots en gemensam databas. Arkitekturfrågan är vem som äger modellen och vilka gränser andra konsumenter måste respektera.
 
@@ -327,7 +327,7 @@ Flera logiska databaser kan tekniskt ligga på samma förvaltade plattform. Samt
 
 Ett stödjande IT-område kan med stor fördel erbjuda standardiserade datatjänster, exempelvis:
 
-- relationell databastjänst,
+- *relationell databastjänst*,
 - objektlagring,
 - cachetjänst,
 - dokumentlagring,
@@ -543,7 +543,7 @@ Ett bra erbjudande kan exempelvis låta ett team välja mellan dokumenterade kva
 - särskild backup-/retentionprofil,
 - definierade kapacitetsnivåer.
 
-Tjänsten bör samtidigt vara tydlig med vad den **inte** löser. Plattformen kan exempelvis tillhandahålla backup och teknisk HA, men konsumenten ansvarar fortfarande för att datamodell, retention och återställningskrav är korrekta för verksamheten.
+Tjänsten bör samtidigt vara tydlig med vad den inte löser. Plattformen kan exempelvis tillhandahålla backup och teknisk HA, men konsumenten ansvarar fortfarande för att datamodell, retention och återställningskrav är korrekta för verksamheten.
 
 På samma sätt kan en objektlagringstjänst erbjuda robust lagring men inte automatiskt bli ett dokumenthanteringssystem, och en cachetjänst kan erbjuda snabb åtkomst men inte ta ansvar för verksamhetens sanning.
 
@@ -567,4 +567,4 @@ Några huvudprinciper är särskilt viktiga:
 
 När dessa principer är tydliga blir teknikvalet enklare. Då kan relationell databas, objektlagring, cache och andra tjänster väljas som svar på kända behov i stället för som utgångspunkt för arkitekturen.
 
-Nästa kapitel flyttar perspektivet från lagring och informationslivscykel till hur data används för **analys, sökning och AI**. Där blir många av de här principerna fortfarande avgörande: ett sökindex, en analyskopia eller en RAG-lösning är bara så tillförlitlig som den informationsgrund och den kopplingsmodell som ligger bakom den.
+Nästa kapitel flyttar perspektivet från lagring och informationslivscykel till hur data används för analys, sökning och AI. Där blir många av de här principerna fortfarande avgörande: ett sökindex, en analyskopia eller en RAG-lösning är bara så tillförlitlig som den informationsgrund och den kopplingsmodell som ligger bakom den.
