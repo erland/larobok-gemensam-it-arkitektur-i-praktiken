@@ -217,7 +217,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur hanteras introduktion, rekommendation, deprecation och retirement?
 - Centralt innehåll: technology radar, lifecycle states, EOL, migration, sunset, produkt- och versionshantering samt tidsbegränsade undantag.
 - Avgränsning: handlar om teknikportföljens livscykel; den övergripande arkitekturmodellens förvaltning behandlas i kapitel 37.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 33: Ekonomi, kostnad och kapacitet
 - Kärnfråga: Hur påverkar kostnadsmodell och kapacitetsansvar arkitekturval och plattformsbeteenden?

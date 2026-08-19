@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev39.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev40.zip",
   "chapters": {
-    "count": 31,
+    "count": 32,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -33,28 +33,29 @@
       "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "3e04742220c1f75a2747a9ffa93e0ee40a7c81213f48a925493da654119a12fe",
       "chapters/29-platform-as-a-product.md": "c05b744c73c97817a60a541dc39ddfac675b17baee90582651fea12c2c2e21ac",
       "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "b19777a3c24b914bc9d77b8c3ea2f006e71169ad547ca95e2e904699c316953a",
-      "chapters/31-tekniska-standarder-och-deras-nivaer.md": "0f9d0eb74b3d12288cf4ab766bf1848f08bb7710fff32e7779a227f35d936d08"
+      "chapters/31-tekniska-standarder-och-deras-nivaer.md": "0f9d0eb74b3d12288cf4ab766bf1848f08bb7710fff32e7779a227f35d936d08",
+      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "2f7ed091aa9815158ba4fdbe02e5b9b6d4ff8124ec55e9aca05e856b11bfcb78"
     },
-    "latest": 31
+    "latest": 32
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/31-tekniska-standarder-och-deras-nivaer.md",
+      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 31 – Tekniska standarder och deras nivåer och synkroniserade projektstatus/exportordning",
-    "source_revision": 38
+    "operation": "Skrev kapitel 32 – Tekniklivscykel och kontrollerad förändring och synkroniserade projektstatus/exportordning",
+    "source_revision": 39
   },
-  "parent_revision": 38,
+  "parent_revision": 39,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 39,
+  "revision": 40,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -72,7 +73,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "3eebcdfc94ba52a1178cdb9904bfd40dbe254ed6e89fa99bccc3a776d11a18b2"
+      "sha256": "9fced19ad45b3e023179605368cbac4deb30a14876923108dbb832f1e0fb8133"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -87,8 +88,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2684,
-      "sha256": "aea417aa63cf5ccfa49d568756003033ffb4b3277c8e96c861b0003e29b0d0e2"
+      "bytes": 2745,
+      "sha256": "0ddefafaae5cd25f173d209ef895dbcba492eb9c6f2ca1d0c3c192761ffb89c1"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -218,6 +219,10 @@
       "bytes": 20742,
       "sha256": "0f9d0eb74b3d12288cf4ab766bf1848f08bb7710fff32e7779a227f35d936d08"
     },
+    "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": {
+      "bytes": 29547,
+      "sha256": "2f7ed091aa9815158ba4fdbe02e5b9b6d4ff8124ec55e9aca05e856b11bfcb78"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -239,8 +244,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 10275,
-      "sha256": "6e4bd6ee55e03d2fc1b0e1bcb1b1dbba2825b07c49c46cdb3187083856b3476a"
+      "bytes": 10450,
+      "sha256": "048183290c3f0efc03511ee419be6e0891341aa9158dd3ffa11b2593fcbb8f4a"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -255,16 +260,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 22317,
-      "sha256": "b44e3b4d0420e73b1a7e7f9c042711e6d99ce07a83a57beca065735312f3187a"
+      "bytes": 22330,
+      "sha256": "fc877a22bd1739f56023fb6120da5e126965333c79ba4ca597e4298642dc033b"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 14329,
-      "sha256": "cf2da1289519fc4724d5797088f12aae9feb5665f3902cfb20251e6e06e738ad"
+      "bytes": 14825,
+      "sha256": "6e6cea5aadaadb3fa040e6690e1d58a6fd1b4155916aed2f507e769b16be307b"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -748,7 +753,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "61d1626554dd43fe9d4667fca6c6ba5dd65247e68bd6c7144a4c71bd59ecd747"
+      "sha256": "d921a091aa249fad3ffcf259685879666a6ab8c276f3787dfca27c971f692158"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -771,8 +776,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 24042,
-      "sha256": "39ae425fa41e905801d53c9dc5d447c3f86bf415da7c9108bb951539cc9c00b6"
+      "bytes": 24427,
+      "sha256": "5d3edf7c74466c4552d7ecd9c4b2170d5953a5baa700f8456cab149817674123"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -795,5 +800,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T06:11:23Z"
+  "updated_at": "2026-08-19T06:31:11Z"
 }

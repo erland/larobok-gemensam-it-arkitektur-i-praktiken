@@ -46,7 +46,8 @@ Skrivfas – del I–IV kompletta i första utkast; del V pågår
 | 29 | Platform as a Product | Första utkast | Målgrupp, värdelöfte, developer experience, user journeys, adoption, produktmätetal, feedback, roadmap, kostnad och livscykel etablerade. |
 | 30 | Golden paths, paved roads och självservice | Första utkast | Golden paths, paved roads, templates, självservice, policy-as-code, guardrails, escape hatches, portal/katalog och mognadstrappa etablerade. |
 | 31 | Tekniska standarder och deras nivåer | Första utkast | Standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och kopplingen till plattformar/mönster etablerade. |
-| 32–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 32 | Tekniklivscykel och kontrollerad förändring | Första utkast | Livscykelstatus, technology radar, supportfönster, deprecation, sunset, migration, experiment, undantag och retirement etablerade. |
+| 33–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -93,4 +94,5 @@ Skrivfas – del I–IV kompletta i första utkast; del V pågår
 - Del IV är därmed komplett i första utkast. Kapitel 28 – När ett byggblock blir en plattformstjänst är skapat som första utkast och inleder del V genom att etablera tjänstekontrakt, ansvar, konsumtionsmodell, kvalitetsprofiler, support och livscykel som skillnaden mellan rå teknik och konsumerbart erbjudande.
 - Kapitel 29 – Platform as a Product är skapat som första utkast och etablerar målgrupper, värdelöfte, developer experience, användarresor, produktmätetal, feedbackloopar, roadmap, kostnad och plattformsproduktens livscykel.
 - Kapitel 30 – Golden paths, paved roads och självservice är skapat som första utkast och etablerar sammanhängande konsumtionsvägar, templates, självservice, guardrails, policy-as-code, escape hatches och hur styrning kan flyttas från manuella gates till förvaltade gemensamma mekanismer.
-- Kapitel 31 – Tekniska standarder och deras nivåer är skapat som första utkast och etablerar standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och relationen mellan standarder, plattformar, mönster och produkter. Nästa steg är kapitel 32 – Tekniklivscykel och kontrollerad förändring.
+- Kapitel 31 – Tekniska standarder och deras nivåer är skapat som första utkast och etablerar standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och relationen mellan standarder, plattformar, mönster och produkter.
+- Kapitel 32 – Tekniklivscykel och kontrollerad förändring är skapat som första utkast och etablerar livscykelstatus, technology radar, produkt-/versionslivscykel, supportfönster, deprecation, sunset, migrationsansvar, experimentens exit-kriterier, tidsbegränsade undantag och faktisk retirement. Nästa steg är kapitel 33 – Ekonomi, kostnad och kapacitet.

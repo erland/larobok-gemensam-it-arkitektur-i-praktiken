@@ -51,6 +51,7 @@ chapters:
 - chapters/29-platform-as-a-product.md
 - chapters/30-golden-paths-paved-roads-och-sjalvservice.md
 - chapters/31-tekniska-standarder-och-deras-nivaer.md
+- chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
 exports:
   epub:
     enabled: true
