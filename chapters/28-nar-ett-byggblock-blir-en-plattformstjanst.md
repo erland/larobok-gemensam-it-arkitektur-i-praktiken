@@ -557,10 +557,14 @@ När ett tekniskt byggblock övervägs som gemensam plattformstjänst kan följa
 - Ett tekniskt byggblock blir inte en plattformstjänst bara genom central installation eller gemensam drift.
 - En plattformstjänst behöver ett tydligt konsumentproblem, ett tjänstekontrakt och ett explicit ansvarssnitt.
 - Onboarding, support, observerbarhet och livscykel är delar av erbjudandet, inte sidoaktiviteter.
-- Självservice är främst en fråga om reproducerbar och förutsägbar konsumtion, inte om frånvaro av styrning.
+- Självservice är främst en fråga om reproducerbar och förutsägbar konsumtion[K1], inte om frånvaro av styrning.
 - Kvalitetsprofiler gör erbjudandet mer användbart än individuella och ad hoc-baserade överenskommelser.
 - Plattformens service level och verksamhetssystemets end-to-end-kvalitet är relaterade men inte identiska.
 - Produkt och plattformstjänst bör hållas isär: produkten är en realisering av tjänsten.
 - En plattformstjänst kan bestå av flera tekniska byggblock, och en produkt kan realisera flera tjänster.
 - Det är inte alltid rätt att skapa en plattformstjänst; ibland är en standard, ett mönster eller ett referensbyggblock tillräckligt.
 - När ett erbjudande utvecklas aktivt utifrån konsumentbehov och användningsdata närmar det sig **Platform as a Product**, vilket är nästa steg i modellen.
+
+## Källor och vidare läsning
+
+**[K1]** CNCF TAG App Delivery, *CNCF Platforms White Paper*, om plattformar som självbetjänade, användarorienterade erbjudanden. https://tag-app-delivery.cncf.io/whitepapers/platforms/

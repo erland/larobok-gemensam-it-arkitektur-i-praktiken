@@ -119,7 +119,7 @@ En lösning behöver veta:
 
 Återförsök är därför inte automatiskt säkert.
 
-Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja **idempotens** eller någon annan mekanism som gör upprepning kontrollerad.
+Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja **idempotens** eller någon annan mekanism som gör upprepning kontrollerad.[K1]
 
 ## Asynkron meddelandekommunikation – när parterna inte behöver mötas i tid
 
@@ -692,3 +692,11 @@ Ett bra integrationslandskap gör det möjligt för lösningar att:
 Det är därför integrationsförmågan inte bör mätas i hur många flöden en central plattform kontrollerar. En bättre fråga är hur lätt organisationen kan skapa och förändra **robusta relationer mellan självständiga lösningar**.
 
 I nästa kapitel flyttas fokus från själva kommunikationen till frågan om tillit: **hur vet en lösning vem människan, tjänsten eller organisationen på andra sidan faktiskt är, och vad den får göra?**
+
+## Källor och vidare läsning
+
+**[K1]** IETF/RFC Editor, *RFC 9110: HTTP Semantics*, särskilt avsnittet om idempotenta metoder. https://www.rfc-editor.org/info/rfc9110/
+
+Vidare läsning: Cloud Native Computing Foundation, *CloudEvents specification*. https://cloudevents.io/
+
+Vidare läsning: OASIS Open, *MQTT Version 5.0*. https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html

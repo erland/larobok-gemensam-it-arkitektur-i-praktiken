@@ -234,7 +234,7 @@ Det räcker inte att säga ”applikationskoden ändrades inte” om modellversi
 
 ## RAG – sökning plus generering
 
-Retrieval-Augmented Generation, RAG, är ett mönster där en språkmodell kompletteras med information som hämtas från en extern kunskapskälla vid frågetillfället.
+Retrieval-Augmented Generation, RAG, är ett mönster där en språkmodell kompletteras med information som hämtas från en extern kunskapskälla vid frågetillfället.[K1]
 
 En förenklad struktur är:
 
@@ -305,7 +305,7 @@ Det är särskilt viktigt när användningsfallet kräver hög verifierbarhet.
 
 ## Human-in-the-loop – mänsklig kontroll måste ha en funktion
 
-Uttrycket **human-in-the-loop** används ofta som en generell riskreducerande åtgärd. Men att en människa finns någonstans i processen innebär inte automatiskt att kontrollen är meningsfull.
+Uttrycket **human-in-the-loop** används ofta som en generell riskreducerande åtgärd.[K2] Men att en människa finns någonstans i processen innebär inte automatiskt att kontrollen är meningsfull.
 
 För mänsklig kontroll behöver man veta:
 
@@ -681,3 +681,9 @@ RAG kombinerar retrieval och generering men eliminerar inte felkällor. Human-in
 Det mest stabila arkitekturvalet är därför inte att standardisera en viss AI-modell. Det är att standardisera **ansvar, kvalitetskrav, informationsskydd, spårbarhet, utvärdering och konsumerbara plattformsmekanismer**, samtidigt som den konkreta lösningen får välja den enklaste teknik som möter behovet.
 
 I nästa kapitel flyttas fokus från bearbetning av information till hur system och domäner kommunicerar med varandra: **Integration och kommunikation**.
+
+## Källor och vidare läsning
+
+**[K1]** Patrick Lewis m.fl., *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* (2020). https://arxiv.org/abs/2005.11401
+
+**[K2]** NIST, *Artificial Intelligence Risk Management Framework (AI RMF 1.0)* samt *NIST AI 600-1: Generative Artificial Intelligence Profile*. https://www.nist.gov/itl/ai-risk-management-framework och https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence

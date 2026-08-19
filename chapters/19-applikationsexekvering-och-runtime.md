@@ -72,7 +72,7 @@ En bra runtimetjänst gör mycket av den underliggande infrastrukturen ointressa
 
 ## Containers är ett exekveringssätt – inte en arkitekturprincip
 
-Containerisering har blivit en vanlig form för att paketera och köra applikationer. Den ger ofta goda förutsättningar för standardiserad distribution, isolering och portabilitet mellan kompatibla miljöer.
+Containerisering har blivit en vanlig form för att paketera och köra applikationer. Den ger ofta goda förutsättningar för standardiserad distribution, isolering och portabilitet mellan kompatibla miljöer.[K1]
 
 Men ”allt ska köras i containers” är sällan en bra generell arkitekturprincip.
 
@@ -207,7 +207,7 @@ En långlivad tjänst bör exempelvis kunna:
 5. avsluta eller lämna över pågående arbete på ett säkert sätt,
 6. starta igen utan manuell rekonstruktion av lokal tillstånd.
 
-Health checks och graceful shutdown är därför inte bara driftfunktioner. De är delar av kontraktet mellan workload och runtime.
+Health checks och graceful shutdown är därför inte bara driftfunktioner. De är delar av kontraktet mellan workload och runtime.[K2]
 
 ## Resurser ska uttryckas som behov
 
@@ -590,3 +590,9 @@ Organisationen behöver också kunna svara på:
 Det är nästa förmåga.
 
 I **kapitel 20 – Driftbarhet och motståndskraft** flyttas fokus därför från exekveringsmiljön till förmågan att förstå, återställa och hålla systemen fungerande över tid.
+
+## Källor och vidare läsning
+
+**[K1]** Open Container Initiative, *OCI Image Specification* och *OCI Runtime Specification*. https://specs.opencontainers.org/image-spec/ och https://github.com/opencontainers/runtime-spec
+
+**[K2]** Kubernetes, *Liveness, Readiness, and Startup Probes*. https://kubernetes.io/docs/concepts/workloads/pods/probes/

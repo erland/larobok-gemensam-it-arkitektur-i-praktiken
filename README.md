@@ -11,3 +11,8 @@ Projektet befinner sig i revisionsfas. Bokspecifikation, kapitelplan, källpolic
 3. Håll `docs/faktakontroll.md`, `docs/terminologi.md` och `docs/innehalls-canon.md` synkroniserade.
 4. Validera projektet före och efter varje revision.
 5. Bygg EPUB/PDF reproducerbart med projektets scripts och GitHub Actions.
+
+
+## Källapparat
+
+Projektet använder selektiva kapitelvisa slutnoter (`[K1]`, `[K2]` …), avsnittet **Källor och vidare läsning** i relevanta kapitel samt en samlad bibliografi i `chapters/kallor-och-vidare-lasning.md`. Reglerna finns i `docs/kallpolicy.md` och källregistret i `docs/kallregister.md`.

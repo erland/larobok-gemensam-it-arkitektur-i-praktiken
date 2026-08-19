@@ -386,7 +386,7 @@ Det blir bättre beslutsstöd.
 
 ## FinOps som tvärfunktionell disciplin
 
-FinOps har vuxit fram som ett sätt att föra samman teknik, ekonomi och verksamhet kring variabel teknikförbrukning. Den aktuella FinOps Framework beskriver bland annat arbete med kostnads- och användningsförståelse, värde, optimering, forecast, unit economics och arkitektur-/workload placement.
+FinOps har vuxit fram som ett sätt att föra samman teknik, ekonomi och verksamhet kring variabel teknikförbrukning. Den aktuella FinOps Framework[K1] beskriver bland annat arbete med kostnads- och användningsförståelse, värde, optimering, forecast, unit economics och arkitektur-/workload placement.
 
 För den här boken är den viktigaste lärdomen inte ett specifikt FinOps-processflöde. Det är principen att **ekonomiska data måste komma till de personer som kan påverka de tekniska besluten**.
 
@@ -416,7 +416,7 @@ Det kan vara värdefullt att standardisera exempelvis:
 - tidsperiod,
 - allokeringsprincip.
 
-Inom FinOps finns exempelvis FOCUS, en öppen specifikation som standardiserar faktureringsdata och relaterade kostnads- och användningsbegrepp över olika datakällor. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att **ekonomiska data behöver ett eget informationskontrakt** om de ska kunna användas tvärs över tekniska miljöer.
+Inom FinOps finns exempelvis FOCUS[K2], en öppen specifikation som standardiserar faktureringsdata och relaterade kostnads- och användningsbegrepp över olika datakällor. Poängen här är inte att varje organisation måste använda just den specifikationen, utan att **ekonomiska data behöver ett eget informationskontrakt** om de ska kunna användas tvärs över tekniska miljöer.
 
 ## Kostnadsoptimering har flera nivåer
 
@@ -618,3 +618,9 @@ Det är den viktigaste principen i detta kapitel:
 > **Kostnad ska vara synlig där tekniska beslut fattas, men alltid tolkas tillsammans med värde, risk och övriga kvalitetskrav.**
 
 Med detta är bokens del om plattformar, standarder och teknikstyrning komplett. Nästa del flyttar perspektivet från enskilda artefakter till hur de kombineras i referensarkitekturer och konkreta lösningsarkitekturer.
+
+## Källor och vidare läsning
+
+**[K1]** FinOps Foundation, *FinOps Framework*. https://www.finops.org/framework/
+
+**[K2]** FinOps Foundation, *FOCUS Specification 1.4*, ratificerad 4 juni 2026. https://focus.finops.org/focus-specification/

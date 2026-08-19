@@ -85,7 +85,7 @@ Detta är samma grundprincip som tidigare i boken: behov och ansvar bör först�
 
 ## Bounded context – när ett begrepp behöver en tydlig betydelse
 
-Ett användbart begrepp från Domain-Driven Design är *bounded context*. Det kan på svenska beskrivas som ett **avgränsat sammanhang där en viss modell och terminologi har en bestämd betydelse**.
+Ett användbart begrepp från Domain-Driven Design är *bounded context*.[K1] Det kan på svenska beskrivas som ett **avgränsat sammanhang där en viss modell och terminologi har en bestämd betydelse**.
 
 Det är särskilt värdefullt i större organisationer eftersom samma ord ofta betyder olika saker i olika verksamhetsområden.
 
@@ -549,3 +549,7 @@ De viktigaste principerna i kapitlet är:
 - och domängränser ska behandlas som prövbara arkitekturhypoteser, inte som eviga sanningar.
 
 I nästa kapitel flyttas fokus från själva ansvarssnitten till det som passerar genom dem: **information och data som arkitekturella ingångsvärden**. Där blir frågan vem som äger ett begrepp, en informationsmängd eller en auktoritativ källa ännu mer konkret – innan vi senare går vidare till den tekniska förmågan för lagring och datahantering.
+
+## Källor och vidare läsning
+
+**[K1]** Eric Evans, *Domain-Driven Design Reference* (2015), särskilt Strategic Design och Bounded Context. https://www.domainlanguage.com/ddd/reference/
