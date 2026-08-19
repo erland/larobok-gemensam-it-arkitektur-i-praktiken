@@ -192,7 +192,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 28: När ett byggblock blir en plattformstjänst
 - Kärnfråga: Vad krävs för att något ska vara ett konsumerbart erbjudande och inte bara central infrastruktur?
 - Centralt innehåll: service offering, tekniska byggblock, gränssnitt, ansvar, onboarding, support, service levels och konsumtionsmodell.
-- Status: planerad
+- Avgränsning: etablerar vad som gör ett tekniskt byggblock till en konsumerbar tjänst. Kapitel 29 fördjupar produktorienterad utveckling av plattformen och kapitel 30 självservice, paved roads och guardrails.
+- Status: första utkast skapat
 
 ## Kapitel 29: Platform as a Product
 - Kärnfråga: Hur gör man plattformar användbara, mätbara och efterfrågade?

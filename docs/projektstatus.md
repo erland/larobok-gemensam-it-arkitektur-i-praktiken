@@ -42,7 +42,8 @@ Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
 | 25 | Process-, regel- och datamönster | Första utkast | Human workflow, externaliserade regler, system of record/härledda kopior, cache-aside, state-ansvar, eventual consistency och mönsterkombinationer etablerade. |
 | 26 | AI-, identitets- och runtime-mönster | Första utkast | RAG, mänsklig kontroll, tjänsteidentitet och containeriserad stateless tjänst fördjupade som kombinerbara riskbegränsande mönster. |
 | 27 | Drift- och leveransmönster | Första utkast | Build once/promote many, observability för distribuerade tjänster, backup/verifierad återställning, releaseverifiering och sammanhängande återställningskedja etablerade. |
-| 28–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 28 | När ett byggblock blir en plattformstjänst | Första utkast | Tjänstekontrakt, ansvar, onboarding, kvalitetsprofiler, konsumtionsmodell, support, livscykel och mognad från byggblock till tjänst etablerade. |
+| 29–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -86,4 +87,4 @@ Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
 
 - Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.
 - Kapitel 27 – Drift- och leveransmönster är skapat som första utkast och fördjupar build once/promote many, observability för distribuerade tjänster och backup med verifierad återställning som en sammanhängande leverans- och återhämtningskedja.
-- Del IV är därmed komplett i första utkast. Nästa steg är kapitel 28 – När ett byggblock blir en plattformstjänst, som inleder del V.
+- Del IV är därmed komplett i första utkast. Kapitel 28 – När ett byggblock blir en plattformstjänst är skapat som första utkast och inleder del V genom att etablera tjänstekontrakt, ansvar, konsumtionsmodell, kvalitetsprofiler, support och livscykel som skillnaden mellan rå teknik och konsumerbart erbjudande. Nästa steg är kapitel 29 – Platform as a Product.
