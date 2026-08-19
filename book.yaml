@@ -52,6 +52,7 @@ chapters:
 - chapters/30-golden-paths-paved-roads-och-sjalvservice.md
 - chapters/31-tekniska-standarder-och-deras-nivaer.md
 - chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
+- chapters/33-ekonomi-kostnad-och-kapacitet.md
 exports:
   epub:
     enabled: true

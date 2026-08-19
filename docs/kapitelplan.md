@@ -221,8 +221,9 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 ## Kapitel 33: Ekonomi, kostnad och kapacitet
 - Kärnfråga: Hur påverkar kostnadsmodell och kapacitetsansvar arkitekturval och plattformsbeteenden?
-- Centralt innehåll: FinOps-principer, showback/chargeback, kapacitet, kostnadsdrivare, gemensam investering, incitament och kostnad som kvalitetsdimension.
-- Status: planerad
+- Centralt innehåll: FinOps-principer, showback/chargeback, enhetskostnad, kapacitet, kostnadsdrivare, gemensam investering, incitament, prognoser och kostnad som kvalitetsdimension.
+- Avgränsning: behandlar ekonomisk transparens, kostnads- och kapacitetsstyrning som arkitekturella signaler; övergripande budgetgovernance och organisationsstyrning hör inte till kapitlet.
+- Status: första utkast skapat
 
 # Del VI – Referensarkitekturer och praktisk tillämpning
 
