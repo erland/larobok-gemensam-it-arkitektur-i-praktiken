@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I–V kompletta i första utkast; del VI återstår
+Skrivfas – del I–V kompletta i första utkast; del VI påbörjad
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -48,7 +48,8 @@ Skrivfas – del I–V kompletta i första utkast; del VI återstår
 | 31 | Tekniska standarder och deras nivåer | Första utkast | Standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och kopplingen till plattformar/mönster etablerade. |
 | 32 | Tekniklivscykel och kontrollerad förändring | Första utkast | Livscykelstatus, technology radar, supportfönster, deprecation, sunset, migration, experiment, undantag och retirement etablerade. |
 | 33 | Ekonomi, kostnad och kapacitet | Första utkast | Kostnadsdrivare, enhetskostnad, showback/chargeback, gemensam investering, kapacitet, prognoser, incitament och FinOps som tvärfunktionell disciplin etablerade. |
-| 34–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 34 | Vad en referensarkitektur är – och inte är | Första utkast | Scope, viewpoints, variation points, constraints, ansvar, spårbarhet och relationen till lösningsarkitektur/mönster/standard/plattform etablerade. |
+| 35–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -97,4 +98,5 @@ Skrivfas – del I–V kompletta i första utkast; del VI återstår
 - Kapitel 30 – Golden paths, paved roads och självservice är skapat som första utkast och etablerar sammanhängande konsumtionsvägar, templates, självservice, guardrails, policy-as-code, escape hatches och hur styrning kan flyttas från manuella gates till förvaltade gemensamma mekanismer.
 - Kapitel 31 – Tekniska standarder och deras nivåer är skapat som första utkast och etablerar standardnivåer, bindningsgrad, interoperabilitet, compliance, verifiering, undantag och relationen mellan standarder, plattformar, mönster och produkter.
 - Kapitel 32 – Tekniklivscykel och kontrollerad förändring är skapat som första utkast och etablerar livscykelstatus, technology radar, produkt-/versionslivscykel, supportfönster, deprecation, sunset, migrationsansvar, experimentens exit-kriterier, tidsbegränsade undantag och faktisk retirement.
-- Kapitel 33 – Ekonomi, kostnad och kapacitet är skapat som första utkast och etablerar kostnadsdrivare, enhetskostnad, kostnadsallokering, showback/chargeback, gemensam investering, kapacitetsprofiler, prognoser, incitament och ekonomisk transparens som arkitekturell återkoppling. Del V är därmed komplett i första utkast. Nästa steg är kapitel 34 – Vad en referensarkitektur är – och inte är.
+- Kapitel 33 – Ekonomi, kostnad och kapacitet är skapat som första utkast och etablerar kostnadsdrivare, enhetskostnad, kostnadsallokering, showback/chargeback, gemensam investering, kapacitetsprofiler, prognoser, incitament och ekonomisk transparens som arkitekturell återkoppling. Del V är därmed komplett i första utkast.
+- Kapitel 34 – Vad en referensarkitektur är – och inte är är skapat som första utkast och inleder del VI genom att etablera scope, concerns/viewpoints, constraints, variation points, ansvar, spårbarhet och gränsen mot lösningsarkitektur, mönster, standarder, plattformar och templates. Nästa steg är kapitel 35 – Från behov till lösningsarkitektur.

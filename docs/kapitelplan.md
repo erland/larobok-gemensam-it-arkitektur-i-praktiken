@@ -230,7 +230,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 34: Vad en referensarkitektur är – och inte är
 - Kärnfråga: Hur ger en referensarkitektur vägledning utan att bli en frusen lösningsdesign?
 - Centralt innehåll: scope, viewpoints, variation points, constraints, relation till lösningsmönster, standarder och solution architecture.
-- Status: planerad
+- Avgränsning: definierar referensarkitekturen som återanvändbar artefakt och dess relation till andra arkitekturartefakter; den praktiska resan från behov till konkret lösningsarkitektur hör till kapitel 35 och scenariotillämpningen till kapitel 36.
+- Status: första utkast skapat
 
 ## Kapitel 35: Från behov till lösningsarkitektur
 - Kärnfråga: Hur gör ett konkret initiativ resan från behov till valda mönster, plattformar, standarder och dokumenterade beslut?

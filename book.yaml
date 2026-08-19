@@ -53,6 +53,7 @@ chapters:
 - chapters/31-tekniska-standarder-och-deras-nivaer.md
 - chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
 - chapters/33-ekonomi-kostnad-och-kapacitet.md
+- chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
 exports:
   epub:
     enabled: true
