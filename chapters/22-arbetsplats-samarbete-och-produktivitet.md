@@ -518,7 +518,7 @@ Detta är i praktiken samma styrfilosofi som senare utvecklas i kapitel 30 om go
 
 ## Plattformstjänster inom förmågan
 
-I det ursprungliga arkitekturunderlaget identifieras fyra tydliga tjänsteerbjudanden inom området:
+Inom området är fyra tjänsteerbjudanden särskilt relevanta:
 
 ### Productivity Suite
 

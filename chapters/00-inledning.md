@@ -8,4 +8,4 @@ Boken riktar sig till arkitekter, tekniska ledare, plattformsansvariga, produkt�
 
 Boken kan läsas från början till slut, men är också tänkt att fungera som en ämnesöversikt att återvända till. De första delarna etablerar begreppsmodellen och beslutslogiken. Därefter fördjupas elva gemensamma IT-förmågor. Senare delar behandlar lösningsmönster, plattformar som produkter, tekniska standarder, referensarkitekturer och hur hela modellen kan förvaltas över tid.
 
-Källmaterialet som satte i gång arbetet beskriver en sammanhängande struktur för gemensam IT-arkitektur i en större statlig myndighet. Boken använder strukturen som stomme, men begränsas inte av den. Arkitekturbeslut, domänarkitektur, plattformsproduktledning, livscykelstyrning, säkerhet, kostnad och styrning behandlas mer ingående eftersom de behövs för att modellen ska fungera i praktiken.
+För att modellen ska fungera i praktiken behöver den sättas in i ett bredare arkitekturellt sammanhang. Därför behandlar boken också arkitekturbeslut, domänarkitektur, plattformsproduktledning, livscykelstyrning, säkerhet, kostnad och styrning mer ingående.

@@ -364,9 +364,7 @@ Ett kandidatobjekt bör därför prövas mot frågor som:
 - Kan flera team använda beskrivningen som beslutsstöd?
 - Är detta verkligen ett mönster och inte en standard, plattformstjänst eller teknisk instruktion?
 
-Det ursprungliga underlaget till denna bok använder just denna typ av urval och har valt att inte skapa separata mönster för exempelvis varje återförsöksvariant, varje driftsättningsstrategi eller varje specifik åtkomstkontrollmodell.
-
-Det är en sund återhållsamhet.
+Ett användbart organisationsgemensamt mönsterbibliotek behöver vara återhållsamt. Det finns sällan skäl att skapa separata mönster för exempelvis varje återförsöksvariant, varje driftsättningsstrategi eller varje specifik åtkomstkontrollmodell.
 
 Ett litet och begripligt mönsterbibliotek är ofta mer användbart än en katalog med hundratals nästan överlappande poster.
 
@@ -622,9 +620,9 @@ Ett mönster kan behöva tas bort om:
 
 Att ta bort ett mönster är alltså inte ett misslyckande. Det är ett tecken på att arkitekturkunskapen förvaltas.
 
-## De femton mönstren i bokens underlag
+## De femton mönstren i boken
 
-Det ursprungliga arkitekturmaterialet identifierar femton lösningsmönster:
+Boken använder femton lösningsmönster:
 
 - Backend for Frontend,
 - Asynkron meddelandekommunikation,

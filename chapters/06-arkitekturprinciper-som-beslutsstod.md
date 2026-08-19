@@ -110,7 +110,7 @@ Principer ska därför inte behandlas som absoluta lagar som alltid ger ett enty
 
 ## Tio principer som exempel på en sammanhängande principuppsättning
 
-Det arkitekturunderlag som ligger till grund för denna bok innehåller tio gemensamma principer. De är användbara som exempel därför att de tillsammans täcker flera återkommande beslutssituationer utan att gå hela vägen ner till specifika produkter.
+Här används tio gemensamma principer som exempel på en sammanhängande principuppsättning. Tillsammans täcker de flera återkommande beslutssituationer utan att gå hela vägen ner till specifika produkter.
 
 De är inte universella regler som varje organisation måste använda ordagrant. De visar snarare hur en principuppsättning kan byggas för att stödja den modell som boken beskriver.
 

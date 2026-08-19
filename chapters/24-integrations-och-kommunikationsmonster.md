@@ -6,7 +6,7 @@ Kapitel 17 beskrev integrations- och kommunikationsförmågan och valen mellan e
 
 I resten av kapitlet återupprepas därför inte kapitel 17:s katalog över kommunikationsformer. Fokus ligger på mönstrens struktur, krafter, konsekvenser och kombinationer.
 
-Tre mönster från bokens grundmaterial står i centrum:
+Tre mönster står i centrum:
 
 - *Backend for Frontend*,
 - *asynkron meddelandekommunikation*,
