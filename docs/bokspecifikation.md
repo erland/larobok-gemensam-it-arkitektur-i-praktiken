@@ -80,7 +80,7 @@ Exemplen ska visa samma arkitekturbegrepp från olika perspektiv och synliggöra
 ## Kvalitetskriterier
 - Begreppen förmåga, behov, kvalitet, mönster, plattform, standard, byggblock, produkt och referensarkitektur används konsekvent.
 - Boken skiljer tydligt mellan generell modell och organisationsspecifik realisering.
-- Varje större tekniskt råd förklarar varför och vilka trade-offs som finns.
+- Varje större tekniskt råd förklarar varför och vilka avvägningar som finns.
 - Tvärgående frågor som säkerhet, resiliens, kostnad och livscykel integreras i resonemangen.
 - Praktiska exempel visar hur modellen används från behov till beslut.
 - Etableringsordning och ansvar följer den tredelade modellen gemensam arkitektur → förmågeområde → lösning/produkt, utan att beskrivas som ett strikt vattenfall.

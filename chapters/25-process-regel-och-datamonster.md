@@ -75,7 +75,7 @@ Då räcker inte en vanlig HTTP-request som väntar på svar. Processen kan leva
 
 Det är viktigt att skilja mellan en **arbetsuppgift** och det verksamhetsobjekt som arbetet gäller.
 
-Anta att en handläggare ska granska en ansökan. Ansökan är ett verksamhetsobjekt. Arbetsuppgiften "Granska ansökan" är en aktivitet i en process. Processinstansen beskriver hur arbetet rör sig framåt.
+Anta att en handläggare ska granska en ansökan. Ansökan är ett verksamhetsobjekt. Arbetsuppgiften ”Granska ansökan” är en aktivitet i en process. Processinstansen beskriver hur arbetet rör sig framåt.
 
 Om dessa begrepp blandas ihop kan processmotorn börja bli den enda plats där verksamhetens tillstånd finns. Det gör senare integration, rapportering, migrering och förändring svårare.
 
@@ -239,7 +239,7 @@ Varje härledd kopia bör kunna beskrivas genom åtminstone fem frågor:
 4. **Hur upptäcks och hanteras avvikelser?**
 5. **Kan kopian återskapas från sin källa?**
 
-Dessa frågor omvandlar "vi replikerar lite data" till ett medvetet arkitekturval.
+Dessa frågor omvandlar ”vi replikerar lite data” till ett medvetet arkitekturval.
 
 Exempel:
 
@@ -260,7 +260,7 @@ En härledd kopia kan vara kritisk för tjänstens funktion även om den inte ä
 
 Om en publik söktjänst är helt beroende av sitt index kan indexet ha höga krav på tillgänglighet och återställning. Men dess återställningsstrategi kan ändå skilja sig från system of record. Om indexet kan byggas om kanske traditionell backup är mindre viktig än en snabb, verifierad rebuild-process.
 
-Mönstret hjälper därmed inte bara informationsägarskap. Det påverkar även kontinuitetsdesign, observability och kostnad.
+Mönstret hjälper därmed inte bara informationsägarskap. Det påverkar även kontinuitetsdesign, observerbarhet och kostnad.
 
 ### Kopior får inte bli nya sanningar av bekvämlighet
 
@@ -358,7 +358,7 @@ Prestandaoptimering får inte skapa en ny informationssäkerhetsmodell av missta
 
 ## Fyra mönster – fyra olika typer av tillstånd
 
-När mönstren kombineras blir det särskilt viktigt att förstå att de kan bära olika slags state.
+När mönstren kombineras blir det särskilt viktigt att förstå att de kan bära olika slags tillstånd.
 
 | Mönster/komponent | Typiskt tillstånd | Ska normalt vara auktoritativt för |
 |---|---|---|
@@ -367,7 +367,7 @@ När mönstren kombineras blir det särskilt viktigt att förstå att de kan bä
 | System of record | verksamhetsdata | definierad informationsmängd |
 | Härledd kopia/cache | reproducerad eller temporär representation | normalt inget utöver sin egen tekniska status |
 
-Tabellen visar varför ett system kan ha flera "sanningar" utan motsägelse. De är auktoritativa för **olika ansvar**.
+Tabellen visar varför ett system kan ha flera ”sanningar” utan motsägelse. De är auktoritativa för **olika ansvar**.
 
 Processmotorn kan vara auktoritativ för att en viss arbetsuppgift väntar på handläggning samtidigt som verksamhetsdatabasen är auktoritativ för ärendets sakuppgifter. Regelregistret kan vara auktoritativt för vilken regelversion som gäller. Cachen är inte auktoritativ för något av detta.
 
@@ -442,7 +442,7 @@ I vissa fall ska beslutet bygga på det aktuella läget. I andra fall behöver m
 
 Det viktiga är att inte låta processmotorns råa processvariabler bli en oplanerad historikmodell. Historik och beslutsspårbarhet behöver utformas medvetet utifrån verksamhetskravet.
 
-## Duplicerat state är inte automatiskt fel
+## Duplicerat tillstånd är inte automatiskt fel
 
 Mönstren i detta kapitel innebär ofta att samma verksamhetsbegrepp representeras på flera ställen:
 
@@ -494,7 +494,7 @@ När flera mönster kombineras uppstår nya failure modes.
 
 Anta att workflowmotorn har markerat ett beslutsteg som slutfört men domäntransaktionen misslyckades. Eller att verksamhetsdata har uppdaterats men eventet som skulle uppdatera read model aldrig kom fram.
 
-Då behöver lösningen avgöra var atomaritet faktiskt krävs och var kompensation, retry eller reconciliation används.
+Då behöver lösningen avgöra var atomaritet faktiskt krävs och var kompensation, återförsök eller reconciliation används.
 
 En användbar analys är att gå igenom varje gräns:
 
@@ -535,11 +535,11 @@ Lösningen börjar bero på information som bara finns i cache. En tömning blir
 
 ### TTL som verksamhetskrav
 
-"Cachen har fem minuters TTL" dokumenteras utan att någon har bestämt om fem minuter gammal information faktiskt är acceptabel.
+”Cachen har fem minuters TTL” dokumenteras utan att någon har bestämt om fem minuter gammal information faktiskt är acceptabel.
 
 ### Snapshot av allt
 
-En långlivad process kopierar stora mängder verksamhetsdata "för säkerhets skull". Kopiorna blir snart svåra att klassificera, gallra och förstå.
+En långlivad process kopierar stora mängder verksamhetsdata ”för säkerhets skull”. Kopiorna blir snart svåra att klassificera, gallra och förstå.
 
 ### Direkt databasåtkomst från workflow och regler
 
@@ -567,7 +567,7 @@ Ansvariga för process-, regel- och dataförmågorna bör bland annat:
 - förvalta respektive mönster och vägledning,
 - erbjuda relevanta plattformstjänster,
 - definiera rekommenderade integrations- och livscykelmodeller,
-- ge stöd för versionering, migrering och observability,
+- ge stöd för versionering, migrering och observerbarhet,
 - samordna gränssnitt där flera förmågor möts,
 - följa upp återkommande problem och avsteg.
 
@@ -620,7 +620,7 @@ Vilka fakta, regelversioner och processtillstånd måste kunna rekonstrueras i e
 
 ### 8. Analysera felgränser
 
-Vad händer om en del lyckas och nästa misslyckas? Behövs retry, idempotens, kompensation eller manuell återställning?
+Vad händer om en del lyckas och nästa misslyckas? Behövs återförsök, idempotens, kompensation eller manuell återställning?
 
 ### 9. Först därefter – välj teknisk realisering
 

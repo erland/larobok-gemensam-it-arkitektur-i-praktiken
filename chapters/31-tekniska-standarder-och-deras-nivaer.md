@@ -4,7 +4,7 @@ Gemensam IT-arkitektur behöver mer än principer, mönster och plattformstjäns
 
 Det är standardernas uppgift.
 
-Men ordet **standard** används ofta så brett att det tappar precision. En organisation kan kalla allt från ett API-format till en specifik produktversion, en krypteringsinställning eller ett rekommenderat utvecklingsverktyg för "standard". Resultatet blir lätt en katalog där beslut med helt olika syfte, stabilitet och bindningsgrad blandas ihop.
+Men ordet **standard** används ofta så brett att det tappar precision. En organisation kan kalla allt från ett API-format till en specifik produktversion, en krypteringsinställning eller ett rekommenderat utvecklingsverktyg för ”standard”. Resultatet blir lätt en katalog där beslut med helt olika syfte, stabilitet och bindningsgrad blandas ihop.
 
 En fungerande standardmodell behöver därför svara på flera frågor samtidigt:
 
@@ -80,7 +80,7 @@ Exempel kan vara:
 - hur API-kontrakt utformas,
 - hur tjänster identifieras,
 - hur meddelanden korreleras,
-- hur observability ska exponeras,
+- hur observerbarhet ska exponeras,
 - hur containeriserade workloads paketeras,
 - vilka principer som gäller för secrets,
 - hur releaseidentifiering sker.
@@ -236,7 +236,7 @@ Den andra:
 
 > Godkänd för befintliga lösningar men inte rekommenderad för nyutveckling.
 
-Det är betydligt mer informativt än att båda bara märks "standard".
+Det är betydligt mer informativt än att båda bara märks ”standard”.
 
 ## Bindningsgrad bör följa konsekvens
 
@@ -306,11 +306,11 @@ Varje viktig standard bör därför kunna besvara:
 - Vem ansvarar för kontrollen?
 - Hur hanteras undantag?
 
-Det betyder inte att varje standard behöver hundra kontrollpunkter.
+Det innebär inte att varje standard behöver hundra kontrollpunkter.
 
 Men en formulering som:
 
-> Lösningen ska ha god observability.
+> Lösningen ska ha god observerbarhet.
 
 är för vag för att vara en effektiv teknisk standard.
 
@@ -325,7 +325,7 @@ En standard blir betydligt lättare att följa när plattformen stödjer den.
 Anta att organisationen har en standard för:
 
 - tjänsteidentitet,
-- observability,
+- observerbarhet,
 - containerpaketering,
 - CI/CD,
 - secrets.
@@ -350,7 +350,7 @@ Annars riskerar organisationen att skapa ett stort dokumentbibliotek som varje p
 
 ## Standarder och lösningsmönster har olika roller
 
-Ett mönster beskriver ett återkommande sätt att hantera ett problem och dess trade-offs.
+Ett mönster beskriver ett återkommande sätt att hantera ett problem och dess avvägningar.
 
 En standard uttrycker vilket beteende eller val organisationen har beslutat att gemensamt stödja eller kräva.
 
@@ -413,7 +413,7 @@ Detta skapar spårbarhet tillbaka till förmågan och behovet.
 
 Det gör också produktportföljen lättare att ifrågasätta.
 
-Om en produkt inte längre realiserar ett relevant tjänsteerbjudande finns det ett tydligt skäl att avveckla den i stället för att behålla den för att den "alltid har varit standard".
+Om en produkt inte längre realiserar ett relevant tjänsteerbjudande finns det ett tydligt skäl att avveckla den i stället för att behålla den för att den ”alltid har varit standard”.
 
 ## Ett standarddokument behöver en tydlig struktur
 
@@ -486,7 +486,7 @@ Ingen genomtänkt standardmodell bör utgå från att undantag aldrig behövs.
 Tvärtom finns det flera legitima orsaker:
 
 - ett verksamhetskrav som standardlösningen inte kan möta,
-- ett legacysystem med särskilda constraints,
+- ett legacysystem med särskilda begränsningar,
 - ett experiment som behöver pröva ny teknik,
 - ett externt krav,
 - en övergångsperiod under migrering.

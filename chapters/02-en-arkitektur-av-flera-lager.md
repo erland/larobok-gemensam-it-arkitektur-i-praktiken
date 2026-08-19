@@ -4,7 +4,7 @@ Det är lätt att tala om arkitektur som om den vore en enda sak. I praktiken be
 
 Ett verksamhetsbehov är inte samma sak som ett tekniskt krav. En förmåga är inte samma sak som en plattform. Ett lösningsmönster är inte samma sak som en produktstandard. En referensarkitektur är inte samma sak som en färdig lösningsarkitektur. När dessa nivåer blandas ihop blir arkitekturen svår att förstå och ännu svårare att förändra.
 
-Detta kapitel presenterar den modell som används genom resten av boken. Syftet är inte att gå på djupet i varje artefakttyp redan här, utan att ge läsaren en karta: vilka lager som finns, varför de behöver hållas isär, hur de relaterar till varandra och hur man kan spåra ett konkret teknikval tillbaka till det behov som motiverade det.
+Detta kapitel presenterar den modell som används genom resten av boken. Syftet är inte att gå på djupet i varje artefakttyp redan här. Kapitlet ger i stället en karta över vilka lager som finns, varför de behöver hållas isär och hur de relaterar till varandra. Kartan visar också hur ett konkret teknikval kan spåras tillbaka till det behov som motiverade det.
 
 En sådan karta är viktig av två skäl. För det första gör den det möjligt att tala om arkitektur utan att omedelbart hamna i produktdiskussioner. För det andra gör den det möjligt att förändra tekniken utan att behöva skriva om hela den övergripande modellen varje gång en produkt, version eller plattform byts ut.
 
@@ -172,11 +172,11 @@ Exempel är:
 - cache-aside,
 - tjänsteidentitet,
 - build once, promote many,
-- observability för distribuerade tjänster.
+- observerbarhet för distribuerade tjänster.
 
 Mönster är viktiga eftersom de bevarar mer än tekniska komponenter. De bevarar **erfarenheten av hur ett problem bör tänkas igenom**.
 
-Ett mönster för asynkron kommunikation kan exempelvis påminna arkitekten om idempotens, ordering, retry, dead-letter-hantering, korrelation och versionshantering. Dessa frågor finns kvar även om den konkreta meddelandeprodukten byts ut.
+Ett mönster för asynkron kommunikation kan exempelvis påminna arkitekten om idempotens, ordering, återförsök, dead-letter-hantering, korrelation och versionshantering. Dessa frågor finns kvar även om den konkreta meddelandeprodukten byts ut.
 
 Mönster spänner ofta över flera förmågor. Ett RAG-mönster kan beröra AI, sökning, datahantering, identitet och driftbarhet. Därför är det olämpligt att gömma ett sådant mönster som en detalj i ett enda förmågedokument.
 
@@ -299,7 +299,7 @@ En referensarkitektur för en publik e-tjänst kan exempelvis behöva beskriva:
 - API-hantering,
 - integration,
 - datalagring,
-- observability,
+- observerbarhet,
 - säkerhetskrav,
 - relevanta standarder och ansvarssnitt.
 
@@ -377,7 +377,7 @@ I en enkel modell kan relationerna beskrivas med länkar och tabeller. I en stö
 
 Anta att en myndighet ska skapa en ny publik e-tjänst där företag kan lämna uppgifter och följa sina ärenden.
 
-Om arbetet börjar på produktnivå kan diskussionen snabbt handla om vilket frontendramverk, vilken databas och vilken containerplattform som ska användas. De frågorna behöver besvaras, men inte först.
+Om arbetet börjar på produktnivå kan diskussionen snabbt handla om vilket frontend-ramverk, vilken databas och vilken containerplattform som ska användas. De frågorna behöver besvaras, men inte först.
 
 Med den lagerindelade modellen kan resonemanget i stället börja högre upp.
 
@@ -402,7 +402,7 @@ Behovet berör exempelvis:
 
 **4. Mönster**
 
-Beroende på lösning kan exempelvis Backend for Frontend, tjänsteidentitet, asynkron meddelandekommunikation och observability för distribuerade tjänster vara relevanta.
+Beroende på lösning kan exempelvis Backend for Frontend, tjänsteidentitet, asynkron meddelandekommunikation och observerbarhet för distribuerade tjänster vara relevanta.
 
 **5. Plattformstjänster**
 
@@ -410,13 +410,13 @@ Organisationens gemensamma erbjudanden kan sedan ge konkreta alternativ: identit
 
 **6. Standarder**
 
-API-standard, identitetsprotokoll, observability-standard, containerstandard och release-standard kan begränsa den tekniska variationen.
+API-standard, identitetsprotokoll, observerbarhetsstandard, containerstandard och release-standard kan begränsa den tekniska variationen.
 
 **7. Produkter och konfiguration**
 
 Först här behöver den konkreta realiseringen bli fullt specifik: produkt, version, miljö och konfiguration.
 
-Detta innebär inte att processen alltid sker strikt uppifrån och ner. Ett existerande plattformserbjudande kan påverka vad som är ekonomiskt rimligt. En teknisk begränsning kan vara verklig och behöva tas med som constraint. Ett proof of concept kan visa att ett antagande var fel.
+Detta innebär inte att processen alltid sker strikt uppifrån och ner. Ett existerande plattformserbjudande kan påverka vad som är ekonomiskt rimligt. En teknisk begränsning kan vara verklig och behöva tas med som begränsning. Ett proof of concept kan visa att ett antagande var fel.
 
 Men lagerindelningen gör det möjligt att se **vilken typ av information som påverkar vilken typ av beslut**. Det minskar risken att en lokal produktbegränsning omärkligt omvandlas till ett generellt arkitekturkrav.
 

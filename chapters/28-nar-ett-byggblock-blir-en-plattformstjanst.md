@@ -34,7 +34,7 @@ Anta att en organisation har ett OpenShift-kluster. Det betyder inte automatiskt
 - vilka resursprofiler som stöds,
 - hur team får tillgång,
 - vilka nätverks- och identitetsintegrationer som ingår,
-- vilken observability som är tillgänglig,
+- vilken observerbarhet som är tillgänglig,
 - hur uppgraderingar hanteras,
 - vilka tillgänglighets- och supportnivåer som gäller,
 - vilka delar konsumentteamet själv måste bygga och förvalta.
@@ -51,7 +51,7 @@ Det är inte tillräckligt att säga:
 
 Ett tjänsteerbjudande behöver snarare säga något i stil med:
 
-> Vi erbjuder en förvaltad exekveringsmiljö för containeriserade applikationer med standardiserad deployment, basobservability, nätverksintegration, identitetsintegration och definierade resursprofiler.
+> Vi erbjuder en förvaltad exekveringsmiljö för containeriserade applikationer med standardiserad driftsättning, grundläggande observerbarhet, nätverksintegration, identitetsintegration och definierade resursprofiler.
 
 Skillnaden är viktig. Den första formuleringen börjar med produkten. Den andra börjar med **konsumentens behov och den kapacitet som erbjuds**.
 
@@ -126,7 +126,7 @@ Ett team som bygger ett handläggningssystem behöver sannolikt förstå sin dom
 - hur certifikat roteras,
 - hur meddelandekluster uppgraderas,
 - hur backupmedia förvaltas,
-- hur observabilitybackend skalas,
+- hur backend för observerbarhet skalas,
 - hur underliggande noder livscykelhanteras.
 
 Plattformens uppgift är inte nödvändigtvis att dölja all teknisk komplexitet. Det skulle kunna skapa farliga abstraktioner. Uppgiften är att **äga den komplexitet som med fördel kan bäras gemensamt** och exponera ett kontrakt som är tillräckligt enkelt för konsumenten men tillräckligt transparent för välgrundade arkitekturbeslut.
@@ -188,7 +188,7 @@ Efter onboarding behöver teamet veta:
 
 - var tjänstens status syns,
 - hur incidenter rapporteras,
-- vilka dashboards eller loggar som finns,
+- vilka instrumentpaneler eller loggar som finns,
 - hur kapacitet justeras,
 - hur förändringar kommuniceras,
 - hur tjänsten avvecklas.
@@ -230,7 +230,7 @@ Exempel:
 
 Tabellen är ett illustrativt exempel, inte en universell profilmodell. Poängen är att kvalitetsnivån blir en **del av erbjudandet**, inte något som varje lösning försöker förhandla fram efteråt.
 
-## Service levels utan falsk precision
+## Tjänstenivåer utan falsk precision
 
 SLO och SLA kan vara viktiga, men bara när de beskriver något som plattformen faktiskt kan påverka och mäta.
 
@@ -324,7 +324,7 @@ Detta blir särskilt viktigt när standard- och tekniklivscykel fördjupas i sen
 
 En vanlig förenkling är att anta att ett tjänsteerbjudande alltid motsvarar en produktinstallation. Så behöver det inte vara.
 
-Ett erbjudande som **Relationell databastjänst** kan exempelvis ha flera profiler eller realiseringar därför att olika workloadtyper har olika constraints. Ett identitetserbjudande kan kombinera katalog, federation, PKI och secrets management. Ett observabilityerbjudande kan bestå av flera byggblock för loggar, metrics och tracing.
+Ett erbjudande som **Relationell databastjänst** kan exempelvis ha flera profiler eller realiseringar därför att olika workload-typer har olika begränsningar. Ett identitetserbjudande kan kombinera katalog, federation, PKI och secrets management. Ett observerbarhetserbjudande kan bestå av flera byggblock för loggar, mätvärden och tracing.
 
 Tjänsten är då den stabilare **konsumtions- och ansvarsenheten** ovanpå dessa komponenter.
 
@@ -398,7 +398,7 @@ För att utveckla detta till **Relationell databastjänst** kan organisationen d
 3. standardiserad provisioning,
 4. backup-/restoreprofiler,
 5. kapacitets- och supportmodell,
-6. mätbara service levels där det är relevant,
+6. mätbara tjänstenivåer där det är relevant,
 7. livscykel för produktrealiseringen.
 
 Tekniken kan vara densamma före och efter. Skillnaden är att relationen till konsumenten har blivit en tjänst.
@@ -413,7 +413,7 @@ En centralt förvaltad broker kan ta emot meddelanden. Ett plattformserbjudande 
 - retention,
 - säkerhetsmodell,
 - klientbibliotek eller protokoll,
-- observability,
+- observerbarhet,
 - dead-letter-hantering,
 - support och versionslivscykel.
 
@@ -429,7 +429,7 @@ Konsumenten kan exempelvis ansvara för:
 - health checks,
 - resursbehov,
 - applikationskonfiguration,
-- applikationsnära observability.
+- applikationsnära observerbarhet.
 
 Plattformen kan ansvara för:
 
@@ -437,8 +437,8 @@ Plattformen kan ansvara för:
 - scheduler,
 - plattformsuppgraderingar,
 - nätverks- och identitetsintegration,
-- basobservability,
-- standardiserad deploymentyta.
+- grundläggande observerbarhet,
+- standardiserad driftsättningsyta.
 
 Det är ansvarskontraktet och konsumtionsvägen, inte förekomsten av Kubernetes eller OpenShift i sig, som gör detta till en plattformstjänst.
 
@@ -460,7 +460,7 @@ Onboarding, provisioning och standardkonfiguration är dokumenterade och i hög 
 
 ### Nivå 4 – Operativ tjänst
 
-Support, service levels, observability, incidenthantering och livscykel är integrerade delar av erbjudandet.
+Support, tjänstenivåer, observerbarhet, incidenthantering och livscykel är integrerade delar av erbjudandet.
 
 ### Nivå 5 – Produktliknande plattform
 
@@ -479,7 +479,7 @@ Den gemensamma arkitekturen bör definiera:
 - vad som menas med plattformstjänst,
 - minimikrav på tjänstebeskrivningar,
 - gemensamma kvalitetsdimensioner,
-- principer för service levels och livscykel,
+- principer för tjänstenivåer och livscykel,
 - hur plattformskatalogen relaterar till förmågor, standarder och referensarkitekturer.
 
 Den bör normalt inte detaljdesigna varje erbjudande.
@@ -523,7 +523,7 @@ Plattformsteamet förväntas felsöka allting som körs på plattformen, inklusi
 
 ### Obegränsat konsumentansvar
 
-Plattformen tillhandahåller endast rå teknik och förväntar sig att varje konsument själv bygger provisioning, säkerhet, observability och lifecycle automation.
+Plattformen tillhandahåller endast rå teknik och förväntar sig att varje konsument själv bygger provisioning, säkerhet, observerbarhet och lifecycle automation.
 
 ### Falsk standardisering
 
@@ -533,9 +533,9 @@ Alla användningsfall pressas in i samma profil trots tydligt olika kvalitetsbeh
 
 Tjänsten kan beställas men det finns ingen definierad process för migrering, avregistrering, databorttagning eller avveckling.
 
-### Service levels utan mätbarhet
+### Tjänstenivåer utan mätbarhet
 
-SLA eller SLO skrivs för att tjänsten ska se mogen ut men plattformsteamet saknar telemetry eller kontroll över den kvalitet som lovas.
+SLA eller SLO skrivs för att tjänsten ska se mogen ut men plattformsteamet saknar telemetri eller kontroll över den kvalitet som lovas.
 
 ## Praktisk analysordning
 
@@ -547,7 +547,7 @@ När ett tekniskt byggblock övervägs som gemensam plattformstjänst kan följa
 4. **Definiera tjänstekontraktet.** Vad får konsumenten och vad måste konsumenten själv leverera?
 5. **Bestäm kvalitetsprofiler.** Vilka nivåer av tillgänglighet, kapacitet, recovery, säkerhet eller support är relevanta?
 6. **Utforma konsumtionsvägen.** Hur beställs, provisioneras, ändras och avvecklas tjänsten?
-7. **Designa operativ modell.** Support, observability, incidenter, kapacitet och service levels.
+7. **Designa operativ modell.** Support, observerbarhet, incidenter, kapacitet och tjänstenivåer.
 8. **Separera tjänst från realisering.** Vilka tekniska byggblock och produkter används i dag, och vilka delar av kontraktet bör överleva ett framtida produktbyte?
 9. **Mät faktisk användbarhet.** Användning, ledtid, fel, supportärenden och återkommande avsteg visar om tjänsten fungerar.
 10. **Pröva om tjänsten fortfarande bör vara gemensam.** Gemensamt ansvar är ett arkitekturbeslut som kan behöva omprövas.
@@ -556,7 +556,7 @@ När ett tekniskt byggblock övervägs som gemensam plattformstjänst kan följa
 
 - Ett tekniskt byggblock blir inte en plattformstjänst bara genom central installation eller gemensam drift.
 - En plattformstjänst behöver ett tydligt konsumentproblem, ett tjänstekontrakt och ett explicit ansvarssnitt.
-- Onboarding, support, observability och livscykel är delar av erbjudandet, inte sidoaktiviteter.
+- Onboarding, support, observerbarhet och livscykel är delar av erbjudandet, inte sidoaktiviteter.
 - Självservice är främst en fråga om reproducerbar och förutsägbar konsumtion, inte om frånvaro av styrning.
 - Kvalitetsprofiler gör erbjudandet mer användbart än individuella och ad hoc-baserade överenskommelser.
 - Plattformens service level och verksamhetssystemets end-to-end-kvalitet är relaterade men inte identiska.

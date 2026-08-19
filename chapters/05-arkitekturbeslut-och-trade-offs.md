@@ -1,4 +1,4 @@
-# 5. Arkitekturbeslut och trade-offs
+# 5. Arkitekturbeslut och avvägningar
 
 Arkitektur handlar sällan om att hitta ett alternativ som är bäst i alla avseenden. Ofta finns flera lösningar som skulle fungera, men de fungerar bra på olika sätt. En lösning kan ge hög förändringstakt men större operativ komplexitet. En annan kan vara enklare att drifta men ge svagare isolering mellan verksamhetsdelar. En tredje kan vara billigast att införa men svårare att lämna senare.
 
@@ -17,7 +17,7 @@ Detta kapitel behandlar hur arkitekturbeslut kan göras explicita, jämförbara 
 
 ## Arkitektur är val under begränsningar
 
-I kapitel 3 skilde vi mellan behov, constraints och teknikval. I kapitel 4 såg vi hur kvalitetsattribut gör vissa egenskaper arkitekturdrivande. Tillsammans skapar de beslutsrymmet.
+I kapitel 3 skilde vi mellan behov, begränsningar och teknikval. I kapitel 4 såg vi hur kvalitetsattribut gör vissa egenskaper arkitekturdrivande. Tillsammans skapar de beslutsrymmet.
 
 En förenklad bild är:
 
@@ -26,11 +26,11 @@ Behov och mål
       +
 Kvalitetskrav
       +
-Constraints
+Begränsningar
       ↓
 Realistiska alternativ
       ↓
-Trade-offs och risker
+Avvägningar och risker
       ↓
 Arkitekturbeslut
       ↓
@@ -39,7 +39,7 @@ Konsekvenser och uppföljning
 
 Det viktiga ordet är **realistiska**. Arkitekturval görs aldrig i ett vakuum. Organisationen kan redan ha investerat i plattformar, kompetens, avtal, driftsmodeller och säkerhetsmekanismer. Lagstiftning, informationsklassning eller externa integrationskrav kan begränsa möjliga alternativ. Tid, budget och tillgång till kompetens gör detsamma.
 
-Men constraints ska avgränsa beslutsrymmet – inte ersätta beslutsanalysen.
+Men begränsningar ska avgränsa beslutsrymmet – inte ersätta beslutsanalysen.
 
 Om organisationen redan har en containerplattform är det ett relevant faktum. Det betyder däremot inte automatiskt att varje ny applikation bör köras där. Frågan är fortfarande om plattformens egenskaper möter lösningens behov bättre än alternativen, givet kostnad, risk och långsiktiga konsekvenser.
 
@@ -94,7 +94,7 @@ Men robusthet är bara en dimension. Valet påverkar också:
 - svarstider,
 - koppling i tid mellan systemen,
 - felhantering,
-- observability,
+- observerbarhet,
 - dataordning,
 - utvecklingskomplexitet,
 - testbarhet,
@@ -107,11 +107,11 @@ Den asynkrona lösningen kan tåla att mottagaren tillfälligt är nere, men den
 
 Arkitektens uppgift är därför inte att hitta den egenskap där ett alternativ är starkast, utan att förstå **vilken kombination av egenskaper som bäst motsvarar den prioriterade kravbilden**.
 
-## Trade-off betyder inte kompromiss i negativ mening
+## Avvägning betyder inte kompromiss i negativ mening
 
-Ordet kompromiss kan ge intrycket att arkitekturen blir sämre än den borde vara. Trade-off är ett mer precist sätt att tänka.
+Ordet kompromiss kan ge intrycket att arkitekturen blir sämre än den borde vara. Avvägning är ett mer precist sätt att tänka.
 
-En trade-off innebär att förbättring av en egenskap kan ha kostnader eller konsekvenser för andra egenskaper.
+En avvägning innebär att förbättring av en egenskap kan ha kostnader eller konsekvenser för andra egenskaper.
 
 Exempel:
 
@@ -119,13 +119,13 @@ Exempel:
 - mer återanvändning kan ge starkare koppling mellan konsumenter,
 - strikt standardisering kan ge lägre variationskostnad men minska lokalt handlingsutrymme,
 - mer cache kan ge bättre svarstid men svårare konsistenshantering,
-- fler distribuerade tjänster kan ge självständigare leverans men öka behovet av observability och robust integration,
+- fler distribuerade tjänster kan ge självständigare leverans men öka behovet av observerbarhet och robust integration,
 - stark portabilitet kan minska leverantörslåsning men hindra användning av värdefulla plattformsspecifika funktioner,
 - mer detaljerad auditloggning kan öka spårbarheten men också kostnad, datavolym och integritetsrisk.
 
 Det finns alltså sällan en arkitektur som maximerar alla kvaliteter samtidigt.
 
-Det gör prioriteringen från föregående kapitel central. Om organisationen inte vet vilka kvaliteter som är viktigast blir trade-off-diskussionen lätt en kamp mellan personliga teknikpreferenser.
+Det gör prioriteringen från föregående kapitel central. Om organisationen inte vet vilka kvaliteter som är viktigast blir avvägning-diskussionen lätt en kamp mellan personliga teknikpreferenser.
 
 ## Gör beslutskriterierna synliga före valet
 
@@ -228,7 +228,7 @@ ADR ger störst värde för beslut som är:
 
 - betydelsefulla,
 - svåra att förstå i efterhand,
-- kontroversiella eller innehåller tydliga trade-offs,
+- kontroversiella eller innehåller tydliga avvägningar,
 - beroende av antaganden som kan ändras,
 - svåra eller kostsamma att reversera,
 - viktiga för flera team eller framtida förvaltare.
@@ -463,7 +463,7 @@ Möjliga nackdelar:
 
 - distribuerad konsistens måste hanteras,
 - mer integrationslogik,
-- större observability-behov,
+- större observerbarhetsbehov,
 - högre initial komplexitet.
 
 Vilket alternativ är rätt?
@@ -472,7 +472,7 @@ Det går inte att avgöra utan sammanhang.
 
 Om funktionerna i praktiken tillhör samma sammanhållna domän, förändras tillsammans och kräver stark transaktionell konsistens kan en gemensam datamodell vara rimlig. Om de har olika ägare, olika förändringstakt och tydliga domängränser kan separata dataägarskap vara viktigare.
 
-Trade-off-analysen gör alltså inte beslutet automatiskt. Den gör **orsakerna till beslutet synliga**.
+Avvägning-analysen gör alltså inte beslutet automatiskt. Den gör **orsakerna till beslutet synliga**.
 
 ## Undvik falsk precision i beslutsmatriser
 
@@ -535,7 +535,7 @@ När framtida arkitekter ser diagrammet behöver de kunna avgöra vilka delar so
 
 - fundamentala för behovet,
 - konsekvens av ett kvalitetskrav,
-- organisatorisk constraint,
+- organisatorisk begränsning,
 - lokalt teknikval,
 - historiskt arv som kan ändras.
 
@@ -568,7 +568,7 @@ Därför är en bra kontrollfråga:
 
 Om svaret är nej är beslutet för beroende av organisatoriskt minne.
 
-Det betyder inte att varje diskussion måste dokumenteras. Men det som behövs för att rekonstruera kärnlogiken bör finnas kvar:
+Det innebär inte att varje diskussion måste dokumenteras. Men det som behövs för att rekonstruera kärnlogiken bör finnas kvar:
 
 - kontexten,
 - de viktigaste alternativen,
@@ -587,7 +587,7 @@ Beskriv vad som faktiskt behöver avgöras. Undvik att formulera frågan som ett
 
 ### 2. Identifiera arkitekturdrivare
 
-Samla relevanta behov, kvalitetskrav, constraints och beroenden.
+Samla relevanta behov, kvalitetskrav, begränsningar och beroenden.
 
 ### 3. Skilj krav från preferenser och antaganden
 
@@ -597,7 +597,7 @@ Det minskar risken att historiska vanor får status som absoluta krav.
 
 Ta med status quo när det är ett verkligt alternativ. Att inte förändra något har också konsekvenser.
 
-### 5. Jämför trade-offs
+### 5. Jämför avvägningar
 
 Analysera hur alternativen påverkar de prioriterade kvaliteterna, kostnaderna, riskerna och framtida handlingsutrymmet.
 
@@ -626,7 +626,7 @@ Ett bra beslut kännetecknas snarare av att:
 - problemet är rätt formulerat,
 - de viktigaste drivarna är kända,
 - relevanta alternativ har övervägts,
-- trade-offs är synliga,
+- avvägningar är synliga,
 - antaganden och risker är ärligt beskrivna,
 - beslutet är begripligt för andra,
 - det går att ompröva när förutsättningarna ändras.
@@ -663,4 +663,4 @@ Det kan bli:
 
 Det är så gemensam arkitektur kan växa fram ur verkliga behov utan att reduceras till central teori.
 
-Nästa kapitel behandlar **arkitekturprinciper** – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och trade-off-analys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.
+Nästa kapitel behandlar **arkitekturprinciper** – ett sätt att uttrycka återkommande beslutsriktning på en mer generell nivå. Principer ska inte ersätta beslut och avvägning-analys, men de kan göra organisationens viktigaste utgångspunkter tydliga innan varje enskild beslutssituation uppstår.

@@ -50,7 +50,7 @@ Den ena lösningen kanske accepteras om dokumenten ibland tar fem sekunder att v
 
 Funktionen är densamma. Arkitekturproblemet är det inte.
 
-Det är därför uttryck som "systemet ska vara snabbt", "lösningen ska vara säker" eller "tjänsten ska ha hög tillgänglighet" är otillräckliga. De anger en önskad riktning men inte vilken nivå som faktiskt behövs.
+Det är därför uttryck som ”systemet ska vara snabbt”, ”lösningen ska vara säker” eller ”tjänsten ska ha hög tillgänglighet” är otillräckliga. De anger en önskad riktning men inte vilken nivå som faktiskt behövs.
 
 Arkitekten behöver förstå vad som händer när kvaliteten inte uppnås.
 
@@ -114,7 +114,7 @@ Ett förändringsbarhetsscenario kan vara:
 
 > När ett externt regelverk ändrar formatet för ett inkommande meddelande ska den nödvändiga anpassningen kunna göras utan förändringar i domänlogik som inte berör formatet och kunna driftsättas inom organisationens normala leveransflöde.
 
-Scenariernas styrka är att de tvingar fram sammanhang och mätbarhet. "Hög tillgänglighet" kan betyda nästan vad som helst. "Återställ kapaciteten inom två minuter vid bortfall av en instans under normal drift" går att designa och testa för.
+Scenariernas styrka är att de tvingar fram sammanhang och mätbarhet. ”Hög tillgänglighet” kan betyda nästan vad som helst. ”Återställ kapaciteten inom två minuter vid bortfall av en instans under normal drift” går att designa och testa för.
 
 Det betyder inte att varje kvalitetskrav måste dokumenteras med sex rubriker. Strukturen är ett analysverktyg. Det viktiga är att kravbilden fångar situation, förväntad respons och någon form av verifierbar nivå.
 
@@ -127,7 +127,7 @@ Ett krav blir en **arkitekturdrivare** när det i betydande grad påverkar syste
 Exempel:
 
 - mycket kort tolererad avbrottstid kan kräva redundans och automatisk failover,
-- mycket stora belastningsvariationer kan påverka hur kapacitet och state hanteras,
+- mycket stora belastningsvariationer kan påverka hur kapacitet och tillstånd hanteras,
 - stark isolering mellan informationsmängder kan påverka nät, identitet och lagringsstruktur,
 - höga krav på spårbarhet kan påverka loggning, identitetspropagering och datamodell,
 - krav på snabb förändring kan påverka modularitet, gränssnitt och automatisering,
@@ -150,7 +150,7 @@ Frågor kan vara:
 - Hur upptäcks och utreds missbruk?
 - Hur påverkas säkerhetskraven av informationsklassning och trust boundaries?
 
-"Säkert" är inte ett mätbart krav i sig. Det måste brytas ned till hot, skyddsvärden, kontrollbehov och accepterad risk.
+”Säkert” är inte ett mätbart krav i sig. Det måste brytas ned till hot, skyddsvärden, kontrollbehov och accepterad risk.
 
 ### Tillgänglighet
 
@@ -183,7 +183,7 @@ De bör inte sättas av tekniken ensam. De ska härledas från verksamhetskonsek
 
 ### Prestanda
 
-Prestanda omfattar mer än "snabbt". Beroende på system kan relevanta mått vara:
+Prestanda omfattar mer än ”snabbt”. Beroende på system kan relevanta mått vara:
 
 - svarstid,
 - genomströmning,
@@ -206,7 +206,7 @@ Frågor kan vara:
 - Hur snabbt måste skalan kunna ändras?
 - Krävs horisontell eller vertikal skalning?
 - Vilka delar skalar oberoende av varandra?
-- Finns state eller externa beroenden som begränsar skalningen?
+- Finns tillstånd eller externa beroenden som begränsar skalningen?
 
 Kapacitetskrav bör också skilja mellan normal belastning, förutsebara toppar och extrema men möjliga händelser.
 
@@ -228,7 +228,7 @@ Spårbarhet påverkar därför identitet, loggning, korrelations-id, beslutsdata
 
 Vissa kvalitetskrav motiveras av lag, föreskrift, avtal eller intern styrning.
 
-Det viktiga arkitekturellt är att inte stanna vid formuleringen "av compliance-skäl". Kravet bör så långt möjligt kunna spåras till:
+Det viktiga arkitekturellt är att inte stanna vid formuleringen ”av compliance-skäl”. Kravet bör så långt möjligt kunna spåras till:
 
 - den faktiska källan,
 - organisationens tolkning,
@@ -291,7 +291,7 @@ Detta är inte samma sak som miljömässig hållbarhet, även om resursförbrukn
 
 ### Kostnads- och resurseffektivitet
 
-Kostnad är inte ett separat efterhandsproblem. Den är en del av arkitekturens trade-offs.
+Kostnad är inte ett separat efterhandsproblem. Den är en del av arkitekturens avvägningar.
 
 En lösning kan nästan alltid göras mer redundant, snabbare eller mer isolerad om tillräckligt mycket resurser används. Frågan är om verksamhetsnyttan motiverar nivån.
 
@@ -324,7 +324,7 @@ Exempel:
 - mycket generell abstraktion kan förbättra återanvändning men göra en enkel lösning svårare att förstå,
 - maximal portabilitet kan kräva att plattformsspecifika funktioner med stor produktivitetsnytta avstås.
 
-Detta är inte tecken på dålig kravställning. Det är själva kärnan i arkitekturella trade-offs.
+Detta är inte tecken på dålig kravställning. Det är själva kärnan i arkitekturella avvägningar.
 
 Om två kvaliteter konkurrerar behöver beslutet göras explicit:
 
@@ -367,7 +367,7 @@ Kritisk profil
 - regelbundet verifierad återställning
 ```
 
-Det betyder inte att just dessa två profiler alltid är rätt. Poängen är att kvalitetsnivå kan vara en medveten del av tjänsteerbjudandet i stället för dold i plattformens implementation.
+Det innebär inte att just dessa två profiler alltid är rätt. Poängen är att kvalitetsnivå kan vara en medveten del av tjänsteerbjudandet i stället för dold i plattformens implementation.
 
 ## Kvalitetskrav måste kunna verifieras
 
@@ -475,7 +475,7 @@ Frågor kvarstår:
 - Är återställningsproceduren testad?
 - Vet verksamheten hur arbetet återupptas efter avbrottet?
 
-På samma sätt kan en containerplattform erbjuda automatisk restart utan att applikationen är motståndskraftig mot fel. En applikation som lagrar kritiskt state lokalt kan fortfarande förlora arbete när containern ersätts.
+På samma sätt kan en containerplattform erbjuda automatisk restart utan att applikationen är motståndskraftig mot fel. En applikation som lagrar kritiskt tillstånd lokalt kan fortfarande förlora arbete när containern ersätts.
 
 Gemensamma plattformar kan alltså **möjliggöra** kvaliteter, men de kan sällan garantera hela lösningens kvalitet på egen hand.
 
@@ -543,7 +543,7 @@ Exempel:
 
 Listan är medvetet generell. En mekanism är inte automatiskt rätt bara för att den kan förbättra en viss kvalitet. Caching kan förbättra svarstid men skapa konsistensproblem. Redundans kan förbättra tillgänglighet men öka komplexitet. Asynkron kommunikation kan förbättra frikoppling men göra felsökning och konsistens svårare.
 
-Det är därför kvalitetskraven behöver följas av explicita arkitekturbeslut och trade-offs.
+Det är därför kvalitetskraven behöver följas av explicita arkitekturbeslut och avvägningar.
 
 ## Ett sammanhängande exempel
 
@@ -585,7 +585,7 @@ Detta leder i sin tur till arkitekturfrågor:
 
 Nu driver verksamhetskonsekvenserna arkitekturen. Teknikdiskussionen får en tydlig grund.
 
-Det är skillnaden mellan att säga "bygg en robust e-tjänst" och att faktiskt kunna motivera vad robust betyder.
+Det är skillnaden mellan att säga ”bygg en robust e-tjänst” och att faktiskt kunna motivera vad robust betyder.
 
 ## Centrala fakta
 
@@ -595,7 +595,7 @@ Det är skillnaden mellan att säga "bygg en robust e-tjänst" och att faktiskt 
 - Kvalitetsattributsscenarier gör krav konkreta genom att beskriva stimulus, miljö, respons och verifierbart responsmått.
 - Bokens tolv kvalitetsdimensioner är ett praktiskt arbetsramverk, inte en ny universell kvalitetsstandard.
 - Högsta möjliga nivå på alla kvaliteter är normalt varken ekonomiskt eller arkitekturellt rimlig.
-- Konflikter mellan kvaliteter är normala och behöver hanteras som explicita trade-offs.
+- Konflikter mellan kvaliteter är normala och behöver hanteras som explicita avvägningar.
 - RTO och RPO är verksamhetsdrivna återställningsmål och bör inte sättas enbart utifrån vad tekniken råkar erbjuda.
 - Ett kvalitetskrav bör redan vid formuleringen kopplas till hur det ska verifieras.
 - Gemensamma plattformstjänster kan möjliggöra kvaliteter men garanterar sällan hela lösningens end-to-end-kvalitet.
@@ -609,7 +609,7 @@ Det är skillnaden mellan att säga "bygg en robust e-tjänst" och att faktiskt 
 
 **Kvalitetskrav** – ett krav som preciserar önskad eller nödvändig nivå för ett kvalitetsattribut.
 
-**Arkitekturdrivare** – ett behov, constraint eller kvalitetskrav som i betydande grad påverkar arkitekturens struktur och centrala beslut.
+**Arkitekturdrivare** – ett behov, begränsning eller kvalitetskrav som i betydande grad påverkar arkitekturens struktur och centrala beslut.
 
 **Kvalitetsattributsscenario** – en konkret situation som beskriver stimulus, miljö, berörd del, förväntad respons och hur responsen mäts.
 
@@ -621,6 +621,6 @@ Det är skillnaden mellan att säga "bygg en robust e-tjänst" och att faktiskt 
 
 **SLA (Service Level Agreement)** – ett formellt åtagande om tjänstenivå mellan parter, ofta med definierade ansvar eller konsekvenser.
 
-**Trade-off** – en avvägning där förbättring av en egenskap påverkar kostnad, komplexitet eller en annan kvalitet.
+**Avvägning** – en avvägning där förbättring av en egenskap påverkar kostnad, komplexitet eller en annan kvalitet.
 
 **Arkitekturell taktik** – en designmekanism som används för att påverka ett kvalitetsattribut, exempelvis redundans för tillgänglighet eller caching för svarstid.

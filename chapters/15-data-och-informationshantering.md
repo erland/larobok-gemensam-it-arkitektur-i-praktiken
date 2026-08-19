@@ -2,7 +2,7 @@
 
 ## Från informationsbehov till teknisk datahantering
 
-I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan teknik väljs. Det kapitlet svarade på frågor som *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Det här kapitlet tar nästa steg: **hur ska informationen realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid?**
+I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan teknik väljs. Det kapitlet svarade på frågor som *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Här tar vi nästa steg. Frågan är **hur informationen ska realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid**.
 
 Det är en annan fråga än informationsmodellering. Två verksamhetsområden kan ha väl definierade begrepp och tydligt informationsägarskap men ändå behöva helt olika tekniska mekanismer. En transaktionell ärendedatabas, ett dokumentarkiv, en cache och ett sökindex hanterar alla data, men de har olika ansvar, olika livscykel och olika krav på konsistens och återställning.
 
@@ -243,7 +243,7 @@ Tekniska plattformar har kortare livslängd än många informationsmängder. Dat
 
 Därför är portabilitet en viktig men ofta förbisedd kvalitet.
 
-Det betyder inte att all data alltid måste ligga i ett helt leverantörsneutralt format. Det betyder däremot att organisationen bör förstå:
+Det innebär inte att all data alltid måste ligga i ett helt leverantörsneutralt format. Det betyder däremot att organisationen bör förstå:
 
 - hur data exporteras,
 - vilka metadata som krävs för att tolka exporten,

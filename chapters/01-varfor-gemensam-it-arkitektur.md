@@ -38,7 +38,7 @@ Teknisk variation är inte nödvändigtvis negativ. Två olika databastyper kan 
 
 ### Operativ fragmentering
 
-Två system kan vara byggda med liknande teknik men ändå förvaltas på helt olika sätt. De kan ha olika modeller för deployment, loggning, övervakning, backup, incidenthantering och återställning. Då blir organisationens driftförmåga beroende av lokal kunskap och manuella rutiner.
+Två system kan vara byggda med liknande teknik men ändå förvaltas på helt olika sätt. De kan ha olika modeller för driftsättning, loggning, övervakning, backup, incidenthantering och återställning. Då blir organisationens driftförmåga beroende av lokal kunskap och manuella rutiner.
 
 Operativ fragmentering är ofta mindre synlig än produktfragmentering, men kan vara minst lika dyr. Den märks först när något ska förändras, uppgraderas, felsökas eller återställas.
 
@@ -79,7 +79,7 @@ Det som kan återanvändas är även:
 - en referensarkitektur,
 - erfarenhet av vilka avvägningar som brukar vara viktiga.
 
-Detta är ofta mer värdefullt än att återanvända en viss kodbas. Om ett team kan använda en etablerad modell för tjänsteidentitet behöver det inte börja med frågan "hur brukar vi lösa detta?". Om det finns en gemensam databastjänst med tydliga ansvar och kvalitetsnivåer behöver varje projekt inte designa drift, backup och övervakning från grunden. Om det finns ett väl beskrivet mönster för asynkron kommunikation kan nya lösningar börja med kända frågor om idempotens, ordering, retry och felhantering i stället för att upptäcka dem sent.
+Detta är ofta mer värdefullt än att återanvända en viss kodbas. Om ett team kan använda en etablerad modell för tjänsteidentitet behöver det inte börja med frågan ”hur brukar vi lösa detta?”. Om det finns en gemensam databastjänst med tydliga ansvar och kvalitetsnivåer behöver varje projekt inte designa drift, backup och övervakning från grunden. Om det finns ett väl beskrivet mönster för asynkron kommunikation kan nya lösningar börja med kända frågor om idempotens, ordering, återförsök och felhantering i stället för att upptäcka dem sent.
 
 Gemensam IT-arkitektur skapar därför värde när den förvandlar återkommande problem till **återanvändbar kunskap och återanvändbara erbjudanden**.
 
@@ -156,7 +156,7 @@ Vilken form som är lämplig beror på problemet.
 
 Om tio team behöver samma specialiserade infrastruktur kan en gemensam plattform ge tydliga skalfördelar. Om behoven däremot skiljer sig kraftigt kan en gemensam plattform skapa mer friktion än nytta. I vissa fall är det viktigaste bara att systemen använder kompatibla protokoll eller delar samma informationskontrakt.
 
-En mogen gemensam arkitektur behöver därför kunna säga både **"detta bör vi lösa tillsammans"** och **"detta bör få vara lokalt"**.
+En mogen gemensam arkitektur behöver därför kunna säga både **”detta bör vi lösa tillsammans”** och **”detta bör få vara lokalt”**.
 
 ## Standardisering ska köpa något
 
@@ -199,7 +199,7 @@ Ett utvecklingsteam bör exempelvis kunna komma in i ett projekt och redan ha sv
 - Vilka återställningsmekanismer finns?
 - Vilka kvalitetsnivåer kan de gemensamma tjänsterna leverera?
 
-Det betyder inte att arkitekturen ska ge ett enda svar på varje fråga. Ibland behövs flera godkända alternativ. Men alternativen bör vara begripliga, deras avvägningar kända och deras ansvar tydliga.
+Det innebär inte att arkitekturen ska ge ett enda svar på varje fråga. Ibland behövs flera godkända alternativ. Men alternativen bör vara begripliga, deras avvägningar kända och deras ansvar tydliga.
 
 När detta fungerar kan gemensam arkitektur faktiskt **öka teamens autonomi**. Teamet behöver inte vänta på en central arkitekt för varje detaljbeslut, eftersom spelplanen redan är tydlig. Det kan välja inom etablerade ramar och fokusera sin energi på det som är unikt för verksamhetsproblemet.
 
@@ -211,7 +211,7 @@ Samma mekanismer som kan skapa sammanhang kan också skapa problem.
 
 ### När standarden blir viktigare än behovet
 
-Om frågan "följer ni standarden?" kommer före frågan "vilket behov försöker ni lösa?" har styrningen vänt på orsak och verkan. Team kan då tvingas in i lösningar som formellt är korrekta men funktionellt olämpliga.
+Om frågan ”följer ni standarden?” kommer före frågan ”vilket behov försöker ni lösa?” har styrningen vänt på orsak och verkan. Team kan då tvingas in i lösningar som formellt är korrekta men funktionellt olämpliga.
 
 ### När gemensamma plattformar blir obligatoriska monopol
 
@@ -219,7 +219,7 @@ En gemensam plattform kan vara värdefull så länge den erbjuder en konkurrensk
 
 ### När abstraktionen blir för grov
 
-Om allt sorteras under ett fåtal breda rubriker kan viktiga skillnader försvinna. "Integration" är exempelvis inte ett enda problem. Realtids-API:er, eventdriven kommunikation, batchöverföring och myndighetsöverskridande informationsutbyte kan ha helt olika kvalitetskrav.
+Om allt sorteras under ett fåtal breda rubriker kan viktiga skillnader försvinna. ”Integration” är exempelvis inte ett enda problem. Realtids-API:er, eventdriven kommunikation, batchöverföring och myndighetsöverskridande informationsutbyte kan ha helt olika kvalitetskrav.
 
 Gemensam arkitektur måste därför vara tillräckligt stabil för att skapa sammanhang men tillräckligt detaljerad för att leda till meningsfulla beslut.
 
@@ -273,7 +273,7 @@ Ingen av nivåerna kan ersätta de andra.
 
 Om den gemensamma nivån försöker detaljdesigna varje lösning blir den en flaskhals. Om förmågeområdena saknar mandat att utveckla sina erbjudanden blir arkitekturen statisk. Om lösningsteamen ignorerar gemensamma byggstenar försvinner skalfördelarna och sammanhanget.
 
-Den praktiska frågan blir därför inte "centralt eller lokalt?" utan **vilka beslut hör hemma på vilken nivå?**
+Den praktiska frågan blir därför inte ”centralt eller lokalt?” utan **vilka beslut hör hemma på vilken nivå?**
 
 Boken återkommer till detta genomgående.
 

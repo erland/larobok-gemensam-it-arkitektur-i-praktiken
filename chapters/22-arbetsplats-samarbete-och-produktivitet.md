@@ -41,7 +41,7 @@ Gränsen avgörs inte av vilket verktyg som används. En lösning byggd i ett ge
 
 Det betyder att formuleringen:
 
-> "Det är bara en lista och ett formulär i vår samarbetsplattform."
+> ”Det är bara en lista och ett formulär i vår samarbetsplattform.”
 
 inte säger särskilt mycket om lösningens arkitekturella betydelse.
 
@@ -186,7 +186,7 @@ En versionslista visar i första hand hur ett arbetsobjekt förändrats i verkty
 
 Det är därför viktigt att inte resonera:
 
-> "Plattformen sparar versioner, alltså är informationsförvaltningen löst."
+> ”Plattformen sparar versioner, alltså är informationsförvaltningen löst.”
 
 Samma princip mötte vi i kapitel 15 för backup: en teknisk mekanism och ett verksamhetskrav är inte samma sak.
 
@@ -241,7 +241,7 @@ Ett gemensamt erbjudande ger värde genom:
 - lägre utbildningströskel,
 - enklare livscykelhantering.
 
-Det betyder inte att standardverktyget alltid är rätt. Principen från kapitel 6 gäller fortfarande: **standardiserade erbjudanden bör användas när de möter behovet**.
+Det innebär inte att standardverktyget alltid är rätt. Principen från kapitel 6 gäller fortfarande: **standardiserade erbjudanden bör användas när de möter behovet**.
 
 Om ett specialiserat behov inte kan mötas utan orimliga kompromisser kan ett annat verktyg vara motiverat. Men avvikelsen bör då vara ett medvetet behovsdrivet val, inte resultatet av att någon råkade föredra ett annat verktyg.
 
@@ -302,11 +302,11 @@ Det kan vara värdefullt, men en organisation behöver undvika två extremer.
 
 Den ena är total frihet:
 
-> "Alla får bygga vad som helst eftersom verktyget är godkänt."
+> ”Alla får bygga vad som helst eftersom verktyget är godkänt.”
 
 Den andra är total centralisering:
 
-> "Ingen får skapa något utan att gå genom den ordinarie utvecklingsorganisationen."
+> ”Ingen får skapa något utan att gå genom den ordinarie utvecklingsorganisationen.”
 
 En mer hållbar modell är att skapa olika banor beroende på lösningens konsekvens.
 
@@ -348,7 +348,7 @@ Det innebär att:
 
 > **AI kan förstärka effekten av befintliga behörigheter utan att någon behörighetsregel faktiskt ändras.**
 
-Det är därför inte tillräckligt att fråga om AI-assistenten "respekterar behörigheter". Det måste den göra, men organisationen bör också fråga:
+Det är därför inte tillräckligt att fråga om AI-assistenten ”respekterar behörigheter”. Det måste den göra, men organisationen bör också fråga:
 
 - Är de befintliga behörigheterna rimliga?
 - Finns gamla ytor med alltför bred åtkomst?
@@ -366,7 +366,7 @@ En produktivitetsassistent bör alltså inte betraktas som en helt separat infor
 
 ## AI gör informationshygien mer värdefull
 
-En konsekvens av detta är att tidigare "osynlig" informationsskuld blir mer synlig.
+En konsekvens av detta är att tidigare ”osynlig” informationsskuld blir mer synlig.
 
 Exempel:
 
@@ -432,7 +432,7 @@ E-post är primärt ett kommunikationsverktyg. Men i praktiken används inkorgar
 
 Det skapar personberoende och gör information svår att hitta för andra.
 
-En robust arbetsplatsarkitektur försöker därför inte "förbjuda e-post". Den erbjuder bättre platser för gemensamt arbete och gör det naturligt att flytta information från kommunikation till rätt gemensamt sammanhang.
+En robust arbetsplatsarkitektur försöker därför inte ”förbjuda e-post”. Den erbjuder bättre platser för gemensamt arbete och gör det naturligt att flytta information från kommunikation till rätt gemensamt sammanhang.
 
 Principen är densamma som för personliga filytor:
 
@@ -480,7 +480,7 @@ I liten skala kan det vara helt rimligt. Men när flödet får central verksamhe
 
 - Vem äger kontraktet?
 - Hur hanteras fel?
-- Finns retry och idempotens?
+- Finns återförsök och idempotens?
 - Hur övervakas flödet?
 - Vad händer när ett API ändras?
 - Hur testas förändringar?
@@ -716,7 +716,7 @@ Om den blivit ett kritiskt verksamhetssystem, en integrationslösning eller en l
 
 Återkommande lokala behov kan visa att det gemensamma erbjudandet behöver utvecklas.
 
-## Förmågan är mer än "kontors-IT"
+## Förmågan är mer än ”kontors-IT”
 
 Arbetsplats, samarbete och produktivitet kan verka mindre arkitekturellt än containerplattformar, integrationsmönster eller identitetsprotokoll. I praktiken är det ett område där organisationens tekniska och informationsmässiga styrmodell möter varje medarbetares vardag.
 

@@ -4,7 +4,7 @@ När ett tekniskt byggblock har fått ett tydligt tjänstekontrakt, definierat a
 
 En plattform kan vara tekniskt stabil och välförvaltad men ändå misslyckas därför att den löser fel problem, kräver för mycket specialkunskap, har långsam onboarding, erbjuder fel abstraheringsnivå eller utvecklas utifrån plattformsteamets interna teknikintressen snarare än konsumenternas vardag.
 
-**Platform as a Product** är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en roadmap som styrs av värde snarare än enbart teknisk önskelista.
+**Platform as a Product** är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en färdplan som styrs av värde snarare än enbart teknisk önskelista.
 
 Det betyder inte att en intern plattform är en kommersiell produkt eller att varje teknisk komponent behöver en produktchef. Det betyder att den som ansvarar för en viktig gemensam plattform måste behandla **konsumenternas förmåga att lyckas** som ett centralt resultat av plattformsarbetet.
 
@@ -62,7 +62,7 @@ För en Container Application Platform kan konsumenten exempelvis vara ett utvec
 
 Det viktiga är inte att plattformen har Kubernetes, OpenShift eller någon annan viss teknik. Det viktiga är hur väl plattformen minskar den återkommande friktionen runt dessa behov.
 
-Samma resonemang gäller för en databastjänst. Konsumenten behöver sällan "en PostgreSQL-instans" som slutmål. Teamet behöver snarare en **säker och förvaltad plats för relationell data med förutsägbara egenskaper**.
+Samma resonemang gäller för en databastjänst. Konsumenten behöver sällan ”en PostgreSQL-instans” som slutmål. Teamet behöver snarare en **säker och förvaltad plats för relationell data med förutsägbara egenskaper**.
 
 Produktperspektivet börjar därför med användningssituationen.
 
@@ -84,23 +84,23 @@ Dessa grupper kan behöva samma underliggande kapacitet men olika konsumtionsvä
 
 En plattform kan därför behöva formulera explicita målgrupper:
 
-> Primär målgrupp: team som bygger containeriserade stateless tjänster och vill ha standardiserad deployment, observability och identitetsintegration.
+> Primär målgrupp: team som bygger containeriserade stateless tjänster och vill ha standardiserad driftsättning, observerbarhet och identitetsintegration.
 
 > Sekundär målgrupp: team som kör schemalagda batch-workloads med liknande operativa behov.
 
-Det är bättre än att formulera plattformen som "lösningen för alla applikationer".
+Det är bättre än att formulera plattformen som ”lösningen för alla applikationer”.
 
 ## Börja med problem, inte features
 
-Plattformsroadmaps blir lätt featurelistor:
+Plattformsfärdplans blir lätt featurelistor:
 
 - stöd för ny runtime,
 - nytt dashboardverktyg,
 - ytterligare databasmotor,
 - ny portal,
-- fler deploymentalternativ.
+- fler driftsättningsalternativ.
 
-En produktorienterad roadmap bör i stället börja med problem och önskade utfall.
+En produktorienterad färdplan bör i stället börja med problem och önskade utfall.
 
 Exempel:
 
@@ -120,13 +120,13 @@ Möjliga lösningar:
 - bättre dokumentation
 ```
 
-Detta lämnar utrymme att välja den mest effektiva lösningen. Om man börjar med "bygg en portal" har man redan låst lösningen innan problemet är förstått.
+Detta lämnar utrymme att välja den mest effektiva lösningen. Om man börjar med ”bygg en portal” har man redan låst lösningen innan problemet är förstått.
 
 Principen **behov före teknik** gäller alltså lika mycket för plattformsteam som för lösningsarkitektur.
 
-## Developer Experience är ett arkitekturellt resultat
+## utvecklarupplevelse är ett arkitekturellt resultat
 
-För plattformar som riktar sig till utvecklingsteam är **Developer Experience**, ofta förkortat DX, en central del av produkten.
+För plattformar som riktar sig till utvecklingsteam är **utvecklarupplevelse**, ofta förkortat DX, en central del av produkten.
 
 DX handlar inte bara om att gränssnittet är snyggt. Det handlar om hur mycket kognitiv och administrativ belastning teamet behöver bära för att åstadkomma ett resultat.
 
@@ -147,7 +147,7 @@ En plattform kan därför vara tekniskt kraftfull men ha låg produktkvalitet om
 
 ## Kognitiv last är en kostnad
 
-När varje team behöver förstå detaljer om nätverk, certifikat, deployment, observability, backup, identiteter och underliggande klusterarkitektur används utvecklingskapacitet på frågor som kanske inte är verksamhetsdifferentierande.
+När varje team behöver förstå detaljer om nätverk, certifikat, driftsättning, observerbarhet, backup, identiteter och underliggande klusterarkitektur används utvecklingskapacitet på frågor som kanske inte är verksamhetsdifferentierande.
 
 En bra plattform tar inte bort allt ansvar. Den reducerar **onödig kognitiv last** genom att skapa rimliga standarder och abstrahera sådant som bäst hanteras gemensamt.
 
@@ -219,7 +219,7 @@ Tekniska SLO:er är fortfarande centrala. Men de bör kompletteras med mätetal 
 
 ## Mät användarresor
 
-Ett kraftfullt sätt att tänka är att beskriva de återkommande **user journeys** som plattformen ska stödja.
+Ett kraftfullt sätt att tänka är att beskriva de återkommande **användarresor** som plattformen ska stödja.
 
 För en databastjänst kan det vara:
 
@@ -227,7 +227,7 @@ För en databastjänst kan det vara:
 2. välja kvalitetsprofil,
 3. skapa instans,
 4. ansluta applikation,
-5. få observability,
+5. få observerbarhet,
 6. skala kapacitet,
 7. återställa data,
 8. uppgradera,
@@ -268,7 +268,7 @@ Ett återkommande avsteg kan exempelvis vara ett tecken på att konsumenterna in
 ```text
 Konsumentbeteende
        ↓
-Feedback och telemetry
+Feedback och telemetri
        ↓
 Produktinsikt
        ↓
@@ -278,11 +278,11 @@ Förbättrat erbjudande
        ↺
 ```
 
-## Roadmapen behöver balansera flera typer av arbete
+## Färdplanen behöver balansera flera typer av arbete
 
 Ett plattformsteam kan inte bara utveckla nya funktioner. Det behöver samtidigt bära teknisk och operativ hållbarhet.
 
-En realistisk roadmap behöver därför balansera åtminstone:
+En realistisk färdplan behöver därför balansera åtminstone:
 
 - konsumentdrivna förbättringar,
 - säkerhets- och compliancekrav,
@@ -293,7 +293,7 @@ En realistisk roadmap behöver därför balansera åtminstone:
 - förbättrad självservice,
 - support- och drifterfarenheter.
 
-Om roadmapen bara innehåller nya features kan plattformen bli svår att förvalta. Om den bara innehåller uppgraderingar och patchning utvecklas den till en intern infrastrukturfunktion utan tydlig produktutveckling.
+Om färdplanen bara innehåller nya features kan plattformen bli svår att förvalta. Om den bara innehåller uppgraderingar och patchning utvecklas den till en intern infrastrukturfunktion utan tydlig produktutveckling.
 
 ## Plattformsteamet behöver produktkompetens
 
@@ -308,9 +308,9 @@ Det behöver förmåga att:
 - designa konsumtionsupplevelser,
 - förvalta tekniken,
 - driva säkerhet och tillgänglighet,
-- kommunicera förändringar och roadmap.
+- kommunicera förändringar och färdplan.
 
-Det betyder inte att varje plattform behöver samma organisatoriska roller. Produktansvar kan ligga hos en produktägare, produktchef, teknisk produktledare eller annan tydligt utsedd funktion. Det viktiga är att ansvaret **finns** och inte reduceras till backlogadministration.
+Det innebär inte att varje plattform behöver samma organisatoriska roller. Produktansvar kan ligga hos en produktägare, produktchef, teknisk produktledare eller annan tydligt utsedd funktion. Det viktiga är att ansvaret **finns** och inte reduceras till backlogadministration.
 
 ## Produktansvar och förmågeansvar är inte samma sak
 
@@ -335,7 +335,7 @@ Produktansvaret för databastjänsten handlar mer konkret om:
 
 - målgrupp,
 - tjänstekontrakt,
-- roadmap,
+- färdplan,
 - adoption,
 - supportupplevelse,
 - teknisk realisering,
@@ -377,7 +377,7 @@ Ett plattformserbjudande bör kunna beskrivas med ett enkelt värdelöfte.
 
 Exempel:
 
-> Container Application Platform gör det möjligt för produktteam att driftsätta och operera standardiserade containeriserade tjänster utan att själva bygga klusterdrift, basobservability, identitetsintegration och grundläggande deploymentmekanismer.
+> Container Application Platform gör det möjligt för produktteam att driftsätta och operera standardiserade containeriserade tjänster utan att själva bygga klusterdrift, grundläggande observerbarhet, identitetsintegration och grundläggande driftsättningsmekanismer.
 
 Värdelöftet hjälper till att avgränsa produkten.
 
@@ -397,7 +397,7 @@ Produktteamet behöver därför förstå åtminstone:
 - kostnad för support och manuell hantering,
 - kostnad för att behålla gammal funktionalitet.
 
-Det betyder inte att all intern konsumtion måste faktureras. Men kostnadstransparens hjälper både plattformsteam och konsumenter att göra rationella val.
+Poängen är inte att all intern konsumtion måste faktureras. Men kostnadstransparens hjälper både plattformsteam och konsumenter att göra rationella val.
 
 En kvalitetsprofil med extremt hög tillgänglighet och mycket låg RPO kan exempelvis vara tekniskt möjlig men avsevärt dyrare. Produktmodellen behöver göra sådana samband begripliga.
 
@@ -413,7 +413,7 @@ En bra produkt behöver en tydlig riktning och kan därför behöva säga nej ti
 - requests som egentligen hör hemma i domänlösningen,
 - äldre funktionalitet som bör avvecklas.
 
-Ett nej bör däremot kunna förklaras utifrån produktens mål, målgrupp, kvaliteter och kostnader – inte bara genom att "plattformen inte stödjer det".
+Ett nej bör däremot kunna förklaras utifrån produktens mål, målgrupp, kvaliteter och kostnader – inte bara genom att ”plattformen inte stödjer det”.
 
 ## Escape hatches är en produktfråga
 
@@ -471,7 +471,7 @@ Här ligger produktansvaret:
 - målgrupp,
 - värdelöfte,
 - tjänstekontrakt,
-- roadmap,
+- färdplan,
 - användarresor,
 - kvalitetsprofiler,
 - adoption,
@@ -495,7 +495,7 @@ Den här separationen gör att plattformen kan vara produktorienterad utan att b
 
 ### Tekniken är produkten
 
-Roadmapen drivs av produktuppgraderingar och features i underliggande teknik snarare än konsumentproblem.
+Färdplanen drivs av produktuppgraderingar och features i underliggande teknik snarare än konsumentproblem.
 
 ### Captive customers tolkas som nöjda kunder
 
@@ -519,7 +519,7 @@ En portal byggs, men de underliggande arbetsflödena är fortfarande manuella, i
 
 ### Mätning utan produktinsikt
 
-Hundratals tekniska metrics samlas in men teamet vet fortfarande inte hur lång tid onboarding tar eller varför konsumenterna bygger egna lösningar.
+Hundratals tekniska mätvärden samlas in men teamet vet fortfarande inte hur lång tid onboarding tar eller varför konsumenterna bygger egna lösningar.
 
 ## En praktisk analysordning
 
@@ -535,7 +535,7 @@ När en organisation vill arbeta med Platform as a Product kan följande ordning
 8. Balansera ny funktionalitet mot säkerhet, livscykel och teknisk hållbarhet.
 9. Skapa kontinuerliga feedbackloopar.
 10. Tolka avsteg, workarounds och låg adoption som data.
-11. Gör roadmap och avvecklingsplan synliga för konsumenterna.
+11. Gör färdplan och avvecklingsplan synliga för konsumenterna.
 12. Ompröva målgrupp och produktgräns när behoven förändras.
 
 Det är inte en universell produktmetod. Det är ett praktiskt arbetssätt för att flytta en intern plattform från **teknik som tillhandahålls** till **en tjänst som aktivt utvecklas för att hjälpa andra team att lyckas**.

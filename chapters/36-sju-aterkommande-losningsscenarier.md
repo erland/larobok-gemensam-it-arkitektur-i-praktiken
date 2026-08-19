@@ -69,7 +69,7 @@ Interaktion, Identitet, Integration och Data är vanligen primära. Process och 
 
 Backend for Frontend kan vara relevant när den publika kanalens behov skiljer sig tydligt från bakomliggande domäntjänster. Tjänsteidentitet används mellan interna komponenter. Human workflow kan aktiveras när en inskickad ansökan går vidare till handläggning.
 
-Typiska plattformstjänster är webbframework, design system, extern identitet/federation där det behövs, API Management, databastjänster, objektlagring, containerplattform, observability och CI/CD.
+Typiska plattformstjänster är webbframework, design system, extern identitet/federation där det behövs, API Management, databastjänster, objektlagring, containerplattform, observerbarhet och CI/CD.
 
 ### Lokala val
 
@@ -97,11 +97,11 @@ Integration och kommunikation är primär, tillsammans med Data och Driftbarhet.
 
 ### Typiska mönster och plattformar
 
-Asynkron meddelandekommunikation och publicera/prenumerera blir ofta centrala. Tjänsteidentitet, observability och system of record/härledda kopior stödjer dem. API Management och Enterprise Messaging är typiska gemensamma erbjudanden, kompletterade med data integration/ETL eller strukturerade utbytestjänster där det finns sådana behov.
+Asynkron meddelandekommunikation och publicera/prenumerera blir ofta centrala. Tjänsteidentitet, observerbarhet och system of record/härledda kopior stödjer dem. API Management och Enterprise Messaging är typiska gemensamma erbjudanden, kompletterade med data integration/ETL eller strukturerade utbytestjänster där det finns sådana behov.
 
 ### Lokala val
 
-Varje integration måste fortfarande avgöra om kommunikationen ska vara synkron eller asynkron, kommando eller event, API eller fil, direkt eller via plattform. Ordering, idempotens, retry, dead-letter-hantering och kontraktskompatibilitet måste relateras till faktisk verksamhetseffekt.
+Varje integration måste fortfarande avgöra om kommunikationen ska vara synkron eller asynkron, kommando eller event, API eller fil, direkt eller via plattform. Ordering, idempotens, återförsök, dead-letter-hantering och kontraktskompatibilitet måste relateras till faktisk verksamhetseffekt.
 
 ### Vanligt felgrepp
 
@@ -125,11 +125,11 @@ Integration och Identitet/tillit är primära. Data och Driftbarhet är stödjan
 
 ### Typiska mönster och plattformar
 
-Asynkron meddelandekommunikation är ofta attraktiv när parterna inte kan förutsättas vara tillgängliga samtidigt. Tjänsteidentitet, PKI och observability blir viktiga. Gemensamma tjänster för säker myndighetskommunikation, strukturerat utbyte, managed file transfer eller messaging kan minska mängden lokal säkerhets- och protokollimplementation.
+Asynkron meddelandekommunikation är ofta attraktiv när parterna inte kan förutsättas vara tillgängliga samtidigt. Tjänsteidentitet, PKI och observerbarhet blir viktiga. Gemensamma tjänster för säker myndighetskommunikation, strukturerat utbyte, managed file transfer eller messaging kan minska mängden lokal säkerhets- och protokollimplementation.
 
 ### Lokala val
 
-API, message eller fil måste fortfarande väljas utifrån informationsmängd, tidskrav och motpartens kapacitet. Kötid, retry, kvittenstyper, ordering, certifikatlivscykel och incidentansvar behöver definieras explicit.
+API, message eller fil måste fortfarande väljas utifrån informationsmängd, tidskrav och motpartens kapacitet. Kötid, återförsök, kvittenstyper, ordering, certifikatlivscykel och incidentansvar behöver definieras explicit.
 
 ### Vanligt felgrepp
 
@@ -141,7 +141,7 @@ En containerbaserad tjänst är annorlunda än de föregående scenarierna efter
 
 ### Drivande behov
 
-Typiska behov är reproducerbar paketering, automatiserad deployment, skalning, standardiserad runtime, isolering, observability, secrets och snabb återstart.
+Typiska behov är reproducerbar paketering, automatiserad driftsättning, skalning, standardiserad runtime, isolering, observerbarhet, secrets och snabb återstart.
 
 ### Dominerande kvaliteter
 
@@ -153,7 +153,7 @@ Runtime, Programvaruutveckling och leverans samt Driftbarhet är primära. Ident
 
 ### Typiska mönster och plattformar
 
-Containeriserad stateless tjänst, build once/promote many, tjänsteidentitet och observability är typiska mönster. Source Code Management, CI/CD, Artifact Repository, Container Application Platform, Secrets Management och observabilitytjänster bildar ofta en paved road.
+Containeriserad stateless tjänst, build once/promote many, tjänsteidentitet och observerbarhet är typiska mönster. Source Code Management, CI/CD, Artifact Repository, Container Application Platform, Secrets Management och observerbarhetstjänster bildar ofta en paved road.
 
 ### Lokala val
 
@@ -183,7 +183,7 @@ Analys/sökning/AI, Data och Identitet är primära. Integration, Regler, Proces
 
 RAG är relevant när svar behöver grundas i kontrollerade källor. AI med mänsklig kontroll är relevant när resultatet kan få betydande konsekvens. Tjänsteidentitet behövs när AI-tjänsten anropar andra system. System of record/härledda kopior hjälper till att hålla index och embeddings separerade från auktoritativa källor.
 
-Managed LLM, RAG/Knowledge Service, Search/Indexing, API Management och observability kan vara gemensamma erbjudanden.
+Managed LLM, RAG/Knowledge Service, Search/Indexing, API Management och observerbarhet kan vara gemensamma erbjudanden.
 
 ### Lokala val
 
@@ -241,7 +241,7 @@ Flera slutsatser återkommer.
 
 För det första är **en plattform aldrig hela arkitekturen**. Containerplattformen löser exekveringsfrågan men inte verksamhetsgränserna. Produktivitetssviten löser samarbetsbehov men inte system-of-record-frågan. AI-plattformen löser modellåtkomst men inte tillitsfrågan.
 
-För det andra är **samma mönster olika viktigt i olika sammanhang**. Tjänsteidentitet och observability förekommer i många scenarier eftersom de är tvärgående mekanismer. Human workflow är däremot starkt situationsberoende. Att något finns i en referensarkitektur betyder därför inte att det ska användas i varje instans.
+För det andra är **samma mönster olika viktigt i olika sammanhang**. Tjänsteidentitet och observerbarhet förekommer i många scenarier eftersom de är tvärgående mekanismer. Human workflow är däremot starkt situationsberoende. Att något finns i en referensarkitektur betyder därför inte att det ska användas i varje instans.
 
 För det tredje blir **kvalitetsprofilen den viktigaste differentieraren mellan två lösningar inom samma scenario**. Två publika e-tjänster kan se lika ut funktionellt men behöva olika identitetsnivå, tillgänglighet, redundans och loggning. Två AI-stöd kan använda samma modell men kräva helt olika mänsklig kontroll beroende på konsekvensen av ett fel.
 

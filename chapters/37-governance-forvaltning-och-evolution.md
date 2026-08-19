@@ -91,7 +91,7 @@ Förmågeansvariga och plattformsteam utvecklar innehållet inom spelplanen. Der
 - definiera plattformserbjudanden och tjänstekontrakt,
 - föreslå eller besluta förmågespecifika tekniska standarder,
 - följa adoption, kvalitet och konsumentfeedback,
-- hantera roadmap och livscykel för plattformstjänster,
+- hantera färdplan och livscykel för plattformstjänster,
 - identifiera när en fråga behöver lyftas till gemensam nivå.
 
 Ett förmågeområde bör alltså inte bara äga dokumentation. Det behöver äga en faktisk förbättringsloop.
@@ -138,7 +138,7 @@ Det kan exempelvis innebära att:
 
 - ett gemensamt arkitekturråd äger de övergripande principerna,
 - förmågeansvariga äger vägledning och standarder inom sina områden,
-- plattformsteam äger tjänstekontrakt och produktroadmaps,
+- plattformsteam äger tjänstekontrakt och produktfärdplans,
 - produktteam fattar lokala designbeslut inom givna guardrails,
 - tvärgående frågor löses i tidsbegränsade grupper med berörda experter.
 
@@ -186,7 +186,7 @@ Ett avsteg bör därför behandlas som ett explicit arkitekturbeslut med minst:
 
 - vilken regel eller standard som frångås,
 - varför standardvägen inte möter behovet,
-- vilka kvaliteter eller constraints som driver avsteget,
+- vilka kvaliteter eller begränsningar som driver avsteget,
 - vilka risker och kostnader avsteget introducerar,
 - vem som accepterar konsekvenserna,
 - om avsteget är tidsbegränsat,
@@ -227,13 +227,13 @@ En enkel modell kan vara:
 | Förmågekarta | låg | förändrad verksamhets-/IT-struktur, nya återkommande behov |
 | Arkitekturprinciper | låg | återkommande konflikt eller systematiska avsteg |
 | Lösningsmönster | medel | nya erfarenheter, nya felmoder, ändrade plattformsmöjligheter |
-| Plattformstjänster | medel–hög | adoption, SLO, kostnad, produktroadmap, konsumentbehov |
+| Plattformstjänster | medel–hög | adoption, SLO, kostnad, produktfärdplan, konsumentbehov |
 | Standarder | medel–hög | tekniklivscykel, interoperabilitet, avsteg, säkerhetsläge |
 | Referensarkitekturer | medel | förändrade mönster, plattformar eller kvalitetskrav |
 
 Det är bättre att använda händelser och signaler än att mekaniskt skriva om allt en gång per år.
 
-## Telemetry visar om arkitekturen faktiskt används
+## Telemetri visar om arkitekturen faktiskt används
 
 En arkitekturmodell kan vara logiskt elegant och ändå sakna organisatoriskt värde. Därför behöver governance mäta mer än hur många dokument som är publicerade.
 
@@ -274,7 +274,7 @@ Många avsteg + samma motiv
 → standard eller plattform bör omprövas
 ```
 
-Det är först när telemetry kombineras med kvalitativ feedback som den blir användbar för arkitekturförvaltning.
+Det är först när telemetri kombineras med kvalitativ feedback som den blir användbar för arkitekturförvaltning.
 
 ## Documentation-as-code minskar glappet mellan beslut och verklighet
 
@@ -313,8 +313,8 @@ En standard som säger att en viss plattformsväg är rekommenderad kan exempelv
 - projektgenerator,
 - CI/CD-policy,
 - dependency checks,
-- observability-standarder,
-- kataloger och dashboards.
+- observerbarhetsstandarder,
+- kataloger och instrumentpaneler.
 
 Då minskar risken att dokumentationen säger en sak medan verktygen leder användaren åt ett annat håll.
 
@@ -381,7 +381,7 @@ Artefakter har ägare, status, review cadence och avstegsprocess. Förmåge- och
 
 ### Steg 4: Produktifierad och automatiserad
 
-Golden paths, självservice och policy-as-code gör de vanligaste besluten enkla att följa. Telemetry visar adoption och friktion.
+Golden paths, självservice och policy-as-code gör de vanligaste besluten enkla att följa. Telemetri visar adoption och friktion.
 
 ### Steg 5: Lärande
 
@@ -393,7 +393,7 @@ Mognadstrappan är bokens rekommenderade analysmodell, inte en extern standard.
 
 Den verkliga vinsten med en gemensam arkitekturmodell är inte att alla lösningar ser likadana ut. Den är att organisationen kan lära snabbare än varje enskilt team skulle kunna göra på egen hand.
 
-När ett team upptäcker att en viss retry-strategi skapar problem kan det förbättra ett gemensamt integrationsmönster. När flera team behöver samma plattformsegenskap kan erbjudandet utvecklas. När en standard skapar återkommande avsteg kan den omprövas. När en referensarkitektur visar sig sakna ett viktigt variation point kan nästa lösning dra nytta av erfarenheten.
+När ett team upptäcker att en viss återförsöksstrategi skapar problem kan det förbättra ett gemensamt integrationsmönster. När flera team behöver samma plattformsegenskap kan erbjudandet utvecklas. När en standard skapar återkommande avsteg kan den omprövas. När en referensarkitektur visar sig sakna ett viktigt variation point kan nästa lösning dra nytta av erfarenheten.
 
 Detta är arkitektur som institutionellt minne.
 
@@ -408,7 +408,7 @@ Hela kapitlet kan sammanfattas i en återkommande arbetscykel.
 3. **Gör standardvägen enkel.** Flytta återkommande beslut till plattformar, golden paths och automatiserade guardrails.
 4. **Låt lokala team fatta lokala beslut.** Eskalera bara när konsekvensen motiverar det.
 5. **Dokumentera betydelsefulla avsteg.** Koppla dem till behov, risk och omprövning.
-6. **Samla telemetry och feedback.** Mät användning, friktion, incidenter, kostnad och återkommande undantag.
+6. **Samla telemetri och feedback.** Mät användning, friktion, incidenter, kostnad och återkommande undantag.
 7. **Granska signaler, inte bara kalendern.** Prioritera de artefakter där verkligheten visar förändringsbehov.
 8. **Förbättra eller avveckla.** Uppdatera standarder, mönster, plattformar och referensarkitekturer när de inte längre fungerar.
 9. **Återför lärandet.** Gör erfarenheten återanvändbar för nästa lösning.
@@ -447,7 +447,7 @@ Organisationen har golden paths och policyer men saknar mekanism för att först
 
 ## Från gemensam arkitektur till gemensam förmåga att förändras
 
-Boken började med problemet att lokala teknikval och historiska lösningar lätt formar organisationens arkitektur mer än medvetna behov. Den har därefter byggt upp en modell där behov och kvaliteter kopplas till stabila IT-förmågor, där återkommande lösningsproblem fångas som mönster, där tekniska byggblock produktifieras som plattformstjänster, där standarder skapar guardrails och där referensarkitekturer ger återanvändbar struktur för återkommande lösningsklasser.
+Boken började med problemet att lokala teknikval och historiska lösningar lätt formar organisationens arkitektur mer än medvetna behov. Därefter har boken byggt upp en sammanhängande modell. Behov och kvaliteter kopplas till stabila IT-förmågor, återkommande lösningsproblem fångas som mönster och tekniska byggblock produktifieras som plattformstjänster. Standarder skapar guardrails, medan referensarkitekturer ger återanvändbar struktur för återkommande lösningsklasser.
 
 Men modellen är inte färdig när katalogerna är kompletta.
 
@@ -467,6 +467,6 @@ Governance för gemensam IT-arkitektur bör bygga på tydliga mandat, federerat 
 
 Avsteg ska vara möjliga men explicita. Återkommande avsteg, låg adoption, incidenter och supportfriktion ska betraktas som data om arkitekturmodellens kvalitet. Artefakter behöver tydligt ägarskap, livscykelstatus och en review cadence som motsvarar deras förändringstakt.
 
-När dokumentation, metadata, plattformar, golden paths och automatiserade guardrails hänger ihop kan governance flytta fokus från rutinmässiga godkännanden till verkliga systemfrågor och trade-offs. Den högsta mognadsnivån är inte maximal central kontroll utan ett lärande system där gemensam arkitektur kontinuerligt förbättras utifrån faktisk användning.
+När dokumentation, metadata, plattformar, golden paths och automatiserade guardrails hänger ihop kan governance flytta fokus från rutinmässiga godkännanden till verkliga systemfrågor och avvägningar. Den högsta mognadsnivån är inte maximal central kontroll utan ett lärande system där gemensam arkitektur kontinuerligt förbättras utifrån faktisk användning.
 
 Därmed sluts bokens cirkel: gemensam IT-arkitektur börjar i behov, men måste förvaltas som en levande förmåga att lära och förändras.

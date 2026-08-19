@@ -29,15 +29,15 @@ Etableringen bör i stället börja med frågor som:
 - var finns kompetens eller infrastruktur som är rationell att dela?
 - vilka delar behöver vara lokalt differentierade för att verksamheten ska kunna utvecklas snabbt?
 
-Det betyder inte att det befintliga landskapet ignoreras. Befintliga investeringar, avtal, kompetenser och tekniska beroenden är verkliga constraints. Men de ska beskriva **förutsättningarna för förändring**, inte definiera vilka behov organisationen har.
+Det betyder inte att det befintliga landskapet ignoreras. Befintliga investeringar, avtal, kompetenser och tekniska beroenden är verkliga begränsningar. Men de ska beskriva **förutsättningarna för förändring**, inte definiera vilka behov organisationen har.
 
-Den distinktionen från kapitel 3 blir särskilt viktig under etableringen. Ett konstaterande som "vi har en central integrationsplattform" är inte samma sak som "vi behöver förmåga till säker, spårbar och förändringsbar kommunikation mellan system". Det första beskriver en realisering. Det andra beskriver något organisationen behöver kunna åstadkomma även den dag dagens produkt har ersatts.
+Den distinktionen från kapitel 3 blir särskilt viktig under etableringen. Ett konstaterande som ”vi har en central integrationsplattform” är inte samma sak som ”vi behöver förmåga till säker, spårbar och förändringsbar kommunikation mellan system”. Det första beskriver en realisering. Det andra beskriver något organisationen behöver kunna åstadkomma även den dag dagens produkt har ersatts.
 
 ## En rekommenderad etableringsordning
 
 En praktisk etablering kan organiseras i nio steg:
 
-1. förstå återkommande behov och verkliga constraints,
+1. förstå återkommande behov och verkliga begränsningar,
 2. formulera gemensamma principer och kvalitetsdimensioner,
 3. skapa en tillräckligt bra första förmågekarta,
 4. avgränsa ansvar och beroenden,
@@ -49,7 +49,7 @@ En praktisk etablering kan organiseras i nio steg:
 
 Ordningen är avsiktlig, men den är inte ett vattenfall. Ett senare steg kommer ofta att visa att något tidigare behöver ändras. Det är inte ett misslyckande utan en förväntad del av arbetet.
 
-### 1. Förstå återkommande behov och constraints
+### 1. Förstå återkommande behov och begränsningar
 
 Det första målet är inte att skapa en fullständig kravkatalog. Målet är att förstå vilka problem som faktiskt återkommer på organisationsnivå.
 
@@ -66,9 +66,9 @@ En myndighet eller större organisation kan exempelvis se återkommande behov av
 - övervaka distribuerade lösningar,
 - erbjuda samarbets- och produktivitetsverktyg.
 
-Samtidigt behöver viktiga constraints göras synliga: lagkrav, informationsklassning, befintliga avtal, kompetens, nätförutsättningar, driftmiljöer, beroenden till externa aktörer och realistisk förändringstakt.
+Samtidigt behöver viktiga begränsningar göras synliga: lagkrav, informationsklassning, befintliga avtal, kompetens, nätförutsättningar, driftmiljöer, beroenden till externa aktörer och realistisk förändringstakt.
 
-Det viktiga är att hålla isär de två kategorierna. Behovet beskriver vad organisationen behöver kunna åstadkomma. Constrainten beskriver ett villkor som arkitekturen måste ta hänsyn till.
+Det viktiga är att hålla isär de två kategorierna. Behovet beskriver vad organisationen behöver kunna åstadkomma. Begränsningen beskriver ett villkor som arkitekturen måste ta hänsyn till.
 
 ### 2. Formulera gemensamma principer och kvalitetsdimensioner
 
@@ -76,7 +76,7 @@ Innan förmågekartan blir för detaljerad behöver organisationen ett litet ant
 
 Kvalitetsdimensionerna hjälper organisationen att ställa samma slags frågor över flera områden. Tillgänglighet, säkerhet, spårbarhet, interoperabilitet och förvaltningsbarhet behöver exempelvis inte betyda samma nivå överallt, men de behöver kunna diskuteras med ett gemensamt språk.
 
-Principerna uttrycker återkommande prioriteringar. "Behov före teknik", "problem löses på lämplig arkitekturnivå" och "ansvar och gränssnitt ska vara tydliga" påverkar hur själva etableringen genomförs.
+Principerna uttrycker återkommande prioriteringar. ”Behov före teknik”, ”problem löses på lämplig arkitekturnivå” och ”ansvar och gränssnitt ska vara tydliga” påverkar hur själva etableringen genomförs.
 
 Här bör ambitionen vara liten men användbar. En organisation som försöker besluta hundratals detaljer innan den har testat modellen riskerar att skapa en regelbok som saknar kontakt med det arbete den ska stödja.
 
@@ -112,7 +112,7 @@ För varje förmåga behöver därför några grundfrågor besvaras:
 
 Gränserna behöver inte vara perfekta. De behöver vara **diskuterbara**. En oklar gräns som är explicit dokumenterad är ofta lättare att hantera än två områden som båda antar att den andre ansvarar för frågan.
 
-Detta gäller särskilt tvärgående frågor. Säkerhet, kontinuitet, observability, informationshantering och livscykel går inte alltid att stoppa in i en enda organisatorisk låda. Det centrala blir då att skilja på vem som sätter gemensamma krav, vem som tillhandahåller mekanismer och vem som tillämpar dem i en konkret lösning.
+Detta gäller särskilt tvärgående frågor. Säkerhet, kontinuitet, observerbarhet, informationshantering och livscykel går inte alltid att stoppa in i en enda organisatorisk låda. Det centrala blir då att skilja på vem som sätter gemensamma krav, vem som tillhandahåller mekanismer och vem som tillämpar dem i en konkret lösning.
 
 ### 5. Utse ansvar för förmågorna
 
@@ -163,7 +163,7 @@ Det är i detta steg som den gemensamma arkitekturen börjar få konkret värde 
 
 ### 8. Identifiera tvärgående referensarkitekturer
 
-När flera förmågor utvecklats blir återkommande kombinationer synliga. En publik e-tjänst kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett internt handläggningsstöd kan kombinera workflow, regler, data, dokument, integration och observability.
+När flera förmågor utvecklats blir återkommande kombinationer synliga. En publik e-tjänst kan exempelvis återkommande behöva interaktion, identitet, integration, data, runtime och driftbarhet. Ett internt handläggningsstöd kan kombinera workflow, regler, data, dokument, integration och observerbarhet.
 
 När samma kombination och samma arkitekturella frågor återkommer kan en referensarkitektur vara mer användbar än att varje förmåga dokumenteras separat.
 
@@ -240,12 +240,12 @@ Teamet behöver kunna:
 - välja relevanta mönster och plattformstjänster,
 - kombinera erbjudanden från flera förmågor,
 - utforma domän- och lösningsspecifika delar,
-- göra explicita trade-offs,
+- göra explicita avvägningar,
 - dokumentera lokala arkitekturbeslut,
 - identifiera när ett gemensamt erbjudande inte räcker,
 - initiera ett motiverat avsteg när det behövs.
 
-Ett produktteam ska alltså inte behöva uppfinna tjänsteidentitet, observability eller containerplattform från grunden om organisationen redan erbjuder fungerande gemensamma lösningar. Men teamet måste fortfarande avgöra hur identiteter, loggning, driftkrav och runtime passar just den produktens behov.
+Ett produktteam ska alltså inte behöva uppfinna tjänsteidentitet, observerbarhet eller containerplattform från grunden om organisationen redan erbjuder fungerande gemensamma lösningar. Men teamet måste fortfarande avgöra hur identiteter, loggning, driftkrav och runtime passar just den produktens behov.
 
 ## Ansvar ska följa beslutets räckvidd
 
@@ -265,7 +265,7 @@ Etableringen behöver därför röra sig i två riktningar samtidigt.
 
 **Top-down** behövs för att skapa sammanhang:
 
-- gemensamma mål och constraints,
+- gemensamma mål och begränsningar,
 - principer,
 - kvalitetsdimensioner,
 - en första förmågestruktur,
@@ -290,7 +290,7 @@ Mognaden ligger i återkopplingen mellan dem.
 
 ## Undvik ett arkitekturvattenfall
 
-Det är därför missvisande att tänka att modellen ska "bli klar" innan den börjar användas.
+Det är därför missvisande att tänka att modellen ska ”bli klar” innan den börjar användas.
 
 En bättre etableringscykel är:
 

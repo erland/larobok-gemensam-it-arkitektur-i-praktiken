@@ -23,7 +23,7 @@ Underlaget innehåller bland annat:
 - säkerhet och andra kvaliteter som tvärgående egenskaper
 
 ## Områden att fördjupa i boken
-- arkitekturbeslut, trade-offs och ADR
+- arkitekturbeslut, avvägningar och ADR
 - skillnaden mellan verksamhetsförmågor och IT-stödjande förmågor
 - domän- och informationsarkitektur
 - kvalitetsattribut från verksamhetskonsekvens till mätbara krav

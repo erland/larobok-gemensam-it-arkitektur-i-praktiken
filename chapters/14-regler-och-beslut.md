@@ -35,7 +35,7 @@ Ett annat villkor kan vara:
 
 ```text
 om HTTP-anropet misslyckas med 503
-så försök igen enligt retry-policy
+så försök igen enligt återförsökspolicy
 ```
 
 Det är också en regel i vardagligt språk, men den hör inte hemma i förmågan Regler och beslut. Det är teknisk resilienslogik.
@@ -121,8 +121,8 @@ Det gemensamma kan då vara:
 - modellformat,
 - versionshantering,
 - test- och simulationsstöd,
-- deploymentmekanism,
-- audit och observability,
+- driftsättningsmekanism,
+- audit och observerbarhet,
 - API-principer,
 - verktygsstöd.
 
@@ -209,7 +209,7 @@ Poängen är inte tabellen i sig. Poängen är att **representationen passar den
 
 För vissa beslut passar ett beslutsträd bättre. För andra en beräkning, en sammansatt beslutsmodell eller vanlig kod.
 
-En arkitekt bör därför inte fråga "kan detta göras i en beslutstabell?" utan "vilken representation gör beslutets logik mest korrekt, begriplig och förvaltningsbar?".
+En arkitekt bör därför inte fråga ”kan detta göras i en beslutstabell?” utan ”vilken representation gör beslutets logik mest korrekt, begriplig och förvaltningsbar?”.
 
 ## DMN – en standardiserad beslutsnotation
 
@@ -251,7 +251,7 @@ Det kan ge flera fördelar:
 - en gemensam exekveringspunkt,
 - konsekvent användning av samma regelversion,
 - separat release av beslutet,
-- gemensam observability,
+- gemensam observerbarhet,
 - tydlig mätning av användning och fel,
 - möjlighet att centralisera vissa test- och auditfunktioner.
 
@@ -264,7 +264,7 @@ Om varje lokal beräkning måste göra ett synkront nätverksanrop till en centr
 - skalbarhet,
 - felhantering,
 - versionering av kontrakt,
-- deploymentberoenden,
+- driftsättningsberoenden,
 - geografiska eller säkerhetsmässiga begränsningar.
 
 Återanvändning genom tjänsteanrop är alltså inte automatiskt bättre än återanvändning genom gemensam modell, bibliotek eller distribuerad regelartefakt.
@@ -281,7 +281,7 @@ Då behöver arkitekturen skilja mellan exempelvis:
 
 - **modellversion** – vilken teknisk version av beslutsmodellen som används,
 - **giltighetsperiod** – när regeln verksamhetsmässigt gäller,
-- **deploymenttidpunkt** – när versionen blev tekniskt tillgänglig,
+- **driftsättningstidpunkt** – när versionen blev tekniskt tillgänglig,
 - **beslutstidpunkt** – när ett konkret beslut exekverades.
 
 Dessa är inte samma sak.
@@ -349,7 +349,7 @@ Då blir regelplattformen inte bara en exekveringsmotor utan ett verktyg för ko
 
 Externaliserade regler hamnar lätt i ett organisatoriskt mellanrum.
 
-Verksamheten kan tänka att "IT har implementerat reglerna". IT kan tänka att "verksamheten äger innehållet". När regelverket förändras blir det oklart vem som får besluta, vem som ska testa och vem som ansvarar för konsekvenserna.
+Verksamheten kan tänka att ”IT har implementerat reglerna”. IT kan tänka att ”verksamheten äger innehållet”. När regelverket förändras blir det oklart vem som får besluta, vem som ska testa och vem som ansvarar för konsekvenserna.
 
 Minst två ansvar behöver därför vara tydliga:
 
@@ -373,7 +373,7 @@ Det kan omfatta:
 - modellformat,
 - implementation,
 - testautomatisering,
-- deployment,
+- driftsättning,
 - prestanda,
 - audit,
 - versionshantering,
@@ -409,7 +409,7 @@ Utfall
 
 Exempelvis kan en modell beräkna en risksignal medan explicita regler avgör vilka åtgärder som får följa av signalen.
 
-Det betyder inte att denna struktur alltid är rätt. Men den gör ansvarsfördelningen tydlig: modellen producerar en bedömning; beslutslagret tillämpar explicita regler.
+Det innebär inte att denna struktur alltid är rätt. Men den gör ansvarsfördelningen tydlig: modellen producerar en bedömning; beslutslagret tillämpar explicita regler.
 
 Kapitel 16 återkommer till AI-specifika kvalitets- och styrningsfrågor.
 
@@ -506,9 +506,9 @@ Förmågeansvaret för Regler och beslut kan utveckla:
 - gemensam regel-/beslutsplattform,
 - modellerings- och teststöd,
 - golden paths,
-- standarder för deployment och versionering,
+- standarder för driftsättning och versionering,
 - stöd för simulering och beslutsmetadata,
-- integration mot process, data och observability.
+- integration mot process, data och observerbarhet.
 
 ### Lösning eller produkt
 
@@ -535,7 +535,7 @@ Regler från många orelaterade domäner samlas i samma globala regelverk. Ägar
 
 ### Verksamheten redigerar produktion direkt
 
-Målet "verksamheten ska kunna ändra regler utan IT" leder till att förändringar kan göras utan versionshantering, test, granskning eller kontrollerad deployment.
+Målet ”verksamheten ska kunna ändra regler utan IT” leder till att förändringar kan göras utan versionshantering, test, granskning eller kontrollerad driftsättning.
 
 ### Regeln dupliceras överallt
 
@@ -603,11 +603,11 @@ Hur upptäcks konflikter, luckor och oönskade effekter före driftsättning?
 
 ### 10. Planera version och giltighet
 
-Vad betyder det att en regelversion "gäller" och hur kopplas ett konkret beslut till rätt version?
+Vad betyder det att en regelversion ”gäller” och hur kopplas ett konkret beslut till rätt version?
 
 ### 11. Analysera driftsegenskaper
 
-Vilka krav finns på latens, tillgänglighet, volym, säkerhet och observability?
+Vilka krav finns på latens, tillgänglighet, volym, säkerhet och observerbarhet?
 
 ### 12. Jämför med vanlig kod igen
 
@@ -626,8 +626,8 @@ Ett konsumerbart stöd kan exempelvis bestå av:
 - versions- och giltighetsmodell,
 - test- och simulationsverktyg,
 - audit och beslutsmetadata,
-- observability,
-- säker deployment,
+- observerbarhet,
+- säker driftsättning,
 - exempel och golden paths,
 - integration mot workflow och API-plattform,
 - tydligt konsumentansvar för domänregler och informationskvalitet.

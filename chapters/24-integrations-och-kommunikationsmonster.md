@@ -12,11 +12,11 @@ Tre mönster från bokens grundmaterial står i centrum:
 - asynkron meddelandekommunikation,
 - publicera/prenumerera.
 
-Runt dem behöver vi dessutom förstå sådant som idempotens, ordering, retries, dead-letter-hantering, korrelation och kontraktsutveckling. Dessa är inte alltid egna lösningsmönster, men de är återkommande designmekanismer som avgör om mönstren fungerar robust i praktiken.
+Runt dem behöver vi dessutom förstå sådant som idempotens, ordering, återförsök, dead-letter-hantering, korrelation och kontraktsutveckling. Dessa är inte alltid egna lösningsmönster, men de är återkommande designmekanismer som avgör om mönstren fungerar robust i praktiken.
 
 ## Börja med den koppling du är beredd att acceptera
 
-Ett integrationsval skapar alltid någon form av koppling. Målet är därför inte "ingen koppling", utan **medveten och kontrollerad koppling**.
+Ett integrationsval skapar alltid någon form av koppling. Målet är därför inte ”ingen koppling”, utan **medveten och kontrollerad koppling**.
 
 Parter kan bland annat kopplas genom:
 
@@ -28,7 +28,7 @@ Parter kan bland annat kopplas genom:
 - **kapacitet** – måste båda kunna hantera samma belastningstopp samtidigt?
 - **förändring** – behöver en ändring hos den ena samordnas med den andra?
 
-Detta ger en bättre utgångspunkt än frågor som "ska vi använda REST eller Kafka?". Tekniken kan realisera ett valt mönster, men den avgör inte vilket beroende verksamheten faktiskt behöver.
+Detta ger en bättre utgångspunkt än frågor som ”ska vi använda REST eller Kafka?”. Tekniken kan realisera ett valt mönster, men den avgör inte vilket beroende verksamheten faktiskt behöver.
 
 En synkron begäran kan vara rätt när den som anropar inte kan fortsätta utan ett omedelbart svar. Asynkron messaging kan vara rätt när arbete får utföras senare och tillgänglighetstoppar behöver absorberas. Publicera/prenumerera kan vara rätt när producenten ska uttrycka ett faktum utan att styra vilka andra delar som reagerar på det.
 
@@ -50,7 +50,7 @@ Domän- och plattformstjänster
 
 BFF-lagret kan exempelvis:
 
-- aggregera data från flera backendtjänster,
+- aggregera data från flera backend-tjänster,
 - anpassa dataformat för en viss klienttyp,
 - minska antalet nätverksanrop från klienten,
 - hantera klientnära sessions- eller autentiseringsflöden,
@@ -69,7 +69,7 @@ Mönstret passar därför sämre om lagret enbart vidarebefordrar varje anrop ut
 
 ### BFF får inte bli en ny monolit
 
-Ett vanligt misslyckande är att lägga all "bekväm" logik i BFF-lagret. Då kan lagret successivt börja innehålla:
+Ett vanligt misslyckande är att lägga all ”bekväm” logik i BFF-lagret. Då kan lagret successivt börja innehålla:
 
 - verksamhetsregler,
 - gemensam domänlogik,
@@ -139,13 +139,13 @@ Det gör idempotens central för många integrationsmönster.
 
 En operation är idempotent i praktisk integrationsmening när samma logiska begäran kan behandlas igen utan att den avsedda verksamhetseffekten upprepas felaktigt.
 
-Om kommandot "Registrera betalning" levereras två gånger ska det exempelvis inte automatiskt skapa två betalningar. Lösningen kan behöva ett stabilt meddelande- eller operations-id och en mekanism som känner igen redan behandlade operationer.
+Om kommandot ”Registrera betalning” levereras två gånger ska det exempelvis inte automatiskt skapa två betalningar. Lösningen kan behöva ett stabilt meddelande- eller operations-id och en mekanism som känner igen redan behandlade operationer.
 
 Idempotens är inte detsamma som att ignorera alla dubbletter. I vissa domäner kan två till synes identiska händelser vara två verkliga verksamhetshändelser. Det är därför den **logiska identiteten** för operationen som behöver modelleras, inte bara dess payload.
 
-## Retry – återförsök bara sådant som kan lyckas senare
+## Återförsök – återförsök bara sådant som kan lyckas senare
 
-Retry är en mekanism, inte en universell felhantering.
+Återförsök är en mekanism, inte en universell felhantering.
 
 Ett återförsök är meningsfullt när felet sannolikt är tillfälligt, exempelvis:
 
@@ -153,7 +153,7 @@ Ett återförsök är meningsfullt när felet sannolikt är tillfälligt, exempe
 - tillfällig överbelastning,
 - en beroendetjänst som håller på att starta om.
 
-Retry hjälper inte när felet är permanent:
+Återförsök hjälper inte när felet är permanent:
 
 - kontraktet är ogiltigt,
 - obligatoriska data saknas,
@@ -162,7 +162,7 @@ Retry hjälper inte när felet är permanent:
 
 Oreflekterade återförsök kan tvärtom förstärka en incident. Om hundratals konsumenter omedelbart försöker igen mot en överbelastad tjänst ökar belastningen precis när kapaciteten är som lägst.
 
-Robust retry behöver därför normalt ta ställning till:
+Robust återförsök behöver därför normalt ta ställning till:
 
 - vilka fel som är återförsökningsbara,
 - hur många försök som får göras,
@@ -191,7 +191,7 @@ En dead-letter-kö som ingen övervakar är inte en felhanteringsstrategi. Den �
 
 ## Ordering – betala bara för ordning när ordningen betyder något
 
-Ordering är en typisk integrationsfråga där ett generellt "starkare" beteende kan vara dyrare än verksamheten behöver.
+Ordering är en typisk integrationsfråga där ett generellt ”starkare” beteende kan vara dyrare än verksamheten behöver.
 
 I vissa flöden är ordningen central. Om en statusövergång från `Skapad` till `Godkänd` måste behandlas före `Avslutad` kan omkastning ge ett semantiskt fel.
 
@@ -226,7 +226,7 @@ Detta är en stark egenskap när händelsen uttrycker ett **redan inträffat fak
 - `BeslutFattat`,
 - `LeveransMottagen`.
 
-Producenten säger då i princip: "detta har hänt". Konsumenterna avgör själva vad det betyder för dem.
+Producenten säger då i princip: ”detta har hänt”. Konsumenterna avgör själva vad det betyder för dem.
 
 ### Event är inte ett förklätt kommando
 
@@ -286,14 +286,14 @@ Korrelation används för att kunna relatera meddelanden och händelser till ett
 - en processinstans,
 - en teknisk trace.
 
-Det kan finnas flera relevanta identiteter samtidigt. Ett `correlation-id` för observability är inte nödvändigtvis samma sak som verksamhetens ärende-id, och ett meddelande-id har ett annat syfte än båda.
+Det kan finnas flera relevanta identiteter samtidigt. Ett `correlation-id` för observerbarhet är inte nödvändigtvis samma sak som verksamhetens ärende-id, och ett meddelande-id har ett annat syfte än båda.
 
 En robust lösning skiljer därför mellan:
 
 - **meddelandets identitet** – vilket enskilt meddelande är detta?
 - **operationens identitet** – vilken logisk begäran representeras?
 - **verksamhetskorrelation** – vilket ärende eller aggregat hör det till?
-- **teknisk trace-korrelation** – hur följs exekveringskedjan i observabilityverktyg?
+- **teknisk trace-korrelation** – hur följs exekveringskedjan i observerbarhetsverktyg?
 
 Om alla dessa pressas in i ett enda fält blir betydelsen snabbt oklar.
 
@@ -314,7 +314,7 @@ Ett kontrakt består inte bara av JSON-, XML- eller meddelandeschema. Det omfatt
 
 När det är möjligt bör kontrakt utvecklas genom förändringar som befintliga konsumenter kan tåla. Exempel kan vara att lägga till ny information som äldre konsumenter kan ignorera.
 
-Men "bakåtkompatibel" är inte bara en schemafråga. Ett nytt fält kan tekniskt vara valfritt men ändå ändra innebörden av hela meddelandet. Semantisk kompatibilitet behöver därför bedömas separat.
+Men ”bakåtkompatibel” är inte bara en schemafråga. Ett nytt fält kan tekniskt vara valfritt men ändå ändra innebörden av hela meddelandet. Semantisk kompatibilitet behöver därför bedömas separat.
 
 ### Parallella versioner har en kostnad
 
@@ -356,7 +356,7 @@ Varje övergång har olika syfte:
 - det asynkrona kommandot bryter tidskoppling för ett arbete som får utföras senare,
 - eventet informerar oberoende konsumenter om ett inträffat faktum.
 
-Det är viktigt att inte beskriva hela kedjan som "eventdriven" och därmed förlora skillnaden mellan dessa ansvar.
+Det är viktigt att inte beskriva hela kedjan som ”eventdriven” och därmed förlora skillnaden mellan dessa ansvar.
 
 ### Mönsterkombinationer skapar nya krafter
 
@@ -373,7 +373,7 @@ Ett korrekt valt mönster lokalt garanterar alltså inte en bra arkitektur globa
 
 ## Exakt en gång är ofta fel fråga
 
-I integrationsdiskussioner dyker ofta önskemålet "exactly once" upp. Bakom det finns vanligtvis ett legitimt verksamhetskrav: en verksamhetseffekt får inte uppstå dubbelt.
+I integrationsdiskussioner dyker ofta önskemålet ”exactly once” upp. Bakom det finns vanligtvis ett legitimt verksamhetskrav: en verksamhetseffekt får inte uppstå dubbelt.
 
 Det är bättre att formulera just det kravet än att börja med en transportegenskap.
 
@@ -385,7 +385,7 @@ En robust lösning kan exempelvis kombinera:
 - transaktionell lokal hantering,
 - tydlig återställningsprocedur.
 
-Ur verksamhetens perspektiv kan detta ge den önskade effekten utan att hela den distribuerade kedjan måste lova ett absolut "exakt en gång"-beteende.
+Ur verksamhetens perspektiv kan detta ge den önskade effekten utan att hela den distribuerade kedjan måste lova ett absolut ”exakt en gång”-beteende.
 
 Poängen är inte att en viss leveranssemantik alltid är rätt, utan att **verksamhetseffekten ska beskrivas först** och den tekniska mekanismen därefter.
 
@@ -414,7 +414,7 @@ Organisationen kan erbjuda gemensamma tjänster för exempelvis:
 - messaging,
 - eventdistribution,
 - schema- eller kontraktsregister,
-- observability,
+- observerbarhet,
 - identitets- och certifikathantering.
 
 Dessa tjänster kan göra rätt mönster enklare att använda och ge gemensamma guardrails. Men plattformen bör inte tvinga alla integrationsbehov in i samma mönster.
@@ -433,7 +433,7 @@ Den gemensamma nivån bör definiera sådant som behöver vara konsekvent över 
 
 - gemensamma principer för kontraktsägarskap,
 - grundläggande integrationsmönster och deras användningsområden,
-- krav på säkerhet, spårbarhet och observability,
+- krav på säkerhet, spårbarhet och observerbarhet,
 - miniminivå för kontraktslivscykel,
 - gemensamma mekanismer för identitet och kommunikation över organisationsgränser.
 
@@ -446,8 +446,8 @@ De som ansvarar för Integration och kommunikation bör fördjupa exempelvis:
 - mönsterbeskrivningar,
 - standardprofiler,
 - plattformserbjudanden för API och messaging,
-- vägledning för retries, dead-letter och kontraktsutveckling,
-- observabilitykrav för integrationsflöden,
+- vägledning för återförsök, dead-letter och kontraktsutveckling,
+- observerbarhetskrav för integrationsflöden,
 - stöd för onboarding och felsökning.
 
 Förmågeansvaret gör mönstren användbara i praktiken.
@@ -470,13 +470,13 @@ Detta kan inte central nivå besluta utan kunskap om domänen.
 
 ### Allt blir event
 
-Organisationen bestämmer att arkitekturen ska vara "eventdriven" och börjar publicera varje intern förändring som event. Resultatet blir stora mängder tekniska notifieringar utan tydligt domänansvar.
+Organisationen bestämmer att arkitekturen ska vara ”eventdriven” och börjar publicera varje intern förändring som event. Resultatet blir stora mängder tekniska notifieringar utan tydligt domänansvar.
 
 **Motfråga:** vilket faktum behöver en oberoende konsument faktiskt reagera på?
 
 ### Asynkront för att slippa hantera fel
 
-Ett synkront beroende ersätts med kö för att "bli robust" men ingen definierar retry, dead-letter, status eller kompensation.
+Ett synkront beroende ersätts med kö för att ”bli robust” men ingen definierar återförsök, dead-letter, status eller kompensation.
 
 **Konsekvens:** felet flyttas i tid men blir svårare att förstå.
 
@@ -486,7 +486,7 @@ BFF börjar äga regler och data som egentligen är gemensamma för flera kanale
 
 **Konsekvens:** verksamhetslogiken dupliceras och kanalarkitekturen styr domänmodellen.
 
-### Retry utan idempotens
+### Återförsök utan idempotens
 
 Samma operation kan utföras flera gånger när mottagaren lyckades men svaret eller acknowledgements försvann.
 
@@ -506,7 +506,7 @@ Alla meddelanden serialiseras trots att verksamheten endast behöver lokal ordni
 
 ### Event som dolt RPC
 
-Producenten publicerar ett "event" som i själva verket instruerar en namngiven konsument att göra något.
+Producenten publicerar ett ”event” som i själva verket instruerar en namngiven konsument att göra något.
 
 **Konsekvens:** stark semantisk koppling döljs bakom asynkron transport.
 
@@ -542,9 +542,9 @@ Vad betyder meddelandet eller API-operationen? Vem äger betydelsen? Vad är ett
 
 ### 6. Definiera leverans- och felbeteende
 
-Behövs retry? Hur uppnås idempotens? Finns orderingkrav? Vad händer efter sista försöket?
+Behövs återförsök? Hur uppnås idempotens? Finns orderingkrav? Vad händer efter sista försöket?
 
-### 7. Definiera korrelation och observability
+### 7. Definiera korrelation och observerbarhet
 
 Hur följs flödet tekniskt och verksamhetsmässigt över systemgränser?
 
@@ -564,6 +564,6 @@ Verifiera inte bara happy path. Testa dubbletter, omkastad ordning, timeout, oti
 
 Integrations- och kommunikationsmönster handlar om att forma beroenden mellan självständiga delar. Backend for Frontend isolerar kanalnära variationer från domän- och backendstrukturen. Asynkron meddelandekommunikation minskar tidskoppling och kan absorbera variation i tillgänglighet och belastning. Publicera/prenumerera gör det möjligt att uttrycka inträffade fakta till flera oberoende konsumenter utan att producenten behöver styra deras beteende.
 
-Mönstrens värde avgörs dock av detaljerna runt omkring dem. Idempotens, retries, dead-letter-hantering, ordering, korrelation och kontraktsutveckling är avgörande för om en lösning blir robust eller bara mer distribuerad.
+Mönstrens värde avgörs dock av detaljerna runt omkring dem. Idempotens, återförsök, dead-letter-hantering, ordering, korrelation och kontraktsutveckling är avgörande för om en lösning blir robust eller bara mer distribuerad.
 
 Det viktigaste är därför inte att standardisera ett enda integrationssätt. Det är att skapa ett gemensamt språk för **vilken relation man vill ha**, vilka krafter som behöver balanseras och vilka konsekvenser varje mönster medför. När detta kombineras med gemensamma plattformstjänster och guardrails kan lösningsteamen återanvända arkitekturell erfarenhet utan att förlora domänansvar och lokal beslutskraft.

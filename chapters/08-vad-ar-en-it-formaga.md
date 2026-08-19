@@ -171,7 +171,7 @@ Förmågan är ett sätt att samla ett relativt stabilt problemområde så att b
 
 En av de svåraste praktiska frågorna är granulariteten.
 
-Om kartan är för grov blir den svår att använda. En enda förmåga som heter ”Teknisk plattform” kan rymma runtime, integration, identitet, data, observability och leverans. Nästan alla frågor hamnar då i samma ruta och kartan hjälper inte till att fördela ansvar eller analysera behov.
+Om kartan är för grov blir den svår att använda. En enda förmåga som heter ”Teknisk plattform” kan rymma runtime, integration, identitet, data, observerbarhet och leverans. Nästan alla frågor hamnar då i samma ruta och kartan hjälper inte till att fördela ansvar eller analysera behov.
 
 Om kartan är för detaljerad uppstår motsatt problem. Om varje protokoll, databasfunktion, utvecklingsverktyg och driftmekanism blir en egen förmåga får organisationen i praktiken en teknik- eller tjänstekatalog med ett nytt namn.
 

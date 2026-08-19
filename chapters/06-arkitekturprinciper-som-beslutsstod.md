@@ -58,7 +58,7 @@ Skillnaden kan förenklas så här:
 | Plattformserbjudande | Vilken gemensam tjänst kan konsumeras? | API Management. |
 | Lokalt beslut | Vad väljer vi i just denna lösning? | Använd erbjudandet för dessa API:er. |
 
-En princip som försöker innehålla produktnamn, versionsnummer och detaljerade implementationer blir därför ofta för kortlivad. Omvänt blir en princip som bara säger att organisationen ska "bygga bra och säkra lösningar" så allmän att den inte hjälper någon att välja.
+En princip som försöker innehålla produktnamn, versionsnummer och detaljerade implementationer blir därför ofta för kortlivad. Omvänt blir en princip som bara säger att organisationen ska ”bygga bra och säkra lösningar” så allmän att den inte hjälper någon att välja.
 
 Den användbara nivån ligger mellan dessa ytterligheter.
 
@@ -74,17 +74,17 @@ En användbar arkitekturprincip bör normalt ha flera egenskaper.
 
 En princip bör säga något som faktiskt kan påverka ett val.
 
-"Vi ska använda lämplig teknik" är nästan omöjlig att invända mot, men hjälper inte när två alternativ konkurrerar.
+”Vi ska använda lämplig teknik” är nästan omöjlig att invända mot, men hjälper inte när två alternativ konkurrerar.
 
-"Behov före teknik" uttrycker däremot en verklig prioritering: behov och kvalitetskrav ska styra formuleringen av problemet före dagens produktlandskap.
+”Behov före teknik” uttrycker däremot en verklig prioritering: behov och kvalitetskrav ska styra formuleringen av problemet före dagens produktlandskap.
 
-Det betyder inte att befintlig teknik ignoreras. Kapitel 3 visade att installerad teknik kan vara en verklig constraint eller ett ekonomiskt relevant alternativ. Principen säger däremot att tekniken inte automatiskt får definiera behovet.
+Det betyder inte att befintlig teknik ignoreras. Kapitel 3 visade att installerad teknik kan vara en verklig begränsning eller ett ekonomiskt relevant alternativ. Principen säger däremot att tekniken inte automatiskt får definiera behovet.
 
 ### Den ska vara tillräckligt stabil
 
 En gemensam princip bör normalt överleva fler produktgenerationer än en teknisk standard.
 
-Om organisationen byter containerplattform behöver principen "separera stabil arkitektur från föränderlig teknik" fortfarande vara meningsfull. En princip som säger "alla tjänster ska köras i produkt X" gör det inte.
+Om organisationen byter containerplattform behöver principen ”separera stabil arkitektur från föränderlig teknik” fortfarande vara meningsfull. En princip som säger ”alla tjänster ska köras i produkt X” gör det inte.
 
 Detta hänger ihop med metamodellen i kapitel 2. Ju högre upp ett artefaktslag ligger i abstraktionskedjan, desto större skäl finns att hålla det relativt oberoende av dagens realisering.
 
@@ -94,15 +94,15 @@ En princip bör göra det möjligt att fråga:
 
 > Om vi tar den här principen på allvar, vad förändras då i vårt beslut?
 
-Om svaret är "ingenting" är formuleringen sannolikt för vag.
+Om svaret är ”ingenting” är formuleringen sannolikt för vag.
 
-Principen "livscykel och förvaltning beaktas vid beslut" kan exempelvis innebära att ett tekniskt alternativ med snabbare initial utveckling ändå väljs bort om det medför oproportionerligt hög förvaltningskostnad, svår uppgradering eller oacceptabel leverantörsrisk.
+Principen ”livscykel och förvaltning beaktas vid beslut” kan exempelvis innebära att ett tekniskt alternativ med snabbare initial utveckling ändå väljs bort om det medför oproportionerligt hög förvaltningskostnad, svår uppgradering eller oacceptabel leverantörsrisk.
 
 ### Den ska kunna användas tillsammans med andra principer
 
 Principer verkar sällan ensamma.
 
-"Återanvändning före lokal speciallösning" kan tala för ett gemensamt erbjudande. "Standardiserade erbjudanden när de möter behovet" lägger samtidigt in ett viktigt villkor: återanvändning är inte ett självändamål.
+”Återanvändning före lokal speciallösning” kan tala för ett gemensamt erbjudande. ”Standardiserade erbjudanden när de möter behovet” lägger samtidigt in ett viktigt villkor: återanvändning är inte ett självändamål.
 
 Om standarderbjudandet inte klarar lösningens centrala kvalitetskrav kan ett avsteg vara rationellt.
 
@@ -116,7 +116,7 @@ De är inte universella regler som varje organisation måste använda ordagrant.
 
 ## 1. Behov före teknik
 
-Principen säger i korthet att tekniska lösningar och tekniska krav ska härledas från identifierade behov, kvalitetskrav och verkliga constraints.
+Principen säger i korthet att tekniska lösningar och tekniska krav ska härledas från identifierade behov, kvalitetskrav och verkliga begränsningar.
 
 Den motverkar ett vanligt mönster:
 
@@ -135,7 +135,7 @@ I stället eftersträvas:
 ```text
 Verksamhetsbehov och kvalitetskrav
               ↓
-      Relevanta constraints
+      Relevanta begränsningar
               ↓
         Arkitekturalternativ
               ↓
@@ -150,7 +150,7 @@ Kapitel 3 behandlade denna princip i detalj. I principuppsättningen fungerar de
 
 En organisation investerar ofta betydande resurser i gemensamma plattformar, tjänster och standarder. Om varje team ändå bygger egna varianter går skalfördelar, säkerhetsarbete och samlad kompetens förlorade.
 
-Det betyder inte att det gemensamma alltid ska användas.
+Det innebär inte att det gemensamma alltid ska användas.
 
 Den avgörande delen av principen är **när de möter behovet**.
 
@@ -213,7 +213,7 @@ Säkerhet, tillgänglighet, kontinuitet, spårbarhet, användbarhet och andra re
 
 De behöver påverka arkitekturen från början.
 
-Detta är särskilt viktigt för kvaliteter som skär genom flera lager. Om säkerhet behandlas som ett separat teknikområde riskerar den att reduceras till komponenter vid sidan av den egentliga lösningen. Samma sak gäller driftbarhet: loggning, metrics, tracing, larm och återställningsförmåga blir betydligt dyrare att lägga till när systemets struktur redan är låst.
+Detta är särskilt viktigt för kvaliteter som skär genom flera lager. Om säkerhet behandlas som ett separat teknikområde riskerar den att reduceras till komponenter vid sidan av den egentliga lösningen. Samma sak gäller driftbarhet: loggning, mätvärden, tracing, larm och återställningsförmåga blir betydligt dyrare att lägga till när systemets struktur redan är låst.
 
 Principen betyder inte att alla lösningar ska ha samma säkerhets- eller tillgänglighetsnivå. Nivån ska fortfarande härledas från behov och konsekvens. Det som ska vara gemensamt är att relevanta kvaliteter beaktas som en del av designen.
 
@@ -231,7 +231,7 @@ Då har en viss produkt byggts in i förmågedefinitionen.
 
 En stabilare formulering är:
 
-> Förmåga att exekvera och drifta applikationer med definierade egenskaper för isolering, skalning, deployment och driftbarhet.
+> Förmåga att exekvera och drifta applikationer med definierade egenskaper för isolering, skalning, driftsättning och driftbarhet.
 
 OpenShift kan vara dagens realisering, men förmågan kan bestå även om produkten ersätts.
 
@@ -252,7 +252,7 @@ När flera team behöver liknande funktioner kan gemensamma komponenter, tjänst
 
 Men principen behöver läsas tillsammans med behovsprincipen och principen om standardiserade erbjudanden.
 
-Återanvändning är rationell när det återanvända faktiskt möter behovet. En lokal speciallösning kan vara berättigad när verksamhetsbehov, kvalitetskrav, juridiska förutsättningar eller andra constraints avviker på ett sätt som det gemensamma erbjudandet inte stödjer.
+Återanvändning är rationell när det återanvända faktiskt möter behovet. En lokal speciallösning kan vara berättigad när verksamhetsbehov, kvalitetskrav, juridiska förutsättningar eller andra begränsningar avviker på ett sätt som det gemensamma erbjudandet inte stödjer.
 
 Det viktiga är att skillnaden är verklig och synlig, inte bara uttryck för lokal vana eller preferens.
 
@@ -268,7 +268,7 @@ Det kan gälla:
 
 - byggprocesser,
 - test,
-- deployment,
+- driftsättning,
 - infrastruktur,
 - konfiguration,
 - policykontroller,
@@ -348,7 +348,7 @@ Om det gemensamma erbjudandet klarar volym, latens, leveransgarantier och driftk
 
 Om det inte gör det kan samma principuppsättning stödja ett avsteg. Behovet och kvalitetskraven väger då tyngre än återanvändning för återanvändningens skull.
 
-Detta är viktigt: **principerna ska göra resonemanget mer konsekvent, inte eliminera trade-offs**.
+Detta är viktigt: **principerna ska göra resonemanget mer konsekvent, inte eliminera avvägningar**.
 
 Kapitel 5 behövs fortfarande. En principuppsättning är inte en beslutsmotor som automatiskt producerar rätt svar.
 
@@ -358,7 +358,7 @@ Organisationer frestas ibland att numrera principer och sedan anta att P1 alltid
 
 Det kan vara praktiskt i vissa mycket specifika sammanhang, men en generell rangordning blir ofta konstgjord.
 
-Behov före teknik är exempelvis grundläggande, men det betyder inte att kostnad, regulatoriska constraints eller befintliga strategiska investeringar saknar betydelse. Säkerhet som inbyggd kvalitet är viktig, men den konkreta säkerhetsnivån måste fortfarande stå i proportion till information, hot och konsekvens.
+Behov före teknik är exempelvis grundläggande, men det betyder inte att kostnad, regulatoriska begränsningar eller befintliga strategiska investeringar saknar betydelse. Säkerhet som inbyggd kvalitet är viktig, men den konkreta säkerhetsnivån måste fortfarande stå i proportion till information, hot och konsekvens.
 
 Det är därför ofta bättre att se principerna som **gemensamma utgångspunkter med tydlig motivering**, inte som en mekanisk prioriteringslista.
 
@@ -366,7 +366,7 @@ När två principer drar åt olika håll behöver det konkreta beslutet återgå
 
 1. behovet,
 2. kvalitetskraven,
-3. constraints,
+3. begränsningar,
 4. riskerna,
 5. beslutets konsekvenser.
 
@@ -396,7 +396,7 @@ Exempel:
 
 **Motivering:** Om dagens produktlandskap får definiera morgondagens krav cementeras historiska begränsningar och alternativa realiseringar blir svåra att utvärdera.
 
-**Konsekvenser:** Behov och kvalitetskrav ska formuleras innan produktval. Produktbegränsningar får behandlas som constraints när de verkligen är bindande, men ska inte automatiskt generaliseras till alla lösningar.
+**Konsekvenser:** Behov och kvalitetskrav ska formuleras innan produktval. Produktbegränsningar får behandlas som begränsningar när de verkligen är bindande, men ska inte automatiskt generaliseras till alla lösningar.
 
 Detta format gör principen lättare att använda än enbart ett slagord.
 
@@ -404,7 +404,7 @@ I vissa organisationer läggs även exempel, implikationer, ägare eller relater
 
 ## För många principer är nästan lika illa som inga
 
-Om en organisation har femtio eller hundra "principer" uppstår ett praktiskt problem: nästan ingen kan minnas eller använda dem i vardagliga beslut.
+Om en organisation har femtio eller hundra ”principer” uppstår ett praktiskt problem: nästan ingen kan minnas eller använda dem i vardagliga beslut.
 
 Det är ofta ett tecken på att flera olika artefakttyper har blandats ihop.
 
@@ -419,7 +419,7 @@ Vissa formuleringar kanske egentligen är:
 
 En liten uppsättning starka arkitekturprinciper kan vara mer styrande än en stor lista av detaljregler eftersom de är lättare att internalisera och använda i nya situationer.
 
-Det betyder inte att organisationen ska ha få tekniska regler. Det betyder att de tekniska reglerna bör ligga där de hör hemma – exempelvis i standarder och tjänstekontrakt – i stället för att kallas principer.
+Poängen är inte att organisationen ska ha få tekniska regler. Det betyder att de tekniska reglerna bör ligga där de hör hemma – exempelvis i standarder och tjänstekontrakt – i stället för att kallas principer.
 
 ## Principer på olika nivåer
 
@@ -448,7 +448,7 @@ Sådana principer bör vara förenliga med de gemensamma principerna men får va
 
 ### Lösnings-/produktnivå
 
-Här behövs normalt färre långlivade "principer" och fler konkreta arkitekturbeslut.
+Här behövs normalt färre långlivade ”principer” och fler konkreta arkitekturbeslut.
 
 Ett produktteam kan naturligtvis ha lokala designprinciper, men de ska inte automatiskt upphöjas till organisationsgemensam arkitektur. Det som är optimalt för en lösning är inte nödvändigtvis ett generellt mönster.
 
@@ -494,7 +494,7 @@ Princip: Återanvändning före lokal speciallösning
 
 Principen i sig tillhandahåller inte återanvändning. Den behöver stödjas av erbjudanden som faktiskt är användbara.
 
-Om organisationen säger "använd gemensamma plattformar" men plattformarna är svåra att beställa, saknar dokumentation eller inte uppfyller rimliga kvalitetskrav kommer principen att uppfattas som administrativ styrning snarare än stöd.
+Om organisationen säger ”använd gemensamma plattformar” men plattformarna är svåra att beställa, saknar dokumentation eller inte uppfyller rimliga kvalitetskrav kommer principen att uppfattas som administrativ styrning snarare än stöd.
 
 Detta leder till en viktig slutsats:
 
@@ -560,7 +560,7 @@ När en ny plattform föreslås kan man fråga:
 
 > Hur ser hela livscykeln ut, inte bara införandet?
 
-När observability planeras sent kan någon påminna om att driftbarhet ska byggas in från början.
+När observerbarhet planeras sent kan någon påminna om att driftbarhet ska byggas in från början.
 
 Principerna blir då inte skyltar på väggen utan **frågor organisationen har lärt sig att ställa återkommande**.
 
@@ -574,7 +574,7 @@ De första sex kapitlen har nu byggt upp flera delar av samma logik:
 - kapitel 2 etablerade arkitekturens olika lager,
 - kapitel 3 separerade behov från teknik,
 - kapitel 4 gjorde kvalitetsattribut till explicita arkitekturdrivare,
-- kapitel 5 visade hur konkreta beslut och trade-offs kan göras spårbara,
+- kapitel 5 visade hur konkreta beslut och avvägningar kan göras spårbara,
 - detta kapitel har visat hur återkommande beslutsriktning kan uttryckas som relativt stabila principer.
 
 Nästa fråga är praktisk:

@@ -21,7 +21,7 @@ Anta att organisationen erbjuder:
 - artefaktregister,
 - containerplattform,
 - secrets management,
-- observability,
+- observerbarhet,
 - tjänsteidentitet,
 - databastjänst.
 
@@ -33,11 +33,11 @@ Det är en imponerande katalog. Men ett team som ska skapa en ny tjänst måste 
 - Hur kopplas de ihop?
 - Vilken metadata krävs?
 - Hur får workloaden identitet?
-- Hur skickas loggar och metrics rätt?
+- Hur skickas loggar och mätvärden rätt?
 - Hur ser en godkänd pipeline ut?
 - Hur vet vi att säkerhets- och driftkraven är uppfyllda?
 
-Om svaret är "läs åtta olika dokument och boka möten med fyra specialistteam" har organisationen plattformstjänster men ännu inte en effektiv konsumtionsmodell.
+Om svaret är ”läs åtta olika dokument och boka möten med fyra specialistteam” har organisationen plattformstjänster men ännu inte en effektiv konsumtionsmodell.
 
 En golden path försöker paketera ett vanligt behov till en sammanhängande väg.
 
@@ -61,7 +61,7 @@ Det är inte ett nytt arkitekturlager. Det är **ett sätt att göra flera redan
 
 Begreppen används inte helt enhetligt i branschen, och det är därför klokt att definiera hur de används i denna bok.
 
-En **golden path** är här en konkret, rekommenderad väg för ett vanligt scenario. Den kan till exempel hjälpa ett team att skapa en ny containeriserad backendtjänst med standardiserad pipeline, identitet, observability och deploymentkonfiguration.
+En **golden path** är här en konkret, rekommenderad väg för ett vanligt scenario. Den kan till exempel hjälpa ett team att skapa en ny containeriserad backend-tjänst med standardiserad pipeline, identitet, observerbarhet och driftsättningskonfiguration.
 
 En **paved road** är ett bredare begrepp för den välunderhållna, stödda väg där organisationens standardiserade tjänster, verktyg och arbetssätt är samordnade.
 
@@ -69,7 +69,7 @@ Man kan förenklat tänka:
 
 ```text
 Paved road
-  └─ Golden path: ny backendtjänst
+  └─ Golden path: ny backend-tjänst
   └─ Golden path: nytt batchjobb
   └─ Golden path: ny publik webbapplikation
   └─ Golden path: ny databasberoende tjänst
@@ -93,17 +93,17 @@ En verklig golden path behöver ofta även hantera:
 - registrering av tjänsten,
 - repository,
 - CI/CD,
-- runtimeprofil,
+- runtime-profil,
 - identitet,
 - secrets,
 - nätverksregler,
-- observability,
+- observerbarhet,
 - ägarskapsmetadata,
 - standardiserade kvalitetskontroller,
 - dokumentationsingångar,
 - eventuella kostnads- och kapacitetsprofiler.
 
-Det viktiga resultatet är alltså inte "en genererad kodbas" utan ett **sammanhängande och fungerande utgångsläge**.
+Det viktiga resultatet är alltså inte ”en genererad kodbas” utan ett **sammanhängande och fungerande utgångsläge**.
 
 Det innebär också att en golden path kan vara helt relevant även när ingen kod genereras. En väg för att beställa och konfigurera en managed databastjänst kan exempelvis vara en golden path utan att innehålla ett enda applikationsramverk.
 
@@ -207,12 +207,12 @@ En särskilt viktig egenskap hos golden paths är att de kan göra arkitektur pr
 
 I stället för att skriva:
 
-> Alla nya tjänster ska använda standardiserad observability, tjänsteidentitet och godkänd CI/CD.
+> Alla nya tjänster ska använda standardiserad observerbarhet, tjänsteidentitet och godkänd CI/CD.
 
 kan organisationen erbjuda en väg där dessa delar redan är integrerade.
 
 ```text
-Skapa ny backendtjänst
+Skapa ny backend-tjänst
        ↓
 Repository + ägarskap
        ↓
@@ -222,9 +222,9 @@ Runtimeprofil
        ↓
 Tjänsteidentitet
        ↓
-Logging + metrics + tracing
+Loggning + mätvärden + tracing
        ↓
-Deployment
+Driftsättning
 ```
 
 Detta är ett viktigt skifte.
@@ -263,7 +263,7 @@ En **guardrail** definierar gränser inom vilka teamet kan agera självständigt
 
 Exempel på guardrails kan vara:
 
-- tillåtna runtimeprofiler,
+- tillåtna runtime-profiler,
 - obligatorisk ägarskapsmetadata,
 - krav på kryptering,
 - förbjudna publika nätverksgränssnitt,
@@ -294,7 +294,7 @@ Det kan användas för att kontrollera exempelvis:
 - konfiguration,
 - metadata,
 - infrastrukturdefinitioner,
-- deploymentmanifest,
+- driftsättningsmanifest,
 - åtkomstregler,
 - säkerhetsinställningar,
 - artefaktegenskaper.
@@ -320,7 +320,7 @@ En policy måste ha:
 - felmeddelanden som går att förstå,
 - hantering av undantag.
 
-En ogenomskinlig policy som bara säger "denied" kan skapa mer friktion än den tar bort.
+En ogenomskinlig policy som bara säger ”denied” kan skapa mer friktion än den tar bort.
 
 ## Flytta kontrollen åt vänster – men också närmare beslutet
 
@@ -340,7 +340,7 @@ Visa begriplig orsak
 Föreslå godkänd väg
 ```
 
-Detta är mer än traditionell "shift left". Det handlar om att placera styrningen där den är **mest handlingsbar**.
+Detta är mer än traditionell ”shift left”. Det handlar om att placera styrningen där den är **mest handlingsbar**.
 
 ## Guardrails måste ha en motivering
 
@@ -376,9 +376,9 @@ En escape hatch är en kontrollerad möjlighet att avvika från standardvägen n
 
 Det kan innebära:
 
-- annan runtimeprofil,
+- annan runtime-profil,
 - annan datateknik,
-- annan deploymentmodell,
+- annan driftsättningsmodell,
 - specialiserad nätverkslösning,
 - tillfälligt undantag från en standard.
 
@@ -406,7 +406,7 @@ Det är rimligt att standardvägen är enklare än specialvägen. Annars finns i
 
 Men friktionen får inte vara artificiell.
 
-Om ett team har ett legitimt behov av en annan lösning bör processen inte göras långsam bara för att "skydda" plattformens adoptionstal.
+Om ett team har ett legitimt behov av en annan lösning bör processen inte göras långsam bara för att ”skydda” plattformens adoptionstal.
 
 En bra princip är:
 
@@ -427,7 +427,7 @@ Om många team begär samma typ av undantag kan det betyda att:
 - en guardrail bygger på fel antagande,
 - organisationen har identifierat en ny kandidat för standardisering.
 
-Därför bör escape hatches inte bara "godkännas eller avslås". De bör analyseras som data.
+Därför bör escape hatches inte bara ”godkännas eller avslås”. De bör analyseras som data.
 
 ## Templates måste ha en livscykel
 
@@ -438,7 +438,7 @@ En dålig template kan sprida:
 - föråldrade beroenden,
 - dåliga säkerhetsinställningar,
 - felaktiga pipelinekonfigurationer,
-- inkonsekvent observability,
+- inkonsekvent observerbarhet,
 - kopierade anti-patterns.
 
 Därför måste templates behandlas som produkter eller åtminstone förvaltade artefakter.
@@ -503,7 +503,7 @@ En intern utvecklarportal kan hjälpa konsumenten att hitta:
 - dokumentation,
 - status,
 - kostnadsinformation,
-- service levels,
+- tjänstenivåer,
 - beroenden,
 - onboarding och självservice.
 
@@ -515,7 +515,7 @@ Portalen bör därför vara ett fönster mot en fungerande plattformsmodell, int
 
 ## En servicekatalog behöver kopplas till verklig status
 
-En katalog som listar "Databastjänst – stödd" är bara början.
+En katalog som listar ”Databastjänst – stödd” är bara början.
 
 För konsumenten är information som följande ofta viktigare:
 
@@ -538,13 +538,13 @@ En rekommenderad väg bör inte bara beskriva teknik. Den bör också göra vikt
 
 Exempel:
 
-> Golden path: Standard backendtjänst
+> Golden path: Standard backend-tjänst
 
 Kan innebära:
 
 - stateless workload,
 - två repliker i produktion,
-- standardiserad observability,
+- standardiserad observerbarhet,
 - tjänsteidentitet,
 - automatiserad CI/CD,
 - definierad timeoutprofil,
@@ -558,7 +558,7 @@ Det gör att golden path kan fungera som en brygga mellan kvalitetsmodellen i ka
 
 ## En golden path måste ha tydligt scope
 
-Ett vanligt misstag är att försöka skapa "den gemensamma standardarkitekturen" som ska passa alla lösningar.
+Ett vanligt misstag är att försöka skapa ”den gemensamma standardarkitekturen” som ska passa alla lösningar.
 
 Det leder ofta till en enorm template med:
 
@@ -568,7 +568,7 @@ Det leder ofta till en enorm template med:
 - cache,
 - eventbus,
 - AI-stöd,
-- full observability,
+- full observerbarhet,
 - flera runtimealternativ.
 
 Det är motsatsen till förenkling.
@@ -583,7 +583,7 @@ Då blir det också tydligt när den inte passar.
 
 En golden path kan gå tvärs över flera gemensamma IT-förmågor.
 
-Exempelvis kan "ny containeriserad tjänst" beröra:
+Exempelvis kan ”ny containeriserad tjänst” beröra:
 
 - Programvaruutveckling och leverans,
 - Applikationsexekvering och runtime,
@@ -644,7 +644,7 @@ Om den rekommenderade vägen redan innehåller:
 
 kan behovet av manuell arkitekturgranskning minska för standardfallet.
 
-Det betyder inte "ingen arkitekturstyrning".
+Det betyder inte ”ingen arkitekturstyrning”.
 
 Det betyder:
 
@@ -668,7 +668,7 @@ Några varningssignaler är:
 
 ### Vägen döljer arkitekturval
 
-Teamet använder en template utan att förstå viktiga konsekvenser kring state, identitet eller återställning.
+Teamet använder en template utan att förstå viktiga konsekvenser kring tillstånd, identitet eller återställning.
 
 ### Vägen blir för bred
 
@@ -726,7 +726,7 @@ Mätetal bör spegla konsumentens upplevelse och resultat, inte bara automatione
 
 Exempel:
 
-- tid till första fungerande deployment,
+- tid till första fungerande driftsättning,
 - tid till etablerad databastjänst,
 - andel standardfall utan manuell handläggning,
 - felandel i onboarding,
@@ -743,7 +743,7 @@ Om ett team måste känna till plattformens interna implementation för att lyck
 
 ## Ett konkret exempel: från idé till körbar tjänst
 
-Anta att ett team behöver skapa en ny intern backendtjänst.
+Anta att ett team behöver skapa en ny intern backend-tjänst.
 
 Utan paved road kan arbetet innebära:
 
@@ -756,15 +756,15 @@ Utan paved road kan arbetet innebära:
 7. ordna tjänsteidentitet,
 8. konfigurera secrets,
 9. ansluta logging,
-10. ansluta metrics,
-11. hitta deploymentstandard,
+10. ansluta mätvärden,
+11. hitta driftsättningsstandard,
 12. dokumentera ägare,
 13. boka arkitekturgranskning.
 
 Med en golden path kan teamet i stället uttrycka:
 
 ```text
-Skapa intern backendtjänst
+Skapa intern backend-tjänst
 - Java-runtime
 - standardkritikalitet
 - relationsdatabas: nej
@@ -776,12 +776,12 @@ Plattformen kan därefter etablera eller generera:
 
 - repository,
 - standardiserad pipeline,
-- godkänd runtimeprofil,
+- godkänd runtime-profil,
 - workloadidentitet,
-- observability,
+- observerbarhet,
 - ägarskapsmetadata,
 - policykontroller,
-- deploymentkonfiguration.
+- driftsättningskonfiguration.
 
 Teamet börjar närmare den verksamhetsspecifika kod som faktiskt skapar värde.
 

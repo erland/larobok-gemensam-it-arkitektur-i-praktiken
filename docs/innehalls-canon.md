@@ -14,7 +14,7 @@
 | Behov | 2 | Ett önskat resultat eller problem som IT-stödet behöver bidra till att lösa. | Ska inte förväxlas med ett redan valt tekniskt svar. |
 | Kvalitetsattribut | 4 | En mätbar eller bedömningsbar egenskap hos en lösning, exempelvis tillgänglighet, prestanda eller säkerhet. | Används som drivkraft för arkitekturval. |
 | Gemensam IT-förmåga | 8 | Något ett stödjande IT-område varaktigt behöver kunna erbjuda stöd inom. | Skild från verksamhetsförmåga och enskild plattform. |
-| Lösningsmönster | 23 | Ett återanvändbart sätt att strukturera en lösning i en återkommande kontext med tydliga trade-offs. | Är vägledning, inte komplett lösningsdesign. |
+| Lösningsmönster | 23 | Ett återanvändbart sätt att strukturera en lösning i en återkommande kontext med tydliga avvägningar. | Är vägledning, inte komplett lösningsdesign. |
 | Plattformstjänst | 28 | Ett konsumerbart tekniskt erbjudande med definierat värde, gränssnitt och ansvar. | Produkten är realisering, inte själva förmågan. |
 | Teknisk standard | 31 | Ett styrande eller rekommenderat val som skapar kompatibilitet, konsekvens eller kontrollerad variation. | Standardnivå måste anges. |
 | Referensarkitektur | 34 | En återanvändbar arkitektur för en klass av lösningar som visar struktur, principer och variation points. | Ska inte kopieras som färdig lösningsarkitektur. |
@@ -22,7 +22,7 @@
 ## Återkommande exempel, case eller berättargrepp
 - En större myndighet används som neutral bakgrund för exempel.
 - Sju återkommande lösningsscenarier återkommer från källmaterialet.
-- Exempel ska illustrera beslut och trade-offs, inte organisationsspecifika sanningar.
+- Exempel ska illustrera beslut och avvägningar, inte organisationsspecifika sanningar.
 
 ## Arkitekturmodell som ska vara konsekvent genom boken
 Behov → kvalitetskrav → gemensamma IT-förmågor → lösningsmönster/plattformstjänster → tekniska standarder/byggblock → produkter, versioner och konfiguration. Referensarkitekturer skär tvärs genom flera lager.

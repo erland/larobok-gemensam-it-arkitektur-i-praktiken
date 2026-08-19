@@ -8,7 +8,7 @@ En referensarkitektur ska göra mer än att lista vilka tekniker som är godkän
 
 I den här boken används därför följande arbetsdefinition:
 
-> En referensarkitektur är en förvaltad, återanvändbar arkitekturbeskrivning för en avgränsad klass av lösningar. Den beskriver relevanta concerns, strukturer, ansvar, obligatoriska constraints, rekommenderade mönster, gemensamma tjänster och explicita variation points, så att en konkret lösningsarkitektur kan härledas snabbare och mer konsekvent.
+> En referensarkitektur är en förvaltad, återanvändbar arkitekturbeskrivning för en avgränsad klass av lösningar. Den beskriver relevanta concerns, strukturer, ansvar, obligatoriska begränsningar, rekommenderade mönster, gemensamma tjänster och explicita variation points, så att en konkret lösningsarkitektur kan härledas snabbare och mer konsekvent.
 
 Definitionen är avsiktligt praktisk. Begreppet *referensarkitektur* används på olika sätt i olika organisationer och ramverk. Det viktiga är därför inte att hitta en enda universell definition, utan att organisationen är tydlig med **vilket problem artefakten ska lösa, vilken abstraktionsnivå den har och hur den relaterar till andra arkitekturartefakter**.
 
@@ -81,7 +81,7 @@ Domäntjänster
    ├─ verksamhetsdata
    ├─ dokument
    ├─ integrationer
-   └─ observability
+   └─ observerbarhet
 ```
 
 Men den behöver inte bestämma:
@@ -111,7 +111,7 @@ Skillnaden kan beskrivas så här:
 | Beskriver typiska strukturer och ansvar | Beskriver faktisk struktur och faktiska beslut |
 | Har explicita variation points | Väljer en konkret variant |
 | Pekar på gemensamma mönster och tjänster | Väljer vilka som faktiskt används |
-| Beskriver constraints som gäller lösningsklassen | Hanterar även lokala constraints |
+| Beskriver begränsningar som gäller lösningsklassen | Hanterar även lokala begränsningar |
 | Förvaltas över flera initiativ | Förvaltas med den konkreta lösningen |
 
 Sambandet är inte:
@@ -129,14 +129,14 @@ konkreta behov
       +
 kvalitetsprofil
       +
-lokala constraints
+lokala begränsningar
       +
 arkitekturbeslut
       ↓
 Lösningsarkitektur
 ```
 
-Detta gör också att avsteg från en referensarkitektur inte automatiskt är fel. Ett avsteg kan vara helt korrekt om den konkreta lösningen har andra kvalitetsdrivare eller constraints.
+Detta gör också att avsteg från en referensarkitektur inte automatiskt är fel. Ett avsteg kan vara helt korrekt om den konkreta lösningen har andra kvalitetsdrivare eller begränsningar.
 
 Det viktiga är att avvikelsen blir synlig och motiverad.
 
@@ -163,7 +163,7 @@ En referensarkitektur för AI-baserat verksamhetsstöd kan exempelvis använda:
 - AI med mänsklig kontroll,
 - tjänsteidentitet,
 - stateless runtime,
-- observability,
+- observerbarhet,
 - auktoritativ informationskälla.
 
 Mönstret svarar alltså ungefär på:
@@ -184,7 +184,7 @@ Den kan exempelvis ange:
 
 - godkänd API-profil,
 - identitetsprotokoll,
-- observabilitykrav,
+- observerbarhetskrav,
 - containerkrav,
 - produktstandard,
 - supportversioner,
@@ -230,7 +230,7 @@ Det kan vara en värdefull plattformsbild, men är inte automatiskt en referensa
 
 En referensarkitektur behöver utgå från lösningens concerns och kvalitetsbehov, inte från vilka produkter plattformsteamet råkar erbjuda.
 
-Den kan däremot beskriva att en viss lösningsklass **normalt realiseras genom** organisationens containerplattform, databastjänst, identitetstjänst och observabilitytjänster.
+Den kan däremot beskriva att en viss lösningsklass **normalt realiseras genom** organisationens containerplattform, databastjänst, identitetstjänst och observerbarhetstjänster.
 
 Skillnaden är viktig:
 
@@ -304,8 +304,8 @@ För en publik e-tjänst kan relevanta viewpoints exempelvis vara:
 - informationsflöden,
 - integrationer,
 - identitet och tillit,
-- deployment/runtime,
-- observability och drift,
+- driftsättning/runtime,
+- observerbarhet och drift,
 - kontinuitet,
 - ansvar och ägarskap.
 
@@ -313,7 +313,7 @@ Ett viewpoint kan ses som en återanvändbar regel för **vilka frågor en viss 
 
 Exempel:
 
-> Deployment-vyn ska visa exekveringsmiljöer, externa beroenden, zon-/miljögränser och de plattformstjänster som är relevanta för tillgänglighet och drift.
+> Driftsättning-vyn ska visa exekveringsmiljöer, externa beroenden, zon-/miljögränser och de plattformstjänster som är relevanta för tillgänglighet och drift.
 
 Den konkreta vyn visar sedan dessa aspekter för referensarkitekturen.
 
@@ -356,28 +356,28 @@ Variation kan exempelvis bero på:
 
 - containeriserad stateless workload,
 - stateful komponent,
-- legacy constraint,
+- legacy begränsning,
 - särskilt hårdvarubehov.
 
 Att dokumentera dessa variation points gör referensarkitekturen mer användbar eftersom den visar **var arkitekturarbetet fortfarande måste fatta ett lokalt beslut**.
 
-## Constraints ska vara få, tydliga och motiverade
+## Begränsningar ska vara få, tydliga och motiverade
 
 Allt i en referensarkitektur bör inte vara valbart.
 
-Det finns ofta constraints som gäller hela lösningsklassen.
+Det finns ofta begränsningar som gäller hela lösningsklassen.
 
 Exempel:
 
 - externa API:er ska exponeras genom den gemensamma API-hanteringen,
 - tjänsteidentiteter ska användas för workload-till-workload-kommunikation,
-- produktionslösningar ska producera definierad observabilitytelemetri,
+- produktionslösningar ska producera definierad telemetri för observerbarhet,
 - secrets ska hanteras genom den gemensamma secrets-tjänsten,
 - publika gränssnitt ska följa organisationens tillgänglighetskrav.
 
-Men varje constraint behöver ha ett skäl.
+Men varje begränsning behöver ha ett skäl.
 
-En constraint kan motiveras av:
+En begränsning kan motiveras av:
 
 - säkerhet,
 - interoperabilitet,
@@ -430,7 +430,7 @@ Därför bör referensarkitekturen visa ansvar för exempelvis:
 - identitet,
 - integration,
 - dokument,
-- observability,
+- observerbarhet,
 - plattformsdrift.
 
 Det gör det möjligt att skilja mellan:
@@ -499,14 +499,14 @@ En praktisk referensarkitektur kan exempelvis innehålla:
 4. **Logisk översiktsvy**
 5. **Viktiga informations-/integrationsflöden**
 6. **Identitets- och tillitsmodell**
-7. **Deployment/runtime-vy där relevant**
+7. **Driftsättning/runtime-vy där relevant**
 8. **Ansvarsgränser**
-9. **Obligatoriska constraints**
+9. **Obligatoriska begränsningar**
 10. **Variation points och beslutsregler**
 11. **Rekommenderade lösningsmönster**
 12. **Relevanta plattformstjänster**
 13. **Relevanta standarder**
-14. **Kända trade-offs och risker**
+14. **Kända avvägningar och risker**
 15. **Exempel på tillämpning**
 16. **Livscykel, ägare och ändringshistorik**
 
@@ -528,7 +528,7 @@ Exempel:
 
 | Typ | Betydelse |
 |---|---|
-| Constraint | Ska följas om inte godkänt avsteg finns |
+| Begränsning | Ska följas om inte godkänt avsteg finns |
 | Rekommenderad struktur | Bör vara förstahandsval när angivna förutsättningar gäller |
 | Variation point | Lokalt beslut krävs enligt angivna drivkrafter |
 | Exempel | Illustrerar möjlig realisering men är inte normerande |
@@ -544,7 +544,7 @@ Om ett konkret initiativ inte kan följa referensarkitekturen bör frågan inte 
 
 utan:
 
-> Vilken skillnad i behov, kvalitet eller constraint gör att referensarkitekturen inte passar här?
+> Vilken skillnad i behov, kvalitet eller begränsning gör att referensarkitekturen inte passar här?
 
 Det finns åtminstone tre möjliga utfall:
 
@@ -597,7 +597,7 @@ Den gemensamma nivån bör definiera:
 - vad organisationen menar med referensarkitektur,
 - gemensam dokumentationsstruktur,
 - minsta metadata och statusmodell,
-- hur constraints och variation points markeras,
+- hur begränsningar och variation points markeras,
 - hur relationer till principer, mönster, standarder och plattformar uttrycks,
 - vilka lösningsklasser som motiverar gemensamma referensarkitekturer.
 
@@ -610,7 +610,7 @@ Förmåge- och plattformsansvariga bidrar med:
 - tjänstekontrakt,
 - standarder,
 - kvalitetsprofiler,
-- kända constraints och variationer inom sina områden.
+- kända begränsningar och variationer inom sina områden.
 
 De behöver inte ensamma äga en tvärgående referensarkitektur, men deras erbjudanden måste kunna användas i den.
 
@@ -621,7 +621,7 @@ Den konkreta lösningen ska:
 - välja relevant referensarkitektur,
 - verifiera att scope och antaganden passar,
 - välja variationer,
-- komplettera med lokala behov och constraints,
+- komplettera med lokala behov och begränsningar,
 - dokumentera faktiska beslut,
 - registrera motiverade avsteg,
 - ge återkoppling när referensen inte fungerar.
@@ -674,7 +674,7 @@ En enda arkitektur försöker täcka e-tjänster, batch, integration, AI, arbets
 
 ### Den normlösa bilden
 
-Diagrammet ser pedagogiskt ut men det går inte att avgöra vad som är constraint, rekommendation eller exempel.
+Diagrammet ser pedagogiskt ut men det går inte att avgöra vad som är begränsning, rekommendation eller exempel.
 
 ### Den odokumenterade variationen
 
@@ -712,7 +712,7 @@ Vilka vyer behövs för att besvara dessa concerns?
 
 Vilka principer, mönster, standarder och plattformserbjudanden är relevanta?
 
-### 6. Separera constraints från rekommendationer
+### 6. Separera begränsningar från rekommendationer
 
 Vad måste vara gemensamt och vad är bara ett bra standardval?
 

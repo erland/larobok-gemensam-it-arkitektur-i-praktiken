@@ -13,7 +13,7 @@ En förenklad kedja kan beskrivas så här:
 ```text
 Behov och verksamhetskonsekvenser
             ↓
-Kvalitetsprofil och constraints
+Kvalitetsprofil och begränsningar
             ↓
 Berörda förmågor och ansvar
             ↓
@@ -54,7 +54,7 @@ Arkitekturarbetets omfattning bör därför vara proportionerlig mot exempelvis:
 - beroenden till andra system,
 - krav på tillgänglighet och kontinuitet,
 - förändringstakt,
-- juridiska och organisatoriska constraints,
+- juridiska och organisatoriska begränsningar,
 - graden av irreversibilitet i de tekniska besluten.
 
 Detta knyter an till principen från kapitel 5: analysens djup ska stå i proportion till beslutets räckvidd och reversibilitet.
@@ -144,11 +144,11 @@ Arkitekturdrivare
 
 Det är dessa arkitekturdrivare som ska användas när mönster, plattformar och alternativ senare bedöms.
 
-## Steg 3: identifiera verkliga constraints
+## Steg 3: identifiera verkliga begränsningar
 
-Parallellt med kvalitetsprofilen behöver initiativet identifiera constraints.
+Parallellt med kvalitetsprofilen behöver initiativet identifiera begränsningar.
 
-En constraint är något lösningen måste förhålla sig till även om arkitekten hade föredragit något annat.
+En begränsning är något lösningen måste förhålla sig till även om arkitekten hade föredragit något annat.
 
 Exempel kan vara:
 
@@ -159,11 +159,11 @@ Exempel kan vara:
 - en kritisk datakälla kan bara förändras vid vissa releasefönster,
 - organisationen har beslutat en obligatorisk identitetsstandard.
 
-Det är viktigt att skilja constraints från preferenser.
+Det är viktigt att skilja begränsningar från preferenser.
 
 > Vi brukar använda produkt X.
 
-är inte automatiskt en constraint.
+är inte automatiskt en begränsning.
 
 > Organisationens förvaltade plattformstjänst stöder endast produkt X under lösningens planerade livslängd och avsteg skulle kräva separat driftorganisation.
 
@@ -225,7 +225,7 @@ En praktisk start är att klassificera innehållet i tre grupper:
 
 1. **Direkt tillämpligt** – delar som passar utan särskild anpassning.
 2. **Tillämpligt med variation** – samma arkitekturidé men annan konkret utformning.
-3. **Ej tillämpligt eller avvikande** – där initiativets behov eller constraints motiverar annan lösning.
+3. **Ej tillämpligt eller avvikande** – där initiativets behov eller begränsningar motiverar annan lösning.
 
 Detta gör referensarkitekturen till beslutsunderlag snarare än mall.
 
@@ -237,7 +237,7 @@ Referensarkitektur: Publik e-tjänst
 Direkt tillämpligt:
 - federerad användaridentitet
 - förvaltad API-exponering
-- central observability
+- central observerbarhet
 
 Variation:
 - dokumentlagring behövs inte
@@ -287,7 +287,7 @@ Exempel:
 
 ```text
 Behov:
-Asynkron kommunikation med beständig kö, definierad retrymodell,
+Asynkron kommunikation med beständig kö, definierad återförsöksmodell,
 central övervakning och stöd för tjänsteidentitet.
 
 Mönster:
@@ -319,7 +319,7 @@ Exempel:
 - API-standard,
 - identitetsprotokoll,
 - containerstandard,
-- observabilitystandard,
+- observerbarhetsstandard,
 - backup/recovery-standard,
 - produktstandarder,
 - versions-/supportstandarder.
@@ -340,7 +340,7 @@ Tjänst-till-tjänst-kommunikation
     → tjänsteidentitetsstandard
 
 Containeriserad workload
-    → containerstandard + runtimeprofil
+    → containerstandard + runtime-profil
 
 Kritisk persistent data
     → backup/recovery-standard + kvalitetsprofil
@@ -385,7 +385,7 @@ En bättre jämförelse kopplar alternativen till arkitekturdrivarna:
 | Återanvändning | Hög | Medel |
 | Lokal specialanpassning | Begränsad | Hög |
 
-Poängen är inte att skapa en matematisk sanning. Poängen är att göra trade-offen synlig.
+Poängen är inte att skapa en matematisk sanning. Poängen är att göra avvägningen synlig.
 
 ## Steg 10: dokumentera de beslut som förändrar lösningens konsekvensyta
 
@@ -417,7 +417,7 @@ Alternativ
 Synkront API-anrop; schemalagd batch; asynkron messaging.
 
 Konsekvenser
-Eventual consistency, behov av idempotens, retry och operativ köövervakning.
+Eventual consistency, behov av idempotens, återförsök och operativ köövervakning.
 
 Gemensam arkitektur
 Enterprise Messaging används enligt organisationens messagingstandard.
@@ -450,7 +450,7 @@ Avviker från:
 Referensarkitekturens rekommenderade API-baserade informationsutbyte.
 
 Motivering:
-Motpartens tekniska constraint kan inte påverkas inom initiativets tidsram.
+Motpartens tekniska begränsning kan inte påverkas inom initiativets tidsram.
 
 Konsekvens:
 Separat filflöde, batchlatens och särskild övervakning krävs.
@@ -470,7 +470,7 @@ Det räcker ofta att kunna följa de viktigaste besluten genom en enkel kedja:
 ```text
 Behov
   ↓
-Kvalitetsdrivare / constraint
+Kvalitetsdrivare / begränsning
   ↓
 Arkitekturbeslut
   ↓
@@ -524,7 +524,7 @@ Den bör inte bara vara ett diagram över produkter. Den behöver uttrycka åtmi
 - identitets- och tillitsgränser,
 - runtime och plattformsberoenden,
 - kvalitetsdrivande mekanismer,
-- observability och recovery,
+- observerbarhet och recovery,
 - viktiga arkitekturbeslut,
 - kända avsteg och risker.
 
@@ -659,8 +659,8 @@ Exempel:
 | Behörighetsseparation | Säkerhetstest och access review |
 | Eventual consistency | Test av fördröjning och reconciliation |
 | Spårbar AI | Utvärdering av källträff och citering |
-| Portabilitet | Reproducerbar deployment i alternativ miljö |
-| Observability | Incidentövning med telemetry |
+| Portabilitet | Reproducerbar driftsättning i alternativ miljö |
+| Observerbarhet | Incidentövning med telemetri |
 
 Det är här kedjan sluts:
 
@@ -756,7 +756,7 @@ Anta att en myndighet ska skapa en ny publik tjänst där företag kan lämna en
 - Tjänsteidentitet mellan interna tjänster,
 - System of record med härledda statusvyer,
 - Build once, promote many,
-- Observability för distribuerade tjänster.
+- Observerbarhet för distribuerade tjänster.
 
 ### Plattformstjänster
 
@@ -773,7 +773,7 @@ Anta att en myndighet ska skapa en ny publik tjänst där företag kan lämna en
 - API-standard,
 - identitetsstandard,
 - containerstandard,
-- observabilitystandard,
+- observerbarhetsstandard,
 - backup/recoverystandard.
 
 ### Lokala arkitekturbeslut
@@ -797,7 +797,7 @@ För ett konkret initiativ kan arbetsflödet sammanfattas i tolv frågor:
 
 1. Vilket verksamhetsproblem eller vilken möjlighet ska lösas?
 2. Vilka kvalitetsattribut och verksamhetskonsekvenser driver arkitekturen?
-3. Vilka constraints är verkliga?
+3. Vilka begränsningar är verkliga?
 4. Vilka domäner och gemensamma IT-förmågor berörs?
 5. Finns en relevant referensarkitektur?
 6. Vilka delar av den är direkt tillämpliga, varierande eller inte tillämpliga?
@@ -845,7 +845,7 @@ Resan från behov till lösningsarkitektur kan sammanfattas som en kedja av succ
 ```text
 Behov
   ↓
-Kvalitetsprofil och constraints
+Kvalitetsprofil och begränsningar
   ↓
 Förmågor och ansvar
   ↓

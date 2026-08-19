@@ -14,7 +14,7 @@ Den centrala frågan i detta kapitel är:
 
 ## Från enskilt beslut till återanvändbar erfarenhet
 
-I kapitel 5 beskrev vi arkitekturbeslut som val mellan realistiska alternativ under givna drivkrafter och constraints. Ett lösningsmönster kan ses som ett nästa steg när samma typ av beslut återkommer i flera lösningar.
+I kapitel 5 beskrev vi arkitekturbeslut som val mellan realistiska alternativ under givna drivkrafter och begränsningar. Ett lösningsmönster kan ses som ett nästa steg när samma typ av beslut återkommer i flera lösningar.
 
 Förenklat kan utvecklingen beskrivas så här:
 
@@ -23,7 +23,7 @@ Förenklat kan utvecklingen beskrivas så här:
         ↓
 Flera lösningars erfarenheter
         ↓
-Gemensamma krafter och trade-offs
+Gemensamma krafter och avvägningar
         ↓
 Återkommande lösningsstruktur
         ↓
@@ -64,7 +64,7 @@ Ett starkt mönster börjar inte med lösningen. Det börjar med **kontexten**.
 
 Kontexten beskriver den situation där problemet brukar uppstå. För ett mönster för asynkron meddelandekommunikation kan kontexten exempelvis vara att två delar av ett system behöver utbyta arbete men inte bör vara tidsmässigt beroende av att båda är tillgängliga samtidigt.
 
-Därefter behöver problemet formuleras. Problemet är inte "vi behöver en meddelandekö". Det är snarare något i stil med:
+Därefter behöver problemet formuleras. Problemet är inte ”vi behöver en meddelandekö”. Det är snarare något i stil med:
 
 > Hur kan en producent lämna över arbete utan att behöva vänta på att konsumenten är tillgänglig och klar just nu?
 
@@ -110,7 +110,7 @@ Denna struktur är medvetet abstrakt. Ett lösningsmönster bör normalt inte be
 
 Sådant hör hemma längre ned i arkitekturmodellen – i plattformstjänster, tekniska standarder, byggblock och produktval.
 
-Men abstraktion får inte bli vaghet. Ett mönster som bara säger "använd asynkron kommunikation när asynkron kommunikation är lämplig" ger inget beslutsstöd.
+Men abstraktion får inte bli vaghet. Ett mönster som bara säger ”använd asynkron kommunikation när asynkron kommunikation är lämplig” ger inget beslutsstöd.
 
 Ett bra mönster behöver därför vara **teknikoberoende men mekanismtydligt**.
 
@@ -150,9 +150,9 @@ Asynkron meddelandekommunikation kan minska tidskoppling men samtidigt göra:
 - felhantering mer explicit,
 - idempotens och dubbletter till centrala designfrågor.
 
-Mönstret är alltså inte "bra" eller "dåligt". Det förändrar lösningens egenskaper.
+Mönstret är alltså inte ”bra” eller ”dåligt”. Det förändrar lösningens egenskaper.
 
-Detta knyter direkt tillbaka till kvalitetsattributen i kapitel 4. Ett lösningsmönster är i praktiken ett återkommande sätt att påverka en viss uppsättning kvaliteter och trade-offs.
+Detta knyter direkt tillbaka till kvalitetsattributen i kapitel 4. Ett lösningsmönster är i praktiken ett återkommande sätt att påverka en viss uppsättning kvaliteter och avvägningar.
 
 ## När mönstret passar – och när det inte passar
 
@@ -217,7 +217,7 @@ Asynkron meddelandekommunikation
         ↓
 System of record och härledda kopior
         ↓
-Observability för distribuerade tjänster
+Observerbarhet för distribuerade tjänster
 ```
 
 Det betyder inte att mönstren bildar en strikt kedja. Poängen är att de adresserar olika problem i samma lösning.
@@ -230,14 +230,14 @@ Ett sådant språk kan bland annat uttrycka relationer som:
 - **förutsätter** – ett mönster kräver att en annan mekanism eller struktur redan finns,
 - **alternativ till** – två mönster hanterar samma kraft på olika sätt,
 - **förstärker** – kombinationen ökar en viss kvalitet,
-- **står i spänning med** – mönstren kan kombineras men skapar nya trade-offs,
+- **står i spänning med** – mönstren kan kombineras men skapar nya avvägningar,
 - **specialiserar** – ett mer specifikt mönster förfinar ett bredare.
 
 Detta är mer användbart än en lång alfabetisk lista över mönsternamn. Mönsterbibliotekets verkliga värde uppstår när läsaren kan förstå **landskapet mellan mönstren**.
 
 ## Mönster och anti-patterns
 
-Ett anti-pattern är inte bara "en dålig lösning". Det är en återkommande lösningsform som ofta verkar rimlig men tenderar att skapa oönskade konsekvenser i den aktuella kontexten.
+Ett anti-pattern är inte bara ”en dålig lösning”. Det är en återkommande lösningsform som ofta verkar rimlig men tenderar att skapa oönskade konsekvenser i den aktuella kontexten.
 
 Exempel som återkommit tidigare i boken är:
 
@@ -317,7 +317,7 @@ En **Service Identity Platform** kan sedan tillhandahålla:
 - credential rotation,
 - policyintegration,
 - certifikat eller tokens,
-- observability och livscykelhantering.
+- observerbarhet och livscykelhantering.
 
 Mönstret beskriver struktur och ansvar. Plattformen gör en viss realisering enkel att konsumera.
 
@@ -342,7 +342,7 @@ Ett internt handläggningsstöd kan exempelvis använda:
 - Externaliserade verksamhetsregler,
 - System of record och härledda kopior,
 - Tjänsteidentitet,
-- Observability för distribuerade tjänster.
+- Observerbarhet för distribuerade tjänster.
 
 Mönstren är byggstenar i resonemanget. Referensarkitekturen visar hur de kan kombineras i en större sammanhängande struktur.
 
@@ -360,11 +360,11 @@ Ett kandidatobjekt bör därför prövas mot frågor som:
 - Är problemet arkitekturellt snarare än bara implementeringsnära?
 - Är lösningsidén tillräckligt stabil för att överleva produktbyten?
 - Finns tydliga situationer där mönstret passar och inte passar?
-- Finns verkliga trade-offs att förstå?
+- Finns verkliga avvägningar att förstå?
 - Kan flera team använda beskrivningen som beslutsstöd?
 - Är detta verkligen ett mönster och inte en standard, plattformstjänst eller teknisk instruktion?
 
-Det ursprungliga underlaget till denna bok använder just denna typ av urval och har valt att inte skapa separata mönster för exempelvis varje retry-variant, varje deploymentstrategi eller varje specifik accesskontrollmodell.
+Det ursprungliga underlaget till denna bok använder just denna typ av urval och har valt att inte skapa separata mönster för exempelvis varje återförsöksvariant, varje driftsättningsstrategi eller varje specifik åtkomstkontrollmodell.
 
 Det är en sund återhållsamhet.
 
@@ -394,7 +394,7 @@ Vilket återkommande problem som behöver lösas.
 
 ### Krafter
 
-Vilka kvalitetskrav, constraints och motstridiga behov som påverkar valet.
+Vilka kvalitetskrav, begränsningar och motstridiga behov som påverkar valet.
 
 ### Struktur
 
@@ -436,7 +436,7 @@ Ett mönster bör helst inte uppstå enbart genom central arkitekturdesign.
 
 Om ingen har använt lösningsformen finns ännu begränsad erfarenhet av dess konsekvenser.
 
-Det betyder inte att organisationen aldrig kan dokumentera ett mönster proaktivt. Men mognadsgraden bör vara synlig.
+Det innebär inte att organisationen aldrig kan dokumentera ett mönster proaktivt. Men mognadsgraden bör vara synlig.
 
 En enkel livscykel kan vara:
 
@@ -488,7 +488,7 @@ De kan:
 
 - identifiera kandidater,
 - samla erfarenhet från användning,
-- beskriva trade-offs,
+- beskriva avvägningar,
 - koppla mönster till plattformstjänster och standarder,
 - förvalta variationer och rekommendationer.
 
@@ -572,7 +572,7 @@ Men lösningen behöver fortfarande avgöra:
 - hur provenance verifieras,
 - hur miljökonfiguration separeras,
 - vilka kontroller som krävs före promotion,
-- vilken deploymentstrategi som används,
+- vilken driftsättningsstrategi som används,
 - hur rollback eller roll-forward hanteras.
 
 En del av dessa val kan styras av plattformstjänster och tekniska standarder. Andra hör hemma i den konkreta lösningsarkitekturen.
@@ -601,7 +601,7 @@ Ett mönster kan vara för brett om:
 
 - det innehåller flera problem som kan uppstå oberoende av varandra,
 - olika delar har helt olika krafter,
-- "när det passar" blir så brett att nästan allt inkluderas,
+- ”när det passar” blir så brett att nästan allt inkluderas,
 - variationerna är större än den gemensamma kärnan.
 
 Då kan det behöva delas upp.
@@ -611,7 +611,7 @@ Två mönster kan tvärtom behöva slås ihop om:
 - de i praktiken löser samma problem,
 - skillnaden bara är produktspecifik,
 - läsaren måste förstå båda för att kunna använda något av dem,
-- samma trade-offs upprepas nästan ordagrant.
+- samma avvägningar upprepas nästan ordagrant.
 
 Ett mönster kan behöva tas bort om:
 
@@ -638,7 +638,7 @@ Det ursprungliga arkitekturmaterialet identifierar femton lösningsmönster:
 - Tjänsteidentitet,
 - Containeriserad stateless tjänst,
 - Build once, promote many,
-- Observability för distribuerade tjänster,
+- Observerbarhet för distribuerade tjänster,
 - Backup och verifierad återställning,
 - Kontrollerad samarbetsyta.
 
@@ -648,14 +648,14 @@ Detta illustrerar en viktig princip:
 
 > Ett organisationsgemensamt mönsterbibliotek bör växa ur de problem organisationen faktiskt behöver lösa – inte ur ambitionen att katalogisera hela IT-branschens mönsterkunskap.
 
-I de kommande kapitlen fördjupar vi dessa mönster i grupper. Syftet är inte att göra katalogposterna längre för sakens skull, utan att visa hur de påverkar verkliga arkitekturbeslut och hur flera mönster kan kombineras utan att ansvar och trade-offs försvinner.
+I de kommande kapitlen fördjupar vi dessa mönster i grupper. Syftet är inte att göra katalogposterna längre för sakens skull, utan att visa hur de påverkar verkliga arkitekturbeslut och hur flera mönster kan kombineras utan att ansvar och avvägningar försvinner.
 
 ## En praktisk analysordning
 
 När ett team överväger ett lösningsmönster kan följande ordning användas:
 
 1. **Formulera problemet utan mönsternamn.** Vad försöker vi faktiskt lösa?
-2. **Beskriv kontexten.** Vilka domäner, användare, systemgränser och tekniska constraints finns?
+2. **Beskriv kontexten.** Vilka domäner, användare, systemgränser och tekniska begränsningar finns?
 3. **Identifiera krafterna.** Vilka kvalitetskrav och motstridiga behov driver beslutet?
 4. **Jämför realistiska alternativ.** Är mönstret ett av flera möjliga svar?
 5. **Kontrollera passform och antipassform.** Finns förutsättningarna som mönstret bygger på?
@@ -665,7 +665,7 @@ När ett team överväger ett lösningsmönster kan följande ordning användas:
 9. **Dokumentera varför mönstret används.** Mönsternamnet ersätter inte beslutets rationale.
 10. **Återför erfarenheten.** Om mönstret inte fungerar som väntat ska biblioteket förbättras.
 
-Denna ordning gör det svårare att börja med formuleringen "vi ska använda mönster X" och först därefter leta efter problemet.
+Denna ordning gör det svårare att börja med formuleringen ”vi ska använda mönster X” och först därefter leta efter problemet.
 
 ## Sammanfattning
 
