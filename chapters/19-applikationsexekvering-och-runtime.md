@@ -2,13 +2,13 @@
 
 När en applikation är byggd behöver den någonstans att köras. Det kan låta som en ren infrastruktursfråga, men valet av exekveringsmiljö påverkar nästan allt annat: hur applikationen skalas, uppgraderas, isoleras, övervakas, patchas, återstartas och förvaltas. Runtime är därför inte bara ”servern där koden körs”. Det är en gemensam IT-förmåga med egna ansvar, kontrakt och livscykler.
 
-I en liten miljö kan varje utvecklingsteam själva välja operativsystem, applikationsserver, containerlösning och deploymentmodell. I en större organisation leder samma arbetssätt snabbt till en flora av kombinationer som alla behöver patchas, övervakas och hållas säkra. Samtidigt är det lika problematiskt att tvinga alla workloads in i exakt samma tekniska form. En äldre applikation med operativsystemsnära beroenden har andra behov än en stateless backendtjänst eller ett kortlivat batchjobb.
+I en liten miljö kan varje utvecklingsteam självt välja operativsystem, applikationsserver, containerlösning och driftsättningsmodell. I en större organisation leder samma arbetssätt snabbt till en flora av kombinationer som alla behöver patchas, övervakas och hållas säkra. Samtidigt är det lika problematiskt att tvinga alla workloads in i exakt samma tekniska form. En äldre applikation med operativsystemsnära beroenden har andra behov än en stateless backend-tjänst eller ett kortlivat batchjobb.
 
 Kärnfrågan i kapitlet är därför:
 
 > **Vad behöver en organisation erbjuda för att applikationer och andra workloads ska kunna köras standardiserat, säkert och förvaltningsbart utan att onödigt låsa lösningarna till en viss produkt eller exekveringsmodell?**
 
-Kapitlet behandlar den gemensamma IT-förmågan **Applikationsexekvering och runtime**. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observability, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
+Kapitlet behandlar den gemensamma IT-förmågan **Applikationsexekvering och runtime**. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
 
 ## Workloaden är utgångspunkten
 
@@ -41,7 +41,7 @@ Exempel:
 
 är inte samma sak som:
 
-> ”Applikationen behöver horisontell skalning, automatiserad ersättning av instanser, standardiserad nätverksanslutning och en deploymentmodell där instanser kan startas och stoppas utan lokal dataförlust.”
+> ”Applikationen behöver horisontell skalning, automatiserad ersättning av instanser, standardiserad nätverksanslutning och en driftsättningsmodell där instanser kan startas och stoppas utan lokal dataförlust.”
 
 Den andra formuleringen går att pröva mot flera möjliga realiseringar och överlever sannolikt längre än den första.
 
@@ -83,7 +83,7 @@ Containers passar särskilt väl när workloaden:
 - kan startas och ersättas automatiskt,
 - kan uttrycka resursbehov deklarativt,
 - kan hantera att instanser är förgängliga,
-- vinner på horisontell skalning eller standardiserad deployment.
+- vinner på horisontell skalning eller standardiserad driftsättning.
 
 De passar sämre när applikationen har hårda beroenden till ett visst operativsystem, kräver specialdrivrutiner, är starkt bunden till lokal maskinstate eller är en äldre produkt där containerisering skulle skapa mer risk än nytta.
 
@@ -152,7 +152,7 @@ Det betyder inte att organisationen måste centralstyra vilket programmeringsspr
 
 ## Stateless där det är ändamålsenligt
 
-Stateless har blivit ett vanligt designideal för backendtjänster. Skälet är praktiskt: en instans som inte bär unik persistent verksamhetsdata är enklare att ersätta, skala och återstarta.
+Stateless har blivit ett vanligt designideal för backend-tjänster. Skälet är praktiskt: en instans som inte bär unik persistent verksamhetsdata är enklare att ersätta, skala och återstarta.
 
 Förenklat:
 
@@ -168,17 +168,17 @@ Om en instans försvinner kan en annan ta över utan att viktig data sitter fast
 
 Men ”stateless” behöver användas precist.
 
-En tjänst kan ha temporärt tillstånd i minne under en request, cache eller teknisk buffert och ändå vara stateless i den mening som är viktig för runtimeplattformen. Det avgörande är om instansen innehåller unik information som måste bevaras för att verksamheten ska fungera.
+En tjänst kan ha temporärt tillstånd i minne under en request, cache eller teknisk buffert och ändå vara stateless i den mening som är viktig för runtime-plattformen. Det avgörande är om instansen innehåller unik information som måste bevaras för att verksamheten ska fungera.
 
-Stateful workloads är samtidigt legitima. Databaser, vissa kökomponenter och andra system behöver persistent state. Även en applikation kan ha krav som gör lokal state nödvändig.
+Stateful workloads är samtidigt legitima. Databaser, vissa kökomponenter och andra system behöver persistent tillstånd. Även en applikation kan ha krav som gör lokal tillstånd nödvändig.
 
-Arkitekturfrågan blir då inte ”hur undviker vi state till varje pris?” utan:
+Arkitekturfrågan blir då inte ”hur undviker vi tillstånd till varje pris?” utan:
 
 - Vilket tillstånd finns?
 - Var är det auktoritativt?
 - Hur bevaras det när en instans flyttas eller ersätts?
 - Hur påverkar det skalning och återställning?
-- Vilket ansvar ligger på runtimeplattformen och vilket ligger på datatjänsten?
+- Vilket ansvar ligger på runtime-plattformen och vilket ligger på datatjänsten?
 
 För vanliga verksamhetstjänster är en bra grundprincip ändå att persistent verksamhetsdata inte ska ligga på en lokal ephemeral disk som försvinner med instansen.
 
@@ -192,7 +192,7 @@ Det kan bero på:
 - omplanering av workloads,
 - autoskalning,
 - maskinvarufel,
-- deployment av ny version,
+- driftsättning av ny version,
 - operatörsåtgärd,
 - resursbrist eller policy.
 
@@ -205,7 +205,7 @@ En långlivad tjänst bör exempelvis kunna:
 3. hantera kontrollerad nedstängning,
 4. sluta ta emot nytt arbete innan processen avslutas,
 5. avsluta eller lämna över pågående arbete på ett säkert sätt,
-6. starta igen utan manuell rekonstruktion av lokal state.
+6. starta igen utan manuell rekonstruktion av lokal tillstånd.
 
 Health checks och graceful shutdown är därför inte bara driftfunktioner. De är delar av kontraktet mellan workload och runtime.
 
@@ -231,7 +231,7 @@ Mätning
 Justering
 ```
 
-Det är en viktig koppling till kapitel 20. Runtimeplattformen tillhandahåller mekanismer för resursallokering och skalning, medan observabilityförmågan ger underlag för att förstå det faktiska beteendet.
+Det är en viktig koppling till kapitel 20. Runtimeplattformen tillhandahåller mekanismer för resursallokering och skalning, medan observerbarhetsförmågan ger underlag för att förstå det faktiska beteendet.
 
 ## Horisontell och vertikal skalning löser olika problem
 
@@ -272,7 +272,7 @@ Det betyder att ”delad plattform” inte behöver betyda ”allt delar allt”
 
 Men varje extra isoleringsnivå har en kostnad. Separata kluster, noder eller maskiner kan förbättra separationen men minska resurseffektiviteten och öka driftbördan.
 
-Precis som i kapitel 5 behöver beslutet därför baseras på trade-offs snarare än på generella slogans.
+Precis som i kapitel 5 behöver beslutet därför baseras på avvägningar snarare än på generella slogans.
 
 ## Konfiguration ska skiljas från artefakten
 
@@ -311,7 +311,7 @@ Applikationsteamet behöver samtidigt kunna:
 - uppgradera egna bibliotek,
 - ändra resursbehov,
 - justera konfiguration,
-- migrera mellan stödda runtimeprofiler.
+- migrera mellan stödda runtime-profiler.
 
 Om varje plattformsuppgradering kräver omfattande kodändring i alla applikationer blir den gemensamma plattformen en källa till systemisk förändringsrisk.
 
@@ -350,7 +350,7 @@ Frågan bör vara:
 
 Det är ofta fullt rimligt att acceptera ett plattformsberoende om nyttan är stor och beroendet är synligt. Problemet uppstår när beroendet upptäcks först när en migrering blir nödvändig.
 
-## Legacykrav är constraints – inte framtida standarder
+## Legacykrav är begränsningar – inte framtida standarder
 
 Äldre applikationer kan kräva:
 
@@ -362,7 +362,7 @@ Det är ofta fullt rimligt att acceptera ett plattformsberoende om nyttan är st
 - lokalt filsystem,
 - särskilda installationsmodeller.
 
-Dessa krav behöver hanteras som faktiska constraints så länge applikationen finns kvar.
+Dessa krav behöver hanteras som faktiska begränsningar så länge applikationen finns kvar.
 
 Men de bör inte utan vidare omvandlas till generella plattformsprinciper.
 
@@ -385,7 +385,7 @@ Batchjobb och schemalagda workloads har andra egenskaper:
 - de startar vid en viss tid eller händelse,
 - de kan behandla stora datamängder,
 - de behöver ofta tydlig exitstatus,
-- retry kan vara relevant på jobbnivå,
+- återförsök kan vara relevant på jobbnivå,
 - parallellisering kan vara viktig,
 - missade körningar kan ha verksamhetskonsekvenser,
 - ett jobb kan behöva återupptas från checkpoint.
@@ -409,13 +409,13 @@ Men samma modell kan skapa nya begränsningar kring:
 
 - exekveringstid,
 - startup-latens,
-- state,
+- tillstånd,
 - felsökning,
 - lokala beroenden,
 - portabilitet,
 - kostnadsprofil.
 
-Serverless bör därför behandlas som ännu en möjlig runtimeprofil, inte som ett mål i sig.
+Serverless bör därför behandlas som ännu en möjlig runtime-profil, inte som ett mål i sig.
 
 ## Specialiserad hårdvara förändrar plattformskontraktet
 
@@ -443,22 +443,22 @@ Plattformen får då ansvar för:
 - integration,
 - databaser,
 - CI/CD,
-- observability,
+- observerbarhet,
 - verksamhetsregler,
-- deployment,
+- driftsättning,
 - säkerhet,
 - nätverk,
 - backup.
 
-Tekniskt kan flera av dessa mekanismer vara integrerade med runtimeplattformen. Arkitekturellt behöver ansvaret ändå hållas isär.
+Tekniskt kan flera av dessa mekanismer vara integrerade med runtime-plattformen. Arkitekturellt behöver ansvaret ändå hållas isär.
 
-Exempelvis kan runtimeplattformen injicera en secret, men identitetsförmågan äger principerna för hur secreten skapas och roteras. Plattformen kan exponera metrics, men driftbarhetsförmågan äger modellen för observability och operativ uppföljning.
+Exempelvis kan runtime-plattformen injicera en secret, men identitetsförmågan äger principerna för hur secreten skapas och roteras. Plattformen kan exponera mätvärden, men driftbarhetsförmågan äger modellen för observerbarhet och operativ uppföljning.
 
 Detta följer bokens metamodell: en fysisk eller teknisk produkt kan realisera flera förmågor utan att förmågorna behöver slås ihop begreppsligt.
 
 ## Ett gemensamt runtimeerbjudande behöver profiler
 
-I en större organisation är det ofta bättre att erbjuda ett begränsat antal tydliga runtimeprofiler än en enda universell miljö eller helt fria teknikval.
+I en större organisation är det ofta bättre att erbjuda ett begränsat antal tydliga runtime-profiler än en enda universell miljö eller helt fria teknikval.
 
 Exempelvis kan katalogen innehålla:
 
@@ -471,7 +471,7 @@ Varje erbjudande bör beskriva:
 
 - vilka behov det är avsett för,
 - vilka kvalitetsnivåer som stöds,
-- vilka tekniska constraints som finns,
+- vilka tekniska begränsningar som finns,
 - vilket ansvar konsumenten har,
 - vilket ansvar plattformen har,
 - vilka standarder som gäller,
@@ -518,7 +518,7 @@ Det konkreta utvecklingsområdet behöver bland annat:
 - ange resursbehov,
 - bygga applikationen för plattformens livscykelmodell,
 - hantera graceful shutdown och healthmekanismer,
-- undvika onödigt lokal persistent state,
+- undvika onödigt lokal persistent tillstånd,
 - dokumentera särskilda runtimeberoenden,
 - följa plattformens standarder och uppgraderingskrav.
 
@@ -559,9 +559,9 @@ En applikation binds till en gammal runtimeversion utan definierad avvecklingspl
 När en ny workload ska placeras i en runtime kan följande ordning användas:
 
 1. **Beskriv workloaden.** Är den långlivad, batch, händelsedriven eller specialiserad?
-2. **Identifiera state.** Vilket tillstånd finns och var behöver det bevaras?
+2. **Identifiera tillstånd.** Vilket tillstånd finns och var behöver det bevaras?
 3. **Beskriv resursprofilen.** CPU, minne, lagring, GPU och belastningsmönster.
-4. **Identifiera tekniska constraints.** Runtimeversion, native-bibliotek, OS-beroenden och särskild hårdvara.
+4. **Identifiera tekniska begränsningar.** Runtimeversion, native-bibliotek, OS-beroenden och särskild hårdvara.
 5. **Härled kvalitetskraven.** Tillgänglighet, skalning, återstartstid, isolering och livscykel.
 6. **Pröva mot gemensamma runtimeerbjudanden.** Välj det enklaste erbjudande som uppfyller behoven.
 7. **Dokumentera avvikelser.** Om inget erbjudande passar ska gapet beskrivas som behov, inte omedelbart som ett nytt produktkrav.

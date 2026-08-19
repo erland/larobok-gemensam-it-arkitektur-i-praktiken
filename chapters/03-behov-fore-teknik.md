@@ -34,14 +34,14 @@ med:
 
 Den första formuleringen beskriver ett tekniskt beslut. Den andra beskriver egenskaper som kan motivera ett tekniskt beslut.
 
-Det betyder inte att den första formuleringen aldrig hör hemma i arkitekturen. Om organisationen redan har beslutat att en viss typ av tjänst ska använda en gemensam containerplattform kan det vara helt korrekt att uttrycka det som en standard eller constraint. Men den bör inte förväxlas med det underliggande behovet.
+Det betyder inte att den första formuleringen aldrig hör hemma i arkitekturen. Om organisationen redan har beslutat att en viss typ av tjänst ska använda en gemensam containerplattform kan det vara helt korrekt att uttrycka det som en standard eller begränsning. Men den bör inte förväxlas med det underliggande behovet.
 
 Samma problem uppstår i många andra former:
 
-- "Vi behöver Kafka" i stället för "vi behöver distribuera händelser till flera oberoende konsumenter med definierade krav på leverans och ordning".
-- "Vi behöver en Oracle-databas" i stället för "vi behöver transaktionell lagring med definierade krav på konsistens, återställning och datalivscykel".
-- "Vi behöver Kubernetes" i stället för "vi behöver standardiserad orkestrering och livscykelhantering för containeriserade arbetslaster".
-- "Vi behöver en AI-assistent" i stället för "användaren behöver snabbare kunna hitta, sammanställa och bearbeta relevant information med en acceptabel felrisk".
+- ”Vi behöver Kafka” i stället för ”vi behöver distribuera händelser till flera oberoende konsumenter med definierade krav på leverans och ordning”.
+- ”Vi behöver en Oracle-databas” i stället för ”vi behöver transaktionell lagring med definierade krav på konsistens, återställning och datalivscykel”.
+- ”Vi behöver Kubernetes” i stället för ”vi behöver standardiserad orkestrering och livscykelhantering för containeriserade arbetslaster”.
+- ”Vi behöver en AI-assistent” i stället för ”användaren behöver snabbare kunna hitta, sammanställa och bearbeta relevant information med en acceptabel felrisk”.
 
 Produktnamn och tekniker är konkreta, vilket gör dem enkla att diskutera. Behov är ofta svårare. De kräver att man förstår verksamheten, konsekvenserna av fel och vilka egenskaper som faktiskt spelar roll.
 
@@ -105,9 +105,9 @@ Det går att driva principen behov före teknik för långt.
 
 En organisation som låtsas att befintlig teknik, kompetens, kostnad och driftmiljö inte existerar riskerar att skapa arkitektur som är teoretiskt ren men praktiskt orealistisk.
 
-Därför behöver man skilja mellan **behov** och **constraints**.
+Därför behöver man skilja mellan **behov** och **begränsningar** (*constraints*).
 
-En constraint är en verklig begränsning av lösningsutrymmet. Exempel kan vara:
+En begränsning är en verklig begränsning av lösningsutrymmet. Exempel kan vara:
 
 - information får av rättsliga eller säkerhetsmässiga skäl endast hanteras i vissa miljöer,
 - organisationen måste använda ett visst identitetssystem för en viss användargrupp,
@@ -116,7 +116,7 @@ En constraint är en verklig begränsning av lösningsutrymmet. Exempel kan vara
 - budget eller tid sätter ett konkret tak,
 - driftmiljön har definierade nätverks- eller kapacitetsgränser.
 
-Constraints är alltså inte samma sak som fria teknikpreferenser.
+Begränsningar är alltså inte samma sak som fria teknikpreferenser.
 
 Jämför:
 
@@ -148,7 +148,7 @@ Varför är det ett problem?
 
 Där börjar behovet bli tydligare: tidsmässig frikoppling och möjlighet att hantera temporär otillgänglighet.
 
-Men frågan "varför?" bör inte användas som en ritual där varje svar ifrågasätts tills diskussionen tappar förankring. Målet är inte att abstrahera bort all konkretion. Målet är att identifiera vilken egenskap eller konsekvens som faktiskt motiverar teknikvalet.
+Men frågan ”varför?” bör inte användas som en ritual där varje svar ifrågasätts tills diskussionen tappar förankring. Målet är inte att abstrahera bort all konkretion. Målet är att identifiera vilken egenskap eller konsekvens som faktiskt motiverar teknikvalet.
 
 När det är tydligt kan tekniken återintroduceras med ett bättre beslutsunderlag.
 
@@ -185,7 +185,7 @@ Teknikskuld kan också finnas i:
 - specialkonfigurationer som hindrar standardisering,
 - produktval med få interna kompetensbärare,
 - beroenden som saknar tydlig ägare,
-- gamla constraints som fortsätter gälla trots att deras ursprungliga orsak har försvunnit.
+- gamla begränsningar som fortsätter gälla trots att deras ursprungliga orsak har försvunnit.
 
 Detta kan kallas **arkitekturell teknikskuld**: tidigare lösningsval minskar handlingsutrymmet och gör förändring dyrare.
 
@@ -193,7 +193,7 @@ Behov före teknik hjälper inte genom att automatiskt ta bort sådan skuld. Dä
 
 Om en organisation kan formulera vilket behov en gammal plattform faktiskt fyller går det också att bedöma om behovet kan realiseras på annat sätt. Om plattformen och behovet däremot har blivit synonyma är ett teknikbyte mycket svårare att ens föreställa sig.
 
-## Ett konkret exempel: "vi behöver en portal"
+## Ett konkret exempel: ”vi behöver en portal”
 
 Anta att en myndighet säger att den behöver en ny portal för externa aktörer.
 
@@ -212,11 +212,11 @@ Nu blir flera arkitekturella möjligheter synliga.
 
 Kanske behövs en sammanhållen webbkanal. Kanske ska vissa funktioner exponeras genom API:er för aktörer som vill integrera sina egna system. Kanske finns redan en gemensam identitetstjänst och ett ärende-API. Kanske är dokumentutbyte ett separat plattformserbjudande.
 
-Genom att börja i behoven blir "portal" en möjlig sammansättning av förmågor och tjänster i stället för ett odelbart krav.
+Genom att börja i behoven blir ”portal” en möjlig sammansättning av förmågor och tjänster i stället för ett odelbart krav.
 
 Det ger större handlingsfrihet och bättre spårbarhet.
 
-## Ett annat exempel: "allt ska vara eventdrivet"
+## Ett annat exempel: ”allt ska vara eventdrivet”
 
 Teknikcentrering kan också uppstå genom arkitekturtrender snarare än produkter.
 
@@ -224,7 +224,7 @@ Anta att en organisation beslutar att nya lösningar ska vara eventdrivna.
 
 Det kan bygga på goda erfarenheter av lös koppling, skalbarhet och reaktivitet. Men om principen används utan behovsanalys kan den skapa onödig komplexitet.
 
-Vissa interaktioner är i grunden synkrona. En användare som skickar en enkel fråga och förväntar sig ett direkt svar kan vara bättre betjänt av ett vanligt API-anrop. Att införa asynkrona events kräver då hantering av korrelation, eventual consistency, fel, replay och observability utan att dessa egenskaper nödvändigtvis löser ett verkligt problem.
+Vissa interaktioner är i grunden synkrona. En användare som skickar en enkel fråga och förväntar sig ett direkt svar kan vara bättre betjänt av ett vanligt API-anrop. Att införa asynkrona events kräver då hantering av korrelation, eventual consistency, fel, replay och observerbarhet utan att dessa egenskaper nödvändigtvis löser ett verkligt problem.
 
 En behovsdriven formulering blir i stället:
 
@@ -232,11 +232,11 @@ En behovsdriven formulering blir i stället:
 
 Då blir eventdriven arkitektur ett mönster som väljs när dess egenskaper passar problemet, inte ett självändamål.
 
-## Constraints bör ha ägare och livslängd
+## Begränsningar bör ha ägare och livslängd
 
-Eftersom constraints begränsar lösningsutrymmet bör de inte bara skrivas in i ett dokument och glömmas bort.
+Eftersom begränsningar begränsar lösningsutrymmet bör de inte bara skrivas in i ett dokument och glömmas bort.
 
-För viktiga constraints är det värdefullt att dokumentera:
+För viktiga begränsningar är det värdefullt att dokumentera:
 
 - vad begränsningen är,
 - varför den finns,
@@ -247,13 +247,13 @@ För viktiga constraints är det värdefullt att dokumentera:
 
 Exempel:
 
-| Constraint | Orsak | Ägare | Omprövning |
+| Begränsning | Orsak | Ägare | Omprövning |
 |---|---|---|---|
 | Extern identitet ska använda gemensam identitetstjänst | Gemensam tillitsmodell och säkerhetsstyrning | Identitet och tillit | Årligen eller vid större förändring |
 | Äldre system måste nås via befintlig integrationsplattform | Kärnsystemet kan inte förändras i pågående program | Integration | Efter programslut |
 | Data får endast lagras i godkänd miljöklass | Informationsklassning och säkerhetskrav | Informations-/säkerhetsansvar | Vid förändrad klassning eller miljö |
 
-Det gör stor skillnad om en teknisk begränsning uttrycks som "så här gör vi" eller som "detta gäller därför att X, ägs av Y och ska omprövas vid Z".
+Det gör stor skillnad om en teknisk begränsning uttrycks som ”så här gör vi” eller som ”detta gäller därför att X, ägs av Y och ska omprövas vid Z”.
 
 Den senare formen stödjer förändring.
 
@@ -280,7 +280,7 @@ En användbar arbetsordning är därför:
 ```text
 Beskriv behovet utan onödig lösningsbindning
             ↓
-Identifiera verkliga constraints
+Identifiera verkliga begränsningar
             ↓
 Gör kvalitetsbehoven konkreta
             ↓
@@ -341,7 +341,7 @@ Men även då är principen användbar. Frågan blir:
 
 > Vilka behov och kvaliteter måste den ersättande lösningen fortsatt uppfylla?
 
-Om en gammal meddelandeplattform ska avvecklas bör man inte automatiskt leta efter "samma produkt fast ny". Man bör först förstå vilka integrationsbehov, leveransgarantier, driftskrav och beroenden den gamla plattformen faktiskt hanterade.
+Om en gammal meddelandeplattform ska avvecklas bör man inte automatiskt leta efter ”samma produkt fast ny”. Man bör först förstå vilka integrationsbehov, leveransgarantier, driftskrav och beroenden den gamla plattformen faktiskt hanterade.
 
 Tekniken kan alltså initiera förändringen utan att ensam definiera målbilden.
 
@@ -355,7 +355,7 @@ Före ett större tekniskt beslut kan följande frågor användas som enkel kont
 2. **Vilka egenskaper är avgörande?**
    Vad måste vara sant för att lösningen ska vara användbar, säker och förvaltningsbar?
 
-3. **Vilka constraints är verkliga?**
+3. **Vilka begränsningar är verkliga?**
    Vilka begränsningar kommer från juridik, säkerhet, externa parter, tid, ekonomi eller befintliga beroenden?
 
 4. **Vilka delar är bara vana eller preferens?**
@@ -376,7 +376,7 @@ I en behovsdriven modell behövs ytterligare en fråga:
 
 > Uppfyller standardlösningen faktiskt behovet och kvalitetskraven i detta fall?
 
-Det betyder inte att standarder blir frivilliga. Tvärtom kan en gemensam standard vara mycket starkt motiverad av säkerhet, kostnad eller interoperabilitet.
+Det innebär inte att standarder blir frivilliga. Tvärtom kan en gemensam standard vara mycket starkt motiverad av säkerhet, kostnad eller interoperabilitet.
 
 Men ett avsteg kan då bedömas utifrån sakliga kriterier:
 
@@ -413,7 +413,7 @@ Det är själva poängen med att lägga behov före teknik: inte att göra arkit
 - Mål, behov, krav, arkitekturval och teknisk realisering är olika nivåer och bör kunna skiljas åt även när arbetet är iterativt.
 - Ett behov är normalt bättre formulerat om det fortfarande är giltigt när den nuvarande tekniken byts ut.
 - Teknikoberoende betyder inte att befintlig teknik, ekonomi eller säkerhetsförutsättningar ska ignoreras.
-- Verkliga begränsningar bör beskrivas som constraints med tydlig orsak, ägare och omprövningspunkt.
+- Verkliga begränsningar bör beskrivas som begränsningar med tydlig orsak, ägare och omprövningspunkt.
 - Path dependency gör att historiska teknikval påverkar framtida handlingsutrymme; detta är inte alltid negativt men bör vara synligt.
 - Arkitekturell teknikskuld kan finnas i plattformar, standarder, integrationssätt och beroenden – inte bara i kod.
 - Produktoberoende krav måste fortfarande vara tillräckligt precisa för att ge beslutsstöd.
@@ -427,7 +427,7 @@ Det är själva poängen med att lägga behov före teknik: inte att göra arkit
 
 **Mål** – ett önskat verksamhets- eller organisationsresultat som behov och lösningar ska bidra till.
 
-**Constraint** – en verklig begränsning av lösningsutrymmet, exempelvis juridik, säkerhetskrav, externa beroenden, tid eller ekonomi.
+**Begränsning** – en verklig begränsning av lösningsutrymmet, exempelvis juridik, säkerhetskrav, externa beroenden, tid eller ekonomi.
 
 **Teknikoberoende krav** – krav som beskriver nödvändiga egenskaper utan onödig bindning till en viss produkt eller implementation.
 

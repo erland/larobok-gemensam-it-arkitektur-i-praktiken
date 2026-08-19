@@ -1,6 +1,6 @@
 # 18. Identitet och tillit
 
-När en människa loggar in i ett verksamhetsstöd, när en backendtjänst anropar ett API eller när två organisationer utbyter information behöver systemen kunna avgöra vem eller vad som finns på andra sidan. Det räcker inte att kommunikationen tekniskt når fram. Det måste också finnas en grund för tillit.
+När en människa loggar in i ett verksamhetsstöd, när en backend-tjänst anropar ett API eller när två organisationer utbyter information behöver systemen kunna avgöra vem eller vad som finns på andra sidan. Det räcker inte att kommunikationen tekniskt når fram. Det måste också finnas en grund för tillit.
 
 Det gör identitet till en arkitekturfråga.
 
@@ -22,7 +22,7 @@ En digital identitet är en representation av ett **subjekt** eller en **aktör*
 - en extern användare,
 - en organisation,
 - en applikation,
-- en backendtjänst,
+- en backend-tjänst,
 - en workload i en runtimeplattform,
 - en CI/CD-pipeline,
 - en administratör med särskilt privilegierad åtkomst.
@@ -137,7 +137,7 @@ Om varje system i stället skapar egna lokala användarkonton uppstår flera par
 
 Principen **gemensam identitet före lokal identitet** är därför ofta en bra utgångspunkt när det gemensamma erbjudandet faktiskt stödjer målgruppen och kvalitetskraven.
 
-Det betyder inte att alla applikationer saknar lokal användarrepresentation. Ett system kan behöva lagra domänspecifika inställningar eller interna identifierare. Men den lokala representationen bör då kopplas till en gemensamt förvaltad identitet i stället för att bli en ny fristående autentiseringsvärld.
+Det innebär inte att alla applikationer saknar lokal användarrepresentation. Ett system kan behöva lagra domänspecifika inställningar eller interna identifierare. Men den lokala representationen bör då kopplas till en gemensamt förvaltad identitet i stället för att bli en ny fristående autentiseringsvärld.
 
 ## Identitetens livscykel
 
@@ -283,7 +283,7 @@ Det skapar en viktig koppling till nästa kapitel om runtime. En modern runtimep
 
 ## Tjänsteidentitet och användardelegering är inte samma sak
 
-En backendtjänst kan agera i två principiellt olika roller.
+En backend-tjänst kan agera i två principiellt olika roller.
 
 ### Tjänsten agerar i eget ansvar
 
@@ -438,7 +438,7 @@ Begreppet Zero Trust används ofta i identitetssammanhang. Den användbara kärn
 
 Identitet, enhet, kontext, policy och den skyddade resursen behöver i stället ingå i åtkomstbeslutet.
 
-Det betyder dock inte att identitetsplattformen ensam realiserar Zero Trust. Nätverk, enhetssäkerhet, policy enforcement, observability och informationsskydd behöver samverka.
+Det betyder dock inte att identitetsplattformen ensam realiserar Zero Trust. Nätverk, enhetssäkerhet, policy enforcement, observerbarhet och informationsskydd behöver samverka.
 
 För förmågemodellen är lärdomen därför främst:
 
@@ -582,7 +582,7 @@ Varje ny kombination av rättigheter skapar en ny global roll.
 
 ### Implicit trust mellan interna tjänster
 
-En tjänst får åtkomst bara för att den finns på "rätt nät".
+En tjänst får åtkomst bara för att den finns på ”rätt nät”.
 
 **Konsekvens:** otydlig säkerhetsmodell och stor konsekvens när nätgränsen kringgås.
 

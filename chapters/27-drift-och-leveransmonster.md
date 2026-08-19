@@ -7,10 +7,10 @@ Kapitel 20 och 21 beskrev förmågorna driftbarhet respektive leverans. Här åt
 I det här kapitlet fördjupar vi tre lösningsmönster från bokens mönsterbibliotek:
 
 - **Build once, promote many**,
-- **Observability för distribuerade tjänster**,
+- **Observerbarhet för distribuerade tjänster**,
 - **Backup och verifierad återställning**.
 
-De tre mönstren angriper olika problem. Build once, promote many skapar förtroende för att den artefakt som når produktion är samma artefakt som testades. Observability gör det möjligt att förstå en körande lösnings beteende över tjänste- och plattformsgränser. Backup och verifierad återställning gör det möjligt att återfå data och nödvändig konfiguration efter förlust eller korruption.
+De tre mönstren angriper olika problem. Build once, promote many skapar förtroende för att den artefakt som når produktion är samma artefakt som testades. Observerbarhet gör det möjligt att förstå en körande lösnings beteende över tjänste- och plattformsgränser. Backup och verifierad återställning gör det möjligt att återfå data och nödvändig konfiguration efter förlust eller korruption.
 
 Tillsammans binder de ihop tre delar av livscykeln:
 
@@ -26,7 +26,7 @@ Observera och förstå
 Lära och förbättra nästa leverans
 ```
 
-Det är viktigt att hålla ansvaren isär. En reproducerbar artefakt skapar inte observability. Bra tracing ersätter inte backup. En lyckad backup säger inte att återställning fungerar. Mönstren blir starka när de kombineras, inte när ett av dem förväntas lösa allt.
+Det är viktigt att hålla ansvaren isär. En reproducerbar artefakt skapar inte observerbarhet. Bra tracing ersätter inte backup. En lyckad backup säger inte att återställning fungerar. Mönstren blir starka när de kombineras, inte när ett av dem förväntas lösa allt.
 
 ## Drift och leverans börjar före produktion
 
@@ -35,7 +35,7 @@ Ett vanligt anti-pattern är att behandla driftbarhet som en fråga som uppstår
 - hur artefakter byggs,
 - var konfiguration ligger,
 - hur versioner identifieras,
-- hur loggar och metrics produceras,
+- hur loggar och mätvärden produceras,
 - hur korrelation fungerar,
 - vilka data som måste skyddas,
 - hur återställning kan genomföras,
@@ -106,7 +106,7 @@ Typiska exempel på sådant som bör hanteras utanför den byggda artefakten är
 
 - endpointadresser,
 - databaskopplingar,
-- feature flags,
+- funktionsflaggor,
 - resursprofiler,
 - miljöspecifik loggingnivå,
 - credentials och secrets,
@@ -157,7 +157,7 @@ Själva artefakten behöver däremot inte byggas om.
 
 ### Databasmigreringar komplicerar bilden
 
-Applikationsartefakten kan vara immutable, men en release kan ändå förändra persistent state genom databasmigreringar.
+Applikationsartefakten kan vara immutable, men en release kan ändå förändra persistent tillstånd genom databasmigreringar.
 
 Därför behöver mönstret kompletteras med en tydlig strategi för:
 
@@ -192,7 +192,7 @@ Det kan kräva variationer när själva resultatet måste produceras specifikt f
 
 Principen bör ändå bevaras så långt det går: det som testas och godkänns ska ha en entydig identitet och inte förändras på vägen till målmiljön.
 
-## Mönster 2: Observability för distribuerade tjänster
+## Mönster 2: Observerbarhet för distribuerade tjänster
 
 ### Problemet
 
@@ -228,17 +228,17 @@ Lokala loggfiler svarar då dåligt på frågor som:
 
 ### Mönstret
 
-Observabilitymönstret kombinerar flera typer av signaler:
+Observerbarhetmönstret kombinerar flera typer av signaler:
 
 - strukturerade loggar,
-- metrics,
+- mätvärden,
 - distributed tracing,
 - korrelationsinformation,
 - central eller federerad insamling,
-- dashboards,
+- instrumentpaneler,
 - åtgärdsbara larm.
 
-Poängen är inte mängden telemetry. Poängen är att kunna **ställa relevanta frågor om systemets tillstånd utan att i förväg känna till exakt vilket fel som kommer att inträffa**.
+Poängen är inte mängden telemetri. Poängen är att kunna **ställa relevanta frågor om systemets tillstånd utan att i förväg känna till exakt vilket fel som kommer att inträffa**.
 
 ### Tre signaltyper med olika styrkor
 
@@ -257,9 +257,9 @@ version=3.8.2
 
 Strukturerade loggar gör informationen sökbar och möjlig att korrelera.
 
-### Metrics
+### mätvärden
 
-Metrics passar för aggregerade tidsserier:
+mätvärden passar för aggregerade tidsserier:
 
 - latens,
 - throughput,
@@ -270,15 +270,15 @@ Metrics passar för aggregerade tidsserier:
 
 De är effektiva för trender, SLI:er och larm.
 
-### Traces
+### spår
 
 Distributed tracing visar en operations väg över flera komponenter. Det är särskilt värdefullt för att förstå latens och beroenden i distribuerade flöden.
 
-Ingen av signalerna ersätter de andra. En trace kan visa *var* tiden försvann, en logg kan visa *varför* ett anrop misslyckades och metrics kan visa *hur ofta* problemet uppstår.
+Ingen av signalerna ersätter de andra. En trace kan visa *var* tiden försvann, en logg kan visa *varför* ett anrop misslyckades och mätvärden kan visa *hur ofta* problemet uppstår.
 
 ### Korrelation måste designas
 
-Observability över flera tjänster kräver att relationer mellan händelser kan följas.
+Observerbarhet över flera tjänster kräver att relationer mellan händelser kan följas.
 
 Det kan finnas flera relevanta identiteter:
 
@@ -294,18 +294,18 @@ Ett tekniskt trace-id har annan livslängd och mening än ett verksamhetsärende
 
 Mönstret behöver därför beskriva **vilka korrelationer som ska följa med över vilka gränser**.
 
-### Observability bör följa deploymenten
+### Observerbarhet bör följa driftsättningen
 
-När en ny version promoveras till produktion bör telemetry göra det möjligt att koppla observerat beteende till just den versionen.
+När en ny version promoveras till produktion bör telemetri göra det möjligt att koppla observerat beteende till just den versionen.
 
 Det ger en viktig länk till build once, promote many:
 
 ```text
 Artefaktversion
       ↓
-Deployment
+Driftsättning
       ↓
-Telemetry märkt med version
+Telemetri märkt med version
       ↓
 Jämförelse före/efter release
 ```
@@ -317,13 +317,13 @@ Då kan man exempelvis se om version 3.8.2 förändrade:
 - minnesanvändning,
 - antal misslyckade verksamhetsoperationer.
 
-Observability blir därmed en del av releaseverifieringen, inte bara felsökning efter incident.
+Observerbarhet blir därmed en del av releaseverifieringen, inte bara felsökning efter incident.
 
 ### SLI och SLO ger riktning
 
-Telemetry blir mest värdefull när den kopplas till kvalitetskrav.
+Telemetri blir mest värdefull när den kopplas till kvalitetskrav.
 
-En lösning kan samla tusentals metrics utan att veta vilka som faktiskt avgör om tjänsten fungerar för konsumenten.
+En lösning kan samla tusentals mätvärden utan att veta vilka som faktiskt avgör om tjänsten fungerar för konsumenten.
 
 En **Service Level Indicator (SLI)** uttrycker en mätbar egenskap, exempelvis andelen lyckade begäranden eller latens för en viss operation. Ett **Service Level Objective (SLO)** anger den nivå som eftersträvas.
 
@@ -334,7 +334,7 @@ SLI: andel lyckade registreringar
 SLO: minst 99,9 % under rullande 30 dagar
 ```
 
-Det gör observability användbar för arkitekturella beslut. Om en release försämrar den indikator som faktiskt representerar tjänstens nytta är det mer betydelsefullt än att en enskild intern metric förändras.
+Det gör observerbarhet användbar för arkitekturella beslut. Om en release försämrar den indikator som faktiskt representerar tjänstens nytta är det mer betydelsefullt än att en enskild intern metric förändras.
 
 ### Åtgärdsbara larm
 
@@ -360,7 +360,7 @@ Mönstret är särskilt viktigt för:
 - lösningar över flera plattformar,
 - system med höga krav på felsökning, spårbarhet eller tillgänglighet.
 
-Även mindre system tjänar dock på en gemensam miniminivå för strukturerad logging, metrics och korrelation.
+Även mindre system tjänar dock på en gemensam miniminivå för strukturerad logging, mätvärden och korrelation.
 
 ## Mönster 3: Backup och verifierad återställning
 
@@ -422,7 +422,7 @@ En central fråga blir därför:
 
 > Vad är oersättligt, och vad kan reproduceras?
 
-Det kopplar återställningsmönstret direkt till bokens tidigare skillnad mellan auktoritativt och härlett state.
+Det kopplar återställningsmönstret direkt till bokens tidigare skillnad mellan auktoritativt och härlett tillstånd.
 
 ### RPO och RTO måste kopplas till mekanismen
 
@@ -483,7 +483,7 @@ En databasrestore hjälper inte om systemet därefter saknar:
 
 Här möts alla tre kapitlets mönster.
 
-Build once, promote many gör gamla applikationsartefakter reproducerbart identifierbara. Observability gör det möjligt att verifiera att den återställda tjänsten faktiskt fungerar. Backup-/restore-mönstret återför det state som inte kan återskapas på annat sätt.
+Build once, promote many gör gamla applikationsartefakter reproducerbart identifierbara. Observerbarhet gör det möjligt att verifiera att den återställda tjänsten faktiskt fungerar. Backup-/restore-mönstret återför det tillstånd som inte kan återskapas på annat sätt.
 
 ## Tre mönster – en sammanhängande kedja
 
@@ -505,7 +505,7 @@ Build once, promote many svarar på:
 
 ### Efter release
 
-Observability svarar på:
+Observerbarhet svarar på:
 
 > Beter sig den produktionssatta versionen som vi förväntar oss?
 
@@ -513,7 +513,7 @@ Observability svarar på:
 
 Backup och verifierad återställning svarar på:
 
-> Kan vi återfå nödvändigt state och återetablera en fungerande tjänst inom accepterad tid och dataförlust?
+> Kan vi återfå nödvändigt tillstånd och återetablera en fungerande tjänst inom accepterad tid och dataförlust?
 
 Tillsammans ger de en kedja:
 
@@ -537,9 +537,9 @@ Det är en starkare arkitekturmodell än tre isolerade teknikfunktioner.
 
 ## Releasebeslut bör använda driftdata
 
-En mogen leveransprocess slutar inte när deploymentverktyget rapporterar "success".
+En mogen leveransprocess slutar inte när driftsättningsverktyget rapporterar ”success”.
 
-En deployment kan tekniskt lyckas samtidigt som:
+En driftsättning kan tekniskt lyckas samtidigt som:
 
 - latensen stiger kraftigt,
 - en viss verksamhetsoperation börjar misslyckas,
@@ -547,7 +547,7 @@ En deployment kan tekniskt lyckas samtidigt som:
 - minnesanvändningen driver,
 - fel endast uppstår för en viss användargrupp.
 
-Därför kan releaseflödet använda observability som verifieringssteg.
+Därför kan releaseflödet använda observerbarhet som verifieringssteg.
 
 Exempel:
 
@@ -571,7 +571,7 @@ Begreppen blandas ibland ihop.
 
 **Rollback av applikation** innebär att gå tillbaka till en tidigare programversion.
 
-**Restore av data** innebär att återskapa persistent state från en tidigare eller skyddad kopia.
+**Restore av data** innebär att återskapa persistent tillstånd från en tidigare eller skyddad kopia.
 
 De kan ha helt olika konsekvenser.
 
@@ -630,14 +630,14 @@ Det kan omfatta:
 
 - krav på spårbar artefaktidentitet,
 - gemensamma principer för build once/promote many,
-- miniminivå för telemetry och korrelation,
+- miniminivå för telemetri och korrelation,
 - gemensam terminologi för SLI/SLO,
 - backup-/recoveryprofiler,
 - krav på återställningstest för vissa riskklasser,
 - principer för separation mellan primär och skyddad kopia,
 - gemensamma metadata för version, miljö och tjänsteidentitet.
 
-Den gemensamma nivån bör däremot inte detaljdesigna varje teams pipeline, dashboard eller backupjobb.
+Den gemensamma nivån bör däremot inte detaljdesigna varje teams pipeline, instrumentpanel eller backupjobb.
 
 ### Förmågenivå
 
@@ -646,8 +646,8 @@ Förmågeansvariga för programvaruleverans respektive driftbarhet kan omsätta 
 - CI/CD-plattform,
 - artefaktregister,
 - pipelinekomponenter,
-- deploymentstöd,
-- logging-/metrics-/tracingtjänster,
+- driftsättningsstöd,
+- logging-/mätvärden-/tracingtjänster,
 - dashboardskelett,
 - backup- och recoverytjänster,
 - standardprofiler och golden paths.
@@ -682,13 +682,13 @@ Ett generiskt versionsnamn återanvänds och pekar på olika innehåll över tid
 
 En ny build krävs bara för att endpoint eller annat miljövärde förändras.
 
-### Telemetry utan frågor
+### Telemetri utan frågor
 
-Systemet producerar stora mängder loggar och metrics men ingen har definierat vilka frågor de ska kunna besvara.
+Systemet producerar stora mängder loggar och mätvärden men ingen har definierat vilka frågor de ska kunna besvara.
 
-### Dashboard som mål
+### instrumentpanel som mål
 
-Att en dashboard existerar behandlas som bevis på observability, trots att den inte kopplar signaler till användar- eller verksamhetskonsekvens.
+Att en instrumentpanel existerar behandlas som bevis på observerbarhet, trots att den inte kopplar signaler till användar- eller verksamhetskonsekvens.
 
 ### Alarm på allt
 
@@ -708,7 +708,7 @@ Data kan återställas men organisationen vet inte vilken applikationsartefakt e
 
 ### Återställning beroende av den havererade miljön
 
-Runbooks, credentials eller kontrollverktyg finns bara i samma fel- eller hotdomän som ska återställas.
+driftinstruktioner, credentials eller kontrollverktyg finns bara i samma fel- eller hotdomän som ska återställas.
 
 ## Ett genomgående exempel
 
@@ -725,11 +725,11 @@ Samma image promoveras genom test och acceptans till produktion. Databasadress o
 Tjänsten producerar:
 
 - strukturerade loggar,
-- tekniska metrics,
+- tekniska mätvärden,
 - verksamhetsnära SLI:er,
-- traces över anrop till regel- och integrationstjänster.
+- spår över anrop till regel- och integrationstjänster.
 
-All telemetry innehåller tjänstenamn och artefaktversion. Därmed kan driftorganisationen se om just version 2.7.0 påverkar exempelvis andelen lyckade registreringar.
+All telemetri innehåller tjänstenamn och artefaktversion. Därmed kan driftorganisationen se om just version 2.7.0 påverkar exempelvis andelen lyckade registreringar.
 
 ### Data
 
@@ -779,11 +779,11 @@ Vilka tekniska och verksamhetsnära signaler visar att tjänsten fungerar?
 
 Hur följs en operation över tjänste-, meddelande- och plattformsgränser?
 
-### 6. Koppla telemetry till SLI/SLO
+### 6. Koppla telemetri till SLI/SLO
 
 Vilka mätvärden representerar den kvalitet konsumenten faktiskt upplever?
 
-### 7. Identifiera oersättligt state
+### 7. Identifiera oersättligt tillstånd
 
 Vilka data och konfigurationer kan inte enkelt reproduceras?
 
@@ -803,7 +803,7 @@ Verifiera inte bara enskilda mekanismer. Testa promotion, observation och åters
 
 Drift- och leveransmönster handlar ytterst om **förtroende för förändring och återhämtning**.
 
-Build once, promote many gör det möjligt att veta vilken programvara som testades och vilken som körs. Observability gör det möjligt att förstå hur den programvaran faktiskt beter sig i en distribuerad lösning. Backup och verifierad återställning gör det möjligt att återskapa det state som inte kan reproduceras när ett allvarligt fel inträffar.
+Build once, promote many gör det möjligt att veta vilken programvara som testades och vilken som körs. Observerbarhet gör det möjligt att förstå hur den programvaran faktiskt beter sig i en distribuerad lösning. Backup och verifierad återställning gör det möjligt att återskapa det tillstånd som inte kan reproduceras när ett allvarligt fel inträffar.
 
 De tre mönstren kan sammanfattas med tre frågor:
 

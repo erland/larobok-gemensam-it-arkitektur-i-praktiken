@@ -18,7 +18,7 @@ Detta kapitel introducerar en beslutsmodell för den frågan. Fokus ligger på *
 
 Det första som behöver klarläggas är att *gemensamt* inte automatiskt betyder *centralt producerat av ett enda team*.
 
-En organisation kan ha ett gemensamt ansvar för exempelvis identitet, API-principer eller observability samtidigt som delar av realiseringen är federerad. Ett centralt arkitekturområde kan definiera gemensamma krav och gränser, flera plattformsteam kan erbjuda olika tekniska byggblock och lösningsteamen kan bära ansvar för lokal konfiguration och användning.
+En organisation kan ha ett gemensamt ansvar för exempelvis identitet, API-principer eller observerbarhet samtidigt som delar av realiseringen är federerad. Ett centralt arkitekturområde kan definiera gemensamma krav och gränser, flera plattformsteam kan erbjuda olika tekniska byggblock och lösningsteamen kan bära ansvar för lokal konfiguration och användning.
 
 Det innebär att man bör skilja mellan åtminstone fyra frågor:
 
@@ -68,7 +68,7 @@ Typiska områden där skalfördelar kan vara betydande är:
 - gemensamma databastjänster,
 - standardiserade utvecklarverktyg.
 
-Men skala är inte bara en kostnadsfråga. Ett gemensamt erbjudande kan också göra en avancerad lösning praktiskt tillgänglig för fler team. Ett enskilt produktteam kanske inte har resurser att bygga en robust certifikatlifecycle, självservice för secrets eller avancerad observability. Om detta finns som gemensamt erbjudande kan teamet konsumera en högre kvalitet än det rimligen hade kunnat skapa självt.
+Men skala är inte bara en kostnadsfråga. Ett gemensamt erbjudande kan också göra en avancerad lösning praktiskt tillgänglig för fler team. Ett enskilt produktteam kanske inte har resurser att bygga en robust certifikatlivscykel, självservice för secrets eller avancerad observerbarhet. Om detta finns som gemensamt erbjudande kan teamet konsumera en högre kvalitet än det rimligen hade kunnat skapa självt.
 
 Samtidigt finns en viktig gräns: **skalfördelar uppstår bara när behoven faktiskt är tillräckligt lika**.
 
@@ -107,7 +107,7 @@ Det kan handla om exempelvis:
 - databasmotorns drift och återställning,
 - meddelandemäklares klustring och leveranssemantik,
 - Kubernetes- eller containerplattformars interna drift,
-- avancerad observability,
+- avancerad observerbarhet,
 - sökindexering,
 - AI-infrastruktur eller modellförvaltning.
 
@@ -317,7 +317,7 @@ Ett gemensamt förmågeansvar behöver kunna:
 - synliggöra beroenden och luckor,
 - samla återkoppling från faktiska lösningar.
 
-Det betyder inte att förmågeansvarig ska fatta alla lokala beslut. Rollen är snarare att säkerställa att organisationen inte tappar bort helheten medan implementation och verksamhetsnära variation förblir distribuerad.
+Det innebär inte att förmågeansvarig ska fatta alla lokala beslut. Rollen är snarare att säkerställa att organisationen inte tappar bort helheten medan implementation och verksamhetsnära variation förblir distribuerad.
 
 Detta knyter tillbaka till ansvarmodellen från kapitel 7:
 
@@ -363,9 +363,9 @@ Det kan finnas skäl för gemensamma mönster, standarder för spårbarhet och e
 
 Här blir en federerad modell ofta mer rimlig än full centralisering.
 
-### Exempel 3: Observability
+### Exempel 3: Observerbarhet
 
-Alla produktteam behöver kunna förstå sina system i drift. Gemensam korrelation, logghantering, metrics, tracing och larmkedjor ger stora skalfördelar och förbättrar möjligheten att felsöka över systemgränser.
+Alla produktteam behöver kunna förstå sina system i drift. Gemensam korrelation, logghantering, mätvärden, tracing och larmkedjor ger stora skalfördelar och förbättrar möjligheten att felsöka över systemgränser.
 
 Det talar för gemensamma standarder och gemensam plattform.
 

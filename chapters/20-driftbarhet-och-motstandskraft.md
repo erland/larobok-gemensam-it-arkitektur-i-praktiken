@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 Kapitel 4 beskrev hur tillgänglighet, kontinuitet, återställningstid och andra kvalitetskrav härleds från verksamhetskonsekvenser. Det här kapitlet tar nästa steg: vilka tekniska och operativa förmågor behövs för att realisera och verifiera sådana krav?
 
-Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer behandlades i kapitel 19. Bygg, test, release och deployment behandlas i kapitel 21. Fokus här ligger på **observability, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling**.
+Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer behandlades i kapitel 19. Bygg, test, release och driftsättning behandlas i kapitel 21. Fokus här ligger på **observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling**.
 
 ## Driftbarhet är en egenskap hos hela systemet
 
@@ -28,7 +28,7 @@ Ett system blir driftbart genom en kombination av sådant som:
 - rimlig förändringstakt,
 - och människor som kan förstå signalerna och agera på dem.
 
-Det innebär att två system med samma observabilityplattform kan ha helt olika driftbarhet. Det ena producerar strukturerade loggar, meningsfulla metrics och korrelerade traces och har tydliga runbooks. Det andra skickar stora mängder ostrukturerad text till samma plattform utan att någon vet vilka signaler som är viktiga.
+Det innebär att två system med samma observerbarhetsplattform kan ha helt olika driftbarhet. Det ena producerar strukturerade loggar, meningsfulla mätvärden och korrelerade spår och har tydliga driftinstruktioner. Det andra skickar stora mängder ostrukturerad text till samma plattform utan att någon vet vilka signaler som är viktiga.
 
 Den gemensamma plattformen kan ge verktyg och standarder. Den kan inte ensam skapa driftbarheten.
 
@@ -65,13 +65,13 @@ Det leder till **kvalitetsprofiler** snarare än ett universellt maximalkrav.
 
 En gemensam plattform kan exempelvis erbjuda flera profiler för backup, retention, redundans eller larmning. Konsumenten väljer inte profil efter tycke, utan utifrån de kvalitetsbehov som härletts tidigare.
 
-## Observability är förmågan att förstå systemets tillstånd
+## Observerbarhet (*observability*) är förmågan att förstå systemets tillstånd
 
-Begreppet *observability* används ofta som synonym till övervakning, men det är mer användbart att skilja dem åt.
+Begreppet *observability*, här **observerbarhet**, används ofta som synonym till övervakning, men det är mer användbart att skilja dem åt.
 
 **Monitorering** handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
 
-**Observability** handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.
+**Observerbarhet** handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.
 
 Skillnaden blir tydlig i en incident.
 
@@ -79,7 +79,7 @@ Monitorering kan säga:
 
 > Felkvoten för API:t har passerat fem procent.
 
-Observability behöver dessutom hjälpa oss svara på:
+Observerbarhet behöver dessutom hjälpa oss svara på:
 
 - Vilka anrop fallerar?
 - När började problemet?
@@ -89,7 +89,7 @@ Observability behöver dessutom hjälpa oss svara på:
 - Uppstår felet i samma del av ett distribuerat flöde?
 - Är systemet tekniskt levande men verksamhetsmässigt oanvändbart?
 
-En gemensam observabilityförmåga behöver därför mer än en central loggdatabas. Den behöver en sammanhängande modell för **loggar, metrics, traces, korrelation, dashboards, larm och åtkomst till telemetrin**.
+En gemensam observerbarhetsförmåga behöver därför mer än en central loggdatabas. Den behöver en sammanhängande modell för **loggar, mätvärden, spår, korrelation, instrumentpaneler, larm och åtkomst till telemetrin**.
 
 ## Loggar berättar vad som hände
 
@@ -114,11 +114,11 @@ En viktig princip är därför:
 
 Credentials, secrets och onödiga person- eller skyddsvärda uppgifter ska inte användas som diagnostiskt material. Retention för loggar behöver också styras medvetet. ”Spara allt för säkerhets skull” är sällan en hållbar informationsstrategi.
 
-## Metrics visar beteende över tid
+## mätvärden visar beteende över tid
 
-Loggar beskriver enskilda händelser. Metrics gör det lättare att se mönster och förändring över tid.
+Loggar beskriver enskilda händelser. mätvärden gör det lättare att se mönster och förändring över tid.
 
-Exempel på tekniska metrics är:
+Exempel på tekniska mätvärden är:
 
 - svarstid,
 - felkvot,
@@ -184,9 +184,9 @@ Det finns flera nivåer av hälsa:
 
 Dessa nivåer ska inte alltid kopplas ihop mekaniskt.
 
-Om en health check exempelvis gör instansen ”ohälsosam” bara för att ett externt beroende är tillfälligt nere kan runtimeplattformen börja starta om fullt fungerande instanser i onödan. Resultatet kan bli större störning än det ursprungliga felet.
+Om en health check exempelvis gör instansen ”ohälsosam” bara för att ett externt beroende är tillfälligt nere kan runtime-plattformen börja starta om fullt fungerande instanser i onödan. Resultatet kan bli större störning än det ursprungliga felet.
 
-Health checks behöver därför ha ett tydligt syfte. En signal som används för automatisk omstart har en annan konsekvens än en signal som används för en dashboard.
+Health checks behöver därför ha ett tydligt syfte. En signal som används för automatisk omstart har en annan konsekvens än en signal som används för en instrumentpanel.
 
 Automatisering gör felhantering snabbare – men den förstorar också konsekvensen av en felaktig signal.
 
@@ -213,10 +213,10 @@ Mätbar indikator
         ↓
 Målnivå
         ↓
-Observability och operativ uppföljning
+Observerbarhet och operativ uppföljning
 ```
 
-SLO bör inte börja i frågan ”vilka metrics kan vår plattform mäta?”. De bör börja i vilket tjänstebeteende som faktiskt är viktigt.
+SLO bör inte börja i frågan ”vilka mätvärden kan vår plattform mäta?”. De bör börja i vilket tjänstebeteende som faktiskt är viktigt.
 
 ## Larm ska leda till handling
 
@@ -243,9 +243,9 @@ Att lägga ytterligare larm ovanpå problemet förbättrar inte driftbarheten.
 
 **Larmtrötthet** är därför inte bara ett användargränssnittsproblem. Det är ett tecken på att organisationens operativa signalmodell behöver förbättras.
 
-## Dashboards är hypoteser om vad som är viktigt
+## instrumentpaneler är hypoteser om vad som är viktigt
 
-Dashboards blir lätt stora samlingar av grafer därför att telemetrin finns tillgänglig.
+instrumentpaneler blir lätt stora samlingar av grafer därför att telemetrin finns tillgänglig.
 
 En bättre utgångspunkt är att varje vy ska svara på en fråga.
 
@@ -258,9 +258,9 @@ Exempel:
 - Växer kön snabbare än vi kan behandla den?
 - Har återkommande incidenter samma tekniska signatur?
 
-Det innebär ofta att olika målgrupper behöver olika vyer. Ett plattformsteam, ett applikationsteam och en tjänsteägare behöver inte samma dashboard.
+Det innebär ofta att olika målgrupper behöver olika vyer. Ett plattformsteam, ett applikationsteam och en tjänsteägare behöver inte samma instrumentpanel.
 
-En gemensam observabilityplattform bör göra data tillgänglig och standardiserad. Den bör inte anta att samma dashboard kan representera alla tjänsters verkliga hälsa.
+En gemensam observerbarhetsplattform bör göra data tillgänglig och standardiserad. Den bör inte anta att samma instrumentpanel kan representera alla tjänsters verkliga hälsa.
 
 ## Motståndskraft börjar med att fel förväntas
 
@@ -276,7 +276,7 @@ Det handlar om att utforma system så att fel:
 
 Det kräver en annan tankemodell än att betrakta fel som exceptionella undantag.
 
-I ett distribuerat system kommer exempelvis nätverksfördröjning, tillfälligt otillgängliga beroenden, överbelastning, processkrascher och misslyckade deploymenter förr eller senare att inträffa.
+I ett distribuerat system kommer exempelvis nätverksfördröjning, tillfälligt otillgängliga beroenden, överbelastning, processkrascher och misslyckade driftsättningar förr eller senare att inträffa.
 
 Arkitekturen behöver därför fråga:
 
@@ -321,15 +321,15 @@ Om tjänst A anropar B som anropar C behöver tidsbudgeten förstås över hela 
 
 Det gör timeout till mer än en lokal konfigurationsparameter. I kritiska flöden är den en del av lösningens fel- och latensmodell.
 
-## Retry kan både hjälpa och skada
+## Återförsök kan både hjälpa och skada
 
-Automatiska retries kan hantera kortvariga fel mycket effektivt.
+Automatiska återförsök kan hantera kortvariga fel mycket effektivt.
 
 De kan också förstärka en incident.
 
-Om tusentals klienter omedelbart skickar om misslyckade anrop mot en redan överbelastad tjänst kan retrylogiken skapa en återkopplingsloop som gör problemet större.
+Om tusentals klienter omedelbart skickar om misslyckade anrop mot en redan överbelastad tjänst kan återförsökslogiken skapa en återkopplingsloop som gör problemet större.
 
-Retry behöver därför analyseras tillsammans med:
+Återförsök behöver därför analyseras tillsammans med:
 
 - idempotens,
 - timeout,
@@ -341,7 +341,7 @@ Retry behöver därför analyseras tillsammans med:
 
 Ett permanent valideringsfel ska normalt inte försöka skickas om på samma sätt som ett tillfälligt nätverksfel.
 
-Detta knyter an till kapitel 17: leveranssemantik och kommunikationsmönster är en del av motståndskraften, men driftbarhetsförmågan behöver ge mekanismer för att **se när retries sker, när de misslyckas och när de skapar belastning**.
+Detta knyter an till kapitel 17: leveranssemantik och kommunikationsmönster är en del av motståndskraften, men driftbarhetsförmågan behöver ge mekanismer för att **se när återförsök sker, när de misslyckas och när de skapar belastning**.
 
 ## Automatisk återhämtning är värdefull när beteendet är säkert
 
@@ -474,7 +474,7 @@ DR är därför både arkitektur och operativ förmåga.
 
 Dokumentation är nödvändig men inte tillräcklig.
 
-En runbook kan vara logiskt korrekt och ändå fallera när den används därför att:
+En driftinstruktion kan vara logiskt korrekt och ändå fallera när den används därför att:
 
 - kommandon har förändrats,
 - behörigheter saknas,
@@ -495,11 +495,11 @@ Det kan handla om:
 
 Alla system behöver inte samma testfrekvens eller omfattning. Återigen är det kvalitetsbehovet som styr.
 
-## Runbooks gör kunskap operativ
+## driftinstruktioner gör kunskap operativ
 
-En runbook beskriver hur ett känt operativt tillstånd hanteras.
+En driftinstruktion beskriver hur ett känt operativt tillstånd hanteras.
 
-En bra runbook kan exempelvis svara på:
+En bra driftinstruktion kan exempelvis svara på:
 
 - Hur identifieras problemet?
 - Vilka kontroller ska göras först?
@@ -509,9 +509,9 @@ En bra runbook kan exempelvis svara på:
 - När ska problemet eskaleras?
 - Vilken information ska bevaras för efteranalys?
 
-Runbooks är särskilt värdefulla när återkommande incidenter kräver samma kedja av diagnostik och åtgärder.
+driftinstruktioner är särskilt värdefulla när återkommande incidenter kräver samma kedja av diagnostik och åtgärder.
 
-Men de ska inte bli ett sätt att permanent acceptera manuellt arbete som borde automatiseras. Om samma runbook körs flera gånger i veckan är det ofta ett tecken på att en plattforms- eller produktförbättring bör prioriteras.
+Men de ska inte bli ett sätt att permanent acceptera manuellt arbete som borde automatiseras. Om samma driftinstruktion körs flera gånger i veckan är det ofta ett tecken på att en plattforms- eller produktförbättring bör prioriteras.
 
 På så sätt blir operativt arbete en källa till arkitektoniskt lärande.
 
@@ -544,7 +544,7 @@ En av de största vinsterna med en gemensam driftbarhetsförmåga är att incide
 Återkommande problem kan visa att:
 
 - ett API-kontrakt är för skört,
-- en runtimeprofil är fel dimensionerad,
+- en runtime-profil är fel dimensionerad,
 - ett beroende saknar timeout,
 - en gemensam plattform inte erbjuder rätt recoveryprofil,
 - ett system har otydliga ägargränser,
@@ -592,9 +592,9 @@ Ett gemensamt erbjudande för insamling, retention, sökning och åtkomstkontrol
 
 Plattformen kan standardisera mekanismen. Konsumenten behöver fortfarande producera meningsfulla loggar och avgöra vilken information som får förekomma i dem.
 
-### Metrics, Monitoring and Tracing
+### mätvärden, Monitoring and Tracing
 
-Ett erbjudande för metrics, dashboards, teknisk monitorering, tracing och larmfunktioner.
+Ett erbjudande för mätvärden, instrumentpaneler, teknisk monitorering, tracing och larmfunktioner.
 
 Plattformen kan tillhandahålla insamling och standardiserade integrationer. Konsumenten behöver definiera vilka signaler som visar den egna tjänstens hälsa.
 
@@ -604,7 +604,7 @@ Ett erbjudande för backup, point-in-time recovery, restore och tekniskt stöd f
 
 Plattformen kan erbjuda profiler. Konsumenten behöver identifiera skyddsvärda data, välja rätt profil och delta i verifieringen av att hela lösningen kan återställas.
 
-Dessa tjänster kan vara separata produkter även om de hör till samma förmåga. Det finns inget egenvärde i att samla observability, backup och DR i en enda teknisk plattform.
+Dessa tjänster kan vara separata produkter även om de hör till samma förmåga. Det finns inget egenvärde i att samla observerbarhet, backup och DR i en enda teknisk plattform.
 
 ## Standardisering ska ske på rätt nivå
 
@@ -614,9 +614,9 @@ Exempel på lämpliga standardområden är:
 
 - strukturerad loggning,
 - korrelationsmekanism,
-- benämning och labels för metrics,
+- benämning och labels för mätvärden,
 - health checks,
-- hur traces propagateras,
+- hur spår propagateras,
 - förbud mot secrets i loggar,
 - backup- och restoreprofiler,
 - krav på återkommande restoretest för kritiska data.
@@ -636,7 +636,7 @@ Driftbarhet blir särskilt tydlig när ansvarsfördelningen från kapitel 7 till
 Den gemensamma nivån bör bland annat:
 
 - definiera kvalitetsdimensioner och övergripande principer,
-- ange gemensamma krav för observability och återställningsbarhet,
+- ange gemensamma krav för observerbarhet och återställningsbarhet,
 - definiera hur kvalitetsprofiler uttrycks,
 - besluta gemensamma korrelations- och telemetrikontrakt,
 - etablera principer för backup, restore och fel-/hotdomäner,
@@ -649,11 +649,11 @@ Den gemensamma nivån ska inte välja larmtröskel för varje enskild applikatio
 
 Förmågeansvaret för Driftbarhet och motståndskraft bör bland annat:
 
-- utveckla gemensamma observabilitytjänster,
+- utveckla gemensamma observerbarhetstjänster,
 - erbjuda logging-, monitoring- och tracingmekanismer,
 - erbjuda backup- och recoveryprofiler,
 - ta fram standarder och golden paths,
-- stödja runbooks och operativ integration,
+- stödja driftinstruktioner och operativ integration,
 - följa upp återkommande incidentmönster,
 - utveckla mekanismer för restoretest och DR-verifiering,
 - förvalta retention- och kapacitetsprofiler för telemetri,
@@ -672,8 +672,8 @@ Det konkreta produktområdet behöver bland annat:
 - kartlägga kritiska beroenden och felmoder,
 - välja backup- och recoveryprofil,
 - dokumentera och testa återställning,
-- utforma lösningen för felisolering och säker retry,
-- äga sina runbooks,
+- utforma lösningen för felisolering och säker återförsök,
+- äga sina driftinstruktioner,
 - följa upp incidenter och förbättra både produkt och gemensamma mekanismer.
 
 Denna ansvarsfördelning gör det möjligt att standardisera verktyg och mekanismer utan att centralisera all operativ förståelse.
@@ -682,7 +682,7 @@ Denna ansvarsfördelning gör det möjligt att standardisera verktyg och mekanis
 
 ### Dashboarden blir målet
 
-Projektet anses ”ha observability” eftersom en dashboard finns, trots att den inte hjälper någon att förstå tjänstens verkliga tillstånd.
+Projektet anses ”ha observerbarhet” eftersom en instrumentpanel finns, trots att den inte hjälper någon att förstå tjänstens verkliga tillstånd.
 
 ### Alla fel blir larm
 
@@ -710,7 +710,7 @@ Automatiserad självläkning döljer ett återkommande fel utan att grundorsaken
 
 ### Plattformsteamet blir ansvarigt för applikationens drift
 
-Konsumenten producerar ingen meningsfull telemetri eftersom den antar att observabilityplattformen automatiskt kan förstå verksamhetslogiken.
+Konsumenten producerar ingen meningsfull telemetri eftersom den antar att observerbarhetsplattformen automatiskt kan förstå verksamhetslogiken.
 
 ## En praktisk analysordning
 
@@ -719,13 +719,13 @@ När driftbarhet och motståndskraft ska utformas för ett IT-stöd kan följand
 1. **Utgå från konsekvensen.** Återanvänd kvalitetskraven från kapitel 4.
 2. **Identifiera kritiska användar- och verksamhetsflöden.** Vad måste faktiskt fungera?
 3. **Kartlägg beroenden och felmoder.** Vad kan fallera och hur sprids felet?
-4. **Definiera observerbara signaler.** Vilka loggar, metrics, traces och verksamhetsnära indikatorer behövs?
+4. **Definiera observerbara signaler.** Vilka loggar, mätvärden, spår och verksamhetsnära indikatorer behövs?
 5. **Definiera SLI och relevanta målnivåer.** Hur vet vi om tjänsten håller önskad kvalitet?
 6. **Utforma larm.** Vilka tillstånd kräver mänsklig eller automatisk åtgärd?
-7. **Planera felisolering och återhämtning.** Timeout, retry, redundans, failover och andra mekanismer där behovet motiverar dem.
+7. **Planera felisolering och återhämtning.** Timeout, återförsök, redundans, failover och andra mekanismer där behovet motiverar dem.
 8. **Identifiera vad som måste kunna återställas.** Data, konfiguration och övriga beroenden.
 9. **Välj backup- och recoveryprofil.** Knyt den till RPO/RTO eller motsvarande behov.
-10. **Dokumentera operativa procedurer.** Runbooks, mandat och eskalering.
+10. **Dokumentera operativa procedurer.** driftinstruktioner, mandat och eskalering.
 11. **Verifiera återställningen.** Testa restore och DR i proportion till konsekvensen.
 12. **Lär från drift.** Använd incidenter, kapacitetsdata och återkommande manuellt arbete som återkoppling till arkitekturen.
 

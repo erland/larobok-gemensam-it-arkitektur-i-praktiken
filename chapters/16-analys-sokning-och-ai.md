@@ -120,7 +120,7 @@ Det kan motivera särskilda analytiska representationer, exempelvis datamarts el
 
 ### Ett diagram är inte mer sant än sin definition
 
-En dashboard kan se exakt och övertygande ut även när begreppen bakom den är otydliga.
+En instrumentpanel kan se exakt och övertygande ut även när begreppen bakom den är otydliga.
 
 Ta ett enkelt nyckeltal som **genomsnittlig handläggningstid**. För att måttet ska vara meningsfullt måste man bland annat veta:
 
@@ -423,7 +423,7 @@ Men testdata behöver också livscykelhanteras. Om verkligheten förändras kan 
 
 ## Drift, förändring och modellbeteende
 
-Traditionell observability fokuserar ofta på tekniska signaler som svarstid, felprocent och resursanvändning. Dessa är viktiga även för analys- och AI-tjänster, men räcker inte alltid.
+Traditionell observerbarhet fokuserar ofta på tekniska signaler som svarstid, felprocent och resursanvändning. Dessa är viktiga även för analys- och AI-tjänster, men räcker inte alltid.
 
 En lösning kan tekniskt svara med HTTP 200 och samtidigt producera undermåliga resultat.
 
@@ -537,7 +537,7 @@ De som ansvarar för Analys, sökning och AI kan exempelvis ansvara för:
 - RAG-/kunskapstjänster där återanvändning är motiverad,
 - mallar för modell- och promptversionering,
 - utvärderingsramverk,
-- observability för AI-specifika signaler,
+- observerbarhet för AI-specifika signaler,
 - guardrails och godkända integrationsmönster,
 - vägledning för kostnad och kapacitet.
 

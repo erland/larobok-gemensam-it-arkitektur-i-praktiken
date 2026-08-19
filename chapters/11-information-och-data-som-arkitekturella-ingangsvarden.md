@@ -77,9 +77,9 @@ En bättre ordning är att först fråga:
 
 Dessa frågor påverkar senare de tekniska valen, men de ska inte formuleras utifrån en viss teknik.
 
-Om verksamheten exempelvis behöver kunna avgöra vilken adress som var gällande vid ett historiskt beslut är behovet inte "en temporal tabell". Behovet är att kunna återskapa vilket informationsläge som gällde vid en viss tidpunkt. Temporal modellering kan vara en realisering, men inte utgångspunkten.
+Om verksamheten exempelvis behöver kunna avgöra vilken adress som var gällande vid ett historiskt beslut är behovet inte ”en temporal tabell”. Behovet är att kunna återskapa vilket informationsläge som gällde vid en viss tidpunkt. Temporal modellering kan vara en realisering, men inte utgångspunkten.
 
-På samma sätt är "vi behöver Kafka-event" inte ett informationsbehov. Det kan finnas ett behov av att flera konsumenter får kännedom om en förändring med låg fördröjning och utan stark tidsmässig koppling till producenten. Eventbaserad kommunikation är då ett möjligt arkitekturval.
+På samma sätt är ”vi behöver Kafka-event” inte ett informationsbehov. Det kan finnas ett behov av att flera konsumenter får kännedom om en förändring med låg fördröjning och utan stark tidsmässig koppling till producenten. Eventbaserad kommunikation är då ett möjligt arkitekturval.
 
 ## Begrepp är en del av arkitekturen
 
@@ -192,7 +192,7 @@ Arkitekturen behöver därför fråga mer precist:
 
 > För vilken information, i vilket sammanhang och vid vilken tidpunkt är denna källa auktoritativ?
 
-Den precisionen är viktigare än sloganen att det bara ska finnas "en sanning".
+Den precisionen är viktigare än sloganen att det bara ska finnas ”en sanning”.
 
 ## Masterdata och referensdata
 
@@ -221,7 +221,7 @@ Teknik kan inte ersätta informationsgovernance.
 
 När information passerar en domängräns behövs ett explicit kontrakt.
 
-Ett **data contract** kan beskrivas som en överenskommelse mellan producent och konsument om hur data exponeras och vilka egenskaper konsumenten får förlita sig på.
+Ett **datakontrakt** kan beskrivas som en överenskommelse mellan producent och konsument om hur data exponeras och vilka egenskaper konsumenten får förlita sig på.
 
 Kontraktet kan omfatta mer än bara schema.
 
@@ -239,7 +239,7 @@ Det kan exempelvis beskriva:
 - ägarskap och kontaktvägar,
 - samt hur förändringar och avveckling kommuniceras.
 
-Det gör data contract till en nära släkting till API-kontrakt och eventkontrakt, men med tydligare fokus på **den information som konsumeras**.
+Det gör datakontrakt till en nära släkting till API-kontrakt och eventkontrakt, men med tydligare fokus på **den information som konsumeras**.
 
 Poängen är inte att varje intern tabell ska bli ett formellt avtal. Poängen är att information som används över en ansvargräns inte bör vara beroende av outtalade antaganden.
 
@@ -304,7 +304,7 @@ De påverkas av verksamhetsregler, rättsliga krav, informationsägarskap och be
 
 Om ett beslut exempelvis baserades på en viss uppgift behöver organisationen ibland kunna förstå vilken version av uppgiften som användes. Det kan kräva historik även om den aktuella verksamhetsprocessen bara behöver dagens värde.
 
-På motsvarande sätt kan "spara allt för säkerhets skull" vara lika problematiskt som att radera för tidigt. Onödig information ökar kostnader, komplexitet, säkerhetsrisk och ansvar.
+På motsvarande sätt kan ”spara allt för säkerhets skull” vara lika problematiskt som att radera för tidigt. Onödig information ökar kostnader, komplexitet, säkerhetsrisk och ansvar.
 
 Retention bör därför vara ett **medvetet informationsbeslut som sedan realiseras tekniskt**, inte en bieffekt av att lagringsutrymmet är billigt.
 
@@ -452,7 +452,7 @@ Det team som driver databasen förväntas avgöra verksamhetsmässiga definition
 
 Först efter att systemet är byggt upptäcks att viss information inte får hanteras på den valda plattformen eller i den valda loggningen.
 
-### "Single source of truth" blir "single point of dependency"
+### ”Single source of truth” blir ”single point of dependency”
 
 Alla konsumenter tvingas läsa synkront från samma system även när deras behov gäller sökning, analys eller lokal tillgänglighet. Ett informationsprincipbeslut förväxlas med en teknisk distributionsmodell.
 
@@ -538,7 +538,7 @@ Ett hållbart arbetssätt börjar med att förstå:
 
 Först därefter bör tekniska beslut om lagring, kopior, cache, historik och konsistens tas.
 
-Det innebär också att en organisation inte behöver välja mellan full centralisering och total lokal frihet. Gemensamma begrepp och referensdata kan styras där gemensam semantik faktiskt behövs, samtidigt som domäner behåller ansvar för sin lokala modell. Explicita data contracts kan därefter göra informationsutbyte begripligt och förändringsbart.
+Det innebär också att en organisation inte behöver välja mellan full centralisering och total lokal frihet. Gemensamma begrepp och referensdata kan styras där gemensam semantik faktiskt behövs, samtidigt som domäner behåller ansvar för sin lokala modell. Explicita datakontrakt kan därefter göra informationsutbyte begripligt och förändringsbart.
 
 Det centrala arkitekturbudskapet är därför:
 

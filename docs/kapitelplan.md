@@ -48,9 +48,9 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Avgränsning: förklarar kravkedjan; enskilda förmågekapitel beskriver hur vissa kvaliteter realiseras tekniskt och ska inte upprepa kravmetoden.
 - Status: helhetsreviderad – pass 1
 
-## Kapitel 5: Arkitekturbeslut och trade-offs
+## Kapitel 5: Arkitekturbeslut och avvägningar
 - Kärnfråga: Hur gör man explicita, spårbara och omprövningsbara arkitekturbeslut?
-- Centralt innehåll: alternativ, beslutskriterier, trade-offs, ADR, riskacceptans, konsekvenser, teknisk skuld och omprövningsdatum.
+- Centralt innehåll: alternativ, beslutskriterier, avvägningar, ADR, riskacceptans, konsekvenser, teknisk skuld och omprövningsdatum.
 - Avgränsning: fokuserar på beslutets form och resonemang, inte organisatorisk governance eller standardernas livscykel.
 - Status: helhetsreviderad – pass 1
 
@@ -140,14 +140,14 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 ## Kapitel 20: Driftbarhet och motståndskraft
 - Kärnfråga: Hur designas system som går att förstå, återställa och hålla i drift?
-- Centralt innehåll: observability, backup, restore, SLO, failure modes, resilience, kontinuitet och operativ återkoppling.
+- Centralt innehåll: observerbarhet, backup, restore, SLO, failure modes, resilience, kontinuitet och operativ återkoppling.
 - Avgränsning: kapitel 4 definierar kvalitetskraven; detta kapitel behandlar förmågor och mekanismer för att realisera och verifiera dem.
 - Status: helhetsreviderad – pass 1
 
 ## Kapitel 21: Programvaruutveckling och leverans
 - Kärnfråga: Hur skapas en säker och reproducerbar väg från kod till produktion?
 - Centralt innehåll: SCM, CI/CD, artifacts, software supply chain, build once/promote many och developer experience.
-- Avgränsning: kapitel 19 behandlar exekveringsmiljön och kapitel 20 driftbarhet/recovery; detta kapitel behandlar förändringskedjan från källkod till verifierad och spårbar deployment.
+- Avgränsning: kapitel 19 behandlar exekveringsmiljön och kapitel 20 driftbarhet/återställning; detta kapitel behandlar förändringskedjan från källkod till verifierad och spårbar driftsättning.
 - Status: helhetsreviderad – pass 1
 
 ## Kapitel 22: Arbetsplats, samarbete och produktivitet
@@ -182,8 +182,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Status: helhetsreviderad – pass 1
 
 ## Kapitel 27: Drift- och leveransmönster
-- Kärnfråga: Hur byggs deployment, observability och återställning in i lösningen från början?
-- Centralt innehåll: build once/promote many, observability för distribuerade tjänster, backup och verifierad återställning samt kopplingen till SLO och releaseflöde.
+- Kärnfråga: Hur byggs driftsättning, observerbarhet och återställning in i lösningen från början?
+- Centralt innehåll: build once/promote many, observerbarhet för distribuerade tjänster, backup och verifierad återställning samt kopplingen till SLO och releaseflöde.
 - Avgränsning: kapitel 20 och 21 beskriver driftbarhets- och leveransförmågorna; detta kapitel behandlar mönstrens krafter, kombinationer, releaseverifiering, spårbarhet och återställningskedja.
 - Status: helhetsreviderad – pass 1
 
@@ -215,7 +215,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 ## Kapitel 32: Tekniklivscykel och kontrollerad förändring
 - Kärnfråga: Hur hanteras introduktion, rekommendation, deprecation och retirement?
-- Centralt innehåll: technology radar, lifecycle states, EOL, migration, sunset, produkt- och versionshantering samt tidsbegränsade undantag.
+- Centralt innehåll: technology radar, lifecycle states, EOL, migration, avveckling, produkt- och versionshantering samt tidsbegränsade undantag.
 - Avgränsning: handlar om teknikportföljens livscykel; den övergripande arkitekturmodellens förvaltning behandlas i kapitel 37.
 - Status: helhetsreviderad – pass 1
 
@@ -248,7 +248,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 ## Kapitel 37: Governance, förvaltning och evolution
 - Kärnfråga: Hur hålls förmågekarta, principer, mönster, plattformskatalog, standarder och referensarkitekturer levande utan att governance blir en flaskhals?
-- Centralt innehåll: mandat, ownership, federerad styrning, avsteg, review cadence, telemetry, adoption, documentation-as-code, feedback loops, maturity, sunset och organisatoriskt lärande.
+- Centralt innehåll: mandat, ownership, federerad styrning, avsteg, granskningsfrekvens, telemetri, adoption, documentation-as-code, återkopplingsloopar, mognad, avveckling och organisatoriskt lärande.
 - Avgränsning: knyter ihop styrning och långsiktig evolution; teknikens specifika produkt-/versionslivscykel ligger i kapitel 32.
 - Status: helhetsreviderad – pass 1
 
@@ -256,7 +256,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 1. **Kapitel 4 kontra 20:** Kapitel 4 beskriver hur kvalitetskrav härleds och prioriteras. Kapitel 20 beskriver tekniska och operativa mekanismer för driftbarhet och resiliens.
 2. **Kapitel 11 kontra 15:** Kapitel 11 beskriver informationens semantik, ägarskap och livscykel. Kapitel 15 beskriver teknisk datahantering och lagringsmekanismer.
-3. **Del III kontra del IV:** Förmågekapitlen beskriver *vilken förmåga som behövs och varför*. Mönsterkapitlen beskriver *återanvändbara sätt att strukturera lösningar* och deras trade-offs.
+3. **Del III kontra del IV:** Förmågekapitlen beskriver *vilken förmåga som behövs och varför*. Mönsterkapitlen beskriver *återanvändbara sätt att strukturera lösningar* och deras avvägningar.
 4. **Del III/IV kontra del V:** Förmågor och mönster får nämna plattformstyper, men plattformskapitlen beskriver *hur erbjudanden produktifieras, konsumeras och styrs*.
 5. **Kapitel 6 kontra 31/32/37:** Kapitel 6 beskriver arkitekturprinciper. Kapitel 31 beskriver konkreta standarder. Kapitel 32 beskriver tekniklivscykel. Kapitel 37 beskriver organisatorisk governance och förvaltning.
 6. **Kapitel 28 kontra 29:** Kapitel 28 definierar vad en plattformstjänst är och dess tjänstekontrakt. Kapitel 29 handlar om produktledningen och teammodellen kring plattformen.

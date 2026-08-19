@@ -25,7 +25,7 @@ Artefaktregister
   ↓
 Promotion
   ↓
-Deployment
+Driftsättning
   ↓
 Verifiering i målmiljö
 ```
@@ -55,7 +55,7 @@ Källkod bör versionshanteras på ett sätt som gör förändringar gransknings
 - byggskript,
 - dependencyfiler,
 - policy-as-code,
-- deploymentspecifikationer,
+- driftsättningsspecifikationer,
 - databasmigreringar,
 - centrala konfigurationsmallar.
 
@@ -82,13 +82,13 @@ Några centrala egenskaper är:
 
 En klassisk varningssignal är formuleringen:
 
-> "Den går bara att bygga på Johans dator."
+> ”Den går bara att bygga på Johans dator.”
 
 Det betyder inte bara att utvecklarupplevelsen är dålig. Det betyder att organisationen saknar en tillräckligt robust leveransförmåga.
 
 ## Build once, promote many
 
-En av de viktigaste principerna i ett kontrollerat leveransflöde är att **bygga artefakten en gång och promovera samma artefakt mellan miljöerna**.
+En av de viktigaste principerna i ett kontrollerat leveransflöde är att **bygga artefakten en gång och föra samma artefakt vidare mellan miljöerna**.
 
 En vanlig men riskfylld modell är:
 
@@ -174,19 +174,19 @@ En kontroll som alltid ignoreras eller rutinmässigt kringgås skapar inte säke
 
 ## CD kan betyda två olika saker
 
-Förkortningen CD används både för **continuous delivery** och **continuous deployment**.
+Förkortningen CD används både för **continuous delivery** och **continuous driftsättning**.
 
 Continuous delivery innebär normalt att programvaran hålls i ett tillstånd där en verifierad version kan produktionssättas genom ett kontrollerat beslut.
 
-Continuous deployment går längre: förändringar som passerar de automatiserade kontrollerna kan också sättas i produktion automatiskt.
+Continuous driftsättning går längre: förändringar som passerar de automatiserade kontrollerna kan också sättas i produktion automatiskt.
 
-Skillnaden är viktig eftersom organisationer annars kan prata om "CI/CD" utan att egentligen ha bestämt vilken grad av automatisering de avser.
+Skillnaden är viktig eftersom organisationer annars kan prata om ”CI/CD” utan att egentligen ha bestämt vilken grad av automatisering de avser.
 
-Det finns inget universellt krav att all produktion måste använda continuous deployment. För vissa system kan en automatiserad pipeline med en explicit produktionsgrind vara rätt balans mellan kontroll och hastighet. För andra kan full automatisering vara lämplig.
+Det finns inget universellt krav att all produktion måste använda continuous driftsättning. För vissa system kan en automatiserad pipeline med en explicit produktionsgrind vara rätt balans mellan kontroll och hastighet. För andra kan full automatisering vara lämplig.
 
 Arkitekturfrågan är därför inte:
 
-> Har vi continuous deployment?
+> Har vi continuous driftsättning?
 
 utan:
 
@@ -223,11 +223,11 @@ Det gör standardvägen enkel samtidigt som avvikande behov fortfarande kan hant
 
 ## Automatisering är ett sätt att göra kontroll reproducerbar
 
-Manuell kontroll uppfattas ibland som säkrare eftersom en människa "tittar på" förändringen. I praktiken är många manuella steg både svårgranskade och svårreproducerade.
+Manuell kontroll uppfattas ibland som säkrare eftersom en människa ”tittar på” förändringen. I praktiken är många manuella steg både svårgranskade och svårreproducerade.
 
 Exempel:
 
-> "Kopiera filen till servern och ändra sedan tre värden manuellt."
+> ”Kopiera filen till servern och ändra sedan tre värden manuellt.”
 
 Det kan fungera hundra gånger. Men processen har då inget starkt svar på frågor som:
 
@@ -239,7 +239,7 @@ Det kan fungera hundra gånger. Men processen har då inget starkt svar på frå
 
 Automatisering ersätter inte ansvar eller granskning. Den gör den beslutade processen reproducerbar.
 
-Därför är målet inte "automation till varje pris", utan att **automatisera återkommande mekanik och reservera mänskligt omdöme för de beslut där det faktiskt tillför värde**.
+Därför är målet inte ”automation till varje pris”, utan att **automatisera återkommande mekanik och reservera mänskligt omdöme för de beslut där det faktiskt tillför värde**.
 
 ## Kvalitetssäkring behöver ligga längs hela flödet
 
@@ -252,7 +252,7 @@ Kontroller kan därför placeras på flera nivåer:
 - CI-build,
 - integrationsmiljö,
 - releasegrind,
-- deploymentverifiering,
+- driftsättningsverifiering,
 - observation efter produktionssättning.
 
 Exempel på kontroller är:
@@ -267,7 +267,7 @@ Exempel på kontroller är:
 - licenskontroll,
 - container- eller paketanalys,
 - policykontroll,
-- deployment smoke tests.
+- driftsättning smoke tests.
 
 Det avgörande är inte maximalt antal kontroller. En mogen pipeline använder **rätt kontroller på rätt plats** och ger snabb återkoppling när något misslyckas.
 
@@ -392,7 +392,7 @@ Detta är ett bra exempel på hur förmågorna samverkar: leveransförmågan kon
 
 ## Promotion är ett beslut om samma artefakt
 
-En vanlig missuppfattning är att en release "flyttas" mellan miljöer. Egentligen är det ofta bättre att tänka att **samma artefakt får tillåtelse att användas i en ny miljö**.
+En vanlig missuppfattning är att en release ”flyttas” mellan miljöer. Egentligen är det ofta bättre att tänka att **samma artefakt får tillåtelse att användas i en ny miljö**.
 
 Exempel:
 
@@ -408,19 +408,19 @@ Godkänd för produktion
 
 Promotion kan vara helt automatisk eller innehålla explicita beslutspunkter. Det viktiga är att organisationen inte tappar kopplingen mellan den testade och den produktionssatta artefakten.
 
-Miljöspecifik konfiguration behöver däremot fortfarande hanteras. "Samma artefakt" betyder inte "identisk miljö".
+Miljöspecifik konfiguration behöver däremot fortfarande hanteras. ”Samma artefakt” betyder inte ”identisk miljö”.
 
-## Deploymentstrategin är en del av förändringsrisken
+## Driftsättningstrategin är en del av förändringsrisken
 
 Produktionssättning är inte bara ett kommando som startar en ny version. Strategin påverkar hur fel kan upptäckas och begränsas.
 
 Exempel på angreppssätt är:
 
-- rolling deployment,
+- rolling driftsättning,
 - blue/green,
 - canary,
 - trafikstyrd gradvis utrullning,
-- kontrollerad aktivering med feature flags.
+- kontrollerad aktivering med funktionsflaggor.
 
 Vilken strategi som passar beror på bland annat:
 
@@ -431,7 +431,7 @@ Vilken strategi som passar beror på bland annat:
 - konsekvensen av fel,
 - hur snabbt fel kan detekteras.
 
-Det är alltså inte självklart att den mest avancerade deploymentstrategin är bäst. En liten intern batchtjänst kan behöva en mycket enklare modell än en publik tjänst med kontinuerlig trafik.
+Det är alltså inte självklart att den mest avancerade driftsättningsstrategin är bäst. En liten intern batchtjänst kan behöva en mycket enklare modell än en publik tjänst med kontinuerlig trafik.
 
 ## Rollback är inte alltid den säkraste vägen
 
@@ -447,28 +447,28 @@ Därför behöver leveransstrategin ibland utformas för **roll-forward** snarar
 
 Ett enkelt exempel är en bakåtkompatibel databasmigrering där den gamla och nya applikationsversionen kan köras under en övergångsperiod. Om ett fel upptäcks kan en korrigerad applikationsversion då levereras utan att databasen först måste återställas.
 
-Förmågan behöver alltså stödja säkra förändringsmönster, inte bara en "rollback-knapp".
+Förmågan behöver alltså stödja säkra förändringsmönster, inte bara en ”rollback-knapp”.
 
-## Feature flags separerar deployment från aktivering
+## funktionsflaggor separerar driftsättning från aktivering
 
-Feature flags kan göra det möjligt att sätta kod i produktion utan att omedelbart aktivera funktionen för alla användare.
+funktionsflaggor kan göra det möjligt att sätta kod i produktion utan att omedelbart aktivera funktionen för alla användare.
 
 Det kan minska risk genom:
 
 - gradvis aktivering,
 - begränsning till testgrupper,
 - snabb avstängning av en funktion,
-- separation mellan teknisk deployment och verksamhetsmässig lansering.
+- separation mellan teknisk driftsättning och verksamhetsmässig lansering.
 
 Men flags skapar också tillstånd och kombinationer som behöver hanteras. Gamla flags som aldrig tas bort blir teknisk skuld och kan göra testmatrisen svår att förstå.
 
-Feature flags bör därför ha ägarskap och livscykel, inte behandlas som permanent konfiguration.
+funktionsflaggor bör därför ha ägarskap och livscykel, inte behandlas som permanent konfiguration.
 
 ## Developer experience är en arkitekturfråga
 
 Om den gemensamma leveransvägen är svår att använda kommer team att skapa egna genvägar.
 
-Det betyder att developer experience inte bara är bekvämlighet. Den påverkar:
+Det betyder att utvecklarupplevelse inte bara är bekvämlighet. Den påverkar:
 
 - följsamhet till standarder,
 - ledtid,
@@ -485,7 +485,7 @@ Exempel kan vara:
 - gemensamma pipeline-mallar,
 - standardiserad artefaktpublicering,
 - färdiga säkerhetskontroller,
-- dokumenterade deploymentmönster,
+- dokumenterade driftsättningsmönster,
 - självservice för nya projekt,
 - tydliga felmeddelanden och feedback.
 
@@ -495,11 +495,11 @@ Detta är en viktig gräns mot central detaljstyrning. En golden path bör göra
 
 Det är lätt att standardisera för långt ner i verktygsstacken:
 
-> "Alla ska använda Jenkins."
+> ”Alla ska använda Jenkins.”
 
 Men det långsiktiga behovet är snarare:
 
-> "Organisationen behöver en CI/CD-förmåga med reproducerbara builds, spårbara artefakter, säkra pipelineidentiteter, gemensamma kontroller och kontrollerad promotion."
+> ”Organisationen behöver en CI/CD-förmåga med reproducerbara builds, spårbara artefakter, säkra pipeline-identiteter, gemensamma kontroller och kontrollerad förflyttning.”
 
 Jenkins, GitHub Actions, GitLab CI eller andra produkter kan vara realiseringar av detta behov. Produkten kan vara standardiserad under en period, men bör inte förväxlas med själva förmågan.
 
@@ -542,7 +542,7 @@ En gemensam CI/CD-plattform kan erbjuda:
 - secretsintegration,
 - artefaktintegration,
 - policykontroller,
-- deploymentintegration,
+- driftsättningsintegration,
 - loggning och support.
 
 Plattformen bör leverera ett kontrakt och en standardväg snarare än bara en installerad byggserver.
@@ -564,7 +564,7 @@ Den gemensamma nivån bör framför allt fastställa sådant som behöver funger
 - principer för spårbar och reproducerbar leverans,
 - miniminivåer för supply-chain-integritet,
 - gemensamma krav på versionshantering och artefaktidentitet,
-- principer för pipelineidentiteter och secrets,
+- principer för pipeline-identiteter och secrets,
 - hur avsteg hanteras,
 - vilka delar som behöver gemensamma standarder eller plattformserbjudanden.
 
@@ -596,8 +596,8 @@ Det enskilda produktteamet ansvarar fortfarande för:
 - versionsstrategi,
 - vilka kvalitetskontroller som krävs utöver gemensam miniminivå,
 - kompatibla databas- och kontraktsförändringar,
-- deploymentstrategi,
-- feature flags,
+- driftsättningsstrategi,
+- funktionsflaggor,
 - verifiering efter produktionssättning,
 - underhåll av beroenden,
 - att produktens pipeline faktiskt fungerar.
@@ -624,7 +624,7 @@ Samma commit byggs på nytt för varje miljö. Organisationen testar därmed int
 
 ### Manuell produktionsserver
 
-Deployment kräver att någon loggar in på servern och utför en lista manuella kommandon. Resultatet blir svårt att reproducera och auditera.
+Driftsättning kräver att någon loggar in på servern och utför en lista manuella kommandon. Resultatet blir svårt att reproducera och auditera.
 
 ### Personliga pipelinecredentials
 
@@ -640,7 +640,7 @@ SBOM genereras för att uppfylla ett krav men används aldrig för incidenter, s
 
 ### Signera utan att verifiera
 
-Artefakter signeras, men ingen policy kontrollerar signaturen vid promotion eller deployment.
+Artefakter signeras, men ingen policy kontrollerar signaturen vid promotion eller driftsättning.
 
 ### Golden path blir golden cage
 
@@ -658,7 +658,7 @@ När ett utvecklingsområde ska etablera eller förbättra sin leveransväg kan 
 6. **Analysera supply chain.** Vilka externa beroenden, byggverktyg och register behöver kunna betros och följas upp?
 7. **Definiera artefaktflödet.** Hur versionssätts, lagras och promoveras artefakter?
 8. **Bestäm identitets- och secretsmodell.** Vilka tekniska identiteter får göra vad?
-9. **Välj deployment- och recoverystrategi.** Hur begränsas förändringsrisk och hur hanteras fel?
+9. **Välj driftsättning- och återställningsstrategi.** Hur begränsas förändringsrisk och hur hanteras fel?
 10. **Skapa standardvägen.** Vilka delar kan plattformiseras och återanvändas för flera team?
 11. **Mät friktion och effekt.** Var väntar teamen, var sker manuella ingrepp och vilka kontroller ger verkligt värde?
 12. **Förbättra gemensamma byggstenar utifrån användningen.** Återkommande speciallösningar är signaler om att standardvägen behöver utvecklas.

@@ -12,7 +12,7 @@
 | golden path | golden path / rekommenderad väg | Används för en automatiserad, lättillgänglig standardväg för utveckling. |
 | system of record | system of record / auktoritativ källa | Välj uttryck efter sammanhang; definiera tydligt. |
 | bounded context | bounded context / avgränsad domänkontext | DDD-term; behåll originalterm vid första introduktion. |
-| observability | observability / observerbarhet | Använd observerbarhet i löptext och ange engelsk term första gången. |
+| observability | observerbarhet | Ange den engelska termen vid första introduktionen när den behövs för igenkänning. |
 | resilience | motståndskraft / resiliens | Föredra motståndskraft när det fungerar språkligt. |
 
 ## Ansvarsnivåer
@@ -26,3 +26,17 @@ I löptext kan "gemensam nivå", "förmågenivå" och "lösnings-/produktnivå" 
 
 ## Engelska facktermer
 Behåll etablerade engelska termer när en svensk översättning riskerar att bli mindre precis, men introducera dem med svensk förklaring första gången. Undvik att växla mellan flera svenska översättningar för samma begrepp i samma kapitel.
+
+## Språk- och stilval efter manusrevision
+Följande val gäller i löptext efter språk- och stilrevision pass 1:
+
+- **avvägning** föredras framför *trade-off*; den engelska termen används bara när den i sig diskuteras.
+- **observerbarhet** föredras framför *observability*; den engelska termen anges vid första introduktionen.
+- **begränsning** föredras framför *constraint*; den engelska termen kan anges vid första introduktionen när den arkitekturella fackbetydelsen behöver markeras.
+- **driftsättning** föredras framför *deployment*.
+- **telemetri** föredras framför *telemetry*.
+- **återförsök** föredras framför *retry*.
+- **mätvärden**, **spår** och **instrumentpaneler** föredras framför *metrics*, *traces* och *dashboards* när betydelsen är densamma.
+- **utvecklarupplevelse** används i svensk löptext; *Developer Experience (DevEx)* anges vid första introduktionen.
+
+Etablerade termer som *runtime*, *workflow*, *bounded context*, *golden path*, *paved road*, *stateless/stateful*, *showback/chargeback* och protokollspecifika begrepp får behållas när en svensk översättning skulle bli mindre precis eller mindre etablerad. Introducera då termen med en kort svensk förklaring första gången den är central.

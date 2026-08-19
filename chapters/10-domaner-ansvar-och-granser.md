@@ -40,7 +40,7 @@ Integration                     Tillståndshantering
 Identitet                       Uppbörd
 Datahantering                   Kontrollverksamhet
 Workflow                        Personaladministration
-Observability                   Inköp
+Observerbarhet                   Inköp
 ```
 
 Förmågorna till vänster kan återanvändas av många domäner. Domänerna till höger bär verksamhetens eget ansvar och innehåll.
@@ -186,7 +186,7 @@ Detta minskar risken för att flera delar av organisationen utvecklar egna versi
 
 Men även här finns nyanser. En konsument kan behöva en lokal kopia för sökning, analys, tillgänglighet eller prestanda. Det gör inte kopian till ny auktoritativ källa. Ägarskapet behöver därför beskrivas oberoende av den fysiska lagringen.
 
-Denna distinktion blir central när boken senare behandlar system of record, härledda kopior, cache och data contracts.
+Denna distinktion blir central när boken senare behandlar system of record, härledda kopior, cache och datakontrakt.
 
 ## Ansvar bör följa förändring, inte bara organisation
 
@@ -246,7 +246,7 @@ Det är därför riskabelt att använda teknikens gränser som ersättning för 
 
 ## Gemensam plattform ska inte bli en verksamhetsdomän
 
-När en organisation bygger gemensamma plattformar uppstår ibland en subtil förskjutning. Plattformen börjar med generell teknik men tar gradvis över verksamhetslogik för att "göra det enklare" för konsumenterna.
+När en organisation bygger gemensamma plattformar uppstår ibland en subtil förskjutning. Plattformen börjar med generell teknik men tar gradvis över verksamhetslogik för att ”göra det enklare” för konsumenterna.
 
 Ett workflow-erbjudande kan exempelvis börja innehålla organisationens specifika regler för ärendeprioritering. En integrationsplattform kan börja transformera och tolka verksamhetens domänobjekt. En gemensam dataplattform kan bli den plats där begrepp och affärsregler bestäms, trots att plattformsteamet saknar verksamhetsmandat.
 
@@ -260,7 +260,7 @@ En användbar tumregel är:
 
 > En gemensam plattform får gärna bära generella tekniska mekanismer, men den bör vara försiktig med att bära verksamhetsspecifik mening och beslut.
 
-En messagingplattform kan exempelvis ansvara för leverans, autentisering, retention och observability. Den bör normalt inte bestämma vad en verksamhetshändelse betyder.
+En messagingplattform kan exempelvis ansvara för leverans, autentisering, retention och observerbarhet. Den bör normalt inte bestämma vad en verksamhetshändelse betyder.
 
 En regelplattform kan erbjuda exekvering, versionshantering och spårbarhet för regler. Den verksamhetsdomän som använder plattformen bör däremot äga själva regelinnehållet.
 
@@ -297,7 +297,7 @@ Domän B:s egen modell
 
 Detta gör båda domänerna friare att förändras internt.
 
-Principen är viktig eftersom organisationer annars lätt skapar en "enterprise canonical model" som alla system måste anpassa sig till. En sådan modell kan vara värdefull för vissa stabila, verkligt gemensamma begrepp och kodverk, men blir problematisk om den försöker ersätta all lokal semantik.
+Principen är viktig eftersom organisationer annars lätt skapar en ”enterprise canonical model” som alla system måste anpassa sig till. En sådan modell kan vara värdefull för vissa stabila, verkligt gemensamma begrepp och kodverk, men blir problematisk om den försöker ersätta all lokal semantik.
 
 Målet är inte maximal enhetlighet. Målet är **tillräcklig gemensam förståelse vid gränsen**.
 
@@ -331,7 +331,7 @@ Integrationsmönster
 Teknisk realisering
 ```
 
-Att börja längst ned i kedjan – exempelvis med frågan "ska vi använda Kafka eller REST?" – riskerar att lösa fel problem.
+Att börja längst ned i kedjan – exempelvis med frågan ”ska vi använda Kafka eller REST?” – riskerar att lösa fel problem.
 
 ## Autonomi kräver tydliga gränser
 
@@ -409,7 +409,7 @@ Det kan vara effektivt i början. Man slipper API:er, meddelanden och duplicerin
 
 När Domän A ändrar en tabell kan Domän B gå sönder. När båda behöver ändra samma kolumn blir ägarskapet oklart. Databasens tekniska struktur börjar styra verksamhetens gränser.
 
-Det betyder inte att varje modul alltid behöver en separat fysisk databas. Det viktiga är att **det logiska ägarskapet och åtkomsten är tydligt avgränsade**.
+Det innebär inte att varje modul alltid behöver en separat fysisk databas. Det viktiga är att **det logiska ägarskapet och åtkomsten är tydligt avgränsade**.
 
 Två moduler kan ligga i samma databasinstans men ändå använda separata scheman och endast kommunicera genom definierade gränssnitt. Omvänt kan två tjänster ha separata databaser men ändå vara starkt kopplade om de ständigt måste samordna sina modeller och releaser.
 
@@ -523,7 +523,7 @@ Tecken på att en gräns bör omprövas kan vara:
 - många översättningar mellan två modeller som egentligen är identiska,
 - en central komponent fylls med domänspecifika specialfall,
 - ett team behöver ständigt beslut från ett annat team för att förändra sin egen produkt,
-- eller ett "gemensamt" begrepp orsakar fler konflikter än det löser.
+- eller ett ”gemensamt” begrepp orsakar fler konflikter än det löser.
 
 Det motsatta kan också inträffa. Två områden som separerats kan visa sig ha så stark cohesion att uppdelningen skapar mer koordinering än självständighet.
 

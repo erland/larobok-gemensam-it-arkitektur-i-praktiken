@@ -168,7 +168,7 @@ mänsklig granskning
 beslut eller åtgärd
 ```
 
-Det är frestande att beskriva detta som att "en människa tittar på svaret". Men då blir mönstret för vagt för att ge verkligt skydd.
+Det är frestande att beskriva detta som att ”en människa tittar på svaret”. Men då blir mönstret för vagt för att ge verkligt skydd.
 
 Mänsklig kontroll behöver ha en **definierad funktion**.
 
@@ -181,7 +181,7 @@ Granskaren måste exempelvis kunna:
 - ha tid och kompetens att göra bedömningen,
 - förstå vilket ansvar den mänskliga bedömningen innebär.
 
-Om människan i praktiken bara klickar "Godkänn" på hundratals förslag är det inte säkert att mönstret reducerar risk.
+Om människan i praktiken bara klickar ”Godkänn” på hundratals förslag är det inte säkert att mönstret reducerar risk.
 
 ### Kontrollpunkten ska placeras efter konsekvensen
 
@@ -202,9 +202,9 @@ Anta att AI används för att:
 - skapa och skicka ett externt meddelande,
 - anropa ett API som ändrar verksamhetsdata.
 
-Konsekvensen stiger inte nödvändigtvis linjärt med hur "avancerad" modellen är. Ett enkelt klassificeringssystem kan få hög konsekvens om dess resultat automatiskt styr vem som får en förmån eller vilken incident som ignoreras.
+Konsekvensen stiger inte nödvändigtvis linjärt med hur ”avancerad” modellen är. Ett enkelt klassificeringssystem kan få hög konsekvens om dess resultat automatiskt styr vem som får en förmån eller vilken incident som ignoreras.
 
-Mänsklig kontroll bör därför kopplas till **åtgärdens betydelse och återställbarhet**, inte till en generell regel om att "AI alltid ska granskas".
+Mänsklig kontroll bör därför kopplas till **åtgärdens betydelse och återställbarhet**, inte till en generell regel om att ”AI alltid ska granskas”.
 
 ### Mänsklig kontroll är ett processmönster också
 
@@ -246,7 +246,7 @@ När en applikation anropar en annan tjänst behöver mottagaren kunna svara på
 
 > Vem eller vad är det som anropar mig?
 
-För system-till-system-kommunikation bör svaret normalt inte vara "ett delat servicekonto" eller "utvecklarens personliga konto".
+För system-till-system-kommunikation bör svaret normalt inte vara ”ett delat servicekonto” eller ”utvecklarens personliga konto”.
 
 Mönstret tjänsteidentitet ger i stället varje relevant workload eller tjänst en egen teknisk identitet.
 
@@ -269,7 +269,7 @@ Det möjliggör:
 - automatiserad credentialrotation,
 - återkallelse utan att andra tjänster påverkas.
 
-### Identiteten ska följa ansvar, inte bara deployment
+### Identiteten ska följa ansvar, inte bara driftsättning
 
 Det är möjligt att göra identiteter för grova eller för detaljerade.
 
@@ -311,7 +311,7 @@ Två identitetsfrågor finns samtidigt:
 
 De får inte blandas ihop.
 
-Tjänsteidentiteten kan exempelvis svara "AI-assistenten", medan användarkontexten svarar "handläggare X med behörighet Y".
+Tjänsteidentiteten kan exempelvis svara ”AI-assistenten”, medan användarkontexten svarar ”handläggare X med behörighet Y”.
 
 Mottagande system kan behöva båda för att fatta rätt beslut.
 
@@ -330,7 +330,7 @@ Containerinstans
    ├─ kod + runtime
    ├─ externaliserad konfiguration
    ├─ tjänsteidentitet
-   └─ tillfälligt lokalt state
+   └─ tillfälligt lokalt tillstånd
          ↓
 Externa persistenta tjänster
 ```
@@ -344,11 +344,11 @@ Instansen ska kunna:
 
 utan att verksamhetsdata försvinner.
 
-### Stateless betyder inte att systemet saknar state
+### Stateless betyder inte att systemet saknar tillstånd
 
 Detta är en viktig distinktion.
 
-Nästan alla verksamhetssystem har state. Det kan finnas i:
+Nästan alla verksamhetssystem har tillstånd. Det kan finnas i:
 
 - databas,
 - dokumentlager,
@@ -357,7 +357,7 @@ Nästan alla verksamhetssystem har state. Det kan finnas i:
 - cache,
 - sessionslager.
 
-Stateless-mönstret betyder att **den enskilda exekveringsinstansen inte är den enda ägaren till persistent state som behövs för att systemet ska fortsätta fungera**.
+Stateless-mönstret betyder att **den enskilda exekveringsinstansen inte är den enda ägaren till persistent tillstånd som behövs för att systemet ska fortsätta fungera**.
 
 Det gör instansen utbytbar.
 
@@ -374,7 +374,7 @@ En RAG-baserad frågetjänst kan exempelvis:
 
 Om beständiga konversationer, användardata och index ligger i externa tjänster kan själva AI-orchestratorn vara stateless.
 
-Det förenklar skalning och deployment.
+Det förenklar skalning och driftsättning.
 
 Men vissa workloads passar sämre, exempelvis:
 
@@ -535,11 +535,11 @@ Det innebär exempelvis att dokumentera:
 
 - vilka modeller eller modellklasser som får användas,
 - vilken information som får skickas,
-- timeout- och retrybeteende,
+- timeout- och återförsöksbeteende,
 - kostnadsgränser,
 - fallback,
 - versions- eller förändringspolicy,
-- observability,
+- observerbarhet,
 - hur credentials hanteras.
 
 Då blir inte modellleverantörens SDK själva arkitekturen.
@@ -570,7 +570,7 @@ Eller:
 - containerplattformen ser processen som frisk,
 - men AI-tjänsten kan inte längre läsa den informationskälla som krävs.
 
-Då behövs operativ observability som skiljer teknisk processhälsa från faktisk tjänstefunktion.
+Då behövs operativ observerbarhet som skiljer teknisk processhälsa från faktisk tjänstefunktion.
 
 Det illustrerar varför mönsterkombinationer måste analyseras genom **felgränser**, inte bara genom happy-path-diagram.
 
@@ -612,7 +612,7 @@ En organisation kan erbjuda gemensamma plattformstjänster för flera delar av d
 
 Det kan ge stor återanvändning.
 
-Men det betyder inte att en enda "AI-plattform" bör äga:
+Men det betyder inte att en enda ”AI-plattform” bör äga:
 
 - informationsbehörighet,
 - verksamhetsbeslut,
@@ -633,7 +633,7 @@ Den gemensamma nivån bör bland annat kunna definiera:
 - principer för AI-användning och konsekvensbaserad kontroll,
 - gemensamma krav på identitet, spårbarhet och informationsskydd,
 - tillåtna trust- och delegeringsmodeller,
-- gemensamma runtimeprofiler,
+- gemensamma runtime-profiler,
 - övergripande regler för informationsklassning och extern modellåtkomst,
 - hur mönster och standarder ska beskrivas och förvaltas.
 
@@ -648,7 +648,7 @@ Analys, sökning och AI kan exempelvis ansvara för:
 - RAG-vägledning,
 - utvärderingsramverk,
 - modellåtkomst,
-- AI-observability.
+- AI-observerbarhet.
 
 Identitet och tillit kan ansvara för:
 
@@ -691,11 +691,11 @@ Ett sökindex och en språkmodell behandlas som om de tillsammans skapar en aukt
 
 ### Human-in-the-loop som dekor
 
-En människa måste klicka "godkänn", men har varken tid, underlag eller realistisk möjlighet att upptäcka fel.
+En människa måste klicka ”godkänn”, men har varken tid, underlag eller realistisk möjlighet att upptäcka fel.
 
 ### AI-tjänsten får en superidentitet
 
-AI-komponenten ges bred åtkomst till många system "för flexibilitetens skull" och kan därmed agera med större privilegier än användaren.
+AI-komponenten ges bred åtkomst till många system ”för flexibilitetens skull” och kan därmed agera med större privilegier än användaren.
 
 ### Delade servicekonton
 
@@ -703,11 +703,11 @@ Flera workloads använder samma tekniska identitet, vilket gör spårbarhet, åt
 
 ### Container = stateless
 
-En applikation körs i container men lagrar ändå nödvändigt persistent state på lokal disk och blir därmed inte utbytbar.
+En applikation körs i container men lagrar ändå nödvändigt persistent tillstånd på lokal disk och blir därmed inte utbytbar.
 
 ### Modell-SDK som arkitekturgräns
 
-Lösningen binds direkt till en leverantörs SDK utan separat kontrakt för modellåtkomst, vilket gör observability, fallback och förändringskontroll svårare.
+Lösningen binds direkt till en leverantörs SDK utan separat kontrakt för modellåtkomst, vilket gör observerbarhet, fallback och förändringskontroll svårare.
 
 ### All konversationshistorik skickas alltid tillbaka
 
@@ -715,7 +715,7 @@ Hela historiken sparas och skickas till modellen utan tydligt behov, retention, 
 
 ### Autonomi utan ny riskbedömning
 
-En funktion som tidigare gav rekommendationer får börja utföra åtgärder automatiskt utan att behörigheter, rollback, observability och kvalitetskrav omprövas.
+En funktion som tidigare gav rekommendationer får börja utföra åtgärder automatiskt utan att behörigheter, rollback, observerbarhet och kvalitetskrav omprövas.
 
 ## En praktisk analysordning
 
@@ -747,13 +747,13 @@ Vilken åtkomst behöver varje tjänsteidentitet för just sin uppgift?
 
 ### 7. Beskriv workloadens runtimeegenskaper
 
-Kan tjänsten vara stateless? Vilket state måste ligga externt? Vilka resurs- och skalningskrav finns?
+Kan tjänsten vara stateless? Vilket tillstånd måste ligga externt? Vilka resurs- och skalningskrav finns?
 
 ### 8. Definiera felgränser
 
 Vad händer när retrieval, modell, credentialutfärdare eller downstream-API misslyckas var för sig?
 
-### 9. Definiera observability och spårbarhet
+### 9. Definiera observerbarhet och spårbarhet
 
 Kan en operation kopplas från användare och tjänsteidentitet via hämtat underlag och modellresultat till slutlig åtgärd?
 
@@ -772,8 +772,8 @@ Kombinationen kan sammanfattas med fyra frågor:
 1. **Vilket underlag får AI:n använda?**
 2. **Vilken konsekvens får AI:n orsaka utan mänsklig kontroll?**
 3. **Vilken identitet och vilka privilegier används för varje anrop?**
-4. **Vilket state måste överleva den enskilda exekveringsinstansen?**
+4. **Vilket tillstånd måste överleva den enskilda exekveringsinstansen?**
 
 När svaren är tydliga kan AI-lösningen förändras – modell, index, runtime och tjänster kan bytas – utan att ansvar och tillit behöver uppfinnas på nytt varje gång.
 
-I nästa kapitel flyttar vi fokus från AI och runtime till den operativa livscykeln. Då fördjupar vi mönstren **build once, promote many**, **observability för distribuerade tjänster** och **backup med verifierad återställning** – tre mönster som gör leverans och drift till en del av arkitekturen redan innan produktionssättning.
+I nästa kapitel flyttar vi fokus från AI och runtime till den operativa livscykeln. Då fördjupar vi mönstren **build once, promote many**, **observerbarhet för distribuerade tjänster** och **backup med verifierad återställning** – tre mönster som gör leverans och drift till en del av arkitekturen redan innan produktionssättning.

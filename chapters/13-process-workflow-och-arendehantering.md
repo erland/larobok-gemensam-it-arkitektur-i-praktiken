@@ -206,7 +206,7 @@ Bättre är:
 
 En process behöver ofta fatta beslut om **vad som ska hända härnäst**.
 
-Det betyder inte att den bör innehålla all logik för **hur verksamheten fungerar**.
+Det innebär inte att den bör innehålla all logik för **hur verksamheten fungerar**.
 
 Anta att en process ska avgöra om ett ärende får gå vidare. Själva flödet kan behöva uttrycka:
 
@@ -341,11 +341,11 @@ Men själva verksamhetsobjektet kan innehålla:
 
 Det senare bör normalt ha ett tydligt informationsägarskap utanför processmotorns interna tillstånd.
 
-Det betyder inte att processmotorn aldrig får bära verksamhetsdata. Den behöver ofta ett arbetsunderlag och variabler för att styra flödet. Men arkitekturen bör kunna svara på:
+Poängen är inte att processmotorn aldrig får bära verksamhetsdata. Den behöver ofta ett arbetsunderlag och variabler för att styra flödet. Men arkitekturen bör kunna svara på:
 
 > Om processplattformen byts ut, var finns den auktoritativa verksamhetsinformationen då?
 
-Om svaret är "bara inne i processmotorn" kan en teknisk stödplattform oavsiktligt ha blivit system of record för en verksamhetsdomän.
+Om svaret är ”bara inne i processmotorn” kan en teknisk stödplattform oavsiktligt ha blivit system of record för en verksamhetsdomän.
 
 Det är just den sammanblandningen kapitel 11 varnade för ur informationsperspektiv och som kapitel 15 senare fördjupar ur tekniskt datahanteringsperspektiv.
 
@@ -399,7 +399,7 @@ I stället behöver verksamhetsflödet kunna hantera situationen explicit. Det k
 
 En **kompenserande aktivitet** är inte nödvändigtvis en exakt återställning. Om en bokning redan har kommunicerats till en extern part kanske kompensationen består i att skapa en avbokning, inte i att låtsas som att bokningen aldrig fanns.
 
-Detta är viktigt eftersom workflow ibland säljs in med en alltför enkel bild av att motorn "hanterar transaktionerna". Den kan koordinera återhämtning och hålla reda på processens läge, men den kan inte magiskt skapa atomiska transaktioner över självständiga verksamhetssystem.
+Detta är viktigt eftersom workflow ibland säljs in med en alltför enkel bild av att motorn ”hanterar transaktionerna”. Den kan koordinera återhämtning och hålla reda på processens läge, men den kan inte magiskt skapa atomiska transaktioner över självständiga verksamhetssystem.
 
 ## Ärendehantering kräver ett medvetet livscykelbegrepp
 
@@ -506,7 +506,7 @@ De som ansvarar för Process, workflow och ärendehantering bör utveckla:
 - stöd för human tasks och arbetsköer,
 - principer för processversionering,
 - golden paths för robust återupptagning,
-- observability för processinstanser,
+- observerbarhet för processinstanser,
 - integrationsmönster mot andra förmågor.
 
 Det är också denna nivå som bör följa upp om plattformen faktiskt minskar lokal specialutveckling eller bara flyttar komplexiteten.
@@ -531,7 +531,7 @@ Processförmågan berör många av bokens kvalitetsdimensioner, men några blir 
 
 ### Tillgänglighet och kontinuitet
 
-En processplattform kan vara otillgänglig utan att verksamhetsprocessen får förlora sitt läge. Kravet är därför ofta mindre "varje exekvering måste alltid lyckas omedelbart" och mer "processen ska kunna fortsätta korrekt när tjänsten åter är tillgänglig".
+En processplattform kan vara otillgänglig utan att verksamhetsprocessen får förlora sitt läge. Kravet är därför ofta mindre ”varje exekvering måste alltid lyckas omedelbart” och mer ”processen ska kunna fortsätta korrekt när tjänsten åter är tillgänglig”.
 
 ### Korrekthet och spårbarhet
 
@@ -595,7 +595,7 @@ Vilket resultat ska uppnås? Vilka aktörer och domäner deltar? Var finns vänt
 
 ### 2. Identifiera det som behöver överleva över tid
 
-Vilket tillstånd måste finnas kvar efter omstart, deployment eller lång väntan?
+Vilket tillstånd måste finnas kvar efter omstart, driftsättning eller lång väntan?
 
 ### 3. Avgör om processen behöver vara explicit
 
@@ -611,7 +611,7 @@ Finns arbetsköer, roller, tilldelning, deadlines eller eskalering som behöver 
 
 ### 6. Analysera fel och väntan
 
-Vad händer om externa tjänster är nere i minuter, timmar eller dagar? Hur återupptas processen? Krävs retry, kompensation eller manuell hantering?
+Vad händer om externa tjänster är nere i minuter, timmar eller dagar? Hur återupptas processen? Krävs återförsök, kompensation eller manuell hantering?
 
 ### 7. Definiera informationsägarskap
 
@@ -623,7 +623,7 @@ Vad händer med redan startade instanser när modellen ändras?
 
 ### 9. Jämför med enklare lösning
 
-Vilka problem skulle faktiskt bli svårare om flödet implementerades i vanlig applikationskod? Om svaret är "inga", behövs sannolikt ingen processmotor.
+Vilka problem skulle faktiskt bli svårare om flödet implementerades i vanlig applikationskod? Om svaret är ”inga”, behövs sannolikt ingen processmotor.
 
 ### 10. Välj gemensamt erbjudande först när behovet motiverar det
 
@@ -631,7 +631,7 @@ Om en etablerad plattform möter kraven bör den normalt återanvändas. Men pla
 
 ## Förmågan som konsumerbart stöd
 
-Ett välutvecklat förmågeområde bör inte bara kunna säga "vi har en workflowmotor".
+Ett välutvecklat förmågeområde bör inte bara kunna säga ”vi har en workflowmotor”.
 
 Det bör kunna erbjuda ett sammanhängande stöd som exempelvis omfattar:
 
@@ -640,7 +640,7 @@ Det bör kunna erbjuda ett sammanhängande stöd som exempelvis omfattar:
 - stöd för timers och väntelägen,
 - human task- och arbetsköfunktioner,
 - standardiserad integration mot identitet och behörighet,
-- observability för processinstanser,
+- observerbarhet för processinstanser,
 - versions- och deploystrategier,
 - exempel och golden paths,
 - stöd för robust korrelation och återupptagning,
@@ -654,7 +654,7 @@ Den underliggande tekniken kan bytas över tid. Förmågan består så länge or
 
 Process, workflow och ärendehantering blir en egen arkitekturförmåga när själva verksamhetsförloppet behöver vara **explicit, långlivat, observerbart, återupptagningsbart eller samordnat över flera aktörer och system**.
 
-Det betyder inte att varje sekvens i ett system ska modelleras i en processmotor. Vanlig domänlogik är ofta enklare och bättre för kortlivade lokala flöden.
+Det behöver inte innebära att varje sekvens i ett system ska modelleras i en processmotor. Vanlig domänlogik är ofta enklare och bättre för kortlivade lokala flöden.
 
 Den viktigaste gränsdragningen är därför:
 

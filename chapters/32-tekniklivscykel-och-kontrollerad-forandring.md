@@ -30,13 +30,13 @@ Patchnivå och konfiguration     förändras kontinuerligt
 
 Poängen är inte att varje lager alltid följer exakt denna takt. Poängen är att de **inte bör vara hårt sammanbundna**.
 
-Om en förmågebeskrivning säger att organisationen erbjuder "OpenShift version X" har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken containerplattform som för närvarande är godkänd är förändringen placerad där den hör hemma.
+Om en förmågebeskrivning säger att organisationen erbjuder ”OpenShift version X” har en föränderlig produktdetalj byggts in i ett stabilt arkitekturlager. Om en produktstandard däremot anger vilken containerplattform som för närvarande är godkänd är förändringen placerad där den hör hemma.
 
 Detta gör livscykelhantering möjlig utan att hela arkitekturmodellen behöver skrivas om vid varje teknikskifte.
 
 ## Livscykelstatus behöver vara explicit
 
-En organisation behöver kunna uttrycka mer än bara "standard" eller "inte standard".
+En organisation behöver kunna uttrycka mer än bara ”standard” eller ”inte standard”.
 
 En praktisk livscykelmodell kan exempelvis innehålla följande tillstånd:
 
@@ -54,7 +54,7 @@ Detta är en praktisk modell för boken, inte en universell industristandard. Or
 
 En status utan konsekvens är bara metadata.
 
-Om "deprecated" inte säger något om nyanvändning, support, migration eller tidsram blir begreppet för svagt för att styra beteende.
+Om ”deprecated” inte säger något om nyanvändning, support, migration eller tidsram blir begreppet för svagt för att styra beteende.
 
 ## Technology radar är karta, inte beslutsprotokoll
 
@@ -108,7 +108,7 @@ Organisationen kan samtidigt ha:
 - huvudversion 14 som på väg ut ur support,
 - specifika patchnivåer som hanteras operativt.
 
-Om allt detta sammanfattas med formuleringen "PostgreSQL är standard" förloras viktig information.
+Om allt detta sammanfattas med formuleringen ”PostgreSQL är standard” förloras viktig information.
 
 Livscykeln behöver därför kunna uttryckas på flera nivåer:
 
@@ -214,7 +214,7 @@ I andra fall kan ett villkor vara mer relevant än ett fast datum, exempelvis at
 
 Poängen är att slutläget måste gå att planera mot.
 
-Ett "ska avvecklas framöver" utan datum, kriterium eller ägare blir lätt permanent teknisk skuld.
+Ett ”ska avvecklas framöver” utan datum, kriterium eller ägare blir lätt permanent teknisk skuld.
 
 ## Migration är en delad leverans
 
@@ -267,7 +267,7 @@ Det betyder inte att organisationen måste bygga en perfekt CMDB innan något f�
 
 > Vilka påverkas om vi avslutar stödet för den här vägen?
 
-Här blir de tidigare kapitlens plattformskatalog, självservice och automatisering viktiga. Om en plattform konsumeras deklarativt kan mycket av inventeringen komma från faktisk konfiguration och telemetry i stället för manuella kalkylblad.
+Här blir de tidigare kapitlens plattformskatalog, självservice och automatisering viktiga. Om en plattform konsumeras deklarativt kan mycket av inventeringen komma från faktisk konfiguration och telemetri i stället för manuella kalkylblad.
 
 ## Migration behöver risksegmenteras
 
@@ -300,7 +300,7 @@ Exempel på sådana egenskaper är:
 - reproducerbara builds,
 - automatiserade regressionstester,
 - separation mellan konfiguration och kod,
-- observability som gör regressionsrisk synlig,
+- observerbarhet som gör regressionsrisk synlig,
 - portabilitet där den har verkligt värde.
 
 Detta betyder inte att all teknik måste vara utbytbar utan kostnad. Den typen av full abstraktion kan bli dyr och minska nyttan av plattformen.
@@ -417,7 +417,7 @@ För att gå från utvärdering till bredare användning kan organisationen beh�
 - driftbarhet,
 - supportmodell,
 - backup och återställning,
-- observability,
+- observerbarhet,
 - kapacitet och skalning,
 - kostnadsmodell,
 - kompetenstillgång,
@@ -517,7 +517,7 @@ Det kan möjliggöra automatiska vyer som:
 - vilka golden paths genererar fortfarande gammal teknik?
 - vilka plattformar saknar publicerad livscykel?
 
-Det betyder inte att hela arkitekturen ska reduceras till metadata. Rationale, trade-offs och migrationskontext behöver fortfarande mänskligt begriplig dokumentation.
+Det innebär inte att hela arkitekturen ska reduceras till metadata. Rationale, avvägningar och migrationskontext behöver fortfarande mänskligt begriplig dokumentation.
 
 Men maskinläsbara livscykeldata gör styrningen mer operativ.
 
@@ -572,7 +572,7 @@ Samtidigt finns en kostnad för att inte förändra:
 - ökande supportkostnad,
 - säkerhetsrisk,
 - kompetensbrist,
-- sämre developer experience,
+- sämre utvecklarupplevelse,
 - minskad automation,
 - tekniska begränsningar,
 - dyrare framtida migrering.
@@ -648,7 +648,7 @@ Processen behöver inte vara tung för varje teknik. Förändringens räckvidd b
 
 ### Evig preview
 
-En teknik har status "pilot" eller "under utvärdering" i flera år men används ändå i produktion av många team.
+En teknik har status ”pilot” eller ”under utvärdering” i flera år men används ändå i produktion av många team.
 
 Problemet är inte namnet utan att organisationen undviker att fatta ett riktigt beslut om stöd, ansvar och framtid.
 

@@ -4,7 +4,7 @@ När människor möter ett IT-stöd möter de sällan dess interna arkitektur. D
 
 Det kan vara en publik e-tjänst, ett internt handläggningsstöd, en mobil klient, en självserviceportal eller ett administrativt verktyg. För användaren är detta ofta hela systemet. Om gränssnittet är svårt att förstå, långsamt, otillgängligt eller inkonsekvent spelar det liten roll att bakomliggande tjänster är tekniskt välstrukturerade.
 
-Samtidigt är användargränssnitt ett område där lokal variation lätt växer snabbt. Ett team väljer ett frontendramverk, ett annat skapar egna komponenter, ett tredje bygger en särskild notifieringslösning och ett fjärde etablerar en ny portalstruktur. Varje beslut kan vara rimligt i sitt lokala sammanhang, men tillsammans kan de skapa en flora av tekniker, interaktionsmönster och förvaltningsmodeller som är dyr att bära.
+Samtidigt är användargränssnitt ett område där lokal variation lätt växer snabbt. Ett team väljer ett frontend-ramverk, ett annat skapar egna komponenter, ett tredje bygger en särskild notifieringslösning och ett fjärde etablerar en ny portalstruktur. Varje beslut kan vara rimligt i sitt lokala sammanhang, men tillsammans kan de skapa en flora av tekniker, interaktionsmönster och förvaltningsmodeller som är dyr att bära.
 
 Förmågan **Interaktion, presentation och kanaler** handlar därför om vad ett stödjande IT-område varaktigt behöver kunna erbjuda för att organisationens digitala gränssnitt ska bli användbara, tillgängliga, säkra, förändringsbara och kostnadseffektiva.
 
@@ -59,7 +59,7 @@ Förmågan behöver typiskt omfatta stöd för flera typer av frågor:
 - klientnära tillstånd,
 - notifieringar,
 - flerspråkighet,
-- frontendramverk,
+- frontend-ramverk,
 - browser support,
 - klientnära säkerhet,
 - klientnära observerbarhet,
@@ -157,7 +157,7 @@ Ett gemensamt design system kan därför ge skalfördelar inom:
 - kvalitetssäkring,
 - och livscykelhantering.
 
-Men design systemet ersätter inte verksamhetsnära UX-arbete.
+Men designsystemet ersätter inte verksamhetsnära UX-arbete.
 
 En komponent kan vara tillgänglig och väl utformad i sig men användas på ett olämpligt sätt i en viss tjänst. Ett designsystem kan inte avgöra vilken information som ska visas först för en handläggare, vilken ordning ett komplext formulär bör ha eller hur en viss målgrupp bäst förstår ett verksamhetsbegrepp.
 
@@ -229,7 +229,7 @@ Detta medför samtidigt större ansvar för distribution, device management, ver
 
 Klientteknik är ett område där lösningar lätt blir mer avancerade än behoven kräver.
 
-Ett rikt interaktivt handläggningsstöd kan behöva en omfattande klientapplikation med lokal state management, avancerad navigation och många interaktiva komponenter. En enkel publik informations- eller formulärtjänst kan däremot fungera utmärkt med en enklare serverrenderad modell.
+Ett rikt interaktivt handläggningsstöd kan behöva en omfattande klientapplikation med lokal tillstånd management, avancerad navigation och många interaktiva komponenter. En enkel publik informations- eller formulärtjänst kan däremot fungera utmärkt med en enklare serverrenderad modell.
 
 Detta kan uttryckas som en princip:
 
@@ -264,7 +264,7 @@ Det kan exempelvis ge team:
 - säkerhetskontroller,
 - bygg- och leveransstöd,
 - browser support,
-- observability-hookar,
+- integrationspunkter för observerbarhet,
 - dokumentation,
 - och en definierad support- och uppgraderingsmodell.
 
@@ -369,7 +369,7 @@ Det viktiga är inte vilken ruta i organisationsschemat tjänsten hamnar i. Det 
 
 ## Observerbarhet börjar även i klienten
 
-Ett distribuerat användarflöde kan passera webbläsare, gateway, BFF, flera backendtjänster och databaser. Om ett fel bara uppfattas som "något gick fel" i klienten blir felsökningen dyr.
+Ett distribuerat användarflöde kan passera webbläsare, gateway, BFF, flera backend-tjänster och databaser. Om ett fel bara uppfattas som ”något gick fel” i klienten blir felsökningen dyr.
 
 Därför behöver interaktionsförmågan stödja klientnära observerbarhet.
 
@@ -383,7 +383,7 @@ Det kan innebära att:
 
 Men observerbarhet får inte bli synonymt med att skicka hela användarens data till centrala loggar. Informationsskyddet måste finnas kvar även i felsökningsmekanismerna.
 
-Den centrala observability-plattformen hör till Driftbarhet och motståndskraft. Interaktionsförmågan ansvarar för att klienten producerar användbar och säker signalering till den.
+Den centrala observerbarhetsplattformen hör till Driftbarhet och motståndskraft. Interaktionsförmågan ansvarar för att klienten producerar användbar och säker signalering till den.
 
 ## Tekniken förändras snabbare än förmågan
 
@@ -461,7 +461,7 @@ Sådant som normalt behöver ligga nära verksamhetslösningen är:
 - språk och innehåll,
 - och den konkreta kombinationen av komponenter i ett visst användningsfall.
 
-Mellan dessa finns ett federerat område. En lokal lösning kan exempelvis utveckla en ny komponent som senare visar sig vara generell nog att flyttas in i det gemensamma design systemet. På samma sätt kan ett nytt kanalbehov först prövas lokalt och därefter bli ett gemensamt erbjudande om det återkommer.
+Mellan dessa finns ett federerat område. En lokal lösning kan exempelvis utveckla en ny komponent som senare visar sig vara generell nog att flyttas in i det gemensamma designsystemet. På samma sätt kan ett nytt kanalbehov först prövas lokalt och därefter bli ett gemensamt erbjudande om det återkommer.
 
 Detta är ett exempel på den iterativa modell som introducerades i kapitel 7.
 
@@ -487,7 +487,7 @@ Vilket design system, webbramverk, formulärstöd eller annan gemensam komponent
 
 ### 5. Definiera klientens ansvar
 
-Vilken state och vilken interaktionslogik hör hemma i klienten? Vilken logik måste vara auktoritativ på serversidan?
+Vilken tillstånd och vilken interaktionslogik hör hemma i klienten? Vilken logik måste vara auktoritativ på serversidan?
 
 ### 6. Definiera backendgränsen
 
@@ -529,7 +529,7 @@ Detta är också en viktig övergång till senare delar av boken. Förmågan bes
 
 Interaktion, presentation och kanaler är förmågan som formar mötet mellan människor och organisationens digitala IT-stöd.
 
-Den omfattar mer än frontendramverk. Den behöver ge ett sammanhållet stöd för kanalval, design system, komponenter, tillgänglighet, klientarkitektur, formulär, notifieringar, säkerhet, browser support och klientens relation till backend.
+Den omfattar mer än frontend-ramverk. Den behöver ge ett sammanhållet stöd för kanalval, design system, komponenter, tillgänglighet, klientarkitektur, formulär, notifieringar, säkerhet, browser support och klientens relation till backend.
 
 Samtidigt måste gränsen mot andra förmågor vara tydlig. Interaktionsförmågan ska inte ta över processlogik, verksamhetsregler, informationsägarskap, identitetsmekanismer eller integration bara för att funktionerna exponeras i ett gränssnitt.
 

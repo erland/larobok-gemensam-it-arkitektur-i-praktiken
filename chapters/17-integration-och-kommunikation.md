@@ -117,7 +117,7 @@ En lösning behöver veta:
 - om operationen kan ha genomförts trots att svaret förlorades,
 - vilket beteende användaren eller processen får vid fel.
 
-Retry är därför inte automatiskt säkert.
+Återförsök är därför inte automatiskt säkert.
 
 Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja **idempotens** eller någon annan mekanism som gör upprepning kontrollerad.
 
@@ -242,7 +242,7 @@ Om konsumenter blir beroende av interna tabeller, filstrukturer eller tekniska d
 
 Direkt databasåtkomst mellan självständiga IT-stöd är därför normalt ett varningstecken som integrationsmodell.
 
-Det betyder inte att databaser aldrig delas tekniskt. Men om två självständiga ansvar använder samma interna lagringsmodell som sitt primära kontrakt har man skapat en stark koppling som behöver vara medvetet motiverad.
+Det innebär inte att databaser aldrig delas tekniskt. Men om två självständiga ansvar använder samma interna lagringsmodell som sitt primära kontrakt har man skapat en stark koppling som behöver vara medvetet motiverad.
 
 ## API management är inte detsamma som integrationsarkitektur
 
@@ -330,7 +330,7 @@ En bra tumregel är:
 
 > **Integration får anpassa kontrakt och transport, men verksamhetens auktoritativa beslut och domänlogik bör ligga hos den ansvariga domänen.**
 
-Det betyder inte att transformation måste vara trivial. Men man bör kunna förklara om en regel i integrationslagret är teknisk mappning eller verksamhetsmässig logik.
+Poängen är inte att transformation måste vara trivial. Men man bör kunna förklara om en regel i integrationslagret är teknisk mappning eller verksamhetsmässig logik.
 
 ## Kontraktslivscykeln är lika viktig som tekniken
 
@@ -380,7 +380,7 @@ Vid asynkron kommunikation kan meddelandet ligga kvar i en kö, levereras igen e
 
 Vid filutbyte kan en hel batch behöva avvisas, delvis accepteras eller behandlas på nytt.
 
-Det är därför otillräckligt att säga ”plattformen hanterar retry”. Lösningen behöver definiera **verksamhetsmässigt felbeteende**.
+Det är därför otillräckligt att säga ”plattformen hanterar återförsök”. Lösningen behöver definiera **verksamhetsmässigt felbeteende**.
 
 Exempel:
 
@@ -477,7 +477,7 @@ Kapitel 18 fördjupar detta. Här räcker det att konstatera att ett integration
 
 Det är ett exempel på hur förmågorna samverkar. Integration äger kommunikationsmönstret och kontraktet. Identitet och tillit erbjuder mekanismer för att avgöra vem som kommunicerar och under vilka förutsättningar.
 
-## Observability över systemgränser
+## Observerbarhet över systemgränser
 
 Ett fel i en distribuerad lösning kan passera flera system innan effekten märks.
 
@@ -490,9 +490,9 @@ Det kan innebära:
 - spårning av anrop,
 - meddelandeidentifierare,
 - gemensamma tidsreferenser,
-- metrics för ködjup, fel och latens.
+- mätvärden för ködjup, fel och latens.
 
-Men även här behöver ansvar hållas isär. Integrationsförmågan definierar vilka egenskaper flödet behöver. Den gemensamma förmågan för driftbarhet och motståndskraft, som behandlas i kapitel 20, tillhandahåller de bredare mekanismerna för observability och operativ återkoppling.
+Men även här behöver ansvar hållas isär. Integrationsförmågan definierar vilka egenskaper flödet behöver. Den gemensamma förmågan för driftbarhet och motståndskraft, som behandlas i kapitel 20, tillhandahåller de bredare mekanismerna för observerbarhet och operativ återkoppling.
 
 ## Gemensamma plattformstjänster för integration
 
@@ -560,7 +560,7 @@ De som ansvarar för Integration och kommunikation bör exempelvis utveckla:
 - tjänsteerbjudanden som API management och messaging,
 - kontrakts- och versionsvägledning,
 - golden paths för vanliga integrationsscenarier,
-- stöd för test, observability och onboarding,
+- stöd för test, observerbarhet och onboarding,
 - livscykel för integrationsprodukter och protokoll.
 
 Förmågeansvaret bör också följa var utvecklingsområden återkommande skapar egna speciallösningar. Det kan vara ett tecken på att det gemensamma erbjudandet saknar något.
@@ -573,7 +573,7 @@ Det konkreta systemet ansvarar bland annat för:
 - vilket mönster som passar,
 - kontraktets verksamhetssemantik,
 - felbeteende och idempotens,
-- timeout- och retrystrategi,
+- timeout- och återförsöksstrategi,
 - hur integrationen används i domänens process,
 - att kraven på säkerhet och driftbarhet uppfylls.
 
@@ -605,7 +605,7 @@ Verksamhetsregler och domänbeslut flyttas till en gemensam integrationsmotor.
 
 **Konsekvens:** domänansvaret urholkas och integrationslagret blir svårt att förstå och förändra.
 
-### Retry utan idempotensanalys
+### Återförsök utan idempotensanalys
 
 Tekniska fel möts med automatiska omförsök utan analys av operationens verksamhetsmässiga effekt.
 

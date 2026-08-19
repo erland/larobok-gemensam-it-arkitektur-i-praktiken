@@ -184,7 +184,7 @@ Det finns ofta en grundkostnad för:
 - automation,
 - grundinfrastruktur,
 - licenser,
-- observability,
+- observerbarhet,
 - backup,
 - dokumentation,
 - kompetensutveckling.
@@ -200,7 +200,7 @@ Därtill kan rörliga kostnader uppstå genom exempelvis:
 - AI-tokens,
 - externa tjänsteanrop.
 
-Det gör en enkel princip som "varje team betalar exakt vad det förbrukar" svår att tillämpa.
+Det gör en enkel princip som ”varje team betalar exakt vad det förbrukar” svår att tillämpa.
 
 En plattform kan i stället finansieras genom en kombination av:
 
@@ -223,7 +223,7 @@ Exempel:
 - gemensam CI/CD minskar tiden varje team lägger på pipelinebygge,
 - central identitetsfederation minskar lokala integrationer,
 - en standardiserad containerplattform minskar variation i drift,
-- gemensam observability minskar felsökningstid,
+- gemensam observerbarhet minskar felsökningstid,
 - golden paths minskar ledtid och felkonfigurationer.
 
 Om man enbart mäter den direkta plattformskostnaden kan dessa tjänster framstå som dyra. En bättre ekonomisk bedömning inkluderar **undviket duplicerat arbete och reducerad koordinationskostnad**.
@@ -297,7 +297,7 @@ Dynamisk skalning gör att kapacitet kan anpassas snabbare till faktisk belastni
 Automatisk skalning kan också skala upp:
 
 - ineffektiv kod,
-- okontrollerade retries,
+- okontrollerade återförsök,
 - bottrafik,
 - felaktiga batchjobb,
 - AI-anrop med oväntat hög tokenförbrukning.
@@ -372,7 +372,7 @@ Varje profil kan ha olika:
 - återställningsmål,
 - ungefärlig kostnadsprofil.
 
-Detta gör trade-offen synlig för konsumenten.
+Detta gör avvägningen synlig för konsumenten.
 
 I stället för att säga:
 
@@ -477,7 +477,7 @@ Exempel:
 
 Detta kan beskrivas som **organisatorisk och operativ kostnad**.
 
-En teknisk komponent med låg licenskostnad kan bli dyr om varje team måste bygga egen automation, egen observability och egen supportkompetens. En dyrare plattformstjänst kan därför ge lägre total kostnad om den reducerar friktionen tillräckligt mycket.
+En teknisk komponent med låg licenskostnad kan bli dyr om varje team måste bygga egen automation, egen observerbarhet och egen supportkompetens. En dyrare plattformstjänst kan därför ge lägre total kostnad om den reducerar friktionen tillräckligt mycket.
 
 Total Cost of Ownership, TCO, är ett användbart tankesätt här, men även TCO behöver avgränsas. Om analysen försöker räkna in varje tänkbar indirekt effekt blir modellen snabbt svår att använda. Det viktiga är att de största relevanta kostnadsdrivarna finns med.
 
@@ -525,7 +525,7 @@ Här ligger ansvar för att göra tjänsternas ekonomi begriplig:
 - showback,
 - prognoser,
 - effektiviseringsarbete,
-- investeringsroadmap.
+- investeringsfärdplan.
 
 Plattformsteamet behöver kunna förklara både **vad plattformen kostar** och **vilket arbete eller vilken risk den hjälper organisationen att undvika**.
 
