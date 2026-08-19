@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev36.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev37.zip",
   "chapters": {
-    "count": 28,
+    "count": 29,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -30,28 +30,29 @@
       "chapters/25-process-regel-och-datamonster.md": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989",
       "chapters/26-ai-identitets-och-runtime-monster.md": "c3e96dfe34226471110085fcf49d800c5d0374c84e1ebd9dbbdb641badaf7d7e",
       "chapters/27-drift-och-leveransmonster.md": "37d2b64c8edbc690a745d3cae60bc11c2e0dc724c877d1e0b67ffa7de3f5551f",
-      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "3e04742220c1f75a2747a9ffa93e0ee40a7c81213f48a925493da654119a12fe"
+      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "3e04742220c1f75a2747a9ffa93e0ee40a7c81213f48a925493da654119a12fe",
+      "chapters/29-platform-as-a-product.md": "c05b744c73c97817a60a541dc39ddfac675b17baee90582651fea12c2c2e21ac"
     },
-    "latest": 28
+    "latest": 29
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md",
+      "chapters/29-platform-as-a-product.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skapat kapitel 28 – När ett byggblock blir en plattformstjänst och synkat projektmetadata",
-    "source_revision": 35
+    "operation": "Skrev kapitel 29 – Platform as a Product och synkroniserade projektstatus/exportordning",
+    "source_revision": 36
   },
-  "parent_revision": 35,
+  "parent_revision": 36,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 36,
+  "revision": 37,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -69,7 +70,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "edc671eeb73d8301bc08eec63407c880f68dd579740dceb02ff87fca9658fac0"
+      "sha256": "17cf2cb70a8f6f98a7c033d96d6fc969c31512dd33f24a39d9443ba1c2e28d5b"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -84,8 +85,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2532,
-      "sha256": "2316b8b23e2d7f41791fee3030f16e120f7181cc4cf41039570d5fa0b4ce3462"
+      "bytes": 2571,
+      "sha256": "99bd45dd4a1d46d46365c32025be78aeb61beb24a67d5bba42a4f457575f1452"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -203,6 +204,10 @@
       "bytes": 24602,
       "sha256": "3e04742220c1f75a2747a9ffa93e0ee40a7c81213f48a925493da654119a12fe"
     },
+    "chapters/29-platform-as-a-product.md": {
+      "bytes": 21385,
+      "sha256": "c05b744c73c97817a60a541dc39ddfac675b17baee90582651fea12c2c2e21ac"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -224,8 +229,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 9214,
-      "sha256": "2c05abf421f5f1531e648790b55112e9c8373a8791e94772d5e1c8aed548514e"
+      "bytes": 9654,
+      "sha256": "557b2d5755486dd7ac671375cb0341d9baf0dc45254adab6b081147d94145547"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -240,16 +245,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 21913,
-      "sha256": "5ce959b090491f002d867ba3d610eaafb1b2f99e160dcda0739635550cddfd6f"
+      "bytes": 21975,
+      "sha256": "3a890e92545ae8049ccd4132027f8d76aa4c6678f13407e6099288edec2ebcc2"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 12919,
-      "sha256": "944569dfa371b0e92cb5b40fe5eebfec3576365b7412fbbb8f519b2df9e41f5d"
+      "bytes": 13367,
+      "sha256": "9ae2f25e9ccd5221294e69b49bc1cca1024cb096502ae78b5ab4fdc89e7fa815"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -733,7 +738,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "2c414c1d1827191c704fba8cd9aeb8f28a120d53f24a14e5a61bd581b4c6c134"
+      "sha256": "88b168cf972f0f443d30be9b8cabf84cb06bbb52ec1e70f1a9e1662f0b27a7c7"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -756,8 +761,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 22952,
-      "sha256": "1fce7939213cf4e0b7eead18e0e1182a3a5e3a7b9a67c201b4d2b145ec0e5290"
+      "bytes": 23291,
+      "sha256": "70350a658d09195e9790d45391924f2a89b1d42f7f31c15f577315f31c98df73"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -780,5 +785,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T05:37:06Z"
+  "updated_at": "2026-08-19T05:42:30Z"
 }

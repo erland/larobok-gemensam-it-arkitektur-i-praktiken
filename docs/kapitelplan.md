@@ -197,9 +197,9 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 
 ## Kapitel 29: Platform as a Product
 - Kärnfråga: Hur gör man plattformar användbara, mätbara och efterfrågade?
-- Centralt innehåll: plattformsteam, produktledning, developer experience, användarbehov, SLO, roadmap, feedback och adoption.
+- Centralt innehåll: plattformsteam, produktledning, developer experience, användarbehov, värdelöfte, user journeys, SLO, roadmap, feedback, adoption, kostnad och livscykel.
 - Avgränsning: handlar om produktmodellen och teamets arbetssätt; självservice och styrmekanismer fördjupas i kapitel 30.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 30: Golden paths, paved roads och självservice
 - Kärnfråga: Hur styr man genom den enklaste vägen i stället för genom dokument och granskningsköer?

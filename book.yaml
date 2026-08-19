@@ -48,6 +48,7 @@ chapters:
 - chapters/26-ai-identitets-och-runtime-monster.md
 - chapters/27-drift-och-leveransmonster.md
 - chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md
+- chapters/29-platform-as-a-product.md
 exports:
   epub:
     enabled: true
