@@ -20,6 +20,7 @@ description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktur
 project_slug: gemensam-it-arkitektur-i-praktiken
 chapters:
 - chapters/00-inledning.md
+- chapters/del-01.md
 - chapters/01-varfor-gemensam-it-arkitektur.md
 - chapters/02-en-arkitektur-av-flera-lager.md
 - chapters/03-behov-fore-teknik.md
@@ -27,10 +28,12 @@ chapters:
 - chapters/05-arkitekturbeslut-och-trade-offs.md
 - chapters/06-arkitekturprinciper-som-beslutsstod.md
 - chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
+- chapters/del-02.md
 - chapters/08-vad-ar-en-it-formaga.md
 - chapters/09-nar-nagot-bor-vara-gemensamt.md
 - chapters/10-domaner-ansvar-och-granser.md
 - chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md
+- chapters/del-03.md
 - chapters/12-interaktion-presentation-och-kanaler.md
 - chapters/13-process-workflow-och-arendehantering.md
 - chapters/14-regler-och-beslut.md
@@ -42,17 +45,20 @@ chapters:
 - chapters/20-driftbarhet-och-motstandskraft.md
 - chapters/21-programvaruutveckling-och-leverans.md
 - chapters/22-arbetsplats-samarbete-och-produktivitet.md
+- chapters/del-04.md
 - chapters/23-losningsmonster-som-ateranvandbara-beslut.md
 - chapters/24-integrations-och-kommunikationsmonster.md
 - chapters/25-process-regel-och-datamonster.md
 - chapters/26-ai-identitets-och-runtime-monster.md
 - chapters/27-drift-och-leveransmonster.md
+- chapters/del-05.md
 - chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md
 - chapters/29-platform-as-a-product.md
 - chapters/30-golden-paths-paved-roads-och-sjalvservice.md
 - chapters/31-tekniska-standarder-och-deras-nivaer.md
 - chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
 - chapters/33-ekonomi-kostnad-och-kapacitet.md
+- chapters/del-06.md
 - chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
 - chapters/35-fran-behov-till-losningsarkitektur.md
 - chapters/36-sju-aterkommande-losningsscenarier.md

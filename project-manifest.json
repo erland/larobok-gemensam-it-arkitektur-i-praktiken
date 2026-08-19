@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev60.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev61.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,17 +46,25 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "README.md",
-      "chapters/begreppsregister.md",
-      "scripts/package_project.py"
+      "book.yaml",
+      "chapters/del-01.md",
+      "chapters/del-02.md",
+      "chapters/del-03.md",
+      "chapters/del-04.md",
+      "chapters/del-05.md",
+      "chapters/del-06.md",
+      "publishing/epub.css",
+      "publishing/fix-epub-after-pandoc.py",
+      "publishing/pdf-filter.lua",
+      "publishing/pdf-template.tex"
     ],
-    "operation": "Separera identiska begrepp per objekttyp i läsbart register och säkra ZIP-paketering utan .git",
-    "source_revision": 59
+    "operation": "Införde sex delar som delsidor och grupperad innehållsförteckning i EPUB/PDF",
+    "source_revision": 60
   },
-  "parent_revision": 59,
+  "parent_revision": 60,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 60,
+  "revision": 61,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -93,8 +101,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 3128,
-      "sha256": "ee217817d7c69128f988ae869ce52a2cae8062f4d1e7debd172610450965acb5"
+      "bytes": 3254,
+      "sha256": "32d0a79ad9ed1f75e648f1089bd24eb6b7bc9fa9a39135985d7db92ce56c00fb"
     },
     "chapters/00-inledning.md": {
       "bytes": 2171,
@@ -251,6 +259,30 @@
     "chapters/begreppsregister.md": {
       "bytes": 7366,
       "sha256": "0e9906062fdc0761c4d124412b8c4ea5e7e41d0bf65a7e49df28db7101df8b5a"
+    },
+    "chapters/del-01.md": {
+      "bytes": 50,
+      "sha256": "0b76c22067eb2fb409e85544ed33c5c8aa6f0f0c0d04abfe8485489f8cedd667"
+    },
+    "chapters/del-02.md": {
+      "bytes": 60,
+      "sha256": "2216a3abac2aec93fe60ffcb86131cb5686ca3536936b58e281a7c1efa731b07"
+    },
+    "chapters/del-03.md": {
+      "bytes": 44,
+      "sha256": "04f13a5260c1c7286a22012e4b736d886579296dc1349ec7a04de3063ad156af"
+    },
+    "chapters/del-04.md": {
+      "bytes": 59,
+      "sha256": "24b2448920d5daf0ee833e9278e9894a0c47a9bd651a71f3ee252a3b53f3305a"
+    },
+    "chapters/del-05.md": {
+      "bytes": 68,
+      "sha256": "ecd6a72aad189a63883438ff37cc599ddd3b76e2b6a2811e31a3535bc9be8e4c"
+    },
+    "chapters/del-06.md": {
+      "bytes": 60,
+      "sha256": "c3b3cb9d3cfcb340502764c51efe642b799dbaf28a43ef075a358d4e3264edf4"
     },
     "chapters/kallor-och-vidare-lasning.md": {
       "bytes": 4569,
@@ -825,24 +857,24 @@
       "sha256": "41ea9b200a768f1f55a5fd86ee6a278907f994274ca548cf742225579e50202c"
     },
     "publishing/epub.css": {
-      "bytes": 1035,
-      "sha256": "12a7d8ebe40b1b03b4c9469b10d656e8b178946cfd7072f219bd34224a120f52"
+      "bytes": 1538,
+      "sha256": "305a7a518f632831ce01e5fca36891ea1d48c1479f60e66056c54e4157d96397"
     },
     "publishing/fix-epub-after-pandoc.py": {
-      "bytes": 3337,
-      "sha256": "223e8f4fb24813ecdf687db1fea7fe2a272af8f4a9ac1ad254ac01c9c03bd3a2"
+      "bytes": 6795,
+      "sha256": "d8a7773696ce6d1cec391f03df91b4ddb7f2dc1a9a26f0740982427291ba265e"
     },
     "publishing/pdf-filter.lua": {
-      "bytes": 811,
-      "sha256": "cfe827087f31a1b3200ff7324303771e7844a55dcf6b0182c3363b47e06fbf04"
+      "bytes": 1290,
+      "sha256": "4ccba6546bfab8a0985c905108d329509c4171e5e47a9133e3ca684a438f881c"
     },
     "publishing/pdf-template.tex": {
-      "bytes": 2859,
-      "sha256": "8029f9953d57fa2f5b879427e5bfd3b6d7949aff014a28283668c14c4feaa26d"
+      "bytes": 3374,
+      "sha256": "c841cf07f85f7090931f6c5ce246ede7ad2fb41dc06b67ea6fe6fd5dff957e19"
     },
     "revision-log.md": {
-      "bytes": 37835,
-      "sha256": "e1536e52474f16a23e9a9731652fe44f8df0c6298e8a23802e15be6e45582de0"
+      "bytes": 38272,
+      "sha256": "1a190ae677254bee61290ff6f6254e669d3f69eb668155844dc2d1dcedcbff4a"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -869,5 +901,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T17:21:10Z"
+  "updated_at": "2026-08-19T17:33:04Z"
 }

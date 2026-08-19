@@ -47,3 +47,30 @@ h1 .chapter-number {
 h1 .chapter-title {
   font-size: 1em;
 }
+
+/* Delsidor */
+body.part-page {
+  text-align: center;
+  padding: 28vh 8% 0;
+  break-after: page;
+  page-break-after: always;
+}
+body.part-page h1.part-heading {
+  text-align: center;
+  margin: 0;
+}
+body.part-page .part-number,
+body.part-page .part-title {
+  display: block;
+}
+body.part-page .part-number {
+  margin-bottom: 0.35em;
+  font-size: 0.72em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body.part-page .part-title {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
