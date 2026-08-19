@@ -153,7 +153,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 22: Arbetsplats, samarbete och produktivitet
 - Kärnfråga: Hur styrs en gemensam digital arbetsplats utan att låsa innovation eller skapa informationsrisker?
 - Centralt innehåll: productivity suite, samarbetsytor, low-code, AI-assistenter, informationshantering och governance.
-- Status: planerad
+- Avgränsning: behandlar generell digital arbetsplats och dess gräns mot verksamhetssystem; kapitel 12 behandlar verksamhetsspecifika användargränssnitt, kapitel 16 generella AI-mekanismer och kapitel 18 identitets- och tillitsmekanismer.
+- Status: första utkast skapat
 
 # Del IV – Från förmåga till återanvändbar lösning
 

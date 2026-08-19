@@ -5,18 +5,18 @@
 - book_kind: factbook
 - book_type: subject_overview
 - Project-id: c9f8f383-f0bc-4fba-8270-629463a8398f
-- Revision: 28
-- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev28.zip
+- Revision: 29
+- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev29.zip
 
 ## Kapitel
 - Inledning: första utkast
 - Planerade kapitel: 37
-- Skapade huvudkapitel: 21
+- Skapade huvudkapitel: 22
 
 ## Faktakontroll
 - Policy: `docs/kallpolicy.md`
 - Register: `docs/faktakontroll.md`
-- Register: F-001–F-015
+- Register: F-001–F-016
 
 ## Underlag
 - Ursprungligt arkitekturmaterial: `docs/underlag/gemensam-it-arkitektur/`

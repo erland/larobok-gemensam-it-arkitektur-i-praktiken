@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev28.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev29.zip",
   "chapters": {
-    "count": 21,
+    "count": 22,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -23,28 +23,29 @@
       "chapters/18-identitet-och-tillit.md": "fd919e9f732c4023d71bc505e7999825168af7e865e874e6275f962f0b019a4c",
       "chapters/19-applikationsexekvering-och-runtime.md": "26c4ba1dea1d9148d6f1e6722345ff0ed895923dd5b59ec5e4d8eac274208129",
       "chapters/20-driftbarhet-och-motstandskraft.md": "cfcf2e36d8fbc0cf8e13796915525fc7fc9c350193fb3b573e0e4eeb655715c8",
-      "chapters/21-programvaruutveckling-och-leverans.md": "7e85af54cf7745aa98c5332121576ee239f598b4b7309ed92030042c7a75d142"
+      "chapters/21-programvaruutveckling-och-leverans.md": "7e85af54cf7745aa98c5332121576ee239f598b4b7309ed92030042c7a75d142",
+      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f"
     },
-    "latest": 21
+    "latest": 22
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/21-programvaruutveckling-och-leverans.md",
+      "chapters/22-arbetsplats-samarbete-och-produktivitet.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 21 – Programvaruutveckling och leverans, verifierade software supply chain mot aktuella primärkällor och synkroniserade projektstatus/exportordning",
-    "source_revision": 27
+    "operation": "Skrev kapitel 22 – Arbetsplats, samarbete och produktivitet; slutförde del III i första utkast och synkroniserade projektstatus/exportordning",
+    "source_revision": 28
   },
-  "parent_revision": 27,
+  "parent_revision": 28,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 28,
+  "revision": 29,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -62,7 +63,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "e9ff2387fb74d695c9aacb447b863bbb000fe93101d1f77317b760860c3103a2"
+      "sha256": "d3953683ed2e6c5fb5030cec5efce3786f1fd2dc4d7acc5ef68f3ed9ccf6ba03"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -77,8 +78,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2159,
-      "sha256": "005685922e6633653fcedcdb24f376a1cc9ff50c06f1d192a7cb65ddac0f1fc1"
+      "bytes": 2216,
+      "sha256": "e38061a0f25e08f62a7f506e68c05b467cded11f37740d18818542704d8ed296"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -168,6 +169,10 @@
       "bytes": 29191,
       "sha256": "7e85af54cf7745aa98c5332121576ee239f598b4b7309ed92030042c7a75d142"
     },
+    "chapters/22-arbetsplats-samarbete-och-produktivitet.md": {
+      "bytes": 28278,
+      "sha256": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -189,8 +194,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 6161,
-      "sha256": "1d77a817f0157dc5ca042798aded169d8581085e80c02a050af44b0a178057fe"
+      "bytes": 6577,
+      "sha256": "579c81fc8e041824addc270554bb38721551b4fa28a062e6d7712001a486f3ce"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -205,16 +210,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 20553,
-      "sha256": "d03bf9c4d5dc9ace9f1e5f3d7b67d75269d795d4a49a90080fb12b6e74bd8ad2"
+      "bytes": 20809,
+      "sha256": "e7ca60515a8173ac4b18e0d638548ac98858c0a15e4daaf6903f8b1487605a8d"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 9337,
-      "sha256": "9e894bb2e1a5abba147679bbdf228171a262d7fad373cfdef40740e27d5ced0f"
+      "bytes": 9683,
+      "sha256": "e3ceca76a89629742667c879745adcf178c5889445dff158ea2074db641d94e4"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -698,7 +703,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "54873ad385b5df4c595cac103c0379b79ba01d4f21282f2ee040086b3e5f70c4"
+      "sha256": "43200fbe24f19709e614764c59309218d450093bfcbf1b87ce19a1845e4a1f6a"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -721,8 +726,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 20071,
-      "sha256": "065ed5d87f4340ef5072cdf988225fb826e5a0ca16d81be55e81ca9b48043feb"
+      "bytes": 20484,
+      "sha256": "e1ee82ffec7e27a6770625b7f6f44f65c8ea1f7afcc782624517685c04456db2"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -745,5 +750,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-18T20:03:13Z"
+  "updated_at": "2026-08-18T20:07:31Z"
 }

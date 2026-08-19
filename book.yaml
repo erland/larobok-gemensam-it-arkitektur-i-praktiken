@@ -41,6 +41,7 @@ chapters:
 - chapters/19-applikationsexekvering-och-runtime.md
 - chapters/20-driftbarhet-och-motstandskraft.md
 - chapters/21-programvaruutveckling-och-leverans.md
+- chapters/22-arbetsplats-samarbete-och-produktivitet.md
 exports:
   epub:
     enabled: true

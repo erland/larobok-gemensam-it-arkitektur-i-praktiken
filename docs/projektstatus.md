@@ -72,4 +72,5 @@ Skrivfas – del I och II kompletta i första utkast; del III pågår
 - Kapitel 19 – Applikationsexekvering och runtime är skapat som första utkast och etablerar workload-baserat runtimeval, container/VM/runtimeprofiler, stateless/stateful, resursprofilering, isolering, portabilitet och separata livscykler för applikation och plattform.
 - Kapitel 20 – Driftbarhet och motståndskraft är skapat som första utkast och etablerar observability, SLI/SLO, larm, felisolering, recovery, backup/restore, RPO/RTO, DR, runbooks, kapacitet och operativ återkoppling.
 - Kapitel 21 – Programvaruutveckling och leverans är skapat som första utkast och etablerar SCM, reproducerbara builds, CI/CD, artefaktflöde, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer.
-- Nästa planerade kapitel är kapitel 22 – Arbetsplats, samarbete och produktivitet.
+- Kapitel 22 – Arbetsplats, samarbete och produktivitet är skapat som första utkast och etablerar gränsen mellan generell produktivitet och verksamhetssystem, samarbetsytors ägarskap/livscykel, extern delning, low-code-eskalering, produktivitets-AI och gemensamma arbetsplatserbjudanden. Del III är därmed komplett i första utkast.
+- Nästa planerade kapitel är kapitel 23 – Lösningsmönster som återanvändbara beslut.
