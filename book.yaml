@@ -1,0 +1,68 @@
+title: Gemensam IT-arkitektur i praktiken
+subtitle: Från behov och förmågor till mönster, plattformar, standarder och referensarkitekturer
+author: Erland Lindmark
+language: sv
+book_kind: factbook
+book_type: subject_overview
+difficulty: advanced
+audience: IT-arkitekter, plattformsansvariga, tekniska ledare, produktägare och andra som utformar eller styr gemensam IT-arkitektur
+  i större organisationer och myndigheter.
+edition: '1'
+version: '0.1'
+date: '2026-08-18'
+rights: All rights reserved
+publisher: ''
+cover_image: ''
+identifier: ''
+subject: Gemensam IT-arkitektur, förmågor, plattformar, standarder, lösningsmönster och referensarkitekturer
+description: En fördjupande faktabok om hur gemensam IT-arkitektur kan struktureras från behov och kvalitetskrav via IT-förmågor
+  och lösningsmönster till plattformstjänster, standarder och referensarkitekturer.
+project_slug: gemensam-it-arkitektur-i-praktiken
+chapters:
+- chapters/00-inledning.md
+- chapters/01-varfor-gemensam-it-arkitektur.md
+- chapters/02-en-arkitektur-av-flera-lager.md
+- chapters/03-behov-fore-teknik.md
+- chapters/04-kvalitetsattribut-som-arkitekturens-drivkrafter.md
+- chapters/05-arkitekturbeslut-och-trade-offs.md
+- chapters/06-arkitekturprinciper-som-beslutsstod.md
+- chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md
+- chapters/08-vad-ar-en-it-formaga.md
+- chapters/09-nar-nagot-bor-vara-gemensamt.md
+- chapters/10-domaner-ansvar-och-granser.md
+- chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md
+- chapters/12-interaktion-presentation-och-kanaler.md
+- chapters/13-process-workflow-och-arendehantering.md
+- chapters/14-regler-och-beslut.md
+- chapters/15-data-och-informationshantering.md
+- chapters/16-analys-sokning-och-ai.md
+- chapters/17-integration-och-kommunikation.md
+- chapters/18-identitet-och-tillit.md
+- chapters/19-applikationsexekvering-och-runtime.md
+- chapters/20-driftbarhet-och-motstandskraft.md
+- chapters/21-programvaruutveckling-och-leverans.md
+- chapters/22-arbetsplats-samarbete-och-produktivitet.md
+- chapters/23-losningsmonster-som-ateranvandbara-beslut.md
+- chapters/24-integrations-och-kommunikationsmonster.md
+- chapters/25-process-regel-och-datamonster.md
+- chapters/26-ai-identitets-och-runtime-monster.md
+- chapters/27-drift-och-leveransmonster.md
+- chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md
+- chapters/29-platform-as-a-product.md
+- chapters/30-golden-paths-paved-roads-och-sjalvservice.md
+- chapters/31-tekniska-standarder-och-deras-nivaer.md
+- chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
+- chapters/33-ekonomi-kostnad-och-kapacitet.md
+- chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
+- chapters/35-fran-behov-till-losningsarkitektur.md
+- chapters/36-sju-aterkommande-losningsscenarier.md
+- chapters/37-governance-forvaltning-och-evolution.md
+exports:
+  epub:
+    enabled: true
+    include_text_toc: false
+    toc_depth: 1
+  pdf:
+    enabled: true
+    include_toc_before_introduction: true
+    toc_depth: 3
