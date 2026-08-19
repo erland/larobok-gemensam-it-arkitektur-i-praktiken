@@ -22,7 +22,6 @@ def split_headings(base: Path)->int:
             ident=h1.attrib.get('id'); h1.clear()
             if ident: h1.set('id',ident)
             a=ET.SubElement(h1,f'{{{XHTML}}}span',{'class':'chapter-number'}); a.text=m.group(1)
-            ET.SubElement(h1,f'{{{XHTML}}}br',{'class':'chapter-title-break'})
             b=ET.SubElement(h1,f'{{{XHTML}}}span',{'class':'chapter-title'}); b.text=m.group(2)
             changed=True
         if changed: tree.write(path,encoding='utf-8',xml_declaration=True); count+=1
