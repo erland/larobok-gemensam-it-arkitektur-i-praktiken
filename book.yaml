@@ -44,6 +44,7 @@ chapters:
 - chapters/22-arbetsplats-samarbete-och-produktivitet.md
 - chapters/23-losningsmonster-som-ateranvandbara-beslut.md
 - chapters/24-integrations-och-kommunikationsmonster.md
+- chapters/25-process-regel-och-datamonster.md
 exports:
   epub:
     enabled: true

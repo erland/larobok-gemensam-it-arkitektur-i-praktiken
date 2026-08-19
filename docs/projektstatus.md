@@ -39,7 +39,8 @@ Skrivfas – del I–III kompletta i första utkast; del IV pågår
 | 22 | Arbetsplats, samarbete och produktivitet | Första utkast | Generell produktivitet kontra verksamhetssystem, samarbetsytor, low-code/citizen development, produktivitets-AI och ansvarsnivåer etablerade. |
 | 23 | Lösningsmönster som återanvändbara beslut | Första utkast | Mönster som återanvändbar beslutserfarenhet, kontext/problem/forces, konsekvenser, variationer, pattern language, anti-patterns, urval och livscykel etablerade. |
 | 24 | Integrations- och kommunikationsmönster | Första utkast | BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation, kontraktsutveckling och mönsterkombinationer etablerade. |
-| 25–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 25 | Process-, regel- och datamönster | Första utkast | Human workflow, externaliserade regler, system of record/härledda kopior, cache-aside, state-ansvar, eventual consistency och mönsterkombinationer etablerade. |
+| 26–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -77,6 +78,7 @@ Skrivfas – del I–III kompletta i första utkast; del IV pågår
 - Kapitel 21 – Programvaruutveckling och leverans är skapat som första utkast och etablerar SCM, reproducerbara builds, CI/CD, artefaktflöde, software supply chain, SBOM/provenance, signering, developer experience och ansvarsnivåer.
 - Kapitel 22 – Arbetsplats, samarbete och produktivitet är skapat som första utkast och etablerar gränsen mellan generell produktivitet och verksamhetssystem, samarbetsytors ägarskap/livscykel, extern delning, low-code-eskalering, produktivitets-AI och gemensamma arbetsplatserbjudanden. Del III är därmed komplett i första utkast.
 - Kapitel 23 – Lösningsmönster som återanvändbara beslut är skapat som första utkast och etablerar mönster som beslutsartefakt, pattern language, context/forces/consequences, variationer, anti-patterns, relationen till andra arkitekturartefakter samt urval och livscykel. Del IV är därmed påbörjad.
-- Nästa planerade kapitel är kapitel 25 – Process-, regel- och datamönster.
+- Kapitel 25 – Process-, regel- och datamönster är skapat som första utkast och fördjupar human workflow, externaliserade regler, system of record/härledda kopior och cache-aside som kombinerbara mönster med tydligt ansvar för state och felgränser.
+- Nästa planerade kapitel är kapitel 26 – AI-, identitets- och runtime-mönster.
 
 - Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.

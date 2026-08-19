@@ -172,7 +172,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 25: Process-, regel- och datamönster
 - Kärnfråga: Hur kombineras workflow, regler, system of record, härledda kopior och cache utan otydligt ansvar?
 - Centralt innehåll: human workflow, externaliserade regler, system of record, derived copies, cache-aside och konsekvenser av duplicerad state.
-- Status: planerad
+- Avgränsning: kapitel 13–15 beskriver de tre förmågorna; detta kapitel behandlar mönstrens struktur, ansvar för olika typer av state, kombinationer, felgränser och konsekvenser av härledda kopior.
+- Status: första utkast skapat
 
 ## Kapitel 26: AI-, identitets- och runtime-mönster
 - Kärnfråga: Vilka återkommande mönster minskar risk när AI, identitet och applikationsdrift kombineras?

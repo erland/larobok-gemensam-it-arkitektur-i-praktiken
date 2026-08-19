@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev31.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev32.zip",
   "chapters": {
-    "count": 24,
+    "count": 25,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -26,28 +26,29 @@
       "chapters/21-programvaruutveckling-och-leverans.md": "7e85af54cf7745aa98c5332121576ee239f598b4b7309ed92030042c7a75d142",
       "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "49741d397e544d13415d680df097564b00c70eada87e5c0ddde7f5305762509f",
       "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "4fe3da7ac5ff26b17dfc24dbbe2e82297b68fb5c4862d1160a5c4157934c2068",
-      "chapters/24-integrations-och-kommunikationsmonster.md": "ef412722dd869bf9d9597ecab90ef58c20e73a707bb2d43d3f86dd7a9dff4d99"
+      "chapters/24-integrations-och-kommunikationsmonster.md": "ef412722dd869bf9d9597ecab90ef58c20e73a707bb2d43d3f86dd7a9dff4d99",
+      "chapters/25-process-regel-och-datamonster.md": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989"
     },
-    "latest": 24
+    "latest": 25
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/24-integrations-och-kommunikationsmonster.md",
+      "chapters/25-process-regel-och-datamonster.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 24 – Integrations- och kommunikationsmönster och synkroniserade projektstatus/exportordning",
-    "source_revision": 30
+    "operation": "Skrev kapitel 25 – Process-, regel- och datamönster och synkroniserade projektstatus/exportordning",
+    "source_revision": 31
   },
-  "parent_revision": 30,
+  "parent_revision": 31,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 31,
+  "revision": 32,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -65,7 +66,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "2f2a37d54709c0f6ca74811403f4e8ae0412d076ffd9da8838c302087a7b762d"
+      "sha256": "27aa847837299c19b68e33a82ae9ec9d53ae4d9ba58376e455a023aea90ff930"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -80,8 +81,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2331,
-      "sha256": "c7d5f70aad7e741d18a5b45bd1ba63904e9e849760427bbda3cbc5bc14ff6ff0"
+      "bytes": 2378,
+      "sha256": "40e440de3d5dec61de0001cdddec26203b660fc2cd2ada5c6f5ff3118c631be7"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -183,6 +184,10 @@
       "bytes": 26008,
       "sha256": "ef412722dd869bf9d9597ecab90ef58c20e73a707bb2d43d3f86dd7a9dff4d99"
     },
+    "chapters/25-process-regel-och-datamonster.md": {
+      "bytes": 28944,
+      "sha256": "c58013880e801bf8373c55fe8e952ba0609bef211bc2df65cada31e2e800b989"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -204,8 +209,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 7375,
-      "sha256": "d5113a604b0981f9edf3508da221d581784243516e1132409220143c04a7b7e8"
+      "bytes": 7829,
+      "sha256": "e4dc3be558ef8644d06368b8bdb6964a50554210f37bc6ce093f4439b3959718"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -220,16 +225,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 21030,
-      "sha256": "274d280200d34865bb3cae62be8b6bcd37f115083dc1544f02091f38c665dbf2"
+      "bytes": 21250,
+      "sha256": "40d8b4ab133c3c9e5d5575f77060e80e17d657d5be3d78d916cc52a04d8ff919"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 10898,
-      "sha256": "b7cd1a51492cb34da771997d541333ff67cac686654912609867516bd30478ca"
+      "bytes": 11384,
+      "sha256": "a32d43e55fca3c9ce0744425a0d49bf1b11cffd5296e3d5d1269484a49f08c77"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -713,7 +718,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "3c9813bc718b984939ad026e22d399daa54dfe5348cf88e4c6bbbc40416b5104"
+      "sha256": "097117775b1ecb6e7bc1a2af05aaf3657655f684f87cee0be9250e56b4c683cc"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -736,8 +741,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 21262,
-      "sha256": "96b728228f08299ecbc4c3105916d3baf3c6c2f4927c1ab895f0396856b46a0d"
+      "bytes": 21621,
+      "sha256": "65a4da3cd6e0a636bba24a96102f04d6b1467ac3a385125f42e71c5014974e4e"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -760,5 +765,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T05:13:36Z"
+  "updated_at": "2026-08-19T05:17:45Z"
 }
