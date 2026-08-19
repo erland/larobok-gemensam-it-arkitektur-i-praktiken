@@ -57,6 +57,7 @@ chapters:
 - chapters/35-fran-behov-till-losningsarkitektur.md
 - chapters/36-sju-aterkommande-losningsscenarier.md
 - chapters/37-governance-forvaltning-och-evolution.md
+- chapters/kallor-och-vidare-lasning.md
 exports:
   epub:
     enabled: true

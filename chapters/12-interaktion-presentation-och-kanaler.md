@@ -169,7 +169,7 @@ Därför är ansvarsfördelningen viktig:
 
 Digital tillgänglighet är ett tydligt exempel på en kvalitet som inte bör behandlas som en slutkontroll.
 
-W3C:s Web Content Accessibility Guidelines, WCAG, strukturerar tillgänglighetskrav kring principerna att innehåll ska vara möjligt att uppfatta, hantera, förstå och använda robust med olika tekniker. Den praktiska konsekvensen för arkitekturen är viktigare här än den enskilda standardversionen: tillgänglighet påverkas av design, semantik, komponentval, tangentbordsinteraktion, felhantering, navigation och testbarhet genom hela utvecklingslivscykeln.
+W3C:s Web Content Accessibility Guidelines, WCAG, strukturerar tillgänglighetskrav kring principerna att innehåll ska vara möjligt att uppfatta, hantera, förstå och använda robust med olika tekniker.[K1] Den praktiska konsekvensen för arkitekturen är viktigare här än den enskilda standardversionen: tillgänglighet påverkas av design, semantik, komponentval, tangentbordsinteraktion, felhantering, navigation och testbarhet genom hela utvecklingslivscykeln.
 
 Om organisationen väntar till slutet och därefter testar färdiga sidor kan många fel vara dyra att rätta. Ett olämpligt komponentbibliotek, ett egenbyggt interaktionsmönster eller en felaktig struktur kan redan vara djupt integrerad i tjänsten.
 
@@ -546,3 +546,7 @@ Några centrala principer är:
 Förmågan visar därmed tydligt hur den gemensamma arkitekturmodellen är tänkt att fungera. Organisationen standardiserar inte användarupplevelsen genom att centralt designa varje tjänst. Den skapar i stället gemensamma byggstenar, principer och rekommenderade vägar som gör det lättare för lokala lösningsteam att skapa bra och långsiktigt hållbara gränssnitt.
 
 I nästa kapitel flyttas fokus från användarens interaktion till sådant som ofta pågår över längre tid bakom gränssnittet: **processer, workflow och ärendehantering**.
+
+## Källor och vidare läsning
+
+**[K1]** W3C, *Web Content Accessibility Guidelines (WCAG) 2.2*, W3C Recommendation. https://www.w3.org/TR/WCAG22/

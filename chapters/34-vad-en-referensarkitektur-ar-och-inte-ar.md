@@ -296,7 +296,7 @@ Om svaret är nej är referensarkitekturens scope sannolikt fel.
 
 En arkitektur har flera intressenter och flera typer av frågor. En enda komponentbild kan därför sällan bära hela referensarkitekturen.
 
-ISO/IEC/IEEE 42010 skiljer mellan arkitekturen och den beskrivning som uttrycker den, och använder bland annat *viewpoints* och *views* för att strukturera arkitekturbeskrivningar. Boken behöver inte göra varje referensarkitektur formellt konform med standarden för att använda samma grundidé: olika concerns behöver ofta olika vyer.
+ISO/IEC/IEEE 42010 skiljer mellan arkitekturen och den beskrivning som uttrycker den[K1], och använder bland annat *viewpoints* och *views* för att strukturera arkitekturbeskrivningar. Boken behöver inte göra varje referensarkitektur formellt konform med standarden för att använda samma grundidé: olika concerns behöver ofta olika vyer.
 
 För en publik e-tjänst kan relevanta viewpoints exempelvis vara:
 
@@ -761,3 +761,7 @@ Men bron fungerar bara om båda sidorna förblir tydliga.
 Referensarkitekturen ska inte absorbera lösningsarkitekturen. Den ska inte heller bli ännu en katalog över gemensamma artefakter. Dess uppgift är att visa **hur organisationens gemensamma arkitekturerfarenhet kan sättas samman för en viss typ av lösning, var den är normerande och var den lämnar plats för lokala beslut**.
 
 I nästa kapitel används denna idé praktiskt. Då följer vi ett konkret initiativ från verksamhetsbehov och kvalitetsprofil genom förmågor, mönster, plattformar, standarder och referensarkitektur till en dokumenterad lösningsarkitektur.
+
+## Källor och vidare läsning
+
+**[K1]** ISO/IEC/IEEE 42010:2022, *Software, systems and enterprise — Architecture description*. https://www.iso.org/standard/74393.html

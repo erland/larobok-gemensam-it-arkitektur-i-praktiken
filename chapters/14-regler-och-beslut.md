@@ -230,7 +230,7 @@ Det gör beroenden synliga på ett annat sätt än om hela logiken bara ligger i
 
 DMN ska däremot inte uppfattas som ett krav för all regelhantering. En organisation kan ha fullt legitima beslut som implementeras på andra sätt. Standarden löser inte heller ägarskap, informationskvalitet, versionsstrategi eller governance automatiskt.
 
-Vid faktagranskningen den 19 augusti 2026 är DMN 1.5 den senaste formellt antagna versionen hos OMG; 1.6 och 1.7 finns som betaversioner. Versionsuppgifter är tidskänsliga och bör därför verifieras igen om publiceringen sker vid ett senare tillfälle.
+Vid faktagranskningen den 19 augusti 2026 är DMN 1.5 den senaste formellt antagna versionen hos OMG; 1.6 och 1.7 finns som betaversioner.[K1] Versionsuppgifter är tidskänsliga och bör därför verifieras igen om publiceringen sker vid ett senare tillfälle.
 
 ## En beslutstjänst som arkitekturmönster
 
@@ -652,3 +652,7 @@ Den centrala gränsdragningen är:
 Externalisering ska därför vara ett medvetet arkitekturbeslut, inte en reflex. En regelmotor skapar värde först när den gör regelverket lättare att äga, förstå och förändra än motsvarande kodlösning.
 
 Nästa kapitel går vidare till **Data- och informationshantering**. Där flyttas fokus från *hur ett beslut uttrycks* till *hur tekniska mekanismer för lagring, konsistens, historik, retention, cache och kopior väljs utifrån informationens behov och kvalitetskrav*.
+
+## Källor och vidare läsning
+
+**[K1]** Object Management Group (OMG), *Decision Model and Notation (DMN) 1.5*. Versionsstatus kontrollerad 2026-08-19 mot OMG:s specifikationsregister. https://www.omg.org/spec/DMN/1.5

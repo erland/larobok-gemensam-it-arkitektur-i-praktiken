@@ -4,7 +4,7 @@ När ett tekniskt byggblock har fått ett tydligt tjänstekontrakt, definierat a
 
 En plattform kan vara tekniskt stabil och välförvaltad men ändå misslyckas därför att den löser fel problem, kräver för mycket specialkunskap, har långsam onboarding, erbjuder fel abstraheringsnivå eller utvecklas utifrån plattformsteamets interna teknikintressen snarare än konsumenternas vardag.
 
-**Platform as a Product** är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en färdplan som styrs av värde snarare än enbart teknisk önskelista.
+**Platform as a Product[K1]** är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en färdplan som styrs av värde snarare än enbart teknisk önskelista.
 
 Det betyder inte att en intern plattform är en kommersiell produkt eller att varje teknisk komponent behöver en produktchef. Det betyder att den som ansvarar för en viktig gemensam plattform måste behandla **konsumenternas förmåga att lyckas** som ett centralt resultat av plattformsarbetet.
 
@@ -547,3 +547,7 @@ Platform as a Product ger ett svar på hur plattformsteamet bör tänka kring ko
 Om plattformens bästa arbetssätt bara finns i dokumentation är friktionen fortfarande hög. Nästa steg är därför att göra den rekommenderade vägen konkret genom automation, templates, portals, policy-as-code och andra former av självservice.
 
 Det är ämnet för nästa kapitel: **golden paths, paved roads och självservice**.
+
+## Källor och vidare läsning
+
+**[K1]** CNCF TAG App Delivery, *CNCF Platforms White Paper* och *Platform Engineering Maturity Model*, om plattformens användarbehov, roadmap, feedback och självservice. https://tag-app-delivery.cncf.io/whitepapers/platforms/ och https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/

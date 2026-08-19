@@ -71,7 +71,7 @@ Begreppet *observability*, här **observerbarhet**, används ofta som synonym ti
 
 **Monitorering** handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
 
-**Observerbarhet** handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.
+**Observerbarhet** handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.[K1]
 
 Skillnaden blir tydlig i en incident.
 
@@ -196,7 +196,7 @@ För att driva en tjänst behöver man kunna mäta den egenskap som är viktig.
 
 En **Service Level Indicator, SLI**, är ett mätetal som representerar en relevant aspekt av tjänstens beteende. Det kan exempelvis vara andelen lyckade anrop eller svarstid för ett definierat flöde.
 
-Ett **Service Level Objective, SLO**, uttrycker den önskade nivån för indikatorn under en viss period.
+Ett **Service Level Objective, SLO**, uttrycker den önskade nivån för indikatorn under en viss period.[K2]
 
 Ett **Service Level Agreement, SLA**, är däremot ett avtal eller en överenskommelse där servicenivåer kan vara kopplade till formella åtaganden och konsekvenser.
 
@@ -407,7 +407,7 @@ Det är två olika mekanismer som svarar på olika felbilder.
 
 ## RPO och RTO behöver kopplas till verklig recovery
 
-Kapitel 4 introducerade **Recovery Point Objective, RPO**, och **Recovery Time Objective, RTO** som sätt att uttrycka återställningsbehov.
+Kapitel 4 introducerade **Recovery Point Objective, RPO**, och **Recovery Time Objective, RTO** som sätt att uttrycka återställningsbehov.[K3]
 
 I driftbarhetsförmågan blir frågan om den tekniska lösningen faktiskt kan möta dem.
 
@@ -749,3 +749,11 @@ Därför behöver organisationen kunna svara på ytterligare frågor:
 Det är nästa förmåga.
 
 I **kapitel 21 – Programvaruutveckling och leverans** flyttas fokus från att hålla en körande tjänst begriplig och återställningsbar till den gemensamma vägen från kod till säker och reproducerbar produktion.
+
+## Källor och vidare läsning
+
+**[K1]** OpenTelemetry, *Signals*. https://opentelemetry.io/docs/concepts/signals/
+
+**[K2]** Google, *Site Reliability Engineering – Service Level Objectives* och *Monitoring Distributed Systems*. https://sre.google/sre-book/service-level-objectives/ och https://sre.google/sre-book/monitoring-distributed-systems/
+
+**[K3]** NIST, *SP 800-34 Rev. 1: Contingency Planning Guide for Federal Information Systems*. https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final

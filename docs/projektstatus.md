@@ -70,3 +70,11 @@ Revisionsfas – samtliga 37 huvudkapitel skrivna; helhetsrevision, faktagranskn
 - Gör organisationsspecifik rättslig/informationsstyrande kontroll av kapitel 22 om boken senare riktas mot en bestämd myndighet eller organisation.
 - Besluta källförteckning/notapparat, illustrationer och omslag samt bygg första kompletta EPUB/PDF.
 - Gör därefter ett slutligt korrekturpass i de faktiska exportformaten.
+
+
+## Källapparat – 2026-08-19
+
+- Kapitelvisa slutnoter införda selektivt i standard-/källtunga kapitel.
+- Samlad bibliografi tillagd som back matter och ingår i exportordningen.
+- Centralt källregister skapat i `docs/kallregister.md`.
+- Källpolicyn uppdaterad med notformat och princip för bokens egna syntesmodeller.

@@ -182,7 +182,7 @@ Arkitekturen bör därför inte försöka pressa allt arbete in i ett strikt pro
 
 ## Standardiserade notationer kan hjälpa – men är inte arkitekturen
 
-För verksamhetsprocesser finns etablerade modelleringsnotationer. **BPMN, Business Process Model and Notation**, är en standardiserad grafisk notation för att beskriva verksamhetsprocesser. För case management finns **CMMN, Case Management Model and Notation**, som fokuserar på modellering av cases och mer situationsstyrt arbete.
+För verksamhetsprocesser finns etablerade modelleringsnotationer. **BPMN, Business Process Model and Notation**, är en standardiserad grafisk notation för att beskriva verksamhetsprocesser. För case management finns **CMMN, Case Management Model and Notation**, som fokuserar på modellering av cases och mer situationsstyrt arbete.[K1][K2]
 
 Notationerna kan bidra med ett gemensamt språk mellan verksamhets- och teknikroller. De kan också göra processmodeller mer portabla mellan verktyg än helt leverantörsspecifika diagram.
 
@@ -668,3 +668,9 @@ Den viktigaste gränsdragningen är därför:
 När dessa ansvar hålls isär kan en workflowplattform ge stor nytta: gemensam hantering av långlivat tillstånd, human tasks, timers, processhistorik och återupptagning. När gränserna suddas ut riskerar samma plattform i stället att bli en ny verksamhetsmonolit.
 
 Nästa kapitel går vidare till en av de viktigaste gränserna: **Regler och beslut**. Där flyttas fokus från *vilket steg som ska ske härnäst* till *hur ett beslut eller en regel uttrycks, versionshanteras, förklaras och kan användas oberoende av ett enskilt processflöde*.
+
+## Källor och vidare läsning
+
+**[K1]** Object Management Group (OMG), *Business Process Model and Notation (BPMN) 2.0.2*. https://www.omg.org/spec/BPMN/2.0.2
+
+**[K2]** Object Management Group (OMG), *Case Management Model and Notation (CMMN) 1.1*. https://www.omg.org/spec/CMMN/1.1

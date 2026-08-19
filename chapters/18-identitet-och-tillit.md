@@ -229,7 +229,7 @@ Man behöver förstå:
 
 Standardiserade federationsprotokoll gör interoperabilitet möjlig, men de ersätter inte denna överenskommelse.
 
-För modern användarautentisering är OpenID Connect ett etablerat protokoll byggt ovanpå OAuth 2.0. OAuth används i sin tur för auktoriserad eller delegerad åtkomst till skyddade resurser. Det är viktigt att inte beskriva OAuth i sig som ett användarautentiseringsprotokoll. SAML kan fortfarande vara relevant i befintliga eller externa federationsmiljöer där det är den etablerade mekanismen.
+För modern användarautentisering är OpenID Connect[K2] ett etablerat protokoll byggt ovanpå OAuth 2.0. OAuth används i sin tur för auktoriserad eller delegerad åtkomst till skyddade resurser. Det är viktigt att inte beskriva OAuth i sig som ett användarautentiseringsprotokoll. SAML kan fortfarande vara relevant i befintliga eller externa federationsmiljöer där det är den etablerade mekanismen.
 
 Poängen för den gemensamma arkitekturen är inte att varje lösning ska välja protokoll fritt. Organisationen bör erbjuda och profilera ett begränsat antal godkända sätt att federera identitet, så att säkerhetskrav, metadata, tokenhantering och livscykel inte behöver uppfinnas på nytt.
 
@@ -415,7 +415,7 @@ Det är lätt att betrakta en token som ett neutralt dataformat. Arkitektoniskt 
 
 En token bör därför inte automatiskt accepteras bara för att dess signatur är tekniskt korrekt. Mottagaren behöver även verifiera att token är av rätt typ, kommer från rätt utfärdare och är avsedd för rätt sammanhang.
 
-Moderna OAuth-profiler och säkerhetsrekommendationer har utvecklats just för att minska riskerna med felaktig tokenhantering, osäkra flöden och alltför bred återanvändning. För en gemensam arkitektur talar det för att organisationen bör ha standardiserade profiler snarare än att varje applikation konfigurerar protokollen på egen hand.
+Moderna OAuth-profiler och säkerhetsrekommendationer har utvecklats just för att minska riskerna med felaktig tokenhantering, osäkra flöden och alltför bred återanvändning.[K3] För en gemensam arkitektur talar det för att organisationen bör ha standardiserade profiler snarare än att varje applikation konfigurerar protokollen på egen hand.
 
 ## Identity proofing är en annan fråga än autentisering
 
@@ -430,7 +430,7 @@ En tekniskt stark autentisering kan alltså inte kompensera för en svag eller f
 
 Detta är en viktig anledning till att identitetsarkitektur behöver beskriva assurance och trustmodell, inte bara protokoll.
 
-Aktuella riktlinjer för digital identitet, exempelvis NIST SP 800-63-4, skiljer uttryckligen mellan identitetssäkring, autentisering och federation. Boken använder inte NIST:s nivåmodell som ett generellt krav för alla organisationer, men distinktionen är användbar även utanför det ramverket.
+Aktuella riktlinjer för digital identitet, exempelvis NIST SP 800-63-4[K1], skiljer uttryckligen mellan identitetssäkring, autentisering och federation. Boken använder inte NIST:s nivåmodell som ett generellt krav för alla organisationer, men distinktionen är användbar även utanför det ramverket.
 
 ## Identitet och Zero Trust
 
@@ -656,3 +656,11 @@ Bra identitetsarkitektur gör det möjligt att svara på frågor som:
 Det är först när dessa frågor kan besvaras som identitet går från att vara en inloggningsfunktion till att bli en verklig gemensam IT-förmåga.
 
 I nästa kapitel flyttas fokus till den miljö där många av dessa identiteter faktiskt används: **hur applikationer och workloads exekveras standardiserat, isolerat och portabelt i en gemensam runtimeförmåga.**
+
+## Källor och vidare läsning
+
+**[K1]** NIST, *SP 800-63-4: Digital Identity Guidelines* (2025). https://csrc.nist.gov/pubs/sp/800/63/4/final
+
+**[K2]** OpenID Foundation, *OpenID Connect Core 1.0 incorporating errata set 2* (2023). https://openid.net/specs/openid-connect-core-1_0.html
+
+**[K3]** IETF/RFC Editor, *RFC 9700 / BCP 240: Best Current Practice for OAuth 2.0 Security* (2025). https://www.rfc-editor.org/info/rfc9700/

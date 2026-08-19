@@ -61,7 +61,7 @@ Det är inte ett nytt arkitekturlager. Det är **ett sätt att göra flera redan
 
 Begreppen används inte helt enhetligt i branschen, och det är därför klokt att definiera hur de används i denna bok.
 
-En **golden path** är här en konkret, rekommenderad väg för ett vanligt scenario. Den kan till exempel hjälpa ett team att skapa en ny containeriserad backend-tjänst med standardiserad pipeline, identitet, observerbarhet och driftsättningskonfiguration.
+En **golden path** är här en konkret, rekommenderad väg för ett vanligt scenario.[K1] Den kan till exempel hjälpa ett team att skapa en ny containeriserad backend-tjänst med standardiserad pipeline, identitet, observerbarhet och driftsättningskonfiguration.
 
 En **paved road** är ett bredare begrepp för den välunderhållna, stödda väg där organisationens standardiserade tjänster, verktyg och arbetssätt är samordnade.
 
@@ -855,3 +855,7 @@ De viktigaste principerna är:
 10. Golden paths är ett praktiskt sätt att kombinera teamautonomi med gemensam arkitekturell riktning.
 
 Nästa steg är att fördjupa **standarderna** som ligger bakom många av dessa guardrails och plattformsprofiler: vad som faktiskt bör standardiseras, på vilken nivå och med vilken grad av bindning.
+
+## Källor och vidare läsning
+
+**[K1]** CNCF TAG App Delivery, *Platform Engineering Maturity Model* och *CNCF Platforms White Paper*. Terminologin för golden paths/paved roads varierar i branschen; kapitlets definition är därför bokens explicita arbetsdefinition. https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/

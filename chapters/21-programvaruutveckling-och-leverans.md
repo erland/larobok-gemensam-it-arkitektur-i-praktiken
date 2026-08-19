@@ -288,7 +288,7 @@ Därför är leveranskedjan också en **software supply chain**.
 
 Det räcker inte att applikationskoden är korrekt om en angripare kan manipulera ett beroende, byggmiljön eller artefakten efter byggning.
 
-NIST:s Secure Software Development Framework, SSDF, beskriver säkra utvecklingspraktiker som kan integreras i olika utvecklingslivscykler. SLSA fokuserar särskilt på integriteten i programvarans supply chain och på verifierbar provenance – information om varifrån en artefakt kommer och hur den byggdes.
+NIST:s Secure Software Development Framework, SSDF, beskriver säkra utvecklingspraktiker som kan integreras i olika utvecklingslivscykler.[K1] SLSA[K2] fokuserar särskilt på integriteten i programvarans supply chain och på verifierbar provenance – information om varifrån en artefakt kommer och hur den byggdes.
 
 För bokens modell är den viktiga principen:
 
@@ -316,7 +316,7 @@ Automatiska fynd är beslutsunderlag, inte färdiga riskbeslut.
 
 ## SBOM gör innehållet synligare
 
-En Software Bill of Materials, SBOM, beskriver vilka programvarukomponenter som ingår i en produkt eller artefakt. Standardiserade format som SPDX gör sådan information maskinläsbar och möjlig att utbyta mellan verktyg och organisationer.
+En Software Bill of Materials, SBOM, beskriver vilka programvarukomponenter som ingår i en produkt eller artefakt. Standardiserade format som SPDX[K3] gör sådan information maskinläsbar och möjlig att utbyta mellan verktyg och organisationer.
 
 En SBOM löser dock inte supply-chain-säkerheten på egen hand. Den ger synlighet.
 
@@ -370,7 +370,7 @@ Verifiering före användning
 
 Om organisationen signerar alla containerimages men produktionsplattformen aldrig verifierar signaturen blir kontrollen huvudsakligen kosmetisk.
 
-Sigstore-ekosystemet är ett exempel på moderna mekanismer för signering och verifiering av programvaruarterfakter. Det viktiga arkitekturbegreppet är dock inte ett specifikt verktyg utan kedjan **producera bevis → skydda beviset → verifiera beviset → verkställ policy**.
+Sigstore[K4]-ekosystemet är ett exempel på moderna mekanismer för signering och verifiering av programvaruarterfakter. Det viktiga arkitekturbegreppet är dock inte ett specifikt verktyg utan kedjan **producera bevis → skydda beviset → verifiera beviset → verkställ policy**.
 
 ## Secrets hör inte hemma i pipelinekoden
 
@@ -691,3 +691,13 @@ Driftbarhet och motståndskraft
 En stark leveransförmåga gör alltså mer än att flytta kod snabbt. Den gör förändring **spårbar, reproducerbar, verifierbar och säker nog för den verksamhetsrisk som förändringen innebär**.
 
 I nästa kapitel lämnar vi den tekniska leveranskedjan och går till den elfte och sista gemensamma IT-förmågan: **Arbetsplats, samarbete och produktivitet**. Där blir arkitekturfrågan annorlunda. Fokus ligger mindre på egenutvecklad programvara och mer på hur en gemensam digital arbetsmiljö kan standardiseras, styras och utvecklas utan att skapa informationsrisker eller kväva lokal produktivitet.
+
+## Källor och vidare läsning
+
+**[K1]** NIST, *SP 800-218: Secure Software Development Framework (SSDF) Version 1.1*. https://csrc.nist.gov/pubs/sp/800/218/final
+
+**[K2]** SLSA, *SLSA Specification v1.2*. https://slsa.dev/spec/v1.2/
+
+**[K3]** SPDX, *SPDX Specifications*, aktuell stabil 3.0 vid granskningsdatumet. https://spdx.dev/use/specifications/
+
+**[K4]** Sigstore, *Cosign – Signing and Verifying*. https://docs.sigstore.dev/cosign/signing/overview/ och https://docs.sigstore.dev/cosign/verifying/verify/

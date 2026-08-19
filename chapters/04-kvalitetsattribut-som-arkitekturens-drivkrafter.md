@@ -95,7 +95,7 @@ Kvalitetskravet blir då ett uttryck för ett verkligt behov, inte en allmän am
 
 ## Kvalitetsattribut behöver scenarier
 
-Ett praktiskt sätt att göra kvalitetskrav konkreta är att formulera dem som **kvalitetsattributsscenarier**.
+Ett praktiskt sätt att göra kvalitetskrav konkreta är att formulera dem som **kvalitetsattributsscenarier**.[K1]
 
 Ett sådant scenario beskriver inte bara egenskapen utan också situationen där den blir relevant. En användbar struktur är:
 
@@ -615,12 +615,22 @@ Det är skillnaden mellan att säga ”bygg en robust e-tjänst” och att fakti
 
 **RTO (Recovery Time Objective)** – mål för hur snabbt en funktion eller resurs behöver återställas efter ett avbrott.
 
-**RPO (Recovery Point Objective)** – mål för hur långt tillbaka återställd data som mest får ligga efter ett avbrott, och därmed vilken dataförlust som kan tolereras.
+**RPO (Recovery Point Objective)** – mål för hur långt tillbaka återställd data som mest får ligga efter ett avbrott, och därmed vilken dataförlust som kan tolereras.[K2]
 
-**SLO (Service Level Objective)** – ett mätbart mål för en observerbar tjänstenivå.
+**SLO (Service Level Objective)** – ett mätbart mål för en observerbar tjänstenivå.[K3]
 
 **SLA (Service Level Agreement)** – ett formellt åtagande om tjänstenivå mellan parter, ofta med definierade ansvar eller konsekvenser.
 
 **Avvägning** – en avvägning där förbättring av en egenskap påverkar kostnad, komplexitet eller en annan kvalitet.
 
 **Arkitekturell taktik** – en designmekanism som används för att påverka ett kvalitetsattribut, exempelvis redundans för tillgänglighet eller caching för svarstid.
+
+## Källor och vidare läsning
+
+**[K1]** Carnegie Mellon University, Software Engineering Institute (SEI), *Reasoning About Software Quality Attributes* och material om Quality Attribute Scenarios. https://www.sei.cmu.edu/library/reasoning-about-software-quality-attributes/
+
+**[K2]** NIST, *SP 800-34 Rev. 1: Contingency Planning Guide for Federal Information Systems*. https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final
+
+**[K3]** Google, *Site Reliability Engineering – Service Level Objectives*. https://sre.google/sre-book/service-level-objectives/
+
+Vidare läsning: ISO/IEC 25010:2023, *Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model*. https://www.iso.org/standard/78176.html
