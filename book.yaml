@@ -54,6 +54,7 @@ chapters:
 - chapters/32-tekniklivscykel-och-kontrollerad-forandring.md
 - chapters/33-ekonomi-kostnad-och-kapacitet.md
 - chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
+- chapters/35-fran-behov-till-losningsarkitektur.md
 exports:
   epub:
     enabled: true

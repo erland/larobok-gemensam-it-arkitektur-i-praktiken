@@ -237,7 +237,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur gör ett konkret initiativ resan från behov till valda mönster, plattformar, standarder och dokumenterade beslut?
 - Centralt innehåll: architecture workflow, behov och kvalitetsprofil, förmågekarta, alternativ, pattern/platform selection, traceability, decision log och avsteg.
 - Avgränsning: sammanför tidigare delar till en metod; introducerar inte nya artefakttyper.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 36: Sju återkommande lösningsscenarier
 - Kärnfråga: Hur ser modellen ut när den används i olika typer av verkliga lösningar?
