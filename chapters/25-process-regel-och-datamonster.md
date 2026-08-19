@@ -6,14 +6,14 @@ Det är också där många lösningar börjar tappa sina tydliga gränser.
 
 Kapitel 13–15 beskrev förmågorna Process, workflow och ärendehantering, Regler och beslut samt Data- och informationshantering. I det här kapitlet ligger fokus i stället på fyra återkommande lösningsmönster:
 
-- **Human workflow**,
-- **externaliserade verksamhetsregler**,
-- **system of record och härledda kopior**,
-- **cache-aside**.
+- Human workflow,
+- externaliserade verksamhetsregler,
+- system of record och härledda kopior,
+- cache-aside.
 
 Mönstren löser olika problem. Human workflow gör långlivat arbete och mänskliga uppgifter explicita. Externaliserade regler ger vissa beslut en egen livscykel och spårbarhet. System of record med härledda kopior tydliggör vilken representation som är auktoritativ när information behöver finnas på flera ställen. Cache-aside förbättrar läsprestanda genom att låta en återskapbar kopia ligga nära användningen.
 
-Det viktiga är inte att använda alla fyra. Det viktiga är att kunna avgöra **vilket ansvar som behöver göras explicit**, var det ska ligga och vad som fortfarande måste vara sant när flera mönster kombineras.
+Det viktiga är inte att använda alla fyra. Det viktiga är att kunna avgöra vilket ansvar som behöver göras explicit, var det ska ligga och vad som fortfarande måste vara sant när flera mönster kombineras.
 
 ## Börja med ansvar, inte motorer
 
@@ -37,7 +37,7 @@ Dessa fyra behov kan motivera fyra olika mekanismer, men inte nödvändigtvis fy
 
 Det ger också en viktig grundregel:
 
-> **En mekanism får gärna hjälpa flera delar av lösningen, men den bör inte oavsiktligt bli ägare till ansvar som hör hemma någon annanstans.**
+> En mekanism får gärna hjälpa flera delar av lösningen, men den bör inte oavsiktligt bli ägare till ansvar som hör hemma någon annanstans.
 
 En processmotor bör exempelvis inte bli auktoritativ källa för all verksamhetsinformation bara därför att den behöver processvariabler. En regelmotor bör inte bli en dold databas. En cache bör inte börja behandlas som system of record därför att den råkar svara snabbast.
 
@@ -56,7 +56,7 @@ Processinstans
    └─ nästa steg
 ```
 
-Det centrala är inte att en människa klickar på en knapp. Mänsklig interaktion finns i nästan alla system. Det arkitektoniskt intressanta uppstår när själva **väntan och arbetsuppgiften måste vara beständiga verksamhetsobjekt**.
+Det centrala är inte att en människa klickar på en knapp. Mänsklig interaktion finns i nästan alla system. Det arkitektoniskt intressanta uppstår när själva väntan och arbetsuppgiften måste vara beständiga verksamhetsobjekt.
 
 Det kan exempelvis krävas att lösningen vet:
 
@@ -73,7 +73,7 @@ Då räcker inte en vanlig HTTP-request som väntar på svar. Processen kan leva
 
 ### Human task är inte samma sak som ärende
 
-Det är viktigt att skilja mellan en **arbetsuppgift** och det verksamhetsobjekt som arbetet gäller.
+Det är viktigt att skilja mellan en arbetsuppgift och det verksamhetsobjekt som arbetet gäller.
 
 Anta att en handläggare ska granska en ansökan. Ansökan är ett verksamhetsobjekt. Arbetsuppgiften ”Granska ansökan” är en aktivitet i en process. Processinstansen beskriver hur arbetet rör sig framåt.
 
@@ -134,7 +134,7 @@ Domän- eller processtjänst
   beslut + förklaring
 ```
 
-Mönstret betyder inte att all `if`-logik ska flyttas ur programkoden. Det handlar om att identifiera regler som har ett **självständigt verksamhetsvärde**.
+Mönstret betyder inte att all `if`-logik ska flyttas ur programkoden. Det handlar om att identifiera regler som har ett självständigt verksamhetsvärde.
 
 Exempel kan vara:
 
@@ -208,7 +208,7 @@ Beslutsbegäran
 Beslut + regelversion + motivering
 ```
 
-Det ger bättre spårbarhet. Man kan senare se **vilka fakta och vilken regelversion** som ledde till beslutet.
+Det ger bättre spårbarhet. Man kan senare se vilka fakta och vilken regelversion som ledde till beslutet.
 
 Om regelkomponenten själv hämtar data från många källor blir det svårare att återskapa det historiska beslutsögonblicket. Fakta kan ha förändrats sedan dess.
 
@@ -216,7 +216,7 @@ Om regelkomponenten själv hämtar data från många källor blir det svårare a
 
 Data behöver ofta finnas på flera platser. Ett system kan ha en transaktionell databas, ett sökindex, ett analyslager, en lokal read model och flera cachelager samtidigt.
 
-Det är inte kopiorna i sig som är problemet. Problemet uppstår när ingen längre vet **vilken representation som har tolkningsföreträde**.
+Det är inte kopiorna i sig som är problemet. Problemet uppstår när ingen längre vet vilken representation som har tolkningsföreträde.
 
 Mönstret system of record och härledda kopior gör denna relation explicit.
 
@@ -233,11 +233,11 @@ System of record är den auktoritativa källan för den aktuella informationsmä
 
 Varje härledd kopia bör kunna beskrivas genom åtminstone fem frågor:
 
-1. **Vilken källa är auktoritativ?**
-2. **Hur uppdateras kopian?**
-3. **Hur gammal får informationen vara?**
-4. **Hur upptäcks och hanteras avvikelser?**
-5. **Kan kopian återskapas från sin källa?**
+1. Vilken källa är auktoritativ?
+2. Hur uppdateras kopian?
+3. Hur gammal får informationen vara?
+4. Hur upptäcks och hanteras avvikelser?
+5. Kan kopian återskapas från sin källa?
 
 Dessa frågor omvandlar ”vi replikerar lite data” till ett medvetet arkitekturval.
 
@@ -294,7 +294,7 @@ Läs cache
       svar
 ```
 
-Mönstret är attraktivt eftersom det kan ge stora prestandavinster utan att den auktoritativa datamodellen behöver förändras. Men det fungerar bara om organisationen accepterar att cacheinnehållet är en **förgänglig och potentiellt inaktuell representation**.
+Mönstret är attraktivt eftersom det kan ge stora prestandavinster utan att den auktoritativa datamodellen behöver förändras. Men det fungerar bara om organisationen accepterar att cacheinnehållet är en förgänglig och potentiellt inaktuell representation.
 
 ### Den centrala frågan är inte TTL utan tolererad felaktighet
 
@@ -327,7 +327,7 @@ Ingen strategi är universellt bäst. Valet styrs av:
 - belastning på system of record,
 - komplexitet i synkroniseringsmekanismen.
 
-Det är också därför cache-aside bör ses som ett mönster ovanpå **system of record och härledda kopior**. Cache är en typ av härledd kopia med särskilda prestandaegenskaper.
+Det är också därför cache-aside bör ses som ett mönster ovanpå system of record och härledda kopior. Cache är en typ av härledd kopia med särskilda prestandaegenskaper.
 
 ### Cache stampede och andra sekundära effekter
 
@@ -341,7 +341,7 @@ Detta brukar beskrivas som cache stampede eller thundering herd. Lösningen kan 
 - stale-while-revalidate-liknande beteende,
 - kapacitetsdesign för cachemissar.
 
-Det visar en viktig generell princip: **ett prestandamönster förändrar också failure modes**. Cache ska därför inte bara dimensioneras för normalfallet utan även för vad som händer när den är tom eller otillgänglig.
+Det visar en viktig generell princip: ett prestandamönster förändrar också failure modes. Cache ska därför inte bara dimensioneras för normalfallet utan även för vad som händer när den är tom eller otillgänglig.
 
 ### Skyddsvärd data i cache
 
@@ -367,7 +367,7 @@ När mönstren kombineras blir det särskilt viktigt att förstå att de kan bä
 | System of record | verksamhetsdata | definierad informationsmängd |
 | Härledd kopia/cache | reproducerad eller temporär representation | normalt inget utöver sin egen tekniska status |
 
-Tabellen visar varför ett system kan ha flera ”sanningar” utan motsägelse. De är auktoritativa för **olika ansvar**.
+Tabellen visar varför ett system kan ha flera ”sanningar” utan motsägelse. De är auktoritativa för olika ansvar.
 
 Processmotorn kan vara auktoritativ för att en viss arbetsuppgift väntar på handläggning samtidigt som verksamhetsdatabasen är auktoritativ för ärendets sakuppgifter. Regelregistret kan vara auktoritativt för vilken regelversion som gäller. Cachen är inte auktoritativ för något av detta.
 
@@ -427,7 +427,7 @@ Detta är medvetet mer explicit än att låta workflowmotorn direkt läsa och sk
 
 ## Snapshot eller live data – ett viktigt beslut i långlivade processer
 
-Långlivade processer skapar en särskild fråga: ska ett senare steg använda **aktuella fakta** eller de fakta som gällde när processen startade?
+Långlivade processer skapar en särskild fråga: ska ett senare steg använda aktuella fakta eller de fakta som gällde när processen startade?
 
 Anta att en ansökan lämnas in den 1 mars men handläggs den 15 mars. Under tiden kan:
 
@@ -456,7 +456,7 @@ Detta är inte nödvändigtvis skadlig duplicering. Tvärtom kan den vara en med
 
 Frågan är i stället:
 
-> **Har varje representation ett tydligt syfte, en definierad källa och en begriplig livscykel?**
+> Har varje representation ett tydligt syfte, en definierad källa och en begriplig livscykel?
 
 Duplicering blir problematisk när två representationer samtidigt förväntas vara auktoritativa för samma sak eller när synkroniseringsmodellen är okänd.
 
@@ -628,7 +628,7 @@ Nu kan workflowmotor, regelmotor, databastjänst, cacheplattform och andra produ
 
 ## Det viktigaste att bära med sig
 
-Process-, regel- och datamönster hjälper oss att göra **olika sorters ansvar och tillstånd explicita**.
+Process-, regel- och datamönster hjälper oss att göra olika sorters ansvar och tillstånd explicita.
 
 Human workflow passar när mänskligt arbete och väntan behöver bli beständiga delar av processen. Externaliserade verksamhetsregler passar när vissa beslut behöver egen livscykel, spårbarhet eller återanvändning. System of record med härledda kopior gör det möjligt att duplicera information utan att tappa bort auktoriteten. Cache-aside är ett specialiserat sätt att använda en förgänglig kopia för bättre läsprestanda.
 
@@ -636,10 +636,10 @@ De fyra mönstren fungerar väl tillsammans just därför att de inte behöver �
 
 En hållbar kombination bygger på att man kan svara på fyra frågor:
 
-1. **Vem äger processens tillstånd?**
-2. **Vem äger regeln och beslutets betydelse?**
-3. **Vilken källa är auktoritativ för verksamhetsinformationen?**
-4. **Vilka kopior får vara tillfälliga eller inaktuella – och hur mycket?**
+1. Vem äger processens tillstånd?
+2. Vem äger regeln och beslutets betydelse?
+3. Vilken källa är auktoritativ för verksamhetsinformationen?
+4. Vilka kopior får vara tillfälliga eller inaktuella – och hur mycket?
 
 När svaren är tydliga kan processer, regler och data utvecklas med olika livscykler utan att lösningen tappar sin sammanhållning. När svaren är otydliga hjälper ingen workflowmotor, regelmotor eller cacheplattform i världen till att skapa ordning.
 

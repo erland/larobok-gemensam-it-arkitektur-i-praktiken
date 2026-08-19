@@ -2,7 +2,7 @@
 
 En intern plattform skapar inte verklig effekt bara genom att erbjuda gemensamma tekniska tjänster. Först när det blir enkelt för ett team att använda tjänsterna i sitt dagliga arbete börjar plattformen på allvar minska variation, väntetid och återkommande problemlösning.
 
-Det är här begrepp som **golden path**, **paved road**, **självservice** och **guardrails** blir viktiga. De beskriver olika sätt att göra det önskade arbetssättet lättare att välja, lättare att genomföra och lättare att hålla inom organisationens gemensamma ramar.
+Det är här begrepp som golden path, paved road, självservice och guardrails blir viktiga. De beskriver olika sätt att göra det önskade arbetssättet lättare att välja, lättare att genomföra och lättare att hålla inom organisationens gemensamma ramar.
 
 Grundidén är enkel:
 
@@ -55,15 +55,15 @@ Policykontroll och guardrails
 Fungerande utgångsläge
 ```
 
-Det är inte ett nytt arkitekturlager. Det är **ett sätt att göra flera redan beslutade delar konsumtionsbara tillsammans**.
+Det är inte ett nytt arkitekturlager. Det är ett sätt att göra flera redan beslutade delar konsumtionsbara tillsammans.
 
 ## Golden path och paved road
 
 Begreppen används inte helt enhetligt i branschen, och det är därför klokt att definiera hur de används i denna bok.
 
-En **golden path** är här en konkret, rekommenderad väg för ett vanligt scenario.[K1] Den kan till exempel hjälpa ett team att skapa en ny containeriserad backend-tjänst med standardiserad pipeline, identitet, observerbarhet och driftsättningskonfiguration.
+En golden path är här en konkret, rekommenderad väg för ett vanligt scenario.[K1] Den kan till exempel hjälpa ett team att skapa en ny containeriserad backend-tjänst med standardiserad pipeline, identitet, observerbarhet och driftsättningskonfiguration.
 
-En **paved road** är ett bredare begrepp för den välunderhållna, stödda väg där organisationens standardiserade tjänster, verktyg och arbetssätt är samordnade.
+En paved road är ett bredare begrepp för den välunderhållna, stödda väg där organisationens standardiserade tjänster, verktyg och arbetssätt är samordnade.
 
 Man kan förenklat tänka:
 
@@ -75,7 +75,7 @@ Paved road
   └─ Golden path: ny databasberoende tjänst
 ```
 
-Den exakta terminologin är mindre viktig än att organisationen är konsekvent. Det centrala är att vägen uttrycker ett **rekommenderat och aktivt underhållet sätt att lösa ett återkommande behov**.
+Den exakta terminologin är mindre viktig än att organisationen är konsekvent. Det centrala är att vägen uttrycker ett rekommenderat och aktivt underhållet sätt att lösa ett återkommande behov.
 
 ## En golden path är inte bara en template
 
@@ -103,7 +103,7 @@ En verklig golden path behöver ofta även hantera:
 - dokumentationsingångar,
 - eventuella kostnads- och kapacitetsprofiler.
 
-Det viktiga resultatet är alltså inte ”en genererad kodbas” utan ett **sammanhängande och fungerande utgångsläge**.
+Det viktiga resultatet är alltså inte ”en genererad kodbas” utan ett sammanhängande och fungerande utgångsläge.
 
 Det innebär också att en golden path kan vara helt relevant även när ingen kod genereras. En väg för att beställa och konfigurera en managed databastjänst kan exempelvis vara en golden path utan att innehålla ett enda applikationsramverk.
 
@@ -143,7 +143,7 @@ Automatiserad etablering
 Spårbart resultat
 ```
 
-Kontrollen har inte försvunnit. Den har flyttats från en manuell kö till en **fördefinierad och reproducerbar kontrollpunkt**.
+Kontrollen har inte försvunnit. Den har flyttats från en manuell kö till en fördefinierad och reproducerbar kontrollpunkt.
 
 Detta är ofta en av de största vinsterna med en mogen intern plattform. Samma regler kan tillämpas snabbare, mer konsekvent och med bättre spårbarhet.
 
@@ -161,7 +161,7 @@ Det kan vara:
 - infrastructure-as-code,
 - en kombination av dessa.
 
-Den viktiga egenskapen är inte gränssnittets form utan att teamet kan uttrycka **önskat resultat** utan att känna till all intern realisering.
+Den viktiga egenskapen är inte gränssnittets form utan att teamet kan uttrycka önskat resultat utan att känna till all intern realisering.
 
 Exempel:
 
@@ -185,7 +185,7 @@ Det är lätt att bygga en portal och tro att problemet är löst.
 
 En portal kan vara ett bra användargränssnitt, men självservice uppstår först när processen bakom den är automatiserad och reproducerbar.
 
-Om en knapp i portalen i praktiken skapar ett ärende som någon senare hanterar manuellt har organisationen främst byggt **en snygg beställningsblankett**.
+Om en knapp i portalen i praktiken skapar ett ärende som någon senare hanterar manuellt har organisationen främst byggt en snygg beställningsblankett.
 
 Det kan fortfarande vara värdefullt, men det är inte samma sak som fullt automatiserad självservice.
 
@@ -229,7 +229,7 @@ Driftsättning
 
 Detta är ett viktigt skifte.
 
-Arkitekturens rekommendationer går från **text som måste tolkas** till **förvalda mekanismer som redan uttrycker beslutet**.
+Arkitekturens rekommendationer går från text som måste tolkas till förvalda mekanismer som redan uttrycker beslutet.
 
 Det minskar inte behovet av dokumentation. Men dokumentationen får en annan roll: den förklarar varför vägen ser ut som den gör, vilka antaganden den bygger på och när den inte passar.
 
@@ -257,9 +257,9 @@ Detta är själva poängen med återanvändbar arkitektur.
 
 ## Guardrails i stället för manuella gates
 
-En **gate** stoppar flödet tills någon fattar ett beslut.
+En gate stoppar flödet tills någon fattar ett beslut.
 
-En **guardrail** definierar gränser inom vilka teamet kan agera självständigt.
+En guardrail definierar gränser inom vilka teamet kan agera självständigt.
 
 Exempel på guardrails kan vara:
 
@@ -287,7 +287,7 @@ Guardrails är särskilt kraftfulla när de kan kontrolleras automatiskt.
 
 ## Policy-as-code
 
-**Policy-as-code** innebär att delar av styrningen uttrycks på ett maskinläsbart sätt så att den kan verifieras automatiskt.
+Policy-as-code innebär att delar av styrningen uttrycks på ett maskinläsbart sätt så att den kan verifieras automatiskt.
 
 Det kan användas för att kontrollera exempelvis:
 
@@ -340,7 +340,7 @@ Visa begriplig orsak
 Föreslå godkänd väg
 ```
 
-Detta är mer än traditionell ”shift left”. Det handlar om att placera styrningen där den är **mest handlingsbar**.
+Detta är mer än traditionell ”shift left”. Det handlar om att placera styrningen där den är mest handlingsbar.
 
 ## Guardrails måste ha en motivering
 
@@ -370,7 +370,7 @@ Ingen golden path kommer täcka alla behov.
 
 Om standardvägen blir obligatorisk även när dess antaganden inte gäller upphör den att vara en paved road och blir i stället en tvångströja.
 
-Därför bör en mogen modell ha **escape hatches**.
+Därför bör en mogen modell ha escape hatches.
 
 En escape hatch är en kontrollerad möjlighet att avvika från standardvägen när det finns ett legitimt behov.
 
@@ -398,7 +398,7 @@ Självservice   Dokumenterat avsteg
           Omprövning
 ```
 
-Escape hatches behöver alltså inte innebära frånvaro av styrning. De kan vara en **formaliserad annan väg genom styrningen**.
+Escape hatches behöver alltså inte innebära frånvaro av styrning. De kan vara en formaliserad annan väg genom styrningen.
 
 ## Friktion i escape hatches bör vara proportionerlig
 
@@ -507,7 +507,7 @@ En intern utvecklarportal kan hjälpa konsumenten att hitta:
 - beroenden,
 - onboarding och självservice.
 
-Men samma varning som tidigare gäller: **portalen är inte plattformen**.
+Men samma varning som tidigare gäller: portalen är inte plattformen.
 
 Om informationen är inaktuell, självservicen inte fungerar eller ägarskapet är otydligt skapar portalen bara en bättre presentation av underliggande problem.
 
@@ -627,7 +627,7 @@ Konsumerande team ansvarar bland annat för:
 - dokumenterade avsteg när standardvägen inte passar,
 - operativt ansvar enligt tjänstekontraktet.
 
-Golden path förändrar alltså inte ansvarsfördelningen. Den gör den **lättare att tillämpa i praktiken**.
+Golden path förändrar alltså inte ansvarsfördelningen. Den gör den lättare att tillämpa i praktiken.
 
 ## Styrning genom standardvägen
 
@@ -737,7 +737,7 @@ Exempel:
 - hur många tjänster som använder föråldrade versioner av gemensamma komponenter,
 - konsumenternas upplevda friktion.
 
-Ett viktigt mått är också **hur mycket lokal specialkunskap som fortfarande krävs för standardfallet**.
+Ett viktigt mått är också hur mycket lokal specialkunskap som fortfarande krävs för standardfallet.
 
 Om ett team måste känna till plattformens interna implementation för att lyckas är abstraktionen sannolikt för tunn.
 
@@ -800,7 +800,7 @@ En referensarkitektur beskriver typiskt:
 - kvalitetskrav,
 - relevanta mönster och standarder.
 
-En golden path beskriver hur ett vanligt fall **konsumeras och realiseras genom organisationens plattformar och automation**.
+En golden path beskriver hur ett vanligt fall konsumeras och realiseras genom organisationens plattformar och automation.
 
 De kan hänga nära ihop.
 
@@ -818,7 +818,7 @@ Men de löser olika problem. Referensarkitekturen hjälper till att förstå lö
 
 ## Från dokumentstyrning till systemstyrning
 
-Det djupare skiftet bakom paved roads är övergången från **dokumentstyrning** till **systemstyrning**.
+Det djupare skiftet bakom paved roads är övergången från dokumentstyrning till systemstyrning.
 
 Dokumentstyrning säger:
 
@@ -832,8 +832,8 @@ Organisationen behöver fortfarande principer, standarder och dokumentation. Men
 
 Detta är en central mekanism för att förena två mål som annars lätt ställs mot varandra:
 
-- **högre autonomi för teamen**, och
-- **större konsekvens i det gemensamma IT-landskapet**.
+- högre autonomi för teamen, och
+- större konsekvens i det gemensamma IT-landskapet.
 
 När paved roads fungerar behöver dessa mål inte vara motsatser.
 
@@ -854,7 +854,7 @@ De viktigaste principerna är:
 9. Vägen ska vinna genom nytta och låg friktion, inte genom att alternativ görs artificiellt omöjliga.
 10. Golden paths är ett praktiskt sätt att kombinera teamautonomi med gemensam arkitekturell riktning.
 
-Nästa steg är att fördjupa **standarderna** som ligger bakom många av dessa guardrails och plattformsprofiler: vad som faktiskt bör standardiseras, på vilken nivå och med vilken grad av bindning.
+Nästa steg är att fördjupa standarderna som ligger bakom många av dessa guardrails och plattformsprofiler: vad som faktiskt bör standardiseras, på vilken nivå och med vilken grad av bindning.
 
 ## Källor och vidare läsning
 

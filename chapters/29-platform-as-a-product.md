@@ -4,9 +4,9 @@ När ett tekniskt byggblock har fått ett tydligt tjänstekontrakt, definierat a
 
 En plattform kan vara tekniskt stabil och välförvaltad men ändå misslyckas därför att den löser fel problem, kräver för mycket specialkunskap, har långsam onboarding, erbjuder fel abstraheringsnivå eller utvecklas utifrån plattformsteamets interna teknikintressen snarare än konsumenternas vardag.
 
-**Platform as a Product[K1]** är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en färdplan som styrs av värde snarare än enbart teknisk önskelista.
+Platform as a Product[K1] är ett sätt att angripa detta problem. Grundidén är att en intern plattform bör utvecklas med samma typ av produktorientering som andra produkter: tydliga målgrupper, förstådda behov, prioriterade problem, mätbara utfall, kontinuerlig återkoppling och en färdplan som styrs av värde snarare än enbart teknisk önskelista.
 
-Det betyder inte att en intern plattform är en kommersiell produkt eller att varje teknisk komponent behöver en produktchef. Det betyder att den som ansvarar för en viktig gemensam plattform måste behandla **konsumenternas förmåga att lyckas** som ett centralt resultat av plattformsarbetet.
+Det betyder inte att en intern plattform är en kommersiell produkt eller att varje teknisk komponent behöver en produktchef. Det betyder att den som ansvarar för en viktig gemensam plattform måste behandla konsumenternas förmåga att lyckas som ett centralt resultat av plattformsarbetet.
 
 ## Från teknisk förvaltning till produktansvar
 
@@ -18,7 +18,7 @@ Traditionell teknisk förvaltning fokuserar ofta på frågor som:
 - Har vi en supportmodell?
 - Är underliggande produkter inom support?
 
-Alla dessa frågor är viktiga. Men de säger inte om plattformen är **bra att konsumera**.
+Alla dessa frågor är viktiga. Men de säger inte om plattformen är bra att konsumera.
 
 En produktorienterad plattform behöver också kunna svara på frågor som:
 
@@ -48,7 +48,7 @@ De två perspektiven konkurrerar inte. En fungerande plattform behöver båda.
 
 ## Plattformens användare är interna kunder
 
-Ordet *kund* kan kännas märkligt i en intern IT-organisation. Teamen kan kanske inte fritt välja leverantör, och plattformen finansieras inte genom en traditionell marknadstransaktion. Men kundperspektivet är ändå användbart eftersom det förskjuter uppmärksamheten från **vad plattformen producerar** till **vilket resultat konsumenten får**.
+Ordet *kund* kan kännas märkligt i en intern IT-organisation. Teamen kan kanske inte fritt välja leverantör, och plattformen finansieras inte genom en traditionell marknadstransaktion. Men kundperspektivet är ändå användbart eftersom det förskjuter uppmärksamheten från vad plattformen producerar till vilket resultat konsumenten får.
 
 För en Container Application Platform kan konsumenten exempelvis vara ett utvecklingsteam som behöver:
 
@@ -62,7 +62,7 @@ För en Container Application Platform kan konsumenten exempelvis vara ett utvec
 
 Det viktiga är inte att plattformen har Kubernetes, OpenShift eller någon annan viss teknik. Det viktiga är hur väl plattformen minskar den återkommande friktionen runt dessa behov.
 
-Samma resonemang gäller för en databastjänst. Konsumenten behöver sällan ”en PostgreSQL-instans” som slutmål. Teamet behöver snarare en **säker och förvaltad plats för relationell data med förutsägbara egenskaper**.
+Samma resonemang gäller för en databastjänst. Konsumenten behöver sällan ”en PostgreSQL-instans” som slutmål. Teamet behöver snarare en säker och förvaltad plats för relationell data med förutsägbara egenskaper.
 
 Produktperspektivet börjar därför med användningssituationen.
 
@@ -122,11 +122,11 @@ Möjliga lösningar:
 
 Detta lämnar utrymme att välja den mest effektiva lösningen. Om man börjar med ”bygg en portal” har man redan låst lösningen innan problemet är förstått.
 
-Principen **behov före teknik** gäller alltså lika mycket för plattformsteam som för lösningsarkitektur.
+Principen behov före teknik gäller alltså lika mycket för plattformsteam som för lösningsarkitektur.
 
 ## utvecklarupplevelse är ett arkitekturellt resultat
 
-För plattformar som riktar sig till utvecklingsteam är **utvecklarupplevelse**, ofta förkortat DX, en central del av produkten.
+För plattformar som riktar sig till utvecklingsteam är utvecklarupplevelse, ofta förkortat DX, en central del av produkten.
 
 DX handlar inte bara om att gränssnittet är snyggt. Det handlar om hur mycket kognitiv och administrativ belastning teamet behöver bära för att åstadkomma ett resultat.
 
@@ -149,7 +149,7 @@ En plattform kan därför vara tekniskt kraftfull men ha låg produktkvalitet om
 
 När varje team behöver förstå detaljer om nätverk, certifikat, driftsättning, observerbarhet, backup, identiteter och underliggande klusterarkitektur används utvecklingskapacitet på frågor som kanske inte är verksamhetsdifferentierande.
 
-En bra plattform tar inte bort allt ansvar. Den reducerar **onödig kognitiv last** genom att skapa rimliga standarder och abstrahera sådant som bäst hanteras gemensamt.
+En bra plattform tar inte bort allt ansvar. Den reducerar onödig kognitiv last genom att skapa rimliga standarder och abstrahera sådant som bäst hanteras gemensamt.
 
 Det kan uttryckas som:
 
@@ -165,7 +165,7 @@ Mer fokus på domän och verksamhetsvärde
 
 Men abstractionen får inte bli ogenomskinlig. Ett team måste fortfarande kunna förstå exempelvis vilka tillgänglighetsgarantier som finns, var data lagras och vilka begränsningar en tjänst har.
 
-Produktkvaliteten ligger alltså i balansen mellan **enkel konsumtion och tillräcklig transparens**.
+Produktkvaliteten ligger alltså i balansen mellan enkel konsumtion och tillräcklig transparens.
 
 ## Adoption är ett utfall, inte ett självändamål
 
@@ -190,7 +190,7 @@ Exempel på användbara mätetal är:
 - stabilitet och SLO-uppfyllelse,
 - ledtid för att införa plattformsförbättringar.
 
-Mätetalen bör hjälpa teamet förstå både **produktnytta och teknisk kvalitet**.
+Mätetalen bör hjälpa teamet förstå både produktnytta och teknisk kvalitet.
 
 ## Plattformens SLO är nödvändigt men inte tillräckligt
 
@@ -219,7 +219,7 @@ Tekniska SLO:er är fortfarande centrala. Men de bör kompletteras med mätetal 
 
 ## Mät användarresor
 
-Ett kraftfullt sätt att tänka är att beskriva de återkommande **användarresor** som plattformen ska stödja.
+Ett kraftfullt sätt att tänka är att beskriva de återkommande användarresor som plattformen ska stödja.
 
 För en databastjänst kan det vara:
 
@@ -310,13 +310,13 @@ Det behöver förmåga att:
 - driva säkerhet och tillgänglighet,
 - kommunicera förändringar och färdplan.
 
-Det innebär inte att varje plattform behöver samma organisatoriska roller. Produktansvar kan ligga hos en produktägare, produktchef, teknisk produktledare eller annan tydligt utsedd funktion. Det viktiga är att ansvaret **finns** och inte reduceras till backlogadministration.
+Det innebär inte att varje plattform behöver samma organisatoriska roller. Produktansvar kan ligga hos en produktägare, produktchef, teknisk produktledare eller annan tydligt utsedd funktion. Det viktiga är att ansvaret finns och inte reduceras till backlogadministration.
 
 ## Produktansvar och förmågeansvar är inte samma sak
 
 I bokens ansvarmodell behöver man skilja mellan förmågeområde och enskild plattformsprodukt.
 
-Förmågan **Data- och informationshantering** kan exempelvis omfatta flera erbjudanden:
+Förmågan Data- och informationshantering kan exempelvis omfatta flera erbjudanden:
 
 - relationell databastjänst,
 - objektlagring,
@@ -367,7 +367,7 @@ Om ett team måste använda en viss tjänst men samtidigt behöver:
 
 är hög adoption inte ett bevis på en bra produkt.
 
-Detta är ett skäl att mäta **friktion och workaround-beteenden**, inte bara antal konsumenter.
+Detta är ett skäl att mäta friktion och workaround-beteenden, inte bara antal konsumenter.
 
 En gemensam standard kan vara obligatorisk av goda skäl. Men plattformsteamet bör ändå försöka göra den rekommenderade vägen till den enklaste rimliga vägen.
 
@@ -538,7 +538,7 @@ När en organisation vill arbeta med Platform as a Product kan följande ordning
 11. Gör färdplan och avvecklingsplan synliga för konsumenterna.
 12. Ompröva målgrupp och produktgräns när behoven förändras.
 
-Det är inte en universell produktmetod. Det är ett praktiskt arbetssätt för att flytta en intern plattform från **teknik som tillhandahålls** till **en tjänst som aktivt utvecklas för att hjälpa andra team att lyckas**.
+Det är inte en universell produktmetod. Det är ett praktiskt arbetssätt för att flytta en intern plattform från teknik som tillhandahålls till en tjänst som aktivt utvecklas för att hjälpa andra team att lyckas.
 
 ## Från produktstrategi till standardväg
 
@@ -546,7 +546,7 @@ Platform as a Product ger ett svar på hur plattformsteamet bör tänka kring ko
 
 Om plattformens bästa arbetssätt bara finns i dokumentation är friktionen fortfarande hög. Nästa steg är därför att göra den rekommenderade vägen konkret genom automation, templates, portals, policy-as-code och andra former av självservice.
 
-Det är ämnet för nästa kapitel: **golden paths, paved roads och självservice**.
+Det är ämnet för nästa kapitel: golden paths, paved roads och självservice.
 
 ## Källor och vidare läsning
 

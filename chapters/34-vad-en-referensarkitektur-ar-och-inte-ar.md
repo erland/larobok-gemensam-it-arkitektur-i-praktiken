@@ -4,13 +4,13 @@ När en organisation har definierat gemensamma förmågor, lösningsmönster, pl
 
 Det är här referensarkitekturen får sin roll.
 
-En referensarkitektur ska göra mer än att lista vilka tekniker som är godkända. Den ska samtidigt göra mindre än att designa ett konkret system. Dess värde ligger i mellanrummet: den återanvänder arkitekturerfarenhet för en **klass av lösningar** och ger ett gemensamt utgångsläge utan att låsa varje implementation till samma detaljdesign.
+En referensarkitektur ska göra mer än att lista vilka tekniker som är godkända. Den ska samtidigt göra mindre än att designa ett konkret system. Dess värde ligger i mellanrummet: den återanvänder arkitekturerfarenhet för en klass av lösningar och ger ett gemensamt utgångsläge utan att låsa varje implementation till samma detaljdesign.
 
 I den här boken används därför följande arbetsdefinition:
 
 > En referensarkitektur är en förvaltad, återanvändbar arkitekturbeskrivning för en avgränsad klass av lösningar. Den beskriver relevanta concerns, strukturer, ansvar, obligatoriska begränsningar, rekommenderade mönster, gemensamma tjänster och explicita variation points, så att en konkret lösningsarkitektur kan härledas snabbare och mer konsekvent.
 
-Definitionen är avsiktligt praktisk. Begreppet *referensarkitektur* används på olika sätt i olika organisationer och ramverk. Det viktiga är därför inte att hitta en enda universell definition, utan att organisationen är tydlig med **vilket problem artefakten ska lösa, vilken abstraktionsnivå den har och hur den relaterar till andra arkitekturartefakter**.
+Definitionen är avsiktligt praktisk. Begreppet *referensarkitektur* används på olika sätt i olika organisationer och ramverk. Det viktiga är därför inte att hitta en enda universell definition, utan att organisationen är tydlig med vilket problem artefakten ska lösa, vilken abstraktionsnivå den har och hur den relaterar till andra arkitekturartefakter.
 
 Detta kapitel etablerar den rollen. Nästa kapitel visar sedan hur ett konkret initiativ går från behov till faktisk lösningsarkitektur med referensarkitekturen som ett av flera beslutsunderlag.
 
@@ -33,7 +33,7 @@ Om varje projekt börjar från noll kommer organisationen att fatta samma typer 
 
 Motsatsen är inte att skapa en enda obligatorisk lösningsdesign för alla e-tjänster. Det skulle göra arkitekturen oförmögen att hantera verkliga skillnader.
 
-Referensarkitekturen försöker i stället fånga **det som rimligen bör återanvändas**.
+Referensarkitekturen försöker i stället fånga det som rimligen bör återanvändas.
 
 ```text
 Återkommande lösningsklass
@@ -49,7 +49,7 @@ Konkret initiativ
 Lösningsarkitektur med explicita variationer
 ```
 
-Värdet är alltså inte att alla lösningar blir identiska. Värdet är att variation blir **medveten, lokaliserad och motiverad**.
+Värdet är alltså inte att alla lösningar blir identiska. Värdet är att variation blir medveten, lokaliserad och motiverad.
 
 ## En referensarkitektur beskriver en klass av lösningar
 
@@ -96,7 +96,7 @@ Men den behöver inte bestämma:
 
 Dessa frågor hör normalt hemma i den faktiska lösningsarkitekturen och implementationen.
 
-Referensarkitekturen måste därför befinna sig på en abstraktionsnivå där den är **tillräckligt konkret för att styra återkommande beslut men tillräckligt generell för att återanvändas**.
+Referensarkitekturen måste därför befinna sig på en abstraktionsnivå där den är tillräckligt konkret för att styra återkommande beslut men tillräckligt generell för att återanvändas.
 
 ## Referensarkitektur är inte lösningsarkitektur
 
@@ -155,7 +155,7 @@ Exempel från tidigare kapitel är:
 - tjänsteidentitet,
 - build once, promote many.
 
-Referensarkitekturen har bredare scope. Den kan **kombinera flera mönster** för en viss lösningsklass.
+Referensarkitekturen har bredare scope. Den kan kombinera flera mönster för en viss lösningsklass.
 
 En referensarkitektur för AI-baserat verksamhetsstöd kan exempelvis använda:
 
@@ -174,7 +174,7 @@ Referensarkitekturen svarar snarare på:
 
 > Hur ser en rimlig sammanhängande arkitektur ut för den här typen av lösning, och vilka beslut bör återanvändas?
 
-Referensarkitekturen bör därför **referera till mönster** i stället för att kopiera hela mönsterbeskrivningen in i varje dokument.
+Referensarkitekturen bör därför referera till mönster i stället för att kopiera hela mönsterbeskrivningen in i varje dokument.
 
 ## Referensarkitektur är inte en standard
 
@@ -202,7 +202,7 @@ Referensarkitektur
 
 Om alla standarder kopieras in i referensarkitekturen uppstår dubbel dokumentation och livscykelproblem. När en standard ändras riskerar flera referensarkitekturer att bli inaktuella samtidigt.
 
-Bättre är att referensarkitekturen uttrycker **beroendet**:
+Bättre är att referensarkitekturen uttrycker beroendet:
 
 > Externa API:er ska följa organisationens aktuella API-standard.
 
@@ -230,7 +230,7 @@ Det kan vara en värdefull plattformsbild, men är inte automatiskt en referensa
 
 En referensarkitektur behöver utgå från lösningens concerns och kvalitetsbehov, inte från vilka produkter plattformsteamet råkar erbjuda.
 
-Den kan däremot beskriva att en viss lösningsklass **normalt realiseras genom** organisationens containerplattform, databastjänst, identitetstjänst och observerbarhetstjänster.
+Den kan däremot beskriva att en viss lösningsklass normalt realiseras genom organisationens containerplattform, databastjänst, identitetstjänst och observerbarhetstjänster.
 
 Skillnaden är viktig:
 
@@ -309,7 +309,7 @@ För en publik e-tjänst kan relevanta viewpoints exempelvis vara:
 - kontinuitet,
 - ansvar och ägarskap.
 
-Ett viewpoint kan ses som en återanvändbar regel för **vilka frågor en viss vy ska besvara**.
+Ett viewpoint kan ses som en återanvändbar regel för vilka frågor en viss vy ska besvara.
 
 Exempel:
 
@@ -323,7 +323,7 @@ Det viktiga är inte att maximera antalet diagram. Det viktiga är att varje vy 
 
 En svag referensarkitektur försöker ofta dölja variation. Den visar en lösning och kallar den ”referens”.
 
-En stark referensarkitektur beskriver i stället explicit **var variation är förväntad och vilka drivkrafter som avgör valet**.
+En stark referensarkitektur beskriver i stället explicit var variation är förväntad och vilka drivkrafter som avgör valet.
 
 Exempel för en publik e-tjänst:
 
@@ -359,7 +359,7 @@ Variation kan exempelvis bero på:
 - legacy begränsning,
 - särskilt hårdvarubehov.
 
-Att dokumentera dessa variation points gör referensarkitekturen mer användbar eftersom den visar **var arkitekturarbetet fortfarande måste fatta ett lokalt beslut**.
+Att dokumentera dessa variation points gör referensarkitekturen mer användbar eftersom den visar var arkitekturarbetet fortfarande måste fatta ett lokalt beslut.
 
 ## Begränsningar ska vara få, tydliga och motiverade
 
@@ -388,7 +388,7 @@ En begränsning kan motiveras av:
 
 Om referensarkitekturen består av mycket detaljerade obligatoriska val riskerar den att bli en dold produktstandard eller en frusen lösningsdesign.
 
-**Obligatoriskt där konsekvensen kräver det; varierbart där lokala behov skiljer sig.**
+Obligatoriskt där konsekvensen kräver det; varierbart där lokala behov skiljer sig.
 
 ## Kvalitetsprofiler påverkar referensarkitekturen
 
@@ -493,22 +493,22 @@ En bild kan vara ett bra navigationslager, men den räcker sällan för att bär
 
 En praktisk referensarkitektur kan exempelvis innehålla:
 
-1. **Syfte och scope**
-2. **Antaganden och avgränsningar**
-3. **Relevanta kvalitetsprofiler**
-4. **Logisk översiktsvy**
-5. **Viktiga informations-/integrationsflöden**
-6. **Identitets- och tillitsmodell**
-7. **Driftsättning/runtime-vy där relevant**
-8. **Ansvarsgränser**
-9. **Obligatoriska begränsningar**
-10. **Variation points och beslutsregler**
-11. **Rekommenderade lösningsmönster**
-12. **Relevanta plattformstjänster**
-13. **Relevanta standarder**
-14. **Kända avvägningar och risker**
-15. **Exempel på tillämpning**
-16. **Livscykel, ägare och ändringshistorik**
+1. Syfte och scope
+2. Antaganden och avgränsningar
+3. Relevanta kvalitetsprofiler
+4. Logisk översiktsvy
+5. Viktiga informations-/integrationsflöden
+6. Identitets- och tillitsmodell
+7. Driftsättning/runtime-vy där relevant
+8. Ansvarsgränser
+9. Obligatoriska begränsningar
+10. Variation points och beslutsregler
+11. Rekommenderade lösningsmönster
+12. Relevanta plattformstjänster
+13. Relevanta standarder
+14. Kända avvägningar och risker
+15. Exempel på tillämpning
+16. Livscykel, ägare och ändringshistorik
 
 Alla referensarkitekturer behöver inte alla dessa delar. Modellen bör anpassas till scope och konsekvens.
 
@@ -548,9 +548,9 @@ utan:
 
 Det finns åtminstone tre möjliga utfall:
 
-1. **Lokalt motiverat avsteg** – referensarkitekturen är fortfarande rätt för sin målklass.
-2. **Ny variation point** – flera lösningar visar att referensarkitekturen behöver uttrycka ett legitimt alternativ.
-3. **Referensarkitekturen är fel eller föråldrad** – återkommande avsteg visar att den gemensamma modellen behöver ändras.
+1. Lokalt motiverat avsteg – referensarkitekturen är fortfarande rätt för sin målklass.
+2. Ny variation point – flera lösningar visar att referensarkitekturen behöver uttrycka ett legitimt alternativ.
+3. Referensarkitekturen är fel eller föråldrad – återkommande avsteg visar att den gemensamma modellen behöver ändras.
 
 Avsteg blir därmed en feedbackmekanism.
 
@@ -738,7 +738,7 @@ En referensarkitektur är en förvaltad produkt av arkitekturarbetet, inte en av
 
 ## Referensarkitekturen som brygga
 
-Bokens arkitekturmodell har hittills gått från behov och kvaliteter via förmågor till mönster, plattformar och standarder. Referensarkitekturen är den artefakt som **kombinerar flera av dessa perspektiv för en återkommande lösningsklass**.
+Bokens arkitekturmodell har hittills gått från behov och kvaliteter via förmågor till mönster, plattformar och standarder. Referensarkitekturen är den artefakt som kombinerar flera av dessa perspektiv för en återkommande lösningsklass.
 
 ```text
 Förmågor
@@ -758,7 +758,7 @@ Det gör den till en brygga mellan den gemensamma arkitekturen och det konkreta 
 
 Men bron fungerar bara om båda sidorna förblir tydliga.
 
-Referensarkitekturen ska inte absorbera lösningsarkitekturen. Den ska inte heller bli ännu en katalog över gemensamma artefakter. Dess uppgift är att visa **hur organisationens gemensamma arkitekturerfarenhet kan sättas samman för en viss typ av lösning, var den är normerande och var den lämnar plats för lokala beslut**.
+Referensarkitekturen ska inte absorbera lösningsarkitekturen. Den ska inte heller bli ännu en katalog över gemensamma artefakter. Dess uppgift är att visa hur organisationens gemensamma arkitekturerfarenhet kan sättas samman för en viss typ av lösning, var den är normerande och var den lämnar plats för lokala beslut.
 
 I nästa kapitel används denna idé praktiskt. Då följer vi ett konkret initiativ från verksamhetsbehov och kvalitetsprofil genom förmågor, mönster, plattformar, standarder och referensarkitektur till en dokumenterad lösningsarkitektur.
 

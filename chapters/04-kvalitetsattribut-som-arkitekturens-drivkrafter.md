@@ -6,7 +6,7 @@ Funktionslistan avslöjar inte den skillnaden.
 
 Det är därför arkitektur inte bara kan utgå från *vad* ett IT-stöd ska göra. Den måste också utgå från *hur väl*, *under vilka förutsättningar* och *med vilka konsekvenser* det ska kunna göra det.
 
-Dessa egenskaper brukar beskrivas som **kvalitetsattribut** eller kvalitetskrav. Exempel är tillgänglighet, prestanda, säkerhet, förändringsbarhet, interoperabilitet och återställningsförmåga. De är ofta mer arkitekturdrivande än enskilda funktioner eftersom de påverkar systemets struktur, redundans, ansvarsfördelning, teknikval och driftmodell.
+Dessa egenskaper brukar beskrivas som kvalitetsattribut eller kvalitetskrav. Exempel är tillgänglighet, prestanda, säkerhet, förändringsbarhet, interoperabilitet och återställningsförmåga. De är ofta mer arkitekturdrivande än enskilda funktioner eftersom de påverkar systemets struktur, redundans, ansvarsfördelning, teknikval och driftmodell.
 
 Ett krav som säger att en användare ska kunna lämna in ett ärende beskriver en funktion. Ett krav som säger att tjänsten ska kunna ta emot ärenden under en nationell tidskritisk period med hög belastning, utan att en enskild komponent blir en kritisk felpunkt, påverkar däremot stora delar av arkitekturen.
 
@@ -95,16 +95,16 @@ Kvalitetskravet blir då ett uttryck för ett verkligt behov, inte en allmän am
 
 ## Kvalitetsattribut behöver scenarier
 
-Ett praktiskt sätt att göra kvalitetskrav konkreta är att formulera dem som **kvalitetsattributsscenarier**.[K1]
+Ett praktiskt sätt att göra kvalitetskrav konkreta är att formulera dem som kvalitetsattributsscenarier.[K1]
 
 Ett sådant scenario beskriver inte bara egenskapen utan också situationen där den blir relevant. En användbar struktur är:
 
-1. **källa** – vem eller vad utlöser något,
-2. **stimulus** – vilken händelse som inträffar,
-3. **berörd del** – vilken del av systemet eller tjänsten som påverkas,
-4. **miljö** – under vilka omständigheter händelsen sker,
-5. **respons** – hur systemet ska reagera,
-6. **responsmått** – hur man avgör om reaktionen är tillräcklig.
+1. källa – vem eller vad utlöser något,
+2. stimulus – vilken händelse som inträffar,
+3. berörd del – vilken del av systemet eller tjänsten som påverkas,
+4. miljö – under vilka omständigheter händelsen sker,
+5. respons – hur systemet ska reagera,
+6. responsmått – hur man avgör om reaktionen är tillräcklig.
 
 Ett tillgänglighetsscenario kan exempelvis vara:
 
@@ -122,7 +122,7 @@ Det betyder inte att varje kvalitetskrav måste dokumenteras med sex rubriker. S
 
 Alla kvalitetskrav är inte lika viktiga för arkitekturen.
 
-Ett krav blir en **arkitekturdrivare** när det i betydande grad påverkar systemets struktur eller centrala designbeslut.
+Ett krav blir en arkitekturdrivare när det i betydande grad påverkar systemets struktur eller centrala designbeslut.
 
 Exempel:
 
@@ -177,7 +177,7 @@ Här blir frågor om återställning centrala:
 - Hur vet vi att backup faktiskt går att återläsa?
 - Kan verksamheten arbeta i ett degraderat eller manuellt reservläge?
 
-Begreppen **RTO** och **RPO** används ofta här. RTO uttrycker målet för hur snabbt en resurs eller funktion behöver återställas efter ett avbrott. RPO uttrycker hur långt tillbaka i tiden man som mest accepterar att återställd data ligger, alltså den tolererade dataförlusten uttryckt som en tidpunkt eller tidsmängd.
+Begreppen RTO och RPO används ofta här. RTO uttrycker målet för hur snabbt en resurs eller funktion behöver återställas efter ett avbrott. RPO uttrycker hur långt tillbaka i tiden man som mest accepterar att återställd data ligger, alltså den tolererade dataförlusten uttryckt som en tidpunkt eller tidsmängd.
 
 De bör inte sättas av tekniken ensam. De ska härledas från verksamhetskonsekvens och därefter användas för att utforma backup, replikerings- och återställningslösningar.
 
@@ -348,7 +348,7 @@ Det är lockande att formulera generella krav som:
 
 Sådana mål kan låta robusta men riskerar att driva stor kostnad och komplexitet utan motsvarande nytta.
 
-Ett kvalitetskrav bör i stället vara **tillräckligt högt för verksamhetsbehovet**.
+Ett kvalitetskrav bör i stället vara tillräckligt högt för verksamhetsbehovet.
 
 Det är särskilt viktigt för gemensamma plattformstjänster. Om varje plattform dimensioneras för den mest extrema möjliga konsumenten blir den onödigt dyr för alla andra. Ett bättre arbetssätt kan vara att erbjuda definierade kvalitetsprofiler eller tjänstenivåer.
 
@@ -398,7 +398,7 @@ Om svaret saknas behöver kravet sannolikt förtydligas.
 
 Begrepp om tjänstenivå blandas ibland ihop med kvalitetskrav.
 
-Ett **SLO**, service level objective, är ett mål för en observerbar tjänstenivå, exempelvis tillgänglighet eller svarstid. Ett **SLA**, service level agreement, är ett avtalat åtagande där tjänstenivån kan kopplas till formella konsekvenser eller ansvar.
+Ett SLO, service level objective, är ett mål för en observerbar tjänstenivå, exempelvis tillgänglighet eller svarstid. Ett SLA, service level agreement, är ett avtalat åtagande där tjänstenivån kan kopplas till formella konsekvenser eller ansvar.
 
 Ett arkitekturellt kvalitetskrav kan ligga bakom båda men är bredare. Förändringsbarhet, isolering eller återställningsförmåga är exempel på kvaliteter som inte alltid uttrycks bäst som en traditionell SLA-metrik.
 
@@ -477,7 +477,7 @@ Frågor kvarstår:
 
 På samma sätt kan en containerplattform erbjuda automatisk restart utan att applikationen är motståndskraftig mot fel. En applikation som lagrar kritiskt tillstånd lokalt kan fortfarande förlora arbete när containern ersätts.
 
-Gemensamma plattformar kan alltså **möjliggöra** kvaliteter, men de kan sällan garantera hela lösningens kvalitet på egen hand.
+Gemensamma plattformar kan alltså möjliggöra kvaliteter, men de kan sällan garantera hela lösningens kvalitet på egen hand.
 
 Detta bör vara tydligt i tjänstekontraktet mellan plattform och konsument:
 
@@ -605,25 +605,25 @@ Det är skillnaden mellan att säga ”bygg en robust e-tjänst” och att fakti
 
 ## Begrepp att känna till
 
-**Kvalitetsattribut** – en egenskap hos ett system eller en tjänst som beskriver hur väl eller under vilka förutsättningar den fungerar, exempelvis tillgänglighet, prestanda eller förändringsbarhet.
+Kvalitetsattribut – en egenskap hos ett system eller en tjänst som beskriver hur väl eller under vilka förutsättningar den fungerar, exempelvis tillgänglighet, prestanda eller förändringsbarhet.
 
-**Kvalitetskrav** – ett krav som preciserar önskad eller nödvändig nivå för ett kvalitetsattribut.
+Kvalitetskrav – ett krav som preciserar önskad eller nödvändig nivå för ett kvalitetsattribut.
 
-**Arkitekturdrivare** – ett behov, begränsning eller kvalitetskrav som i betydande grad påverkar arkitekturens struktur och centrala beslut.
+Arkitekturdrivare – ett behov, begränsning eller kvalitetskrav som i betydande grad påverkar arkitekturens struktur och centrala beslut.
 
-**Kvalitetsattributsscenario** – en konkret situation som beskriver stimulus, miljö, berörd del, förväntad respons och hur responsen mäts.
+Kvalitetsattributsscenario – en konkret situation som beskriver stimulus, miljö, berörd del, förväntad respons och hur responsen mäts.
 
-**RTO (Recovery Time Objective)** – mål för hur snabbt en funktion eller resurs behöver återställas efter ett avbrott.
+RTO (Recovery Time Objective) – mål för hur snabbt en funktion eller resurs behöver återställas efter ett avbrott.
 
-**RPO (Recovery Point Objective)** – mål för hur långt tillbaka återställd data som mest får ligga efter ett avbrott, och därmed vilken dataförlust som kan tolereras.[K2]
+RPO (Recovery Point Objective) – mål för hur långt tillbaka återställd data som mest får ligga efter ett avbrott, och därmed vilken dataförlust som kan tolereras.[K2]
 
-**SLO (Service Level Objective)** – ett mätbart mål för en observerbar tjänstenivå.[K3]
+SLO (Service Level Objective) – ett mätbart mål för en observerbar tjänstenivå.[K3]
 
-**SLA (Service Level Agreement)** – ett formellt åtagande om tjänstenivå mellan parter, ofta med definierade ansvar eller konsekvenser.
+SLA (Service Level Agreement) – ett formellt åtagande om tjänstenivå mellan parter, ofta med definierade ansvar eller konsekvenser.
 
-**Avvägning** – en avvägning där förbättring av en egenskap påverkar kostnad, komplexitet eller en annan kvalitet.
+Avvägning – en avvägning där förbättring av en egenskap påverkar kostnad, komplexitet eller en annan kvalitet.
 
-**Arkitekturell taktik** – en designmekanism som används för att påverka ett kvalitetsattribut, exempelvis redundans för tillgänglighet eller caching för svarstid.
+Arkitekturell taktik – en designmekanism som används för att påverka ett kvalitetsattribut, exempelvis redundans för tillgänglighet eller caching för svarstid.
 
 ## Källor och vidare läsning
 

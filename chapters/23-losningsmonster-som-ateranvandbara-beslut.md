@@ -2,9 +2,9 @@
 
 När flera utvecklingsteam möter samma slags arkitekturproblem uppstår nästan alltid återkommande lösningar. Ett team placerar ett kanalnära lager mellan webbklienten och domäntjänsterna. Ett annat låter meddelanden bära arbete över en tidsgräns. Ett tredje separerar den auktoritativa databasen från ett sökindex. Ett fjärde bygger samma releaseartefakt en gång och promoverar den genom flera miljöer.
 
-Efter ett tag kan organisationen känna igen formerna. Då uppstår en möjlighet: i stället för att varje lösningsteam återupptäcker samma resonemang kan erfarenheten beskrivas som ett **lösningsmönster**.
+Efter ett tag kan organisationen känna igen formerna. Då uppstår en möjlighet: i stället för att varje lösningsteam återupptäcker samma resonemang kan erfarenheten beskrivas som ett lösningsmönster.
 
-Ett mönster är dock inte värdefullt bara för att en viss struktur förekommer ofta. Det måste fånga **varför** strukturen är användbar, **i vilken kontext** den fungerar, **vilka krafter som behöver balanseras** och **vilka konsekvenser som följer av valet**.
+Ett mönster är dock inte värdefullt bara för att en viss struktur förekommer ofta. Det måste fånga varför strukturen är användbar, i vilken kontext den fungerar, vilka krafter som behöver balanseras och vilka konsekvenser som följer av valet.
 
 Det är därför missvisande att se ett lösningsmönster som en ritning som ska kopieras. Ett användbart mönster är snarare ett återanvändbart stycke arkitekturellt beslutsstöd.
 
@@ -34,9 +34,9 @@ Det viktiga är att generaliseringen inte börjar i tekniken. Om tre system råk
 
 Ett mönster bör i stället svara på ett stabilare problem.
 
-**Backend for Frontend** är exempelvis inte intressant därför att vissa lösningar råkar ha en viss sorts serverkomponent. Det är intressant därför att olika klienter kan ha olika behov av aggregering, sessionshantering, säkerhetsanpassning och dataformat, samtidigt som organisationen vill undvika att exponera interna tjänstegränser direkt mot klienten.
+Backend for Frontend är exempelvis inte intressant därför att vissa lösningar råkar ha en viss sorts serverkomponent. Det är intressant därför att olika klienter kan ha olika behov av aggregering, sessionshantering, säkerhetsanpassning och dataformat, samtidigt som organisationen vill undvika att exponera interna tjänstegränser direkt mot klienten.
 
-Det återanvändbara ligger alltså i relationen mellan **problem, kontext, krafter och struktur**.
+Det återanvändbara ligger alltså i relationen mellan problem, kontext, krafter och struktur.
 
 ## Ett mönster är inte ett recept
 
@@ -52,15 +52,15 @@ Skillnaden är avgörande.
 
 Om ett mönster blir ett recept uppstår lätt två problem.
 
-Det första är **överanvändning**. Organisationen börjar applicera mönstret även när problemet inte finns. Om Backend for Frontend blir en regel kan varje frontend få ett eget backendlager, även när klienten utan problem kan använda ett stabilt API direkt. Då har mönstret skapat en extra komponent utan att lösa ett verkligt problem.
+Det första är överanvändning. Organisationen börjar applicera mönstret även när problemet inte finns. Om Backend for Frontend blir en regel kan varje frontend få ett eget backendlager, även när klienten utan problem kan använda ett stabilt API direkt. Då har mönstret skapat en extra komponent utan att lösa ett verkligt problem.
 
-Det andra är **falsk trygghet**. Teamet kan tro att arkitekturen är korrekt bara för att ett känt mönster används. Men mönstret garanterar inte att lösningens kvalitetskrav, informationsgränser, säkerhet eller domänmodell är riktiga.
+Det andra är falsk trygghet. Teamet kan tro att arkitekturen är korrekt bara för att ett känt mönster används. Men mönstret garanterar inte att lösningens kvalitetskrav, informationsgränser, säkerhet eller domänmodell är riktiga.
 
 Ett mönster minskar alltså inte behovet av arkitekturtänkande. Det koncentrerar tidigare arkitekturtänkande så att nästa beslut kan börja på en högre nivå.
 
 ## Mönstrets kärna: kontext, problem och krafter
 
-Ett starkt mönster börjar inte med lösningen. Det börjar med **kontexten**.
+Ett starkt mönster börjar inte med lösningen. Det börjar med kontexten.
 
 Kontexten beskriver den situation där problemet brukar uppstå. För ett mönster för asynkron meddelandekommunikation kan kontexten exempelvis vara att två delar av ett system behöver utbyta arbete men inte bör vara tidsmässigt beroende av att båda är tillgängliga samtidigt.
 
@@ -68,7 +68,7 @@ Därefter behöver problemet formuleras. Problemet är inte ”vi behöver en me
 
 > Hur kan en producent lämna över arbete utan att behöva vänta på att konsumenten är tillgänglig och klar just nu?
 
-Sedan kommer **krafterna** – ibland kallade forces. Det är de drivkrafter och spänningar som gör problemet arkitekturellt intressant.
+Sedan kommer krafterna – ibland kallade forces. Det är de drivkrafter och spänningar som gör problemet arkitekturellt intressant.
 
 För asynkron kommunikation kan sådana krafter vara:
 
@@ -112,7 +112,7 @@ Sådant hör hemma längre ned i arkitekturmodellen – i plattformstjänster, t
 
 Men abstraktion får inte bli vaghet. Ett mönster som bara säger ”använd asynkron kommunikation när asynkron kommunikation är lämplig” ger inget beslutsstöd.
 
-Ett bra mönster behöver därför vara **teknikoberoende men mekanismtydligt**.
+Ett bra mönster behöver därför vara teknikoberoende men mekanismtydligt.
 
 Det ska vara möjligt att förstå:
 
@@ -156,7 +156,7 @@ Detta knyter direkt tillbaka till kvalitetsattributen i kapitel 4. Ett lösnings
 
 ## När mönstret passar – och när det inte passar
 
-En av de mest värdefulla delarna i ett mönster är avsnittet **När mönstret inte passar**.
+En av de mest värdefulla delarna i ett mönster är avsnittet När mönstret inte passar.
 
 Det tvingar författaren att formulera mönstrets gräns.
 
@@ -174,7 +174,7 @@ Det är däremot sannolikt onödigt när:
 - ett fåtal lokala UI-steg kan hanteras enklare i applikationen,
 - det inte finns något verkligt behov av persistent processtillstånd.
 
-Det negativa användningsområdet skyddar mot **pattern fever** – tendensen att använda ett känt mönster därför att det är känt.
+Det negativa användningsområdet skyddar mot pattern fever – tendensen att använda ett känt mönster därför att det är känt.
 
 Ett mönsterbibliotek blir därför starkare om varje mönster tydligt beskriver minst tre saker:
 
@@ -184,7 +184,7 @@ Ett mönsterbibliotek blir därför starkare om varje mönster tydligt beskriver
 
 ## Variationer är en del av mönstret
 
-Verkliga arkitekturer är sällan identiska. Därför behöver mönster kunna beskriva **variation points**.
+Verkliga arkitekturer är sällan identiska. Därför behöver mönster kunna beskriva variation points.
 
 Ta publicera/prenumerera som exempel. Grundidén är att producenter publicerar information utan att känna alla konsumenter. Men lösningen kan variera i exempelvis:
 
@@ -200,7 +200,7 @@ Om mönstret försöker bestämma alla dessa val slutar det vara ett mönster oc
 
 Om det inte nämner dem alls kan det bli för abstrakt för att hjälpa.
 
-En bra mönsterbeskrivning visar därför både **den stabila kärnan** och **de viktigaste variationspunkterna**.
+En bra mönsterbeskrivning visar därför både den stabila kärnan och de viktigaste variationspunkterna.
 
 ## Pattern language – mönster som hänger ihop
 
@@ -222,18 +222,18 @@ Observerbarhet för distribuerade tjänster
 
 Det betyder inte att mönstren bildar en strikt kedja. Poängen är att de adresserar olika problem i samma lösning.
 
-När mönster beskrivs med relationer till andra mönster börjar ett **pattern language** växa fram: ett språk där arkitekter kan resonera om återkommande strukturer och hur de kombineras.
+När mönster beskrivs med relationer till andra mönster börjar ett pattern language växa fram: ett språk där arkitekter kan resonera om återkommande strukturer och hur de kombineras.
 
 Ett sådant språk kan bland annat uttrycka relationer som:
 
-- **kompletterar** – två mönster löser olika delar av samma problem,
-- **förutsätter** – ett mönster kräver att en annan mekanism eller struktur redan finns,
-- **alternativ till** – två mönster hanterar samma kraft på olika sätt,
-- **förstärker** – kombinationen ökar en viss kvalitet,
-- **står i spänning med** – mönstren kan kombineras men skapar nya avvägningar,
-- **specialiserar** – ett mer specifikt mönster förfinar ett bredare.
+- kompletterar – två mönster löser olika delar av samma problem,
+- förutsätter – ett mönster kräver att en annan mekanism eller struktur redan finns,
+- alternativ till – två mönster hanterar samma kraft på olika sätt,
+- förstärker – kombinationen ökar en viss kvalitet,
+- står i spänning med – mönstren kan kombineras men skapar nya avvägningar,
+- specialiserar – ett mer specifikt mönster förfinar ett bredare.
 
-Detta är mer användbart än en lång alfabetisk lista över mönsternamn. Mönsterbibliotekets verkliga värde uppstår när läsaren kan förstå **landskapet mellan mönstren**.
+Detta är mer användbart än en lång alfabetisk lista över mönsternamn. Mönsterbibliotekets verkliga värde uppstår när läsaren kan förstå landskapet mellan mönstren.
 
 ## Mönster och anti-patterns
 
@@ -248,7 +248,7 @@ Exempel som återkommit tidigare i boken är:
 - backup som aldrig återställningstestas,
 - gemensam plattform som gradvis börjar äga verksamhetslogik.
 
-Anti-patterns är användbara därför att de synliggör **varför en till synes enkel lösning blir problematisk**.
+Anti-patterns är användbara därför att de synliggör varför en till synes enkel lösning blir problematisk.
 
 Men även här behövs försiktighet. En lösning som är problematisk i en kontext kan vara fullt rimlig i en annan. En delad databas mellan två små moduler i samma applikation är inte samma arkitekturproblem som en delad databas mellan två organisatoriskt och livscykelmässigt självständiga domäner.
 
@@ -260,7 +260,7 @@ Arkitekturprinciper och lösningsmönster kan låta lika eftersom båda återanv
 
 Men de fyller olika roller.
 
-En princip uttrycker **beslutsriktning**.
+En princip uttrycker beslutsriktning.
 
 > Behov före teknik.
 
@@ -268,7 +268,7 @@ En princip uttrycker **beslutsriktning**.
 
 > Bygg in driftbarhet från början.
 
-Ett mönster beskriver däremot **en återkommande lösningsstruktur för en viss typ av problem**.
+Ett mönster beskriver däremot en återkommande lösningsstruktur för en viss typ av problem.
 
 > Build once, promote many.
 
@@ -309,9 +309,9 @@ Ett mönster är inte något som konsumeras via ett beställningsgränssnitt.
 
 En plattformstjänst är däremot ett faktiskt erbjudande.
 
-Mönstret **Tjänsteidentitet** kan beskriva att workloads bör använda separata, maskinhanterade identiteter i stället för delade användarkonton eller hårdkodade credentials.
+Mönstret Tjänsteidentitet kan beskriva att workloads bör använda separata, maskinhanterade identiteter i stället för delade användarkonton eller hårdkodade credentials.
 
-En **Service Identity Platform** kan sedan tillhandahålla:
+En Service Identity Platform kan sedan tillhandahålla:
 
 - identitetsutfärdande,
 - credential rotation,
@@ -333,7 +333,7 @@ från:
 
 En referensarkitektur är normalt bredare än ett mönster.
 
-Den kombinerar flera mönster, förmågor, kvalitetskrav och variationspunkter för en **klass av lösningar**.
+Den kombinerar flera mönster, förmågor, kvalitetskrav och variationspunkter för en klass av lösningar.
 
 Ett internt handläggningsstöd kan exempelvis använda:
 
@@ -428,7 +428,7 @@ Vilka gemensamma IT-förmågor som huvudsakligen påverkas.
 
 Eventuella plattformstjänster eller standarder som kan hjälpa till att realisera mönstret, utan att blanda ihop dem med själva mönstret.
 
-Denna struktur gör mönsterdokumentet till en **beslutsartefakt**, inte bara en teknisk beskrivning.
+Denna struktur gör mönsterdokumentet till en beslutsartefakt, inte bara en teknisk beskrivning.
 
 ## Mönster behöver evidens från verkliga lösningar
 
@@ -452,7 +452,7 @@ Etablerad erfarenhet
 Omprövas, ersätts eller avvecklas
 ```
 
-Poängen är inte de exakta statusnamnen. Poängen är att mönsterbiblioteket ska **lära från verklig användning**.
+Poängen är inte de exakta statusnamnen. Poängen är att mönsterbiblioteket ska lära från verklig användning.
 
 Om återkommande avsteg visar att ett mönster är svårt att använda kan orsaken vara:
 
@@ -470,7 +470,7 @@ Bokens tredelade ansvarmodell hjälper även här.
 
 ### Gemensam arkitekturnivå
 
-Den gemensamma nivån bör främst äga **formen för mönsterarbetet**:
+Den gemensamma nivån bör främst äga formen för mönsterarbetet:
 
 - definitionen av vad som räknas som lösningsmönster,
 - gemensam dokumentationsstruktur,
@@ -510,7 +510,7 @@ Det senare är inte automatiskt ett avsteg som måste stoppas. Det kan vara vikt
 
 ## Mönster som gemensamt språk
 
-Ett av de största värdena med mönster är inte dokumentationen i sig utan **språket** den skapar.
+Ett av de största värdena med mönster är inte dokumentationen i sig utan språket den skapar.
 
 Om arkitekter, utvecklare och plattformsteam delar betydelsen av uttryck som:
 
@@ -533,7 +533,7 @@ Det är också därför mönsternamn måste användas konsekvent. Om samma namn 
 
 ## Mönster ska göra det lättare att säga nej
 
-Ett väl beskrivet mönster hjälper inte bara till att välja en lösning. Det hjälper också till att **avstå**.
+Ett väl beskrivet mönster hjälper inte bara till att välja en lösning. Det hjälper också till att avstå.
 
 Om ett team föreslår en cache kan mönsterbeskrivningen för Cache-aside tvinga fram frågor som:
 
@@ -552,7 +552,7 @@ Detta är en viktig egenskap hos bra arkitekturstöd: det ska inte bara göra vi
 
 När ett lösningsteam använder ett mönster behöver det fortfarande göra flera lokala val.
 
-Exempelvis kan mönstret **Build once, promote many** ge den stabila idén:
+Exempelvis kan mönstret Build once, promote many ge den stabila idén:
 
 ```text
 Källkod
@@ -654,16 +654,16 @@ I de kommande kapitlen fördjupar vi dessa mönster i grupper. Syftet är inte a
 
 När ett team överväger ett lösningsmönster kan följande ordning användas:
 
-1. **Formulera problemet utan mönsternamn.** Vad försöker vi faktiskt lösa?
-2. **Beskriv kontexten.** Vilka domäner, användare, systemgränser och tekniska begränsningar finns?
-3. **Identifiera krafterna.** Vilka kvalitetskrav och motstridiga behov driver beslutet?
-4. **Jämför realistiska alternativ.** Är mönstret ett av flera möjliga svar?
-5. **Kontrollera passform och antipassform.** Finns förutsättningarna som mönstret bygger på?
-6. **Analysera konsekvenserna.** Vilken komplexitet och vilka nya felmoder introduceras?
-7. **Identifiera variationerna.** Vad behöver anpassas lokalt?
-8. **Koppla till gemensamma erbjudanden och standarder.** Finns plattformsstöd eller guardrails?
-9. **Dokumentera varför mönstret används.** Mönsternamnet ersätter inte beslutets rationale.
-10. **Återför erfarenheten.** Om mönstret inte fungerar som väntat ska biblioteket förbättras.
+1. Formulera problemet utan mönsternamn. Vad försöker vi faktiskt lösa?
+2. Beskriv kontexten. Vilka domäner, användare, systemgränser och tekniska begränsningar finns?
+3. Identifiera krafterna. Vilka kvalitetskrav och motstridiga behov driver beslutet?
+4. Jämför realistiska alternativ. Är mönstret ett av flera möjliga svar?
+5. Kontrollera passform och antipassform. Finns förutsättningarna som mönstret bygger på?
+6. Analysera konsekvenserna. Vilken komplexitet och vilka nya felmoder introduceras?
+7. Identifiera variationerna. Vad behöver anpassas lokalt?
+8. Koppla till gemensamma erbjudanden och standarder. Finns plattformsstöd eller guardrails?
+9. Dokumentera varför mönstret används. Mönsternamnet ersätter inte beslutets rationale.
+10. Återför erfarenheten. Om mönstret inte fungerar som väntat ska biblioteket förbättras.
 
 Denna ordning gör det svårare att börja med formuleringen ”vi ska använda mönster X” och först därefter leta efter problemet.
 
@@ -682,10 +682,10 @@ Ett bra mönster beskriver:
 - viktiga variationer,
 - relationer till andra mönster, förmågor, plattformar och standarder.
 
-Mönster är inte produkter, inte standarder, inte plattformstjänster och inte kompletta referensarkitekturer. De är **återanvändbara beslutserfarenheter**.
+Mönster är inte produkter, inte standarder, inte plattformstjänster och inte kompletta referensarkitekturer. De är återanvändbara beslutserfarenheter.
 
 När de används rätt skapar de ett gemensamt språk och gör det möjligt för lösningsteam att börja med tidigare erfarenhet i stället för från ett tomt papper. När de används fel blir de recept, obligatoriska rutor i diagram eller nya former av central detaljstyrning.
 
-Det är därför mönsterbibliotekets viktigaste kvalitet inte är storleken. Det är hur väl varje mönster hjälper läsaren att förstå **när en viss struktur är ett bra svar – och när den inte är det**.
+Det är därför mönsterbibliotekets viktigaste kvalitet inte är storleken. Det är hur väl varje mönster hjälper läsaren att förstå när en viss struktur är ett bra svar – och när den inte är det.
 
-I nästa kapitel går vi från mönsterbegreppet till den första gruppen konkreta mönster: **integrations- och kommunikationsmönster**, där tidskoppling, leveransbeteende, idempotens, ordering och kontraktsutveckling blir centrala delar av analysen.
+I nästa kapitel går vi från mönsterbegreppet till den första gruppen konkreta mönster: integrations- och kommunikationsmönster, där tidskoppling, leveransbeteende, idempotens, ordering och kontraktsutveckling blir centrala delar av analysen.

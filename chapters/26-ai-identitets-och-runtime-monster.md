@@ -6,10 +6,10 @@ Det gör AI till ett bra exempel på varför lösningsmönster behöver kombiner
 
 I det här kapitlet fördjupar vi fyra mönster från bokens mönsterbibliotek:
 
-- **Retrieval-Augmented Generation (RAG)**,
-- **AI med mänsklig kontroll**,
-- **tjänsteidentitet**,
-- **containeriserad stateless tjänst**.
+- Retrieval-Augmented Generation (RAG),
+- AI med mänsklig kontroll,
+- tjänsteidentitet,
+- containeriserad stateless tjänst.
 
 Mönstren löser inte samma problem. RAG minskar kunskapsrisken genom att grunda generering i explicit informationsunderlag. Mänsklig kontroll begränsar konsekvensen av osäkra eller betydelsefulla AI-resultat. Tjänsteidentitet gör teknisk tillit och privilegier explicita. En containeriserad stateless tjänst gör exekveringen reproducerbar, skalbar och utbytbar utan att persistent verksamhetsstate binds till instansen.
 
@@ -45,7 +45,7 @@ Det är olika problem. Ett mönster som förbättrar ett område löser inte aut
 
 En användbar tumregel är därför:
 
-> **Separera kunskapsrisk, beslutskonsekvens, tillit och exekvering innan tekniken väljs.**
+> Separera kunskapsrisk, beslutskonsekvens, tillit och exekvering innan tekniken väljs.
 
 Det minskar risken att en AI-plattform får ett otydligt helhetsansvar som egentligen borde vara fördelat mellan information, identitet, process, beslut och runtime.
 
@@ -67,7 +67,7 @@ Språkmodell
 Svar + källreferenser
 ```
 
-Det centrala är inte att systemet använder embeddings eller en vektordatabas. Det arkitektoniska mönstret är kombinationen av **informationssökning och generering**.
+Det centrala är inte att systemet använder embeddings eller en vektordatabas. Det arkitektoniska mönstret är kombinationen av informationssökning och generering.
 
 Modellen behöver alltså inte bära hela kunskapen i sina parametrar. Den får i stället ett explicit underlag som en del av kontexten.
 
@@ -110,7 +110,7 @@ Därför behöver lösningen kunna svara på frågor som:
 - Hur återskapas indexet?
 - Hur verifieras att rätt dokument faktiskt hittas?
 
-RAG är alltså lika mycket ett **informationslivscykelmönster** som ett AI-mönster.
+RAG är alltså lika mycket ett informationslivscykelmönster som ett AI-mönster.
 
 ### Retrieval och generering har separata felgränser
 
@@ -127,10 +127,10 @@ Det innebär att kvalitet inte kan mätas med ett enda mått på slutsvaret.
 
 Ett välkonstruerat RAG-system behöver kunna utvärdera åtminstone:
 
-- **retrievalkvalitet** – hittar systemet relevant underlag?
-- **grundning** – stöds svaret av det hämtade underlaget?
-- **svarskvalitet** – är svaret användbart för den avsedda uppgiften?
-- **källspårbarhet** – kan användaren eller granskaren kontrollera underlaget?
+- retrievalkvalitet – hittar systemet relevant underlag?
+- grundning – stöds svaret av det hämtade underlaget?
+- svarskvalitet – är svaret användbart för den avsedda uppgiften?
+- källspårbarhet – kan användaren eller granskaren kontrollera underlaget?
 
 ### Behörighet måste följa med in i retrieval
 
@@ -148,7 +148,7 @@ Det kan hanteras på olika sätt, exempelvis genom:
 
 Det viktiga är principen:
 
-> **AI-lagret får inte göra en informationsmängd mer åtkomlig än den var i källsystemet.**
+> AI-lagret får inte göra en informationsmängd mer åtkomlig än den var i källsystemet.
 
 Här möts RAG och tjänsteidentitet. AI-tjänsten behöver ofta en egen teknisk identitet för att nå källor och söktjänster, men den identiteten får inte ge användaren indirekt tillgång till allt som tjänsten tekniskt kan läsa.
 
@@ -170,7 +170,7 @@ beslut eller åtgärd
 
 Det är frestande att beskriva detta som att ”en människa tittar på svaret”. Men då blir mönstret för vagt för att ge verkligt skydd.
 
-Mänsklig kontroll behöver ha en **definierad funktion**.
+Mänsklig kontroll behöver ha en definierad funktion.
 
 Granskaren måste exempelvis kunna:
 
@@ -204,7 +204,7 @@ Anta att AI används för att:
 
 Konsekvensen stiger inte nödvändigtvis linjärt med hur ”avancerad” modellen är. Ett enkelt klassificeringssystem kan få hög konsekvens om dess resultat automatiskt styr vem som får en förmån eller vilken incident som ignoreras.
 
-Mänsklig kontroll bör därför kopplas till **åtgärdens betydelse och återställbarhet**, inte till en generell regel om att ”AI alltid ska granskas”.
+Mänsklig kontroll bör därför kopplas till åtgärdens betydelse och återställbarhet, inte till en generell regel om att ”AI alltid ska granskas”.
 
 ### Mänsklig kontroll är ett processmönster också
 
@@ -221,7 +221,7 @@ Då behöver lösningen hantera exempelvis:
 - om förslaget ändrades,
 - vilket slutligt beslut som togs.
 
-Det betyder att mönstret ofta behöver kombineras med **Human workflow** från kapitel 25.
+Det betyder att mönstret ofta behöver kombineras med Human workflow från kapitel 25.
 
 AI med mänsklig kontroll är alltså inte bara en UI-funktion. Vid betydelsefulla processer kan det vara en beständig och spårbar del av processarkitekturen.
 
@@ -275,7 +275,7 @@ Det är möjligt att göra identiteter för grova eller för detaljerade.
 
 En enda identitet för en hel plattform ger enkel administration men mycket stora privilegier. En separat identitet för varje kortlivad process kan ge onödig komplexitet om alla instanser har samma ansvar.
 
-Identitetsgränsen bör i stället följa den **säkerhets- och ansvarsgräns som behöver kunna styras och spåras separat**.
+Identitetsgränsen bör i stället följa den säkerhets- och ansvarsgräns som behöver kunna styras och spåras separat.
 
 Exempelvis kan två workloads som körs i samma containerplattform behöva olika identiteter därför att:
 
@@ -306,8 +306,8 @@ Anta att en AI-tjänst anropas av en handläggare och därefter hämtar informat
 
 Två identitetsfrågor finns samtidigt:
 
-1. **Vilken tjänst gör anropet?**
-2. **För vems räkning gör tjänsten det?**
+1. Vilken tjänst gör anropet?
+2. För vems räkning gör tjänsten det?
 
 De får inte blandas ihop.
 
@@ -357,7 +357,7 @@ Nästan alla verksamhetssystem har tillstånd. Det kan finnas i:
 - cache,
 - sessionslager.
 
-Stateless-mönstret betyder att **den enskilda exekveringsinstansen inte är den enda ägaren till persistent tillstånd som behövs för att systemet ska fortsätta fungera**.
+Stateless-mönstret betyder att den enskilda exekveringsinstansen inte är den enda ägaren till persistent tillstånd som behövs för att systemet ska fortsätta fungera.
 
 Det gör instansen utbytbar.
 
@@ -398,9 +398,9 @@ Samtidigt kan det vara farligt att göra liveness beroende av alla externa syste
 
 Det behövs därför en genomtänkt skillnad mellan exempelvis:
 
-- **liveness** – processen kan fortsätta exekvera,
-- **readiness** – instansen är redo att ta trafik,
-- **tjänstefunktion** – hela beroendekedjan kan leverera den avsedda funktionen.
+- liveness – processen kan fortsätta exekvera,
+- readiness – instansen är redo att ta trafik,
+- tjänstefunktion – hela beroendekedjan kan leverera den avsedda funktionen.
 
 Den sista hör ofta hemma i monitorering och syntetiska tester snarare än i containerplattformens omstartslogik.
 
@@ -441,7 +441,7 @@ Varje mönster svarar på en separat fråga:
 | Tjänsteidentitet | Vilken teknisk aktör får åtkomst till vad? |
 | Containeriserad stateless tjänst | Hur gör vi exekveringsinstansen reproducerbar och utbytbar? |
 
-Det är en viktig arkitekturell egenskap: **kombinationen fungerar eftersom mönstren delar upp ansvar, inte därför att de tillsammans bildar en viss produktstack.**
+Det är en viktig arkitekturell egenskap: kombinationen fungerar eftersom mönstren delar upp ansvar, inte därför att de tillsammans bildar en viss produktstack.
 
 ## Behörighetskedjan är viktigare än modellens API-nyckel
 
@@ -474,7 +474,7 @@ För varje steg behöver arkitekturen förstå:
 - vad som loggas,
 - vad som händer när behörigheter ändras.
 
-En agentliknande AI-lösning med bred tjänsteidentitet kan annars bli en **privilegieförstärkare**. Användaren ställer en fråga, men AI-tjänsten utför anrop med en betydligt bredare teknisk behörighet än användaren själv har.
+En agentliknande AI-lösning med bred tjänsteidentitet kan annars bli en privilegieförstärkare. Användaren ställer en fråga, men AI-tjänsten utför anrop med en betydligt bredare teknisk behörighet än användaren själv har.
 
 Det är därför farligt att utgå från:
 
@@ -572,7 +572,7 @@ Eller:
 
 Då behövs operativ observerbarhet som skiljer teknisk processhälsa från faktisk tjänstefunktion.
 
-Det illustrerar varför mönsterkombinationer måste analyseras genom **felgränser**, inte bara genom happy-path-diagram.
+Det illustrerar varför mönsterkombinationer måste analyseras genom felgränser, inte bara genom happy-path-diagram.
 
 ## Quality gates före autonomi
 
@@ -597,7 +597,7 @@ Innan ett högre steg tillåts bör lösningen kunna visa att relevanta kvalitet
 - hantering av modell- och promptförändringar,
 - tydliga stoppmekanismer.
 
-Det är inte en universell mognadsmodell. Poängen är att **autonomi är ett arkitekturbeslut med ökande konsekvens**, inte en funktion som bör slås på enbart därför att tekniken stödjer den.
+Det är inte en universell mognadsmodell. Poängen är att autonomi är ett arkitekturbeslut med ökande konsekvens, inte en funktion som bör slås på enbart därför att tekniken stödjer den.
 
 ## Plattformar ska stödja mönstren – inte blanda ihop dem
 
@@ -763,17 +763,17 @@ Automatisera mer först när kvalitetsmått, privilegier, felhantering och åter
 
 ## Det viktigaste att bära med sig
 
-AI-, identitets- och runtime-mönster blir särskilt värdefulla när de hjälper oss att **begränsa olika typer av risk var för sig**.
+AI-, identitets- och runtime-mönster blir särskilt värdefulla när de hjälper oss att begränsa olika typer av risk var för sig.
 
 RAG gör kunskapsunderlaget explicit och uppdateringsbart, men skapar inte en ny sanningskälla. AI med mänsklig kontroll kan begränsa konsekvensen av osäker inferens, men bara om kontrollen är verklig och placerad före den betydelsefulla åtgärden. Tjänsteidentitet gör tekniska aktörer, privilegier och livscykler explicita. En containeriserad stateless tjänst gör exekveringsinstanser reproducerbara och utbytbara utan att persistent verksamhetsstate binds till dem.
 
 Kombinationen kan sammanfattas med fyra frågor:
 
-1. **Vilket underlag får AI:n använda?**
-2. **Vilken konsekvens får AI:n orsaka utan mänsklig kontroll?**
-3. **Vilken identitet och vilka privilegier används för varje anrop?**
-4. **Vilket tillstånd måste överleva den enskilda exekveringsinstansen?**
+1. Vilket underlag får AI:n använda?
+2. Vilken konsekvens får AI:n orsaka utan mänsklig kontroll?
+3. Vilken identitet och vilka privilegier används för varje anrop?
+4. Vilket tillstånd måste överleva den enskilda exekveringsinstansen?
 
 När svaren är tydliga kan AI-lösningen förändras – modell, index, runtime och tjänster kan bytas – utan att ansvar och tillit behöver uppfinnas på nytt varje gång.
 
-I nästa kapitel flyttar vi fokus från AI och runtime till den operativa livscykeln. Då fördjupar vi mönstren **build once, promote many**, **observerbarhet för distribuerade tjänster** och **backup med verifierad återställning** – tre mönster som gör leverans och drift till en del av arkitekturen redan innan produktionssättning.
+I nästa kapitel flyttar vi fokus från AI och runtime till den operativa livscykeln. Då fördjupar vi mönstren build once, promote many, observerbarhet för distribuerade tjänster och backup med verifierad återställning – tre mönster som gör leverans och drift till en del av arkitekturen redan innan produktionssättning.

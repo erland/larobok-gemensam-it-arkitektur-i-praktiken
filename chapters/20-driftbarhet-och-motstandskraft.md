@@ -2,15 +2,15 @@
 
 Ett system kan vara korrekt byggt, korrekt driftsatt och ändå vara svårt att hålla fungerande över tid. Det kan sakna tillräcklig telemetri för att förstå vad som händer, ha larm som ingen kan agera på, innehålla beroenden som gör att små fel sprider sig eller ha säkerhetskopior som aldrig har provats i en verklig återställning.
 
-Driftbarhet och motståndskraft handlar därför inte bara om att ”ha övervakning” eller ”ta backup”. Förmågan handlar om att göra system **begripliga under drift, möjliga att återställa och konstruerade så att fel kan hanteras utan att konsekvenserna blir större än nödvändigt**.
+Driftbarhet och motståndskraft handlar därför inte bara om att ”ha övervakning” eller ”ta backup”. Förmågan handlar om att göra system begripliga under drift, möjliga att återställa och konstruerade så att fel kan hanteras utan att konsekvenserna blir större än nödvändigt.
 
 Kärnfrågan i kapitlet är:
 
-> **Hur skapar en organisation gemensamma mekanismer för att förstå, upptäcka, begränsa och återhämta sig från fel – på en nivå som motsvarar verksamhetens faktiska behov?**
+> Hur skapar en organisation gemensamma mekanismer för att förstå, upptäcka, begränsa och återhämta sig från fel – på en nivå som motsvarar verksamhetens faktiska behov?
 
 Kapitel 4 beskrev hur tillgänglighet, kontinuitet, återställningstid och andra kvalitetskrav härleds från verksamhetskonsekvenser. Det här kapitlet tar nästa steg: vilka tekniska och operativa förmågor behövs för att realisera och verifiera sådana krav?
 
-Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer behandlades i kapitel 19. Bygg, test, release och driftsättning behandlas i kapitel 21. Fokus här ligger på **observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling**.
+Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer behandlades i kapitel 19. Bygg, test, release och driftsättning behandlas i kapitel 21. Fokus här ligger på observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling.
 
 ## Driftbarhet är en egenskap hos hela systemet
 
@@ -32,7 +32,7 @@ Det innebär att två system med samma observerbarhetsplattform kan ha helt olik
 
 Den gemensamma plattformen kan ge verktyg och standarder. Den kan inte ensam skapa driftbarheten.
 
-Detta är samma ansvarsmönster som återkommer genom boken: **gemensamma mekanismer reducerar återkommande tekniskt arbete, men lösningen måste fortfarande utformas så att mekanismerna kan ge värde**.
+Detta är samma ansvarsmönster som återkommer genom boken: gemensamma mekanismer reducerar återkommande tekniskt arbete, men lösningen måste fortfarande utformas så att mekanismerna kan ge värde.
 
 ## Utgå från konsekvens – inte maximal robusthet
 
@@ -61,17 +61,17 @@ Driftbarhet behöver därför härledas från frågor som:
 - Hur snabbt behöver orsaken kunna diagnostiseras?
 - Hur dyrt är det att bygga och upprätthålla den önskade robusthetsnivån?
 
-Det leder till **kvalitetsprofiler** snarare än ett universellt maximalkrav.
+Det leder till kvalitetsprofiler snarare än ett universellt maximalkrav.
 
 En gemensam plattform kan exempelvis erbjuda flera profiler för backup, retention, redundans eller larmning. Konsumenten väljer inte profil efter tycke, utan utifrån de kvalitetsbehov som härletts tidigare.
 
 ## Observerbarhet (*observability*) är förmågan att förstå systemets tillstånd
 
-Begreppet *observability*, här **observerbarhet**, används ofta som synonym till övervakning, men det är mer användbart att skilja dem åt.
+Begreppet *observability*, här observerbarhet, används ofta som synonym till övervakning, men det är mer användbart att skilja dem åt.
 
-**Monitorering** handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
+Monitorering handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
 
-**Observerbarhet** handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.[K1]
+Observerbarhet handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.[K1]
 
 Skillnaden blir tydlig i en incident.
 
@@ -89,7 +89,7 @@ Observerbarhet behöver dessutom hjälpa oss svara på:
 - Uppstår felet i samma del av ett distribuerat flöde?
 - Är systemet tekniskt levande men verksamhetsmässigt oanvändbart?
 
-En gemensam observerbarhetsförmåga behöver därför mer än en central loggdatabas. Den behöver en sammanhängande modell för **loggar, mätvärden, spår, korrelation, instrumentpaneler, larm och åtkomst till telemetrin**.
+En gemensam observerbarhetsförmåga behöver därför mer än en central loggdatabas. Den behöver en sammanhängande modell för loggar, mätvärden, spår, korrelation, instrumentpaneler, larm och åtkomst till telemetrin.
 
 ## Loggar berättar vad som hände
 
@@ -110,7 +110,7 @@ Det innebär inte att varje intern variabel ska loggas. Tvärtom är för mycket
 
 En viktig princip är därför:
 
-> **Logga det som behövs för drift, felsökning och relevant spårbarhet – inte allt som råkar vara tekniskt möjligt att logga.**
+> Logga det som behövs för drift, felsökning och relevant spårbarhet – inte allt som råkar vara tekniskt möjligt att logga.
 
 Credentials, secrets och onödiga person- eller skyddsvärda uppgifter ska inte användas som diagnostiskt material. Retention för loggar behöver också styras medvetet. ”Spara allt för säkerhets skull” är sällan en hållbar informationsstrategi.
 
@@ -130,7 +130,7 @@ Exempel på tekniska mätvärden är:
 
 Men endast tekniska resursmått är inte alltid tillräckliga.
 
-Ett system kan ha låg CPU-belastning och samtidigt vara helt oanvändbart för verksamheten. Därför behöver lösningen ibland även **verksamhetsnära operativa signaler**, exempelvis:
+Ett system kan ha låg CPU-belastning och samtidigt vara helt oanvändbart för verksamheten. Därför behöver lösningen ibland även verksamhetsnära operativa signaler, exempelvis:
 
 - antal ärenden som fastnat i ett visst steg,
 - ålder på äldsta obehandlade meddelande,
@@ -176,11 +176,11 @@ Ett av de vanligaste misstagen i driftövervakning är att kontrollera att proce
 
 Det finns flera nivåer av hälsa:
 
-1. **Processhälsa** – processen eller containern kör.
-2. **Instanshälsa** – instansen kan ta emot relevant arbete.
-3. **Beroendehälsa** – nödvändiga beroenden fungerar tillräckligt väl.
-4. **Tjänstehälsa** – den externa tjänsten levererar sitt kontrakt.
-5. **Verksamhetsmässig funktion** – det viktiga användar- eller verksamhetsflödet fungerar.
+1. Processhälsa – processen eller containern kör.
+2. Instanshälsa – instansen kan ta emot relevant arbete.
+3. Beroendehälsa – nödvändiga beroenden fungerar tillräckligt väl.
+4. Tjänstehälsa – den externa tjänsten levererar sitt kontrakt.
+5. Verksamhetsmässig funktion – det viktiga användar- eller verksamhetsflödet fungerar.
 
 Dessa nivåer ska inte alltid kopplas ihop mekaniskt.
 
@@ -194,11 +194,11 @@ Automatisering gör felhantering snabbare – men den förstorar också konsekve
 
 För att driva en tjänst behöver man kunna mäta den egenskap som är viktig.
 
-En **Service Level Indicator, SLI**, är ett mätetal som representerar en relevant aspekt av tjänstens beteende. Det kan exempelvis vara andelen lyckade anrop eller svarstid för ett definierat flöde.
+En Service Level Indicator, SLI, är ett mätetal som representerar en relevant aspekt av tjänstens beteende. Det kan exempelvis vara andelen lyckade anrop eller svarstid för ett definierat flöde.
 
-Ett **Service Level Objective, SLO**, uttrycker den önskade nivån för indikatorn under en viss period.[K2]
+Ett Service Level Objective, SLO, uttrycker den önskade nivån för indikatorn under en viss period.[K2]
 
-Ett **Service Level Agreement, SLA**, är däremot ett avtal eller en överenskommelse där servicenivåer kan vara kopplade till formella åtaganden och konsekvenser.
+Ett Service Level Agreement, SLA, är däremot ett avtal eller en överenskommelse där servicenivåer kan vara kopplade till formella åtaganden och konsekvenser.
 
 Det är därför olämpligt att använda orden som synonymer.
 
@@ -241,7 +241,7 @@ Om ett larm återkommande ignoreras finns i grunden tre möjligheter:
 
 Att lägga ytterligare larm ovanpå problemet förbättrar inte driftbarheten.
 
-**Larmtrötthet** är därför inte bara ett användargränssnittsproblem. Det är ett tecken på att organisationens operativa signalmodell behöver förbättras.
+Larmtrötthet är därför inte bara ett användargränssnittsproblem. Det är ett tecken på att organisationens operativa signalmodell behöver förbättras.
 
 ## instrumentpaneler är hypoteser om vad som är viktigt
 
@@ -341,7 +341,7 @@ Om tusentals klienter omedelbart skickar om misslyckade anrop mot en redan över
 
 Ett permanent valideringsfel ska normalt inte försöka skickas om på samma sätt som ett tillfälligt nätverksfel.
 
-Detta knyter an till kapitel 17: leveranssemantik och kommunikationsmönster är en del av motståndskraften, men driftbarhetsförmågan behöver ge mekanismer för att **se när återförsök sker, när de misslyckas och när de skapar belastning**.
+Detta knyter an till kapitel 17: leveranssemantik och kommunikationsmönster är en del av motståndskraften, men driftbarhetsförmågan behöver ge mekanismer för att se när återförsök sker, när de misslyckas och när de skapar belastning.
 
 ## Automatisk återhämtning är värdefull när beteendet är säkert
 
@@ -355,7 +355,7 @@ En datakomponent med oklar replikeringsstatus kan kräva betydligt försiktigare
 
 Principen är därför inte ”automatisera all recovery”, utan:
 
-> **Automatisera återkommande återhämtning när tillståndet kan identifieras pålitligt och åtgärden har förutsägbara konsekvenser.**
+> Automatisera återkommande återhämtning när tillståndet kan identifieras pålitligt och åtgärden har förutsägbara konsekvenser.
 
 Automation ska dessutom vara observerbar. Om en plattform återstartar samma instans hundra gånger utan att någon reagerar har den inte löst problemet; den har bara dolt symptomet.
 
@@ -373,7 +373,7 @@ Den bevisar inte att:
 - återställningen ryms inom önskad tid,
 - den återställda tjänsten faktiskt fungerar.
 
-Därför är **verifierad restore** den viktigare förmågan.
+Därför är verifierad restore den viktigare förmågan.
 
 En återställningsstrategi behöver börja med att identifiera vad som faktiskt måste kunna återskapas. Det kan omfatta mer än databasen:
 
@@ -407,7 +407,7 @@ Det är två olika mekanismer som svarar på olika felbilder.
 
 ## RPO och RTO behöver kopplas till verklig recovery
 
-Kapitel 4 introducerade **Recovery Point Objective, RPO**, och **Recovery Time Objective, RTO** som sätt att uttrycka återställningsbehov.[K3]
+Kapitel 4 introducerade Recovery Point Objective, RPO, och Recovery Time Objective, RTO som sätt att uttrycka återställningsbehov.[K3]
 
 I driftbarhetsförmågan blir frågan om den tekniska lösningen faktiskt kan möta dem.
 
@@ -531,7 +531,7 @@ De kan visa sig som:
 
 Kapacitetsövervakning bör därför kopplas till tjänstens faktiska beteende, inte bara till enskilda servermått.
 
-Det är också viktigt att skilja **kapacitet** från **skalbarhet**.
+Det är också viktigt att skilja kapacitet från skalbarhet.
 
 Skalbarhet beskriver hur lösningen kan förändra kapaciteten när belastningen ändras. Driftbarhet behöver kunna upptäcka när kapaciteten inte längre är tillräcklig och om skalningsmekanismen faktiskt fungerar.
 
@@ -625,7 +625,7 @@ Men en standard bör inte automatiskt föreskriva samma detaljnivå för alla sy
 
 Full distributed tracing kan vara rimligt för en komplex integrationskedja och överdrivet för en enkel intern batchtjänst. En sekundär recoverymiljö kan vara motiverad för ett kritiskt verksamhetssystem och ekonomiskt orimlig för en stödtjänst med lågt kontinuitetskrav.
 
-Standarden bör därför ange **miniminivåer, gemensamma kontrakt och valbara kvalitetsprofiler**, snarare än att göra maximal robusthet obligatorisk överallt.
+Standarden bör därför ange miniminivåer, gemensamma kontrakt och valbara kvalitetsprofiler, snarare än att göra maximal robusthet obligatorisk överallt.
 
 ## Ansvar på tre nivåer
 
@@ -716,18 +716,18 @@ Konsumenten producerar ingen meningsfull telemetri eftersom den antar att observ
 
 När driftbarhet och motståndskraft ska utformas för ett IT-stöd kan följande ordning användas:
 
-1. **Utgå från konsekvensen.** Återanvänd kvalitetskraven från kapitel 4.
-2. **Identifiera kritiska användar- och verksamhetsflöden.** Vad måste faktiskt fungera?
-3. **Kartlägg beroenden och felmoder.** Vad kan fallera och hur sprids felet?
-4. **Definiera observerbara signaler.** Vilka loggar, mätvärden, spår och verksamhetsnära indikatorer behövs?
-5. **Definiera SLI och relevanta målnivåer.** Hur vet vi om tjänsten håller önskad kvalitet?
-6. **Utforma larm.** Vilka tillstånd kräver mänsklig eller automatisk åtgärd?
-7. **Planera felisolering och återhämtning.** Timeout, återförsök, redundans, failover och andra mekanismer där behovet motiverar dem.
-8. **Identifiera vad som måste kunna återställas.** Data, konfiguration och övriga beroenden.
-9. **Välj backup- och recoveryprofil.** Knyt den till RPO/RTO eller motsvarande behov.
-10. **Dokumentera operativa procedurer.** driftinstruktioner, mandat och eskalering.
-11. **Verifiera återställningen.** Testa restore och DR i proportion till konsekvensen.
-12. **Lär från drift.** Använd incidenter, kapacitetsdata och återkommande manuellt arbete som återkoppling till arkitekturen.
+1. Utgå från konsekvensen. Återanvänd kvalitetskraven från kapitel 4.
+2. Identifiera kritiska användar- och verksamhetsflöden. Vad måste faktiskt fungera?
+3. Kartlägg beroenden och felmoder. Vad kan fallera och hur sprids felet?
+4. Definiera observerbara signaler. Vilka loggar, mätvärden, spår och verksamhetsnära indikatorer behövs?
+5. Definiera SLI och relevanta målnivåer. Hur vet vi om tjänsten håller önskad kvalitet?
+6. Utforma larm. Vilka tillstånd kräver mänsklig eller automatisk åtgärd?
+7. Planera felisolering och återhämtning. Timeout, återförsök, redundans, failover och andra mekanismer där behovet motiverar dem.
+8. Identifiera vad som måste kunna återställas. Data, konfiguration och övriga beroenden.
+9. Välj backup- och recoveryprofil. Knyt den till RPO/RTO eller motsvarande behov.
+10. Dokumentera operativa procedurer. driftinstruktioner, mandat och eskalering.
+11. Verifiera återställningen. Testa restore och DR i proportion till konsekvensen.
+12. Lär från drift. Använd incidenter, kapacitetsdata och återkommande manuellt arbete som återkoppling till arkitekturen.
 
 Ordningen gör driftbarheten till en del av lösningsdesignen i stället för ett övervakningsprojekt som startar strax före produktionssättning.
 
@@ -748,7 +748,7 @@ Därför behöver organisationen kunna svara på ytterligare frågor:
 
 Det är nästa förmåga.
 
-I **kapitel 21 – Programvaruutveckling och leverans** flyttas fokus från att hålla en körande tjänst begriplig och återställningsbar till den gemensamma vägen från kod till säker och reproducerbar produktion.
+I kapitel 21 – Programvaruutveckling och leverans flyttas fokus från att hålla en körande tjänst begriplig och återställningsbar till den gemensamma vägen från kod till säker och reproducerbar produktion.
 
 ## Källor och vidare läsning
 

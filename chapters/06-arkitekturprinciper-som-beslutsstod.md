@@ -6,7 +6,7 @@ Ska ett team använda ett gemensamt plattformserbjudande eller bygga en egen lö
 
 Om varje team behöver börja om från noll i sådana frågor blir beslutsfattandet dyrt och inkonsekvent. Samtidigt är det sällan klokt att ersätta bedömning med detaljerade regler för varje tänkbar situation.
 
-Här fyller **arkitekturprinciper** en viktig funktion.
+Här fyller arkitekturprinciper en viktig funktion.
 
 En arkitekturprincip uttrycker en relativt stabil beslutsriktning. Den säger inte exakt vilken produkt eller konfiguration som ska väljas, men den gör organisationens viktigaste utgångspunkter tydliga innan det konkreta beslutet behöver fattas.
 
@@ -152,7 +152,7 @@ En organisation investerar ofta betydande resurser i gemensamma plattformar, tj�
 
 Det innebär inte att det gemensamma alltid ska användas.
 
-Den avgörande delen av principen är **när de möter behovet**.
+Den avgörande delen av principen är när de möter behovet.
 
 Detta skapar en balanserad grundregel:
 
@@ -160,9 +160,9 @@ Detta skapar en balanserad grundregel:
 
 Principen hjälper till att undvika två motsatta problem.
 
-Det ena är **lokal uppfinningslust**: varje team väljer egen teknik även när ett gemensamt erbjudande löser samma problem tillräckligt väl.
+Det ena är lokal uppfinningslust: varje team väljer egen teknik även när ett gemensamt erbjudande löser samma problem tillräckligt väl.
 
-Det andra är **central tvångsstandardisering**: alla tvingas in i samma lösning även när viktiga behov eller kvalitetskrav faktiskt skiljer sig.
+Det andra är central tvångsstandardisering: alla tvingas in i samma lösning även när viktiga behov eller kvalitetskrav faktiskt skiljer sig.
 
 Det är först när standarderbjudandets tjänstekontrakt, egenskaper och begränsningar är synliga som principen kan användas på ett seriöst sätt. Därför leder den senare naturligt vidare till bokens delar om plattformar som produkter och standarder som guardrails.
 
@@ -199,7 +199,7 @@ En gemensam tjänst som bara beskrivs med tekniknamn lämnar ofta många frågor
 - Vem ansvarar för uppgraderingar?
 - Vad händer när tjänsten förändras eller avvecklas?
 
-Principen gör därför **tjänstekontrakt och ansvarssnitt** till en arkitekturfråga, inte bara en organisatorisk detalj.
+Principen gör därför tjänstekontrakt och ansvarssnitt till en arkitekturfråga, inte bara en organisatorisk detalj.
 
 Den underliggande tekniska komplexiteten bör abstraheras där det är ändamålsenligt, men abstraktionen får inte dölja ansvar.
 
@@ -348,7 +348,7 @@ Om det gemensamma erbjudandet klarar volym, latens, leveransgarantier och driftk
 
 Om det inte gör det kan samma principuppsättning stödja ett avsteg. Behovet och kvalitetskraven väger då tyngre än återanvändning för återanvändningens skull.
 
-Detta är viktigt: **principerna ska göra resonemanget mer konsekvent, inte eliminera avvägningar**.
+Detta är viktigt: principerna ska göra resonemanget mer konsekvent, inte eliminera avvägningar.
 
 Kapitel 5 behövs fortfarande. En principuppsättning är inte en beslutsmotor som automatiskt producerar rätt svar.
 
@@ -360,7 +360,7 @@ Det kan vara praktiskt i vissa mycket specifika sammanhang, men en generell rang
 
 Behov före teknik är exempelvis grundläggande, men det betyder inte att kostnad, regulatoriska begränsningar eller befintliga strategiska investeringar saknar betydelse. Säkerhet som inbyggd kvalitet är viktig, men den konkreta säkerhetsnivån måste fortfarande stå i proportion till information, hot och konsekvens.
 
-Det är därför ofta bättre att se principerna som **gemensamma utgångspunkter med tydlig motivering**, inte som en mekanisk prioriteringslista.
+Det är därför ofta bättre att se principerna som gemensamma utgångspunkter med tydlig motivering, inte som en mekanisk prioriteringslista.
 
 När två principer drar åt olika håll behöver det konkreta beslutet återgå till:
 
@@ -522,7 +522,7 @@ En princip bör kunna omprövas när:
 - två principer skapar systematiska konflikter,
 - formuleringen är så vag att olika grupper tolkar den helt olika.
 
-Det är dock viktigt att skilja på att **principen** behöver ändras och att **realiseringen** förändras.
+Det är dock viktigt att skilja på att principen behöver ändras och att realiseringen förändras.
 
 När en produkt går ur support är det normalt produktstandarden eller plattformens tekniska realisering som ska ändras, inte principen om exempelvis återanvändning eller livscykelhantering.
 
@@ -532,13 +532,13 @@ Det är ännu ett exempel på varför separationen mellan stabil arkitektur och 
 
 Innan en organisation beslutar eller reviderar sina principer kan varje princip prövas med några enkla frågor:
 
-1. **Vilket återkommande problem eller vilken strategisk riktning adresserar principen?**
-2. **Vilken typ av beslut ska den påverka?**
-3. **Kan två rimliga alternativ faktiskt bedömas olika med hjälp av principen?**
-4. **Är formuleringen tillräckligt teknikoberoende för att överleva flera realiseringar?**
-5. **Finns innebörden redan bättre uttryckt som standard, policy eller krav?**
-6. **Vilka konsekvenser får principen för gemensam nivå, förmågeområden och lösningsteam?**
-7. **Hur märker vi att principen inte längre fungerar?**
+1. Vilket återkommande problem eller vilken strategisk riktning adresserar principen?
+2. Vilken typ av beslut ska den påverka?
+3. Kan två rimliga alternativ faktiskt bedömas olika med hjälp av principen?
+4. Är formuleringen tillräckligt teknikoberoende för att överleva flera realiseringar?
+5. Finns innebörden redan bättre uttryckt som standard, policy eller krav?
+6. Vilka konsekvenser får principen för gemensam nivå, förmågeområden och lösningsteam?
+7. Hur märker vi att principen inte längre fungerar?
 
 Om svaren är otydliga är principen sannolikt inte färdig.
 
@@ -562,7 +562,7 @@ När en ny plattform föreslås kan man fråga:
 
 När observerbarhet planeras sent kan någon påminna om att driftbarhet ska byggas in från början.
 
-Principerna blir då inte skyltar på väggen utan **frågor organisationen har lärt sig att ställa återkommande**.
+Principerna blir då inte skyltar på väggen utan frågor organisationen har lärt sig att ställa återkommande.
 
 Det är en mycket starkare form av arkitekturstyrning än att bara kontrollera efterlevnad i slutet av ett projekt.
 
@@ -581,4 +581,4 @@ Nästa fråga är praktisk:
 
 > I vilken ordning etablerar man allt detta i en verklig organisation, och vem bör egentligen ansvara för vad?
 
-Det är ämnet för nästa kapitel. Där introduceras bokens tredelning mellan **gemensam arkitekturnivå**, **förmågeområde** och **lösnings-/produktnivå**, tillsammans med en iterativ etableringsordning för den gemensamma IT-arkitekturen.
+Det är ämnet för nästa kapitel. Där introduceras bokens tredelning mellan gemensam arkitekturnivå, förmågeområde och lösnings-/produktnivå, tillsammans med en iterativ etableringsordning för den gemensamma IT-arkitekturen.

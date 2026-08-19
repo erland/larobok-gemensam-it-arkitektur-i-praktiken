@@ -4,31 +4,31 @@ Samma information kan användas på helt olika sätt. En handläggare kan vilja 
 
 Alla dessa behov använder data, men de är inte samma arkitekturproblem.
 
-Det är därför missvisande att samla allt som kallas ”data och AI” i en enda teknisk lösning. Fulltextsökning, rapportering, statistisk analys, maskininlärning och generativ AI har olika syften, olika kvalitetsmått, olika risker och olika sätt att förvaltas. En gemensam förmåga för **Analys, sökning och AI** behöver kunna stödja flera sådana arbetssätt utan att sudda ut deras skillnader.
+Det är därför missvisande att samla allt som kallas ”data och AI” i en enda teknisk lösning. Fulltextsökning, rapportering, statistisk analys, maskininlärning och generativ AI har olika syften, olika kvalitetsmått, olika risker och olika sätt att förvaltas. En gemensam förmåga för Analys, sökning och AI behöver kunna stödja flera sådana arbetssätt utan att sudda ut deras skillnader.
 
 Kärnfrågan i kapitlet är:
 
-> **Vilken typ av informationsbearbetning behöver vi – sökning, analys, prediktion eller generering – och vilka krav följer av just den typen?**
+> Vilken typ av informationsbearbetning behöver vi – sökning, analys, prediktion eller generering – och vilka krav följer av just den typen?
 
-Detta kapitel bygger vidare på kapitel 11 om informationens betydelse och ägarskap samt kapitel 15 om teknisk datahantering. Här ligger fokus inte på var primär data lagras, utan på hur information **indexeras, sammanställs, analyseras och används för inferens eller generering**.
+Detta kapitel bygger vidare på kapitel 11 om informationens betydelse och ägarskap samt kapitel 15 om teknisk datahantering. Här ligger fokus inte på var primär data lagras, utan på hur information indexeras, sammanställs, analyseras och används för inferens eller generering.
 
 ## Fyra olika problem som ofta blandas ihop
 
 En användbar första uppdelning är att skilja mellan fyra huvudtyper av behov.
 
-**Sökning** svarar huvudsakligen på frågan:
+Sökning svarar huvudsakligen på frågan:
 
 > Var finns relevant information?
 
-**Business Intelligence och analys** svarar exempelvis på:
+Business Intelligence och analys svarar exempelvis på:
 
 > Vad har hänt, hur ser nuläget ut och vilka mönster kan vi se i data?
 
-**Maskininlärning** används bland annat för:
+Maskininlärning används bland annat för:
 
 > Vilken klass, sannolikhet eller prognos är rimlig utifrån observerade mönster?
 
-**Generativ AI** används när behovet exempelvis är:
+Generativ AI används när behovet exempelvis är:
 
 > Skapa, omformulera, sammanfatta eller resonera kring innehåll utifrån en instruktion och ett givet sammanhang.
 
@@ -40,11 +40,11 @@ Ett vanligt arkitekturfel är att börja i den mest uppmärksammade tekniken. Om
 
 Principen från kapitel 3 gäller alltså fullt ut även här:
 
-> **AI är ett möjligt lösningsval, inte ett behov.**
+> AI är ett möjligt lösningsval, inte ett behov.
 
 ## Sökning – en sekundär representation för att hitta information
 
-Sökning fungerar ofta genom att data från en eller flera källor transformeras till ett särskilt **sökindex**. Indexet optimeras för att hitta information, inte för att vara verksamhetens primära register.
+Sökning fungerar ofta genom att data från en eller flera källor transformeras till ett särskilt sökindex. Indexet optimeras för att hitta information, inte för att vara verksamhetens primära register.
 
 Det kan exempelvis innehålla:
 
@@ -55,7 +55,7 @@ Det kan exempelvis innehålla:
 - behörighetsinformation för filtrering,
 - vektorrepresentationer för semantisk sökning.
 
-Detta gör sökindexet till ännu ett exempel på en **härledd kopia**, enligt modellen i kapitel 15.
+Detta gör sökindexet till ännu ett exempel på en härledd kopia, enligt modellen i kapitel 15.
 
 För en söklösning behöver man därför kunna svara på frågor som:
 
@@ -66,7 +66,7 @@ För en söklösning behöver man därför kunna svara på frågor som:
 5. Hur hanteras behörigheter när informationen kopieras till indexet?
 6. Vad betyder ett relevant sökresultat för användaren?
 
-Den sista frågan är lätt att underskatta. Sökning är inte bara ett lagringsproblem. Den är också ett **relevansproblem**.
+Den sista frågan är lätt att underskatta. Sökning är inte bara ett lagringsproblem. Den är också ett relevansproblem.
 
 ### Lexikal och semantisk sökning
 
@@ -74,11 +74,11 @@ Traditionell fulltextsökning bygger i stor utsträckning på ord och textstrukt
 
 Semantisk sökning försöker i stället hitta innehåll utifrån betydelse eller likhet i en representation. Moderna lösningar använder ofta så kallade embeddings, där text eller andra objekt representeras som numeriska vektorer som kan jämföras.
 
-Det betyder inte att semantisk sökning alltid är bättre. Exakta identifierare, diarienummer, artikelnummer, juridiska termer och namn kan kräva mycket precis lexikal matchning. I praktiken kan därför en **hybridmodell** vara värdefull, där flera söksignaler kombineras.
+Det betyder inte att semantisk sökning alltid är bättre. Exakta identifierare, diarienummer, artikelnummer, juridiska termer och namn kan kräva mycket precis lexikal matchning. I praktiken kan därför en hybridmodell vara värdefull, där flera söksignaler kombineras.
 
 Arkitekturfrågan är inte vilken metod som låter mest avancerad, utan:
 
-> **Vilken definition av relevans motsvarar användningsfallet?**
+> Vilken definition av relevans motsvarar användningsfallet?
 
 ### Behörighet måste följa med till söklagret
 
@@ -122,7 +122,7 @@ Det kan motivera särskilda analytiska representationer, exempelvis datamarts el
 
 En instrumentpanel kan se exakt och övertygande ut även när begreppen bakom den är otydliga.
 
-Ta ett enkelt nyckeltal som **genomsnittlig handläggningstid**. För att måttet ska vara meningsfullt måste man bland annat veta:
+Ta ett enkelt nyckeltal som genomsnittlig handläggningstid. För att måttet ska vara meningsfullt måste man bland annat veta:
 
 - när tiden börjar räknas,
 - när den slutar,
@@ -135,7 +135,7 @@ Analysförmågan kan erbjuda teknik för visualisering och databehandling, men d
 
 En central princip är:
 
-> **Gemensam analysinfrastruktur får inte skapa en illusion av gemensam semantik.**
+> Gemensam analysinfrastruktur får inte skapa en illusion av gemensam semantik.
 
 Semantiken måste ägas och förvaltas lika medvetet som tekniken.
 
@@ -181,9 +181,9 @@ Kvalitetsmåttet måste därför härledas från användningen, precis som andra
 
 Det är också viktigt att skilja mellan:
 
-- **modellkvalitet i ett testdataset**,
-- **kvalitet i den verkliga produktionsmiljön**,
-- **verksamhetsnytta av hela arbetsflödet där modellen ingår**.
+- modellkvalitet i ett testdataset,
+- kvalitet i den verkliga produktionsmiljön,
+- verksamhetsnytta av hela arbetsflödet där modellen ingår.
 
 En modell kan vara statistiskt stark men ändå skapa dålig verksamhetsnytta om dess resultat presenteras vid fel tidpunkt, inte går att agera på eller leder till en ineffektiv arbetsprocess.
 
@@ -228,7 +228,7 @@ I traditionell applikationsutveckling är det naturligt att versionera källkod.
 - verktyg som modellen får anropa,
 - parametrar och guardrails.
 
-Dessa behöver därför behandlas som **förvaltningsbara artefakter** när de påverkar viktiga verksamhetsutfall.
+Dessa behöver därför behandlas som förvaltningsbara artefakter när de påverkar viktiga verksamhetsutfall.
 
 Det räcker inte att säga ”applikationskoden ändrades inte” om modellversionen eller den centrala prompten byttes ut och systemets beteende därmed förändrades.
 
@@ -254,7 +254,7 @@ Genererat svar
 
 Mönstret är attraktivt eftersom kunskapen inte enbart behöver finnas i modellens parametrar. En organisation kan koppla språkmodellen till interna eller mer aktuella informationskällor och ofta även göra källorna synliga för användaren.
 
-Men RAG bör förstås som **en kedja av komponenter**, inte som en garanti för korrekta svar.
+Men RAG bör förstås som en kedja av komponenter, inte som en garanti för korrekta svar.
 
 Fel kan uppstå i flera steg:
 
@@ -273,7 +273,7 @@ Det betyder att en RAG-lösning behöver utvärderas på mer än bara slutsvaret
 
 En mycket viktig diagnosfråga är:
 
-> **Hittade systemet rätt underlag?**
+> Hittade systemet rätt underlag?
 
 Om svaret är nej ligger problemet inte primärt i genereringen. Då kan förbättringen i stället handla om:
 
@@ -305,7 +305,7 @@ Det är särskilt viktigt när användningsfallet kräver hög verifierbarhet.
 
 ## Human-in-the-loop – mänsklig kontroll måste ha en funktion
 
-Uttrycket **human-in-the-loop** används ofta som en generell riskreducerande åtgärd.[K2] Men att en människa finns någonstans i processen innebär inte automatiskt att kontrollen är meningsfull.
+Uttrycket human-in-the-loop används ofta som en generell riskreducerande åtgärd.[K2] Men att en människa finns någonstans i processen innebär inte automatiskt att kontrollen är meningsfull.
 
 För mänsklig kontroll behöver man veta:
 
@@ -319,7 +319,7 @@ För mänsklig kontroll behöver man veta:
 
 En kontroll där en handläggare förväntas klicka ”godkänn” på hundratals AI-genererade förslag utan realistisk möjlighet att verifiera dem är inte stark mänsklig kontroll. Den är främst en extra interaktionspunkt.
 
-Mänsklig kontroll bör därför dimensioneras efter **konsekvensen av fel** och den faktiska möjligheten att upptäcka felet.
+Mänsklig kontroll bör därför dimensioneras efter konsekvensen av fel och den faktiska möjligheten att upptäcka felet.
 
 ### Human-on-the-loop och efterhandskontroll
 
@@ -356,7 +356,7 @@ Agenten bör inte få ett obegränsat tekniskt mandat bara för att den behöver
 - definierade fel- och fallbacklägen,
 - möjlighet att stoppa eller återkalla handlingar där det är relevant.
 
-Det gör agentfrågan till en kombination av flera förmågor. AI-förmågan hanterar modell- och inferensdelen, men **Identitet och tillit**, **Integration och kommunikation**, **Process och workflow** samt **Driftbarhet och motståndskraft** är fortfarande ansvariga för sina respektive mekanismer.
+Det gör agentfrågan till en kombination av flera förmågor. AI-förmågan hanterar modell- och inferensdelen, men Identitet och tillit, Integration och kommunikation, Process och workflow samt Driftbarhet och motståndskraft är fortfarande ansvariga för sina respektive mekanismer.
 
 ## Informationsgrundning börjar före modellen
 
@@ -401,7 +401,7 @@ För en klassificeringsmodell kan andra mått vara relevanta. För en sammanfatt
 
 Poängen är:
 
-> **AI-kvalitet måste definieras per användningsfall – inte per modellfamilj.**
+> AI-kvalitet måste definieras per användningsfall – inte per modellfamilj.
 
 ### Testmängden är en förvaltningsartefakt
 
@@ -652,11 +652,11 @@ Ett stödjande IT-område bör inte beskriva Analys, sökning och AI som ”vi h
 
 Exempel på sådana erbjudanden kan vara:
 
-- **Search & Indexing Service** – indexering, sökning, relevansmekanismer och standardiserade driftfunktioner,
-- **BI & Reporting Service** – gemensam plattform för analys och rapportering,
-- **Managed LLM Service** – kontrollerad åtkomst till godkända språkmodeller,
-- **RAG/Knowledge Service** – gemensamma mekanismer för retrieval, indexering och generering över godkända kunskapskällor,
-- **Model Evaluation Support** – gemensamma verktyg och arbetssätt för utvärdering och regressionstest.
+- Search & Indexing Service – indexering, sökning, relevansmekanismer och standardiserade driftfunktioner,
+- BI & Reporting Service – gemensam plattform för analys och rapportering,
+- Managed LLM Service – kontrollerad åtkomst till godkända språkmodeller,
+- RAG/Knowledge Service – gemensamma mekanismer för retrieval, indexering och generering över godkända kunskapskällor,
+- Model Evaluation Support – gemensamma verktyg och arbetssätt för utvärdering och regressionstest.
 
 Men varje erbjudande behöver fortfarande tydliggöra:
 
@@ -678,9 +678,9 @@ Sökning handlar om att hitta relevant information i sekundära representationer
 
 RAG kombinerar retrieval och generering men eliminerar inte felkällor. Human-in-the-loop är värdefullt bara när den mänskliga kontrollen är faktiskt genomförbar. Agentbaserade lösningar måste följa samma principer för identitet, behörighet, integration och återställning som andra tekniska komponenter.
 
-Det mest stabila arkitekturvalet är därför inte att standardisera en viss AI-modell. Det är att standardisera **ansvar, kvalitetskrav, informationsskydd, spårbarhet, utvärdering och konsumerbara plattformsmekanismer**, samtidigt som den konkreta lösningen får välja den enklaste teknik som möter behovet.
+Det mest stabila arkitekturvalet är därför inte att standardisera en viss AI-modell. Det är att standardisera ansvar, kvalitetskrav, informationsskydd, spårbarhet, utvärdering och konsumerbara plattformsmekanismer, samtidigt som den konkreta lösningen får välja den enklaste teknik som möter behovet.
 
-I nästa kapitel flyttas fokus från bearbetning av information till hur system och domäner kommunicerar med varandra: **Integration och kommunikation**.
+I nästa kapitel flyttas fokus från bearbetning av information till hur system och domäner kommunicerar med varandra: Integration och kommunikation.
 
 ## Källor och vidare läsning
 

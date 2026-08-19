@@ -4,11 +4,11 @@ Många verksamhetssystem innehåller någon form av flöde. Ett ärende skapas, 
 
 Det betyder inte att varje sådant flöde behöver en processmotor.
 
-En av de viktigaste arkitekturfrågorna inom denna förmåga är därför inte *hur* en workflowplattform används, utan **när process, workflow eller ärendehantering bör behandlas som en explicit förmåga i lösningen och när vanlig domänlogik är ett bättre val**.
+En av de viktigaste arkitekturfrågorna inom denna förmåga är därför inte *hur* en workflowplattform används, utan när process, workflow eller ärendehantering bör behandlas som en explicit förmåga i lösningen och när vanlig domänlogik är ett bättre val.
 
 Det är först när svaret på den frågan är tydligt som tekniska val blir meningsfulla.
 
-Förmågan **Process, workflow och ärendehantering** handlar om att stödja verksamhetsförlopp som behöver hållas ihop över tid, ofta över flera aktiviteter, aktörer och system. Den blir särskilt relevant när tillståndet i ett flöde måste vara synligt, återupptagningsbart, spårbart eller möjligt att förändra som en sammanhängande process.
+Förmågan Process, workflow och ärendehantering handlar om att stödja verksamhetsförlopp som behöver hållas ihop över tid, ofta över flera aktiviteter, aktörer och system. Den blir särskilt relevant när tillståndet i ett flöde måste vara synligt, återupptagningsbart, spårbart eller möjligt att förändra som en sammanhängande process.
 
 Typiska behov är att:
 
@@ -32,9 +32,9 @@ Det gör inte lösningen till ett workflow.
 
 Det är användbart att skilja mellan åtminstone tre nivåer:
 
-1. **lokalt kontrollflöde i kod**,  
-2. **domänens tillstånd och livscykel**,  
-3. **ett explicit verksamhetsflöde som koordinerar aktiviteter över tid**.
+1. lokalt kontrollflöde i kod,  
+2. domänens tillstånd och livscykel,  
+3. ett explicit verksamhetsflöde som koordinerar aktiviteter över tid.
 
 Anta att en ansökan får statusen `INKOMMEN`, därefter valideras och sedan antingen accepteras eller avvisas. Om hela förloppet sker inom en och samma domän, snabbt och utan behov av särskild verksamhetsuppföljning, kan en enkel tillståndsmaskin eller vanlig applikationskod vara fullt tillräcklig.
 
@@ -50,7 +50,7 @@ Om samma ansökan däremot kan behöva:
 
 då har processen blivit ett eget arkitekturproblem.
 
-Skillnaden är alltså inte främst hur många steg som finns, utan **vilka egenskaper själva förloppet behöver ha**.
+Skillnaden är alltså inte främst hur många steg som finns, utan vilka egenskaper själva förloppet behöver ha.
 
 ## När processens tillstånd behöver bli explicit
 
@@ -79,7 +79,7 @@ En vanlig HTTP-förfrågan lever kanske några hundra millisekunder eller sekund
 
 Ett verksamhetsförlopp kan däremot leva i månader.
 
-Det innebär att en långlivad process inte kan byggas som om den vore en lång teknisk transaktion. Den måste kunna **vänta utan att hålla resurser låsta**.
+Det innebär att en långlivad process inte kan byggas som om den vore en lång teknisk transaktion. Den måste kunna vänta utan att hålla resurser låsta.
 
 Anta ett flöde:
 
@@ -90,11 +90,11 @@ Anta ett flöde:
 5. efter 30 dagar sker eskalering,
 6. när svaret kommer fortsätter handläggningen.
 
-Mellan steg 2 och 6 ska ingen applikationstråd, nätverksanslutning eller databastransaktion behöva vara aktiv. Det som behöver överleva är i stället **processens tillstånd och den information som krävs för att återuppta den**.
+Mellan steg 2 och 6 ska ingen applikationstråd, nätverksanslutning eller databastransaktion behöva vara aktiv. Det som behöver överleva är i stället processens tillstånd och den information som krävs för att återuppta den.
 
 Detta leder till en central princip för förmågan:
 
-**Verksamhetsprocessens livslängd får inte kopplas till livslängden hos en enskild teknisk exekvering.**
+Verksamhetsprocessens livslängd får inte kopplas till livslängden hos en enskild teknisk exekvering.
 
 Det ställer krav på bland annat:
 
@@ -106,7 +106,7 @@ Det ställer krav på bland annat:
 - versionshantering av processdefinitioner,
 - observerbarhet och felsökning över lång tid.
 
-Här möter processförmågan andra förmågor. Meddelanden och events hör hemma i **Integration och kommunikation**. Lagring av verksamhetsinformation hör hemma i **Data- och informationshantering**. Återstart, övervakning och felhantering berör **Driftbarhet och motståndskraft**. Processförmågan använder dessa mekanismer för att hålla ihop verksamhetsförloppet.
+Här möter processförmågan andra förmågor. Meddelanden och events hör hemma i Integration och kommunikation. Lagring av verksamhetsinformation hör hemma i Data- och informationshantering. Återstart, övervakning och felhantering berör Driftbarhet och motståndskraft. Processförmågan använder dessa mekanismer för att hålla ihop verksamhetsförloppet.
 
 ## Workflow och mänskliga arbetsuppgifter
 
@@ -124,7 +124,7 @@ En mänsklig arbetsuppgift är mer än att visa en knapp i ett användargränssn
 - vilket resultat som ska lämnas tillbaka,
 - vad som händer om ingen agerar.
 
-Därmed uppstår arkitekturfrågor kring **arbetsfördelning**.
+Därmed uppstår arkitekturfrågor kring arbetsfördelning.
 
 Ska uppgiften tilldelas en namngiven person, en roll eller en gemensam kö? Kan en handläggare plocka nästa uppgift själv? Ska en arbetsledare kunna omfördela? Hur påverkas uppgiften om en användare byter organisatorisk enhet? Hur hanteras frånvaro? Behöver vissa uppgifter göras av två olika personer enligt fyrögonsprincip?
 
@@ -144,13 +144,13 @@ Begreppen används ibland som synonymer, men de representerar olika tyngdpunkter
 
 ### Process
 
-En process betonar normalt **ett förlopp med aktiviteter och övergångar**. Det finns någon form av struktur för hur arbetet rör sig från start mot ett eller flera möjliga slut.
+En process betonar normalt ett förlopp med aktiviteter och övergångar. Det finns någon form av struktur för hur arbetet rör sig från start mot ett eller flera möjliga slut.
 
 Vissa processer är strikt sekventiella. Andra innehåller parallella grenar, väntelägen, loopar och alternativa vägar.
 
 ### Workflow
 
-Workflow används ofta när fokus ligger på **arbetsflödet och koordineringen av aktiviteter**, inte minst mänskliga uppgifter. I praktiken överlappar workflow och processautomation mycket.
+Workflow används ofta när fokus ligger på arbetsflödet och koordineringen av aktiviteter, inte minst mänskliga uppgifter. I praktiken överlappar workflow och processautomation mycket.
 
 ### Case management
 
@@ -164,7 +164,7 @@ Ett ärende kan i stället fungera som en sammanhållande kontext där olika akt
 - regler,
 - ärendets aktuella situation.
 
-I ett sådant fall kan det vara viktigare att beskriva **vilka aktiviteter som är möjliga och under vilka villkor** än att ange en komplett väg genom processen i förväg.
+I ett sådant fall kan det vara viktigare att beskriva vilka aktiviteter som är möjliga och under vilka villkor än att ange en komplett väg genom processen i förväg.
 
 Skillnaden kan illustreras förenklat:
 
@@ -182,7 +182,7 @@ Arkitekturen bör därför inte försöka pressa allt arbete in i ett strikt pro
 
 ## Standardiserade notationer kan hjälpa – men är inte arkitekturen
 
-För verksamhetsprocesser finns etablerade modelleringsnotationer. **BPMN, Business Process Model and Notation**, är en standardiserad grafisk notation för att beskriva verksamhetsprocesser. För case management finns **CMMN, Case Management Model and Notation**, som fokuserar på modellering av cases och mer situationsstyrt arbete.[K1][K2]
+För verksamhetsprocesser finns etablerade modelleringsnotationer. BPMN, Business Process Model and Notation, är en standardiserad grafisk notation för att beskriva verksamhetsprocesser. För case management finns CMMN, Case Management Model and Notation, som fokuserar på modellering av cases och mer situationsstyrt arbete.[K1][K2]
 
 Notationerna kan bidra med ett gemensamt språk mellan verksamhets- och teknikroller. De kan också göra processmodeller mer portabla mellan verktyg än helt leverantörsspecifika diagram.
 
@@ -204,15 +204,15 @@ Bättre är:
 
 ## Processorkestrering ska inte absorbera domänlogiken
 
-En process behöver ofta fatta beslut om **vad som ska hända härnäst**.
+En process behöver ofta fatta beslut om vad som ska hända härnäst.
 
-Det innebär inte att den bör innehålla all logik för **hur verksamheten fungerar**.
+Det innebär inte att den bör innehålla all logik för hur verksamheten fungerar.
 
 Anta att en process ska avgöra om ett ärende får gå vidare. Själva flödet kan behöva uttrycka:
 
 > Om behörighetsprövningen är godkänd, fortsätt till registrering. Annars gå till manuell granskning.
 
-Men logiken som avgör *om behörighetsprövningen är godkänd* kan höra hemma i en domäntjänst eller i förmågan **Regler och beslut**.
+Men logiken som avgör *om behörighetsprövningen är godkänd* kan höra hemma i en domäntjänst eller i förmågan Regler och beslut.
 
 Denna separation ger flera fördelar:
 
@@ -257,7 +257,7 @@ Det gör det frestande att låta processmotorn bli navet för all integration.
 
 Det är sällan en bra generell modell.
 
-**Orkestrering av ett verksamhetsförlopp** och **teknisk integration mellan system** är närliggande men separata ansvar.
+Orkestrering av ett verksamhetsförlopp och teknisk integration mellan system är närliggande men separata ansvar.
 
 Processen kan exempelvis uttrycka:
 
@@ -267,7 +267,7 @@ Men hur registerkontrollen tekniskt exponeras, autentiseras, kontrakteras, routa
 
 Det är särskilt viktigt när samma integration används av många andra konsumenter. Om dess tekniska kontrakt bara existerar som en intern detalj i en processmodell blir lösningen svår att återanvända och förvalta.
 
-Processen bör alltså **konsumera standardiserade integrationsmekanismer** snarare än ersätta dem.
+Processen bör alltså konsumera standardiserade integrationsmekanismer snarare än ersätta dem.
 
 ## Orkestrering och koreografi
 
@@ -366,7 +366,7 @@ Då uppstår frågor som:
 
 Detta är en av de tydligaste skillnaderna mellan vanlig applikationslogik och långlivad processhantering.
 
-En organisation som erbjuder en gemensam workflowplattform behöver därför inte bara erbjuda en motor som kan starta processer. Den behöver ha en modell för **processdefinitionernas livscykel**.
+En organisation som erbjuder en gemensam workflowplattform behöver därför inte bara erbjuda en motor som kan starta processer. Den behöver ha en modell för processdefinitionernas livscykel.
 
 Det kan exempelvis innebära att lösningar måste välja mellan:
 
@@ -397,7 +397,7 @@ I stället behöver verksamhetsflödet kunna hantera situationen explicit. Det k
 - markera processen som avvikande,
 - eskalera till support eller verksamhet.
 
-En **kompenserande aktivitet** är inte nödvändigtvis en exakt återställning. Om en bokning redan har kommunicerats till en extern part kanske kompensationen består i att skapa en avbokning, inte i att låtsas som att bokningen aldrig fanns.
+En kompenserande aktivitet är inte nödvändigtvis en exakt återställning. Om en bokning redan har kommunicerats till en extern part kanske kompensationen består i att skapa en avbokning, inte i att låtsas som att bokningen aldrig fanns.
 
 Detta är viktigt eftersom workflow ibland säljs in med en alltför enkel bild av att motorn ”hanterar transaktionerna”. Den kan koordinera återhämtning och hålla reda på processens läge, men den kan inte magiskt skapa atomiska transaktioner över självständiga verksamhetssystem.
 
@@ -415,7 +415,7 @@ Därför behöver man skilja mellan exempelvis:
 
 Om alla dessa pressas in i ett enda statusfält uppstår snabbt oklarheter.
 
-Ett ärende kan exempelvis ha verksamhetsstatusen **Under handläggning** samtidigt som processmotorn tekniskt väntar på en timer och en specifik arbetsuppgift har status **Ej tilldelad**.
+Ett ärende kan exempelvis ha verksamhetsstatusen Under handläggning samtidigt som processmotorn tekniskt väntar på en timer och en specifik arbetsuppgift har status Ej tilldelad.
 
 Dessa statusar representerar olika saker och kan ha olika målgrupper.
 
@@ -423,7 +423,7 @@ Det är därför värdefullt att definiera en tydlig ärendelivscykel som en del
 
 ## När räcker vanlig domänlogik?
 
-Den kanske viktigaste kompetensen inom processförmågan är att kunna säga **nej till processmotorn**.
+Den kanske viktigaste kompetensen inom processförmågan är att kunna säga nej till processmotorn.
 
 En workflowplattform innebär alltid kostnader:
 
@@ -448,7 +448,7 @@ En vanlig applikation är därför ofta bättre när:
 
 Exempelvis behöver inte en vanlig beställnings-API-metod som validerar indata, sparar ett objekt och returnerar ett svar modelleras som en process bara för att aktiviteterna råkar ske i en viss ordning.
 
-Det centrala kriteriet är **nytta i förhållande till den extra abstraktionen**.
+Det centrala kriteriet är nytta i förhållande till den extra abstraktionen.
 
 ## När en gemensam workflow- eller processplattform är motiverad
 
@@ -470,7 +470,7 @@ En gemensam workflow-/processplattform är särskilt intressant när många lös
 
 Då kan det vara ineffektivt att varje team bygger sin egen enklare workflowmotor ovanpå databas, schemaläggare och messaging.
 
-Men plattformen bör erbjudas som **en konsumerbar tjänst för ett tydligt behov**, inte som obligatorisk standard för all applikationslogik.
+Men plattformen bör erbjudas som en konsumerbar tjänst för ett tydligt behov, inte som obligatorisk standard för all applikationslogik.
 
 Ett moget erbjudande behöver därför beskriva både:
 
@@ -646,28 +646,28 @@ Det bör kunna erbjuda ett sammanhängande stöd som exempelvis omfattar:
 - stöd för robust korrelation och återupptagning,
 - tydliga gränser för vad konsumenten själv ansvarar för.
 
-Det är först då det finns ett **plattformserbjudande** snarare än bara en installerad produkt.
+Det är först då det finns ett plattformserbjudande snarare än bara en installerad produkt.
 
 Den underliggande tekniken kan bytas över tid. Förmågan består så länge organisationen återkommande behöver kunna hålla ihop långlivade verksamhetsförlopp, mänskligt arbete och återupptagningsbar koordinering.
 
 ## Sammanfattning
 
-Process, workflow och ärendehantering blir en egen arkitekturförmåga när själva verksamhetsförloppet behöver vara **explicit, långlivat, observerbart, återupptagningsbart eller samordnat över flera aktörer och system**.
+Process, workflow och ärendehantering blir en egen arkitekturförmåga när själva verksamhetsförloppet behöver vara explicit, långlivat, observerbart, återupptagningsbart eller samordnat över flera aktörer och system.
 
 Det behöver inte innebära att varje sekvens i ett system ska modelleras i en processmotor. Vanlig domänlogik är ofta enklare och bättre för kortlivade lokala flöden.
 
 Den viktigaste gränsdragningen är därför:
 
-- **processen** håller ihop ordning, väntan, övergångar och arbetsuppgifter,
-- **domäntjänster** äger verksamhetsbeteende och auktoritativa tillståndsförändringar,
-- **Regler och beslut** kan äga beslut som behöver uttryckas och förvaltas oberoende av processen,
-- **Integration och kommunikation** tillhandahåller mekanismerna för kommunikation mellan system,
-- **Data- och informationshantering** äger de tekniska mekanismerna för verksamhetsinformationens beständighet,
-- **Identitet och tillit** avgör vem eller vad som får utföra aktiviteter.
+- processen håller ihop ordning, väntan, övergångar och arbetsuppgifter,
+- domäntjänster äger verksamhetsbeteende och auktoritativa tillståndsförändringar,
+- Regler och beslut kan äga beslut som behöver uttryckas och förvaltas oberoende av processen,
+- Integration och kommunikation tillhandahåller mekanismerna för kommunikation mellan system,
+- Data- och informationshantering äger de tekniska mekanismerna för verksamhetsinformationens beständighet,
+- Identitet och tillit avgör vem eller vad som får utföra aktiviteter.
 
 När dessa ansvar hålls isär kan en workflowplattform ge stor nytta: gemensam hantering av långlivat tillstånd, human tasks, timers, processhistorik och återupptagning. När gränserna suddas ut riskerar samma plattform i stället att bli en ny verksamhetsmonolit.
 
-Nästa kapitel går vidare till en av de viktigaste gränserna: **Regler och beslut**. Där flyttas fokus från *vilket steg som ska ske härnäst* till *hur ett beslut eller en regel uttrycks, versionshanteras, förklaras och kan användas oberoende av ett enskilt processflöde*.
+Nästa kapitel går vidare till en av de viktigaste gränserna: Regler och beslut. Där flyttas fokus från *vilket steg som ska ske härnäst* till *hur ett beslut eller en regel uttrycks, versionshanteras, förklaras och kan användas oberoende av ett enskilt processflöde*.
 
 ## Källor och vidare läsning
 

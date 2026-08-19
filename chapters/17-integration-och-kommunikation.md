@@ -8,9 +8,9 @@ När två självständiga lösningar kopplas samman uppstår beroenden i tid, ko
 
 Kärnfrågan i kapitlet är:
 
-> **Vilken kommunikationsform passar behovet – och vilken koppling mellan parterna är vi beredda att acceptera?**
+> Vilken kommunikationsform passar behovet – och vilken koppling mellan parterna är vi beredda att acceptera?
 
-Kapitlet handlar om den gemensamma IT-förmågan **Integration och kommunikation**. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering behandlades i kapitel 13. Informationsägarskap och datalivscykel behandlades i kapitel 11 och 15. Identitet och tillit kommer i kapitel 18.
+Kapitlet handlar om den gemensamma IT-förmågan Integration och kommunikation. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering behandlades i kapitel 13. Informationsägarskap och datalivscykel behandlades i kapitel 11 och 15. Identitet och tillit kommer i kapitel 18.
 
 ## Integration är ett beroende mellan självständiga parter
 
@@ -34,7 +34,7 @@ För att kommunikationen ska fungera måste parterna vara överens om åtminston
 - vilka säkerhetsmekanismer som krävs,
 - hur flödet kan följas vid felsökning.
 
-Integration är därför en **förvaltningsbar relation** mellan två eller flera ansvariga parter.
+Integration är därför en förvaltningsbar relation mellan två eller flera ansvariga parter.
 
 Detta blir särskilt viktigt när parterna har olika livscykel. Två komponenter inom samma kodbas kan ofta ändras samtidigt. Två självständiga system, kanske med olika produktteam eller organisationer, kan inte förutsättas göra det.
 
@@ -62,16 +62,16 @@ eller:
 
 Några centrala dimensioner är:
 
-- **synkronicitet** – krävs ett svar i samma interaktion?
-- **tidskoppling** – måste producent och konsument vara tillgängliga samtidigt?
-- **riktning** – är det en begäran, ett meddelande, en händelse eller ett informationspaket?
-- **antal parter** – finns en mottagare eller potentiellt många?
-- **volym** – handlar det om små enskilda meddelanden eller stora datamängder?
-- **leveranskrav** – vad händer om informationen inte når fram direkt?
-- **ordning** – spelar det roll i vilken sekvens meddelanden behandlas?
-- **aktualitet** – hur gammal får informationen bli?
-- **koppling** – hur mycket behöver avsändaren känna till om mottagaren?
-- **förvaltningsgräns** – kan parterna förändras och driftsättas oberoende?
+- synkronicitet – krävs ett svar i samma interaktion?
+- tidskoppling – måste producent och konsument vara tillgängliga samtidigt?
+- riktning – är det en begäran, ett meddelande, en händelse eller ett informationspaket?
+- antal parter – finns en mottagare eller potentiellt många?
+- volym – handlar det om små enskilda meddelanden eller stora datamängder?
+- leveranskrav – vad händer om informationen inte når fram direkt?
+- ordning – spelar det roll i vilken sekvens meddelanden behandlas?
+- aktualitet – hur gammal får informationen bli?
+- koppling – hur mycket behöver avsändaren känna till om mottagaren?
+- förvaltningsgräns – kan parterna förändras och driftsättas oberoende?
 
 Dessa frågor gör det möjligt att välja mönster efter behov i stället för efter teknisk vana.
 
@@ -93,7 +93,7 @@ Klient ── begäran ──▶ Tjänst
        ◀── svar ─────
 ```
 
-Modellen är enkel att förstå, men den skapar **tidskoppling**. Konsumenten är beroende av att tjänsten kan svara inom en rimlig tid just när anropet görs.
+Modellen är enkel att förstå, men den skapar tidskoppling. Konsumenten är beroende av att tjänsten kan svara inom en rimlig tid just när anropet görs.
 
 Om tjänst B i sin tur anropar C och D kan beroendekedjan snabbt bli längre:
 
@@ -119,7 +119,7 @@ En lösning behöver veta:
 
 Återförsök är därför inte automatiskt säkert.
 
-Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja **idempotens** eller någon annan mekanism som gör upprepning kontrollerad.[K1]
+Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja idempotens eller någon annan mekanism som gör upprepning kontrollerad.[K1]
 
 ## Asynkron meddelandekommunikation – när parterna inte behöver mötas i tid
 
@@ -161,13 +161,13 @@ En infrastruktur kan ge starka garantier inom sin egen gräns, men den verksamhe
 
 Den viktigaste frågan blir därför ofta:
 
-> **Hur säkerställer vi korrekt verksamhetsutfall när ett meddelande kan behandlas mer än en gång eller när utfallet efter ett fel är osäkert?**
+> Hur säkerställer vi korrekt verksamhetsutfall när ett meddelande kan behandlas mer än en gång eller när utfallet efter ett fel är osäkert?
 
 Idempotent behandling, deduplicering och tydliga transaktionsgränser blir då centrala mekanismer.
 
 ## Meddelande och händelse är inte samma sak
 
-Asynkron teknik används ofta både för **meddelanden** och **events**, men semantiken skiljer sig.
+Asynkron teknik används ofta både för meddelanden och events, men semantiken skiljer sig.
 
 Ett riktat meddelande kan uttrycka ett önskat arbete:
 
@@ -187,7 +187,7 @@ Ett kommando har normalt en tänkt mottagare som förväntas göra något. En h�
 
 Det ger en användbar princip:
 
-> **Events bör beskriva fakta som producenten äger, inte fungera som dolda fjärrkommandon till specifika konsumenter.**
+> Events bör beskriva fakta som producenten äger, inte fungera som dolda fjärrkommandon till specifika konsumenter.
 
 Om ett event i praktiken betyder ”System B måste nu göra X” och producenten är beroende av detta för att kunna fortsätta, finns fortfarande en stark verksamhetsmässig koppling även om tekniken råkar vara pub/sub.
 
@@ -223,7 +223,7 @@ Lös koppling betyder alltså inte frånvaro av kontrakt. Tvärtom behöver kont
 
 ## API:er – kontrakt, inte bara endpoints
 
-Ett API bör inte reduceras till en teknisk URL och ett antal HTTP-anrop. Det är ett **förvaltat kontrakt** mellan parter.
+Ett API bör inte reduceras till en teknisk URL och ett antal HTTP-anrop. Det är ett förvaltat kontrakt mellan parter.
 
 Ett bra API-kontrakt behöver göra relevanta delar tydliga:
 
@@ -312,9 +312,9 @@ Båda flyttar information, men de har olika krav på exempelvis:
 
 Det är därför användbart att fråga om flödet primärt är:
 
-1. **tjänsteintegration** – funktionalitet eller aktuell information används mellan lösningar,
-2. **händelse-/meddelandeintegration** – fakta eller arbete distribueras asynkront,
-3. **dataförflyttning** – datamängder kopieras eller transformeras för ett annat ändamål.
+1. tjänsteintegration – funktionalitet eller aktuell information används mellan lösningar,
+2. händelse-/meddelandeintegration – fakta eller arbete distribueras asynkront,
+3. dataförflyttning – datamängder kopieras eller transformeras för ett annat ändamål.
 
 Gemensamma integrationsförmågor kan stödja alla tre, men bör inte tvinga dem genom samma tekniska mekanism.
 
@@ -328,7 +328,7 @@ Men transformation kan också bli ett sätt att gömma otydligt ägarskap. Om en
 
 En bra tumregel är:
 
-> **Integration får anpassa kontrakt och transport, men verksamhetens auktoritativa beslut och domänlogik bör ligga hos den ansvariga domänen.**
+> Integration får anpassa kontrakt och transport, men verksamhetens auktoritativa beslut och domänlogik bör ligga hos den ansvariga domänen.
 
 Poängen är inte att transformation måste vara trivial. Men man bör kunna förklara om en regel i integrationslagret är teknisk mappning eller verksamhetsmässig logik.
 
@@ -350,9 +350,9 @@ Men teknisk kompatibilitet räcker inte alltid. Ett fält kan behålla samma nam
 
 Versionsstrategin behöver därför behandla både:
 
-- **syntax** – hur kontraktet ser ut,
-- **semantik** – vad informationen betyder,
-- **beteende** – vad producent och konsument kan förvänta sig.
+- syntax – hur kontraktet ser ut,
+- semantik – vad informationen betyder,
+- beteende – vad producent och konsument kan förvänta sig.
 
 ### Parallella versioner har ett pris
 
@@ -380,7 +380,7 @@ Vid asynkron kommunikation kan meddelandet ligga kvar i en kö, levereras igen e
 
 Vid filutbyte kan en hel batch behöva avvisas, delvis accepteras eller behandlas på nytt.
 
-Det är därför otillräckligt att säga ”plattformen hanterar återförsök”. Lösningen behöver definiera **verksamhetsmässigt felbeteende**.
+Det är därför otillräckligt att säga ”plattformen hanterar återförsök”. Lösningen behöver definiera verksamhetsmässigt felbeteende.
 
 Exempel:
 
@@ -417,7 +417,7 @@ Man bör därför fråga:
 
 Principen är densamma som på andra områden:
 
-> **Beställ inte starkare tekniska garantier än behovet kräver.**
+> Beställ inte starkare tekniska garantier än behovet kräver.
 
 ## Integration över organisationsgränser
 
@@ -436,7 +436,7 @@ Det gör tjänstekontrakt och ansvar ännu viktigare.
 
 En extern kommunikationstjänst eller myndighetsgemensam infrastruktur kan erbjuda säker transport eller strukturerat informationsutbyte. Men den löser inte automatiskt frågan om vad informationen betyder eller hur fel hanteras mellan verksamheterna.
 
-Extern integration bör därför behandlas som **tjänstekonsumtion med definierade ansvar och begränsningar**, inte som ett anonymt nätverksflöde.
+Extern integration bör därför behandlas som tjänstekonsumtion med definierade ansvar och begränsningar, inte som ett anonymt nätverksflöde.
 
 ## Nätverk är en realisering av kommunikationsbehovet
 
@@ -498,10 +498,10 @@ Men även här behöver ansvar hållas isär. Integrationsförmågan definierar 
 
 Ett större IT-område kan behöva flera gemensamma erbjudanden snarare än ”en integrationsplattform”. Exempel är:
 
-- **API Management**,
-- **Enterprise Messaging**,
-- **Data Integration / ETL**,
-- **Managed File Transfer** eller motsvarande funktion,
+- API Management,
+- Enterprise Messaging,
+- Data Integration / ETL,
+- Managed File Transfer eller motsvarande funktion,
 - säker extern konnektivitet,
 - tjänster för strukturerat informationsutbyte.
 
@@ -532,7 +532,7 @@ Det kan skapa:
 
 Gemensam förmåga betyder inte att alla mönster behöver realiseras i samma produkt.
 
-En bättre målbild är ofta en **sammanhängande portfölj av standardiserade integrationsförmågor och tjänster**, där mekanism väljs efter behov.
+En bättre målbild är ofta en sammanhängande portfölj av standardiserade integrationsförmågor och tjänster, där mekanism väljs efter behov.
 
 ## Ansvar på tre nivåer
 
@@ -679,7 +679,7 @@ Denna ordning är inte ett obligatoriskt processflöde. Den är ett sätt att f�
 
 Bra integration handlar inte om att eliminera alla beroenden. Om två verksamhetsförmågor faktiskt behöver samverka finns ett beroende.
 
-Arkitekturens uppgift är att göra beroendet **avsiktligt, synligt och förvaltningsbart**.
+Arkitekturens uppgift är att göra beroendet avsiktligt, synligt och förvaltningsbart.
 
 Ett bra integrationslandskap gör det möjligt för lösningar att:
 
@@ -689,9 +689,9 @@ Ett bra integrationslandskap gör det möjligt för lösningar att:
 - använda gemensamma mekanismer där de ger nytta,
 - behålla verksamhetsansvar nära rätt domän.
 
-Det är därför integrationsförmågan inte bör mätas i hur många flöden en central plattform kontrollerar. En bättre fråga är hur lätt organisationen kan skapa och förändra **robusta relationer mellan självständiga lösningar**.
+Det är därför integrationsförmågan inte bör mätas i hur många flöden en central plattform kontrollerar. En bättre fråga är hur lätt organisationen kan skapa och förändra robusta relationer mellan självständiga lösningar.
 
-I nästa kapitel flyttas fokus från själva kommunikationen till frågan om tillit: **hur vet en lösning vem människan, tjänsten eller organisationen på andra sidan faktiskt är, och vad den får göra?**
+I nästa kapitel flyttas fokus från själva kommunikationen till frågan om tillit: hur vet en lösning vem människan, tjänsten eller organisationen på andra sidan faktiskt är, och vad den får göra?
 
 ## Källor och vidare läsning
 

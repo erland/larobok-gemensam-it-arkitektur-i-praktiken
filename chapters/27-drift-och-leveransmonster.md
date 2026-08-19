@@ -6,9 +6,9 @@ Kapitel 20 och 21 beskrev förmågorna driftbarhet respektive leverans. Här åt
 
 I det här kapitlet fördjupar vi tre lösningsmönster från bokens mönsterbibliotek:
 
-- **Build once, promote many**,
-- **Observerbarhet för distribuerade tjänster**,
-- **Backup och verifierad återställning**.
+- Build once, promote many,
+- Observerbarhet för distribuerade tjänster,
+- Backup och verifierad återställning.
 
 De tre mönstren angriper olika problem. Build once, promote many skapar förtroende för att den artefakt som når produktion är samma artefakt som testades. Observerbarhet gör det möjligt att förstå en körande lösnings beteende över tjänste- och plattformsgränser. Backup och verifierad återställning gör det möjligt att återfå data och nödvändig konfiguration efter förlust eller korruption.
 
@@ -43,7 +43,7 @@ Ett vanligt anti-pattern är att behandla driftbarhet som en fråga som uppstår
 
 Om dessa frågor inte hanteras under design och utveckling blir de ofta dyra att lägga till i efterhand.
 
-Det är därför mer träffsäkert att se leverans och drift som **egenskaper hos lösningen** än som separata processer runt lösningen.
+Det är därför mer träffsäkert att se leverans och drift som egenskaper hos lösningen än som separata processer runt lösningen.
 
 En tjänst som inte kan koppla en produktionsversion till ett källkodscommit har ett arkitekturproblem. En tjänst som inte kan korrelera en användaroperation över sina beroenden har ett arkitekturproblem. Ett system som har backup men saknar verifierad återställningsförmåga har också ett arkitekturproblem.
 
@@ -79,7 +79,7 @@ Om svaret inte kan styrkas har testkedjan en bruten tillitslänk.
 
 ### Mönstret
 
-Build once, promote many separerar **byggandet av programvaran** från **förflyttningen av samma artefakt mellan miljöer**.
+Build once, promote many separerar byggandet av programvaran från förflyttningen av samma artefakt mellan miljöer.
 
 ```text
 Källkod
@@ -94,7 +94,7 @@ Artefaktregister
    └─ promoveras till produktion
 ```
 
-Nyckelordet är inte bara *build once*. Det är att artefakten har en **stabil identitet** genom hela leveranskedjan.
+Nyckelordet är inte bara *build once*. Det är att artefakten har en stabil identitet genom hela leveranskedjan.
 
 Om en containerimage exempelvis har testats bör produktionssättningen referera samma imageidentitet, inte skapa en ny image från samma Dockerfile.
 
@@ -112,7 +112,7 @@ Typiska exempel på sådant som bör hanteras utanför den byggda artefakten är
 - credentials och secrets,
 - vissa policyvärden.
 
-Det betyder inte att all konfiguration ska kunna förändras fritt. Det betyder att **miljöskillnader ska uttryckas som kontrollerad konfiguration**, inte genom att programvaran kompileras eller paketeras på nytt.
+Det betyder inte att all konfiguration ska kunna förändras fritt. Det betyder att miljöskillnader ska uttryckas som kontrollerad konfiguration, inte genom att programvaran kompileras eller paketeras på nytt.
 
 Det ger en tydligare separation:
 
@@ -238,7 +238,7 @@ Observerbarhetmönstret kombinerar flera typer av signaler:
 - instrumentpaneler,
 - åtgärdsbara larm.
 
-Poängen är inte mängden telemetri. Poängen är att kunna **ställa relevanta frågor om systemets tillstånd utan att i förväg känna till exakt vilket fel som kommer att inträffa**.
+Poängen är inte mängden telemetri. Poängen är att kunna ställa relevanta frågor om systemets tillstånd utan att i förväg känna till exakt vilket fel som kommer att inträffa.
 
 ### Tre signaltyper med olika styrkor
 
@@ -292,7 +292,7 @@ De bör inte blandas ihop.
 
 Ett tekniskt trace-id har annan livslängd och mening än ett verksamhetsärende. Ett meddelande kan dessutom behandlas senare i ett nytt tekniskt trace men fortfarande höra till samma verksamhetsflöde.
 
-Mönstret behöver därför beskriva **vilka korrelationer som ska följa med över vilka gränser**.
+Mönstret behöver därför beskriva vilka korrelationer som ska följa med över vilka gränser.
 
 ### Observerbarhet bör följa driftsättningen
 
@@ -325,7 +325,7 @@ Telemetri blir mest värdefull när den kopplas till kvalitetskrav.
 
 En lösning kan samla tusentals mätvärden utan att veta vilka som faktiskt avgör om tjänsten fungerar för konsumenten.
 
-En **Service Level Indicator (SLI)** uttrycker en mätbar egenskap, exempelvis andelen lyckade begäranden eller latens för en viss operation. Ett **Service Level Objective (SLO)** anger den nivå som eftersträvas.
+En Service Level Indicator (SLI) uttrycker en mätbar egenskap, exempelvis andelen lyckade begäranden eller latens för en viss operation. Ett Service Level Objective (SLO) anger den nivå som eftersträvas.
 
 Exempel:
 
@@ -382,7 +382,7 @@ En backup kan vara:
 - lagrad i samma fel- eller hotdomän som originalet,
 - omöjlig att använda utan credentials som försvann i incidenten.
 
-Därför är den verkliga förmågan inte **backup** utan **återställning**.
+Därför är den verkliga förmågan inte backup utan återställning.
 
 Backup är bara en av mekanismerna.
 
@@ -428,8 +428,8 @@ Det kopplar återställningsmönstret direkt till bokens tidigare skillnad mella
 
 Två vanligt använda återställningsmått är:
 
-- **RPO** – hur mycket dataförlust i tid som kan tolereras,
-- **RTO** – hur lång återställningstid som kan tolereras.
+- RPO – hur mycket dataförlust i tid som kan tolereras,
+- RTO – hur lång återställningstid som kan tolereras.
 
 Mönstret blir först meningsfullt när backup- och återställningsdesignen faktiskt kan möta dessa mål.
 
@@ -569,9 +569,9 @@ Det behöver inte innebära att alla beslut automatiseras. Poängen är att prod
 
 Begreppen blandas ibland ihop.
 
-**Rollback av applikation** innebär att gå tillbaka till en tidigare programversion.
+Rollback av applikation innebär att gå tillbaka till en tidigare programversion.
 
-**Restore av data** innebär att återskapa persistent tillstånd från en tidigare eller skyddad kopia.
+Restore av data innebär att återskapa persistent tillstånd från en tidigare eller skyddad kopia.
 
 De kan ha helt olika konsekvenser.
 
@@ -801,16 +801,16 @@ Verifiera inte bara enskilda mekanismer. Testa promotion, observation och åters
 
 ## Det viktigaste att bära med sig
 
-Drift- och leveransmönster handlar ytterst om **förtroende för förändring och återhämtning**.
+Drift- och leveransmönster handlar ytterst om förtroende för förändring och återhämtning.
 
 Build once, promote many gör det möjligt att veta vilken programvara som testades och vilken som körs. Observerbarhet gör det möjligt att förstå hur den programvaran faktiskt beter sig i en distribuerad lösning. Backup och verifierad återställning gör det möjligt att återskapa det tillstånd som inte kan reproduceras när ett allvarligt fel inträffar.
 
 De tre mönstren kan sammanfattas med tre frågor:
 
-1. **Kan vi bevisa exakt vad vi satte i produktion?**
-2. **Kan vi förstå om det fungerar och varför det inte gör det?**
-3. **Kan vi återetablera en fungerande tjänst när data eller miljö går förlorad?**
+1. Kan vi bevisa exakt vad vi satte i produktion?
+2. Kan vi förstå om det fungerar och varför det inte gör det?
+3. Kan vi återetablera en fungerande tjänst när data eller miljö går förlorad?
 
 Om någon av frågorna saknar ett verifierbart svar är leverans- och driftförmågan ofullständig, även om enskilda verktyg finns på plats.
 
-Med detta avslutas bokens del om lösningsmönster. I nästa del flyttar vi fokus från återanvändbara lösningsbeslut till **plattformstjänster**. Först undersöker vi vad som egentligen krävs för att ett tekniskt byggblock ska bli ett konsumerbart gemensamt erbjudande – och varför central infrastruktur inte automatiskt är en plattform.
+Med detta avslutas bokens del om lösningsmönster. I nästa del flyttar vi fokus från återanvändbara lösningsbeslut till plattformstjänster. Först undersöker vi vad som egentligen krävs för att ett tekniskt byggblock ska bli ett konsumerbart gemensamt erbjudande – och varför central infrastruktur inte automatiskt är en plattform.

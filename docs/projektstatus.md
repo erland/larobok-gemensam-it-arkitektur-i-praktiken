@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Revisionsfas – samtliga 37 huvudkapitel skrivna; helhetsrevision, faktagranskning samt språk- och stilrevision pass 1 genomförda
+Revisionsfas – samtliga 37 huvudkapitel skrivna; helhetsrevision, faktagranskning, språk- och stilrevision samt typografirevision pass 1 genomförda
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -78,3 +78,10 @@ Revisionsfas – samtliga 37 huvudkapitel skrivna; helhetsrevision, faktagranskn
 - Samlad bibliografi tillagd som back matter och ingår i exportordningen.
 - Centralt källregister skapat i `docs/kallregister.md`.
 - Källpolicyn uppdaterad med notformat och princip för bokens egna syntesmodeller.
+
+
+## Typografi och begreppsregister
+
+- Typografirevision pass 1 genomförd 2026-08-19: retorisk fetstil i löptexten har i huvudsak tagits bort, medan strukturella etiketter och källmarkörer har behållits.
+- Begreppsmarkering och alfabetiskt begreppsregister planeras som ett separat pass 2 för att undvika störande korshänvisningar i löptexten.
+- Revisionsrapport: `docs/typografi-och-korsreferenser-pass-1.md`.

@@ -4,7 +4,7 @@ Den digitala arbetsplatsen är lätt att underskatta arkitekturellt. Ordbehandli
 
 En samarbetsyta kan börja som ett praktiskt ställe för projektfiler och gradvis utvecklas till den enda plats där viktiga beslut, avtal eller verksamhetsuppgifter finns. Ett kalkylblad kan gå från personlig analys till kritisk planeringsmodell. En enkel low-code-applikation kan bli central för en verksamhetsprocess. En AI-assistent kan få tillgång till stora mängder arbetsmaterial och göra information enklare att hitta än organisationens ursprungliga behörighets- och informationsstruktur var designad för.
 
-Förmågan **Arbetsplats, samarbete och produktivitet** handlar därför inte bara om vilka kontorsverktyg organisationen tillhandahåller. Den handlar om att skapa en gemensam digital arbetsmiljö där medarbetare kan arbeta effektivt utan att produktivitetsverktygen oavsiktligt blir oreglerade verksamhetssystem, parallella system of record eller genvägar runt organisationens informations- och säkerhetsprinciper.
+Förmågan Arbetsplats, samarbete och produktivitet handlar därför inte bara om vilka kontorsverktyg organisationen tillhandahåller. Den handlar om att skapa en gemensam digital arbetsmiljö där medarbetare kan arbeta effektivt utan att produktivitetsverktygen oavsiktligt blir oreglerade verksamhetssystem, parallella system of record eller genvägar runt organisationens informations- och säkerhetsprinciper.
 
 Den centrala arkitekturfrågan är:
 
@@ -12,7 +12,7 @@ Den centrala arkitekturfrågan är:
 
 ## En generell arbetsplats är något annat än ett verksamhetssystem
 
-Det första viktiga gränssnittet går mellan **generell produktivitet** och **verksamhetsspecifikt IT-stöd**.
+Det första viktiga gränssnittet går mellan generell produktivitet och verksamhetsspecifikt IT-stöd.
 
 Generella arbetsplatsverktyg stödjer sådant som:
 
@@ -75,7 +75,7 @@ Fastställd information
 Arkiv-/bevarandeobjekt eller gallringsbar information
 ```
 
-Tekniskt kan samma filformat användas i alla fem stegen. Men informationens **betydelse, ägarskap och livscykel** har förändrats.
+Tekniskt kan samma filformat användas i alla fem stegen. Men informationens betydelse, ägarskap och livscykel har förändrats.
 
 Detta är ett viktigt skäl till att tekniska produktbegrepp inte räcker som informationsarkitektur. Frågan är inte bara om dokumentet finns i en personlig lagringsyta, en teamyta eller ett dokumentbibliotek. Organisationen behöver förstå vilken roll informationen spelar.
 
@@ -85,7 +85,7 @@ Samma resonemang gäller andra artefakter än dokument. Ett kalkylblad, en lista
 
 ## Samarbetsytan behöver ett syfte och en ägare
 
-En samarbetsyta bör inte bara skapas. Den bör ha en **avsikt**.
+En samarbetsyta bör inte bara skapas. Den bör ha en avsikt.
 
 Det kan exempelvis vara:
 
@@ -108,7 +108,7 @@ Syftet påverkar vilka regler som bör gälla för:
 
 En projektyta som skapas för ett sexmånadersprojekt bör inte nödvändigtvis leva kvar oförändrad i tio år. Ett permanent teams arbetsyta bör inte förlora sitt ägarskap när den person som skapade ytan byter tjänst.
 
-Därför är **livscykel** en central del av arbetsplatsarkitekturen.
+Därför är livscykel en central del av arbetsplatsarkitekturen.
 
 En enkel livscykel kan beskrivas som:
 
@@ -138,7 +138,7 @@ Om en verksamhetsviktig fil endast ligger i en enskild medarbetares personliga a
 - får sitt konto avstängt,
 - rensar eller flyttar innehåll.
 
-Den arkitekturella principen bör därför vara att **gemensamt ansvar kräver gemensam ägarstruktur**.
+Den arkitekturella principen bör därför vara att gemensamt ansvar kräver gemensam ägarstruktur.
 
 Det betyder inte att personliga ytor ska förbjudas. Det betyder att information som andra behöver för att utföra sitt arbete bör kunna flytta från ett personligt sammanhang till ett organisatoriskt sammanhang innan personberoendet blir ett problem.
 
@@ -164,7 +164,7 @@ Men modellen kräver också tydlighet om:
 - hur externa identiteter hanteras,
 - hur ägarskapet följs upp.
 
-Här möts arbetsplatsförmågan och **Identitet och tillit** från kapitel 18. Arbetsplatsförmågan ansvarar för den konsumerbara samarbetsmodellen, medan identitetsförmågan tillhandahåller de mekanismer som gör mottagare och behörigheter möjliga att kontrollera.
+Här möts arbetsplatsförmågan och Identitet och tillit från kapitel 18. Arbetsplatsförmågan ansvarar för den konsumerbara samarbetsmodellen, medan identitetsförmågan tillhandahåller de mekanismer som gör mottagare och behörigheter möjliga att kontrollera.
 
 Det är därför missvisande att behandla extern delning som en ren knappinställning i ett produktivitetsverktyg. Det är en realisering av ett organisatoriskt beslut om informationsdelning och tillit.
 
@@ -207,7 +207,7 @@ Digital arbetsplats
    └─ produktivitetsassistans
 ```
 
-Arkitekturellt bör dock **förmågan beskrivas utan att vara beroende av ett specifikt produktnamn**.
+Arkitekturellt bör dock förmågan beskrivas utan att vara beroende av ett specifikt produktnamn.
 
 Om organisationen idag använder en viss kontors- eller samarbetsprodukt är detta en realisering av förmågan. Behovet är fortfarande dokumentproduktion, kommunikation, samarbete och produktivitet.
 
@@ -241,7 +241,7 @@ Ett gemensamt erbjudande ger värde genom:
 - lägre utbildningströskel,
 - enklare livscykelhantering.
 
-Det innebär inte att standardverktyget alltid är rätt. Principen från kapitel 6 gäller fortfarande: **standardiserade erbjudanden bör användas när de möter behovet**.
+Det innebär inte att standardverktyget alltid är rätt. Principen från kapitel 6 gäller fortfarande: standardiserade erbjudanden bör användas när de möter behovet.
 
 Om ett specialiserat behov inte kan mötas utan orimliga kompromisser kan ett annat verktyg vara motiverat. Men avvikelsen bör då vara ett medvetet behovsdrivet val, inte resultatet av att någon råkade föredra ett annat verktyg.
 
@@ -276,7 +276,7 @@ Verksamhetskritisk funktion
 
 Den tekniska formen kan vara densamma även när konsekvensen förändras dramatiskt.
 
-Därför behöver organisationen en **eskaleringsmodell**.
+Därför behöver organisationen en eskaleringsmodell.
 
 Frågor som bör trigga en omprövning är exempelvis:
 
@@ -292,7 +292,7 @@ När svaret förändras kan även förvaltningsmodellen behöva förändras.
 
 Detta är en viktig princip:
 
-> **Low-code är en utvecklings- och automatiseringsform, inte en riskklass.**
+> Low-code är en utvecklings- och automatiseringsform, inte en riskklass.
 
 ## Citizen development behöver guardrails
 
@@ -336,7 +336,7 @@ Guardrails kan exempelvis omfatta:
 - hur kritiska lösningar identifieras,
 - hur överlämning till professionell förvaltning sker.
 
-Målet är inte att göra low-code identiskt med traditionell systemutveckling. Då försvinner mycket av värdet. Målet är att **kontrollnivån ska följa konsekvensen**.
+Målet är inte att göra low-code identiskt med traditionell systemutveckling. Då försvinner mycket av värdet. Målet är att kontrollnivån ska följa konsekvensen.
 
 ## Produktivitets-AI förändrar informationsåtkomsten
 
@@ -346,7 +346,7 @@ Anta att en användare tekniskt har läsbehörighet till tusentals dokument spri
 
 Det innebär att:
 
-> **AI kan förstärka effekten av befintliga behörigheter utan att någon behörighetsregel faktiskt ändras.**
+> AI kan förstärka effekten av befintliga behörigheter utan att någon behörighetsregel faktiskt ändras.
 
 Det är därför inte tillräckligt att fråga om AI-assistenten ”respekterar behörigheter”. Det måste den göra, men organisationen bör också fråga:
 
@@ -358,7 +358,7 @@ Det är därför inte tillräckligt att fråga om AI-assistenten ”respekterar 
 - Hur hanteras promptar och genererat innehåll?
 - Kan assistenten vidta åtgärder eller bara föreslå?
 
-Här möts arbetsplatsförmågan med kapitel 16 om **Analys, sökning och AI**.
+Här möts arbetsplatsförmågan med kapitel 16 om Analys, sökning och AI.
 
 AI-förmågan beskriver generella mekanismer, risker och kvalitetsfrågor. Arbetsplatsförmågan ansvarar för hur dessa konsumeras i den dagliga arbetsmiljön.
 
@@ -488,7 +488,7 @@ I liten skala kan det vara helt rimligt. Men när flödet får central verksamhe
 
 När dessa frågor blir centrala är lösningen inte längre bara en personlig automation. Den har börjat få egenskaper av ett integrations- eller verksamhetssystem.
 
-Det viktiga är alltså inte att en viss teknisk connector är förbjuden. Det viktiga är att **lösningens styrmodell följer dess faktiska ansvar**.
+Det viktiga är alltså inte att en viss teknisk connector är förbjuden. Det viktiga är att lösningens styrmodell följer dess faktiska ansvar.
 
 ## Gemensam arbetsplatsarkitektur handlar mycket om defaults
 
@@ -503,7 +503,7 @@ Arbetsplatsförmågan är ett område där användare fattar tusentals små besl
 
 Det är orimligt att varje beslut ska kräva arkitektgranskning.
 
-Därför är **bra standardval och guardrails** särskilt viktiga.
+Därför är bra standardval och guardrails särskilt viktiga.
 
 En stark arbetsplatsplattform gör exempelvis:
 
@@ -733,6 +733,6 @@ utan att användaren för varje aktivitet behöver förstå hela den bakomliggan
 
 Samtidigt skapar den tydliga gränser när arbetsmaterial blir auktoritativ information, när en enkel automation blir ett verksamhetssystem eller när en AI-assistent gör gamla behörighetsproblem mer betydelsefulla.
 
-Det är därför arbetsplatsarkitekturens viktigaste bidrag inte är ett visst produktpaket. Det är en **kontrollerad men användbar digital arbetsmiljö där den enklaste vägen också är en hållbar väg**.
+Det är därför arbetsplatsarkitekturens viktigaste bidrag inte är ett visst produktpaket. Det är en kontrollerad men användbar digital arbetsmiljö där den enklaste vägen också är en hållbar väg.
 
 Med detta kapitel är bokens genomgång av de elva gemensamma IT-förmågorna komplett. Nästa del byter perspektiv. Där går vi från frågan *vilken förmåga organisationen behöver* till frågan *hur återkommande arkitekturbeslut kan fångas som lösningsmönster och återanvändas utan att bli rigida recept*.

@@ -1,12 +1,12 @@
 # 8. Vad är en IT-förmåga?
 
-I de första kapitlen har **gemensam IT-förmåga** använts som ett av de centrala begreppen i bokens arkitekturmodell. Hittills har det räckt att förstå förmågan som något relativt stabilt som ett stödjande IT-område behöver kunna erbjuda över tid. När förmågekartan nu ska bli utgångspunkt för resten av boken behöver begreppet bli mer precist.
+I de första kapitlen har gemensam IT-förmåga använts som ett av de centrala begreppen i bokens arkitekturmodell. Hittills har det räckt att förstå förmågan som något relativt stabilt som ett stödjande IT-område behöver kunna erbjuda över tid. När förmågekartan nu ska bli utgångspunkt för resten av boken behöver begreppet bli mer precist.
 
 Det är nödvändigt eftersom ordet *förmåga* används på många sätt. En verksamhetsarkitekt kan tala om verksamhetsförmågan att handlägga ärenden. Ett plattformsteam kan säga att organisationen behöver en containerförmåga. En leverantör kan beskriva en produkt som en AI-förmåga. Ett utvecklingsteam kan tala om sin förmåga att leverera ofta. Alla användningarna kan vara begripliga i sitt sammanhang, men de betyder inte samma sak.
 
 I den här boken används därför en avgränsad arbetsdefinition:
 
-> En **gemensam IT-förmåga** är något ett stödjande IT-område varaktigt behöver kunna erbjuda stöd inom för att flera verksamhetslösningar ska kunna utvecklas, integreras, köras, förvaltas eller användas på ett ändamålsenligt sätt.
+> En gemensam IT-förmåga är något ett stödjande IT-område varaktigt behöver kunna erbjuda stöd inom för att flera verksamhetslösningar ska kunna utvecklas, integreras, köras, förvaltas eller användas på ett ändamålsenligt sätt.
 
 Definitionen är medvetet oberoende av dagens produkter och organisationsschema. Förmågan *Integration och kommunikation* finns exempelvis kvar även om en meddelandeprodukt byts ut, ett API-team omorganiseras eller vissa integrationsmekanismer flyttas till en annan teknisk plattform. Det som ska vara stabilt är behovsområdet och det ansvar organisationen behöver kunna bära – inte den aktuella realiseringen.
 
@@ -14,7 +14,7 @@ Detta kapitel förklarar vad som gör en sådan förmåga användbar som arkitek
 
 ## Förmåga beskriver vad organisationen behöver kunna åstadkomma
 
-En förmåga uttrycker i första hand ett **vad**, inte ett **hur**.
+En förmåga uttrycker i första hand ett vad, inte ett hur.
 
 Om organisationen behöver kunna autentisera användare, etablera tillit mellan tekniska tjänster och hantera autentiseringsuppgifter finns ett varaktigt behov inom området identitet och tillit. Den konkreta lösningen kan däremot förändras: identitetsleverantör, certifikatlösning, protokoll, nyckelhantering och driftmodell kan bytas över tid.
 
@@ -22,7 +22,7 @@ På motsvarande sätt beskriver *Applikationsexekvering och runtime* behovet av 
 
 Denna separation ger två viktiga egenskaper.
 
-För det första kan arkitekturen tala om **långsiktigt ansvar** utan att låsa sig till en produktgeneration. För det andra blir det möjligt att bedöma om dagens realisering faktiskt möter behovet. Om förmågan definieras som ”vår API gateway” blir frågan nästan självrefererande: så länge gatewayen finns har vi förmågan. Om förmågan i stället beskriver säker, spårbar och förändringsbar integration kan organisationen fråga om dess nuvarande API-, meddelande- och informationsutbyteslösningar tillsammans ger det stöd som behövs.
+För det första kan arkitekturen tala om långsiktigt ansvar utan att låsa sig till en produktgeneration. För det andra blir det möjligt att bedöma om dagens realisering faktiskt möter behovet. Om förmågan definieras som ”vår API gateway” blir frågan nästan självrefererande: så länge gatewayen finns har vi förmågan. Om förmågan i stället beskriver säker, spårbar och förändringsbar integration kan organisationen fråga om dess nuvarande API-, meddelande- och informationsutbyteslösningar tillsammans ger det stöd som behövs.
 
 Förmågan fungerar därmed som ett lager mellan behov och realisering:
 
@@ -40,7 +40,7 @@ Den säger inte exakt hur problemet ska lösas. Den säger vilket område organi
 
 ## Verksamhetsförmåga och gemensam IT-förmåga är inte samma sak
 
-Den viktigaste distinktionen är mot **verksamhetsförmåga**.
+Den viktigaste distinktionen är mot verksamhetsförmåga.
 
 En verksamhetsförmåga beskriver något verksamheten behöver kunna göra för att fullgöra sitt uppdrag eller skapa värde. I en myndighet kan exempel vara att genomföra kontroll, fatta beslut, hantera tillstånd, ge service eller utbyta information med andra aktörer. I ett företag kan motsvarande förmågor handla om försäljning, orderhantering, produktutveckling eller kundservice.
 
@@ -58,13 +58,13 @@ Gemensam IT-förmåga X ─→ stödjer flera verksamhetsförmågor
 
 Ett digitalt handläggningsstöd kan exempelvis behöva interaktion, workflow, regler, data, integration, identitet, runtime och driftbarhet. Samtidigt kan identitetsförmågan användas av ett stort antal verksamhetsområden som i övrigt har mycket lite gemensamt.
 
-Det gör att en gemensam IT-förmågekarta inte bör läsas som en karta över vad organisationen *gör*. Den beskriver vad ett stödjande IT-område behöver kunna **erbjuda stöd inom**.
+Det gör att en gemensam IT-förmågekarta inte bör läsas som en karta över vad organisationen *gör*. Den beskriver vad ett stödjande IT-område behöver kunna erbjuda stöd inom.
 
 Distinktionen har praktisk betydelse. Om IT-förmågorna utformas genom att spegla verksamhetsorganisationens avdelningar finns risk för att samma tekniska problem löses flera gånger. Om verksamhetsförmågorna i stället ersätts av en teknisk förmågekarta förlorar man verksamhetens ansvar och mening. De två kartorna kan kopplas till varandra, men de har olika syften.
 
 ## Förmåga är inte en tjänst
 
-En annan vanlig sammanblandning uppstår mellan förmåga och **tjänst**.
+En annan vanlig sammanblandning uppstår mellan förmåga och tjänst.
 
 Förmågan beskriver ett område organisationen behöver kunna stödja. En tjänst är ett mer konkret erbjudande som en konsument kan använda.
 
@@ -119,7 +119,7 @@ Om förmågan definieras efter dagens team uppstår två problem.
 
 Det första är att arkitekturmodellen blir instabil vid varje omorganisation. Det andra är att organisatoriska glapp riskerar att döljas. Om två team delar ansvar för en fråga kan en förmågekarta som bara speglar teamen göra det svårt att se att det egentligen finns ett gemensamt behov som ingen håller ihop.
 
-Förmågekartan bör därför kunna användas för att **utmana organisationen**, inte bara avbilda den.
+Förmågekartan bör därför kunna användas för att utmana organisationen, inte bara avbilda den.
 
 Ett bra kontrolltest är:
 
@@ -131,9 +131,9 @@ Om svaret är ja talar det för att man beskriver en förmåga snarare än en or
 
 Orden ligger nära varandra men bör hållas isär.
 
-**Kompetens** handlar om människors eller gruppers kunskap och färdighet. En organisation kan behöva kompetens inom databasteknik, informationsmodellering, nätverk eller UX för att realisera olika förmågor. Kompetensen är en förutsättning men inte själva förmågan.
+Kompetens handlar om människors eller gruppers kunskap och färdighet. En organisation kan behöva kompetens inom databasteknik, informationsmodellering, nätverk eller UX för att realisera olika förmågor. Kompetensen är en förutsättning men inte själva förmågan.
 
-**Kapacitet** beskriver hur mycket som kan hanteras inom en viss tid eller belastning: antal transaktioner, mängd lagring, antal samtidiga användare, leveransvolym eller tillgänglig bemanning. Två organisationer kan i princip ha samma förmåga men mycket olika kapacitet.
+Kapacitet beskriver hur mycket som kan hanteras inom en viss tid eller belastning: antal transaktioner, mängd lagring, antal samtidiga användare, leveransvolym eller tillgänglig bemanning. Två organisationer kan i princip ha samma förmåga men mycket olika kapacitet.
 
 En gemensam IT-förmåga beskriver däremot att organisationen kan erbjuda ett visst slags stöd med en kombination av ansvar, kompetens, processer, tjänster, teknik och styrning.
 
@@ -224,7 +224,7 @@ Frågorna är inte en formell certifiering. De hjälper till att upptäcka när 
 
 ## Capability map – karta, inte inventarielista
 
-En **capability map**, eller förmågekarta, visar vilka förmågor som finns och ofta hur de grupperas eller relaterar till varandra. För den gemensamma IT-arkitekturen fungerar kartan främst som en orienteringsyta.
+En capability map, eller förmågekarta, visar vilka förmågor som finns och ofta hur de grupperas eller relaterar till varandra. För den gemensamma IT-arkitekturen fungerar kartan främst som en orienteringsyta.
 
 Den kan användas för att:
 
@@ -250,7 +250,7 @@ Nya verksamhetsbehov kan göra att ett område blir viktigt nog att få ett eget
 
 En förändring av förmågekartan bör dock normalt ha en annan tyngd än ett produktbyte. Om kartan ändras varje kvartal är den förmodligen för nära teknik- eller organisationsstrukturen. Om den aldrig omprövas trots stora förändringar riskerar den att bli historisk dokumentation.
 
-En användbar förmågekarta är därför **trögrörlig men lärande**.
+En användbar förmågekarta är därför trögrörlig men lärande.
 
 Den ska ge kontinuitet samtidigt som erfarenheter från förmågeområden och lösningar kan förändra modellen när det finns goda skäl.
 
@@ -287,7 +287,7 @@ Syftet bör inte vara att ge varje ruta en dekorativ färg utan att identifiera 
 
 Ett konkret exempel visar skillnaderna mellan nivåerna.
 
-Anta att en större organisation har många system som behöver utbyta information. Den gemensamma IT-förmågan kan beskrivas som **Integration och kommunikation**.
+Anta att en större organisation har många system som behöver utbyta information. Den gemensamma IT-förmågan kan beskrivas som Integration och kommunikation.
 
 Förmågan omfattar frågor som:
 
@@ -338,10 +338,10 @@ Bokens fortsatta fördjupning utgår från elva gemensamma IT-förmågor:
 10. Programvaruutveckling och leverans,
 11. Arbetsplats, samarbete och produktivitet.
 
-Indelningen ska läsas som ett **sammanhängande förslag för ett stödjande IT-område**, inte som en universell taxonomi.
+Indelningen ska läsas som ett sammanhängande förslag för ett stödjande IT-område, inte som en universell taxonomi.
 
 Det är möjligt att en organisation behöver dela upp analys och AI i flera förmågor, lägga till nätverks- eller säkerhetsrelaterade områden, slå samman runtime och driftbarhet eller organisera digital arbetsplats på ett helt annat sätt. Poängen är inte att kopiera elva rubriker. Poängen är att använda ett stabilt förmågeperspektiv för att skapa ansvar och återanvändning utan att börja i produkter.
 
 Det leder direkt till nästa fråga. Även om något kan beskrivas som en IT-förmåga betyder det inte att hela förmågan eller alla dess realiseringar bör centraliseras.
 
-Nästa kapitel behandlar därför **när något faktiskt bör vara gemensamt** – och när federation, lokal variation eller domänspecifikt ansvar är ett bättre val.
+Nästa kapitel behandlar därför när något faktiskt bör vara gemensamt – och när federation, lokal variation eller domänspecifikt ansvar är ett bättre val.

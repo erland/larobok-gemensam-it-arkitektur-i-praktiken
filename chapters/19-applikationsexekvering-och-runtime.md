@@ -6,9 +6,9 @@ I en liten miljö kan varje utvecklingsteam självt välja operativsystem, appli
 
 Kärnfrågan i kapitlet är därför:
 
-> **Vad behöver en organisation erbjuda för att applikationer och andra workloads ska kunna köras standardiserat, säkert och förvaltningsbart utan att onödigt låsa lösningarna till en viss produkt eller exekveringsmodell?**
+> Vad behöver en organisation erbjuda för att applikationer och andra workloads ska kunna köras standardiserat, säkert och förvaltningsbart utan att onödigt låsa lösningarna till en viss produkt eller exekveringsmodell?
 
-Kapitlet behandlar den gemensamma IT-förmågan **Applikationsexekvering och runtime**. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
+Kapitlet behandlar den gemensamma IT-förmågan Applikationsexekvering och runtime. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
 
 ## Workloaden är utgångspunkten
 
@@ -237,9 +237,9 @@ Det är en viktig koppling till kapitel 20. Runtimeplattformen tillhandahåller 
 
 Skalning behandlas ibland som en generell funktion som plattformen ”har”. I praktiken behöver workloaden vara designad för den skalningsmodell som används.
 
-**Vertikal skalning** innebär att en instans får mer CPU eller minne.
+Vertikal skalning innebär att en instans får mer CPU eller minne.
 
-**Horisontell skalning** innebär att fler instanser körs parallellt.
+Horisontell skalning innebär att fler instanser körs parallellt.
 
 Horisontell skalning passar särskilt bra när arbetet kan fördelas mellan likvärdiga instanser. Men den skapar också nya frågor:
 
@@ -346,7 +346,7 @@ Portabilitet är därför bättre att analysera som en uppsättning beroenden ä
 
 Frågan bör vara:
 
-> **Vilka delar av lösningen är portabla, vilka är medvetet plattformsbundna och vad kostar ett framtida byte?**
+> Vilka delar av lösningen är portabla, vilka är medvetet plattformsbundna och vad kostar ett framtida byte?
 
 Det är ofta fullt rimligt att acceptera ett plattformsberoende om nyttan är stor och beroendet är synligt. Problemet uppstår när beroendet upptäcks först när en migrering blir nödvändig.
 
@@ -462,9 +462,9 @@ I en större organisation är det ofta bättre att erbjuda ett begränsat antal 
 
 Exempelvis kan katalogen innehålla:
 
-- **Container Application Platform** för containeriserade workloads,
-- **Java Application Runtime** för förvaltad Java-exekvering,
-- **Virtual Machine Runtime** för workloads som behöver fullare operativsystemsmiljö,
+- Container Application Platform för containeriserade workloads,
+- Java Application Runtime för förvaltad Java-exekvering,
+- Virtual Machine Runtime för workloads som behöver fullare operativsystemsmiljö,
 - särskilda batch- eller funktionsprofiler när behovet motiverar det.
 
 Varje erbjudande bör beskriva:
@@ -558,22 +558,22 @@ En applikation binds till en gammal runtimeversion utan definierad avvecklingspl
 
 När en ny workload ska placeras i en runtime kan följande ordning användas:
 
-1. **Beskriv workloaden.** Är den långlivad, batch, händelsedriven eller specialiserad?
-2. **Identifiera tillstånd.** Vilket tillstånd finns och var behöver det bevaras?
-3. **Beskriv resursprofilen.** CPU, minne, lagring, GPU och belastningsmönster.
-4. **Identifiera tekniska begränsningar.** Runtimeversion, native-bibliotek, OS-beroenden och särskild hårdvara.
-5. **Härled kvalitetskraven.** Tillgänglighet, skalning, återstartstid, isolering och livscykel.
-6. **Pröva mot gemensamma runtimeerbjudanden.** Välj det enklaste erbjudande som uppfyller behoven.
-7. **Dokumentera avvikelser.** Om inget erbjudande passar ska gapet beskrivas som behov, inte omedelbart som ett nytt produktkrav.
-8. **Definiera konsumentansvaret.** Health, shutdown, konfiguration, resurser och kompatibilitet.
-9. **Planera livscykeln.** Hur uppgraderas både applikation och runtime över tid?
-10. **Mät i verklig drift.** Justera resursprofil och plattformsval utifrån observerat beteende.
+1. Beskriv workloaden. Är den långlivad, batch, händelsedriven eller specialiserad?
+2. Identifiera tillstånd. Vilket tillstånd finns och var behöver det bevaras?
+3. Beskriv resursprofilen. CPU, minne, lagring, GPU och belastningsmönster.
+4. Identifiera tekniska begränsningar. Runtimeversion, native-bibliotek, OS-beroenden och särskild hårdvara.
+5. Härled kvalitetskraven. Tillgänglighet, skalning, återstartstid, isolering och livscykel.
+6. Pröva mot gemensamma runtimeerbjudanden. Välj det enklaste erbjudande som uppfyller behoven.
+7. Dokumentera avvikelser. Om inget erbjudande passar ska gapet beskrivas som behov, inte omedelbart som ett nytt produktkrav.
+8. Definiera konsumentansvaret. Health, shutdown, konfiguration, resurser och kompatibilitet.
+9. Planera livscykeln. Hur uppgraderas både applikation och runtime över tid?
+10. Mät i verklig drift. Justera resursprofil och plattformsval utifrån observerat beteende.
 
 Arbetssättet gör runtimevalet till ett arkitekturbeslut som kan motiveras, följas upp och omprövas.
 
 ## Från exekvering till driftbarhet
 
-Runtimeförmågan svarar på frågan **var och under vilka tekniska villkor en workload körs**.
+Runtimeförmågan svarar på frågan var och under vilka tekniska villkor en workload körs.
 
 Men att en applikation går att starta innebär inte att den går att drifta väl.
 
@@ -589,7 +589,7 @@ Organisationen behöver också kunna svara på:
 
 Det är nästa förmåga.
 
-I **kapitel 20 – Driftbarhet och motståndskraft** flyttas fokus därför från exekveringsmiljön till förmågan att förstå, återställa och hålla systemen fungerande över tid.
+I kapitel 20 – Driftbarhet och motståndskraft flyttas fokus därför från exekveringsmiljön till förmågan att förstå, återställa och hålla systemen fungerande över tid.
 
 ## Källor och vidare läsning
 
