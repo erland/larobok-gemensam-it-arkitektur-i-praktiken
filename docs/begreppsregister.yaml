@@ -60,11 +60,9 @@ concepts:
   - 13
   - 11
   - 35
-  - 9
   - 25
   - 14
   marked_chapters:
-  - 11
   - 14
   - 15
   - 29
@@ -265,7 +263,6 @@ concepts:
   - 11
   - 23
   marked_chapters:
-  - 11
   - 25
 - id: monster-07
   term: Cache-aside
@@ -292,7 +289,6 @@ concepts:
   - 17
   - 16
   marked_chapters:
-  - 10
   - 26
 - id: monster-09
   term: AI med mänsklig kontroll
@@ -882,11 +878,9 @@ concepts:
   source: docs/underlag/gemensam-it-arkitektur/standarder/21-backup-recovery-standard.md
   related_chapters:
   - 15
-  - 11
   - 32
   - 9
-  marked_chapters:
-  - 11
+  marked_chapters: []
 - id: standarder-22
   term: Microsoft 365
   type: Teknisk standard

@@ -181,76 +181,63 @@ Det är därför ofta mer träffsäkert att fråga:
 
 än att försöka klassificera hela området som antingen centraliserat eller decentraliserat.
 
-## Ett spektrum: lokalt, federerat och gemensamt
+## Två perspektiv på gemensamhet
 
-I praktiken är gemensamhet ett spektrum. Tre idealtypiska lägen är användbara:
+När ett behov bedöms som gemensamt återstår två olika frågor:
 
-### Lokalt ansvar
+1. **Var behöver ansvaret ligga?**
+2. **Vad behöver faktiskt vara gemensamt?**
 
-Varje produkt- eller domänteam väljer och förvaltar sin egen lösning inom breda gemensamma principer.
+De frågorna bör hållas isär. Gemensamt ansvar kräver inte central realisering, och lösningar kan dela arkitektur utan att dela runtime.
 
-Det passar när:
+### Ansvar: lokalt, federerat eller gemensamt
 
-- behovet är starkt domänspecifikt,
-- beroendena till andra är små,
-- riskerna är lokala,
-- variation ger verkligt värde,
-- kostnaden för gemensam samordning är större än nyttan.
+Tre ansvarslägen är användbara.
 
-### Federerat ansvar
+**Lokalt ansvar** passar när behovet är starkt domänspecifikt, beroendena är små och variation skapar verkligt verksamhetsvärde. Teamet kan då välja och förvalta sin lösning inom bredare gemensamma principer.
 
-Gemensamma kontrakt, standarder eller grundkomponenter kombineras med lokal realisering och lokalt ägarskap.
+**Federerat ansvar** passar när organisationen behöver gemensamma kontrakt, standarder eller grundkomponenter men samtidigt vill behålla lokal realisering och lokalt ägarskap. Det passar när interoperabilitet kräver samordning men verksamhetsnära variation är betydande.
 
-Det passar när:
+**Gemensamt tjänsteansvar** passar när behovet är återkommande och relativt homogent, skalfördelarna är stora, specialistkompetens bör koncentreras eller riskbilden talar för en enhetlig tjänst.
 
-- interoperabilitet kräver gemensamma regler,
-- flera tekniska realiseringar behöver kunna samexistera,
-- verksamhetsnära variation är betydande,
-- organisationen vill undvika både fragmentering och central köbildning.
+Lägena kan kombineras. För *Integration och kommunikation* kan API- och eventstandarder samt viss infrastruktur vara gemensamma, medan kontrakt ägs federerat och domänens data och semantik lokalt.
 
-### Gemensamt tjänsteansvar
+### Återanvändning: vad är det som ska vara gemensamt?
 
-Organisationen erbjuder en konsumerbar gemensam tjänst eller plattform med tydligt ägarskap och livscykel.
+Ansvarsmodellen säger inte hur långt återanvändningen bör gå. Det som delas kan ligga på olika nivåer:
 
-Det passar när:
+| Återanvändningsnivå | Det gemensamma | Typisk vinst | Typisk kostnad eller risk |
+|---|---|---|---|
+| Gemensamma begrepp och principer | språk, erfarenheter och styrande principer | samsyn utan teknisk koppling | stora variationer i realisering |
+| Gemensamma krav, kontrakt och mönster | kvalitetskrav, API-kontrakt, standarder, lösningsmönster | interoperabilitet och jämnare kvalitet | implementation och verifiering dupliceras |
+| Gemensam design och automation | referensdesign, IaC, konfiguration, säkerhetsprofil, golden path | snabbare och mer konsekvent realisering | risk för versionsdrift mellan instanser |
+| Gemensam implementation | samma kodbas eller produktpaket | central förbättring och mindre kodduplicering | gemensam livscykel påverkar flera konsumenter |
+| Gemensam implementation, separata runtimeinstanser | samma tjänstedesign och kod, men isolerad drift per konsument eller område | standardisering kombinerad med isolering | fler instanser, uppgraderingar och kapacitetsytor att hantera |
+| Gemensam delad runtime-tjänst | en gemensam tjänsteinstans eller plattform | maximal central återanvändning och gemensam förbättring | större beroende, gemensam konsekvensyta och krav på kompatibla behov |
 
-- behovet är återkommande och relativt homogent,
-- skalfördelarna är stora,
-- specialiserad kompetens bör koncentreras,
-- risk eller compliance talar för enhetlighet,
-- en gemensam tjänst kan ge bättre användarupplevelse än lokal egenproduktion.
+Detta är **inte en mognadstrappa**. Rätt nivå beror på vad organisationen försöker optimera och vilka kvalitetskrav konsumenterna delar.
 
-Dessa lägen kan dessutom kombineras inom samma förmåga.
+Mer delad realisering kan ge större skalfördelar och central förbättring, men ökar ofta beroenden, gemensam konsekvensyta och behovet av samordnad livscykel.
 
-För *Integration och kommunikation* kan organisationen exempelvis ha:
+Det gör frågan mer precis än "ska detta vara gemensamt?":
 
-- gemensamma API- och eventstandarder,
-- en gemensam API management-tjänst,
-- en gemensam meddelandetjänst,
-- federerat ägarskap för integrationskontrakt,
-- lokalt ansvar för domänens data och semantik.
+> Vilken del av problemet behöver vara gemensam – kunskapen, kraven, kontraktet, designen, implementationen eller runtimeinstansen?
 
-Förmågan är gemensam, men ansvarsmönstret är inte monolitiskt.
+Tre kontraster räcker för att visa skillnaden.
+
+**Gemensamma kontrakt, olika implementationer.** Flera domäner kan följa samma autentiserings- och API-principer men skriva och drifta sin egen kod. Det minskar runtimeberoenden och ger lokal autonomi, men säkerhetsfixar och verifiering behöver göras på flera håll.
+
+**Gemensam design, separata instanser.** Organisationen kan använda samma plattformsdesign, IaC, säkerhetsprofil och driftmodell men låta varje område ha en egen runtimeinstans. Det ger standardisering och isolering, men skapar fler instanser att uppgradera och en risk att de gradvis divergerar.
+
+**Gemensam delad tjänst.** Alla konsumenter använder samma tjänsteinstans. Det ger starkast central återanvändning och gör förbättringar omedelbart tillgängliga för alla, men skapar också större gemensamma beroenden och en större konsekvensyta vid fel.
+
+Observerbarhet visar hur nivåerna kan kombineras: gemensamma korrelationskrav, telemetristandard och insamlingsplattform kan kombineras med lokal semantisk instrumentering.
 
 ## Centralisering har också kostnader
 
-Gemensamma initiativ motiveras ofta genom de problem de ska lösa, men deras egna kostnader glöms lätt bort.
+Ju mer realisering som samlas i en gemensam runtime, desto viktigare blir det att väga skalfördelarna mot samordningskostnaden. Väntetider, långsammare anpassning, svagare lokalt ägarskap och större gemensam konsekvensyta kan snabbt äta upp vinsten.
 
-Ett centraliserat erbjudande kan skapa:
-
-- väntetider och beroenden,
-- långsammare anpassning,
-- lägre känsla av ägarskap hos konsumenterna,
-- en stor gemensam failure domain,
-- överstandardisering,
-- svårigheter att prioritera mellan många olika behov,
-- teknisk inlåsning om en gemensam plattform blir obligatorisk för länge.
-
-Detta betyder inte att gemensamma plattformar är fel, utan att deras nytta måste jämföras med samordningskostnaden.
-
-En gemensam lösning som sparar tio team fem timmars arbete per år men kräver ett helt centralt team för att förvaltas är knappast en skalfördel. En gemensam lösning som däremot minskar säkerhetsrisk, gör återställning verifierbar och eliminerar hundratals lokala speciallösningar kan vara mycket värdefull även om plattformsteamet i sig är kostsamt.
-
-Gemensamhet behöver därför bedömas som ett arkitekturbeslut med samma disciplin som andra större val: alternativ, konsekvenser, kvaliteter, kostnader och omprövningsvillkor.
+Det avgörande är därför inte om ett centralt team kostar pengar, utan om den gemensamma lösningen ger större samlad nytta än alternativen. Gemensamhet behöver bedömas som ett arkitekturbeslut med konsekvenser, kvaliteter, kostnader och omprövningsvillkor.
 
 ## En enkel bedömningsmatris
 
@@ -280,26 +267,11 @@ eller:
 
 Båda missar arkitekturens verkliga fråga: var behöver beroenden och ansvar samordnas för att helheten ska fungera?
 
-## Bedöm förmågan och tjänsten separat
+## Bedöm förmågan och realiseringen separat
 
-En särskilt viktig distinktion är att en gemensam förmåga inte automatiskt innebär en gemensam plattformstjänst.
+En gemensam förmåga innebär inte automatiskt en gemensam plattformstjänst. Organisationen kan exempelvis behöva ett gemensamt ansvar för *Interaktion, presentation och kanaler* men realisera det genom designsystem, tillgänglighetsstandarder och återanvändbara komponenter i stället för en enda frontendplattform.
 
-Organisationen kan behöva ett gemensamt ansvar för *Interaktion, presentation och kanaler* utan att erbjuda en enda frontendplattform. Förmågeområdet kan i stället äga designsystem, tillgänglighetsstandarder, kanalprinciper och vissa återanvändbara komponenter.
-
-På samma sätt kan *Data- och informationshantering* vara en tydlig gemensam förmåga medan vissa specialiserade databaser eller datalager fortfarande ägs lokalt.
-
-Bedömningen bör därför ske i två steg:
-
-```text
-1. Behöver organisationen bära ett gemensamt ansvar för området?
-                         ↓
-2. Vilka delar av detta ansvar bör realiseras som gemensamma
-   standarder, mönster, tjänster eller plattformar?
-```
-
-Det första steget formar förmågekartan. Det andra formar erbjudandeportföljen.
-
-Om stegen blandas ihop finns risk att förmågekartan blir en direkt avbildning av dagens plattformskatalog. Då försvinner den stabilitet som var en av huvudpoängerna med förmågebegreppet.
+Det första beslutet gäller alltså om området behöver ett gemensamt ansvar. Nästa gäller vilken nivå av återanvändning som är lämplig. Om de blandas ihop riskerar förmågekartan att bli en avbildning av dagens plattformskatalog.
 
 ## Gemensamt betyder att någon måste äga helheten
 
@@ -345,33 +317,15 @@ Därför bör organisationen regelbundet fråga:
 
 Detta är samma iterativa logik som etablerades i kapitel 7. Förmågekartan är stabilare än produktlandskapet, men den är inte immun mot lärande.
 
-## Tre exempel
+## Två korta exempel
 
-### Exempel 1: Secrets management
+### Secrets management
 
-Många team behöver hantera lösenord, tokens, nycklar och andra hemligheter. Felhantering kan ge allvarliga säkerhetskonsekvenser. Kompetensen för säker lagring, rotation, audit och åtkomstkontroll är specialiserad. Behoven är samtidigt relativt lika mellan många lösningar.
+Många team behöver hantera lösenord, tokens, nycklar och andra hemligheter. Riskerna är höga, kompetensen specialiserad och behoven relativt lika. Det talar för gemensamt ansvar och ofta för en gemensam tjänst. Det lokala teamet behöver ändå äga vilka hemligheter lösningen använder och vilka applikationsidentiteter som får åtkomst.
 
-Det talar starkt för gemensamt ansvar och ofta för en gemensam tjänst.
+### Verksamhetsspecifik beslutslogik
 
-Det lokala teamet behöver ändå äga vilka hemligheter dess lösning använder, när de ska bytas och vilka applikationsidentiteter som ska få åtkomst.
-
-### Exempel 2: Verksamhetsspecifik beslutslogik
-
-Flera system behöver fatta beslut, men reglernas innehåll, juridiska betydelse och förändringstakt kan vara starkt verksamhetsspecifika.
-
-Det kan finnas skäl för gemensamma mönster, standarder för spårbarhet och eventuellt en gemensam regelplattform. Däremot bör reglernas semantik och ägarskap normalt inte centraliseras till ett IT-plattformsteam.
-
-Här blir en federerad modell ofta mer rimlig än full centralisering.
-
-### Exempel 3: Observerbarhet
-
-Alla produktteam behöver kunna förstå sina system i drift. Gemensam korrelation, logghantering, mätvärden, tracing och larmkedjor ger stora skalfördelar och förbättrar möjligheten att felsöka över systemgränser.
-
-Det talar för gemensamma standarder och gemensam plattform.
-
-Men plattformsteamet kan inte veta vilka verksamhetsmått som visar om en ansökningsprocess eller ett kontrollflöde fungerar korrekt. Den semantiska instrumenteringen behöver därför ligga nära lösningen.
-
-Även här är den bästa modellen en kombination av gemensam infrastruktur och lokalt ansvar.
+Flera system kan behöva fatta beslut, men reglernas innehåll, juridiska betydelse och förändringstakt kan vara starkt domänspecifika. Gemensamma mönster, spårbarhetskrav och eventuell regelteknik kan återanvändas, medan reglernas semantik och ägarskap ligger nära verksamheten. Här är gemensam arkitektur viktigare än gemensam runtime.
 
 ## En tumregel för beslutets nivå
 

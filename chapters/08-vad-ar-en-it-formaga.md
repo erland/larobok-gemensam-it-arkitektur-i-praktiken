@@ -109,19 +109,11 @@ Stabilitet kommer alltså inte av maximal abstraktion utan av att välja en niv�
 
 ## Förmåga är inte ett team eller en organisatorisk funktion
 
-En förmågekarta bör inte heller vara en kopia av organisationsschemat.
+En förmågekarta bör inte vara en kopia av organisationsschemat. Ett team kan ansvara för flera förmågor, och en förmåga kan kräva samarbete mellan flera organisatoriska enheter. *Driftbarhet och motståndskraft* kan exempelvis involvera plattformsteam, säkerhetsfunktioner, driftorganisation, utvecklingsteam och kontinuitetsansvariga men ändå behöva hållas ihop som ett arkitekturområde.
 
-Det är möjligt att ett team i praktiken ansvarar för en hel förmåga, men det är inte ett krav. Ett team kan ansvara för flera förmågor och en förmåga kan kräva samarbete mellan flera organisatoriska enheter.
+Om förmågan definieras efter dagens team blir modellen instabil vid omorganisationer och organisatoriska glapp riskerar att döljas. Förmågekartan ska därför kunna utmana organisationen, inte bara avbilda den.
 
-Detta är särskilt tydligt för tvärgående områden. *Driftbarhet och motståndskraft* kan involvera plattformsteam, säkerhetsfunktioner, driftorganisation, utvecklingsteam och kontinuitetsansvariga. Förmågan behöver ändå kunna beskrivas som ett sammanhängande arkitekturområde med tydliga ansvarssnitt.
-
-Om förmågan definieras efter dagens team uppstår två problem.
-
-Det första är att arkitekturmodellen blir instabil vid varje omorganisation. Det andra är att organisatoriska glapp riskerar att döljas. Om två team delar ansvar för en fråga kan en förmågekarta som bara speglar teamen göra det svårt att se att det egentligen finns ett gemensamt behov som ingen håller ihop.
-
-Förmågekartan bör därför kunna användas för att utmana organisationen, inte bara avbilda den.
-
-Ett bra kontrolltest är:
+Ett enkelt kontrolltest är:
 
 > Om teamen organiserades om i morgon, skulle detta fortfarande vara något IT-området behöver kunna erbjuda stöd inom?
 
@@ -129,22 +121,9 @@ Om svaret är ja talar det för att man beskriver en förmåga snarare än en or
 
 ## Förmåga är inte samma sak som kompetens eller kapacitet
 
-Orden ligger nära varandra men bör hållas isär.
+Kompetens handlar om människors eller gruppers kunskap och färdighet; kapacitet om hur mycket som kan hanteras inom en viss tid eller belastning. Båda är förutsättningar för en förmåga men inte samma sak som förmågan.
 
-Kompetens handlar om människors eller gruppers kunskap och färdighet. En organisation kan behöva kompetens inom databasteknik, informationsmodellering, nätverk eller UX för att realisera olika förmågor. Kompetensen är en förutsättning men inte själva förmågan.
-
-Kapacitet beskriver hur mycket som kan hanteras inom en viss tid eller belastning: antal transaktioner, mängd lagring, antal samtidiga användare, leveransvolym eller tillgänglig bemanning. Två organisationer kan i princip ha samma förmåga men mycket olika kapacitet.
-
-En gemensam IT-förmåga beskriver däremot att organisationen kan erbjuda ett visst slags stöd med en kombination av ansvar, kompetens, processer, tjänster, teknik och styrning.
-
-Det är därför möjligt att säga:
-
-- vi har identifierat förmågan men saknar tillräcklig kompetens,
-- vi erbjuder förmågan men kapaciteten är otillräcklig,
-- vi har tekniska produkter men saknar ett sammanhållet förmågeansvar,
-- vi har hög lokal kompetens men inget gemensamt tjänsteerbjudande.
-
-Sådana utsagor är viktiga eftersom de gör olika typer av brister synliga.
+En gemensam IT-förmåga beskriver att organisationen kan erbjuda ett visst slags stöd genom en kombination av ansvar, kompetens, processer, tjänster, teknik och styrning. Därför går det exempelvis att ha rätt kompetens men otillräcklig kapacitet, eller tekniska produkter men inget sammanhållet förmågeansvar. Distinktionen gör olika typer av brister synliga.
 
 ## Förmågan är ett ansvarssystem – inte bara en rubrik
 
@@ -267,17 +246,7 @@ En förmåga kan exempelvis ha:
 - god kompetens men produkter nära end-of-life,
 - hög användning men otillräcklig kapacitet.
 
-Det är därför ofta mer informativt att bedöma flera dimensioner, till exempel:
-
-- ansvar och ägarskap,
-- behovsförståelse,
-- arkitektur och vägledning,
-- tjänsteutbud,
-- standardisering och automatisering,
-- kvalitet och driftbarhet,
-- användbarhet för konsumenter,
-- livscykel och förvaltningsförmåga,
-- faktisk användning och upplevt värde.
+Det är därför ofta mer informativt att bedöma flera dimensioner: ansvar och ägarskap, behovsförståelse, arkitektur och vägledning, tjänsteutbud, standardisering och automatisering, kvalitet och driftbarhet, användbarhet, livscykel samt faktisk användning och upplevt värde.
 
 Syftet bör inte vara att ge varje ruta en dekorativ färg utan att identifiera var nästa investering ger störst effekt.
 
