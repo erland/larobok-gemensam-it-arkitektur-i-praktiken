@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev63.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev64.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,15 +46,16 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "publishing/fix-epub-after-pandoc.py"
+      "publishing/epub.css",
+      "publishing/pdf-template.tex"
     ],
-    "operation": "Gjorde EPUB-innehållsförteckningen läsarkompatibel efter delindelningen genom att bevara Pandocs namespace-struktur och validera 6 delar/37 kapitel",
-    "source_revision": 62
+    "operation": "Tydligare kodblock i EPUB och PDF med ljusgrå bakgrund, diskret ram och förbättrad luft",
+    "source_revision": 63
   },
-  "parent_revision": 62,
+  "parent_revision": 63,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 63,
+  "revision": 64,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -847,8 +848,8 @@
       "sha256": "41ea9b200a768f1f55a5fd86ee6a278907f994274ca548cf742225579e50202c"
     },
     "publishing/epub.css": {
-      "bytes": 1538,
-      "sha256": "305a7a518f632831ce01e5fca36891ea1d48c1479f60e66056c54e4157d96397"
+      "bytes": 1686,
+      "sha256": "53628304449efc97209b26abb0bc1e36c32843af8adac089ecc3aa881cd11907"
     },
     "publishing/fix-epub-after-pandoc.py": {
       "bytes": 9659,
@@ -859,12 +860,12 @@
       "sha256": "4ccba6546bfab8a0985c905108d329509c4171e5e47a9133e3ca684a438f881c"
     },
     "publishing/pdf-template.tex": {
-      "bytes": 3374,
-      "sha256": "c841cf07f85f7090931f6c5ce246ede7ad2fb41dc06b67ea6fe6fd5dff957e19"
+      "bytes": 3782,
+      "sha256": "796df88f81d0b53d8434d5cd16d00448cfc4d79fd15f4086e4dbaaf8213e8aa8"
     },
     "revision-log.md": {
-      "bytes": 38997,
-      "sha256": "88fbe2ae52a644627c37768b4741c1c5026ce1d092d95509097510d287928d7d"
+      "bytes": 39232,
+      "sha256": "55fa40daed6db494fe1e01640e6075d235784ba6a77b0cc62b7ced52485ea475"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -891,5 +892,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T18:01:01Z"
+  "updated_at": "2026-08-19T18:15:55Z"
 }
