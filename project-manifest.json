@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev50.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev51.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,20 +46,17 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "README.md",
-      "backmatter/kallor-och-vidare-lasning.md",
-      "book.yaml",
-      "chapters/kallor-och-vidare-lasning.md",
-      "docs/kallapparat-pass-1.md",
-      "project-index.md"
+      "assets/cover/README.md",
+      "assets/cover/gemensam-it-arkitektur-i-praktiken.png",
+      "book.yaml"
     ],
-    "operation": "Anpassade bibliografin till projektets exportstruktur",
-    "source_revision": 49
+    "operation": "Lade in den godkända omslagsbilden och kopplade den till EPUB/PDF-exporten",
+    "source_revision": 50
   },
-  "parent_revision": 49,
+  "parent_revision": 50,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 50,
+  "revision": 51,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -80,8 +77,12 @@
       "sha256": "1eb346a71ad5f11ff3cb1bd0ad0e8383116f40829678dd842a5b680976c203d6"
     },
     "assets/cover/README.md": {
-      "bytes": 55,
-      "sha256": "9ae0299913b2c9ecc17c81203421c3f106ff095fbdea0985f449d2fb562b7c10"
+      "bytes": 244,
+      "sha256": "0dc8a228292fd7dcd26f423c4c6c724a2e2c5e6d465ac845fb27c4f34c6883e0"
+    },
+    "assets/cover/gemensam-it-arkitektur-i-praktiken.png": {
+      "bytes": 1791802,
+      "sha256": "069b5d9e4a46c28b6ddbbf93bb0d24e5ff2842226a31976059d7f8b9bf92f247"
     },
     "assets/image-prompts/README.md": {
       "bytes": 71,
@@ -92,8 +93,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 3048,
-      "sha256": "dc3667f19293c3e6dbefb7a1dd6ebfdf6fe47efdedaa0eeee6c8b7df3f8da31f"
+      "bytes": 3097,
+      "sha256": "846c0269034556dc7ea86cb98ff238fd1f1670f776d37f25c70f797cbc5d5c6d"
     },
     "chapters/00-inledning.md": {
       "bytes": 2171,
@@ -824,8 +825,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 31500,
-      "sha256": "f29b3c91d16f8c36e6aebf254052216e11c7c0644c98ccd0640776e9795f5983"
+      "bytes": 31760,
+      "sha256": "4b08e84769fff4bb94fd93151fcdbc13e59b6d5dedb694a29731ef0db4d58e1f"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -848,5 +849,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T10:52:57Z"
+  "updated_at": "2026-08-19T11:06:28Z"
 }
