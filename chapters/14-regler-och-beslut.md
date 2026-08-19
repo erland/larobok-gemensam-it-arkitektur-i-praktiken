@@ -480,7 +480,7 @@ Finns krav på dokumentation, attest, giltighetsperiod eller bevarande?
 
 Kvalitetsprofilen bör avgöra realiseringen – inte det faktum att organisationen redan äger en viss regelmotor.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 Förmågan blir tydligare om bokens tredelade ansvarmodell används konsekvent.
 

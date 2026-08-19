@@ -12,7 +12,7 @@ En användbar grundregel är:
 
 > **Välj inte lagringsteknik först. Beskriv först informationens roll, livslängd, åtkomstmönster, konsistensbehov, volym, skyddsbehov och återställningskrav.**
 
-Detta är samma behov-före-teknik-princip som boken redan etablerat, men tillämpad specifikt på persistent och härledd data.
+Detta är behov-före-teknik-principen tillämpad specifikt på persistent och härledd data. Informationssemantiken från kapitel 11 tas här som ett ingångsvärde och återförklaras därför inte.
 
 ## Data är inte en enda typ av tekniskt problem
 
@@ -396,7 +396,7 @@ Data lever ofta längre än den produkt som lagrar den. Export- och migreringsf�
 
 All data behöver inte ligga på den dyraste och snabbaste lagringsnivån. Historik, backup och binära objekt kan ha andra profiler än aktiv transaktionell data.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 ### Gemensam arkitektur
 

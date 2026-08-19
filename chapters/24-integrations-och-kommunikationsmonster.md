@@ -4,6 +4,8 @@ Integration är sällan svårt därför att två system inte kan utbyta bytes. D
 
 Kapitel 17 beskrev integrations- och kommunikationsförmågan och valen mellan exempelvis API, messaging, events, filutbyte och dataförflyttning. Här ligger fokus på en annan nivå. Vi ska se hur återkommande lösningsstrukturer kan användas för att hantera dessa behov. Mönstren är inte konkurrerande tekniker som man väljer en gång för hela organisationen. De är svar på olika krafter och kombineras ofta i samma lösning.
 
+I resten av kapitlet återupprepas därför inte kapitel 17:s katalog över kommunikationsformer. Fokus ligger på mönstrens struktur, krafter, konsekvenser och kombinationer.
+
 Tre mönster från bokens grundmaterial står i centrum:
 
 - Backend for Frontend,

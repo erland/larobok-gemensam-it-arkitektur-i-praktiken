@@ -606,7 +606,7 @@ Arbetsytor, dokument, appar och automationer behöver kunna skapas, ägas, för�
 
 Licenser, lagring och tilläggstjänster kan ge betydande kostnader när de multipliceras över hela organisationen. Kostnadsfrågan behöver därför kopplas till faktisk användning och nytta.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 Den tredelade ansvarmodellen från kapitel 7 fungerar väl även här.
 

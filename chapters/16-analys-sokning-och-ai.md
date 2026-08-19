@@ -510,7 +510,7 @@ AI-tjänster kan ha en kostnadsprofil som skiljer sig från traditionell applika
 
 Därför behöver kostnad kunna följas per relevant användningsfall och inte bara som en total plattformsfaktura.
 
-## Ansvar på de tre nivåerna
+## Ansvar på tre nivåer
 
 Den tredelade ansvarmodellen från kapitel 7 är särskilt viktig i ett område med hög teknisk förändringstakt.
 

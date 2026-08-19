@@ -2,6 +2,8 @@
 
 En lösning är inte färdig när koden fungerar på en utvecklares dator. Den måste kunna byggas reproducerbart, förflyttas mellan miljöer utan att ändra identitet, observeras när den körs och återställas när något går fel. Det är först då leverans och drift blir delar av arkitekturen i stället för aktiviteter som läggs på i slutet.
 
+Kapitel 20 och 21 beskrev förmågorna driftbarhet respektive leverans. Här återupprepas inte deras fulla mekanismer; vi fokuserar på tre återanvändbara mönster och på de beroenden som uppstår när de kombineras.
+
 I det här kapitlet fördjupar vi tre lösningsmönster från bokens mönsterbibliotek:
 
 - **Build once, promote many**,

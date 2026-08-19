@@ -7,7 +7,7 @@
 
 ## Inledning
 - Syfte: Introducera bokens problemställning, läsarprofil, centrala modell och hur boken kan användas både linjärt och som referens.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Övergripande dispositionsprincip
 Boken följer en medveten progression:
@@ -27,38 +27,38 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Kärnfråga: Vilket problem försöker gemensam IT-arkitektur lösa, och när blir den själv ett problem?
 - Centralt innehåll: fragmentering, lokal optimering, återanvändning, autonomi, gemensamt kontra domänspecifikt, arkitektur som möjliggörare snarare än kontrollapparat.
 - Avgränsning: beskriver problembilden och målbilden, inte den konkreta styrmodellen.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 2: En arkitektur av flera lager
 - Kärnfråga: Hur hänger behov, kvaliteter, förmågor, mönster, plattformar, standarder, byggblock och produkter ihop?
 - Centralt innehåll: metamodell, abstraktionsnivåer, stabilitet över tid, spårbarhet, relationer mellan modellens artefakter.
 - Avgränsning: presenterar helhetsmodellen; respektive artefakttyp fördjupas senare.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 3: Behov före teknik
 - Kärnfråga: Hur undviker man att dagens teknikplattform blir morgondagens verksamhetskrav?
 - Centralt innehåll: behovsanalys, constraints, produktoberoende krav, mål kontra medel, teknikskuld och path dependency.
 - Avgränsning: behandlar hur problemet formuleras före arkitekturval; kvalitetskrav behandlas i kapitel 4.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 4: Kvalitetsattribut som arkitekturens drivkrafter
 - Kärnfråga: Hur översätts verksamhetskonsekvenser till mätbara kvalitetskrav och arkitekturdrivare?
 - Centralt innehåll: tillgänglighet, kontinuitet, prestanda, skalbarhet, säkerhet, spårbarhet, interoperabilitet, användbarhet, förvaltningsbarhet, livscykel och kostnad.
 - Fördjupning: quality attribute scenarios, prioritering och konflikt mellan kvaliteter, från konsekvens till verifierbart krav.
 - Avgränsning: förklarar kravkedjan; enskilda förmågekapitel beskriver hur vissa kvaliteter realiseras tekniskt och ska inte upprepa kravmetoden.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 5: Arkitekturbeslut och trade-offs
 - Kärnfråga: Hur gör man explicita, spårbara och omprövningsbara arkitekturbeslut?
 - Centralt innehåll: alternativ, beslutskriterier, trade-offs, ADR, riskacceptans, konsekvenser, teknisk skuld och omprövningsdatum.
 - Avgränsning: fokuserar på beslutets form och resonemang, inte organisatorisk governance eller standardernas livscykel.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 6: Arkitekturprinciper som beslutsstöd
 - Kärnfråga: Hur används principer för att skapa konsekvens utan att ersätta arkitektens bedömning?
 - Centralt innehåll: principers syfte, egenskaper hos användbara principer, behov före teknik, standardiserade erbjudanden, separation mellan stabil arkitektur och föränderlig teknik, säkerhet och driftbarhet som inbyggda egenskaper.
 - Avgränsning: handlar om principerna som styrsignal; mandat, avsteg, förvaltning och governance behandlas samlat i kapitel 37.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 7: Att etablera modellen – ordning, ansvar och iteration
 - Kärnfråga: I vilken ordning bör en organisation etablera gemensam IT-arkitektur, och vilka beslut hör hemma på gemensam nivå, förmågenivå respektive lösningsnivå?
@@ -66,32 +66,32 @@ Varje senare del får förutsätta begrepp från tidigare delar, men ska inte å
 - Rekommenderad etableringsordning: förstå återkommande behov och constraints → formulera gemensamma principer och kvalitetsdimensioner → skapa en tillräckligt bra första förmågekarta → avgränsa ansvar och beroenden → utse förmågeansvar → prioritera vilka förmågor som behöver fördjupas först → utveckla mönster, plattformstjänster och standarder inom förmågorna → identifiera tvärgående referensarkitekturer → följ upp, lär och justera modellen.
 - Ansvarsprincip: gemensam nivå äger spelplanen och sådant som måste vara konsekvent över flera förmågor; förmågeansvar utvecklar innehåll och erbjudanden inom sitt område; lösnings-/produktteam kombinerar och tillämpar byggstenarna för konkreta verksamhetsbehov.
 - Avgränsning: introducerar etablerings- och ansvarmodellen. Kapitel 8–11 fördjupar förmågebegrepp, gemensamhet, domängränser och information; kapitel 37 behandlar långsiktig governance, förvaltning, avsteg och evolution.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Del II – Från verksamhet till gemensamma IT-förmågor
 
 ## Kapitel 8: Vad är en IT-förmåga?
 - Kärnfråga: Vad betyder förmåga i detta sammanhang och hur skiljer den sig från verksamhetsförmåga, tjänst och produkt?
 - Centralt innehåll: verksamhetsförmåga, gemensam IT-förmåga, capability map, tjänst, produkt, stabilitet och ansvar.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 9: När något bör vara gemensamt
 - Kärnfråga: Vilka egenskaper motiverar en gemensam förmåga eller tjänst?
 - Centralt innehåll: skalfördelar, risk, kompetens, interoperabilitet, standardisering, differentiering, centralisering kontra federation.
 - Avgränsning: avgör *vad* som lämpar sig för gemensamt ansvar; kapitel 28–30 behandlar *hur* ett gemensamt tekniskt erbjudande utformas.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 10: Domäner, ansvar och gränser
 - Kärnfråga: Vilka arkitekturfrågor löses inte av en gemensam förmågekarta?
 - Centralt innehåll: domänarkitektur, bounded context, cohesion, coupling, ownership, lokalt kontra gemensamt ansvar.
 - Avgränsning: handlar om verksamhets- och lösningsgränser, inte den gemensamma plattformens tjänstegränser.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 11: Information och data som arkitekturella ingångsvärden
 - Kärnfråga: Hur kopplas informationsbehov, semantik, informationsägarskap och datans livscykel till arkitekturen innan lagringsteknik väljs?
 - Centralt innehåll: informationsmodell, begrepp, informationsägarskap, datamodell, system of record, master- och referensdata, data contracts, klassning och livscykel.
 - Avgränsning: handlar om informationens mening och ansvar. Kapitel 15 behandlar den tekniska förmågan för lagring, kopior, cache, historik, konsistens och retention.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Del III – De gemensamma IT-förmågorna
 
@@ -100,61 +100,61 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 12: Interaktion, presentation och kanaler
 - Kärnfråga: Hur skapas konsekventa, tillgängliga och förändringsbara användargränssnitt över flera kanaler?
 - Centralt innehåll: webb, design system, kanalstrategi, BFF som möjlig lösningsstruktur, tillgänglighet och klientansvar.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 13: Process, workflow och ärendehantering
 - Kärnfråga: När behövs processmotor, workflow eller case management – och när räcker vanlig domänlogik?
 - Centralt innehåll: workflow, human tasks, case management, state, långlivade processer, orkestrering kontra domänansvar.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 14: Regler och beslut
 - Kärnfråga: När bör verksamhetsregler externaliseras och hur hålls beslut begripliga och spårbara?
 - Centralt innehåll: beslutslogik, regelmotor, DMN, versionshantering, förklarbarhet och ansvar för regler.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 15: Data- och informationshantering
 - Kärnfråga: Hur väljer man lagrings- och datahanteringsmekanismer efter informationsbehov och kvalitetskrav?
 - Centralt innehåll: relationsdata, objektlagring, cache, historik, retention, konsistens, kopior och återställningsbehov.
 - Avgränsning: bygger på kapitel 11 och fokuserar på den tekniska förmågan, inte begrepps- eller informationsmodellering.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 16: Analys, sökning och AI
 - Kärnfråga: Hur skiljer sig sökning, BI, ML och generativ AI – och hur kombineras de ansvarsfullt?
 - Centralt innehåll: indexering, BI, ML, LLM, RAG, human-in-the-loop, informationsgrundning och AI-specifika kvalitetsfrågor.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 17: Integration och kommunikation
 - Kärnfråga: Hur väljer man mellan API, meddelanden, events, filutbyte och strukturerat informationsutbyte?
 - Centralt innehåll: synkront, asynkront, pub/sub, API, messaging, kontrakt, koppling och ansvar.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 18: Identitet och tillit
 - Kärnfråga: Hur byggs tillit mellan människor, tjänster och organisationer?
 - Centralt innehåll: workforce identity, federation, service identity, PKI, secrets, autentisering, auktorisation och trust boundaries.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 19: Applikationsexekvering och runtime
 - Kärnfråga: Vad behöver en organisation erbjuda för att köra applikationer standardiserat men flexibelt?
 - Centralt innehåll: containers, JVM/runtime, virtuella maskiner, stateless/stateful, isolation, runtime-ansvar och portabilitet.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 20: Driftbarhet och motståndskraft
 - Kärnfråga: Hur designas system som går att förstå, återställa och hålla i drift?
 - Centralt innehåll: observability, backup, restore, SLO, failure modes, resilience, kontinuitet och operativ återkoppling.
 - Avgränsning: kapitel 4 definierar kvalitetskraven; detta kapitel behandlar förmågor och mekanismer för att realisera och verifiera dem.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 21: Programvaruutveckling och leverans
 - Kärnfråga: Hur skapas en säker och reproducerbar väg från kod till produktion?
 - Centralt innehåll: SCM, CI/CD, artifacts, software supply chain, build once/promote many och developer experience.
 - Avgränsning: kapitel 19 behandlar exekveringsmiljön och kapitel 20 driftbarhet/recovery; detta kapitel behandlar förändringskedjan från källkod till verifierad och spårbar deployment.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 22: Arbetsplats, samarbete och produktivitet
 - Kärnfråga: Hur styrs en gemensam digital arbetsplats utan att låsa innovation eller skapa informationsrisker?
 - Centralt innehåll: productivity suite, samarbetsytor, low-code, AI-assistenter, informationshantering och governance.
 - Avgränsning: behandlar generell digital arbetsplats och dess gräns mot verksamhetssystem; kapitel 12 behandlar verksamhetsspecifika användargränssnitt, kapitel 16 generella AI-mekanismer och kapitel 18 identitets- och tillitsmekanismer.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Del IV – Från förmåga till återanvändbar lösning
 
@@ -162,30 +162,30 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Vad gör ett lösningsmönster användbart och hur undviker man att det blir ett recept?
 - Centralt innehåll: pattern language, context, forces, consequences, variationer, anti-patterns och relationen till principer, standarder och referensarkitekturer.
 - Avgränsning: etablerar mönsterbegreppet, dokumentationsformen, urvalskriterierna och livscykeln; kapitel 24–27 fördjupar de konkreta mönstergrupperna utan att återupprepa grundmodellen.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 24: Integrations- och kommunikationsmönster
 - Kärnfråga: Hur används synkrona och asynkrona mönster för lös koppling och robust informationsöverföring?
 - Centralt innehåll: BFF, messaging, pub/sub, idempotens, ordering, retries, dead-letter, korrelation och kontraktsutveckling.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 25: Process-, regel- och datamönster
 - Kärnfråga: Hur kombineras workflow, regler, system of record, härledda kopior och cache utan otydligt ansvar?
 - Centralt innehåll: human workflow, externaliserade regler, system of record, derived copies, cache-aside och konsekvenser av duplicerad state.
 - Avgränsning: kapitel 13–15 beskriver de tre förmågorna; detta kapitel behandlar mönstrens struktur, ansvar för olika typer av state, kombinationer, felgränser och konsekvenser av härledda kopior.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 26: AI-, identitets- och runtime-mönster
 - Kärnfråga: Vilka återkommande mönster minskar risk när AI, identitet och applikationsdrift kombineras?
 - Centralt innehåll: RAG, AI med mänsklig kontroll, service identity och containeriserad stateless tjänst.
 - Avgränsning: kapitel 16, 18 och 19 beskriver förmågorna; detta kapitel behandlar de fyra mönstrens ansvar, risktyper, kombinationer, behörighetskedjor, felgränser och konsekvenser av ökad autonomi.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 27: Drift- och leveransmönster
 - Kärnfråga: Hur byggs deployment, observability och återställning in i lösningen från början?
 - Centralt innehåll: build once/promote many, observability för distribuerade tjänster, backup och verifierad återställning samt kopplingen till SLO och releaseflöde.
 - Avgränsning: kapitel 20 och 21 beskriver driftbarhets- och leveransförmågorna; detta kapitel behandlar mönstrens krafter, kombinationer, releaseverifiering, spårbarhet och återställningskedja.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Del V – Plattformar som produkter och standarder som guardrails
 
@@ -193,37 +193,37 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Vad krävs för att något ska vara ett konsumerbart erbjudande och inte bara central infrastruktur?
 - Centralt innehåll: service offering, tekniska byggblock, gränssnitt, ansvar, onboarding, support, service levels och konsumtionsmodell.
 - Avgränsning: etablerar vad som gör ett tekniskt byggblock till en konsumerbar tjänst. Kapitel 29 fördjupar produktorienterad utveckling av plattformen och kapitel 30 självservice, paved roads och guardrails.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 29: Platform as a Product
 - Kärnfråga: Hur gör man plattformar användbara, mätbara och efterfrågade?
 - Centralt innehåll: plattformsteam, produktledning, developer experience, användarbehov, värdelöfte, user journeys, SLO, roadmap, feedback, adoption, kostnad och livscykel.
 - Avgränsning: handlar om produktmodellen och teamets arbetssätt; självservice och styrmekanismer fördjupas i kapitel 30.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 30: Golden paths, paved roads och självservice
 - Kärnfråga: Hur styr man genom den enklaste vägen i stället för genom dokument och granskningsköer?
 - Centralt innehåll: golden paths, templates, automation, portals, policy-as-code, guardrails, escape hatches och självservice.
 - Avgränsning: omsätter plattformsstrategin i konsumtionsvägar och exekverbara guardrails; standardernas typer och bindningsgrad fördjupas i kapitel 31.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 31: Tekniska standarder och deras nivåer
 - Kärnfråga: Vad bör standardiseras – arkitektur, teknik, produkt, version eller konfiguration?
 - Centralt innehåll: standardtyper, rekommendation kontra krav, interoperabilitet, compliance, undantag och kopplingen till plattformar och mönster.
 - Avgränsning: definierar standardnivåer, bindningsgrad och undantagsmodell; produkt-/versionslivscykel, deprecation och retirement fördjupas i kapitel 32.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 32: Tekniklivscykel och kontrollerad förändring
 - Kärnfråga: Hur hanteras introduktion, rekommendation, deprecation och retirement?
 - Centralt innehåll: technology radar, lifecycle states, EOL, migration, sunset, produkt- och versionshantering samt tidsbegränsade undantag.
 - Avgränsning: handlar om teknikportföljens livscykel; den övergripande arkitekturmodellens förvaltning behandlas i kapitel 37.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 33: Ekonomi, kostnad och kapacitet
 - Kärnfråga: Hur påverkar kostnadsmodell och kapacitetsansvar arkitekturval och plattformsbeteenden?
 - Centralt innehåll: FinOps-principer, showback/chargeback, enhetskostnad, kapacitet, kostnadsdrivare, gemensam investering, incitament, prognoser och kostnad som kvalitetsdimension.
 - Avgränsning: behandlar ekonomisk transparens, kostnads- och kapacitetsstyrning som arkitekturella signaler; övergripande budgetgovernance och organisationsstyrning hör inte till kapitlet.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Del VI – Referensarkitekturer och praktisk tillämpning
 
@@ -231,26 +231,26 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Kärnfråga: Hur ger en referensarkitektur vägledning utan att bli en frusen lösningsdesign?
 - Centralt innehåll: scope, viewpoints, variation points, constraints, relation till lösningsmönster, standarder och solution architecture.
 - Avgränsning: definierar referensarkitekturen som återanvändbar artefakt och dess relation till andra arkitekturartefakter; den praktiska resan från behov till konkret lösningsarkitektur hör till kapitel 35 och scenariotillämpningen till kapitel 36.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 35: Från behov till lösningsarkitektur
 - Kärnfråga: Hur gör ett konkret initiativ resan från behov till valda mönster, plattformar, standarder och dokumenterade beslut?
 - Centralt innehåll: architecture workflow, behov och kvalitetsprofil, förmågekarta, alternativ, pattern/platform selection, traceability, decision log och avsteg.
 - Avgränsning: sammanför tidigare delar till en metod; introducerar inte nya artefakttyper.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 36: Sju återkommande lösningsscenarier
 - Kärnfråga: Hur ser modellen ut när den används i olika typer av verkliga lösningar?
 - Centralt innehåll: internt handläggningsstöd, publik e-tjänst, integrationsintensivt verksamhetssystem, informationsutbyte med extern part, containerbaserad tjänst, AI-baserat verksamhetsstöd och digital arbetsplats.
 - Form: jämförande case studies som följer arbetsflödet från kapitel 35 och använder referensarkitekturbegreppen från kapitel 34.
 - Avgränsning: scenarierna ska syntetisera tidigare innehåll, inte skapa sju nya mini-läroböcker.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 ## Kapitel 37: Governance, förvaltning och evolution
 - Kärnfråga: Hur hålls förmågekarta, principer, mönster, plattformskatalog, standarder och referensarkitekturer levande utan att governance blir en flaskhals?
 - Centralt innehåll: mandat, ownership, federerad styrning, avsteg, review cadence, telemetry, adoption, documentation-as-code, feedback loops, maturity, sunset och organisatoriskt lärande.
 - Avgränsning: knyter ihop styrning och långsiktig evolution; teknikens specifika produkt-/versionslivscykel ligger i kapitel 32.
-- Status: första utkast skapat
+- Status: helhetsreviderad – pass 1
 
 # Avgränsningsregler för att undvika onödig upprepning
 
