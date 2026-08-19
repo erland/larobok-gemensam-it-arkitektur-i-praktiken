@@ -244,7 +244,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Centralt innehåll: internt handläggningsstöd, publik e-tjänst, integrationsintensivt verksamhetssystem, informationsutbyte med extern part, containerbaserad tjänst, AI-baserat verksamhetsstöd och digital arbetsplats.
 - Form: jämförande case studies som följer arbetsflödet från kapitel 35 och använder referensarkitekturbegreppen från kapitel 34.
 - Avgränsning: scenarierna ska syntetisera tidigare innehåll, inte skapa sju nya mini-läroböcker.
-- Status: planerad
+- Status: första utkast skapat
 
 ## Kapitel 37: Governance, förvaltning och evolution
 - Kärnfråga: Hur hålls förmågekarta, principer, mönster, plattformskatalog, standarder och referensarkitekturer levande utan att governance blir en flaskhals?

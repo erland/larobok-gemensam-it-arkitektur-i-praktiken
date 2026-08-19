@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I–V kompletta i första utkast; del VI påbörjad
+Skrivfas – del I–V kompletta i första utkast; del VI har kapitel 34–36 i första utkast
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -50,7 +50,8 @@ Skrivfas – del I–V kompletta i första utkast; del VI påbörjad
 | 33 | Ekonomi, kostnad och kapacitet | Första utkast | Kostnadsdrivare, enhetskostnad, showback/chargeback, gemensam investering, kapacitet, prognoser, incitament och FinOps som tvärfunktionell disciplin etablerade. |
 | 34 | Vad en referensarkitektur är – och inte är | Första utkast | Scope, viewpoints, variation points, constraints, ansvar, spårbarhet och relationen till lösningsarkitektur/mönster/standard/plattform etablerade. |
 | 35 | Från behov till lösningsarkitektur | Första utkast | Praktiskt arbetsflöde från behov och kvalitetsprofil via förmågor, referensarkitektur, mönster, plattformar och standarder till lokala beslut, verifiering, avsteg och återkoppling etablerat. |
-| 35–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 36 | Sju återkommande lösningsscenarier | Första utkast | Sju jämförbara scenarier tillämpar arbetsflödet på handläggningsstöd, publik e-tjänst, integrationsintensivt system, externt informationsutbyte, containerbaserad tjänst, AI-stöd och digital arbetsplats. |
+| 37 | Governance, förvaltning och evolution | Planerad | Ej skapad ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -63,6 +64,7 @@ Skrivfas – del I–V kompletta i första utkast; del VI påbörjad
 - Slutlig målomfattning efter att 3–5 provkapitel skrivits.
 
 ## Nästa rekommenderade steg
+- Kapitel 36 – Sju återkommande lösningsscenarier är skapat som första utkast; nästa kapitel är 37 – Governance, förvaltning och evolution.
 - Kapitelplanen har helhetsgranskats för överlapp, kompletterats med ett explicit etableringskapitel och genomgått en slutlig förskrivningskontroll; aktuell plan är 37 kapitel före skrivstart.
 - Tredelningen gemensam arkitektur → förmågeområde → lösning/produkt är nu en bärande ansvarmodell genom boken.
 - Kapitel 1–7 är skapade som första utkast; del I är därmed komplett i första utkast.

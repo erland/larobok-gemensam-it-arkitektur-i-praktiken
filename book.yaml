@@ -55,6 +55,7 @@ chapters:
 - chapters/33-ekonomi-kostnad-och-kapacitet.md
 - chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md
 - chapters/35-fran-behov-till-losningsarkitektur.md
+- chapters/36-sju-aterkommande-losningsscenarier.md
 exports:
   epub:
     enabled: true
