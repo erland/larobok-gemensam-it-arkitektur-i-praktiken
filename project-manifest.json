@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev52.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev53.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,17 +46,15 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      ".github/workflows/02-build-preview.yml",
-      ".github/workflows/03-release.yml",
-      "project-index.md"
+      "publishing/pdf-template.tex"
     ],
-    "operation": "Gjorde fontkontrollen i Preview och Release robust via fontconfig efter misslyckad GitHub Actions-körning",
-    "source_revision": 51
+    "operation": "Korrigerade PDF-fontnamn för XeLaTeX/fontspec",
+    "source_revision": 52
   },
-  "parent_revision": 51,
+  "parent_revision": 52,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 52,
+  "revision": 53,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -821,12 +819,12 @@
       "sha256": "cfe827087f31a1b3200ff7324303771e7844a55dcf6b0182c3363b47e06fbf04"
     },
     "publishing/pdf-template.tex": {
-      "bytes": 2449,
-      "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
+      "bytes": 2451,
+      "sha256": "f68a5dcc8bbba88445b95be33c498f798233cc4b0dcca0e7bfe8d92e8b443934"
     },
     "revision-log.md": {
-      "bytes": 32055,
-      "sha256": "871e7f3976e19709cfc482ae02149b1e3de17e8531068d8485c7913901c16ede"
+      "bytes": 32223,
+      "sha256": "bd5458e05498178d8e50dbeedf64af7a8bb63ae2e6d0af2d74d68295a91e448e"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -849,5 +847,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T11:16:20Z"
+  "updated_at": "2026-08-19T11:34:44Z"
 }
