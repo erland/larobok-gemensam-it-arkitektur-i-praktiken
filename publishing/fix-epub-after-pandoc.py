@@ -46,71 +46,121 @@ def split_headings(base: Path)->tuple[int,int]:
     return chapters,parts
 
 
-def group_nav_by_parts(base: Path)->int:
-    grouped=0
-    for path in base.rglob('*.xhtml'):
-        tree=ET.parse(path); root=tree.getroot()
-        navs=root.findall('.//x:nav',NS)
-        changed=False
-        for nav in navs:
-            typ=nav.attrib.get(f'{{{EPUB}}}type','')
-            if typ!='toc': continue
-            ol=nav.find('x:ol',NS)
-            if ol is None: continue
-            items=list(ol.findall('x:li',NS))
-            current_part=None
-            for li in items:
-                a=li.find('x:a',NS)
-                label=''.join(a.itertext()).strip() if a is not None else ''
-                if re.match(r'^Del\s+[IVX]+\s+[–-]\s+',label,re.I):
-                    current_part=li
-                    continue
-                if re.match(r'^\d+\.\s+',label) and current_part is not None:
-                    sub=current_part.find('x:ol',NS)
-                    if sub is None: sub=ET.SubElement(current_part,f'{{{XHTML}}}ol')
-                    ol.remove(li); sub.append(li); grouped+=1; changed=True
-                elif not re.match(r'^\d+\.\s+',label):
-                    current_part=None
-        if changed: tree.write(path,encoding='utf-8',xml_declaration=True)
-    return grouped
+def _label_from_markup(fragment: str) -> str:
+    import html
+    return html.unescape(re.sub(r'<[^>]+>', '', fragment)).strip()
 
+
+def group_nav_by_parts(base: Path)->int:
+    """Group Pandoc's flat EPUB3 TOC without reserializing its XML namespaces.
+
+    Some readers are stricter than the XML standard and have problems with nav.xhtml
+    after ElementTree rewrites the default XHTML/epub namespaces to generated prefixes.
+    Pandoc's original serialization is therefore preserved byte-for-byte except for
+    the <ol class="toc"> contents that we intentionally nest.
+    """
+    path=base/'EPUB/nav.xhtml'
+    if not path.is_file():
+        candidates=list(base.rglob('nav.xhtml'))
+        if not candidates: raise RuntimeError('EPUB saknar nav.xhtml')
+        path=candidates[0]
+    text=path.read_text(encoding='utf-8')
+    m=re.search(r'(<nav\s+epub:type="toc"[^>]*>.*?<ol\s+class="toc">)(.*?)(</ol>\s*</nav>)', text, re.S)
+    if not m: raise RuntimeError('EPUB nav.xhtml saknar förväntad TOC-struktur')
+    body=m.group(2)
+    items=re.findall(r'<li\b[^>]*>.*?</li>', body, re.S)
+    if not items: raise RuntimeError('EPUB nav.xhtml innehåller inga TOC-poster')
+    out=[]; grouped=0; current_part=None; children=[]
+    def flush_part():
+        nonlocal current_part, children
+        if current_part is not None:
+            if children:
+                out.append(current_part[:-5] + '<ol>' + ''.join(children) + '</ol></li>')
+            else:
+                out.append(current_part)
+        current_part=None; children=[]
+    for li in items:
+        am=re.search(r'<a\b[^>]*>(.*?)</a>', li, re.S)
+        label=_label_from_markup(am.group(1)) if am else ''
+        if re.match(r'^Del\s+[IVX]+\s+[–-]\s+',label,re.I):
+            flush_part(); current_part=li; continue
+        if re.match(r'^\d+\.\s+',label) and current_part is not None:
+            children.append(li); grouped+=1; continue
+        flush_part(); out.append(li)
+    flush_part()
+    new_text=text[:m.start(2)] + ''.join(out) + text[m.end(2):]
+    path.write_text(new_text,encoding='utf-8')
+    return grouped
 
 
 def group_ncx_by_parts(base: Path)->int:
-    ns='http://www.daisy.org/z3986/2005/ncx/'
-    grouped=0
-    for path in base.rglob('*.ncx'):
-        tree=ET.parse(path); root=tree.getroot()
-        navmap=root.find(f'{{{ns}}}navMap')
-        if navmap is None: continue
-        items=list(navmap.findall(f'{{{ns}}}navPoint'))
-        current_part=None; changed=False
-        for item in items:
-            text_node=item.find(f'{{{ns}}}navLabel/{{{ns}}}text')
-            label=(text_node.text or '').strip() if text_node is not None else ''
-            if re.match(r'^Del\s+[IVX]+\s+[–-]\s+',label,re.I):
-                current_part=item
-                continue
-            if re.match(r'^\d+\.\s+',label) and current_part is not None:
-                navmap.remove(item); current_part.append(item); grouped+=1; changed=True
-            elif not re.match(r'^\d+\.\s+',label):
-                current_part=None
-        if changed:
-            depth=root.find(f'{{{ns}}}head/{{{ns}}}meta[@name="dtb:depth"]')
-            if depth is not None: depth.set('content','2')
-            tree.write(path,encoding='utf-8',xml_declaration=True)
+    """Group the legacy NCX while preserving Pandoc's default namespace syntax."""
+    path=base/'EPUB/toc.ncx'
+    if not path.is_file():
+        candidates=list(base.rglob('*.ncx'))
+        if not candidates: return 0
+        path=candidates[0]
+    text=path.read_text(encoding='utf-8')
+    m=re.search(r'(<navMap>)(.*?)(</navMap>)', text, re.S)
+    if not m: raise RuntimeError('EPUB NCX saknar navMap')
+    body=m.group(2)
+    items=re.findall(r'<navPoint\b[^>]*>.*?</navPoint>', body, re.S)
+    if not items: return 0
+    out=[]; grouped=0; current_part_index=None
+    for item in items:
+        lm=re.search(r'<navLabel>\s*<text>(.*?)</text>\s*</navLabel>',item,re.S)
+        label=_label_from_markup(lm.group(1)) if lm else ''
+        if re.match(r'^Del\s+[IVX]+\s+[–-]\s+',label,re.I):
+            out.append(item); current_part_index=len(out)-1; continue
+        if re.match(r'^\d+\.\s+',label) and current_part_index is not None:
+            parent=out[current_part_index]
+            parent=parent[:-len('</navPoint>')] + item + '</navPoint>'
+            out[current_part_index]=parent; grouped+=1
+        else:
+            out.append(item)
+            if not re.match(r'^\d+\.\s+',label): current_part_index=None
+    new_text=text[:m.start(2)] + ''.join(out) + text[m.end(2):]
+    new_text=re.sub(r'(<meta\s+name="dtb:depth"\s+content=")[^"]*("\s*/>)',r'\g<1>2\2',new_text,count=1)
+    path.write_text(new_text,encoding='utf-8')
     return grouped
 
-def nav_non_linear(base: Path, opf_rel: Path)->bool:
-    path=base/opf_rel; tree=ET.parse(path); manifest=tree.getroot().find('opf:manifest',NS); spine=tree.getroot().find('opf:spine',NS)
-    if manifest is None or spine is None: raise RuntimeError('EPUB OPF saknar manifest/spine')
-    nav_ids={i.attrib['id'] for i in manifest.findall('opf:item',NS) if 'nav' in i.attrib.get('properties','').split()}
-    changed=False
-    for item in spine.findall('opf:itemref',NS):
-        if item.attrib.get('idref') in nav_ids and item.attrib.get('linear')!='no': item.set('linear','no'); changed=True
-    if changed: tree.write(path,encoding='utf-8',xml_declaration=True)
-    return changed
 
+def nav_non_linear(base: Path, opf_rel: Path)->bool:
+    """Mark the navigation document non-linear without rewriting OPF namespaces."""
+    path=base/opf_rel
+    text=path.read_text(encoding='utf-8')
+    nav_item=re.search(r'<item\b(?=[^>]*\bproperties="[^"]*\bnav\b[^"]*")(?=[^>]*\bid="([^"]+)")[^>]*/>',text)
+    if not nav_item:
+        nav_item=re.search(r'<item\b(?=[^>]*\bid="([^"]+)")(?=[^>]*\bproperties="[^"]*\bnav\b[^"]*")[^>]*/>',text)
+    if not nav_item: raise RuntimeError('EPUB OPF saknar nav-item')
+    nav_id=nav_item.group(1)
+    pat=re.compile(r'(<itemref\b[^>]*\bidref="'+re.escape(nav_id)+r'"[^>]*)(/>)')
+    mm=pat.search(text)
+    if not mm: raise RuntimeError('EPUB OPF spine saknar nav-itemref')
+    if re.search(r'\blinear="no"',mm.group(1)): return False
+    repl=mm.group(1)+' linear="no"'+mm.group(2)
+    path.write_text(text[:mm.start()]+repl+text[mm.end():],encoding='utf-8')
+    return True
+
+
+def validate_navigation(base: Path)->None:
+    nav_candidates=list(base.rglob('nav.xhtml'))
+    if not nav_candidates: raise RuntimeError('EPUB-validering: nav.xhtml saknas')
+    text=nav_candidates[0].read_text(encoding='utf-8')
+    if 'xmlns="http://www.w3.org/1999/xhtml"' not in text or 'xmlns:epub="http://www.idpf.org/2007/ops"' not in text:
+        raise RuntimeError('EPUB-validering: Pandocs standard-namespace i nav.xhtml har ändrats')
+    if '<html:' in text or 'ns1:type=' in text:
+        raise RuntimeError('EPUB-validering: genererade XML-prefix finns kvar i nav.xhtml')
+    part_count=len(re.findall(r'<li\b[^>]*><a\b[^>]*>Del\s+[IVX]+\s+[–-]\s+',text,re.I))
+    chapter_count=len(re.findall(r'<li\b[^>]*><a\b[^>]*>\d+\.\s+',text))
+    nested_count=len(re.findall(r'Del\s+[IVX]+\s+[–-].*?<ol>.*?<li\b[^>]*><a\b[^>]*>\d+\.\s+',text,re.I|re.S))
+    if part_count!=6 or chapter_count!=37 or nested_count<6:
+        raise RuntimeError(f'EPUB-validering: oväntad TOC-struktur (delar={part_count}, kapitel={chapter_count}, grupper={nested_count})')
+    for href in re.findall(r'<a\b[^>]*href="([^"]+)"',text):
+        file_part=href.split('#',1)[0]
+        if not file_part: continue
+        target=(nav_candidates[0].parent/file_part).resolve()
+        if not target.is_file(): raise RuntimeError('EPUB-validering: TOC-länk saknar mål: '+href)
 
 def repack(base:Path,out:Path)->None:
     if out.exists(): out.unlink()
@@ -138,6 +188,7 @@ def main()->int:
         grouped=group_nav_by_parts(base)
         ncx_grouped=group_ncx_by_parts(base)
         nav=nav_non_linear(base,opf)
+        validate_navigation(base)
         repack(base,epub)
     validate(epub)
     print(f'Efterbearbetad EPUB: kapitelfiler={chapters}, delsidor={parts}, grupperade TOC-kapitel={grouped}, NCX-kapitel={ncx_grouped}, nav linear=no={nav}')
