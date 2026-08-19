@@ -210,7 +210,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 31: Tekniska standarder och deras nivåer
 - Kärnfråga: Vad bör standardiseras – arkitektur, teknik, produkt, version eller konfiguration?
 - Centralt innehåll: standardtyper, rekommendation kontra krav, interoperabilitet, compliance, undantag och kopplingen till plattformar och mönster.
-- Status: planerad
+- Avgränsning: definierar standardnivåer, bindningsgrad och undantagsmodell; produkt-/versionslivscykel, deprecation och retirement fördjupas i kapitel 32.
+- Status: första utkast skapat
 
 ## Kapitel 32: Tekniklivscykel och kontrollerad förändring
 - Kärnfråga: Hur hanteras introduktion, rekommendation, deprecation och retirement?

@@ -1,7 +1,7 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev38.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev39.zip",
   "chapters": {
-    "count": 30,
+    "count": 31,
     "hashes": {
       "chapters/01-varfor-gemensam-it-arkitektur.md": "7bb195e185af051afa31751b6026c94edabe96dce677e395c0d0cf3138efd1ad",
       "chapters/02-en-arkitektur-av-flera-lager.md": "60f61849e3552a0a9ab1358f5391a091ea87b32d178efaeacf81f402245ba0c4",
@@ -32,28 +32,29 @@
       "chapters/27-drift-och-leveransmonster.md": "37d2b64c8edbc690a745d3cae60bc11c2e0dc724c877d1e0b67ffa7de3f5551f",
       "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "3e04742220c1f75a2747a9ffa93e0ee40a7c81213f48a925493da654119a12fe",
       "chapters/29-platform-as-a-product.md": "c05b744c73c97817a60a541dc39ddfac675b17baee90582651fea12c2c2e21ac",
-      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "b19777a3c24b914bc9d77b8c3ea2f006e71169ad547ca95e2e904699c316953a"
+      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "b19777a3c24b914bc9d77b8c3ea2f006e71169ad547ca95e2e904699c316953a",
+      "chapters/31-tekniska-standarder-och-deras-nivaer.md": "0f9d0eb74b3d12288cf4ab766bf1848f08bb7710fff32e7779a227f35d936d08"
     },
-    "latest": 30
+    "latest": 31
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
       "README.md",
       "book.yaml",
-      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md",
+      "chapters/31-tekniska-standarder-och-deras-nivaer.md",
       "docs/faktakontroll.md",
       "docs/kapitelplan.md",
       "docs/projektstatus.md",
       "project-index.md"
     ],
-    "operation": "Skrev kapitel 30 – Golden paths, paved roads och självservice och synkroniserade projektstatus/exportordning",
-    "source_revision": 37
+    "operation": "Skrev kapitel 31 – Tekniska standarder och deras nivåer och synkroniserade projektstatus/exportordning",
+    "source_revision": 38
   },
-  "parent_revision": 37,
+  "parent_revision": 38,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 38,
+  "revision": 39,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -71,7 +72,7 @@
     },
     "README.md": {
       "bytes": 905,
-      "sha256": "641ccc09f79be3c95cac4bef80422692fb6af9ba53d757c94abda474ac574910"
+      "sha256": "3eebcdfc94ba52a1178cdb9904bfd40dbe254ed6e89fa99bccc3a776d11a18b2"
     },
     "assets/cover/README.md": {
       "bytes": 55,
@@ -86,8 +87,8 @@
       "sha256": "3ca661eed049895bf1314529400eb0e2719817b82569f15b58aeb794a7966fa3"
     },
     "book.yaml": {
-      "bytes": 2630,
-      "sha256": "fe3f60a1760dded23398c50fcb3d1cfe92f30406ef5b63b976b0ab25de6eed49"
+      "bytes": 2684,
+      "sha256": "aea417aa63cf5ccfa49d568756003033ffb4b3277c8e96c861b0003e29b0d0e2"
     },
     "chapters/00-inledning.md": {
       "bytes": 2188,
@@ -213,6 +214,10 @@
       "bytes": 27448,
       "sha256": "b19777a3c24b914bc9d77b8c3ea2f006e71169ad547ca95e2e904699c316953a"
     },
+    "chapters/31-tekniska-standarder-och-deras-nivaer.md": {
+      "bytes": 20742,
+      "sha256": "0f9d0eb74b3d12288cf4ab766bf1848f08bb7710fff32e7779a227f35d936d08"
+    },
     "chapters/kapitelmall-faktabok.md": {
       "bytes": 337,
       "sha256": "66f5e412396793af328b5fb1b5bbd4dec3412a62b3db4f4fdb00b97639d5f53c"
@@ -234,8 +239,8 @@
       "sha256": "ae7c763f7d10d92d1145223b984110334363f436452441b11b5af919f818d799"
     },
     "docs/faktakontroll.md": {
-      "bytes": 10101,
-      "sha256": "c1a303bcf0f8188d3c30d46af7b3954feb6a5daef7a97c5150e577cdbc1d199c"
+      "bytes": 10275,
+      "sha256": "6e4bd6ee55e03d2fc1b0e1bcb1b1dbba2825b07c49c46cdb3187083856b3476a"
     },
     "docs/illustration-plan.md": {
       "bytes": 525,
@@ -250,16 +255,16 @@
       "sha256": "5116058627f4c1f20607b7e76529cff35059969355dbe37b6db5da5df871ff28"
     },
     "docs/kapitelplan.md": {
-      "bytes": 22145,
-      "sha256": "12391a58ec5c3673e67bd8a119e1a0a3941a589c45af51f7b67aa4cd85ffad67"
+      "bytes": 22317,
+      "sha256": "b44e3b4d0420e73b1a7e7f9c042711e6d99ce07a83a57beca065735312f3187a"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
       "sha256": "26aa3eeb69bb0cfc8b656d84845786d02c881adc2272b4d74f01e9daedac2140"
     },
     "docs/projektstatus.md": {
-      "bytes": 13862,
-      "sha256": "75f14d6b63c8795a01e62ea2c57b3c53f6eeb61f2902116baa2a0b6082d485d0"
+      "bytes": 14329,
+      "sha256": "cf2da1289519fc4724d5797088f12aae9feb5665f3902cfb20251e6e06e738ad"
     },
     "docs/quality-checklist.md": {
       "bytes": 980,
@@ -743,7 +748,7 @@
     },
     "project-index.md": {
       "bytes": 822,
-      "sha256": "d5b6f5e7aeeef67ad4d64d6d640d9a46ba34c9886fa3c930280279ac46e4609b"
+      "sha256": "61d1626554dd43fe9d4667fca6c6ba5dd65247e68bd6c7144a4c71bd59ecd747"
     },
     "publishing/build-notes.md": {
       "bytes": 439,
@@ -766,8 +771,8 @@
       "sha256": "3bb0c04afe39ebcc35d0a5ca3c4b6acc2220069d6c6a65bf9cb4b5bbf6347cc1"
     },
     "revision-log.md": {
-      "bytes": 23672,
-      "sha256": "232f9f9378b2dead868f8826f277f58c35e7369ee5ef33d6dddf906f8b89cd12"
+      "bytes": 24042,
+      "sha256": "39ae425fa41e905801d53c9dc5d447c3f86bf415da7c9108bb951539cc9c00b6"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -790,5 +795,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T05:47:45Z"
+  "updated_at": "2026-08-19T06:11:23Z"
 }

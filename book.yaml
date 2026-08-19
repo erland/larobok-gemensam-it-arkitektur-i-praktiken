@@ -50,6 +50,7 @@ chapters:
 - chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md
 - chapters/29-platform-as-a-product.md
 - chapters/30-golden-paths-paved-roads-och-sjalvservice.md
+- chapters/31-tekniska-standarder-och-deras-nivaer.md
 exports:
   epub:
     enabled: true
