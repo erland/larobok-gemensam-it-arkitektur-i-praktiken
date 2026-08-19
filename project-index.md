@@ -5,8 +5,8 @@
 - book_kind: factbook
 - book_type: subject_overview
 - Project-id: c9f8f383-f0bc-4fba-8270-629463a8398f
-- Revision: 52
-- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev52.zip
+- Revision: 55
+- Senaste verifierade zip: gemensam-it-arkitektur-i-praktiken-projekt-rev55.zip
 
 ## Kapitel
 - Inledning: helhetsreviderad – pass 1
