@@ -134,23 +134,11 @@ Det minskar också risken att en gammal databasstruktur blir organisationens de 
 
 Kapitel 10 behandlade ägarskap som en del av domängränser. Här behöver vi gå ett steg djupare.
 
-Informationsägarskap betyder inte bara att ett visst system råkar lagra en uppgift. Det handlar om mandat och ansvar för informationens betydelse och kvalitet.
+Informationsägarskap betyder inte att ett visst system råkar lagra en uppgift. Det handlar om mandat och ansvar för informationens betydelse, kvalitet och livscykel.
 
-Ett informationsägarskap kan behöva omfatta ansvar för:
+Ägarskapet behöver bland annat klargöra vem som får definiera informationen, ändra reglerna för hur den skapas, sätta krav på kvalitet och aktualitet samt besluta om klassning, åtkomst, gallring och kontrakt mot konsumenter. Det tekniska systemet kan samtidigt förvaltas av ett annat team.
 
-- definitionen av informationen,
-- regler för hur den skapas och ändras,
-- krav på kvalitet och aktualitet,
-- livscykel och gallring,
-- klassning och åtkomstprinciper,
-- vilka externa eller interna kontrakt som får exponera den,
-- och hur förändringar i definitionen kommuniceras till konsumenter.
-
-Det tekniska systemet som lagrar informationen kan förvaltas av ett annat team än det verksamhetsområde som äger betydelsen. Detta är inte ett problem så länge ansvarssnittet är tydligt.
-
-Ett vanligt anti-pattern är däremot att informationsägarskap delegeras till den som råkar drifta databasen. Då får tekniska team fatta verksamhetsmässiga beslut om begrepp de inte äger.
-
-Ett annat anti-pattern är att alla anses vara gemensamma ägare. I praktiken betyder det ofta att ingen har mandat att avgöra vad som gäller när definitioner kolliderar.
+Två anti-patterns är särskilt vanliga: att den som driver databasen får verksamhetsmässigt tolkningsföreträde, och att "alla" sägs äga informationen. I båda fallen saknas i praktiken ett tydligt mandat när definitioner kolliderar.
 
 ## System of record och auktoritativ källa
 
@@ -202,18 +190,9 @@ Masterdata beskriver relativt stabila kärnobjekt som används av flera processe
 
 Referensdata beskriver i stället ofta tillåtna värdemängder eller klassifikationer, exempelvis landkoder, statuskoder, valuta, kategorier eller andra kodverk.
 
-Gränsen är inte universell. Det viktiga är därför inte att klassificera varje informationsobjekt perfekt, utan att förstå när gemensam styrning behövs.
+Gränsen är inte universell. Det viktiga är inte att klassificera varje informationsobjekt perfekt, utan att avgöra om flera domäner verkligen behöver dela betydelse, auktoritet, klassifikation eller förändringshantering.
 
-Frågor som kan motivera gemensamt ansvar är exempelvis:
-
-- används samma information av många domäner?
-- behöver betydelsen vara konsekvent mellan dem?
-- uppstår kostsamma fel när olika kopior divergerar?
-- finns en tydlig auktoritativ källa?
-- finns krav på gemensam klassifikation eller rapportering?
-- behöver förändringar distribueras kontrollerat?
-
-Ett vanligt misstag är att skapa en central masterdataplattform innan ansvar och semantik är tydliga. Plattformen kan då bara centralisera den tidigare otydligheten.
+Ett vanligt misstag är att skapa en central masterdataplattform innan ansvar och semantik är tydliga. Plattformen centraliserar då främst den tidigare otydligheten.
 
 Teknik kan inte ersätta informationsgovernance.
 
@@ -354,75 +333,19 @@ Kapitel 15 kommer att fördjupa hur sådana kopior, cachemekanismer, historik oc
 
 En central fråga för större organisationer är hur långt den gemensamma informationsmodellen bör sträcka sig.
 
-Det finns två ytterligheter.
+Två ytterligheter är problematiska. Om varje system definierar sina begrepp själv ökar integrationskostnaden och risken för semantisk fragmentering. Om organisationen i stället försöker skapa en enda fullständig modell som alla måste följa blir styrningen lätt tung och dåligt anpassad till domänspecifika behov.
 
-Den ena är att varje system definierar sina begrepp själv. Det ger lokal frihet men skapar hög integrationskostnad och risk för semantisk fragmentering.
-
-Den andra är att försöka skapa en enda fullständig organisationsgemensam modell som alla måste följa. Det kan skapa konsistens men riskerar att bli tungstyrt, långsamt och dåligt anpassat till domänspecifika behov.
-
-Mellan dessa ytterligheter finns en mer praktisk modell: federerad semantik.
-
-Den innebär att:
+En mer praktisk modell är federerad semantik:
 
 - vissa kärnbegrepp och kodverk styrs gemensamt,
-- domäner äger sin lokala modell,
+- domäner äger sin verksamhetsnära semantik,
 - betydande skillnader mellan kontexter görs explicita,
 - integration sker via tydliga kontrakt,
 - och gemensamma definitioner skapas där faktisk interoperabilitet kräver dem.
 
-Det ligger nära bokens övergripande ansvarmodell.
+Bokens ansvarmodell behöver här bara tillämpas, inte definieras på nytt. Den gemensamma nivån sätter exempelvis informationsprinciper, klassnings- och kontraktsprinciper samt gemensamma kodverk där sådana behövs. Förmågenivån omsätter detta i återanvändbara mönster och tjänster för exempelvis lagring, sökning, metadata eller kontraktshantering. Lösnings- och produktnivån realiserar konkreta datamodeller, kopior, klassning och livscykel inom respektive domän.
 
-Gemensam nivå bör inte försöka äga all information. Den bör äga de spelregler, gemensamma begrepp och kontraktsprinciper som krävs för att flera domäner ska kunna samverka.
-
-Domänerna bör äga sin verksamhetsnära semantik.
-
-Lösningar och produkter realiserar dessa modeller tekniskt.
-
-## De tre ansvarsnivåerna i informationsarkitekturen
-
-Bokens tredelade ansvarmodell kan tillämpas direkt på information och data.
-
-### Gemensam nivå
-
-Den gemensamma nivån bör normalt hantera sådant som behöver vara konsekvent över flera domäner, exempelvis:
-
-- övergripande informationsprinciper,
-- gemensamma klassningsprinciper,
-- gemensamma identifieringsprinciper där det behövs,
-- gemensamma referensdata och kodverk,
-- kontraktsprinciper för datautbyte,
-- gemensamma krav på metadata, spårbarhet och livscykel,
-- samt metoder för att beskriva auktoritativa källor och ägarskap.
-
-Den bör däremot vara försiktig med att skapa en enda detaljerad datamodell för hela organisationen.
-
-### Förmågenivå
-
-Förmågeansvariga behöver omsätta de gemensamma principerna till återanvändbara mekanismer och tjänster.
-
-Det kan exempelvis innebära:
-
-- plattformstjänster för relationsdata, objektlagring eller sökning,
-- mönster för *system of record och härledda kopior*,
-- standarder för schema- och kontraktshantering,
-- tjänster för master- eller referensdata där sådana faktiskt behövs,
-- datakataloger och metadatafunktioner,
-- eller vägledning för retention och historik.
-
-Förmågeområdet ska dock inte ta över verksamhetsdomänens ansvar för vad informationen betyder.
-
-### Lösnings-/produktnivå
-
-Lösningsteamet behöver:
-
-- identifiera vilka informationsobjekt lösningen använder,
-- följa domänens begrepp och ägarskap,
-- definiera konkreta datamodeller,
-- använda rätt gemensamma kontrakt och plattformstjänster,
-- dokumentera lokala kopior och deras roll,
-- och säkerställa att klassning och livscykel realiseras i den tekniska lösningen.
-
-Det är här informationsarkitektur blir konkret systemdesign.
+Det avgörande är att en gemensam teknisk mekanism inte tar över domänens ansvar för vad informationen betyder.
 
 ## Vanliga anti-patterns
 
@@ -443,10 +366,6 @@ Resultatet blir ofta hundratals attribut, komplexa regler och otydliga ansvar.
 ### Alla kopior blir nya sanningar
 
 En lokal kopia skapas för analys eller prestanda men börjar senare uppdateras lokalt. Efter några år vet ingen längre vilken källa som gäller.
-
-### Ägarskap följer lagringsplats
-
-Det team som driver databasen förväntas avgöra verksamhetsmässiga definitioner eftersom informationen tekniskt ligger där.
 
 ### Klassning sker efter implementation
 
@@ -504,20 +423,11 @@ Denna ordning är inte ett vattenfall. Informationens tekniska realisering kan g
 
 När återkommande informationsproblem analyseras på detta sätt börjar också behov av gemensamma IT-förmågor bli synliga.
 
-Om många domäner exempelvis behöver:
+Om många domäner återkommande behöver hantera stora dokument, söka i härledda kopior, lagra relationsdata med säker återställning, hantera gemensamma kodverk, distribuera förändringar eller bevara historik med tydlig retention är slutsatsen inte automatiskt att alla ska använda samma applikation.
 
-- hantera stora dokument,
-- söka över härledda kopior,
-- lagra relationsdata med *backup och återställning*,
-- hantera gemensamma kodverk,
-- distribuera förändringar som events,
-- eller lagra historik med tydlig retention,
+Det kan i stället visa att organisationen behöver gemensamma förmågor och plattformstjänster för data- och informationshantering, integration, sökning eller lagring.
 
-är det inte nödvändigtvis ett tecken på att alla ska använda samma applikation.
-
-Det kan i stället vara ett tecken på att organisationen behöver gemensamma *data- och informationshantering*sförmågor, integrationsförmågor och plattformstjänster.
-
-Här möts del II och del III i boken.
+Det är den övergången som Del III tar vid: från de gemensamma analysfrågorna till de konkreta IT-förmågor organisationen behöver kunna erbjuda och utveckla.
 
 Domän- och informationsanalysen beskriver vad som behöver vara sant om informationen. Förmågemodellen beskriver vilket återanvändbart stöd organisationen behöver kunna erbjuda för att göra detta möjligt.
 

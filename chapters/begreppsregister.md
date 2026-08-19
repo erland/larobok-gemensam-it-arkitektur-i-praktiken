@@ -14,7 +14,7 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Backend for Frontend* — lösningsmönster; kapitel **24**, 2, 12, 23, 31, 6
 - *Backup and Recovery Service* — plattform/tjänst; kapitel **20**
 - *Backup och verifierad återställning* — lösningsmönster; kapitel **27**, 23
-- *Backup och återställning* — teknisk standard; kapitel **20**, 15, 11, 32, 9
+- *Backup och återställning* — teknisk standard; kapitel **20**, 15, 32, 9
 - *BI och rapportering* — teknisk standard; kapitel **16**
 - *Build once, promote many* — lösningsmönster; kapitel **27**, 21, 35, 23, 26, 34
 - *Business Intelligence and Reporting* — plattform/tjänst; kapitel **16**
