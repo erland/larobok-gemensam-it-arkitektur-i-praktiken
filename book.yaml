@@ -46,6 +46,7 @@ chapters:
 - chapters/24-integrations-och-kommunikationsmonster.md
 - chapters/25-process-regel-och-datamonster.md
 - chapters/26-ai-identitets-och-runtime-monster.md
+- chapters/27-drift-och-leveransmonster.md
 exports:
   epub:
     enabled: true

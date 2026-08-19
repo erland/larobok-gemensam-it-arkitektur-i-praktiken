@@ -9,7 +9,7 @@
 - book_type: subject_overview
 
 ## Nuvarande fas
-Skrivfas – del I–III kompletta i första utkast; del IV pågår
+Skrivfas – del I–IV kompletta i första utkast; del V står näst på tur
 
 ## Kapitelstatus
 | Kapitel | Titel | Status | Kommentar |
@@ -41,7 +41,8 @@ Skrivfas – del I–III kompletta i första utkast; del IV pågår
 | 24 | Integrations- och kommunikationsmönster | Första utkast | BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation, kontraktsutveckling och mönsterkombinationer etablerade. |
 | 25 | Process-, regel- och datamönster | Första utkast | Human workflow, externaliserade regler, system of record/härledda kopior, cache-aside, state-ansvar, eventual consistency och mönsterkombinationer etablerade. |
 | 26 | AI-, identitets- och runtime-mönster | Första utkast | RAG, mänsklig kontroll, tjänsteidentitet och containeriserad stateless tjänst fördjupade som kombinerbara riskbegränsande mönster. |
-| 27–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
+| 27 | Drift- och leveransmönster | Första utkast | Build once/promote many, observability för distribuerade tjänster, backup/verifierad återställning, releaseverifiering och sammanhängande återställningskedja etablerade. |
+| 28–37 | Se kapitelplan | Planerade | Ej skapade ännu. |
 
 ## Faktakontroll
 - Öppna verifieringspunkter: se `docs/faktakontroll.md`
@@ -84,3 +85,5 @@ Skrivfas – del I–III kompletta i första utkast; del IV pågår
 - Nästa planerade kapitel är kapitel 27 – Drift- och leveransmönster.
 
 - Kapitel 24 – Integrations- och kommunikationsmönster är skapat som första utkast och fördjupar BFF, asynkron messaging, pub/sub, idempotens, retries, dead-letter, ordering, korrelation och kontraktsutveckling som återanvändbara mönster.
+- Kapitel 27 – Drift- och leveransmönster är skapat som första utkast och fördjupar build once/promote many, observability för distribuerade tjänster och backup med verifierad återställning som en sammanhängande leverans- och återhämtningskedja.
+- Del IV är därmed komplett i första utkast. Nästa steg är kapitel 28 – När ett byggblock blir en plattformstjänst, som inleder del V.

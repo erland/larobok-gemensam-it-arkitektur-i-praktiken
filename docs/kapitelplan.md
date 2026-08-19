@@ -184,7 +184,8 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 ## Kapitel 27: Drift- och leveransmönster
 - Kärnfråga: Hur byggs deployment, observability och återställning in i lösningen från början?
 - Centralt innehåll: build once/promote many, observability för distribuerade tjänster, backup och verifierad återställning samt kopplingen till SLO och releaseflöde.
-- Status: planerad
+- Avgränsning: kapitel 20 och 21 beskriver driftbarhets- och leveransförmågorna; detta kapitel behandlar mönstrens krafter, kombinationer, releaseverifiering, spårbarhet och återställningskedja.
+- Status: första utkast skapat
 
 # Del V – Plattformar som produkter och standarder som guardrails
 
