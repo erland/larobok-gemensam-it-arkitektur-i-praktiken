@@ -230,7 +230,7 @@ Det gör beroenden synliga på ett annat sätt än om hela logiken bara ligger i
 
 DMN ska däremot inte uppfattas som ett krav för all regelhantering. En organisation kan ha fullt legitima beslut som implementeras på andra sätt. Standarden löser inte heller ägarskap, informationskvalitet, versionsstrategi eller governance automatiskt.
 
-Vid skrivtillfället är DMN 1.5 den senaste formellt antagna versionen hos OMG; senare 1.6 och 1.7 finns som betaversioner. Versionsuppgifter är tidskänsliga och bör därför verifieras igen inför publicering.
+Vid faktagranskningen den 19 augusti 2026 är DMN 1.5 den senaste formellt antagna versionen hos OMG; 1.6 och 1.7 finns som betaversioner. Versionsuppgifter är tidskänsliga och bör därför verifieras igen om publiceringen sker vid ett senare tillfälle.
 
 ## En beslutstjänst som arkitekturmönster
 
