@@ -309,29 +309,9 @@ Det djupare resonemanget om BFF och andra lösningsmönster kommer i del IV. I d
 
 ## Klientnära tillstånd och lokal lagring
 
-Moderna klienter kan lagra stora mängder information lokalt. Det är tekniskt enkelt och därför lätt att göra utan att först analysera konsekvenserna.
+Moderna klienter kan lagra stora mängder information lokalt, men lokal lagring ska inte bli en skuggdatabas för auktoritativ verksamhetsinformation.
 
-För varje form av lokalt tillstånd behöver man fråga:
-
-- varför informationen behöver finnas i klienten,
-- hur länge den behöver finnas,
-- hur känslig den är,
-- vad som händer om enheten delas eller förloras,
-- hur gammal information får bli,
-- om informationen kan återskapas,
-- och om den måste raderas när sessionen avslutas.
-
-Lokal lagring ska inte bli en skuggdatabas för auktoritativ verksamhetsinformation.
-
-Det kan däremot finnas legitima behov av exempelvis:
-
-- tillfällig formulärstate,
-- användarpreferenser,
-- cache för prestanda,
-- offlinearbete,
-- eller återupptagning av en pågående uppgift.
-
-Behovet avgör mekanismen. Informationsklassning och kvalitetskrav avgör vilka skydd och begränsningar som behövs.
+För varje lokalt tillstånd behöver man bedöma varför det behövs, hur länge det får leva, hur känsligt det är, hur gammalt det får bli och vad som händer om enheten delas eller förloras. Tillfällig formulärstate, användarpreferenser, cache, offlinearbete och återupptagning kan vara legitima behov, men mekanism och skydd ska följa informationsklassning och kvalitetskrav.
 
 ## Säkerhet i klienten är mer än inloggning
 
@@ -387,27 +367,9 @@ Den centrala observerbarhetsplattformen hör till Driftbarhet och motståndskraf
 
 ## Tekniken förändras snabbare än förmågan
 
-Frontendområdet illustrerar tydligt varför boken separerar stabil arkitektur från teknisk realisering.
+Frontendområdet visar tydligt varför förmåga, erbjudande och teknisk realisering behöver hållas isär. Ramverk, byggverktyg och bibliotek förändras snabbare än organisationens behov av användbara, tillgängliga och säkra digitala gränssnitt.
 
-Ramverk, byggverktyg, bibliotek och browserfunktioner förändras snabbare än organisationens grundläggande behov av digital interaktion.
-
-Förmågan bör därför uttryckas stabilt:
-
-> Organisationen behöver kunna skapa och förvalta användbara, tillgängliga, säkra och sammanhängande digitala gränssnitt över relevanta kanaler.
-
-Plattformserbjudandet kan vara mer konkret:
-
-> Organisationen erbjuder en standardiserad väg för större webbaserade klientapplikationer.
-
-Teknikstandarden kan vara ännu mer konkret:
-
-> För en viss period rekommenderas ett visst ramverk, språk och stödd versionsfamilj.
-
-Och den tekniska dokumentationen får vara mest föränderlig:
-
-> Så här konfigureras den aktuella versionen, byggverktyget och projektmallen.
-
-Genom denna separation kan ramverket bytas utan att hela förmågemodellen behöver skrivas om.
+Förmågan bör därför uttryckas stabilt, medan plattformserbjudandet kan ange en rekommenderad väg och teknikstandarden vilka ramverk och versionsfamiljer som stöds för tillfället. Då kan tekniken bytas utan att förmågemodellen behöver skrivas om.
 
 ## Typiska kvalitetsattribut för förmågan
 
@@ -439,31 +401,11 @@ Frontendramverk och beroenden kan ha snabb livscykel. Standardiserad struktur, g
 
 ## Vad bör vara gemensamt och vad bör vara lokalt?
 
-Kapitel 9 etablerade att gemensamt ansvar ska motiveras, inte antas. Interaktionsförmågan är ett bra område för att tillämpa den principen.
+Interaktionsförmågan tillämpar kapitel 9:s grundfråga: vad vinner på att vara gemensamt och vad behöver få variera nära användningssituationen?
 
-Sådant som ofta lämpar sig väl för gemensamt ansvar är:
+Gemensamt ansvar passar ofta för design system, tillgänglighets- och säkerhetsbaseline, browser support, projektstrukturer, identitetsintegration, telemetri och stödda webbutvecklingserbjudanden. Verksamhetsnära team behöver däremot normalt äga användarresor, informationsprioritering, navigation, lokala arbetsflöden, språk, innehåll och den konkreta användningen av komponenterna.
 
-- design system,
-- tillgänglighetsbaseline,
-- browser support policy,
-- frontend security baseline,
-- rekommenderade projektstrukturer,
-- integration mot gemensam identitet,
-- standardiserad telemetri,
-- och ett eller flera stödda webbutvecklingserbjudanden.
-
-Sådant som normalt behöver ligga nära verksamhetslösningen är:
-
-- användarresor,
-- informationsprioritering,
-- verksamhetsspecifik navigation,
-- lokala arbetsflöden,
-- språk och innehåll,
-- och den konkreta kombinationen av komponenter i ett visst användningsfall.
-
-Mellan dessa finns ett federerat område. En lokal lösning kan exempelvis utveckla en ny komponent som senare visar sig vara generell nog att flyttas in i det gemensamma designsystemet. På samma sätt kan ett nytt kanalbehov först prövas lokalt och därefter bli ett gemensamt erbjudande om det återkommer.
-
-Detta är ett exempel på den iterativa modell som introducerades i kapitel 7.
+Mellan dessa finns ett federerat område. En lokalt utvecklad komponent eller ett nytt kanalbehov kan först prövas nära verksamheten och senare bli gemensamt om behovet återkommer.
 
 ## En praktisk analysordning
 

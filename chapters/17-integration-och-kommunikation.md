@@ -75,127 +75,44 @@ Några centrala dimensioner är:
 
 Dessa frågor gör det möjligt att välja mönster efter behov i stället för efter teknisk vana.
 
-## Synkron kommunikation – när svaret behövs nu
+## Interaktionsformer: synkront, asynkront och pub/sub
 
-Vid synkron kommunikation skickar en konsument en begäran och väntar på ett svar innan den kan fortsätta.
+Synkron och asynkron kommunikation löser olika behov och skapar olika former av koppling.
 
-Det är ofta ett naturligt val när:
-
-- en användare väntar på resultatet,
-- aktuell information måste hämtas,
-- ett kommando behöver bekräftas direkt,
-- transaktionen logiskt kräver omedelbar återkoppling.
-
-Ett typiskt exempel är ett API-anrop:
+Vid synkron kommunikation skickar en konsument en begäran och väntar på svar innan den kan fortsätta. Det passar när en användare väntar på resultatet, aktuell information måste hämtas eller ett kommando behöver bekräftas direkt.
 
 ```text
 Klient ── begäran ──▶ Tjänst
        ◀── svar ─────
 ```
 
-Modellen är enkel att förstå, men den skapar tidskoppling. Konsumenten är beroende av att tjänsten kan svara inom en rimlig tid just när anropet görs.
-
-Om tjänst B i sin tur anropar C och D kan beroendekedjan snabbt bli längre:
+Modellen är enkel att förstå men skapar tidskoppling. Om tjänst B i sin tur anropar C och D växer beroendekedjan:
 
 ```text
 A → B → C → D
 ```
 
-Tillgängligheten i hela användarflödet påverkas då av samtliga kritiska beroenden. Latens summeras och fel kan spridas bakåt genom kedjan.
+Latens summeras och fel kan spridas bakåt. Synkrona API:er är därför ofta rätt val, men de bör användas med förståelse för den operativa koppling de skapar.
 
-Det betyder inte att synkrona API:er är fel. De är ofta precis rätt. Men man bör använda dem med förståelse för vilken operativ koppling de skapar.
+Timeout är en del av kontraktet. Lösningen behöver veta hur länge den väntar, vad timeout betyder, om anropet kan provas igen och om operationen kan ha genomförts trots att svaret förlorades. Ett blint återförsök kan annars skapa dubbletter. För vissa operationer behöver kontraktet stödja idempotens eller motsvarande mekanism.[K1]
 
-### Timeout är en del av kontraktet
-
-Ett synkront anrop får aldrig i praktiken antas kunna vänta obegränsat.
-
-En lösning behöver veta:
-
-- hur länge den väntar,
-- vad en timeout betyder,
-- om anropet kan provas igen,
-- om operationen kan ha genomförts trots att svaret förlorades,
-- vilket beteende användaren eller processen får vid fel.
-
-Återförsök är därför inte automatiskt säkert.
-
-Om ett anrop betyder ”skapa betalning” och klienten inte vet om första försöket lyckades kan ett blint nytt försök skapa en dublett. För vissa operationer behöver kontraktet därför stödja idempotens eller någon annan mekanism som gör upprepning kontrollerad.[K1]
-
-## Asynkron meddelandekommunikation – när parterna inte behöver mötas i tid
-
-Vid asynkron kommunikation skickas information utan krav på att mottagaren behandlar den omedelbart medan avsändaren väntar.
-
-En mellanliggande meddelandetjänst kan exempelvis lagra meddelandet tills konsumenten kan ta hand om det:
+Vid asynkron kommunikation skickas information utan krav på att mottagaren behandlar den medan avsändaren väntar:
 
 ```text
 Producent ──▶ Kö ──▶ Konsument
 ```
 
-Detta kan minska tidskopplingen mellan parterna. Producenten behöver inte nödvändigtvis vara beroende av att konsumenten är tillgänglig just då.
+Det minskar tidskopplingen och passar när arbete kan ske senare, belastning behöver jämnas ut eller mottagaren måste kunna vara tillfälligt otillgänglig. I stället behöver lösningen hantera omleverans, dubbletter, gamla meddelanden, felparkering och återstart.
 
-Asynkron kommunikation passar exempelvis när:
+Det betyder att robustare tidskoppling inte ger mindre designarbete. Frågor som tidigare hanterades i samma anrop flyttas i stället till meddelandets livscykel. Lösningen behöver veta hur länge ett meddelande får vänta, hur många omleveranser som är rimliga, när ett fel ska kräva mänsklig hantering och hur konsumenten kommer tillbaka till ett känt läge efter ett längre avbrott.
 
-- arbetet kan ske senare,
-- mottagaren behöver kunna vara tillfälligt otillgänglig,
-- belastning behöver jämnas ut,
-- robust leverans är viktigare än omedelbart svar,
-- processen naturligt består av flera steg över tid.
+Begrepp som *at-most-once*, *at-least-once* och *exactly-once* är användbara, men infrastrukturen kan inte ensam garantera korrekt verksamhetsutfall när databaser och externa system ingår. Idempotens, deduplicering och tydliga transaktionsgränser blir därför centrala. Det är den verksamhetsmässiga effekten som behöver bli korrekt, inte bara meddelandebussens interna leveransstatus.
 
-Men robustare tidskoppling innebär inte mindre designarbete. Tvärtom flyttas flera frågor från det omedelbara anropet till meddelandeflödet.
-
-Man behöver bland annat ta ställning till:
-
-- hur omleverans fungerar,
-- hur dubbletter hanteras,
-- om ordning behöver bevaras,
-- vad som händer efter upprepade misslyckanden,
-- hur gamla meddelanden får bli,
-- hur konsumenten återstartas efter avbrott,
-- hur ett meddelande kan spåras genom flödet.
-
-### Leveransgarantier behöver förstås i sitt sammanhang
-
-Begrepp som *at-most-once*, *at-least-once* och *exactly-once* används ofta när meddelandesystem diskuteras. De kan vara användbara, men de får inte ersätta analysen av hela affärsoperationen.
-
-En infrastruktur kan ge starka garantier inom sin egen gräns, men den verksamhetsmässiga effekten kan involvera databasuppdateringar, externa system och andra komponenter.
-
-Den viktigaste frågan blir därför ofta:
-
-> Hur säkerställer vi korrekt verksamhetsutfall när ett meddelande kan behandlas mer än en gång eller när utfallet efter ett fel är osäkert?
-
-Idempotent behandling, deduplicering och tydliga transaktionsgränser blir då centrala mekanismer.
-
-## Meddelande och händelse är inte samma sak
-
-Asynkron teknik används ofta både för meddelanden och events, men semantiken skiljer sig.
-
-Ett riktat meddelande kan uttrycka ett önskat arbete:
-
-```text
-SkapaFraktuppdrag
-```
-
-En händelse uttrycker i stället något som redan har inträffat:
-
-```text
-OrderGodkänd
-```
-
-Skillnaden är viktig eftersom den påverkar ansvar.
-
-Ett kommando har normalt en tänkt mottagare som förväntas göra något. En händelse publiceras av den som äger faktumet och behöver inte känna till vilka konsumenter som reagerar.
-
-Det ger en användbar princip:
+Asynkron teknik kan bära både riktade meddelanden och händelser, men semantiken skiljer sig. Ett kommando uttrycker ett önskat arbete, exempelvis `SkapaFraktuppdrag`, medan en händelse beskriver ett faktum som redan inträffat, exempelvis `OrderGodkänd`.
 
 > Events bör beskriva fakta som producenten äger, inte fungera som dolda fjärrkommandon till specifika konsumenter.
 
-Om ett event i praktiken betyder ”System B måste nu göra X” och producenten är beroende av detta för att kunna fortsätta, finns fortfarande en stark verksamhetsmässig koppling även om tekniken råkar vara pub/sub.
-
-Teknisk asynkronicitet är alltså inte samma sak som arkitekturell lös koppling.
-
-## Publicera/prenumerera – när flera konsumenter kan reagera
-
-I ett publicera/prenumerera-mönster publiceras en händelse eller ett meddelande till ett ämne eller en kanal där flera konsumenter kan prenumerera.
+I ett publicera/prenumerera-mönster kan flera oberoende konsumenter reagera på samma händelse:
 
 ```text
              ┌──▶ Konsument A
@@ -203,23 +120,11 @@ Producent ──▶ Topic ──▶ Konsument B
              └──▶ Konsument C
 ```
 
-Det kan minska producentens kunskap om konsumenterna. Nya konsumenter kan ibland läggas till utan att producenten förändras.
+Det minskar producentens kunskap om konsumenterna, men inte behovet av stabila kontrakt. Nya konsumenter, historik, versionsförändringar och semantik behöver fortfarande hanteras.
 
-Det passar särskilt väl när:
+Pub/sub behöver därför besvara frågor som vem som får publicera, hur konsumenter upptäcker relevanta händelser, hur långt bak historik kan läsas och hur en kontraktsförändring påverkar konsumenter som utvecklas i en annan takt. Om producenten måste känna till exakt vilka konsumenter som finns och vänta in deras förändringar har man förlorat en stor del av den avsedda självständigheten.
 
-- samma händelse är relevant för flera oberoende parter,
-- producenten inte ska orkestrera deras arbete,
-- konsumenterna har egna ansvar och livscykler.
-
-Men pub/sub skapar nya frågor:
-
-- hur vet man vilka konsumenter som faktiskt finns?
-- vad händer om en konsument tolkar händelsen fel?
-- hur förändras eventets kontrakt över tid?
-- hur länge behöver gamla konsumentversioner stödjas?
-- kan en ny konsument återskapa historik eller bara se nya events?
-
-Lös koppling betyder alltså inte frånvaro av kontrakt. Tvärtom behöver kontraktet ofta vara ännu mer stabilt när producent och konsument inte koordinerar varje förändring.
+Teknisk asynkronicitet är alltså inte samma sak som arkitekturell lös koppling.
 
 ## API:er – kontrakt, inte bara endpoints
 
@@ -244,93 +149,33 @@ Direkt databasåtkomst mellan självständiga IT-stöd är därför normalt ett 
 
 Det innebär inte att databaser aldrig delas tekniskt. Men om två självständiga ansvar använder samma interna lagringsmodell som sitt primära kontrakt har man skapat en stark koppling som behöver vara medvetet motiverad.
 
-## API management är inte detsamma som integrationsarkitektur
+Ett API-kontrakt behöver dessutom beskriva mer än ”happy path”. Felmodell, validering, trafikbegränsningar, autentiseringskrav och versionsstrategi påverkar konsumentens möjlighet att bygga robust. Ett tekniskt korrekt endpoint utan tydlig semantik och livscykel är därför fortfarande ett svagt kontrakt.
 
-En organisation kan erbjuda en gemensam API Management-tjänst med exempelvis:
+## Plattform, filutbyte, dataförflyttning och transformation
 
-- exponering av API:er,
-- policy enforcement,
-- autentiseringskopplingar,
-- trafikbegränsning,
-- statistik,
-- utvecklarportal eller katalogfunktioner.
+Gemensamma integrationsplattformar kan realisera återkommande mekanismer, men de ersätter inte arkitekturansvaret. En större organisation behöver ofta flera erbjudanden snarare än en enda universell integrationsprodukt: API management, messaging, data integration/ETL, hanterad filöverföring och säker extern kommunikation kan ha olika kvalitetsprofiler och målgrupper.
 
-Det kan ge stor nytta.
+En API Management-tjänst kan exempelvis erbjuda exponering, policy enforcement, autentiseringskopplingar, trafikbegränsning, statistik och utvecklarportal. Den kan däremot inte avgöra var tjänstegränsen bör gå, vem som äger informationen eller om kommunikationen borde vara synkron. Plattformen stödjer mekanismen; ansvar, semantik och gränser behöver fortfarande designas.
 
-Men en API gateway kan inte avgöra:
+Filbaserad integration är på motsvarande sätt inte automatiskt föråldrad. Den kan vara lämplig för stora batcher, periodisk behandling, etablerade externa kontrakt eller när själva filen är leveransenheten. Då behöver format, schema, integritet, kvittens, felhantering, kryptering, retention och omleverans ändå behandlas som ett förvaltat kontrakt.
 
-- vad tjänstegränsen bör vara,
-- vem som äger informationen,
-- om kommunikationen borde vara synkron,
-- hur kontraktet bör utformas verksamhetsmässigt,
-- hur en domän bör delas upp.
+Särskilt viktigt är att kunna skilja en omleverans från en ny leverans och att veta om en batch är fullständig eller inkrementell. Filer som bara placeras i en katalog utan definierad livscykel är därför inte enklare arkitektur; de är bara ett kontrakt som råkar vara sämre synliggjort.
 
-Detta illustrerar bokens generella modell. Plattformen realiserar återkommande mekanismer. Arkitekturansvaret för behov, ansvar och gränser finns fortfarande kvar.
+Dataförflyttning ligger nära integration men har ofta ett annat syfte. Ett operativt API kan ge aktuell information i en affärstransaktion, medan ETL eller replikering kan flytta stora datamängder till analys eller annan bearbetning. Kraven på aktualitet, volym, transaktionell semantik, historik och återkörning skiljer sig därför.
 
-## Filutbyte är fortfarande integration
+Det är också en ägarskapsfråga. En härledd kopia kan vara helt legitim för analys eller sökning utan att bli ny auktoritativ källa. Integrationslösningen behöver därför bära tillräcklig metadata för att mottagaren ska förstå ursprung, aktualitet och vilken användning kopian är avsedd för.
 
-Filbaserad integration beskrivs ibland som gammaldags och ersättningsbar med API:er. Det är en för enkel bild.
-
-Filer kan vara ett lämpligt val när:
-
-- stora informationsmängder överförs i batch,
-- mottagaren arbetar periodiskt,
-- externa parter har etablerade filbaserade kontrakt,
-- formatet i sig är en definierad leveransenhet,
-- direkt interaktiv kommunikation inte behövs.
-
-En filöverföring behöver ändå behandlas som ett förvaltat kontrakt.
-
-Man behöver exempelvis definiera:
-
-- format och schema,
-- namngivning,
-- fullständig eller inkrementell leverans,
-- kontrollsummor eller andra integritetsmekanismer,
-- kvittens,
-- felhantering,
-- kryptering och åtkomst,
-- retention och borttagning,
-- hur omleverans skiljs från en ny leverans.
-
-Problemet med filintegration är alltså inte att den använder en fil. Problemet uppstår när filen blir ett odokumenterat tekniskt sidospår utan tydligt ägarskap och livscykel.
-
-## Dataförflyttning och integration är närliggande men inte identiska
-
-ETL, replikering och andra former av dataförflyttning ligger nära integration. Men syftet kan vara ett annat.
-
-Ett operativt API kan tillhandahålla aktuell information för en affärstransaktion. Ett ETL-flöde kan i stället kopiera stora mängder data till ett analyslager.
-
-Båda flyttar information, men de har olika krav på exempelvis:
-
-- aktualitet,
-- transaktionell semantik,
-- volym,
-- historik,
-- felhantering,
-- återkörning.
-
-Det är därför användbart att fråga om flödet primärt är:
+Det är användbart att skilja mellan:
 
 1. tjänsteintegration – funktionalitet eller aktuell information används mellan lösningar,
 2. händelse-/meddelandeintegration – fakta eller arbete distribueras asynkront,
 3. dataförflyttning – datamängder kopieras eller transformeras för ett annat ändamål.
 
-Gemensamma integrationsförmågor kan stödja alla tre, men bör inte tvinga dem genom samma tekniska mekanism.
-
-## Transformation kan lösa kontraktsproblem – men också dölja dem
-
-Integrationslager används ofta för att transformera meddelanden mellan olika format.
-
-Det kan vara rimligt. Två system med olika externa kontrakt behöver inte ha samma interna modell.
-
-Men transformation kan också bli ett sätt att gömma otydligt ägarskap. Om en central integrationsplattform innehåller stora mängder verksamhetslogik kan den gradvis utvecklas till en svårförvaltad mellanvärld där ingen riktigt vet vem som äger reglerna.
-
-En bra tumregel är:
+Transformation kan behövas mellan olika externa kontrakt, men den får inte bli ett sätt att gömma verksamhetslogik i integrationslagret.
 
 > Integration får anpassa kontrakt och transport, men verksamhetens auktoritativa beslut och domänlogik bör ligga hos den ansvariga domänen.
 
-Poängen är inte att transformation måste vara trivial. Men man bör kunna förklara om en regel i integrationslagret är teknisk mappning eller verksamhetsmässig logik.
+Frågan är alltså inte om transformation får förekomma, utan om en regel är teknisk mappning eller verksamhetsmässig logik.
 
 ## Kontraktslivscykeln är lika viktig som tekniken
 
@@ -368,21 +213,15 @@ En mogen integrationsförmåga behöver därför även stöd för:
 - deprecation,
 - avveckling.
 
-API-kataloger, schemaregister eller andra kontraktskataloger kan hjälpa, men de ersätter inte ansvar mellan producent och konsument.
+API-kataloger, schemaregister eller andra kontraktskataloger kan hjälpa, men de ersätter inte ansvar mellan producent och konsument. Producenten behöver veta vilka kompatibilitetslöften som faktiskt gäller, och konsumenten behöver kunna planera migration innan en gammal version tas bort. Det gör kontraktslivscykeln till en del av tjänstens förvaltning, inte en engångsaktivitet vid första integrationen.
 
-## Felhantering måste designas per interaktionsform
+## Leveranssemantik, felbeteende och ordering
 
-Ett tekniskt fel betyder olika saker beroende på kommunikationsmönstret.
+Fel och leveransgarantier behöver designas utifrån interaktionsformen, inte bara utifrån vad plattformen råkar erbjuda.
 
-Vid ett synkront API kan konsumenten få timeout eller felkod direkt.
+Vid ett synkront API kan konsumenten få timeout eller felkod direkt. Vid asynkron kommunikation kan ett meddelande levereras igen eller flyttas till en felmekanism. Vid filutbyte kan en hel batch behöva avvisas, delvis accepteras eller köras om.
 
-Vid asynkron kommunikation kan meddelandet ligga kvar i en kö, levereras igen eller flyttas till en särskild felhanteringsmekanism efter upprepade misslyckanden.
-
-Vid filutbyte kan en hel batch behöva avvisas, delvis accepteras eller behandlas på nytt.
-
-Det är därför otillräckligt att säga ”plattformen hanterar återförsök”. Lösningen behöver definiera verksamhetsmässigt felbeteende.
-
-Exempel:
+Det räcker därför inte att säga att ”plattformen hanterar återförsök”. Lösningen behöver definiera verksamhetsmässigt felbeteende:
 
 ```text
 Tekniskt avbrott
@@ -398,30 +237,20 @@ Parkerat felobjekt + larm
 Korrigering / beslut / kontrollerad återkörning
 ```
 
-Frågan är inte bara hur infrastrukturen reagerar, utan hur verksamheten återgår till ett korrekt tillstånd.
+Ordering är på samma sätt ett krav, inte en standardinställning. I vissa flöden är sekvensen kritisk; i andra skapar global ordering bara onödig begränsning i skalbarhet och parallell behandling. Ofta räcker ordning inom en avgränsad nyckel, exempelvis per kund eller ärende, vilket ger större frihet än global serialisering.
 
-## Ordering är ett krav – inte en standardinställning
+Frågor att ställa är exempelvis:
 
-Asynkrona flöden väcker ofta frågan om ordning.
-
-I vissa fall är ordningen kritisk. Om ett konto först öppnas och sedan stängs kan motsatt behandlingsordning ge ett orimligt resultat.
-
-I andra fall spelar ordningen ingen roll, och stark ordering kan då skapa onödig begränsning i skalbarhet och parallell behandling.
-
-Man bör därför fråga:
-
-- behöver alla meddelanden ordnas globalt?
-- räcker ordning per kund, ärende eller annan nyckel?
+- behövs global ordning eller räcker ordning per kund, ärende eller annan nyckel?
 - kan konsumenten hantera sen ankomst?
 - kan tillståndet härledas från versionsnummer eller tidsstämplar?
+- vad betyder timeout, dubblett eller delvis genomförd operation för verksamheten?
 
-Principen är densamma som på andra områden:
-
-> Beställ inte starkare tekniska garantier än behovet kräver.
+Principen är enkel: beställ inte starkare tekniska garantier än behovet kräver, men lämna inte felbeteendet implicit.
 
 ## Integration över organisationsgränser
 
-När kommunikationen går till en annan organisation förändras flera förutsättningar.
+När kommunikationen går till en annan organisation förändras flera förutsättningar. Den andra parten kan ha andra drifttider, säkerhetsmodeller, kontaktvägar, standarder och förändringscykler. Det gör integrationskontraktet mer likt ett tjänstekontrakt mellan självständiga organisationer än ett internt tekniskt gränssnitt.
 
 Den andra parten kan ha:
 
@@ -436,63 +265,21 @@ Det gör tjänstekontrakt och ansvar ännu viktigare.
 
 En extern kommunikationstjänst eller myndighetsgemensam infrastruktur kan erbjuda säker transport eller strukturerat informationsutbyte. Men den löser inte automatiskt frågan om vad informationen betyder eller hur fel hanteras mellan verksamheterna.
 
-Extern integration bör därför behandlas som tjänstekonsumtion med definierade ansvar och begränsningar, inte som ett anonymt nätverksflöde.
+Extern integration bör därför behandlas som tjänstekonsumtion med definierade ansvar och begränsningar, inte som ett anonymt nätverksflöde. Kontaktsätt, incidentväg, ändringsavisering, tillgänglighetsförväntningar och eventuell fallback behöver vara kända även när själva transporten levereras av gemensam eller nationell infrastruktur.
 
-## Nätverk är en realisering av kommunikationsbehovet
+## Tvärgående realiseringsfrågor
 
-På teknisk nivå kräver integration naturligtvis nätverk, DNS, routing, brandväggar, lastbalansering och andra kommunikationsmekanismer.
+Integration kräver nätverk, identitet, säkerhet och observerbarhet, men integrationsförmågan bör inte ensam äga dessa områden.
 
-Men dessa bör härledas från det dokumenterade flödet.
+Nätverksregler bör härledas från dokumenterade tjänsterelationer: vem kommunicerar med vem, i vilken riktning, för vilket syfte, med vilken identitet och under vilka kvalitets- och säkerhetskrav. En brandväggsregel utan känd tjänsterelation blir annars snabbt ett historiskt beroende som ingen vågar förändra.
 
-I stället för att börja med:
+Ett integrationsflöde behöver också kunna svara på vem eller vilken tjänst motparten är, hur den autentiseras, vilken behörighet den har och vilka trust boundaries som passeras. Kapitel 18 fördjupar identitet och tillit.
 
-> Öppna port 443 mellan zon A och zon B.
+Viktiga flöden behöver dessutom kunna följas över systemgränser, exempelvis med korrelations-id, strukturerad loggning, spårning, meddelandeidentifierare och mätvärden för ködjup, fel och latens. Kapitel 20 behandlar de bredare mekanismerna för observerbarhet och operativ återkoppling.
 
-bör arkitekturen kunna förklara:
+Poängen är att integration definierar kommunikationsrelationens behov, medan andra förmågor tillhandahåller återanvändbara mekanismer för nätverk, identitet, säkerhet och driftbarhet.
 
-- vilken tjänst som kommunicerar,
-- med vilken motpart,
-- i vilken riktning,
-- för vilket syfte,
-- med vilken identitet,
-- vilken information som överförs,
-- vilka kvalitets- och säkerhetskrav som gäller.
-
-Därefter kan nätverks- och säkerhetskontrollerna realisera behovet.
-
-Detta gör även tekniska regler mer förvaltningsbara. En brandväggsregel utan känd tjänsterelation blir annars snabbt ett historiskt mysterium som ingen vågar ta bort.
-
-## Säkerhet och identitet korsar integrationsförmågan
-
-Integrationsförmågan behöver säker kommunikation, men bör inte ensam äga identitetsmodellen.
-
-Kapitel 18 fördjupar detta. Här räcker det att konstatera att ett integrationsflöde normalt behöver kunna svara på frågor som:
-
-- vem eller vilken tjänst är motparten?
-- hur autentiseras den?
-- vilken behörighet har den?
-- hur skyddas information i transit?
-- hur hanteras certifikat, nycklar och hemligheter?
-- korsar flödet en trust boundary?
-
-Det är ett exempel på hur förmågorna samverkar. Integration äger kommunikationsmönstret och kontraktet. Identitet och tillit erbjuder mekanismer för att avgöra vem som kommunicerar och under vilka förutsättningar.
-
-## Observerbarhet över systemgränser
-
-Ett fel i en distribuerad lösning kan passera flera system innan effekten märks.
-
-Därför behöver viktiga integrationsflöden kunna korreleras över komponentgränser.
-
-Det kan innebära:
-
-- korrelations-id,
-- strukturerad loggning,
-- spårning av anrop,
-- meddelandeidentifierare,
-- gemensamma tidsreferenser,
-- mätvärden för ködjup, fel och latens.
-
-Men även här behöver ansvar hållas isär. Integrationsförmågan definierar vilka egenskaper flödet behöver. Den gemensamma förmågan för driftbarhet och motståndskraft, som behandlas i kapitel 20, tillhandahåller de bredare mekanismerna för observerbarhet och operativ återkoppling.
+Detta är också viktigt för felsökning och förändring. Om ett flöde bara dokumenteras som portar, certifikat och köer blir det svårt att avgöra vad som faktiskt får påverkas av en teknisk ändring. När samma mekanismer i stället kan kopplas till en namngiven tjänsterelation och ett kontrakt blir beroendet begripligt även för den som inte känner den tekniska implementationen.
 
 ## Gemensamma plattformstjänster för integration
 
@@ -510,11 +297,14 @@ Det viktiga är att varje erbjudande har ett tydligt tjänstekontrakt.
 Konsumenten behöver veta:
 
 - vilka behov tjänsten löser,
-- vilka garantier den ger,
+- vilka interaktionsformer och volymer den är avsedd för,
+- vilka garantier den ger och var garantierna slutar,
 - vilket ansvar konsumenten fortfarande har,
-- hur onboarding sker,
+- hur onboarding och test sker,
 - hur kontrakt och versioner hanteras,
 - hur tjänsten övervakas och supporteras.
+
+Det bör också vara möjligt att förklara när ett erbjudande inte ska användas. Ett API-erbjudande, en messagingtjänst och en filöverföringstjänst kan alla höra till samma förmåga men vara avsedda för olika behov. Ett tydligt tjänsteerbjudande minskar därför både speciallösningar och tendensen att använda den plattform som råkar vara mest etablerad till allt.
 
 Detta är samma plattform-as-a-product-perspektiv som senare fördjupas i del V.
 
@@ -536,48 +326,13 @@ En bättre målbild är ofta en sammanhängande portfölj av standardiserade int
 
 ## Ansvar på tre nivåer
 
-Den tredelade ansvarmodellen från kapitel 7 är särskilt användbar för integration.
+Den gemensamma nivån bör ange vilka integrationsformer organisationen behöver stödja, principer för kontrakt och livscykel, övergripande säkerhets- och spårbarhetskrav samt relevanta interoperabilitetsstandarder.
 
-### Gemensam arkitekturnivå
+Förmågeansvaret för Integration och kommunikation utvecklar återanvändbara mönster, standarder, tjänsteerbjudanden, kontrakts- och versionsvägledning samt stöd för test, onboarding och livscykel. Det bör också följa var utvecklingsområden återkommande skapar speciallösningar som signalerar luckor i det gemensamma erbjudandet.
 
-På den gemensamma nivån bör man exempelvis fastställa:
+Den konkreta lösningen ansvarar för kommunikationsbehovet, kontraktets verksamhetssemantik, val av mönster, felbeteende, idempotens, timeout, återförsök och hur integrationen används i domänens process.
 
-- vilka integrationsformer organisationen ska kunna stödja,
-- gemensamma principer för kontrakt och livscykel,
-- övergripande säkerhets- och spårbarhetskrav,
-- när gemensamma plattformstjänster ska användas,
-- gemensamma interoperabilitetsstandarder där de behövs,
-- hur externa kommunikationsformer ska styras.
-
-Den gemensamma nivån bör däremot normalt inte designa varje API eller event.
-
-### Förmågenivå
-
-De som ansvarar för Integration och kommunikation bör exempelvis utveckla:
-
-- lösningsmönster för synkron och asynkron integration,
-- API- och meddelandestandarder,
-- tjänsteerbjudanden som API management och messaging,
-- kontrakts- och versionsvägledning,
-- golden paths för vanliga integrationsscenarier,
-- stöd för test, observerbarhet och onboarding,
-- livscykel för integrationsprodukter och protokoll.
-
-Förmågeansvaret bör också följa var utvecklingsområden återkommande skapar egna speciallösningar. Det kan vara ett tecken på att det gemensamma erbjudandet saknar något.
-
-### Lösnings-/produktnivå
-
-Det konkreta systemet ansvarar bland annat för:
-
-- vilket kommunikationsbehov som finns,
-- vilket mönster som passar,
-- kontraktets verksamhetssemantik,
-- felbeteende och idempotens,
-- timeout- och återförsöksstrategi,
-- hur integrationen används i domänens process,
-- att kraven på säkerhet och driftbarhet uppfylls.
-
-Det lokala teamet ska alltså inte behöva bygga en egen meddelandeplattform. Men plattformsteamet kan inte avgöra om ett visst verksamhetsflöde borde vara ett API, ett event eller en fil.
+Det lokala teamet ska alltså inte behöva bygga en egen meddelandeplattform. Men plattformsteamet kan inte avgöra om ett visst verksamhetsflöde bör vara ett API, ett event eller en fil.
 
 ## Vanliga anti-patterns
 

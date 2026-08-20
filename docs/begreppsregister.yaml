@@ -1,13 +1,15 @@
 policy:
-  marking: Kursivera högst tre definierade arkitekturobjekt per huvudkapitel, endast första betydelsefulla förekomsten och
-    utan inline-kapitelhänvisning.
-  navigation: Begreppsregistret använder kapitelnummer eftersom samma register ska fungera i EPUB och PDF.
+  marking: Kursivera högst tre definierade arkitekturobjekt per huvudkapitel, 
+    endast första betydelsefulla förekomsten och utan inline-kapitelhänvisning.
+  navigation: Begreppsregistret använder kapitelnummer eftersom samma register 
+    ska fungera i EPUB och PDF.
 concepts:
 - id: formagor-01
   term: Interaktion, presentation och kanaler
   type: Förmåga
   primary_chapter: 12
-  source: docs/underlag/gemensam-it-arkitektur/formagor/01-interaktion-presentation-kanaler.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/01-interaktion-presentation-kanaler.md
   related_chapters:
   - 8
   - 2
@@ -22,7 +24,8 @@ concepts:
   term: Process, workflow och ärendehantering
   type: Förmåga
   primary_chapter: 13
-  source: docs/underlag/gemensam-it-arkitektur/formagor/02-process-workflow-arendehantering.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/02-process-workflow-arendehantering.md
   related_chapters:
   - 8
   - 2
@@ -53,7 +56,8 @@ concepts:
   term: Data- och informationshantering
   type: Förmåga
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/formagor/04-data-och-informationshantering.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/04-data-och-informationshantering.md
   related_chapters:
   - 8
   - 2
@@ -85,7 +89,8 @@ concepts:
   term: Integration och kommunikation
   type: Förmåga
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/formagor/06-integration-och-kommunikation.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/06-integration-och-kommunikation.md
   related_chapters:
   - 8
   - 24
@@ -104,7 +109,8 @@ concepts:
   term: Identitet och tillit
   type: Förmåga
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/formagor/07-identitet-och-tillit.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/07-identitet-och-tillit.md
   related_chapters:
   - 8
   - 2
@@ -121,7 +127,8 @@ concepts:
   term: Applikationsexekvering och runtime
   type: Förmåga
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/formagor/08-applikationsexekvering-runtime.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/08-applikationsexekvering-runtime.md
   related_chapters:
   - 8
   - 2
@@ -137,7 +144,8 @@ concepts:
   term: Driftbarhet och motståndskraft
   type: Förmåga
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/formagor/09-driftbarhet-motstandskraft.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/09-driftbarhet-motstandskraft.md
   related_chapters:
   - 8
   - 2
@@ -153,7 +161,8 @@ concepts:
   term: Programvaruutveckling och leverans
   type: Förmåga
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/formagor/10-programvaruutveckling-leverans.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/10-programvaruutveckling-leverans.md
   related_chapters:
   - 8
   - 2
@@ -171,7 +180,8 @@ concepts:
   term: Arbetsplats, samarbete och produktivitet
   type: Förmåga
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/formagor/11-arbetsplats-samarbete-produktivitet.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/formagor/11-arbetsplats-samarbete-produktivitet.md
   related_chapters:
   - 8
   - 21
@@ -181,7 +191,8 @@ concepts:
   term: Backend for Frontend
   type: Lösningsmönster
   primary_chapter: 24
-  source: docs/underlag/gemensam-it-arkitektur/monster/01-backend-for-frontend.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/01-backend-for-frontend.md
   related_chapters:
   - 2
   - 12
@@ -197,7 +208,8 @@ concepts:
   term: Asynkron meddelandekommunikation
   type: Lösningsmönster
   primary_chapter: 24
-  source: docs/underlag/gemensam-it-arkitektur/monster/02-asynkron-meddelandekommunikation.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/02-asynkron-meddelandekommunikation.md
   related_chapters:
   - 8
   - 2
@@ -215,7 +227,8 @@ concepts:
   term: Publicera/prenumerera
   type: Lösningsmönster
   primary_chapter: 24
-  source: docs/underlag/gemensam-it-arkitektur/monster/03-publicera-prenumerera.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/03-publicera-prenumerera.md
   related_chapters:
   - 8
   - 2
@@ -244,7 +257,8 @@ concepts:
   term: Externaliserade verksamhetsregler
   type: Lösningsmönster
   primary_chapter: 25
-  source: docs/underlag/gemensam-it-arkitektur/monster/05-externaliserade-verksamhetsregler.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/05-externaliserade-verksamhetsregler.md
   related_chapters:
   - 2
   - 35
@@ -257,7 +271,8 @@ concepts:
   term: System of record och härledda kopior
   type: Lösningsmönster
   primary_chapter: 25
-  source: docs/underlag/gemensam-it-arkitektur/monster/06-system-of-record-och-harledda-kopior.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/06-system-of-record-och-harledda-kopior.md
   related_chapters:
   - 15
   - 11
@@ -281,12 +296,8 @@ concepts:
   primary_chapter: 26
   source: docs/underlag/gemensam-it-arkitektur/monster/08-rag.md
   related_chapters:
-  - 18
   - 8
   - 28
-  - 12
-  - 13
-  - 17
   - 16
   marked_chapters:
   - 26
@@ -294,7 +305,8 @@ concepts:
   term: AI med mänsklig kontroll
   type: Lösningsmönster
   primary_chapter: 26
-  source: docs/underlag/gemensam-it-arkitektur/monster/09-ai-med-mansklig-kontroll.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/09-ai-med-mansklig-kontroll.md
   related_chapters:
   - 23
   - 36
@@ -321,7 +333,8 @@ concepts:
   term: Containeriserad stateless tjänst
   type: Lösningsmönster
   primary_chapter: 26
-  source: docs/underlag/gemensam-it-arkitektur/monster/11-containeriserad-stateless-tjanst.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/11-containeriserad-stateless-tjanst.md
   related_chapters:
   - 2
   - 23
@@ -332,7 +345,8 @@ concepts:
   term: Build once, promote many
   type: Lösningsmönster
   primary_chapter: 27
-  source: docs/underlag/gemensam-it-arkitektur/monster/12-build-once-promote-many.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/12-build-once-promote-many.md
   related_chapters:
   - 21
   - 35
@@ -346,7 +360,8 @@ concepts:
   term: Observerbarhet för distribuerade tjänster
   type: Lösningsmönster
   primary_chapter: 27
-  source: docs/underlag/gemensam-it-arkitektur/monster/13-observability-for-distribuerade-tjanster.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/13-observability-for-distribuerade-tjanster.md
   related_chapters:
   - 2
   - 35
@@ -358,7 +373,8 @@ concepts:
   term: Backup och verifierad återställning
   type: Lösningsmönster
   primary_chapter: 27
-  source: docs/underlag/gemensam-it-arkitektur/monster/14-backup-och-verifierad-aterstallning.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/14-backup-och-verifierad-aterstallning.md
   related_chapters:
   - 23
   marked_chapters:
@@ -367,7 +383,8 @@ concepts:
   term: Kontrollerad samarbetsyta
   type: Lösningsmönster
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/monster/15-kontrollerad-samarbetsyta.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/monster/15-kontrollerad-samarbetsyta.md
   related_chapters:
   - 23
   - 36
@@ -376,7 +393,8 @@ concepts:
   term: Web Application Framework
   type: Plattform/tjänst
   primary_chapter: 12
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/01-web-application-framework.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/01-web-application-framework.md
   related_chapters: []
   marked_chapters:
   - 12
@@ -395,28 +413,32 @@ concepts:
   term: Workflow/Process Platform
   type: Plattform/tjänst
   primary_chapter: 13
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/03-workflow-process-platform.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/03-workflow-process-platform.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-04
   term: Case Management Platform
   type: Plattform/tjänst
   primary_chapter: 13
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/04-case-management-platform.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/04-case-management-platform.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-05
   term: Business Rules Platform
   type: Plattform/tjänst
   primary_chapter: 14
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/05-business-rules-platform.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/05-business-rules-platform.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-06
   term: Relationell databastjänst
   type: Plattform/tjänst
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/06-relationell-databastjanst.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/06-relationell-databastjanst.md
   related_chapters:
   - 8
   - 2
@@ -431,7 +453,8 @@ concepts:
   term: Object Storage Service
   type: Plattform/tjänst
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/07-object-storage-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/07-object-storage-service.md
   related_chapters:
   - 35
   marked_chapters: []
@@ -446,7 +469,8 @@ concepts:
   term: Search and Indexing Service
   type: Plattform/tjänst
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/09-search-indexing-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/09-search-indexing-service.md
   related_chapters:
   - 28
   marked_chapters:
@@ -455,14 +479,16 @@ concepts:
   term: Business Intelligence and Reporting
   type: Plattform/tjänst
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/10-bi-reporting-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/10-bi-reporting-service.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-11
   term: Managed LLM Service
   type: Plattform/tjänst
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/11-managed-llm-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/11-managed-llm-service.md
   related_chapters: []
   marked_chapters:
   - 16
@@ -470,7 +496,8 @@ concepts:
   term: RAG/Knowledge Service
   type: Plattform/tjänst
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/12-rag-knowledge-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/12-rag-knowledge-service.md
   related_chapters:
   - 36
   marked_chapters:
@@ -493,7 +520,8 @@ concepts:
   term: Enterprise Messaging
   type: Plattform/tjänst
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/14-enterprise-messaging.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/14-enterprise-messaging.md
   related_chapters:
   - 8
   - 24
@@ -508,7 +536,8 @@ concepts:
   term: Data Integration / ETL
   type: Plattform/tjänst
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/15-data-integration-etl.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/15-data-integration-etl.md
   related_chapters: []
   marked_chapters:
   - 17
@@ -516,21 +545,24 @@ concepts:
   term: Secure Government Connectivity
   type: Plattform/tjänst
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/16-secure-government-connectivity.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/16-secure-government-connectivity.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-17
   term: Structured Government Exchange
   type: Plattform/tjänst
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/17-structured-government-exchange.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/17-structured-government-exchange.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-18
   term: Workforce Identity
   type: Plattform/tjänst
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/18-workforce-identity.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/18-workforce-identity.md
   related_chapters: []
   marked_chapters:
   - 18
@@ -538,23 +570,27 @@ concepts:
   term: Service Identity
   type: Plattform/tjänst
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/19-service-identity.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/19-service-identity.md
   related_chapters:
   - 23
   - 26
-  marked_chapters: []
+  marked_chapters:
+  - 18
 - id: plattformar-20
   term: PKI / Certificate Service
   type: Plattform/tjänst
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/20-pki-certificate-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/20-pki-certificate-service.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-21
   term: Secrets Management
   type: Plattform/tjänst
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/21-secrets-management.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/21-secrets-management.md
   related_chapters:
   - 30
   - 28
@@ -568,7 +604,8 @@ concepts:
   term: Container Application Platform
   type: Plattform/tjänst
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/22-container-application-platform.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/22-container-application-platform.md
   related_chapters:
   - 2
   - 28
@@ -586,7 +623,8 @@ concepts:
   term: Java Application Runtime
   type: Plattform/tjänst
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/23-java-application-runtime.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/23-java-application-runtime.md
   related_chapters: []
   marked_chapters:
   - 19
@@ -594,35 +632,40 @@ concepts:
   term: Virtual Machine Runtime
   type: Plattform/tjänst
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/24-virtual-machine-runtime.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/24-virtual-machine-runtime.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-25
   term: Central Logging Service
   type: Plattform/tjänst
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/25-central-logging-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/25-central-logging-service.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-26
   term: Metrics, Monitoring and Tracing
   type: Plattform/tjänst
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/26-monitoring-tracing-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/26-monitoring-tracing-service.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-27
   term: Backup and Recovery Service
   type: Plattform/tjänst
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/27-backup-recovery-service.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/27-backup-recovery-service.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-28
   term: Source Code Management
   type: Plattform/tjänst
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/28-source-code-management.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/28-source-code-management.md
   related_chapters:
   - 36
   marked_chapters: []
@@ -638,7 +681,8 @@ concepts:
   term: Artifact Repository
   type: Plattform/tjänst
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/30-artifact-repository.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/30-artifact-repository.md
   related_chapters:
   - 36
   marked_chapters: []
@@ -646,14 +690,16 @@ concepts:
   term: Developer Tooling
   type: Plattform/tjänst
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/31-developer-tooling.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/31-developer-tooling.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-32
   term: Productivity Suite
   type: Plattform/tjänst
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/32-productivity-suite.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/32-productivity-suite.md
   related_chapters:
   - 28
   - 36
@@ -662,14 +708,16 @@ concepts:
   term: Collaboration and Workspace Services
   type: Plattform/tjänst
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/33-collaboration-workspace.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/33-collaboration-workspace.md
   related_chapters: []
   marked_chapters: []
 - id: plattformar-34
   term: Productivity AI Assistant
   type: Plattform/tjänst
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/34-productivity-ai-assistant.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/34-productivity-ai-assistant.md
   related_chapters:
   - 36
   marked_chapters: []
@@ -677,14 +725,16 @@ concepts:
   term: Low-Code Productivity Platform
   type: Plattform/tjänst
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/plattformar/35-low-code-productivity-platform.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/plattformar/35-low-code-productivity-platform.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-01
   term: Web frontend
   type: Teknisk standard
   primary_chapter: 12
-  source: docs/underlag/gemensam-it-arkitektur/standarder/01-web-frontend-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/01-web-frontend-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-02
@@ -706,25 +756,29 @@ concepts:
   term: Messaging och events
   type: Teknisk standard
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/standarder/03-messaging-event-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/03-messaging-event-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-04
   term: Identitets- och federationsprotokoll
   type: Teknisk standard
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/standarder/04-identitetsprotokoll-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/04-identitetsprotokoll-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-05
   term: Service identity
   type: Teknisk standard
   primary_chapter: 18
-  source: docs/underlag/gemensam-it-arkitektur/standarder/05-service-identity-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/05-service-identity-standard.md
   related_chapters:
   - 23
   - 26
-  marked_chapters: []
+  marked_chapters:
+  - 18
 - id: standarder-06
   term: Secrets
   type: Teknisk standard
@@ -743,21 +797,24 @@ concepts:
   term: Java persistence
   type: Teknisk standard
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/standarder/07-java-persistence-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/07-java-persistence-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-08
   term: Relationella databaser
   type: Teknisk standard
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/standarder/08-relationsdatabas-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/08-relationsdatabas-produktstandard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-09
   term: Objektlagring
   type: Teknisk standard
   primary_chapter: 15
-  source: docs/underlag/gemensam-it-arkitektur/standarder/09-object-storage-realisering-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/09-object-storage-realisering-standard.md
   related_chapters:
   - 8
   - 2
@@ -771,7 +828,8 @@ concepts:
   term: Sökplattform
   type: Teknisk standard
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/standarder/10-search-platform-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/10-search-platform-standard.md
   related_chapters:
   - 11
   marked_chapters: []
@@ -779,16 +837,17 @@ concepts:
   term: BI och rapportering
   type: Teknisk standard
   primary_chapter: 16
-  source: docs/underlag/gemensam-it-arkitektur/standarder/11-bi-platform-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/11-bi-platform-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-12
   term: Container
   type: Teknisk standard
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/standarder/12-container-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/12-container-standard.md
   related_chapters:
-  - 18
   - 8
   - 2
   - 30
@@ -800,7 +859,8 @@ concepts:
   term: Containerplattform
   type: Teknisk standard
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/standarder/13-openshift-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/13-openshift-produktstandard.md
   related_chapters:
   - 2
   - 30
@@ -819,63 +879,71 @@ concepts:
   term: Java Application Runtime
   type: Teknisk standard
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/standarder/14-java-runtime-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/14-java-runtime-produktstandard.md
   related_chapters: []
-  marked_chapters: []
+  marked_chapters:
+  - 19
 - id: standarder-15
   term: Linux serveroperativsystem
   type: Teknisk standard
   primary_chapter: 19
-  source: docs/underlag/gemensam-it-arkitektur/standarder/15-linux-os-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/15-linux-os-produktstandard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-16
   term: CI/CD
   type: Teknisk standard
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/standarder/16-ci-cd-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/16-ci-cd-produktstandard.md
   related_chapters:
   - 18
   - 8
   - 2
   - 30
   - 28
-  - 15
   - 7
   marked_chapters: []
 - id: standarder-17
   term: Developer tooling
   type: Teknisk standard
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/standarder/17-developer-tooling-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/17-developer-tooling-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-18
   term: Git och repository
   type: Teknisk standard
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/standarder/18-git-repository-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/18-git-repository-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-19
   term: Release- och versionsidentifiering
   type: Teknisk standard
   primary_chapter: 21
-  source: docs/underlag/gemensam-it-arkitektur/standarder/19-release-version-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/19-release-version-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-20
   term: Observerbarhet
   type: Teknisk standard
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/standarder/20-observability-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/20-observability-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-21
   term: Backup och återställning
   type: Teknisk standard
   primary_chapter: 20
-  source: docs/underlag/gemensam-it-arkitektur/standarder/21-backup-recovery-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/21-backup-recovery-standard.md
   related_chapters:
   - 15
   - 32
@@ -885,7 +953,8 @@ concepts:
   term: Microsoft 365
   type: Teknisk standard
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/standarder/22-m365-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/22-m365-produktstandard.md
   related_chapters:
   - 28
   marked_chapters: []
@@ -893,28 +962,32 @@ concepts:
   term: Power Platform governance
   type: Teknisk standard
   primary_chapter: 22
-  source: docs/underlag/gemensam-it-arkitektur/standarder/23-power-platform-governance-standard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/23-power-platform-governance-standard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-24
   term: Nätverks- och tjänstekommunikation
   type: Teknisk standard
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/standarder/24-teknisk-kommunikationsstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/24-teknisk-kommunikationsstandard.md
   related_chapters: []
   marked_chapters: []
 - id: standarder-25
   term: Myndighetsgemensam kommunikation
   type: Teknisk standard
   primary_chapter: 17
-  source: docs/underlag/gemensam-it-arkitektur/standarder/25-sgsi-shs-produktstandard.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/standarder/25-sgsi-shs-produktstandard.md
   related_chapters: []
   marked_chapters: []
 - id: referensarkitekturer-01
   term: Internt handläggningsstöd
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/01-internt-handlaggningsstod.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/01-internt-handlaggningsstod.md
   related_chapters:
   - 2
   - 12
@@ -929,7 +1002,8 @@ concepts:
   term: Publik e-tjänst
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/02-publik-e-tjanst.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/02-publik-e-tjanst.md
   related_chapters:
   - 24
   - 2
@@ -946,7 +1020,8 @@ concepts:
   term: Integrationsintensivt verksamhetssystem
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/03-integrationsintensivt-verksamhetssystem.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/03-integrationsintensivt-verksamhetssystem.md
   related_chapters:
   - 35
   - 34
@@ -957,14 +1032,16 @@ concepts:
   term: Informationsutbyte med annan myndighet
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/04-informationsutbyte-med-annan-myndighet.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/04-informationsutbyte-med-annan-myndighet.md
   related_chapters: []
   marked_chapters: []
 - id: referensarkitekturer-05
   term: Containerbaserad tjänst
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/05-containerbaserad-tjanst.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/05-containerbaserad-tjanst.md
   related_chapters:
   - 35
   - 34
@@ -974,7 +1051,8 @@ concepts:
   term: AI-baserat verksamhetsstöd
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/06-ai-baserat-verksamhetsstod.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/06-ai-baserat-verksamhetsstod.md
   related_chapters:
   - 35
   - 34
@@ -984,7 +1062,8 @@ concepts:
   term: Digital arbetsplats
   type: Referensarkitektur
   primary_chapter: 36
-  source: docs/underlag/gemensam-it-arkitektur/referensarkitekturer/07-digital-arbetsplats.md
+  source: 
+    docs/underlag/gemensam-it-arkitektur/referensarkitekturer/07-digital-arbetsplats.md
   related_chapters:
   - 8
   - 35

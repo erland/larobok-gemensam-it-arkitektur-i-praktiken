@@ -321,17 +321,7 @@ En kontroll där en handläggare förväntas klicka ”godkänn” på hundratal
 
 Mänsklig kontroll bör därför dimensioneras efter konsekvensen av fel och den faktiska möjligheten att upptäcka felet.
 
-### Human-on-the-loop och efterhandskontroll
-
-Inte alla användningsfall kräver att en människa godkänner varje enskilt resultat. I vissa situationer kan en bättre modell vara att:
-
-- automatisera lågkonsekvensfall,
-- övervaka kvalitetsmått,
-- stickprovsgranska resultat,
-- eskalera osäkra eller avvikande fall,
-- ha möjlighet att snabbt stoppa eller rulla tillbaka funktionen.
-
-Det viktiga är inte etiketten på kontrollformen, utan att kontrollmekanismen är proportionerlig och verifierbar.
+Inte alla användningsfall kräver godkännande av varje enskilt resultat. För lågkonsekvensfall kan en bättre modell vara att automatisera, övervaka kvalitetsmått, stickprovsgranska, eskalera avvikelser och kunna stoppa eller rulla tillbaka funktionen. Det viktiga är inte etiketten på kontrollformen, utan att kontrollen är proportionerlig och verifierbar.
 
 ## Agentbaserade lösningar ökar konsekvensytan
 
@@ -373,11 +363,7 @@ Några centrala frågor är:
 - Får informationen användas för detta ändamål?
 - Kan vi spåra vilket underlag som användes?
 
-Detta är en direkt koppling till kapitel 11 och 15.
-
-En AI-plattform kan göra det enkelt att anropa en modell, men den kan inte automatiskt skapa korrekt informationsägarskap, bra dokument eller tydlig semantik.
-
-Därför är ett vanligt anti-pattern att lägga stora resurser på modellval och promptar men mycket mindre på den kunskapsbas som modellen faktiskt ska använda.
+Detta är en direkt koppling till kapitel 11 och 15. En AI-plattform kan förenkla modellåtkomst, men kan inte ersätta informationsägarskap, bra källmaterial eller tydlig semantik. En lösning som optimerar modell och prompt men försummar kunskapsbasen angriper därför fel del av problemet.
 
 ## Utvärdering måste ske på systemnivå
 
@@ -440,19 +426,7 @@ Därför kan man behöva följa ytterligare signaler som:
 
 För klassiska ML-system brukar förändringar i datadistribution eller samband beskrivas som olika former av drift. Oavsett terminologi behöver verksamheten kunna upptäcka när förutsättningarna för modellens tidigare kvalitet inte längre gäller.
 
-### En extern modell kan förändra förvaltningsmodellen
-
-Om en organisation konsumerar en hanterad modell som tjänst kan leverantören kontrollera delar av modellens livscykel. Då behöver konsumenten förstå bland annat:
-
-- om en bestämd modellversion kan låsas,
-- hur länge versionen stöds,
-- hur förändringar annonseras,
-- om beteendet kan förändras utan egen driftsättning,
-- hur data behandlas,
-- vilka loggar och mätvärden som är tillgängliga,
-- hur exit eller byte av leverantör kan genomföras.
-
-Detta är ett exempel på hur en enkel API-integration kan bära betydande arkitektoniska konsekvenser.
+Om en hanterad modell konsumeras som tjänst kontrollerar leverantören delar av livscykeln. Konsumenten behöver därför förstå om versioner kan låsas, hur länge de stöds, hur beteendeförändringar annonseras, hur data behandlas, vilka mätvärden som finns och hur ett leverantörsbyte kan genomföras. En enkel API-integration kan alltså bära betydande förvaltningskonsekvenser.
 
 ## Kvalitetskrav för analys-, sök- och AI-förmågan
 
@@ -514,56 +488,17 @@ Därför behöver kostnad kunna följas per relevant användningsfall och inte b
 
 Den tredelade ansvarmodellen från kapitel 7 är särskilt viktig i ett område med hög teknisk förändringstakt.
 
-### Gemensam arkitekturnivå
+På **gemensam arkitekturnivå** behövs framför allt principer för informationsskydd, spårbarhet, mänsklig kontroll, utvärdering och livscykel samt tydliga gränser mot data, identitet, integration och andra förmågor. Den nivån behöver inte välja modell eller sökalgoritm för varje användningsfall.
 
-På den gemensamma nivån bör organisationen bland annat kunna etablera:
+På **förmågenivå** kan organisationen erbjuda återanvändbara sök-, BI-, modell- och RAG-tjänster, utvärderingsramverk, observerbarhet, guardrails och vägledning för kostnad och kapacitet. Förmågeansvaret ska göra tekniken enklare att använda kontrollerat, inte ta över verksamhetens ansvar för information och konsekvenser.
 
-- gemensamma principer för användning av AI och sekundära analyslager,
-- övergripande krav på informationsskydd och spårbarhet,
-- gemensam terminologi för deterministiska och probabilistiska resultat,
-- riskbaserade principer för mänsklig kontroll,
-- gemensamma regler för livscykel och utvärdering,
-- gränser mot identitet, data, integration och andra förmågor.
-
-Den gemensamma nivån behöver däremot inte välja exakt modell eller sökalgoritm för varje verksamhetsfall.
-
-### Förmågenivå
-
-De som ansvarar för Analys, sökning och AI kan exempelvis ansvara för:
-
-- sök- och indexeringserbjudanden,
-- BI- och rapporteringstjänster,
-- gemensam åtkomst till modeller,
-- RAG-/kunskapstjänster där återanvändning är motiverad,
-- mallar för modell- och promptversionering,
-- utvärderingsramverk,
-- observerbarhet för AI-specifika signaler,
-- guardrails och godkända integrationsmönster,
-- vägledning för kostnad och kapacitet.
-
-Förmågeansvaret bör göra det lättare att använda tekniken kontrollerat, inte ta över verksamhetens ansvar för information och konsekvenser.
-
-### Lösnings-/produktnivå
-
-Den konkreta lösningen behöver fortfarande avgöra:
-
-- vilket problem som faktiskt ska lösas,
-- om AI behövs,
-- vilka källor som får användas,
-- vilka kvalitetsmått som är relevanta,
-- hur resultatet används i arbetsprocessen,
-- vilka konsekvenser ett fel får,
-- om mänsklig kontroll behövs,
-- vilken fallback som krävs,
-- hur lösningen följs upp i produktion.
-
-Det är alltså inte den gemensamma AI-plattformen som äger verksamhetsbeslutet om hur ett modellresultat får användas.
+På **lösnings-/produktnivå** avgörs fortfarande vilket problem som ska lösas, vilka källor som får användas, vilka kvalitetsmått och kontrollmekanismer som krävs, hur resultatet får påverka arbetsprocessen och vilken fallback som behövs. En gemensam AI-plattform äger alltså inte verksamhetsbeslutet om hur ett modellresultat får användas.
 
 ## Vanliga anti-patterns
 
-### AI först, problem sedan
+### Teknik först, problem sedan
 
-Organisationen börjar med en vald modell eller plattform och letar därefter efter användningsfall. Resultatet blir lätt hög komplexitet med oklar nytta.
+Organisationen börjar med en vald modell eller plattform och letar därefter efter användningsfall, eller försöker använda samma generativa modell för sökning, klassificering, sammanfattning och regelstyrning. Resultatet blir lätt hög komplexitet med oklar nytta.
 
 ### RAG som sanningsmotor
 
@@ -579,11 +514,7 @@ En människa placeras formellt i processen men saknar tid, underlag eller mandat
 
 ### Gemensam AI-plattform som central verksamhetslogik
 
-Plattformsteamet börjar förvalta verksamhetsspecifika prompts, kunskapskällor och beslutskriterier för många domäner. Ägarskapet blir otydligt och plattformen växer till en central verksamhetskomponent.
-
-### En modell för alla behov
-
-Sökning, klassificering, sammanfattning och regelstyrning försöker lösas med samma generativa modell trots att enklare och mer förutsägbara tekniker passar vissa behov bättre.
+Plattformsteamet börjar förvalta domänspecifika prompts, kunskapskällor och beslutskriterier. Ägarskapet blir otydligt och plattformen växer till en central verksamhetskomponent.
 
 ### Demo som acceptanstest
 
@@ -672,13 +603,11 @@ Det är denna tjänstemässiga form som gör förmågan återanvändbar utan att
 
 ## Sammanfattning
 
-Analys, sökning och AI är en gemensam IT-förmåga eftersom många utvecklingsområden behöver liknande tekniska mekanismer för att hitta, sammanställa och härleda information. Men förmågan blir användbar först när skillnaderna mellan mekanismerna bevaras.
+Analys, sökning och AI är en gemensam IT-förmåga eftersom många utvecklingsområden behöver liknande mekanismer för att hitta, sammanställa och härleda information. Förmågan blir dock användbar först när skillnaderna mellan sökning, analys, probabilistisk inferens och generering bevaras.
 
-Sökning handlar om att hitta relevant information i sekundära representationer. BI och analys handlar om att skapa förståelse och uppföljning ur data. Maskininlärning producerar probabilistisk inferens utifrån modeller. Generativ AI skapar nytt innehåll och behöver därför hanteras med särskild uppmärksamhet på grundning, verifierbarhet och beteende över tid.
+RAG kombinerar retrieval och generering men eliminerar inte felkällor. Mänsklig kontroll är värdefull bara när den faktiskt går att genomföra, och agentbaserade lösningar måste följa samma principer för identitet, behörighet, integration och återställning som andra tekniska komponenter.
 
-RAG kombinerar retrieval och generering men eliminerar inte felkällor. Human-in-the-loop är värdefullt bara när den mänskliga kontrollen är faktiskt genomförbar. Agentbaserade lösningar måste följa samma principer för identitet, behörighet, integration och återställning som andra tekniska komponenter.
-
-Det mest stabila arkitekturvalet är därför inte att standardisera en viss AI-modell. Det är att standardisera ansvar, kvalitetskrav, informationsskydd, spårbarhet, utvärdering och konsumerbara plattformsmekanismer, samtidigt som den konkreta lösningen får välja den enklaste teknik som möter behovet.
+Det stabila arkitekturvalet är därför inte en viss AI-modell, utan tydliga ansvar, kvalitetskrav, informationsskydd, spårbarhet, utvärdering och konsumerbara plattformsmekanismer. Den konkreta lösningen bör fortfarande välja den enklaste teknik som möter behovet.
 
 I nästa kapitel flyttas fokus från bearbetning av information till hur system och domäner kommunicerar med varandra: Integration och kommunikation.
 
