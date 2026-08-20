@@ -520,168 +520,43 @@ Samtidigt uppstår nya frågor:
 
 Stateless runtime löser alltså exekveringsproblemet. Den löser inte informationsförvaltningen.
 
-## Modellåtkomst som ett separat beroende
+## Risk-, kontroll- och felgränser mellan mönstren
 
-En AI-tjänst kan använda:
+När mönstren kombineras behöver modellåtkomst, felhantering och autonomi behandlas som separata men sammanhängande kontrollfrågor.
 
-- en intern modellplattform,
-- en extern modellerbjudare,
-- flera modeller beroende på uppgift,
-- en lokalt driftad modell för vissa informationsklasser.
+### Modellåtkomst är ett eget beroende
 
-Det är klokt att behandla modellåtkomst som ett explicit beroende med eget kontrakt.
+En AI-tjänst kan använda en intern modellplattform, en extern leverantör, flera modeller beroende på uppgift eller en lokalt driftad modell för vissa informationsklasser. Modellåtkomsten bör därför beskrivas som ett explicit beroende med eget kontrakt, bland annat för tillåten information, timeout, kostnadsgränser, fallback, förändringspolicy, observerbarhet och credentials. Då blir inte leverantörens SDK själva arkitekturgränsen.
 
-Det innebär exempelvis att dokumentera:
+### Felgränserna behöver vara synliga
 
-- vilka modeller eller modellklasser som får användas,
-- vilken information som får skickas,
-- timeout- och återförsöksbeteende,
-- kostnadsgränser,
-- fallback,
-- versions- eller förändringspolicy,
-- observerbarhet,
-- hur credentials hanteras.
+Retrieval, modell, mänsklig kontroll, identitet, runtime och downstream-system kan misslyckas oberoende av varandra. Ett mänskligt godkännande kan exempelvis lyckas samtidigt som verksamhets-API:t misslyckas, eller modellen kan svara trots att retrieval saknar relevant underlag. Lösningen behöver därför kunna skilja teknisk processhälsa från faktisk tjänstefunktion och bevara spårbarhet över hela kedjan.
 
-Då blir inte modellleverantörens SDK själva arkitekturen.
+Två särskilt viktiga fall är värda att göra explicita. Om retrieval returnerar otillräckligt underlag bör modellen inte få ge ett säkert formulerat svar utan att bristen blir synlig. Om en tjänsteidentitet förlorar åtkomst till en informationskälla kan containerinstansen fortfarande vara tekniskt frisk samtidigt som tjänsten inte längre kan utföra sin uppgift. Operativa kontroller behöver därför mäta mer än processens liveness.
 
-## Felgränser behöver designas mellan mönstren
+### Quality gates före ökad autonomi
 
-När fyra mönster kombineras får lösningen flera oberoende felkällor.
-
-Anta att:
-
-- retrieval fungerar,
-- modellen svarar,
-- människan godkänner,
-- men verksamhets-API:t misslyckas.
-
-Då måste systemet veta att ett mänskligt godkännande skedde men att åtgärden inte genomfördes.
-
-Eller:
-
-- retrieval returnerar inget relevant underlag,
-- modellen kan fortfarande formulera ett flytande svar.
-
-Då behöver lösningen kunna avstå från att svara eller tydligt indikera bristande grundning.
-
-Eller:
-
-- tjänsteidentiteten har förlorat en behörighet,
-- containerplattformen ser processen som frisk,
-- men AI-tjänsten kan inte längre läsa den informationskälla som krävs.
-
-Då behövs operativ observerbarhet som skiljer teknisk processhälsa från faktisk tjänstefunktion.
-
-Det illustrerar varför mönsterkombinationer måste analyseras genom felgränser, inte bara genom happy-path-diagram.
-
-## Quality gates före autonomi
-
-När en AI-lösning går från rekommendation till automatisk handling förändras arkitekturrisken.
-
-Det kan vara användbart att se autonomi som en progression:
+När en AI-lösning går från rekommendation till automatisk handling ökar konsekvensytan. En användbar progression är:
 
 ```text
 Generera → Visa → Rekommendera → Förbereda → Utföra med godkännande → Utföra autonomt
 ```
 
-Varje steg ökar konsekvensytan.
+Ökad autonomi bör kräva verifierad resultatkvalitet, spårbart underlag, korrekt behörighetskedja, begränsade privilegier, observerbarhet och fungerande stopp-, rollback- eller kompensationsmekanismer där det är relevant. Det är inte en mognadstrappa, utan ett sätt att göra konsekvensen explicit före nästa automatiseringssteg.
 
-Innan ett högre steg tillåts bör lösningen kunna visa att relevanta kvaliteter är tillräckligt väl hanterade, exempelvis:
+## Plattformar och ansvar ska hålla mönstren isär
 
-- utvärderad resultatkvalitet,
-- tydligt underlag och spårbarhet,
-- korrekt behörighetskedja,
-- begränsade privilegier,
-- observerbarhet,
-- rollback eller kompensation där det är möjligt,
-- hantering av modell- och promptförändringar,
-- tydliga stoppmekanismer.
+Organisationen kan erbjuda gemensamma tjänster för modellåtkomst, sök/retrieval, tjänsteidentitet, secrets, container-runtime och observerbarhet. Det ger återanvändning, men innebär inte att en enda AI-plattform bör äga informationsbehörighet, verksamhetsbeslut, processansvar eller persistent verksamhetsdata.
 
-Det är inte en universell mognadsmodell. Poängen är att autonomi är ett arkitekturbeslut med ökande konsekvens, inte en funktion som bör slås på enbart därför att tekniken stödjer den.
+Det är också viktigt att inte göra plattformens produktgräns till arkitekturgräns. En gemensam modellgateway kan till exempel standardisera autentisering, loggning och leverantörsanslutningar utan att avgöra vilka dokument en användare får hämta. På samma sätt kan en containerplattform standardisera runtime utan att äga konversationsstate eller verksamhetsdata.
 
-## Plattformar ska stödja mönstren – inte blanda ihop dem
+Ansvarsfördelningen kan hållas enkel:
 
-En organisation kan erbjuda gemensamma plattformstjänster för flera delar av denna arkitektur:
+- **Gemensam arkitekturnivå:** principer och gemensamma krav för AI-användning, identitet, spårbarhet, informationsskydd och runtime-profiler.
+- **Förmågenivå:** konkret stöd för exempelvis RAG, modellåtkomst, tjänsteidentitet, credentiallivscykel, containerprofiler och observerbarhet.
+- **Lösnings-/produktnivå:** val av källor, kontrollpunkter, tjänsteidentiteter, privilegier, runtimeform, persistent state och felhantering i den konkreta kombinationen.
 
-- AI Platform / Model Gateway,
-- Search & Retrieval Platform,
-- Service Identity,
-- Secrets Management,
-- Container Application Platform,
-- Logging, Monitoring & Tracing.
-
-Det kan ge stor återanvändning.
-
-Men det betyder inte att en enda ”AI-plattform” bör äga:
-
-- informationsbehörighet,
-- verksamhetsbeslut,
-- processansvar,
-- tjänsteidentiteter,
-- persistent verksamhetsdata.
-
-Plattformar bör erbjuda mekanismer och väl definierade kontrakt. Mönstren hjälper lösningen att placera ansvar mellan dessa mekanismer.
-
-## Ansvar på tre nivåer
-
-De fyra mönstren visar tydligt varför bokens tredelade ansvarmodell behövs.
-
-### Gemensam arkitekturnivå
-
-Den gemensamma nivån bör bland annat kunna definiera:
-
-- principer för AI-användning och konsekvensbaserad kontroll,
-- gemensamma krav på identitet, spårbarhet och informationsskydd,
-- tillåtna trust- och delegeringsmodeller,
-- gemensamma runtime-profiler,
-- övergripande regler för informationsklassning och extern modellåtkomst,
-- hur mönster och standarder ska beskrivas och förvaltas.
-
-Den bör däremot normalt inte besluta vilken prompt eller vilken modell varje lösning ska använda.
-
-### Förmågenivå
-
-Förmågeområdena behöver tillsammans förvalta mönstrens konkreta stöd.
-
-Analys, sökning och AI kan exempelvis ansvara för:
-
-- RAG-vägledning,
-- utvärderingsramverk,
-- modellåtkomst,
-- AI-observerbarhet.
-
-Identitet och tillit kan ansvara för:
-
-- tjänsteidentitet,
-- credentiallivscykel,
-- trustmodeller,
-- delegeringsprofiler.
-
-Runtimeförmågan kan ansvara för:
-
-- containerprofiler,
-- resursmodeller,
-- health-check-konventioner,
-- isolering och skalningsmekanismer.
-
-Ingen av förmågorna bör ensam äga hela AI-lösningen.
-
-### Lösnings-/produktnivå
-
-Den konkreta lösningen behöver besluta:
-
-- om RAG faktiskt behövs,
-- vilka källor som är tillåtna,
-- hur retrieval filtreras per användare,
-- var mänsklig kontroll behövs,
-- vilken handling som får automatiseras,
-- vilken tjänsteidentitet varje workload använder,
-- vilka scopes och privilegier som krävs,
-- om stateless exekvering passar workloaden,
-- hur persistent konversations- och verksamhetsstate hanteras,
-- hur fel mellan retrieval, modell, identitet och downstream-system hanteras.
-
-Det är lösningen som bär konsekvensen av kombinationen.
+Ingen enskild förmåga bör ensam äga hela AI-lösningen. Plattformarna tillhandahåller mekanismer och kontrakt; lösningen bär konsekvensen av hur mönstren kombineras.
 
 ## Vanliga anti-patterns
 

@@ -4,16 +4,14 @@ Processer, regler och data hör nära ihop i nästan varje verksamhetssystem. En
 
 Det är också där många lösningar börjar tappa sina tydliga gränser.
 
-Kapitel 13–15 beskrev förmågorna Process, workflow och ärendehantering, Regler och beslut samt Data- och informationshantering. I det här kapitlet ligger fokus i stället på fyra återkommande lösningsmönster:
+Här ligger fokus på fyra återkommande lösningsmönster:
 
 - *Human workflow*,
 - *externaliserade verksamhetsregler*,
 - *system of record och härledda kopior*,
 - cache-aside.
 
-Mönstren löser olika problem. Human workflow gör långlivat arbete och mänskliga uppgifter explicita. Externaliserade regler ger vissa beslut en egen livscykel och spårbarhet. System of record med härledda kopior tydliggör vilken representation som är auktoritativ när information behöver finnas på flera ställen. Cache-aside förbättrar läsprestanda genom att låta en återskapbar kopia ligga nära användningen.
-
-Det viktiga är inte att använda alla fyra. Det viktiga är att kunna avgöra vilket ansvar som behöver göras explicit, var det ska ligga och vad som fortfarande måste vara sant när flera mönster kombineras.
+De gör olika ansvar explicita: långlivat mänskligt arbete, beslut med egen livscykel, auktoritativ information med härledda representationer samt förgängliga kopior för snabb läsning. Det viktiga är inte att använda alla fyra, utan att välja rätt struktur för problemet och förstå vad som måste vara sant när flera mönster kombineras.
 
 ## Börja med ansvar, inte motorer
 
@@ -58,16 +56,7 @@ Processinstans
 
 Det centrala är inte att en människa klickar på en knapp. Mänsklig interaktion finns i nästan alla system. Det arkitektoniskt intressanta uppstår när själva väntan och arbetsuppgiften måste vara beständiga verksamhetsobjekt.
 
-Det kan exempelvis krävas att lösningen vet:
-
-- vem eller vilken roll som ansvarar för uppgiften,
-- när uppgiften skapades,
-- vilken deadline som gäller,
-- om den har delegerats,
-- när den ska eskaleras,
-- vilket underlag som fanns när arbetet startade,
-- vad som händer om processen startas om,
-- hur processen fortsätter när uppgiften är klar.
+Det kan exempelvis krävas att lösningen vet vem som ansvarar för uppgiften, vilka deadlines och eskaleringar som gäller, vilket underlag som hör till arbetet och hur processen ska kunna återupptas och fortsätta.
 
 Då räcker inte en vanlig HTTP-request som väntar på svar. Processen kan leva i dagar eller månader och måste överleva både användarsessioner och tekniska omstarter.
 
@@ -158,7 +147,7 @@ Det behöver då finnas svar på frågor som:
 - Hur kopplas ett historiskt beslut till rätt regelversion?
 - Hur hanteras beroenden mellan regler?
 
-Detta är mönstrets verkliga kostnad. Om regeln är liten, lokal och förändras exakt tillsammans med applikationskoden kan externalisering skapa fler livscykler utan att lösa ett faktiskt problem.
+Om regeln är liten, lokal och förändras tillsammans med applikationskoden kan externalisering skapa en extra livscykel utan att lösa ett faktiskt problem.
 
 ### Regelmotorn ska inte äga processen
 
@@ -239,7 +228,7 @@ Varje härledd kopia bör kunna beskrivas genom åtminstone fem frågor:
 4. Hur upptäcks och hanteras avvikelser?
 5. Kan kopian återskapas från sin källa?
 
-Dessa frågor omvandlar ”vi replikerar lite data” till ett medvetet arkitekturval.
+Då blir kopian ett medvetet arkitekturval i stället för en osynlig replikering.
 
 Exempel:
 
@@ -547,44 +536,21 @@ Process- eller regelmotorn får bred åtkomst till domänens interna tabeller. D
 
 ## Ansvar på tre nivåer
 
-Precis som i tidigare kapitel behöver mönstren kunna användas utan att en central funktion designar varje lösning.
+Mönstren behöver kunna användas utan att en central funktion designar varje lösning.
 
 ### Gemensam arkitekturnivå
 
-Den gemensamma nivån bör framför allt:
-
-- definiera vad organisationen menar med system of record, härledd kopia och cache,
-- ange gemensamma principer för spårbarhet, informationsklassning och historik,
-- tydliggöra när process- och regelmodeller får egna livscykler,
-- etablera gemensamma krav på identitet, audit, driftbarhet och versionshantering,
-- beskriva mönstren och deras gränser,
-- säkerställa att gemensamma plattformserbjudanden inte tvingar fram mönster där de inte passar.
+Den gemensamma nivån definierar begrepp, grundkrav och mönstergränser för exempelvis system of record, härledda kopior, spårbarhet och livscykel. Gemensamma plattformserbjudanden ska stödja mönstren utan att göra dem obligatoriska där de inte passar.
 
 ### Förmågenivå
 
-Ansvariga för process-, regel- och dataförmågorna bör bland annat:
-
-- förvalta respektive mönster och vägledning,
-- erbjuda relevanta plattformstjänster,
-- definiera rekommenderade integrations- och livscykelmodeller,
-- ge stöd för versionering, migrering och observerbarhet,
-- samordna gränssnitt där flera förmågor möts,
-- följa upp återkommande problem och avsteg.
+Förmågeansvariga förvaltar mönster och vägledning, erbjuder relevanta plattformstjänster och samordnar frågor som versionering, migrering, integration och observerbarhet där flera förmågor möts.
 
 ### Lösnings-/produktnivå
 
-Den konkreta lösningen behöver besluta:
+Den konkreta lösningen avgör om explicit workflow behövs, vilka regler som bör externaliseras, vilken källa som är auktoritativ, vilka kopior som behövs, vilken aktualitet de får ha och hur fel, historik och återställning hanteras.
 
-- om explicit workflow verkligen behövs,
-- vilka regler som bör externaliseras,
-- vilket system som är auktoritativt för vilken information,
-- vilka kopior som behövs och varför,
-- vilken aktualitet varje kopia måste ha,
-- om cache ger tillräcklig nytta för sin komplexitet,
-- hur fel och avvikelser mellan komponenterna hanteras,
-- hur beslut och historik ska kunna rekonstrueras.
-
-Den gemensamma arkitekturen ska göra dessa beslut enklare och mer konsekventa, inte fatta dem i förväg för alla system.
+Den gemensamma arkitekturen ska göra besluten enklare och mer konsekventa, inte fatta dem i förväg för varje system.
 
 ## En praktisk analysordning
 
@@ -630,9 +596,9 @@ Nu kan workflowmotor, regelmotor, databastjänst, cacheplattform och andra produ
 
 Process-, regel- och datamönster hjälper oss att göra olika sorters ansvar och tillstånd explicita.
 
-Human workflow passar när mänskligt arbete och väntan behöver bli beständiga delar av processen. Externaliserade verksamhetsregler passar när vissa beslut behöver egen livscykel, spårbarhet eller återanvändning. System of record med härledda kopior gör det möjligt att duplicera information utan att tappa bort auktoriteten. Cache-aside är ett specialiserat sätt att använda en förgänglig kopia för bättre läsprestanda.
+Human workflow gör mänskligt arbete och väntan beständiga. Externaliserade regler ger vissa beslut en egen livscykel. System of record med härledda kopior gör duplicering möjlig utan att tappa auktoriteten, och cache-aside använder en förgänglig kopia för snabbare läsning.
 
-De fyra mönstren fungerar väl tillsammans just därför att de inte behöver äga samma sak.
+Mönstren fungerar tillsammans just därför att de inte behöver äga samma sak.
 
 En hållbar kombination bygger på att man kan svara på fyra frågor:
 
