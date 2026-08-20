@@ -253,7 +253,7 @@ Poängen är inte att processmotorn aldrig får bära verksamhetsdata. Den behö
 
 Om svaret är ”bara inne i processmotorn” kan en teknisk stödplattform oavsiktligt ha blivit system of record för en verksamhetsdomän.
 
-Det är just den sammanblandningen kapitel 11 varnade för ur informationsperspektiv och som kapitel 15 senare fördjupar ur tekniskt datahanteringsperspektiv.
+Det är just den sammanblandningen som behöver undvikas både ur informationsperspektiv och ur tekniskt datahanteringsperspektiv.
 
 ## Livscykel, versionering och återhämtning
 
@@ -298,7 +298,7 @@ Det centrala kriteriet är nytta i förhållande till den extra abstraktionen.
 
 ## När en gemensam workflow- eller processplattform är motiverad
 
-Kapitel 9 visade att ett gemensamt ansvar bör motiveras av återkommande behov, risk, specialistkompetens, interoperabilitet och standardiserbarhet.
+Ett gemensamt ansvar bör motiveras av återkommande behov, risk, specialistkompetens, interoperabilitet och standardiserbarhet.
 
 Samma resonemang gäller här.
 

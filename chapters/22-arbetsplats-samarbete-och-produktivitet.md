@@ -158,7 +158,7 @@ Men modellen kräver också tydlighet om:
 - hur externa identiteter hanteras,
 - hur ägarskapet följs upp.
 
-Här möts arbetsplatsförmågan och Identitet och tillit från kapitel 18. Arbetsplatsförmågan ansvarar för den konsumerbara samarbetsmodellen, medan identitetsförmågan tillhandahåller de mekanismer som gör mottagare och behörigheter möjliga att kontrollera.
+Här möts arbetsplatsförmågan och *Identitet och tillit*. Arbetsplatsförmågan ansvarar för den konsumerbara samarbetsmodellen, medan identitetsförmågan tillhandahåller de mekanismer som gör mottagare och behörigheter möjliga att kontrollera.
 
 Extern delning är därför inte bara en knappinställning utan en realisering av ett organisatoriskt beslut om informationsdelning och tillit.
 
@@ -182,7 +182,7 @@ Det är därför viktigt att inte resonera:
 
 > ”Plattformen sparar versioner, alltså är informationsförvaltningen löst.”
 
-Samma princip mötte vi i kapitel 15 för backup: en teknisk mekanism och ett verksamhetskrav är inte samma sak.
+Samma princip gäller som för backup: en teknisk mekanism och ett verksamhetskrav är inte samma sak.
 
 ## Produktivitetssviten som gemensamt erbjudande
 
@@ -235,7 +235,7 @@ Ett gemensamt erbjudande ger värde genom:
 - lägre utbildningströskel,
 - enklare livscykelhantering.
 
-Det innebär inte att standardverktyget alltid är rätt. Principen från kapitel 6 gäller fortfarande: standardiserade erbjudanden bör användas när de möter behovet.
+Det innebär inte att standardverktyget alltid är rätt. Grundprincipen gäller fortfarande: standardiserade erbjudanden bör användas när de möter behovet.
 
 Om ett specialiserat behov inte kan mötas utan orimliga kompromisser kan ett annat verktyg vara motiverat. Men avvikelsen bör då vara ett medvetet behovsdrivet val, inte resultatet av att någon råkade föredra ett annat verktyg.
 
@@ -344,7 +344,7 @@ Att AI-assistenten respekterar behörigheter är nödvändigt men inte tillräck
 - Hur hanteras promptar och genererat innehåll?
 - Kan assistenten vidta åtgärder eller bara föreslå?
 
-Här möts arbetsplatsförmågan med kapitel 16 om Analys, sökning och AI.
+Här möts arbetsplatsförmågan med *Analys, sökning och AI*.
 
 AI-förmågan beskriver generella mekanismer, risker och kvalitetsfrågor. Arbetsplatsförmågan ansvarar för hur dessa konsumeras i den dagliga arbetsmiljön.
 
@@ -462,7 +462,7 @@ Ett enkelt flöde kan exempelvis:
 4. anropa ett externt API,
 5. uppdatera ett verksamhetssystem.
 
-I liten skala kan det vara helt rimligt. Men när flödet får central verksamhetsbetydelse behöver samma frågor ställas som i kapitel 17:
+I liten skala kan det vara helt rimligt. Men när flödet får central verksamhetsbetydelse behöver samma frågor ställas som för annan integration och kommunikation:
 
 - Vem äger kontraktet?
 - Hur hanteras fel?
@@ -500,7 +500,7 @@ En stark arbetsplatsplattform gör exempelvis:
 - osäkra eller olämpliga val svårare,
 - eskalering tydlig när ett enkelt arbetsstöd blivit ett system.
 
-Detta är i praktiken samma styrfilosofi som senare utvecklas i kapitel 30 om golden paths, paved roads och självservice.
+Detta är i praktiken samma styrfilosofi som senare utvecklas för golden paths, paved roads och självservice.
 
 ## Plattformstjänster inom förmågan
 

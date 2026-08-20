@@ -12,7 +12,7 @@ Det innebär inte att all variation ska försvinna. Det innebär att återkomman
 
 ## Från plattformserbjudande till faktisk konsumtion
 
-Kapitel 28 beskrev vad som krävs för att ett tekniskt byggblock ska bli en konsumerbar plattformstjänst. Kapitel 29 flyttade perspektivet vidare till plattformen som produkt. Nästa fråga är hur denna produkt faktiskt möter utvecklingsteamet.
+Vi har sett vad som krävs för att ett tekniskt byggblock ska bli en konsumerbar plattformstjänst och därefter flyttat perspektivet till plattformen som produkt. Nästa fråga är hur denna produkt faktiskt möter utvecklingsteamet.
 
 Anta att organisationen erbjuder:
 
@@ -288,7 +288,7 @@ Kan innebära:
 
 En annan golden path kan vara avsedd för batch och ha helt andra kvalitetsantaganden.
 
-Det gör att golden path kan fungera som en brygga mellan kvalitetsmodellen i kapitel 4 och de konkreta plattformserbjudandena.
+Det gör att golden path kan fungera som en brygga mellan kvalitetsmodellen och de konkreta plattformserbjudandena.
 
 ## En golden path måste ha tydligt scope
 

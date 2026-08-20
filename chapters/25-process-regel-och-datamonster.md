@@ -502,7 +502,7 @@ För varje gräns bör man fråga:
 - Hur upptäcks ett permanent avvikande tillstånd?
 - Vem äger återställningen?
 
-På så sätt kopplas mönstren tillbaka till integrations- och driftmönstren i kapitel 24 och 27 utan att deras ansvar blandas ihop.
+På så sätt kopplas mönstren tillbaka till integrations- och driftmönstren utan att deras ansvar blandas ihop.
 
 ## Vanliga anti-patterns
 

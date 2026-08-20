@@ -87,7 +87,7 @@ Detta säger ännu inget om API, filöverföring, meddelandekö, webbgränssnitt
 
 Ett annat exempel är att ett internt handläggningsstöd ska kunna fortsätta hantera prioriterade ärenden även om en enskild teknisk komponent fallerar. Det leder vidare till krav på exempelvis tillgänglighet och återställning, men själva behovet ska inte redan innehålla lösningen.
 
-Kapitel 3 fördjupar hur behov hålls produktoberoende och hur verkliga begränsningar skiljs från förtida lösningsval.
+Nästa steg är att fördjupa hur behov hålls produktoberoende och hur verkliga begränsningar skiljs från förtida lösningsval.
 
 ## Krav och kvalitetsattribut gör behovet prövbart
 
@@ -99,7 +99,7 @@ Kvalitetsattributen fungerar därmed som en bro mellan verksamhetskonsekvens och
 
 Det är också här som generella ambitioner behöver börja få en tydligare innebörd. Två lösningar kan båda vara ”säkra” men kräva olika skyddsnivåer, eller båda vara ”tillgängliga” men med helt olika tolerans för avbrott. Kravlagret gör sådana skillnader synliga innan de översätts till konkreta mönster och teknikval.
 
-Kapitel 4 fördjupar hur kvalitetsattribut formuleras, prioriteras och används som arkitekturdrivare.
+Därefter fördjupas hur kvalitetsattribut formuleras, prioriteras och används som arkitekturdrivare.
 
 ## Förmågor skapar en stabil navigationsstruktur
 
@@ -264,7 +264,7 @@ I praktiken sker arbetet iterativt. Plattformserfarenheter kan synliggöra nya k
 
 Modellen beskriver därför logiska beroenden och abstraktionsnivåer, inte en engångssekvens. Behov bör kunna motivera krav och krav bör kunna motivera arkitekturval, men kunskapen om vilka val som är rimliga utvecklas genom återkoppling från verkliga lösningar.
 
-Hur detta etableras organisatoriskt och iterativt behandlas i kapitel 7.
+Hur detta etableras organisatoriskt och iterativt behandlas senare i denna del.
 
 ## Vad ska vara stabilt – och vad ska kunna bytas ut?
 

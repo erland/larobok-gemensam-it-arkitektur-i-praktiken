@@ -14,7 +14,7 @@ Den centrala frågan i detta kapitel är:
 
 ## Från enskilt beslut till återanvändbar erfarenhet
 
-I kapitel 5 beskrev vi arkitekturbeslut som val mellan realistiska alternativ under givna drivkrafter och begränsningar. Ett lösningsmönster kan ses som ett nästa steg när samma typ av beslut återkommer i flera lösningar.
+Arkitekturbeslut är val mellan realistiska alternativ under givna drivkrafter och begränsningar. Ett lösningsmönster kan ses som nästa steg när samma typ av beslut återkommer i flera lösningar.
 
 Förenklat kan utvecklingen beskrivas så här:
 
@@ -152,7 +152,7 @@ Asynkron meddelandekommunikation kan minska tidskoppling men samtidigt göra:
 
 Mönstret är alltså inte ”bra” eller ”dåligt”. Det förändrar lösningens egenskaper.
 
-Detta knyter direkt tillbaka till kvalitetsattributen i kapitel 4. Ett lösningsmönster är i praktiken ett återkommande sätt att påverka en viss uppsättning kvaliteter och avvägningar.
+Detta knyter direkt tillbaka till kvalitetsattributen. Ett lösningsmönster är i praktiken ett återkommande sätt att påverka en viss uppsättning kvaliteter och avvägningar.
 
 ## När mönstret passar – och när det inte passar
 

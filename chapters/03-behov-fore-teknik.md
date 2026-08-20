@@ -226,7 +226,7 @@ Jämför arkitekturalternativ
 Välj teknisk realisering
 ```
 
-Kapitel 4 fördjupar hur kvalitetsbehoven görs till användbara arkitekturdrivare.
+Nästa steg är att fördjupa hur kvalitetsbehoven görs till användbara arkitekturdrivare.
 
 ## Befintliga plattformar ska påverka beslut – men på rätt nivå
 
@@ -246,7 +246,7 @@ Detta är viktigt även för plattformsförvaltningen. Om flera team behöver sa
 
 Principen gäller på alla tre ansvarsnivåerna, men på olika sätt. På gemensam nivå innebär den att långlivade förmågor och principer inte binds onödigt till en produktgeneration. På förmågenivå innebär den att mönster och plattformserbjudanden utvecklas utifrån återkommande konsumentbehov. På lösnings-/produktnivå innebär den att gemensamma byggstenar används där de möter det konkreta behovet.
 
-Den praktiska ansvarsfördelningen mellan nivåerna utvecklas i kapitel 7.
+Den praktiska ansvarsfördelningen mellan nivåerna utvecklas senare i denna del.
 
 ## När behöver man faktiskt börja i tekniken?
 

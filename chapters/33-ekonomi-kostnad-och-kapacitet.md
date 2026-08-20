@@ -10,7 +10,7 @@ Detta kapitel handlar om hur ekonomi och kapacitet kan bli arkitekturella styrsi
 
 ## Kostnad är ett kvalitetsattribut – men inte ett ensamt mål
 
-I kapitel 4 behandlades kostnadseffektivitet som en av bokens tvärgående kvalitetsdimensioner. Det är en viktig placering. Kostnad konkurrerar ibland med andra kvaliteter och samverkar ibland med dem.
+Kostnadseffektivitet är en av bokens tvärgående kvalitetsdimensioner. Det är en viktig placering. Kostnad konkurrerar ibland med andra kvaliteter och samverkar ibland med dem.
 
 Högre tillgänglighet kan kräva:
 
@@ -256,7 +256,7 @@ Det är därför användbart att formulera kapacitet som:
 
 > den belastning som kan hanteras inom överenskommen kvalitetsprofil.
 
-Detta knyter kapacitetsplanering till kvalitetskraven i kapitel 4 och drifttelemetrin i kapitel 20.
+Detta knyter kapacitetsplanering till kvalitetskraven och drifttelemetrin.
 
 **Överkapacitet kan vara både slöseri och försäkring.**
 
@@ -310,7 +310,7 @@ Det kan exempelvis vara:
 - skalningsgränser,
 - cost alerts.
 
-Principen är densamma som i kapitel 30: självservice fungerar bäst när ramarna är automatiserade och begripliga.
+Principen är densamma som för annan självservice: den fungerar bäst när ramarna är automatiserade och begripliga.
 
 **Prognoser behöver uttrycka osäkerhet.**
 
@@ -350,7 +350,7 @@ Det gör prognosen till ett arkitekturstöd i stället för en ren budgetövning
 
 ## Kostnadsprofiler kan vara en del av plattformserbjudandet
 
-Kapitel 28 introducerade kvalitetsprofiler och tjänstekontrakt. Ekonomi kan knytas till samma modell.
+Kvalitetsprofiler och tjänstekontrakt ger också en modell som ekonomin kan knytas till.
 
 En databastjänst skulle exempelvis kunna erbjuda:
 
@@ -491,7 +491,7 @@ Ett exempel är gemensam säkerhetsinfrastruktur. Om varje team måste bära hel
 
 Vissa kostnader bör därför medvetet bäras gemensamt eftersom organisationen vill att ett visst beteende ska vara standardvägen.
 
-Det knyter tillbaka till paved roads i kapitel 30: den rekommenderade vägen bör inte bara vara tekniskt enklare – den behöver också vara ekonomiskt rimlig att välja.
+Det knyter tillbaka till paved roads: den rekommenderade vägen bör inte bara vara tekniskt enklare – den behöver också vara ekonomiskt rimlig att välja.
 
 ## Kostnad och kapacitet som delat ansvar
 

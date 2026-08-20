@@ -260,7 +260,7 @@ När analysen mognat behöver lösningsarkitekturen beskriva den faktiska lösni
 
 Dokumentationen kan bestå av diagram, text, ADR, modeller, kod, infrastructure-as-code och maskinläsbar konfiguration. Det viktiga är att den stödjer dem som behöver förstå, bygga, drifta och förändra lösningen.
 
-De tre ansvarsnivåerna från kapitel 7 behöver inte definieras på nytt här. I en konkret lösning räcker följande arbetsfördelning:
+De tre ansvarsnivåerna behöver inte definieras på nytt här. I en konkret lösning räcker följande arbetsfördelning:
 
 | Nivå | Beslutar framför allt |
 |---|---|

@@ -222,7 +222,7 @@ Förstärkt kontinuitetsprofil
   → högre kapacitetsmarginal
 ```
 
-Därmed kopplas referensarkitekturen tillbaka till kvalitetsmodellen i kapitel 4 i stället för att reduceras till en komponentbild.
+Därmed kopplas referensarkitekturen tillbaka till bokens kvalitetsmodell i stället för att reduceras till en komponentbild.
 
 ### Ansvar och spårbarhet
 
@@ -230,7 +230,7 @@ Referensarkitekturen behöver visa ansvar i de gränser där lösningar annars l
 
 För en containerbaserad tjänst kan lösningsteamet exempelvis ansvara för korrekt health behavior, resursdeklarationer, applikationsloggning, data- och transaktionsdesign samt säker användning av credentials. Plattformsteamet ansvarar samtidigt för exekveringsmiljö, plattformens tillgänglighet, gemensamma policyer, plattformstelemetri och supportfönster.
 
-Detta är en tillämpning av bokens tre ansvarsnivåer, inte en ny ansvarmodell. Den generella governance- och förvaltningsmodellen behandlas i kapitel 37.
+Detta är en tillämpning av bokens tre ansvarsnivåer, inte en ny ansvarmodell. Den generella governance- och förvaltningsmodellen behandlas i det avslutande governancekapitlet.
 
 Viktiga delar bör också kunna härledas till behov, kvalitetsattribut, mönster, standard eller gemensamt erbjudande:
 
@@ -250,7 +250,7 @@ Referensarkitektur: asynkron integrationsväg
 
 Spårbarheten gör både besluten begripliga och förändringspåverkan lättare att analysera.
 
-En praktisk referensarkitektur kan därför innehålla syfte och scope, antaganden, kvalitetsprofiler, relevanta vyer, ansvarsgränser, begränsningar, variation points, rekommenderade mönster, plattformstjänster, standardreferenser, kända avvägningar och exempel på tillämpning. Ägare, status och ändringshistorik behöver också finnas, men den mer generella förvaltningsmekaniken hör hemma i kapitel 37.
+En praktisk referensarkitektur kan därför innehålla syfte och scope, antaganden, kvalitetsprofiler, relevanta vyer, ansvarsgränser, begränsningar, variation points, rekommenderade mönster, plattformstjänster, standardreferenser, kända avvägningar och exempel på tillämpning. Ägare, status och ändringshistorik behöver också finnas, men den mer generella förvaltningsmekaniken hör hemma i bokens avslutande governancekapitel.
 
 ## Normativitet och avsteg
 
@@ -272,7 +272,7 @@ Det kan leda till tre utfall:
 2. **Ny variation point** – flera lösningar visar att ett legitimt alternativ behöver beskrivas.
 3. **Förändrad referensarkitektur** – återkommande avsteg visar att den gemensamma modellen är fel eller föråldrad.
 
-Det räcker här att konstatera att referensarkitekturen behöver ägare, status, revisionshistorik och en avstegsmekanism. Hur denna feedback blir en fungerande governance- och förvaltningsloop behandlas i kapitel 37.
+Det räcker här att konstatera att referensarkitekturen behöver ägare, status, revisionshistorik och en avstegsmekanism. Hur denna feedback blir en fungerande governance- och förvaltningsloop behandlas i bokens avslutning.
 
 ## Kvalitetskriterier och anti-patterns
 

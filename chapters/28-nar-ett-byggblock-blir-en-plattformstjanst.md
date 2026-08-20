@@ -115,7 +115,7 @@ Självservice är ofta ett mognadstecken, men betyder inte att allt måste vara 
 
 Exempel kan vara att skapa en databas från en godkänd profil, registrera ett API, skapa ett meddelandetopic, begära en workload-identitet eller skapa ett projekt i en containerplattform. Guardrails kan fortfarande kräva exempelvis informationsklassning, kostnadsställe eller återställningsprofil.
 
-Kapitel 30 fördjupar hur denna konsumtionsväg kan utvecklas till golden paths, paved roads och mer omfattande självservice. Här räcker det att konstatera att ett erbjudande som bara kan konsumeras genom personberoende specialistarbete fortfarande har en svag tjänsteform, även om den underliggande tekniken är gemensam.
+Senare fördjupas hur denna konsumtionsväg kan utvecklas till golden paths, paved roads och mer omfattande självservice. Här räcker det att konstatera att ett erbjudande som bara kan konsumeras genom personberoende specialistarbete fortfarande har en svag tjänsteform, även om den underliggande tekniken är gemensam.
 
 ## Kvalitetsprofiler och tjänstenivåer
 
@@ -145,7 +145,7 @@ Om en *relationell databastjänst* i dag realiseras med en viss produkt bör kon
 
 Allt kan inte göras produktoberoende. Produktbyte kan kräva migrering och skapa kompatibilitetsproblem. Men ju bättre tjänstekontraktet är separerat från realiseringen, desto mindre risk att organisationens gemensamma arkitektur blir en katalog över tillfälliga produktnamn.
 
-Kapitel 32 fördjupar den kontrollerade förändringen, migrationen och avvecklingen över tid. På tjänstenivå behöver kapitel 28 bara etablera att förändring måste kommuniceras i termer som konsumenten förstår: vilka profiler som ändras, när stöd upphör, vilken migreringsväg som finns och vilka delar av kontraktet som består även när tekniken under byts ut.
+Den kontrollerade förändringen, migrationen och avvecklingen fördjupas senare. På tjänstenivå räcker det här att etablera att förändring måste kommuniceras i termer som konsumenten förstår: vilka profiler som ändras, när stöd upphör, vilken migreringsväg som finns och vilka delar av kontraktet som består även när tekniken under byts ut.
 
 ## En gemensam tjänst behöver inte ha en enda realisering
 

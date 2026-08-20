@@ -221,7 +221,7 @@ Då behöver lösningen hantera exempelvis:
 - om förslaget ändrades,
 - vilket slutligt beslut som togs.
 
-Det betyder att mönstret ofta behöver kombineras med Human workflow från kapitel 25.
+Det betyder att mönstret ofta behöver kombineras med *Human workflow*.
 
 AI med mänsklig kontroll är alltså inte bara en UI-funktion. Vid betydelsefulla processer kan det vara en beständig och spårbar del av processarkitekturen.
 

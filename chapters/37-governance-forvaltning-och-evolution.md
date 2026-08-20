@@ -2,7 +2,7 @@
 
 Gemensam IT-arkitektur skapar inget långsiktigt värde bara genom att dokumenteras. Förmågekartor, principer, lösningsmönster, plattformstjänster, standarder och referensarkitekturer måste användas, följas upp och förändras. Annars blir de snabbt en beskrivning av hur organisationen tänkte vid ett visst tillfälle i stället för ett fungerande beslutsstöd.
 
-Kapitel 31 och 32 behandlade standardisering och tekniklivscykel, kapitel 34 referensarkitekturen och kapitel 35 hur ett konkret initiativ tar sig från behov till lösningsarkitektur. Här ligger fokus på systemet runt allt detta: mandat, ägarskap, avsteg, återkoppling och förmågan att utveckla arkitekturen när verkligheten förändras.
+Tidigare delar har behandlat standardisering och tekniklivscykel, referensarkitekturen och hur ett konkret initiativ tar sig från behov till lösningsarkitektur. Här ligger fokus på systemet runt allt detta: mandat, ägarskap, avsteg, återkoppling och förmågan att utveckla arkitekturen när verkligheten förändras.
 
 Målet är inte maximal central kontroll. En användbar governance-modell ska göra det möjligt att fatta rätt beslut på rätt nivå, göra återkommande goda beslut enkla och omvandla erfarenheter från lösningar till förbättrade gemensamma byggstenar.
 
@@ -32,7 +32,7 @@ Lärande och omprövning
         └──────────────→ tillbaka till gemensam arkitektur
 ```
 
-Det är samma iterativa princip som introducerades i kapitel 7: top-down för sammanhang och ramar, bottom-up för lärande.
+Det är samma iterativa princip som återkommer genom boken: top-down för sammanhang och ramar, bottom-up för lärande.
 
 ## Styr det som måste hänga ihop
 
@@ -160,7 +160,7 @@ Arkitekturartefakter bör därför ha en enkel livscykel, exempelvis:
 - ersatt,
 - arkiverad.
 
-Exakta statusnamn är mindre viktiga än att användaren kan förstå giltighet, ersättare och tidpunkt för omprövning. Teknikens produkt- och versionslivscykel behandlades i kapitel 32; här gäller livscykeln själva arkitekturartefakten och dess roll i beslutsmodellen.
+Exakta statusnamn är mindre viktiga än att användaren kan förstå giltighet, ersättare och tidpunkt för omprövning. Teknikens produkt- och versionslivscykel har behandlats tidigare; här gäller livscykeln själva arkitekturartefakten och dess roll i beslutsmodellen.
 
 ## Mognad: från personberoende till lärande
 

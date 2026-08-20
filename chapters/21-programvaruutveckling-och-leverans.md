@@ -2,7 +2,7 @@
 
 Programvara blir inte verksamhetsnytta när koden är skriven. Den blir verksamhetsnytta först när organisationen på ett kontrollerat sätt kan förvandla förändrad källkod till en verifierad, spårbar och driftsatt version som går att förstå, återskapa och vid behov återställa eller ersätta. Därför är *programvaruutveckling och leverans* en egen gemensam IT-förmåga.
 
-Förmågan omfattar inte all teknik som utvecklare råkar använda. Den handlar om den gemensamma vägen från källkod och ändringsförslag till byggda artefakter, verifierade releaser och kontrollerad produktionssättning. Applikationens exekveringsmiljö behandlades i kapitel 19 och driftbarhet och motståndskraft i kapitel 20. Här ligger fokus i stället på själva förändringsflödet.
+Förmågan omfattar inte all teknik som utvecklare råkar använda. Den handlar om den gemensamma vägen från källkod och ändringsförslag till byggda artefakter, verifierade releaser och kontrollerad produktionssättning. Applikationens exekveringsmiljö samt driftbarhet och motståndskraft behandlas som separata förmågor. Här ligger fokus i stället på själva förändringsflödet.
 
 Det centrala arkitekturproblemet är att leveransflödet både måste ge hög förändringstakt och hög kontroll. En organisation som försöker skapa kontroll genom manuella steg får ofta långsamma, svårreproducerade och personberoende leveranser. En organisation som försöker skapa hastighet genom att ta bort kontroller riskerar i stället att göra produktion till testmiljö. Den gemensamma förmågan behöver därför göra den säkra och reproducerbara vägen till den enklaste vägen.
 
@@ -595,7 +595,7 @@ Denna ordning gör att CI/CD inte börjar som en verktygsupphandling. Den börja
 
 ## Leveransförmågan är bryggan mellan förändring och drift
 
-Kapitel 19 beskrev var applikationen körs. Kapitel 20 beskrev hur den går att förstå, övervaka och återställa. Detta kapitel har beskrivit hur en förändring tar sig från källkod till den körande miljön.
+Tidigare har vi behandlat var applikationen körs och hur den går att förstå, övervaka och återställa. Här har fokus varit hur en förändring tar sig från källkod till den körande miljön.
 
 De tre förmågorna behöver därför fungera som ett sammanhängande system:
 

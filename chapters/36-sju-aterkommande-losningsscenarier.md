@@ -20,7 +20,7 @@ En *publik e-tjänst* möter externa användare över internet. Därmed blir anv
 
 Interaktion, Identitet, Integration och Data är vanligen centrala förmågor. Backend for Frontend kan vara relevant när kanalens behov skiljer sig tydligt från bakomliggande domäntjänster, medan gemensamma tjänster för design, identitet, API-hantering, runtime, observerbarhet och leverans ofta utgör startpunkter. Men identifiering, sessionsmodell, edge-/gatewaylösning, uppladdningsflöden, cache, skydd mot överbelastning och kopplingen till intern handläggning måste fortfarande härledas från den konkreta kvalitetsprofilen.
 
-Det typiska felgreppet är att behandla ”publik e-tjänst” som ett färdigt produktpaket och ge alla tjänster samma autentisering, komponentuppsättning och driftprofil. För den fullständiga härledningen från behov till lösningsarkitektur används den publika e-tjänsten som genomgående exempel i kapitel 35. Här är poängen i stället att visa att samma scenarioklass kan ge olika arkitektur när risk, informationsinnehåll och konsekvens skiljer sig.
+Det typiska felgreppet är att behandla ”publik e-tjänst” som ett färdigt produktpaket och ge alla tjänster samma autentisering, komponentuppsättning och driftprofil. I föregående kapitel användes den publika e-tjänsten som genomgående exempel för hela härledningen från behov till lösningsarkitektur. Här är poängen i stället att visa att samma scenarioklass kan ge olika arkitektur när risk, informationsinnehåll och konsekvens skiljer sig.
 
 ## Scenario 3: Integrationsintensivt verksamhetssystem
 

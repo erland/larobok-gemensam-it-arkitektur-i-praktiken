@@ -425,7 +425,7 @@ I produktperspektivet är en *escape hatch* inte bara ett governanceundantag. De
 
 Om ett fåtal specialiserade workloads behöver en annan runtime kan det vara rimligt att hantera dem utanför standardplattformen. Om däremot många team använder samma escape hatch kan det betyda att produktstrategin behöver ändras.
 
-Kapitel 30 återkommer till hur sådana vägar kan kombineras med golden paths och guardrails.
+Nästa steg är att se hur sådana vägar kan kombineras med golden paths och guardrails.
 
 ## Plattformens livscykel är en produktlivscykel
 

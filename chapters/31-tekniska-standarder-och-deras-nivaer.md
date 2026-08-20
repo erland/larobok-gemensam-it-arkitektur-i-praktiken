@@ -41,7 +41,7 @@ utan:
 
 > Vilken variation behöver organisationen faktiskt kontrollera – och varför?
 
-Det knyter tillbaka till kapitel 9. Något bör vara gemensamt när konsekvenserna av lokal variation spiller över på andra delar av organisationen. Standarder är ett av verktygen för att hantera just denna typ av gemensamma konsekvenser.
+Det knyter tillbaka till grundfrågan om vad som bör vara gemensamt. Något bör vara gemensamt när konsekvenserna av lokal variation spiller över på andra delar av organisationen. Standarder är ett av verktygen för att hantera just denna typ av gemensamma konsekvenser.
 
 ## Fem olika nivåer som ofta blandas ihop
 
@@ -157,7 +157,7 @@ Den typen av information bör normalt ligga i en separat support- eller livscyke
 
 Annars uppstår ett välkänt problem: varje mindre produktrelease tvingar fram ändring av dokument som egentligen beskriver långsiktiga arkitekturbeslut.
 
-Kapitel 32 fördjupar denna livscykelmodell.
+Nästa steg är att fördjupa denna livscykelmodell.
 
 ## Konfigurationsstandard
 
@@ -276,7 +276,7 @@ Men en formulering som:
 
 En bättre standard kan uttrycka vilka signaler, metadata och korrelationsmekanismer som ska finnas och därefter låta en plattformsprofil eller policy kontrollera dem automatiskt. Verifieringen behöver inte alltid vara helt automatiserad, men det bör vara tydligt vilken evidens som visar att kravet är uppfyllt och var kontrollen sker.
 
-Det knyter direkt till kapitel 30: en mogen paved road gör många standarder inbyggda i konsumtionsvägen.
+Det knyter direkt till resonemanget om paved roads: en mogen paved road gör många standarder inbyggda i konsumtionsvägen.
 
 ## Standarder behöver stöd i plattformar och andra arkitekturartefakter
 
