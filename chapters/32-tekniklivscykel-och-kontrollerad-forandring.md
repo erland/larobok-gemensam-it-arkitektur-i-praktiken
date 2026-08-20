@@ -123,102 +123,25 @@ Patch:       aktuell säkerhetsnivå         obligatorisk
 
 Det gör det möjligt att förändra en del utan att automatiskt förändra de andra.
 
-## End of support är en arkitektursignal
+## Från supportstatus till avvecklingsbeslut
 
-Leverantörens eller communityns supportdatum är inte bara en driftfråga.
+Leverantörens eller communityns supportdatum är en arkitektursignal, inte bara en driftuppgift. När en version närmar sig slutet av normalt underhåll förändras riskprofilen genom sämre tillgång till säkerhetsuppdateringar, felrättningar, kompatibilitet och leverantörsstöd. Därför bör organisationen löpande kunna se vilka versioner som lämnar support inom exempelvis 12, 24 och 36 månader.
 
-När en version närmar sig slutet av sitt underhåll förändras lösningens riskprofil. Det kan påverka:
+För gemensamma plattformstjänster behöver detta översättas till ett tydligt supportfönster. Konsumenterna behöver veta vilka huvudversioner som är rekommenderade eller stödda, hur långt i förväg förändringar annonseras, vad plattformsteamet gör och vilka anpassningar som ligger på lösningsteamen. Supportfönstret blir därmed en del av tjänstekontraktet.
 
-- säkerhetsuppdateringar,
-- tillgång till felrättningar,
-- leverantörsstöd,
-- kompatibilitet med andra komponenter,
-- möjligheten att uppfylla interna krav,
-- kostnaden för särskild support,
-- återställnings- och kontinuitetsförmåga.
+Ett supportfönster behöver också skilja mellan olika former av stöd. En version kan vara fullt rekommenderad för nyutveckling, fortsatt stödd för befintliga lösningar eller endast få migrationsstöd under en begränsad period. För en Java-runtime kan det exempelvis innebära att en JDK-version är förstahandsval, en äldre fortfarande stöds och en tredje endast får användas tills en annonserad migrationsfrist löper ut. Den skillnaden gör planeringen betydligt mer konkret än ett binärt ”stöds/stöds inte”.
 
-Därför bör end-of-life och end-of-support användas som framåtblickande arkitektursignaler, inte som datum som upptäcks först när de passerats.
+När en teknik eller version får status *deprecated* börjar migrationen. Ett sådant beslut bör ange vad som fasas ut, varför, om nyanvändning stoppas, vilken ersättare som rekommenderas, när normal support upphör, vem som ansvarar för respektive del av migrationen och hur kvarvarande användning följs upp.
 
-En mogen livscykelprocess frågar exempelvis:
+Det är också viktigt att skilja mellan deprecation av en produktversion och deprecation av själva teknikvägen. En version kan fasas ut därför att nästa huvudversion tar över, medan plattformstjänsten och den underliggande arkitekturprincipen består. I andra fall är det själva teknikvalet som lämnar portföljen. Den distinktionen avgör hur stor del av standarder, dokumentation, golden paths och referensarkitekturer som behöver ändras.
 
-> Vilka versioner lämnar normal support under de kommande 12, 24 och 36 månaderna?
+Slutpunkten behöver också vara konkret. Ett sunsetbeslut bör ha ett datum eller ett verifierbart villkor, till exempel att samtliga kända konsumenter har migrerat och en observationsperiod har passerat. Formuleringar som ”ska avvecklas framöver” skapar annars lätt permanent teknisk skuld.
 
-Det gör att migration kan bli en planerad del av portfölj- och plattformsarbetet i stället för en akut teknisk händelse.
+Leverantörens datum är en viktig signal men inte det enda beslutskriteriet. Organisationen kan behöva avveckla tidigare därför att tekniken inte längre passar arkitekturen, eller bära den under en begränsad övergångsperiod genom ett explicit risk- och undantagsbeslut.
 
-Samtidigt bör leverantörens datum inte ensamt styra organisationens status. En produkt kan behöva avvecklas tidigare därför att den inte längre passar arkitekturen. En organisation kan i vissa fall också bära en version under en övergångsperiod trots att den lämnat normal support, men då är det ett medvetet risk- och undantagsbeslut.
+## Migration som kontrollerad förändringskedja
 
-## Supportfönster är ett tjänstekontrakt
-
-När en gemensam plattform erbjuder teknik till många konsumenter blir versionssupport en del av tjänstens kontrakt.
-
-Konsumenterna behöver veta exempelvis:
-
-- vilka huvudversioner som stöds,
-- hur länge de normalt stöds,
-- hur långt i förväg deprecation annonseras,
-- vem som genomför plattformsuppgraderingen,
-- vad konsumenten själv behöver ändra,
-- vilka kompatibilitetskrav som gäller,
-- vad som händer när supportfönstret stängs.
-
-Det är inte tillräckligt att plattformsteamet vet detta internt.
-
-För en Java-runtime kan tjänstekontraktet exempelvis skilja mellan:
-
-- rekommenderad JDK-version för nya tjänster,
-- äldre men fortfarande stödda versioner,
-- versioner där endast migration stöds,
-- versioner som inte längre får köras på den gemensamma plattformen.
-
-Ett tydligt supportfönster hjälper lösningsteam att planera sin egen livscykel och minskar behovet av specialförhandlingar.
-
-## Deprecation är början på en migration
-
-En av de viktigaste principerna i tekniklivscykel är:
-
-> Deprecation är inte slutet på ett beslut. Det är starten på ett förändringsarbete.
-
-Att märka en teknik som deprecated utan att skapa en väg bort från den löser nästan inget.
-
-Ett deprecationbeslut bör normalt kunna besvara:
-
-- Vad är det som fasas ut?
-- Varför?
-- Gäller det nyanvändning, befintlig användning eller båda?
-- Vilken rekommenderad ersättare finns?
-- Vilka kända skillnader finns mellan gammal och ny väg?
-- När upphör normal support?
-- När måste migration vara klar?
-- Vem ansvarar för plattformssidan av migrationen?
-- Vem ansvarar för anpassning i konsumerande lösningar?
-- Hur följs migrationen upp?
-
-Detta gör deprecation till ett styrt övergångstillstånd i stället för en etikett på en katalogpost.
-
-## Sunset behöver vara ett verkligt datum eller villkor
-
-Begreppet *sunset* används ofta för den punkt då en gammal tjänst, version eller teknikväg inte längre ska vara tillgänglig.
-
-För att vara användbart behöver det vara konkret.
-
-Exempel:
-
-```text
-2027-03-01  Ny användning stoppas
-2027-06-01  Automatisk migreringshjälp tillgänglig
-2027-10-01  Normal support upphör
-2028-01-31  Plattformsvägen stängs
-```
-
-I andra fall kan ett villkor vara mer relevant än ett fast datum, exempelvis att en gammal API-version avvecklas när samtliga identifierade konsumenter migrerat och en minsta observationsperiod passerat.
-
-Poängen är att slutläget måste gå att planera mot.
-
-Ett ”ska avvecklas framöver” utan datum, kriterium eller ägare blir lätt permanent teknisk skuld.
-
-## Migration är en delad leverans
-
-Teknikmigration beskrivs ibland som om ett plattformsteam bara behöver uppgradera den gemensamma komponenten. I praktiken finns ofta minst två förändringsytor:
+En teknikmigration är normalt en delad leverans. Plattformen kan uppgradera den gemensamma komponenten, men det verkliga teknikskiftet är inte klart förrän konsumerande lösningar har anpassats, testats och flyttats.
 
 ```text
 Plattformsförändring
@@ -228,254 +151,49 @@ Konsumentanpassning
 Faktiskt teknikskifte
 ```
 
-Exempelvis kan en ny runtimeversion kräva att plattformen:
+Därför behöver migration börja med inventering. Organisationen behöver veta vilka lösningar som använder tekniken, i vilka versioner, med vilka beroenden och vilken verksamhetskritikalitet. Utan denna bild blir tidsplanen lätt en gissning och undantagen upptäcks sent.
 
-- publicerar nya images,
-- uppdaterar byggkedjan,
-- förändrar basoperativsystem,
-- erbjuder ny dokumentation,
-- uppdaterar golden paths.
+Inventeringen behöver helst kunna kopplas till faktisk konsumtion snarare än enbart manuella listor. Artefaktregister, pipelineinformation, plattformsmetadata och runtimeinventering kan ge en mer aktuell bild av vilka versioner som faktiskt används. Där sådan automation saknas bör åtminstone ägarskap och senaste verifieringsdatum framgå, så att migrationsplanen inte bygger på bortglömd dokumentation.
 
-Samtidigt kan konsumenterna behöva:
+Alla konsumenter behöver inte behandlas lika. Migrationen bör risksegmenteras utifrån exempelvis kritikalitet, teknisk komplexitet, datamängd, tillgänglighetskrav och beroenden. En enkel konsument kan flyttas tidigt för att verifiera vägen, medan kritiska eller svårflyttade lösningar får mer förberedelse.
 
-- uppgradera bibliotek,
-- ändra kod,
-- köra regressionstester,
-- justera konfiguration,
-- verifiera prestanda,
-- planera produktionssättning.
+Risksegmenteringen gör det också möjligt att välja olika migrationsstrategier. Vissa lösningar kan uppgraderas direkt, andra kan behöva parallell drift, kompatibilitetslager eller stegvis dataflytt. För en mycket kritisk lösning kan ett tidsbegränsat undantag vara rationellt, men då bör det vara ett medvetet riskbeslut och inte resultatet av att migrationen upptäcktes för sent.
 
-Därför bör en migrationsplan tydligt skilja mellan enablement och adoption.
+Kompatibilitet är ett viktigt verktyg för att minska migrationskostnaden. Parallellt stöd, kompatibilitetslager, automatiserade tester och tydliga migreringsguider kan skapa en övergång där konsumenterna inte behöver ändra allt samtidigt. Men kompatibilitet bör vara tidsbegränsad; om varje historisk version stöds permanent flyttas kostnaden bara från migration till långsiktig variation.
 
-Plattformen kan möjliggöra migrationen, men det innebär inte att alla konsumenter automatiskt är migrerade.
+Det är därför rimligt att ha en uttalad policy för hur många huvudversioner eller teknikgenerationer som normalt stöds samtidigt. Policyn behöver inte vara identisk för alla tekniker, men den bör göra kostnaden för långvarig versionsspridning synlig.
 
-## Inventering före migration
+En viktig konsekvens är att standarden kan vara stabil även när produkten byts. Ett krav på exempelvis en gemensam relationsdatabastjänst eller containerplattform kan bestå medan den tekniska realiseringen migreras. Det är ännu ett skäl att hålla stabil arkitektur och föränderliga produktval isär.
 
-Det är svårt att styra en tekniklivscykel om ingen vet var tekniken används.
+## Från experiment till rekommenderad teknik
 
-Inför större förändringar behövs därför en rimlig inventering av exempelvis:
+Ny teknik bör inte introduceras bara för att den är ny. Utgångspunkten bör vara ett konkret problem eller en tydlig möjlighet som dagens standardväg inte hanterar tillräckligt väl.
 
-- konsumerande system,
-- versioner,
-- ägare,
-- kritikalitet,
-- beroenden,
-- avvikelser från standardkonfiguration,
-- uppskattad migrationskomplexitet.
+Ett experiment behöver därför ha ett syfte och exit-kriterier. Det bör på förhand vara tydligt vilka frågor som ska besvaras, vilka kvaliteter som ska verifieras och vad som krävs för att tekniken ska gå vidare, stoppas eller fortsätta utvärderas. Annars riskerar ”pilot” att bli ett permanent tillstånd där tekniken används utan tydligt stöd- eller ägarbeslut.
 
-Det betyder inte att organisationen måste bygga en perfekt CMDB innan något får förändras. Men för gemensamma plattformar bör konsumtionen vara tillräckligt spårbar för att besvara:
+Exit-kriterier kan exempelvis omfatta driftbarhet, säkerhetsmodell, prestanda, kompetenstillgång, kostnad, leverantörs- eller communitymognad och hur tekniken passar med befintliga plattformstjänster. Det viktiga är inte att varje experiment använder samma checklista, utan att det finns ett uttalat beslutstillfälle där evidensen faktiskt leder till nästa status.
 
-> Vilka påverkas om vi avslutar stödet för den här vägen?
+När tekniken går från experiment till bredare användning behövs kvalitetsgrindar. Det kan exempelvis innebära verifierad säkerhetsmodell, driftbarhet, uppgraderingsväg, kompetens, kostnadsbild och förmåga till support. Först när den nya vägen också går att konsumera genom dokumentation, plattform, standarder och relevanta golden paths bör den göras till rekommenderat förstahandsval.
 
-Här blir de tidigare kapitlens plattformskatalog, självservice och automatisering viktiga. Om en plattform konsumeras deklarativt kan mycket av inventeringen komma från faktisk konfiguration och telemetri i stället för manuella kalkylblad.
+Introduktion är därmed samma typ av livscykelbeslut som deprecation, men i motsatt riktning: statusen ska spegla faktisk mognad och faktisk konsumtionsförmåga.
 
-## Migration behöver risksegmenteras
+## Övergångstillstånd, teknisk skuld och undantag
 
-Alla konsumenter bör inte nödvändigtvis migreras på samma sätt eller samtidigt.
+Teknisk skuld och tidsbegränsade undantag kan vara rationella övergångstillstånd. Problemet uppstår när de saknar ägare, slutpunkt eller nytt beslutstillfälle.
 
-En praktisk segmentering kan ta hänsyn till:
+Ett godkänt undantag bör därför beskriva varför normal migration inte följs, vilken risk som accepteras, vilka kompensatoriska åtgärder som behövs, vem som äger risken och när undantaget upphör eller omprövas. Samma logik gäller medveten teknisk skuld: den ska ha ett tydligt syfte och en planerad väg ut.
 
-- verksamhetskritikalitet,
-- teknisk komplexitet,
-- förändringstakt,
-- regulatoriska beroenden,
-- testbarhet,
-- integrationsyta,
-- data- och återställningsrisk.
-
-Ett mindre internt verktyg kan exempelvis vara lämpligt som tidig pilot. Ett mycket kritiskt verksamhetssystem kan behöva vänta tills plattform, stödmaterial och erfarenheter är mer mogna.
-
-En sådan ordning gör det möjligt att använda tidiga migreringar för lärande utan att göra de mest riskfyllda systemen till försökskaniner.
-
-## Kompatibilitet minskar migrationskostnad
-
-Tekniklivscykel är lättare att hantera när plattformar och standarder utformas för förändring från början.
-
-Exempel på sådana egenskaper är:
-
-- tydliga API- och tjänstekontrakt,
-- versionerade gränssnitt,
-- bakåtkompatibla förändringar där det är rimligt,
-- automatiserade kompatibilitetstester,
-- reproducerbara builds,
-- automatiserade regressionstester,
-- separation mellan konfiguration och kod,
-- observerbarhet som gör regressionsrisk synlig,
-- portabilitet där den har verkligt värde.
-
-Detta betyder inte att all teknik måste vara utbytbar utan kostnad. Den typen av full abstraktion kan bli dyr och minska nyttan av plattformen.
-
-Målet är snarare kontrollerbar förändringskostnad.
-
-## Versioner bör inte leva för evigt
-
-En till synes konsumentvänlig strategi är att stödja många versioner under mycket lång tid.
-
-Problemet är att varje extra version kan multiplicera:
-
-- säkerhetsarbete,
-- testmatriser,
-- dokumentation,
-- kompetensbehov,
-- driftvarianter,
-- felsökningsvägar,
-- beroendekombinationer.
-
-Det kan skapa ett läge där plattformen lägger en stor del av sin kapacitet på historisk kompatibilitet i stället för att förbättra det aktuella erbjudandet.
-
-Livscykelstyrning behöver därför balansera två kostnader:
-
-```text
-Kostnad för migration
-        ↕
-Kostnad för fortsatt variation
-```
-
-Det finns inget universellt optimalt supportfönster. Men organisationen bör kunna förklara varför fönstret ser ut som det gör och vilken typ av konsumentbehov det är avsett att stödja.
-
-## En standard kan vara aktiv även när en produkt byts
-
-Tekniklivscykeln visar varför standardnivåerna i kapitel 31 är viktiga.
-
-Anta att organisationen har följande:
-
-- API:er ska beskrivas maskinläsbart,
-- ett gemensamt API Management-erbjudande används,
-- produkt A är dagens standardprodukt.
-
-Om produkt A ska ersättas av produkt B behöver inte den övergripande API-standarden avvecklas. Inte heller behöver API Management som tjänstekoncept försvinna.
-
-Förändringen kan koncentreras till produkt- och realiseringslagret.
-
-```text
-API-standard                  består
-API Management-tjänst         består
-Produkt A                     deprecated
-Produkt B                     rekommenderad
-```
-
-Det är precis denna separation som gör en gemensam arkitektur långsiktigt förvaltningsbar.
-
-## Experiment behöver exit-kriterier
-
-Kapitel 31 beskrev behovet av en kontrollerad experimentväg. Tekniklivscykeln behöver också beskriva hur experiment lämnas.
-
-Ett experiment bör inte bli ett permanent specialfall bara för att ingen fattar nästa beslut.
-
-Redan när tekniken börjar utvärderas bör det finnas kriterier för möjliga utfall:
-
-### Gå vidare
-
-Tekniken löser ett identifierat problem och har tillräckligt stöd för att gå vidare till pilot, godkänd eller rekommenderad status.
-
-### Fortsätt utvärdera
-
-Det finns fortfarande relevant osäkerhet och ett tydligt nästa lärandemål.
-
-### Avsluta
-
-Tekniken ger inte tillräcklig nytta, uppfyller inte kvalitetskrav eller är olämplig för organisationens kontext.
-
-Ett avslutat experiment behöver också städas:
-
-- testmiljöer tas bort,
-- data raderas eller hanteras enligt livscykelkrav,
-- temporära identiteter stängs,
-- specialkonfiguration avvecklas,
-- dokumenterade lärdomar bevaras.
-
-Det gör experiment till en kontrollerad del av teknikportföljen i stället för en dold källa till nya permanenta teknikvarianter.
-
-## Introduktion bör börja med ett problem
-
-Precis som kapitel 3 argumenterade för behov före teknik bör ny teknik inte få plats i portföljen bara för att den är intressant.
-
-En kandidat bör kunna kopplas till ett problem eller en möjlighet, exempelvis:
-
-- dagens plattform uppfyller inte ett viktigt kvalitetskrav,
-- en nuvarande produkt närmar sig slutet av support,
-- kostnaden för dagens lösning är oproportionerlig,
-- återkommande lokala speciallösningar visar ett saknat gemensamt behov,
-- en ny teknik kan väsentligt förenkla leverans eller drift,
-- ett nytt regulatoriskt krav kräver annan funktionalitet.
-
-Detta ger en bättre utgångspunkt för utvärdering än frågan:
-
-> Är den nya tekniken bra?
-
-Den mer användbara frågan är:
-
-> Är den bättre för vårt identifierade behov, givet våra kvalitetskrav, kostnader och migrationskonsekvenser?
-
-## Införande behöver kvalitetsgrindar
-
-Att en teknik fungerar i ett proof of concept innebär inte att den är redo som gemensam standard eller plattformskomponent.
-
-För att gå från utvärdering till bredare användning kan organisationen behöva verifiera områden som:
-
-- säkerhet,
-- driftbarhet,
-- supportmodell,
-- backup och återställning,
-- observerbarhet,
-- kapacitet och skalning,
-- kostnadsmodell,
-- kompetenstillgång,
-- licens- och avtalsfrågor,
-- integrationsförmåga,
-- automatiserad leverans,
-- livscykel och exitmöjlighet.
-
-Vilka kriterier som är relevanta beror på tekniken. En IDE-plugin behöver inte samma analys som en databasplattform.
-
-Principen är proportionalitet: ju större gemensam konsekvens tekniken får, desto starkare behöver introduktionsbeslutet vara.
-
-## Teknisk skuld kan vara ett medvetet övergångstillstånd
-
-Under en migration kommer organisationen ofta att bära både gammal och ny teknik samtidigt.
-
-Det är inte automatiskt ett misslyckande. Parallella vägar kan vara en rationell kostnad för kontrollerad förändring.
-
-Problemet uppstår när övergången saknar slutpunkt.
-
-Det är därför användbart att skilja mellan:
-
-- avsiktlig övergångsskuld – gammal teknik finns kvar under en planerad migration,
-- permanent oavsiktlig variation – gammal teknik lever vidare utan aktivt beslut.
-
-Den första kan vara sund. Den andra tenderar att växa.
-
-Ett bra livscykelbeslut gör övergångsskulden synlig genom ägare, tidsram och exitkriterium.
-
-## Tidsbegränsade undantag hör ihop med livscykeln
-
-En lösning kan ibland inte följa den rekommenderade livscykeln.
-
-Exempelvis kan ett system:
-
-- vara beroende av en tredjepartsprodukt som ännu inte stödjer nästa version,
-- stå inför en nära förestående avveckling där migration inte är ekonomiskt rimlig,
-- ha regulatoriska begränsningar för förändringstidpunkt,
-- kräva en längre testperiod på grund av verksamhetskritikalitet.
-
-Då kan ett tidsbegränsat undantag vara bättre än att låtsas att standarden följs.
-
-Ett sådant undantag bör beskriva:
-
-- varför migration inte sker enligt normal plan,
-- vilken risk som accepteras,
-- vilka kompensatoriska åtgärder som behövs,
-- vem som äger risken,
-- hur länge undantaget gäller,
-- vilket nästa beslutstillfälle är.
-
-Det är viktigt att undantaget inte automatiskt flyttar den gemensamma teknikens status bakåt. En gammal version kan vara deprecated även om vissa konsumenter har godkända övergångsundantag.
+Undantaget ska inte ändra den gemensamma teknikens status. En version kan vara deprecated även om några konsumenter har tidsbegränsade undantag. På så sätt hålls den gemensamma riktningen stabil samtidigt som legitima övergångsbehov kan hanteras.
 
 ## Avveckling är mer än att sluta supportera
 
 En teknik är inte fullt avvecklad bara för att standarddokumentet markerats som retired.
 
 En faktisk avveckling kan kräva att organisationen:
+
+Avvecklingsplanen bör därför börja innan sunsetdatumet och följas upp på samma sätt som migrationen. Det räcker inte att konsumenterna har flyttat; även tekniska rester och operativa beroenden måste bort. Först när de är verifierat avvecklade bör statusen betraktas som tekniskt slutförd retirement.
+
+Den kan kräva att organisationen:
 
 - verifierar att inga aktiva konsumenter återstår,
 - stoppar ny provisionering,
@@ -493,140 +211,33 @@ Det finns alltså en skillnad mellan beslutad retirement och tekniskt slutförd 
 
 Det bör gå att se vilken av dessa två punkter som avses.
 
-## Livscykelmetadata behöver vara maskinläsbar där det ger värde
+## Maskinläsbar livscykel och automatisk styrning
 
-När teknikportföljen växer blir det svårt att hålla status manuellt i fristående dokument.
+När teknikportföljen växer är det svårt att hålla status enbart i fristående dokument. Där det ger värde bör därför metadata som status, ägare, rekommenderad och stödd version, deprecation- och sunsetdatum, ersättande teknik samt länkar till standard och migrationsguide vara strukturerade och maskinläsbara.
 
-Vissa metadata lämpar sig därför väl för strukturerad hantering, exempelvis:
+Det möjliggör frågor som vilka tekniker som närmar sig sunset, vilka lösningar som använder deprecated versioner och vilka golden paths som fortfarande skapar gammal teknik. Rationale och avvägningar behöver fortfarande mänskligt begriplig dokumentation; metadata ersätter inte beslutsmotiveringen.
 
-- status,
-- ägare,
-- rekommenderad version,
-- stödda versioner,
-- deprecationdatum,
-- sunsetdatum,
-- ersättande teknik,
-- berörda förmågor,
-- länk till standard,
-- länk till migrationsguide.
+En användbar miniminivå kan vara status, ägare, rekommenderad version, stödda versioner, deprecation- och sunsetdatum, ersättande teknik samt länkar till standard och migrationsguide. Metadata behöver hållas nära den källa som faktiskt styr konsumtionen; annars riskerar även den strukturerade katalogen att bli en ny manuell sanning som glider från verkligheten.
 
-Det kan möjliggöra automatiska vyer som:
+Automationen bör sedan följa statusen. Rekommenderad teknik kan finnas i templates och självservice. Begränsad teknik kan kräva motivering för ny användning. Deprecated teknik kan blockeras för ny provisionering och kopplas till migrationsinformation. Retired teknik ska inte längre kunna provisioneras och dess artefakter, pipelines och stödmekanismer ska vara avvecklade.
 
-- vilka tekniker närmar sig sunset?
-- vilka lösningar använder deprecated versioner?
-- vilka golden paths genererar fortfarande gammal teknik?
-- vilka plattformar saknar publicerad livscykel?
+Det innebär att samma status kan materialiseras på flera ställen: i servicekatalogen, i golden paths, i CI-policy, i provisioneringsgränssnitt och i rapportering över faktisk konsumtion. När dessa ytor hämtar status från samma källa minskar risken att dokumentationen säger en sak medan verktygen fortsätter erbjuda en annan.
 
-Det innebär inte att hela arkitekturen ska reduceras till metadata. Rationale, avvägningar och migrationskontext behöver fortfarande mänskligt begriplig dokumentation.
+Då blir livscykelstatus inte bara en etikett i en katalog utan en del av den faktiska konsumtionsupplevelsen.
 
-Men maskinläsbara livscykeldata gör styrningen mer operativ.
+## Kostnaden för förändring
 
-## Automatisk styrning bör följa livscykeln
+Teknikbyte har en kostnad hos plattformsteam, lösningsteam, drift, verksamhet, upphandling och kompetensutveckling. Samtidigt finns en kostnad för att inte förändra: högre supportbörda, säkerhetsrisk, kompetensbrist och dyrare framtida migration.
 
-När en teknik går genom livscykeln bör även verktygen förändras.
+Livscykelbeslut behöver därför synliggöra båda sidor utan att göra kapitel 32 till ett ekonomiskapitel. Det är särskilt viktigt när den som beslutar om en gemensam teknikförändring inte bär hela migrationskostnaden själv. En billigare eller enklare plattform kan bli dyr för organisationen om hundratals konsumenter behöver omfattande anpassning. På motsvarande sätt kan en planerad migration vara ekonomiskt rimlig även om den kortsiktigt kräver investering, eftersom den minskar framtida support- och riskkostnad. Kapitel 33 fördjupar kostnad, kapacitet och incitament som arkitekturfrågor.
 
-Ett möjligt förlopp är:
+## Ansvar genom livscykeln
 
-### Rekommenderad
+Den gemensamma arkitekturnivån bör definiera spelreglerna: statusmodell, minsta metadata, principer för deprecation, sunset och undantag samt hur större teknikskiften påverkar gemensamma standarder och referensarkitekturer. Den behöver också ange när en förändring kräver gemensamt beslut och när förmågeansvaret kan hantera den inom sitt mandat.
 
-- finns i standardtemplates,
-- erbjuds via självservice,
-- används av golden paths,
-- kontrolleras automatiskt som normal väg.
+Förmågeansvaret bör äga teknikportföljen inom sitt område: följa supportfönster, utvärdera kandidater, föreslå statusförändringar, planera migrationer och ge konsumenterna framförhållning. Det är normalt här den operativa livscykelplaneringen sker, eftersom förmågeansvaret kan se både plattformens realisering och konsumenternas behov.
 
-### Begränsad
-
-- befintliga konsumenter stöds,
-- ny provisionering kräver motivering,
-- templates pekar inte längre dit.
-
-### Deprecated
-
-- ny användning blockeras eller varnas tydligt,
-- migrationsinformation visas,
-- automatiska rapporter identifierar kvarvarande konsumenter.
-
-### Retired
-
-- provisionering är avstängd,
-- artefakter och pipelines har städats,
-- endast historisk dokumentation återstår där den behövs.
-
-På detta sätt blir livscykeln inte bara en katalogstatus utan en förändring i den faktiska konsumtionsupplevelsen.
-
-## Kostnaden för förändring behöver synliggöras
-
-Teknikbyte har nästan alltid en kostnad. Den kan ligga hos olika aktörer:
-
-- plattformsteamet,
-- lösningsteamen,
-- driftorganisationen,
-- verksamheten genom test och produktionsrisk,
-- upphandling/licens,
-- utbildning och kompetensutveckling.
-
-Om den gemensamma arkitekturen bara räknar plattformens egen kostnad kan ett teknikskifte se billigare ut än det är.
-
-Samtidigt finns en kostnad för att inte förändra:
-
-- ökande supportkostnad,
-- säkerhetsrisk,
-- kompetensbrist,
-- sämre utvecklarupplevelse,
-- minskad automation,
-- tekniska begränsningar,
-- dyrare framtida migrering.
-
-Tekniklivscykel är därför ett ekonomiskt beslut lika mycket som ett tekniskt. Kapitel 33 fördjupar kostnad, kapacitet och incitament som arkitekturfrågor.
-
-## Ansvar på tre nivåer
-
-Bokens tredelade ansvarmodell passar särskilt väl för tekniklivscykel.
-
-### Gemensam arkitekturnivå
-
-Den gemensamma nivån bör definiera spelregler som behöver vara konsekventa över flera förmågor:
-
-- gemensam livscykelmodell,
-- betydelsen av statusar,
-- minsta metadata,
-- principer för deprecation och sunset,
-- hur undantag och riskacceptans kopplas till livscykeln,
-- hur tvärgående beroenden hanteras,
-- hur större teknikskiften påverkar referensarkitekturer och gemensamma standarder.
-
-Den gemensamma nivån bör däremot inte behöva besluta varje versionsuppgradering.
-
-### Förmågenivå
-
-Förmågeansvaret bör äga teknikportföljen inom sitt område.
-
-Det kan innebära att:
-
-- följa externa supportfönster,
-- utvärdera nya tekniker,
-- föreslå statusförändringar,
-- planera plattforms- och produktmigrationer,
-- publicera rekommenderade versioner,
-- ge konsumenterna framförhållning,
-- följa adoption och kvarvarande gammal teknik.
-
-Det är här mycket av den praktiska livscykelhanteringen bör ske.
-
-### Lösnings-/produktnivå
-
-Lösningsteamen ansvarar för sin faktiska konsumtion.
-
-De behöver:
-
-- känna till vilka versioner och tekniker de använder,
-- planera migration inom annonserade fönster,
-- testa sina lösningar mot nya versioner,
-- undvika att introducera ny användning av deprecated teknik,
-- begära tidsbegränsat undantag när migration inte är rimlig,
-- ge återkoppling om migrationsproblem och dolda beroenden.
-
-Det gör tekniklivscykeln till ett delat ansvar med tydliga gränser, inte ett centralt uppgraderingsprojekt som någon annan förväntas lösa.
+Lösnings- och produktteam ansvarar för sin faktiska konsumtion: känna till använda versioner, planera migration inom annonserade fönster, testa nya versioner och begära tidsbegränsade undantag när det finns sakliga skäl. Tekniklivscykel blir därmed ett delat ansvar med tydliga gränser.
 
 ## En praktisk livscykelprocess
 
@@ -642,88 +253,46 @@ En återkommande process kan beskrivas i nio steg:
 8. Verifiera retirement – säkerställ att beroenden, data, artefakter och driftmekanismer är avvecklade.
 9. Lär – använd erfarenheter för att förbättra nästa teknikskifte.
 
-Processen behöver inte vara tung för varje teknik. Förändringens räckvidd bör styra hur formell den behöver vara.
+Processen behöver inte vara tung för varje teknik. Förändringens räckvidd bör styra hur formell den behöver vara. En patchuppdatering inom ett etablerat supportfönster kan följa en automatiserad rutin, medan ett byte av huvudprodukt eller en gemensam runtimeplattform kräver betydligt mer inventering, riskanalys och kommunikation.
 
-## Några vanliga anti-patterns
+Det viktiga är att samma grundlogik återkommer: observera signaler, förstå drivkraften, fatta ett explicit statusbeslut, göra den nya vägen praktiskt konsumtionsbar, migrera och verifiera att den gamla verkligen är borta. Då blir livscykeln en återkommande styrmekanism snarare än en serie engångsprojekt.
 
-### Evig preview
+## Vanliga anti-patterns
 
-En teknik har status ”pilot” eller ”under utvärdering” i flera år men används ändå i produktion av många team.
+Några återkommande fel är särskilt värda att känna igen:
 
-Problemet är inte namnet utan att organisationen undviker att fatta ett riktigt beslut om stöd, ansvar och framtid.
+- **Evig preview:** teknik används brett men förblir formellt ”pilot” eftersom organisationen undviker beslut om stöd och ansvar.
+- **Deprecated utan migrationsväg:** den gamla vägen markeras som fel men ersättare, dokumentation eller migrationskapacitet saknas.
+- **Sunset utan inventering:** ett slutdatum sätts innan berörda konsumenter och beroenden är kända.
+- **Stöd för allt:** historiska versioner stöds permanent för att undvika konflikt, vilket ökar variation och kostnad.
+- **Upgrade by surprise:** gemensam teknik ändras med för kort framförhållning och planeringskostnaden flyttas till konsumenterna.
+- **Radar utan ägare:** status kommuniceras visuellt men ingen äger supportfönster, migration eller faktisk konsumtion.
+- **Ny standard före ny väg:** gammal teknik förbjuds innan den nya vägen går att konsumera praktiskt.
 
-### Deprecated utan migrationsväg
-
-En standard markeras som gammal, men det finns ingen ersättare, dokumentation eller kapacitet att hjälpa konsumenterna vidare.
-
-Statusen skapar då skuld utan att skapa förändring.
-
-### Sunset utan inventering
-
-Ett datum beslutas utan att organisationen vet vilka konsumenter som påverkas.
-
-Det leder ofta till sena undantag och uppskjutna datum.
-
-### Stöd för allt
-
-Plattformen fortsätter stödja varje historisk version för att undvika konflikt med konsumenterna.
-
-Resultatet blir ökande variation, kostnad och minskad förändringsförmåga.
-
-### Upgrade by surprise
-
-Gemensam teknik uppgraderas med kort framförhållning och konsumenterna förväntas anpassa sig omedelbart.
-
-Det flyttar plattformens planeringsproblem till lösningsteamen och underminerar tilliten till den gemensamma vägen.
-
-### Technology radar utan ägare
-
-Tekniker flyttas mellan ringar eller kategorier, men ingen äger supportfönster, migrationsplan eller faktisk konsumtion.
-
-Radarn blir då mer kommunikationsgrafik än styrinstrument.
-
-### Ny standard före ny väg
-
-Den gamla tekniken förbjuds innan den nya tekniken finns tillgänglig genom plattform, dokumentation och support.
-
-Det skapar ett styrglapp där teamen förväntas följa en standard de praktiskt inte kan konsumera.
+Gemensamt för dessa anti-patterns är att statusen skiljs från den förändringsmekanism som ska göra statusen verklig.
 
 ## En praktisk analysordning
 
-När en teknik eller produkt behöver förändra livscykelstatus kan följande frågor användas:
+När en teknik eller produkt behöver ändra livscykelstatus bör organisationen åtminstone kunna besvara följande frågor:
 
-1. Vilken artefakt förändras? Teknik, produkt, version, plattformstjänst eller standard?
-2. Vad driver förändringen? Support, säkerhet, kvalitet, kostnad, behov eller strategisk riktning?
+1. Vilken artefakt förändras – teknik, produkt, version, plattformstjänst eller standard?
+2. Vad driver förändringen – support, säkerhet, kvalitet, behov eller strategisk riktning?
 3. Vilka konsumenter och beroenden påverkas?
-4. Vilken målstatus ska tekniken få?
-5. Finns en rekommenderad ersättare eller krävs fortsatt utvärdering?
-6. Vilka kvalitetskrav måste den nya vägen verifiera?
-7. Vad behöver plattformen göra för att möjliggöra förändringen?
-8. Vad behöver konsumerande lösningar göra?
-9. Vilket supportfönster och vilket sunsetvillkor är rimligt?
-10. Hur hanteras legitima undantag?
-11. Hur mäts faktisk migration och kvarvarande användning?
-12. Vilka artefakter och automationer måste uppdateras när statusen ändras?
+4. Vilken målstatus och vilken ersättande väg gäller?
+5. Vad behöver plattformen respektive konsumerande lösningar göra?
+6. Vilka kvalitetskrav måste verifieras?
+7. Vilket supportfönster och sunsetvillkor är rimligt?
+8. Hur hanteras legitima undantag?
+9. Hur mäts faktisk migration och kvarvarande användning?
+10. Vilka standarder, golden paths och automationer måste ändras tillsammans med statusen?
 
-Om organisationen inte kan besvara dessa frågor är det ofta för tidigt att kommunicera en definitiv retirement eller att göra den nya tekniken till gemensam standard.
+Om dessa frågor inte kan besvaras är det ofta för tidigt att kommunicera definitiv retirement eller att göra den nya tekniken till gemensam standard.
 
 ## Kontrollerad förändring i stället för frusen standardisering
 
-Målet med tekniklivscykel är inte maximal förändringstakt. Det är inte heller maximal stabilitet.
+Målet med tekniklivscykel är varken maximal förändringstakt eller maximal stabilitet. Målet är förutsägbar förändring.
 
-Målet är förutsägbar förändring.
-
-En välfungerande modell gör det möjligt att samtidigt säga:
-
-- den här tekniken är stabil och rekommenderad i dag,
-- vi vet vilka signaler som kan göra att den omprövas,
-- vi följer externa och interna livscykelrisker,
-- vi kan introducera alternativ kontrollerat,
-- konsumenterna får rimlig framförhållning,
-- en deprecated väg har en faktisk migrationsplan,
-- gamla vägar kan slutligen stängas.
-
-Det är först då standardisering och förändringsförmåga slutar vara motsatser.
+En välfungerande modell gör det möjligt att ha en stabil rekommenderad väg i dag och samtidigt veta vilka signaler som kan utlösa omprövning, hur alternativ introduceras, hur konsumenterna får framförhållning och hur en deprecated väg faktiskt migreras och stängs.
 
 ```text
 Stabil standard i nuet
@@ -737,4 +306,4 @@ Planerad migration
 Långsiktigt förändringsbar arkitektur
 ```
 
-Nästa kapitel fördjupar en annan kraft som påverkar nästan alla dessa beslut: ekonomi, kostnad och kapacitet. En teknik kan vara funktionellt lämplig och arkitekturellt välstrukturerad men ändå skapa fel incitament eller oproportionerliga gemensamma kostnader. Därför behöver även ekonomin göras till ett explicit arkitekturperspektiv.
+Det är först då standardisering och förändringsförmåga slutar vara motsatser. Nästa kapitel fördjupar en annan kraft som påverkar nästan alla dessa beslut: ekonomi, kostnad och kapacitet.

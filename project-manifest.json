@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev99.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev106.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -30,12 +30,12 @@
       "chapters/25-process-regel-och-datamonster.md": "b3b5e0a3a04c8ad1dcb2d11efdbbeb6a0e3bf654e62ecd1576cff09e365d7816",
       "chapters/26-ai-identitets-och-runtime-monster.md": "be6c7c63841dd9600587aa9eb5e76ff64684af153b4a0e9fd6ff6c89b7f02b31",
       "chapters/27-drift-och-leveransmonster.md": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf",
-      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "22570679089fb0bbceb35c28aeab1e2f6ab96dd98f9f132e1780583c65d5a097",
-      "chapters/29-platform-as-a-product.md": "e73e8902953669a0eb73e71e5722e25241d124124ecfebd5366837f9940ab143",
-      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "f13f160a1c5349170dc50f31efd1397ec34ae94571d7f3939b18beacb4554c3e",
-      "chapters/31-tekniska-standarder-och-deras-nivaer.md": "cc3c26993071cdd89506a61d5e94ab2402668a481861d6b8af25b6a77f9f1917",
-      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "977c2f22e6cc4bc95e4249a9550b7a454f2ad8159072c0e0c931ac4b10040cd6",
-      "chapters/33-ekonomi-kostnad-och-kapacitet.md": "1b9adb61ab132319c70bfea0bd1106f24ce8aad267b6bcafc98cd7647ae2df5e",
+      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "35562a7440328222f223a292871f3df7c2863ac5e6cb4d7c80c8c5fe5e40a14d",
+      "chapters/29-platform-as-a-product.md": "dc76a4bce9c9dbeb75da617f302b49559d39448aa57dd64a966323fa59a7812a",
+      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "d748ad8dd791d7f27258a3cee3e0b876f3e4485772b92a7e0d7ab42f0dae76d4",
+      "chapters/31-tekniska-standarder-och-deras-nivaer.md": "4e7b327529a142a43e1b3350191ab1bce78da0fffc8065238b4aeed0dd80ed47",
+      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "386f37d740ca734e3d88b6c98aacb930e608dfded6bc529afd518ba27cbe5d14",
+      "chapters/33-ekonomi-kostnad-och-kapacitet.md": "d397275b296a9a9fc45345252da9e34b845fd8c549b55fad31756163f4b6b808",
       "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": "3d0a9549d96cfc3f7d9e6c5bae2bfbe92deb1c32f40d45368f6f9dc86262a763",
       "chapters/35-fran-behov-till-losningsarkitektur.md": "247664bf2002d089920b3ff454c3b16ffbac87541998537f388332bb68f4da38",
       "chapters/36-sju-aterkommande-losningsscenarier.md": "087ff9e5dde2624f6b449bbd7d385e3578e0fea9ea225ee8ba2f0f0df2a96e23",
@@ -47,15 +47,15 @@
   "last_operation": {
     "changed_files": [
       "docs/begreppsregister.yaml",
-      "docs/register-korsreferenssynk-pass-4.md"
+      "docs/register-korsreferenssynk-pass-5.md"
     ],
-    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del IV",
-    "source_revision": 98
+    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del V",
+    "source_revision": 105
   },
-  "parent_revision": 98,
+  "parent_revision": 105,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 99,
+  "revision": 106,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -208,28 +208,28 @@
       "sha256": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf"
     },
     "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": {
-      "bytes": 24738,
-      "sha256": "22570679089fb0bbceb35c28aeab1e2f6ab96dd98f9f132e1780583c65d5a097"
+      "bytes": 20407,
+      "sha256": "35562a7440328222f223a292871f3df7c2863ac5e6cb4d7c80c8c5fe5e40a14d"
     },
     "chapters/29-platform-as-a-product.md": {
-      "bytes": 21740,
-      "sha256": "e73e8902953669a0eb73e71e5722e25241d124124ecfebd5366837f9940ab143"
+      "bytes": 20696,
+      "sha256": "dc76a4bce9c9dbeb75da617f302b49559d39448aa57dd64a966323fa59a7812a"
     },
     "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": {
-      "bytes": 27797,
-      "sha256": "f13f160a1c5349170dc50f31efd1397ec34ae94571d7f3939b18beacb4554c3e"
+      "bytes": 22610,
+      "sha256": "d748ad8dd791d7f27258a3cee3e0b876f3e4485772b92a7e0d7ab42f0dae76d4"
     },
     "chapters/31-tekniska-standarder-och-deras-nivaer.md": {
-      "bytes": 20637,
-      "sha256": "cc3c26993071cdd89506a61d5e94ab2402668a481861d6b8af25b6a77f9f1917"
+      "bytes": 18825,
+      "sha256": "4e7b327529a142a43e1b3350191ab1bce78da0fffc8065238b4aeed0dd80ed47"
     },
     "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": {
-      "bytes": 29389,
-      "sha256": "977c2f22e6cc4bc95e4249a9550b7a454f2ad8159072c0e0c931ac4b10040cd6"
+      "bytes": 23529,
+      "sha256": "386f37d740ca734e3d88b6c98aacb930e608dfded6bc529afd518ba27cbe5d14"
     },
     "chapters/33-ekonomi-kostnad-och-kapacitet.md": {
-      "bytes": 22775,
-      "sha256": "1b9adb61ab132319c70bfea0bd1106f24ce8aad267b6bcafc98cd7647ae2df5e"
+      "bytes": 21542,
+      "sha256": "d397275b296a9a9fc45345252da9e34b845fd8c549b55fad31756163f4b6b808"
     },
     "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": {
       "bytes": 27212,
@@ -292,8 +292,8 @@
       "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
     },
     "docs/begreppsregister.yaml": {
-      "bytes": 24422,
-      "sha256": "bff8f5cf33a64494f3c22cad84cc52de903d306d1501adec4d53db6284d465fb"
+      "bytes": 24429,
+      "sha256": "735678528ce109b715b80513c0aa6292c9bbab554df7ac85999246b738632ce3"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
@@ -370,6 +370,10 @@
     "docs/register-korsreferenssynk-pass-4.md": {
       "bytes": 2531,
       "sha256": "57cdf41fdd53a691d510a1249676cd2ae745259c5aac67b4657ef9d2afdeee32"
+    },
+    "docs/register-korsreferenssynk-pass-5.md": {
+      "bytes": 2265,
+      "sha256": "7cae64e56cf99eaeffa4a3767b237d4537e886137cf8ab0273b5e41081d361d3"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -884,8 +888,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 49598,
-      "sha256": "7dd47a27e42af4f55e1ce121ae6e6b97adb3f9c6f9c16fc0eb95dbaac463a39d"
+      "bytes": 51566,
+      "sha256": "f6b32961cd2d2206da97fbda166b3789a1e629078e6a76cd8477197dd222f677"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -912,5 +916,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T06:25:25Z"
+  "updated_at": "2026-08-20T13:54:42Z"
 }

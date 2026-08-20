@@ -32,7 +32,7 @@ inte:
 
 Det första är en arkitekturfråga. Det andra riskerar att bli lokal optimering.
 
-## Från totalsumma till kostnadsdrivare
+## Från kostnadsdrivare till ekonomisk återkoppling
 
 En totalsumma säger väldigt lite om varför en tjänst kostar det den gör.
 
@@ -75,7 +75,7 @@ Total kostnad och enhetskostnad
 
 Om sambandet saknas blir ekonomirapporteringen svår att använda som arkitekturell återkoppling.
 
-## Enhetskostnad ger bättre signal än total kostnad
+**Enhetskostnad ger bättre signal än total kostnad.**
 
 Total kostnad växer ofta när verksamheten växer. Det behöver inte innebära att arkitekturen blivit mindre effektiv.
 
@@ -112,7 +112,7 @@ Det svåra är inte divisionen. Det svåra är att avgöra:
 
 Två lösningar kan ha samma kostnad per transaktion men helt olika tillgänglighet, säkerhetsnivå eller lagringstid. Enhetskostnaden är därför ett beslutsunderlag, inte ett facit.
 
-## Kostnadsallokering skapar synlighet
+**Kostnadsallokering skapar synlighet.**
 
 För att kunna förstå kostnadsdrivare behöver kostnader kunna kopplas till något ansvarsbärande objekt.
 
@@ -145,7 +145,7 @@ Bättre återkoppling till beslut
 
 Otydliga delade resurser, gemensamma databaser och tekniska plattformar utan konsumtionsmodell gör ekonomisk transparens svårare.
 
-## Showback före chargeback
+**Showback före chargeback.**
 
 Två återkommande begrepp är showback och chargeback.
 
@@ -174,9 +174,7 @@ Ekonomisk transparens kräver inte automatiskt intern fakturering.
 
 ## Gemensamma plattformar har både fasta och rörliga kostnader
 
-Ett plattformserbjudande har sällan en rent konsumtionsbaserad kostnadsbild.
-
-Det finns ofta en grundkostnad för:
+Ett plattformserbjudande har sällan en rent konsumtionsbaserad kostnadsbild. Det finns ofta en grundkostnad för:
 
 - plattformsteam,
 - support,
@@ -200,9 +198,7 @@ Därtill kan rörliga kostnader uppstå genom exempelvis:
 - AI-tokens,
 - externa tjänsteanrop.
 
-Det gör en enkel princip som ”varje team betalar exakt vad det förbrukar” svår att tillämpa.
-
-En plattform kan i stället finansieras genom en kombination av:
+Det gör principen ”varje team betalar exakt vad det förbrukar” svår att tillämpa. En plattform kan i stället finansieras genom en kombination av:
 
 ```text
 Gemensam grundinvestering
@@ -238,7 +234,7 @@ utan snarare:
 
 > Vad kostar organisationen med respektive utan den gemensamma förmågan, givet samma kvalitetsbehov?
 
-## Kapacitet är länken mellan efterfrågan och kostnad
+## Kapacitet, marginal, elasticitet och prognos
 
 Kapacitet handlar om hur mycket belastning en lösning eller plattform kan bära under givna kvalitetskrav.
 
@@ -262,7 +258,7 @@ Det är därför användbart att formulera kapacitet som:
 
 Detta knyter kapacitetsplanering till kvalitetskraven i kapitel 4 och drifttelemetrin i kapitel 20.
 
-## Överkapacitet kan vara både slöseri och försäkring
+**Överkapacitet kan vara både slöseri och försäkring.**
 
 En vanlig optimeringsidé är att eliminera överkapacitet. Men all överkapacitet är inte dålig.
 
@@ -290,7 +286,7 @@ Om all kapacitet dimensioneras efter ett extremt scenario som inträffar vart fe
 
 Arkitekturen behöver därför göra riskaptit och kapacitetsmarginal explicita.
 
-## Elasticitet förändrar frågan – men tar inte bort den
+**Elasticitet förändrar frågan – men tar inte bort den.**
 
 Dynamisk skalning gör att kapacitet kan anpassas snabbare till faktisk belastning. Det är värdefullt, men elasticitet löser inte automatiskt ekonomin.
 
@@ -316,7 +312,7 @@ Det kan exempelvis vara:
 
 Principen är densamma som i kapitel 30: självservice fungerar bäst när ramarna är automatiserade och begripliga.
 
-## Prognoser behöver uttrycka osäkerhet
+**Prognoser behöver uttrycka osäkerhet.**
 
 Kostnads- och kapacitetsprognoser är modeller av framtiden, inte fakta.
 
@@ -420,7 +416,7 @@ Inom FinOps finns exempelvis FOCUS[K2], en öppen specifikation som standardiser
 
 ## Kostnadsoptimering har flera nivåer
 
-Det är användbart att skilja mellan minst fyra typer av optimering.
+Det är användbart att skilja mellan fyra typer av optimering.
 
 ### Resursoptimering
 
@@ -458,7 +454,7 @@ Exempel:
 - minska dyr AI-användning där enklare mekanismer räcker,
 - styra efter faktisk affärs- eller verksamhetsnytta.
 
-De två sista nivåerna kräver ofta arkitektur- och produktbeslut. Därför räcker inte ett centralt kostnadsverktyg för att skapa verklig kostnadseffektivitet.
+De två sista nivåerna kräver arkitektur- och produktbeslut; ett centralt kostnadsverktyg räcker därför inte för verklig kostnadseffektivitet.
 
 ## Billig teknik kan skapa dyr organisation
 
@@ -497,103 +493,36 @@ Vissa kostnader bör därför medvetet bäras gemensamt eftersom organisationen 
 
 Det knyter tillbaka till paved roads i kapitel 30: den rekommenderade vägen bör inte bara vara tekniskt enklare – den behöver också vara ekonomiskt rimlig att välja.
 
-## Kostnad och kapacitet på tre ansvarsnivåer
+## Kostnad och kapacitet som delat ansvar
 
-Bokens ansvarmodell gäller även här.
+Bokens ansvarmodell gäller även här. På gemensam nivå behövs jämförbara kostnadsbegrepp, principer för allokering och showback/chargeback samt minimikrav på vilka kostnads- och kapacitetsdata som ska kunna följas.
 
-### Gemensam arkitekturnivå
+Förmåge- och plattformsnivån behöver göra kostnadsdrivare, konsumtionsenheter, tjänste- och kvalitetsprofiler samt kapacitetsgränser begripliga. Plattformsteamet behöver kunna förklara både vad tjänsten kostar och vilket arbete eller vilken risk den hjälper organisationen att undvika.
 
-Här bör organisationen definiera sådant som behöver vara jämförbart och tvärgående:
+På lösnings- och produktnivå ligger ansvaret för den faktiska konsumtionen: välja rimlig kvalitetsprofil, dimensionera workloaden, följa kostnadsavvikelser och ompröva design när kostnadsprofilen förändras väsentligt.
 
-- principer för kostnadseffektivitet,
-- gemensamma kostnadsbegrepp,
-- minimikrav på ägarskap och allokerbarhet,
-- principer för showback/chargeback,
-- övergripande investeringsprinciper,
-- vilka kostnads- och kapacitetsdata som ska kunna följas.
-
-Den gemensamma nivån bör inte sätta detaljbudget för varje teknisk lösning.
-
-### Förmåge- och plattformsnivå
-
-Här ligger ansvar för att göra tjänsternas ekonomi begriplig:
-
-- kostnadsdrivare,
-- konsumtionsenheter,
-- tjänste- och kvalitetsprofiler,
-- kapacitetsgränser,
-- showback,
-- prognoser,
-- effektiviseringsarbete,
-- investeringsfärdplan.
-
-Plattformsteamet behöver kunna förklara både vad plattformen kostar och vilket arbete eller vilken risk den hjälper organisationen att undvika.
-
-### Lösnings-/produktnivå
-
-Här ligger ansvar för den faktiska konsumtionen och de konkreta designvalen:
-
-- välja rimlig kvalitetsprofil,
-- dimensionera workloaden,
-- följa användning och kostnadsavvikelser,
-- optimera ineffektiv konsumtion,
-- bedöma verksamhetsnytta mot kostnad,
-- ompröva arkitektur när kostnadsprofilen förändras väsentligt.
-
-Ett produktteam kan inte styra leverantörens prislista, men det kan ofta påverka hur arkitekturen konsumerar den.
+Ingen nivå kan ensam skapa kostnadseffektivitet. Gemensamma spelregler, begripliga plattformserbjudanden och lokala designval behöver ge återkoppling till varandra.
 
 ## Vanliga anti-patterns
 
-### Cost cutting efter design
-
-Arkitekturen utformas utan ekonomisk modell. När kostnaden blir för hög startar ett separat besparingsprojekt.
-
-**Konsekvens:** dyra grundval blir svåra att ändra i efterhand.
-
-### Allt mäts i total spend
-
-Organisationen följer bara totalsummor.
-
-**Konsekvens:** tillväxt och ineffektivitet blandas ihop.
-
-### Chargeback utan begriplig kostnadsmodell
-
-Intern debitering införs innan kostnadsdrivare och allokering är stabila.
-
-**Konsekvens:** team optimerar mot en godtycklig internprislista.
-
-### Gemensamt betyder gratis
-
-Plattformskonsumtion saknar all synlighet eftersom kostnaden finansieras centralt.
-
-**Konsekvens:** överkonsumtion och svaga prioriteringar blir svåra att upptäcka.
-
-### Billigast vinner
-
-Arkitekturval görs på direkt kostnad utan att väga risk, kvalitet och förändringskostnad.
-
-**Konsekvens:** lokal besparing skapar större total kostnad.
-
-### Kapacitet utan verksamhetsscenario
-
-System dimensioneras mot tekniska maxvärden utan koppling till faktisk efterfrågan och kvalitetsmål.
-
-**Konsekvens:** överkapacitet eller oväntade flaskhalsar.
+- **Cost cutting efter design:** ekonomin analyseras först när kostnaden blivit ett problem, vilket gör grundläggande designval dyra att ändra.
+- **Allt mäts i total spend:** tillväxt och ineffektivitet blandas ihop.
+- **Chargeback utan begriplig kostnadsmodell:** team optimerar mot en internprislista snarare än faktisk nytta.
+- **Gemensamt betyder gratis:** centralt finansierad konsumtion blir osynlig och överkonsumtion svår att upptäcka.
+- **Billigast vinner:** direkt kostnad tränger undan risk, kvalitet och förändringskostnad.
+- **Kapacitet utan verksamhetsscenario:** tekniska maxvärden styr dimensioneringen i stället för faktisk efterfrågan och kvalitetsmål.
 
 ## En praktisk analysordning
 
 När kostnad och kapacitet ska vägas in i ett arkitekturbeslut kan följande ordning användas:
 
-1. Identifiera verksamhetsnytta och kvalitetsprofil. Vad måste lösningen faktiskt åstadkomma?
-2. Beskriv efterfrågan. Vilken volym, variation och tillväxt förväntas?
-3. Identifiera kostnadsdrivare. Vilka tekniska egenskaper skapar huvuddelen av kostnaden?
-4. Välj relevanta konsumtionsenheter. Vad kan följas som enhetskostnad?
-5. Gör kostnaden allokerbar. Finns tydliga ägare och konsumtionsgränser?
-6. Analysera kapacitetsmarginal. Vilken reserv behövs och varför?
-7. Jämför realistiska alternativ. Inkludera både direkt och större indirekt kostnad.
-8. Granska incitament. Vilket beteende skapar finansierings- och debiteringsmodellen?
-9. Automatisera återkoppling. Gör kostnad och kapacitet synliga nära de tekniska besluten.
-10. Ompröva när enhetskostnad eller efterfrågan förändras. Ekonomin är en löpande arkitektursignal.
+1. Identifiera verksamhetsnytta, kvalitetsprofil och förväntad efterfrågan.
+2. Identifiera de viktigaste kostnadsdrivarna och relevanta konsumtionsenheterna.
+3. Säkerställ att kostnaden går att koppla till tydliga ägare och konsumtionsgränser.
+4. Bedöm kapacitetsmarginal och jämför realistiska alternativ, inklusive större indirekta kostnader.
+5. Granska vilket beteende finansierings- och debiteringsmodellen belönar.
+6. Gör kostnad och kapacitet synliga nära de tekniska besluten.
+7. Ompröva när efterfrågan, enhetskostnaden eller kvalitetsprofilen förändras väsentligt.
 
 Detta är inte en separat ekonomiprocess vid sidan av arkitekturen. Det är ett sätt att göra arkitekturbeslut mer fullständiga.
 
@@ -609,11 +538,9 @@ Det innebär att en plattformskonsument kan förstå:
 - vilken kapacitetsmarginal som ingår,
 - hur konsumtionen förändras över tid.
 
-Det innebär också att plattforms- och arkitekturansvariga kan se när ett mönster, en standard eller en tjänst skapar orimlig kostnad i större skala.
+Plattforms- och arkitekturansvariga kan samtidigt se när ett mönster, en standard eller en tjänst skapar orimlig kostnad i större skala. Kostnadsdata blir då feedback till arkitekturen, inte ett kontrollsystem vid sidan av den.
 
-Kostnadsdata blir då inte ett kontrollsystem vid sidan av arkitekturen. Den blir feedback till arkitekturen.
-
-Det är den viktigaste principen i detta kapitel:
+Kapitlets viktigaste princip är därför:
 
 > Kostnad ska vara synlig där tekniska beslut fattas, men alltid tolkas tillsammans med värde, risk och övriga kvalitetskrav.
 
