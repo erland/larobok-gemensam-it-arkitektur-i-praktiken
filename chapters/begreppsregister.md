@@ -72,7 +72,7 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Productivity Suite* — plattform/tjänst; kapitel **22**, 28, 36
 - *Programvaruutveckling och leverans* — förmåga; kapitel **21**, 8, 2, 30, 19, 35
 - *Publicera/prenumerera* — lösningsmönster; kapitel **24**, 8, 2, 17, 35, 23
-- *Publik e-tjänst* — referensarkitektur; kapitel **36**, 24, 2, 12, 4, 7
+- *Publik e-tjänst* — referensarkitektur; kapitel **36**, 35, 24, 2, 12, 4
 - *RAG/Knowledge Service* — plattform/tjänst; kapitel **16**, 36
 - *Regler och beslut* — förmåga; kapitel **14**, 8, 12, 13, 35, 25
 - *Relationell databastjänst* — plattform/tjänst; kapitel **15**, 8, 2, 28, 35, 29

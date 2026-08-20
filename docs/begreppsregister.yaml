@@ -1006,16 +1006,17 @@ concepts:
   source: 
     docs/underlag/gemensam-it-arkitektur/referensarkitekturer/02-publik-e-tjanst.md
   related_chapters:
+  - 35
   - 24
   - 2
   - 12
   - 4
   - 7
   - 1
-  - 35
   - 34
   marked_chapters:
   - 4
+  - 35
   - 36
 - id: referensarkitekturer-03
   term: Integrationsintensivt verksamhetssystem
