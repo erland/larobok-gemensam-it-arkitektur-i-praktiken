@@ -329,7 +329,7 @@ Klientnära säkerhet omfattar också frågor som:
 
 En grundregel är att hemligheter som privata nycklar eller servercredentials inte ska distribueras till en klient som användaren kontrollerar. På samma sätt behöver backend göra de auktoritativa behörighetskontrollerna även om klienten anpassar vad som visas för att ge en bättre användarupplevelse.
 
-Den fullständiga tillitsmodellen behandlas senare i kapitel 18. Interaktionsförmågan behöver framför allt säkerställa att dess standarder och gemensamma byggstenar inte gör det lätt att bygga klienter som underminerar den modellen.
+Den fullständiga tillitsmodellen behandlas senare. Interaktionsförmågan behöver framför allt säkerställa att dess standarder och gemensamma byggstenar inte gör det lätt att bygga klienter som underminerar den modellen.
 
 ## Notifieringar är både interaktion och integration
 
@@ -373,7 +373,7 @@ Förmågan bör därför uttryckas stabilt, medan plattformserbjudandet kan ange
 
 ## Typiska kvalitetsattribut för förmågan
 
-Alla kvalitetsattribut från kapitel 4 kan vara relevanta, men vissa återkommer särskilt ofta inom interaktion och presentation.
+Alla bokens kvalitetsattribut kan vara relevanta, men vissa återkommer särskilt ofta inom interaktion och presentation.
 
 ### Användbarhet
 
@@ -401,7 +401,7 @@ Frontendramverk och beroenden kan ha snabb livscykel. Standardiserad struktur, g
 
 ## Vad bör vara gemensamt och vad bör vara lokalt?
 
-Interaktionsförmågan tillämpar kapitel 9:s grundfråga: vad vinner på att vara gemensamt och vad behöver få variera nära användningssituationen?
+Interaktionsförmågan tillämpar en av bokens grundfrågor: vad vinner på att vara gemensamt och vad behöver få variera nära användningssituationen?
 
 Gemensamt ansvar passar ofta för design system, tillgänglighets- och säkerhetsbaseline, browser support, projektstrukturer, identitetsintegration, telemetri och stödda webbutvecklingserbjudanden. Verksamhetsnära team behöver däremot normalt äga användarresor, informationsprioritering, navigation, lokala arbetsflöden, språk, innehåll och den konkreta användningen av komponenterna.
 

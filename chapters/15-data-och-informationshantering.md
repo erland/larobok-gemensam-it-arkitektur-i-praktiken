@@ -2,7 +2,7 @@
 
 ## Från informationsbehov till teknisk datahantering
 
-I kapitel 11 behandlades informationens mening, ägarskap och livscykel innan teknik väljs. Det kapitlet svarade på frågor som *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Här tar vi nästa steg. Frågan är hur informationen ska realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid.
+Tidigare behandlades informationens mening, ägarskap och livscykel innan teknik väljs: *vad betyder informationen, vem äger den och vilken källa är auktoritativ?* Här tar vi nästa steg. Frågan är hur informationen ska realiseras tekniskt så att den kan lagras, ändras, återställas, kopieras, sökas fram och leva vidare över tid.
 
 Det är en annan fråga än informationsmodellering. Två verksamhetsområden kan ha väl definierade begrepp och tydligt informationsägarskap men ändå behöva helt olika tekniska mekanismer. En transaktionell ärendedatabas, ett dokumentarkiv, en cache och ett sökindex hanterar alla data, men de har olika ansvar, olika livscykel och olika krav på konsistens och återställning.
 
@@ -12,7 +12,7 @@ En användbar grundregel är:
 
 > Välj inte lagringsteknik först. Beskriv först informationens roll, livslängd, åtkomstmönster, konsistensbehov, volym, skyddsbehov och återställningskrav.
 
-Detta är behov-före-teknik-principen tillämpad specifikt på persistent och härledd data. Informationssemantiken från kapitel 11 tas här som ett ingångsvärde och återförklaras därför inte.
+Detta är behov-före-teknik-principen tillämpad specifikt på persistent och härledd data. Informationssemantiken tas här som ett ingångsvärde och återförklaras därför inte.
 
 ## Data är inte en enda typ av tekniskt problem
 
@@ -169,7 +169,7 @@ Därför är en central designfråga:
 
 Om två förändringar hör till samma domänansvar kan en lokal transaktion vara rimlig. Om de tillhör oberoende domäner behöver lösningen ofta acceptera att förändringen sker i flera steg och hantera mellanlägen explicit.
 
-Detta är en brygga mot kapitel 17 om integration och kommunikation, där meddelanden, events och asynkrona mönster behandlas mer i detalj.
+Detta är samtidigt en brygga mot integration och kommunikation, där meddelanden, events och asynkrona mönster behandlas mer i detalj.
 
 ## Historik är inte samma sak som backup
 
@@ -250,7 +250,7 @@ Viktiga frågor är exempelvis:
 - Får data lämna en viss miljö eller jurisdiktion?
 - Hur hanteras data i backup, repliker och testmiljöer?
 
-Identitet, autentisering och tjänsteidentitet behandlas i kapitel 18. Här är poängen att dataförmågan måste uttrycka skyddsbehovet och se till att skyddet omfattar hela datans livscykel, inte bara den primära databasen.
+Identitet, autentisering och tjänsteidentitet behandlas som en egen förmåga. Här är poängen att dataförmågan måste uttrycka skyddsbehovet och se till att skyddet omfattar hela datans livscykel, inte bara den primära databasen.
 
 ## Testdata är också dataarkitektur
 
@@ -269,7 +269,7 @@ Det är ett exempel på att teknisk bekvämlighet inte får skapa oavsiktliga in
 
 ## Data nära domänansvaret
 
-Kapitel 10 etablerade att domängränser och ansvar är viktigare än en organisationsgemensam datamodell. Samma princip bör normalt styra teknisk lagring.
+Domängränser och ansvar är viktigare än en organisationsgemensam datamodell. Samma princip bör normalt styra teknisk lagring.
 
 Verksamhetsdata bör i regel ägas nära den domän eller tjänst som ansvarar för dess betydelse och förändring. Det minskar risken att flera oberoende lösningar börjar skriva direkt i samma data och därmed blir hårt kopplade.
 

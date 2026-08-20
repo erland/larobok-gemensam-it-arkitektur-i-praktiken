@@ -8,9 +8,9 @@ Kärnfrågan i kapitlet är:
 
 > Hur skapar en organisation gemensamma mekanismer för att förstå, upptäcka, begränsa och återhämta sig från fel – på en nivå som motsvarar verksamhetens faktiska behov?
 
-Kapitel 4 beskrev hur tillgänglighet, kontinuitet, återställningstid och andra kvalitetskrav härleds från verksamhetskonsekvenser. Det här kapitlet tar nästa steg: vilka tekniska och operativa förmågor behövs för att realisera och verifiera sådana krav?
+Vi har sett hur tillgänglighet, kontinuitet, återställningstid och andra kvalitetskrav härleds från verksamhetskonsekvenser. Det här kapitlet tar nästa steg: vilka tekniska och operativa förmågor behövs för att realisera och verifiera sådana krav?
 
-Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer behandlades i kapitel 19. Bygg, test, release och driftsättning behandlas i kapitel 21. Fokus här ligger på observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling.
+Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer hör till applikationsexekvering och runtime. Bygg, test, release och driftsättning hör till programvaruutveckling och leverans. Fokus här ligger på observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling.
 
 ## Driftbarhet är en egenskap hos hela systemet
 
@@ -242,7 +242,7 @@ Felisolering kan skapas med exempelvis tidsgränser, separata resurspooler, begr
 
 Varje isoleringsgräns har kostnad. Frågan är därför vilka beroenden som kan orsaka oproportionerligt stora konsekvenser om de fallerar.
 
-Det är nära kopplat till diskussionen om coupling i kapitel 10. Ett system kan vara logiskt modulärt men fortfarande operativt starkt kopplat om alla delar fallerar tillsammans.
+Det är nära kopplat till tidigare resonemang om coupling. Ett system kan vara logiskt modulärt men fortfarande operativt starkt kopplat om alla delar fallerar tillsammans.
 
 ### Timeout är en arkitekturell gräns
 
@@ -308,7 +308,7 @@ Därför är verifierad restore viktigare än ett grönt backupjobb.
 
 En återställningsstrategi behöver börja med att identifiera vad som faktiskt måste kunna återskapas. Det kan omfatta mer än databasen: verksamhetsdata, objekt och dokument, konfiguration, infrastrukturbeskrivningar, nyckelmaterial, externa beroendekonfigurationer och metadata som krävs för att tolka datat.
 
-Detta behöver samordnas med dataförmågan i kapitel 15. Informationsägaren avgör vad som behöver skyddas och hur länge. Driftbarhetsförmågan tillhandahåller mekanismerna för backup och återställning.
+Detta behöver samordnas med dataförmågan. Informationsägaren avgör vad som behöver skyddas och hur länge. Driftbarhetsförmågan tillhandahåller mekanismerna för backup och återställning.
 
 ### Replikering och backup löser olika fel
 
@@ -330,7 +330,7 @@ Mekanismerna svarar alltså på olika felbilder och behöver väljas därefter.
 
 ### RPO och RTO behöver kopplas till verklig recovery
 
-Kapitel 4 introducerade Recovery Point Objective, RPO, och Recovery Time Objective, RTO som sätt att uttrycka återställningsbehov.[K3]
+Recovery Point Objective, RPO, och Recovery Time Objective, RTO har tidigare introducerats som sätt att uttrycka återställningsbehov.[K3]
 
 I driftbarhetsförmågan blir frågan om den tekniska lösningen faktiskt kan möta dem.
 
@@ -536,7 +536,7 @@ Konsumenten antar att observerbarhetsplattformen automatiskt kan förstå verksa
 
 En praktisk analys kan följa denna ordning:
 
-1. Utgå från konsekvensen. Återanvänd kvalitetskraven från kapitel 4.
+1. Utgå från konsekvensen. Återanvänd de etablerade kvalitetskraven.
 2. Identifiera kritiska användar- och verksamhetsflöden. Vad måste faktiskt fungera?
 3. Kartlägg beroenden och felmoder. Vad kan fallera och hur sprids felet?
 4. Definiera observerbara signaler. Vilka loggar, mätvärden, spår och verksamhetsnära indikatorer behövs?
@@ -568,7 +568,7 @@ Därför behöver organisationen kunna svara på ytterligare frågor:
 
 Det är nästa förmåga.
 
-I kapitel 21 – Programvaruutveckling och leverans flyttas fokus från att hålla en körande tjänst begriplig och återställningsbar till den gemensamma vägen från kod till säker och reproducerbar produktion.
+Därefter flyttas fokus från att hålla en körande tjänst begriplig och återställningsbar till den gemensamma vägen från kod till säker och reproducerbar produktion.
 
 ## Källor och vidare läsning
 

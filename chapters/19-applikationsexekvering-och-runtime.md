@@ -8,13 +8,13 @@ Kärnfrågan i kapitlet är därför:
 
 > Vad behöver en organisation erbjuda för att applikationer och andra workloads ska kunna köras standardiserat, säkert och förvaltningsbart utan att onödigt låsa lösningarna till en viss produkt eller exekveringsmodell?
 
-Kapitlet behandlar den gemensamma IT-förmågan *Applikationsexekvering och runtime*. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till kapitel 21 om programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till kapitel 20.
+Kapitlet behandlar den gemensamma IT-förmågan *Applikationsexekvering och runtime*. Fokus ligger på exekveringsmodeller, isolering, resursprofiler, konfiguration, stateless/stateful, portabilitet och relationen mellan applikation och plattform. Bygg, test och release hör primärt till programvaruutveckling och leverans. Observerbarhet, backup, recovery och operativ motståndskraft hör primärt till driftbarhet och motståndskraft.
 
 ## Workloaden är utgångspunkten
 
 En runtimeplattform bör inte väljas därför att organisationen råkar ha en viss produkt. Den bör väljas därför att workloadens egenskaper gör den lämplig.
 
-Det är samma princip som etablerades i kapitel 3: behov före teknik.
+Det är samma grundprincip som tidigare: behov före teknik.
 
 För runtime innebär det att lösningen först behöver förstå sådant som:
 
@@ -206,7 +206,7 @@ Horisontell skalning kräver därför svar på frågor som:
 - Hur hanteras samtidighet mot databasen?
 - Finns externa beroenden som inte skalar lika snabbt?
 
-Autoskalning är alltså inte ett substitut för kapacitetsdesign. Plattformen tillhandahåller mekanismer för resursallokering och skalning, medan observerbarheten i kapitel 20 ger underlag för att justera profilen utifrån verkligt beteende.
+Autoskalning är alltså inte ett substitut för kapacitetsdesign. Plattformen tillhandahåller mekanismer för resursallokering och skalning, medan observerbarhet ger underlag för att justera profilen utifrån verkligt beteende.
 
 ## Isolering är flerdimensionell
 
@@ -229,7 +229,7 @@ Det betyder att ”delad plattform” inte behöver betyda ”allt delar allt”
 
 Isoleringskravet bör uttryckas som en konsekvens av risk och kvalitetsbehov, inte som ett direkt krav på ett visst tekniskt lager. Två workloads kan exempelvis få tillräcklig separation genom identitet, nätverkspolicy och resursgränser, medan en annan behöver egen nodpool eller separat miljö därför att konsekvensen av störning eller administrativ åtkomst är större.
 
-Varje extra isoleringsnivå har samtidigt en kostnad. Separata kluster, noder eller maskiner kan förbättra separationen men minska resurseffektiviteten och öka driftbördan. Precis som i kapitel 5 behöver beslutet därför baseras på avvägningar snarare än på generella slogans.
+Varje extra isoleringsnivå har samtidigt en kostnad. Separata kluster, noder eller maskiner kan förbättra separationen men minska resurseffektiviteten och öka driftbördan. Beslutet behöver därför baseras på avvägningar snarare än på generella slogans.
 
 ## Konfiguration ska skiljas från artefakten
 
@@ -513,7 +513,7 @@ Organisationen behöver också kunna svara på:
 
 Det är nästa förmåga.
 
-I kapitel 20 – Driftbarhet och motståndskraft flyttas fokus därför från exekveringsmiljön till förmågan att förstå, återställa och hålla systemen fungerande över tid.
+Därefter flyttas fokus från exekveringsmiljön till förmågan att förstå, återställa och hålla systemen fungerande över tid.
 
 ## Källor och vidare läsning
 

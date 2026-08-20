@@ -291,7 +291,7 @@ Ett gemensamt förmågeansvar behöver kunna:
 
 Det innebär inte att förmågeansvarig ska fatta alla lokala beslut. Rollen är snarare att säkerställa att organisationen inte tappar bort helheten medan implementation och verksamhetsnära variation förblir distribuerad.
 
-Detta knyter tillbaka till ansvarmodellen från kapitel 7:
+Detta knyter tillbaka till bokens ansvarmodell:
 
 - den gemensamma arkitekturen definierar spelplanen,
 - förmågeområdet utvecklar det gemensamma stödet inom sitt område,
@@ -315,7 +315,7 @@ Därför bör organisationen regelbundet fråga:
 - Finns lokala lösningar som visar en bättre väg?
 - Bör något som är centralt bli mer federerat – eller tvärtom?
 
-Detta är samma iterativa logik som etablerades i kapitel 7. Förmågekartan är stabilare än produktlandskapet, men den är inte immun mot lärande.
+Detta är samma iterativa logik som etablerades tidigare. Förmågekartan är stabilare än produktlandskapet, men den är inte immun mot lärande.
 
 ## Två korta exempel
 

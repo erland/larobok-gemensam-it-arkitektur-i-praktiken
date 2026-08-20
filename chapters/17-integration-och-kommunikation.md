@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 > Vilken kommunikationsform passar behovet – och vilken koppling mellan parterna är vi beredda att acceptera?
 
-Kapitlet handlar om den gemensamma IT-förmågan *Integration och kommunikation*. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering behandlades i kapitel 13. Informationsägarskap och datalivscykel behandlades i kapitel 11 och 15. Identitet och tillit kommer i kapitel 18.
+Kapitlet handlar om den gemensamma IT-förmågan *Integration och kommunikation*. Fokus ligger på informationsutbyte mellan självständiga lösningar och på de mekanismer som kan göras gemensamma. Verksamhetsmässig processorkestrering, informationsägarskap och datalivscykel behandlas som separata frågor, liksom identitet och tillit.
 
 ## Integration är ett beroende mellan självständiga parter
 
@@ -273,9 +273,9 @@ Integration kräver nätverk, identitet, säkerhet och observerbarhet, men integ
 
 Nätverksregler bör härledas från dokumenterade tjänsterelationer: vem kommunicerar med vem, i vilken riktning, för vilket syfte, med vilken identitet och under vilka kvalitets- och säkerhetskrav. En brandväggsregel utan känd tjänsterelation blir annars snabbt ett historiskt beroende som ingen vågar förändra.
 
-Ett integrationsflöde behöver också kunna svara på vem eller vilken tjänst motparten är, hur den autentiseras, vilken behörighet den har och vilka trust boundaries som passeras. Kapitel 18 fördjupar identitet och tillit.
+Ett integrationsflöde behöver också kunna svara på vem eller vilken tjänst motparten är, hur den autentiseras, vilken behörighet den har och vilka trust boundaries som passeras. Detta fördjupas i avsnittet om identitet och tillit.
 
-Viktiga flöden behöver dessutom kunna följas över systemgränser, exempelvis med korrelations-id, strukturerad loggning, spårning, meddelandeidentifierare och mätvärden för ködjup, fel och latens. Kapitel 20 behandlar de bredare mekanismerna för observerbarhet och operativ återkoppling.
+Viktiga flöden behöver dessutom kunna följas över systemgränser, exempelvis med korrelations-id, strukturerad loggning, spårning, meddelandeidentifierare och mätvärden för ködjup, fel och latens. De bredare mekanismerna för observerbarhet och operativ återkoppling behandlas i förmågan för driftbarhet och motståndskraft.
 
 Poängen är att integration definierar kommunikationsrelationens behov, medan andra förmågor tillhandahåller återanvändbara mekanismer för nätverk, identitet, säkerhet och driftbarhet.
 

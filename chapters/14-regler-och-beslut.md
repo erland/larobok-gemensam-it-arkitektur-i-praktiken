@@ -103,7 +103,7 @@ En vanlig missuppfattning är att explicit regelhantering betyder att alla verks
 
 Det är normalt en dålig slutsats.
 
-Som kapitel 10 visade har verksamhetslogik ett domänansvar. Att en gemensam plattform kan exekvera regler innebär inte att plattformen bör äga deras mening.
+Verksamhetslogik har ett domänansvar. Att en gemensam plattform kan exekvera regler innebär inte att plattformen bör äga deras mening.
 
 En mer hållbar struktur kan vara:
 
@@ -296,7 +296,7 @@ Exempelvis kan en modell beräkna en risksignal medan explicita regler avgör vi
 
 Det innebär inte att denna struktur alltid är rätt. Men den gör ansvarsfördelningen tydlig: modellen producerar en bedömning; beslutslagret tillämpar explicita regler.
 
-Kapitel 16 återkommer till AI-specifika kvalitets- och styrningsfrågor.
+AI-specifika kvalitets- och styrningsfrågor behandlas senare.
 
 ## Beslutsdata måste ha tydlig betydelse
 

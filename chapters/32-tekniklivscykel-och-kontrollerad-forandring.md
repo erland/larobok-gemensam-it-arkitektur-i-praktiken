@@ -6,7 +6,7 @@ Det skapar en grundläggande spänning. Om organisationen byter riktning för of
 
 Tekniklivscykel handlar därför inte om att alltid välja det nyaste. Den handlar om att förändra teknikportföljen med tillräcklig framförhållning, tydliga beslut och kontrollerade övergångar.
 
-Det är också viktigt att skilja detta från den bredare governancefrågan. I det här kapitlet ligger fokus på livscykeln för tekniker, produkter, versioner och närliggande standarder. Hur hela arkitekturmodellen förvaltas, hur mandat organiseras och hur gemensam governance fungerar över tid behandlas i kapitel 37.
+Det är också viktigt att skilja detta från den bredare governancefrågan. Här ligger fokus på livscykeln för tekniker, produkter, versioner och närliggande standarder. Hur hela arkitekturmodellen förvaltas, hur mandat organiseras och hur gemensam governance fungerar över tid behandlas i bokens avslutande del.
 
 ## Stabil arkitektur kräver rörlig teknik
 
@@ -229,7 +229,7 @@ Då blir livscykelstatus inte bara en etikett i en katalog utan en del av den fa
 
 Teknikbyte har en kostnad hos plattformsteam, lösningsteam, drift, verksamhet, upphandling och kompetensutveckling. Samtidigt finns en kostnad för att inte förändra: högre supportbörda, säkerhetsrisk, kompetensbrist och dyrare framtida migration.
 
-Livscykelbeslut behöver därför synliggöra båda sidor utan att göra kapitel 32 till ett ekonomiskapitel. Det är särskilt viktigt när den som beslutar om en gemensam teknikförändring inte bär hela migrationskostnaden själv. En billigare eller enklare plattform kan bli dyr för organisationen om hundratals konsumenter behöver omfattande anpassning. På motsvarande sätt kan en planerad migration vara ekonomiskt rimlig även om den kortsiktigt kräver investering, eftersom den minskar framtida support- och riskkostnad. Kapitel 33 fördjupar kostnad, kapacitet och incitament som arkitekturfrågor.
+Livscykelbeslut behöver därför synliggöra båda sidor utan att göra detta till ett ekonomiskapitel. Det är särskilt viktigt när den som beslutar om en gemensam teknikförändring inte bär hela migrationskostnaden själv. En billigare eller enklare plattform kan bli dyr för organisationen om hundratals konsumenter behöver omfattande anpassning. På motsvarande sätt kan en planerad migration vara ekonomiskt rimlig även om den kortsiktigt kräver investering, eftersom den minskar framtida support- och riskkostnad. Kostnad, kapacitet och incitament som arkitekturfrågor fördjupas därefter.
 
 ## Ansvar genom livscykeln
 

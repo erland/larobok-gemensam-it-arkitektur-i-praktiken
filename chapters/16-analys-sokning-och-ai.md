@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 > Vilken typ av informationsbearbetning behöver vi – sökning, analys, prediktion eller generering – och vilka krav följer av just den typen?
 
-Detta kapitel bygger vidare på kapitel 11 om informationens betydelse och ägarskap samt kapitel 15 om teknisk datahantering. Här ligger fokus inte på var primär data lagras, utan på hur information indexeras, sammanställs, analyseras och används för inferens eller generering.
+Detta kapitel bygger vidare på resonemangen om informationens betydelse och ägarskap samt teknisk datahantering. Här ligger fokus inte på var primär data lagras, utan på hur information indexeras, sammanställs, analyseras och används för inferens eller generering.
 
 ## Fyra olika problem som ofta blandas ihop
 
@@ -38,7 +38,7 @@ Men kombination betyder inte att kategorierna bör behandlas som samma sak.
 
 Ett vanligt arkitekturfel är att börja i den mest uppmärksammade tekniken. Om användaren säger ”jag vill kunna fråga på naturligt språk” kan lösningen snabbt formuleras som ”vi behöver en LLM”. Men det verkliga behovet kan vara ett väl avgränsat sökproblem där en bättre sökmodell, bra metadata och ett tydligt gränssnitt ger högre precision och lägre komplexitet.
 
-Principen från kapitel 3 gäller alltså fullt ut även här:
+Principen *behov före teknik* gäller alltså fullt ut även här:
 
 > AI är ett möjligt lösningsval, inte ett behov.
 
@@ -55,7 +55,7 @@ Det kan exempelvis innehålla:
 - behörighetsinformation för filtrering,
 - vektorrepresentationer för semantisk sökning.
 
-Detta gör sökindexet till ännu ett exempel på en härledd kopia, enligt modellen i kapitel 15.
+Detta gör sökindexet till ännu ett exempel på en härledd kopia.
 
 För en söklösning behöver man därför kunna svara på frågor som:
 
@@ -131,7 +131,7 @@ Ta ett enkelt nyckeltal som genomsnittlig handläggningstid. För att måttet sk
 - vilka ärendetyper som ingår,
 - vilken tidsperiod som används.
 
-Analysförmågan kan erbjuda teknik för visualisering och databehandling, men den kan inte ensam avgöra vad verksamhetsbegreppet betyder. Därför behöver analysplattformen kopplas tillbaka till informationsägarskapet från kapitel 11.
+Analysförmågan kan erbjuda teknik för visualisering och databehandling, men den kan inte ensam avgöra vad verksamhetsbegreppet betyder. Därför behöver analysplattformen kopplas tillbaka till informationsägarskapet.
 
 En central princip är:
 
@@ -141,7 +141,7 @@ Semantiken måste ägas och förvaltas lika medvetet som tekniken.
 
 ## Maskininlärning – inferens i stället för explicit regel
 
-I kapitel 14 skilde vi mellan explicita verksamhetsregler och AI-baserad inferens. Skillnaden är grundläggande.
+Vi har skilt mellan explicita verksamhetsregler och AI-baserad inferens. Skillnaden är grundläggande.
 
 En deterministisk regel kan exempelvis uttryckas:
 
@@ -177,7 +177,7 @@ Det finns ingen enda siffra som beskriver om en modell är ”bra”.
 
 För en klassificeringsmodell kan exempelvis falska positiva och falska negativa utfall ha helt olika verksamhetskonsekvenser. En modell som flaggar misstänkta händelser kan behöva optimeras annorlunda beroende på om det värsta felet är att missa ett verkligt riskfall eller att skapa för många onödiga kontroller.
 
-Kvalitetsmåttet måste därför härledas från användningen, precis som andra kvalitetsattribut i kapitel 4.
+Kvalitetsmåttet måste därför härledas från användningen, precis som andra kvalitetsattribut.
 
 Det är också viktigt att skilja mellan:
 
@@ -363,7 +363,7 @@ Några centrala frågor är:
 - Får informationen användas för detta ändamål?
 - Kan vi spåra vilket underlag som användes?
 
-Detta är en direkt koppling till kapitel 11 och 15. En AI-plattform kan förenkla modellåtkomst, men kan inte ersätta informationsägarskap, bra källmaterial eller tydlig semantik. En lösning som optimerar modell och prompt men försummar kunskapsbasen angriper därför fel del av problemet.
+Detta är en direkt koppling till bokens informations- och dataresonemang. En AI-plattform kan förenkla modellåtkomst, men kan inte ersätta informationsägarskap, bra källmaterial eller tydlig semantik. En lösning som optimerar modell och prompt men försummar kunskapsbasen angriper därför fel del av problemet.
 
 ## Utvärdering måste ske på systemnivå
 
@@ -430,7 +430,7 @@ Om en hanterad modell konsumeras som tjänst kontrollerar leverantören delar av
 
 ## Kvalitetskrav för analys-, sök- och AI-förmågan
 
-De generella kvalitetsdimensionerna från kapitel 4 får särskilda uttryck här.
+De generella kvalitetsdimensionerna får särskilda uttryck här.
 
 ### Korrekthet och verifierbarhet
 
@@ -486,7 +486,7 @@ Därför behöver kostnad kunna följas per relevant användningsfall och inte b
 
 ## Ansvar på tre nivåer
 
-Den tredelade ansvarmodellen från kapitel 7 är särskilt viktig i ett område med hög teknisk förändringstakt.
+Den tredelade ansvarmodellen är särskilt viktig i ett område med hög teknisk förändringstakt.
 
 På **gemensam arkitekturnivå** behövs framför allt principer för informationsskydd, spårbarhet, mänsklig kontroll, utvärdering och livscykel samt tydliga gränser mot data, identitet, integration och andra förmågor. Den nivån behöver inte välja modell eller sökalgoritm för varje användningsfall.
 

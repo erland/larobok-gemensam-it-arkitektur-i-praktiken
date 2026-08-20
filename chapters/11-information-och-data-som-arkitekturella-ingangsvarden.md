@@ -54,7 +54,7 @@ Om de tekniska modellerna kommer först riskerar representationen att börja sty
 
 ## Informationsbehov före datamodell
 
-Kapitel 3 etablerade principen *behov före teknik*. Samma princip gäller inom dataområdet.
+Principen *behov före teknik* gäller även inom dataområdet.
 
 En vanlig men riskabel arbetsordning är:
 
@@ -132,7 +132,7 @@ Det minskar också risken att en gammal databasstruktur blir organisationens de 
 
 ## Informationsägarskap handlar om mandat
 
-Kapitel 10 behandlade ägarskap som en del av domängränser. Här behöver vi gå ett steg djupare.
+Ägarskap är en del av domängränserna. Här behöver vi gå ett steg djupare.
 
 Informationsägarskap betyder inte att ett visst system råkar lagra en uppgift. Det handlar om mandat och ansvar för informationens betydelse, kvalitet och livscykel.
 
@@ -327,7 +327,7 @@ Auktoritativ källa
 
 Varje gren har ett syfte och ett ansvar.
 
-Kapitel 15 kommer att fördjupa hur sådana kopior, cachemekanismer, historik och konsistensmodeller kan realiseras tekniskt. Här räcker det att etablera att beslutet om varför en kopia finns och vilken roll den har måste tas innan tekniken väljs.
+Senare fördjupas hur sådana kopior, cachemekanismer, historik och konsistensmodeller kan realiseras tekniskt. Här räcker det att etablera att beslutet om varför en kopia finns och vilken roll den har måste tas innan tekniken väljs.
 
 ## Gemensam informationsmodell eller federerad semantik?
 

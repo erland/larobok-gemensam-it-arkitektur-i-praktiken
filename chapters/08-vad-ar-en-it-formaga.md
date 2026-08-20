@@ -142,7 +142,7 @@ För en gemensam IT-förmåga behöver organisationen över tid kunna svara på 
 - hur vet vi om erbjudandena faktiskt används och skapar värde?
 - vem ansvarar för att dessa frågor hålls samman?
 
-Detta betyder inte att allt måste dokumenteras från början. Kapitel 7 betonade tvärtom en iterativ etablering. Men frågorna visar vad som skiljer en förmåga från en etikett.
+Detta betyder inte att allt måste dokumenteras från början. Etableringen behöver tvärtom vara iterativ. Men frågorna visar vad som skiljer en förmåga från en etikett.
 
 Förmågan är ett sätt att samla ett relativt stabilt problemområde så att behov, ansvar, arkitekturbeslut och återanvändbara erbjudanden kan utvecklas sammanhängande över tid.
 
@@ -219,7 +219,7 @@ Men kartan bör inte försöka bära all information själv. Om varje ruta fylls
 
 Bättre är att behandla kartan som ett index till en rikare modell. För varje förmåga kan det finnas en separat beskrivning med syfte, omfattning, kvaliteter, mönster, plattformstjänster, standarder och relationer. Kartan visar strukturen; underliggande artefakter ger detaljerna.
 
-Det är samma princip som i kapitel 2: olika frågor behöver olika artefakter på rätt abstraktionsnivå.
+Det är samma grundprincip som tidigare: olika frågor behöver olika artefakter på rätt abstraktionsnivå.
 
 ## Stabil betyder inte oföränderlig
 

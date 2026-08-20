@@ -17,7 +17,7 @@ Detta kapitel behandlar hur arkitekturbeslut kan göras explicita, jämförbara 
 
 ## Arkitektur är val under begränsningar
 
-I kapitel 3 skilde vi mellan behov, begränsningar och teknikval. I kapitel 4 såg vi hur kvalitetsattribut gör vissa egenskaper arkitekturdrivande. Tillsammans skapar de beslutsrymmet.
+Vi har skilt mellan behov, begränsningar och teknikval och sett hur kvalitetsattribut gör vissa egenskaper arkitekturdrivande. Tillsammans skapar de beslutsrymmet.
 
 En förenklad bild är:
 

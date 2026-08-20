@@ -2,9 +2,9 @@
 
 Integration är sällan svårt därför att två system inte kan utbyta bytes. Det svåra är att låta två självständiga delar samarbeta utan att deras livscykler, fel, belastning och interna modeller växer ihop mer än nödvändigt. Därför är integrationsmönster i första hand mönster för beroenden. De hjälper oss att bestämma vem som känner till vem, när parterna måste vara tillgängliga samtidigt, vilket ansvar som ligger i kontraktet och vad som händer när något går fel.
 
-Kapitel 17 beskrev integrations- och kommunikationsförmågan och valen mellan exempelvis API, messaging, events, filutbyte och dataförflyttning. Här ligger fokus på en annan nivå. Vi ska se hur återkommande lösningsstrukturer kan användas för att hantera dessa behov. Mönstren är inte konkurrerande tekniker som man väljer en gång för hela organisationen. De är svar på olika krafter och kombineras ofta i samma lösning.
+Integrations- och kommunikationsförmågan omfattar val mellan exempelvis API, messaging, events, filutbyte och dataförflyttning. Här ligger fokus på en annan nivå. Vi ska se hur återkommande lösningsstrukturer kan användas för att hantera dessa behov. Mönstren är inte konkurrerande tekniker som man väljer en gång för hela organisationen. De är svar på olika krafter och kombineras ofta i samma lösning.
 
-Fokus ligger därför på mönstrens struktur, krafter, konsekvenser och kombinationer, inte på att återupprepa kommunikationsformerna från kapitel 17.
+Fokus ligger därför på mönstrens struktur, krafter, konsekvenser och kombinationer, inte på att återupprepa de tidigare behandlade kommunikationsformerna.
 
 Tre mönster står i centrum:
 
@@ -234,7 +234,7 @@ Asynkrona mönster är bra på att hindra ett tillfälligt fel från att omedelb
 
 En kö kan fortsätta ta emot meddelanden trots att ingen konsument lyckas behandla dem. Användarens initiala anrop ser kanske lyckat ut samtidigt som den faktiska verksamhetsprocessen står still.
 
-Därför behöver integrationsmönstren kopplas till driftbarhetsmönstren från kapitel 27:
+Därför behöver integrationsmönstren kopplas till driftbarhetsmönstren:
 
 - ködjup behöver kunna observeras,
 - återförsök behöver mätas,
