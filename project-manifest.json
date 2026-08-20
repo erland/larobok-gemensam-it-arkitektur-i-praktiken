@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev106.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev111.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -36,26 +36,27 @@
       "chapters/31-tekniska-standarder-och-deras-nivaer.md": "4e7b327529a142a43e1b3350191ab1bce78da0fffc8065238b4aeed0dd80ed47",
       "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "386f37d740ca734e3d88b6c98aacb930e608dfded6bc529afd518ba27cbe5d14",
       "chapters/33-ekonomi-kostnad-och-kapacitet.md": "d397275b296a9a9fc45345252da9e34b845fd8c549b55fad31756163f4b6b808",
-      "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": "3d0a9549d96cfc3f7d9e6c5bae2bfbe92deb1c32f40d45368f6f9dc86262a763",
-      "chapters/35-fran-behov-till-losningsarkitektur.md": "247664bf2002d089920b3ff454c3b16ffbac87541998537f388332bb68f4da38",
-      "chapters/36-sju-aterkommande-losningsscenarier.md": "087ff9e5dde2624f6b449bbd7d385e3578e0fea9ea225ee8ba2f0f0df2a96e23",
-      "chapters/37-governance-forvaltning-och-evolution.md": "c7f1d7e7399ae4309ee15c5a02a2aca51c9d00851a31f3874a9865b6691738e4"
+      "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": "be5334b81933d180dc30b0555a15ac5757e93ed0533c762c6a3dd5c4e4ed2260",
+      "chapters/35-fran-behov-till-losningsarkitektur.md": "62ffc3492c62e5b4434cfd7c00a107183c15266bcaa9b400799e0d39ced00206",
+      "chapters/36-sju-aterkommande-losningsscenarier.md": "4c5f42e12863b8c79f3c0bace799844058bd3a81ef966828f7e43d43067235c9",
+      "chapters/37-governance-forvaltning-och-evolution.md": "9b23fa6f5a40238b0d19d90be6e55dfaa5ef7b16a45a408f2e33348419f1c656"
     },
     "latest": 37
   },
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
+      "chapters/begreppsregister.md",
       "docs/begreppsregister.yaml",
-      "docs/register-korsreferenssynk-pass-5.md"
+      "docs/register-korsreferenssynk-pass-6.md"
     ],
-    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del V",
-    "source_revision": 105
+    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del VI",
+    "source_revision": 110
   },
-  "parent_revision": 105,
+  "parent_revision": 110,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 106,
+  "revision": 111,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -232,24 +233,24 @@
       "sha256": "d397275b296a9a9fc45345252da9e34b845fd8c549b55fad31756163f4b6b808"
     },
     "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": {
-      "bytes": 27212,
-      "sha256": "3d0a9549d96cfc3f7d9e6c5bae2bfbe92deb1c32f40d45368f6f9dc86262a763"
+      "bytes": 19823,
+      "sha256": "be5334b81933d180dc30b0555a15ac5757e93ed0533c762c6a3dd5c4e4ed2260"
     },
     "chapters/35-fran-behov-till-losningsarkitektur.md": {
-      "bytes": 27341,
-      "sha256": "247664bf2002d089920b3ff454c3b16ffbac87541998537f388332bb68f4da38"
+      "bytes": 17705,
+      "sha256": "62ffc3492c62e5b4434cfd7c00a107183c15266bcaa9b400799e0d39ced00206"
     },
     "chapters/36-sju-aterkommande-losningsscenarier.md": {
-      "bytes": 21663,
-      "sha256": "087ff9e5dde2624f6b449bbd7d385e3578e0fea9ea225ee8ba2f0f0df2a96e23"
+      "bytes": 15967,
+      "sha256": "4c5f42e12863b8c79f3c0bace799844058bd3a81ef966828f7e43d43067235c9"
     },
     "chapters/37-governance-forvaltning-och-evolution.md": {
-      "bytes": 24076,
-      "sha256": "c7f1d7e7399ae4309ee15c5a02a2aca51c9d00851a31f3874a9865b6691738e4"
+      "bytes": 13869,
+      "sha256": "9b23fa6f5a40238b0d19d90be6e55dfaa5ef7b16a45a408f2e33348419f1c656"
     },
     "chapters/begreppsregister.md": {
-      "bytes": 7354,
-      "sha256": "ee43aa8e7d15bc756df7ad9f2c500618f2ac43d985402e104a79eaf5b2828fee"
+      "bytes": 7355,
+      "sha256": "fe8f3b669c6b91b9d5cc93f83ff1738a2b4a6ba01a8ef6fd94b536b6cfe718da"
     },
     "chapters/del-01.md": {
       "bytes": 50,
@@ -292,8 +293,8 @@
       "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
     },
     "docs/begreppsregister.yaml": {
-      "bytes": 24429,
-      "sha256": "735678528ce109b715b80513c0aa6292c9bbab554df7ac85999246b738632ce3"
+      "bytes": 24436,
+      "sha256": "3f87aed130ed1db8ec665a0ed608062bbdf08f60265cb870b1c6ccac7dd5ba8a"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
@@ -374,6 +375,10 @@
     "docs/register-korsreferenssynk-pass-5.md": {
       "bytes": 2265,
       "sha256": "7cae64e56cf99eaeffa4a3767b237d4537e886137cf8ab0273b5e41081d361d3"
+    },
+    "docs/register-korsreferenssynk-pass-6.md": {
+      "bytes": 2322,
+      "sha256": "edf7e3a630580965a18e183610ce473a4eb916b45ef31b730016ac1b6a1f5a1d"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -888,8 +893,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 51566,
-      "sha256": "f6b32961cd2d2206da97fbda166b3789a1e629078e6a76cd8477197dd222f677"
+      "bytes": 53106,
+      "sha256": "a93b6dedec24db1d2af89efe55b155eea5638eb3bc8adb2b8d5a71b76d415952"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -916,5 +921,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T13:54:42Z"
+  "updated_at": "2026-08-20T15:08:15Z"
 }
