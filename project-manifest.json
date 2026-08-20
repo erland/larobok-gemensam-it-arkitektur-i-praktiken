@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev93.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev99.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -25,11 +25,11 @@
       "chapters/20-driftbarhet-och-motstandskraft.md": "d609784d510475aec809ef3f531cf409976178c36cf4fabde891abf7329c0ce4",
       "chapters/21-programvaruutveckling-och-leverans.md": "46e0511fd6c287e4bb639db47976fc7f3a6d1b5ea867f02ba46442e6617fc8f0",
       "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "040278979b792d0fc5086d0322c958339591af72a634233c1c77fd31f09629bf",
-      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "42753c5c3f3c21c3764647434bdc6fb8afb4ba9298c611eda6e3a9cddb8fe03a",
-      "chapters/24-integrations-och-kommunikationsmonster.md": "b2f01fb2c200d8285b366c5562bd2f038f8e5366c88cfef125e08352f21625bc",
-      "chapters/25-process-regel-och-datamonster.md": "382077fbf2752fefafa2340eeed1a3fdf5af2509c6a28014a6c210cec7c391d8",
-      "chapters/26-ai-identitets-och-runtime-monster.md": "c22b45ae9b622800bf5a26265f1e3405199f3126226b95e8bcf33e3e35e80d54",
-      "chapters/27-drift-och-leveransmonster.md": "37faf67bdfec958be91d9b2c202c19ed6b9c8f26717db1afcf29edf641e81637",
+      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "adb16a9b7a7081ae8b22ab5bce7f48192a375e15ce135ec073705934f15389da",
+      "chapters/24-integrations-och-kommunikationsmonster.md": "8b5beb4cd8982882f4113be0231ea02b3780e423459e94a9e6e4003d5011f101",
+      "chapters/25-process-regel-och-datamonster.md": "b3b5e0a3a04c8ad1dcb2d11efdbbeb6a0e3bf654e62ecd1576cff09e365d7816",
+      "chapters/26-ai-identitets-och-runtime-monster.md": "be6c7c63841dd9600587aa9eb5e76ff64684af153b4a0e9fd6ff6c89b7f02b31",
+      "chapters/27-drift-och-leveransmonster.md": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf",
       "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "22570679089fb0bbceb35c28aeab1e2f6ab96dd98f9f132e1780583c65d5a097",
       "chapters/29-platform-as-a-product.md": "e73e8902953669a0eb73e71e5722e25241d124124ecfebd5366837f9940ab143",
       "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "f13f160a1c5349170dc50f31efd1397ec34ae94571d7f3939b18beacb4554c3e",
@@ -46,17 +46,16 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/begreppsregister.md",
       "docs/begreppsregister.yaml",
-      "docs/register-korsreferenssynk-pass-3.md"
+      "docs/register-korsreferenssynk-pass-4.md"
     ],
-    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del III",
-    "source_revision": 92
+    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del IV",
+    "source_revision": 98
   },
-  "parent_revision": 92,
+  "parent_revision": 98,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 93,
+  "revision": 99,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -189,24 +188,24 @@
       "sha256": "040278979b792d0fc5086d0322c958339591af72a634233c1c77fd31f09629bf"
     },
     "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": {
-      "bytes": 27804,
-      "sha256": "42753c5c3f3c21c3764647434bdc6fb8afb4ba9298c611eda6e3a9cddb8fe03a"
+      "bytes": 24135,
+      "sha256": "adb16a9b7a7081ae8b22ab5bce7f48192a375e15ce135ec073705934f15389da"
     },
     "chapters/24-integrations-och-kommunikationsmonster.md": {
-      "bytes": 26208,
-      "sha256": "b2f01fb2c200d8285b366c5562bd2f038f8e5366c88cfef125e08352f21625bc"
+      "bytes": 24641,
+      "sha256": "8b5beb4cd8982882f4113be0231ea02b3780e423459e94a9e6e4003d5011f101"
     },
     "chapters/25-process-regel-och-datamonster.md": {
-      "bytes": 28890,
-      "sha256": "382077fbf2752fefafa2340eeed1a3fdf5af2509c6a28014a6c210cec7c391d8"
+      "bytes": 27440,
+      "sha256": "b3b5e0a3a04c8ad1dcb2d11efdbbeb6a0e3bf654e62ecd1576cff09e365d7816"
     },
     "chapters/26-ai-identitets-och-runtime-monster.md": {
-      "bytes": 27990,
-      "sha256": "c22b45ae9b622800bf5a26265f1e3405199f3126226b95e8bcf33e3e35e80d54"
+      "bytes": 26586,
+      "sha256": "be6c7c63841dd9600587aa9eb5e76ff64684af153b4a0e9fd6ff6c89b7f02b31"
     },
     "chapters/27-drift-och-leveransmonster.md": {
-      "bytes": 27921,
-      "sha256": "37faf67bdfec958be91d9b2c202c19ed6b9c8f26717db1afcf29edf641e81637"
+      "bytes": 26741,
+      "sha256": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf"
     },
     "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": {
       "bytes": 24738,
@@ -294,7 +293,7 @@
     },
     "docs/begreppsregister.yaml": {
       "bytes": 24422,
-      "sha256": "37662d39adef403d491f5fea05d2f140f7da8a5e82c48ede98daa4ddf90d27be"
+      "sha256": "bff8f5cf33a64494f3c22cad84cc52de903d306d1501adec4d53db6284d465fb"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
@@ -367,6 +366,10 @@
     "docs/register-korsreferenssynk-pass-3.md": {
       "bytes": 2378,
       "sha256": "4532d13d1473e294ae50912230c427d52d2ad1be348906d9ef4c700f5e786244"
+    },
+    "docs/register-korsreferenssynk-pass-4.md": {
+      "bytes": 2531,
+      "sha256": "57cdf41fdd53a691d510a1249676cd2ae745259c5aac67b4657ef9d2afdeee32"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -881,8 +884,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 47959,
-      "sha256": "a493e37ed28d12c0451e8ca79f6cb449cec82e2a1278fa730908d6f46af66410"
+      "bytes": 49598,
+      "sha256": "7dd47a27e42af4f55e1ce121ae6e6b97adb3f9c6f9c16fc0eb95dbaac463a39d"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -909,5 +912,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T05:29:27Z"
+  "updated_at": "2026-08-20T06:25:25Z"
 }

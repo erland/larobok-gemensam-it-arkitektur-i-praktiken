@@ -328,6 +328,7 @@ concepts:
   - 1
   marked_chapters:
   - 1
+  - 23
   - 33
 - id: monster-11
   term: Containeriserad stateless tjänst
@@ -994,7 +995,6 @@ concepts:
   - 7
   - 1
   - 35
-  - 23
   - 34
   marked_chapters:
   - 1

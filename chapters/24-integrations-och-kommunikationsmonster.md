@@ -4,7 +4,7 @@ Integration är sällan svårt därför att två system inte kan utbyta bytes. D
 
 Kapitel 17 beskrev integrations- och kommunikationsförmågan och valen mellan exempelvis API, messaging, events, filutbyte och dataförflyttning. Här ligger fokus på en annan nivå. Vi ska se hur återkommande lösningsstrukturer kan användas för att hantera dessa behov. Mönstren är inte konkurrerande tekniker som man väljer en gång för hela organisationen. De är svar på olika krafter och kombineras ofta i samma lösning.
 
-I resten av kapitlet återupprepas därför inte kapitel 17:s katalog över kommunikationsformer. Fokus ligger på mönstrens struktur, krafter, konsekvenser och kombinationer.
+Fokus ligger därför på mönstrens struktur, krafter, konsekvenser och kombinationer, inte på att återupprepa kommunikationsformerna från kapitel 17.
 
 Tre mönster står i centrum:
 
@@ -131,7 +131,11 @@ En kö gör inte en lösning robust av sig själv. Tvärtom introducerar mönstr
 
 Därför hör leveransbeteende och felhantering till mönstret, inte till en senare driftfråga.
 
-## Idempotens – designa för att samma sak kan hända igen
+## Leveranssemantik och felhantering
+
+Asynkrona mönster minskar tidskoppling men gör leveransbeteendet till en del av arkitekturen. Robustheten avgörs därför inte av att en kö eller broker finns, utan av hur lösningen hanterar dubbletter, tillfälliga och permanenta fel, ordning, upprepade försök och fel som inte kan lösas automatiskt.
+
+**Idempotens – designa för att samma sak kan hända igen.**
 
 I distribuerade system är det ofta svårt att veta om ett försök misslyckades före eller efter att mottagaren hann genomföra operationen. Ett timeoutfel kan exempelvis betyda att mottagaren aldrig fick meddelandet, men också att operationen lyckades och bara svaret försvann.
 
@@ -143,7 +147,7 @@ Om kommandot ”Registrera betalning” levereras två gånger ska det exempelvi
 
 Idempotens är inte detsamma som att ignorera alla dubbletter. I vissa domäner kan två till synes identiska händelser vara två verkliga verksamhetshändelser. Det är därför den logiska identiteten för operationen som behöver modelleras, inte bara dess payload.
 
-## Återförsök – återförsök bara sådant som kan lyckas senare
+**Återförsök – bara när felet kan lyckas senare.**
 
 Återförsök är en mekanism, inte en universell felhantering.
 
@@ -171,7 +175,7 @@ Robust återförsök behöver därför normalt ta ställning till:
 - hur operationens idempotens säkerställs,
 - vad som händer när försöken är slut.
 
-## Dead-letter-hantering – ett stopp är början på ett arbetsflöde
+**Dead-letter – början på ett arbetsflöde, inte slutförvaring.**
 
 När ett meddelande inte kan behandlas efter tillåtna försök behöver det ofta flyttas åt sidan så att resten av flödet kan fortsätta. Detta beskrivs ofta som dead-letter-hantering.
 
@@ -189,7 +193,7 @@ En dead-letter-mekanism behöver därför kopplas till frågor som:
 
 En dead-letter-kö som ingen övervakar är inte en felhanteringsstrategi. Den är ett arkiv över ouppklarade problem.
 
-## Ordering – betala bara för ordning när ordningen betyder något
+**Ordering – betala bara för ordning när den betyder något.**
 
 Ordering är en typisk integrationsfråga där ett generellt ”starkare” beteende kan vara dyrare än verksamheten behöver.
 
@@ -205,6 +209,41 @@ Det finns dessutom flera nivåer av ordering:
 - ingen garanterad ordning.
 
 Att kräva global ordning när endast per-ärende-ordning behövs kan minska parallellism och skalbarhet. Därför bör ordering formuleras som ett konkret verksamhetskrav och avgränsas till den minsta nödvändiga mängden meddelanden.
+
+**”Exakt en gång” är ofta fel fråga.**
+
+I integrationsdiskussioner dyker ofta önskemålet ”exactly once” upp. Bakom det finns vanligtvis ett legitimt verksamhetskrav: en verksamhetseffekt får inte uppstå dubbelt.
+
+Det är bättre att formulera just det kravet än att börja med en transportegenskap.
+
+En robust lösning kan exempelvis kombinera:
+
+- minst-en-gång-leverans,
+- stabilt operations-id,
+- idempotent konsument,
+- transaktionell lokal hantering,
+- tydlig återställningsprocedur.
+
+Ur verksamhetens perspektiv kan detta ge den önskade effekten utan att hela den distribuerade kedjan måste lova ett absolut ”exakt en gång”-beteende.
+
+Poängen är inte att en viss leveranssemantik alltid är rätt, utan att verksamhetseffekten ska beskrivas först och den tekniska mekanismen därefter.
+
+**Fel ska isoleras men inte döljas.**
+
+Asynkrona mönster är bra på att hindra ett tillfälligt fel från att omedelbart spridas bakåt. Det kan göra systemet mer motståndskraftigt. Samtidigt finns en risk att fel blir mindre synliga.
+
+En kö kan fortsätta ta emot meddelanden trots att ingen konsument lyckas behandla dem. Användarens initiala anrop ser kanske lyckat ut samtidigt som den faktiska verksamhetsprocessen står still.
+
+Därför behöver integrationsmönstren kopplas till driftbarhetsmönstren från kapitel 27:
+
+- ködjup behöver kunna observeras,
+- återförsök behöver mätas,
+- dead-letter-volymer behöver larmas,
+- end-to-end-latens behöver följas,
+- korrelationsinformation behöver följa flödet,
+- verksamhetsnära status behöver kunna skiljas från teknisk transportstatus.
+
+Lös koppling får inte betyda lös ansvarskedja.
 
 ## Publicera/prenumerera – uttryck fakta utan att styra mottagarna
 
@@ -371,150 +410,26 @@ När flera mönster kombineras behöver man analysera helheten:
 
 Ett korrekt valt mönster lokalt garanterar alltså inte en bra arkitektur globalt.
 
-## Exakt en gång är ofta fel fråga
+## Plattformstöd och ansvar
 
-I integrationsdiskussioner dyker ofta önskemålet ”exactly once” upp. Bakom det finns vanligtvis ett legitimt verksamhetskrav: en verksamhetseffekt får inte uppstå dubbelt.
+Gemensamma tjänster för API management, messaging, eventdistribution, kontraktsregister, observerbarhet samt identitets- och certifikathantering kan göra rätt integrationsmönster enklare att använda. De bör ge guardrails och standardprofiler, men inte tvinga alla behov in i samma kommunikationsform. En messagingplattform är inte ett argument för att allt ska vara asynkront, och ett API-gateway-erbjudande är inte ett argument för att varje intern metod ska exponeras som API.
 
-Det är bättre att formulera just det kravet än att börja med en transportegenskap.
+Ansvarsfördelningen följer den modell som redan etablerats i boken. Den gemensamma nivån sätter principer, miniminivåer för säkerhet, spårbarhet och kontraktslivscykel. Förmågeansvaret för Integration och kommunikation omsätter detta i mönster, profiler, plattformserbjudanden och stöd. Den konkreta lösningen avgör däremot vilken relation som faktiskt finns mellan parterna, vilket mönster som passar och hur leverans-, ordering-, idempotens- och felbeteende ska realiseras.
 
-En robust lösning kan exempelvis kombinera:
-
-- minst-en-gång-leverans,
-- stabilt operations-id,
-- idempotent konsument,
-- transaktionell lokal hantering,
-- tydlig återställningsprocedur.
-
-Ur verksamhetens perspektiv kan detta ge den önskade effekten utan att hela den distribuerade kedjan måste lova ett absolut ”exakt en gång”-beteende.
-
-Poängen är inte att en viss leveranssemantik alltid är rätt, utan att verksamhetseffekten ska beskrivas först och den tekniska mekanismen därefter.
-
-## Fel ska isoleras men inte döljas
-
-Asynkrona mönster är bra på att hindra ett tillfälligt fel från att omedelbart spridas bakåt. Det kan göra systemet mer motståndskraftigt. Samtidigt finns en risk att fel blir mindre synliga.
-
-En kö kan fortsätta ta emot meddelanden trots att ingen konsument lyckas behandla dem. Användarens initiala anrop ser kanske lyckat ut samtidigt som den faktiska verksamhetsprocessen står still.
-
-Därför behöver integrationsmönstren kopplas till driftbarhetsmönstren från kapitel 27:
-
-- ködjup behöver kunna observeras,
-- återförsök behöver mätas,
-- dead-letter-volymer behöver larmas,
-- end-to-end-latens behöver följas,
-- korrelationsinformation behöver följa flödet,
-- verksamhetsnära status behöver kunna skiljas från teknisk transportstatus.
-
-Lös koppling får inte betyda lös ansvarskedja.
-
-## Gemensamma plattformstjänster ska stödja mönstret – inte definiera det
-
-Organisationen kan erbjuda gemensamma tjänster för exempelvis:
-
-- API management,
-- messaging,
-- eventdistribution,
-- schema- eller kontraktsregister,
-- observerbarhet,
-- identitets- och certifikathantering.
-
-Dessa tjänster kan göra rätt mönster enklare att använda och ge gemensamma guardrails. Men plattformen bör inte tvinga alla integrationsbehov in i samma mönster.
-
-En enterprise messaging-plattform är inte ett argument för att allt ska vara asynkront. En eventplattform är inte ett argument för att alla förändringar ska publiceras som events. Ett API-gateway-erbjudande är inte ett argument för att varje intern metod ska exponeras som API.
-
-Plattformstjänsten realiserar ett behov. Den skapar inte behovet.
-
-## Ansvar på tre nivåer
-
-De tre ansvarsnivåerna blir särskilt tydliga för integrationsmönster.
-
-### Gemensam arkitekturnivå
-
-Den gemensamma nivån bör definiera sådant som behöver vara konsekvent över flera förmågor och domäner, exempelvis:
-
-- gemensamma principer för kontraktsägarskap,
-- grundläggande integrationsmönster och deras användningsområden,
-- krav på säkerhet, spårbarhet och observerbarhet,
-- miniminivå för kontraktslivscykel,
-- gemensamma mekanismer för identitet och kommunikation över organisationsgränser.
-
-Den bör däremot inte välja ett integrationssätt för varje lokal relation.
-
-### Förmågenivå
-
-De som ansvarar för Integration och kommunikation bör fördjupa exempelvis:
-
-- mönsterbeskrivningar,
-- standardprofiler,
-- plattformserbjudanden för API och messaging,
-- vägledning för återförsök, dead-letter och kontraktsutveckling,
-- observerbarhetskrav för integrationsflöden,
-- stöd för onboarding och felsökning.
-
-Förmågeansvaret gör mönstren användbara i praktiken.
-
-### Lösnings-/produktnivå
-
-Den konkreta lösningen behöver besluta:
-
-- vilken relation som faktiskt finns mellan parterna,
-- vilket mönster som passar,
-- vilken semantik kontraktet har,
-- vilka ordering- och leveranskrav verksamheten behöver,
-- hur idempotens realiseras,
-- vad som händer vid fel,
-- hur kontraktet ska förändras över tid.
-
-Detta kan inte central nivå besluta utan kunskap om domänen.
+Plattformstjänsten realiserar alltså ett behov och ett valt mönster. Den skapar inte behovet.
 
 ## Vanliga anti-patterns
 
-### Allt blir event
+Några återkommande fel är särskilt värda att känna igen:
 
-Organisationen bestämmer att arkitekturen ska vara ”eventdriven” och börjar publicera varje intern förändring som event. Resultatet blir stora mängder tekniska notifieringar utan tydligt domänansvar.
-
-**Motfråga:** vilket faktum behöver en oberoende konsument faktiskt reagera på?
-
-### Asynkront för att slippa hantera fel
-
-Ett synkront beroende ersätts med kö för att ”bli robust” men ingen definierar återförsök, dead-letter, status eller kompensation.
-
-**Konsekvens:** felet flyttas i tid men blir svårare att förstå.
-
-### BFF som verksamhetslager
-
-BFF börjar äga regler och data som egentligen är gemensamma för flera kanaler.
-
-**Konsekvens:** verksamhetslogiken dupliceras och kanalarkitekturen styr domänmodellen.
-
-### Återförsök utan idempotens
-
-Samma operation kan utföras flera gånger när mottagaren lyckades men svaret eller acknowledgements försvann.
-
-**Konsekvens:** teknisk robusthet skapar verksamhetsfel.
-
-### Dead-letter som slutförvaring
-
-Misslyckade meddelanden hamnar i en teknisk kö utan ägare, larm eller säker återföringsprocess.
-
-**Konsekvens:** systemet ser stabilt ut medan verksamhetsarbete försvinner ur flödet.
-
-### Global ordering som standard
-
-Alla meddelanden serialiseras trots att verksamheten endast behöver lokal ordning inom ett ärende.
-
-**Konsekvens:** onödig flaskhals och minskad skalbarhet.
-
-### Event som dolt RPC
-
-Producenten publicerar ett ”event” som i själva verket instruerar en namngiven konsument att göra något.
-
-**Konsekvens:** stark semantisk koppling döljs bakom asynkron transport.
-
-### Eviga kontraktsversioner
-
-Nya versioner läggs till men ingen planerar migration och avveckling.
-
-**Konsekvens:** integrationslandskapet blir successivt svårare och dyrare att förändra.
+- **Allt blir event.** Tekniska notifieringar publiceras utan tydligt domänansvar. Fråga vilket faktum en oberoende konsument faktiskt behöver reagera på.
+- **Asynkront för att slippa hantera fel.** En kö införs utan definierade återförsök, dead-letter, status eller kompensation. Felet flyttas bara i tid.
+- **BFF som verksamhetslager.** Kanalnära lagret börjar äga regler och data som ska vara gemensamma över kanaler.
+- **Återförsök utan idempotens.** En teknisk återhämtningsmekanism kan då skapa dubbla verksamhetseffekter.
+- **Dead-letter som slutförvaring.** Misslyckade meddelanden saknar ägare, larm och säker återföringsprocess.
+- **Global ordering som standard.** Allt serialiseras trots att verksamheten bara behöver lokal ordning inom exempelvis ett ärende.
+- **Event som dolt RPC.** Ett ”event” instruerar i praktiken en namngiven konsument och döljer den semantiska kopplingen.
+- **Eviga kontraktsversioner.** Nya versioner införs utan migrations- och avvecklingsplan.
 
 ## En praktisk analysordning
 

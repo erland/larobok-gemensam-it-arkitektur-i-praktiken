@@ -2,7 +2,7 @@
 
 En lösning är inte färdig när koden fungerar på en utvecklares dator. Den måste kunna byggas reproducerbart, förflyttas mellan miljöer utan att ändra identitet, observeras när den körs och återställas när något går fel. Det är först då leverans och drift blir delar av arkitekturen i stället för aktiviteter som läggs på i slutet.
 
-Kapitel 20 och 21 beskrev förmågorna driftbarhet respektive leverans. Här återupprepas inte deras fulla mekanismer; vi fokuserar på tre återanvändbara mönster och på de beroenden som uppstår när de kombineras.
+Här fokuserar vi på tre återanvändbara mönster och på de beroenden som uppstår när leverans och drift kombineras.
 
 I det här kapitlet fördjupar vi tre lösningsmönster från bokens mönsterbibliotek:
 
@@ -620,95 +620,24 @@ Samarbetsplattformen är själv otillgänglig i incidenten
 
 ## Hur ansvar bör fördelas
 
-Precis som i tidigare kapitel behöver mönstren fördelas över bokens tre ansvarsnivåer.
+Ansvarsfördelningen följer samma princip som i tidigare kapitel. Den gemensamma arkitekturnivån sätter spelregler där inkonsistens skapar organisationsövergripande risk, exempelvis krav på spårbar artefaktidentitet, miniminivå för telemetri och korrelation, backup-/recoveryprofiler och återställningstest för vissa riskklasser.
 
-### Gemensam arkitekturnivå
-
-Den gemensamma nivån bör sätta spelregler där inkonsistens skapar organisationsövergripande risk.
-
-Det kan omfatta:
-
-- krav på spårbar artefaktidentitet,
-- gemensamma principer för build once/promote many,
-- miniminivå för telemetri och korrelation,
-- gemensam terminologi för SLI/SLO,
-- backup-/recoveryprofiler,
-- krav på återställningstest för vissa riskklasser,
-- principer för separation mellan primär och skyddad kopia,
-- gemensamma metadata för version, miljö och tjänsteidentitet.
-
-Den gemensamma nivån bör däremot inte detaljdesigna varje teams pipeline, instrumentpanel eller backupjobb.
-
-### Förmågenivå
-
-Förmågeansvariga för programvaruleverans respektive driftbarhet kan omsätta de gemensamma reglerna i konsumerbara erbjudanden:
-
-- CI/CD-plattform,
-- artefaktregister,
-- pipelinekomponenter,
-- driftsättningsstöd,
-- logging-/mätvärden-/tracingtjänster,
-- dashboardskelett,
-- backup- och recoverytjänster,
-- standardprofiler och golden paths.
-
-De behöver också mäta om erbjudandena faktiskt hjälper lösningsteamen att uppnå kraven.
-
-### Lösnings-/produktnivå
-
-Varje lösning behöver fortfarande fatta lokala beslut:
-
-- vilka artefakter som ingår,
-- vilka kvalitetsgrindar som krävs,
-- vilka SLI:er som representerar tjänstens funktion,
-- vilka data som är skyddsvärda,
-- vilket RPO/RTO som gäller,
-- vilka återställningsberoenden som finns,
-- vilka release- och rollbackstrategier som är realistiska.
+Förmågenivån omsätter dessa krav i konsumerbara erbjudanden som CI/CD-plattform, artefaktregister, pipelinekomponenter, observability-tjänster, backup- och recoverytjänster samt standardprofiler och golden paths. Lösnings-/produktnivån avgör däremot vilka SLI:er som representerar tjänstens funktion, vilka data som är skyddsvärda, vilket RPO/RTO som gäller och vilka release-, rollback- och återställningsstrategier som är realistiska.
 
 Det gemensamma stödet minskar mängden uppfinning, men kan inte avgöra lösningens verksamhetskonsekvens.
 
 ## Vanliga anti-patterns
 
-### Build per miljö
+Några återkommande fel är särskilt värda att känna igen:
 
-Samma källkod byggs om inför varje miljö. Test och produktion får därmed olika artefaktidentitet och tillitskedjan bryts.
-
-### Mutable latest
-
-Ett generiskt versionsnamn återanvänds och pekar på olika innehåll över tid. Det blir svårt att bevisa vad som faktiskt kördes eller testades.
-
-### Miljökonfiguration bakas in i artefakten
-
-En ny build krävs bara för att endpoint eller annat miljövärde förändras.
-
-### Telemetri utan frågor
-
-Systemet producerar stora mängder loggar och mätvärden men ingen har definierat vilka frågor de ska kunna besvara.
-
-### instrumentpanel som mål
-
-Att en instrumentpanel existerar behandlas som bevis på observerbarhet, trots att den inte kopplar signaler till användar- eller verksamhetskonsekvens.
-
-### Alarm på allt
-
-Varje tekniskt tröskelvärde genererar larm. Resultatet blir brus och larmtrötthet.
-
-### Backup equals done
-
-Ett grönt backupjobb betraktas som bevis på återställningsförmåga utan fullständigt restore-test.
-
-### Replikering kallas backup
-
-Hög tillgänglighet blandas ihop med skydd mot logisk korruption, radering eller angrepp.
-
-### Restore utan applikationsversion
-
-Data kan återställas men organisationen vet inte vilken applikationsartefakt eller schemaversion som kan använda den.
-
-### Återställning beroende av den havererade miljön
-
-driftinstruktioner, credentials eller kontrollverktyg finns bara i samma fel- eller hotdomän som ska återställas.
+- **Build per miljö:** samma källkod byggs om inför varje miljö och test–produktionskedjan får olika artefaktidentitet.
+- **Mutable latest:** samma versionsnamn pekar på olika innehåll över tid, vilket förstör spårbarheten.
+- **Miljökonfiguration i artefakten:** en ny build krävs för miljöspecifika värden som borde vara kontrollerad körkonfiguration.
+- **Telemetri utan frågor:** stora mängder signaler produceras utan att någon definierat vilka frågor de ska besvara.
+- **Instrumentpaneler eller larm som mål:** dashboards och tekniska tröskellarm blir ett självändamål i stället för stöd för tjänstens SLI:er och verksamhetskonsekvenser.
+- **Backup equals done:** ett grönt backupjobb ses som bevis på återställningsförmåga utan verifierat restore-test.
+- **Replikering kallas backup:** hög tillgänglighet blandas ihop med skydd mot logisk korruption, radering eller angrepp.
+- **Ofullständig restorekedja:** data kan återställas men rätt applikationsversion, credentials, instruktioner eller kontrollverktyg saknas eller ligger i samma felgräns som den havererade miljön.
 
 ## Ett genomgående exempel
 
