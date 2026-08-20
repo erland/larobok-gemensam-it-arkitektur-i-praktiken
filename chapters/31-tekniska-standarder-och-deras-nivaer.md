@@ -240,57 +240,17 @@ Det är betydligt mer informativt än att båda bara märks ”standard”.
 
 ## Bindningsgrad bör följa konsekvens
 
-Hur hårt en standard bör vara styrande bör bero på vad variationen kan orsaka.
+Hur hårt en standard bör vara styrande bör bero på vad variationen kan orsaka. Lokal variation med liten konsekvens kan lämnas fri, medan variation i exempelvis identitetsprotokoll, meddelandekontrakt eller säkerhetsmekanismer kan skapa gemensam risk och integrationskostnad.
 
-Om olika team väljer olika färger på lokala utvecklingsverktyg är konsekvensen liten.
+Det är samma logik som tidigare i boken: beslut bör fattas på den lägsta nivå som fortfarande kan bära hela konsekvensen.
 
-Om olika team däremot använder inkompatibla identitetsprotokoll eller meddelandekontrakt kan variationen skapa:
+Interoperabilitet är därför ett särskilt starkt standardiseringsskäl. När flera system måste kommunicera behöver de dela vissa antaganden om exempelvis protokoll, kontrakt, identifierare, semantik, felbeteende, säkerhetsmekanismer och versionsprinciper. Däremot behöver deras interna implementation inte standardiseras.
 
-- säkerhetsrisk,
-- integrationskostnad,
-- svårförvaltade beroenden,
-- dubbel infrastruktur,
-- låg återanvändbarhet.
-
-Ju större gemensam konsekvens, desto starkare är argumentet för bindande standardisering.
-
-Man kan förenklat tänka:
-
-```text
-Lokal konsekvens
-      ↓
-Mer lokal frihet
-
-Gemensam konsekvens
-      ↓
-Starkare standardisering
-```
-
-Det är samma logik som ansvarsfördelningen tidigare i boken: beslut bör fattas på den lägsta nivå som fortfarande kan bära hela konsekvensen.
-
-## Interoperabilitet är ett särskilt starkt standardiseringsskäl
-
-Interoperabilitet är ett område där standarder ofta skapar mycket stor nytta.
-
-När flera system måste kommunicera behöver de kunna dela vissa antaganden:
-
-- protokoll,
-- kontrakt,
-- identifierare,
-- semantik,
-- felbeteende,
-- säkerhetsmekanismer,
-- versionsprinciper.
-
-Det är inte nödvändigt att standardisera systemens interna implementation för att uppnå interoperabilitet.
-
-Tvärtom är en viktig arkitekturprincip att standardisera gränssnittet där gemensamhet krävs och lämna intern implementation friare där variation inte skadar helheten.
-
-Detta kan sammanfattas som:
+En användbar tumregel är:
 
 > Standardisera gränsen före insidan.
 
-Det är ofta en bättre strategi än att försöka standardisera hela teknikstacken.
+Det ger gemensamhet där den behövs utan att låsa hela teknikstacken. Samma princip gör det möjligt att ha flera tekniska realiseringar bakom ett gemensamt kontrakt när deras interna skillnader inte påverkar omgivningen.
 
 ## Compliance och verifierbarhet
 
@@ -314,80 +274,25 @@ Men en formulering som:
 
 är för vag för att vara en effektiv teknisk standard.
 
-En bättre standard kan uttrycka vilka signaler, metadata och korrelationsmekanismer som ska finnas och därefter låta en plattformsprofil eller policy kontrollera dem automatiskt.
+En bättre standard kan uttrycka vilka signaler, metadata och korrelationsmekanismer som ska finnas och därefter låta en plattformsprofil eller policy kontrollera dem automatiskt. Verifieringen behöver inte alltid vara helt automatiserad, men det bör vara tydligt vilken evidens som visar att kravet är uppfyllt och var kontrollen sker.
 
 Det knyter direkt till kapitel 30: en mogen paved road gör många standarder inbyggda i konsumtionsvägen.
 
-## Standarder och plattformar måste stödja varandra
+## Standarder behöver stöd i plattformar och andra arkitekturartefakter
 
-En standard blir betydligt lättare att följa när plattformen stödjer den.
+En standard blir betydligt lättare att följa när plattformen och de rekommenderade vägarna stödjer den. Om varje team manuellt måste implementera krav på tjänsteidentitet, observerbarhet, containerpaketering, CI/CD och secrets blir standarderna en belastning. Om en golden path i stället etablerar workload identity, logg- och tracekonfiguration, standardpipeline, godkänd base image och secrets-integration blir samma regler en del av den enklaste vägen.
 
-Anta att organisationen har en standard för:
+Det är därför ofta bättre att realisera gemensamma standarder genom tjänster, automation och policy-as-code än att lämna dem som dokument som varje team tolkar separat.
 
-- tjänsteidentitet,
-- observerbarhet,
-- containerpaketering,
-- CI/CD,
-- secrets.
-
-Om varje team manuellt måste implementera alla dessa regler är standarderna en belastning.
-
-Om en golden path däremot automatiskt etablerar:
-
-- workload identity,
-- logg- och tracekonfiguration,
-- standardpipeline,
-- godkänd base image,
-- secrets-integration,
-
-blir samma standarder en del av den enklaste vägen.
-
-Det är en viktig princip:
-
-> Gemensamma standarder bör så långt det är rimligt realiseras genom gemensamma tjänster och automation.
-
-Annars riskerar organisationen att skapa ett stort dokumentbibliotek som varje produktteam förväntas implementera separat.
-
-## Standarder och lösningsmönster har olika roller
-
-Ett mönster beskriver ett återkommande sätt att hantera ett problem och dess avvägningar.
-
-En standard uttrycker vilket beteende eller val organisationen har beslutat att gemensamt stödja eller kräva.
+Samtidigt har standarder, mönster och principer olika roller. Ett mönster beskriver ett återkommande sätt att hantera ett problem och dess avvägningar. En standard uttrycker vilket beteende eller val organisationen har beslutat att stödja eller kräva gemensamt. En princip är mer generell och hjälper organisationen att fatta nya beslut.
 
 Exempel:
 
+- **Princip:** behov före teknik.
 - **Mönster:** *Backend for Frontend*.
 - **Standard:** API-kontrakt ska följa organisationens API-konventioner.
 
-Mönstret svarar på:
-
-> När är denna struktur lämplig och vilka konsekvenser får den?
-
-Standarden svarar på:
-
-> När vi exponerar ett API, vilka gemensamma regler gäller?
-
-En organisation kan alltså ha flera godkända mönster som alla måste följa samma standard i sina gränssnitt.
-
-## Standarder och principer har olika abstraktionsnivå
-
-En princip är ännu mer generell.
-
-Exempel:
-
-> Behov före teknik.
-
-En relaterad standard kan säga:
-
-> Nya synkrona tjänstegränssnitt ska använda organisationens fastställda API-kontrakt.
-
-Principen hjälper organisationen att fatta nya beslut. Standarden konkretiserar ett redan etablerat gemensamt beslut.
-
-Om standardkatalogen fylls med formuleringar som egentligen är principer blir den svår att verifiera.
-
-Om principkatalogen fylls med produktnamn blir den snabbt inaktuell.
-
-Separationen behövs för att varje artefakt ska kunna förändras i rätt takt.
+Separationen gör att varje artefakt kan förändras i rätt takt. Om standardkatalogen fylls med principer blir den svår att verifiera; om principkatalogen fylls med produktnamn blir den snabbt inaktuell.
 
 ## Produktstandarder bör kopplas till tjänster
 
@@ -409,7 +314,7 @@ Supportmatris: versioner A och B
 Plattformsprofil: standard / high availability
 ```
 
-Detta skapar spårbarhet tillbaka till förmågan och behovet.
+Detta skapar spårbarhet tillbaka till förmågan och behovet. Det blir också tydligare när två produktstandarder faktiskt realiserar samma tjänst men för olika användningsfall eller kvalitetsprofiler; då kan organisationen formulera valkriterier i stället för att behandla båda som likvärdiga standardprodukter.
 
 Det gör också produktportföljen lättare att ifrågasätta.
 
@@ -477,55 +382,15 @@ Vilken process gäller när standarden inte passar?
 
 Vem äger standarden och när ska den omprövas?
 
-Denna struktur gör standarden användbar både för människor och för framtida automation.
+Denna struktur gör standarden användbar både för människor och för framtida automation. Den hjälper också läsaren att skilja själva standardbeslutet från den supportmatris, konfiguration eller produktdokumentation som förändras snabbare.
 
-## Undantag är en del av modellen
+## Undantag är en del av modellen – och en källa till feedback
 
-Ingen genomtänkt standardmodell bör utgå från att undantag aldrig behövs.
+Ingen genomtänkt standardmodell bör utgå från att undantag aldrig behövs. Legitima orsaker kan vara ett verksamhetskrav som standardlösningen inte kan möta, ett legacysystem, ett externt krav, ett experiment eller en övergångsperiod under migrering.
 
-Tvärtom finns det flera legitima orsaker:
+Ett undantag bör vara ett synligt och tidsbegränsat beslut som anger vilken standard som frångås, varför, vilka risker som accepteras, vem som beslutat, hur länge undantaget gäller och vad som krävs för omprövning eller migration.
 
-- ett verksamhetskrav som standardlösningen inte kan möta,
-- ett legacysystem med särskilda begränsningar,
-- ett experiment som behöver pröva ny teknik,
-- ett externt krav,
-- en övergångsperiod under migrering.
-
-Men undantag bör vara medvetna beslut, inte osynliga avvikelser.
-
-Ett undantag bör därför normalt innehålla:
-
-- vilken standard som avviks från,
-- varför,
-- vilka risker som accepteras,
-- vem som beslutat,
-- hur länge undantaget gäller,
-- när det ska omprövas,
-- eventuell migreringsplan.
-
-Det är särskilt viktigt att undantag inte automatiskt blir permanenta.
-
-Tidsbegränsning är ofta ett effektivt sätt att skilja en verklig transition från en ny oavsiktlig standard.
-
-## Många undantag är feedback
-
-Om ett fåtal lösningar behöver avvika kan problemet vara lokalt.
-
-Om många lösningar begär samma undantag bör standardägaren fråga:
-
-> Är standarden fel – eller saknas en legitim variant?
-
-Återkommande avsteg kan indikera att:
-
-- standarden är för snäv,
-- plattformen inte möter behovet,
-- en ny kvalitetsprofil behövs,
-- tekniklandskapet har förändrats,
-- standardens rationale inte längre gäller.
-
-Undantag är därför också telemetri för arkitekturstyrningen.
-
-Samma tanke har återkommit genom boken: lokal erfarenhet ska kunna förbättra den gemensamma modellen.
+Undantagen ger samtidigt återkoppling till standardägaren. Om många lösningar behöver samma avsteg kan standarden vara för snäv, en legitim variant saknas, plattformen inte möta behovet eller tekniklandskapet ha förändrats. Många liknande undantag ska därför behandlas som en signal om att den gemensamma modellen behöver prövas, inte bara som lokala avvikelser.
 
 ## Standardisering får inte bli produktlåsning av gammal vana
 
@@ -572,67 +437,30 @@ Ett experiment kan få andra krav än en produktionstjänst, men behöver samtid
 - vad krävs för att tekniken ska gå vidare?
 - vem ansvarar för städning om försöket avslutas?
 
-På så sätt kan organisationen både standardisera produktion och skapa en kontrollerad väg för lärande.
+På så sätt kan organisationen både standardisera produktion och skapa en kontrollerad väg för lärande. Ett lyckat experiment ska inte automatiskt bli ny standard; det behöver först bedömas mot behov, kvalitetskrav, supportbarhet och konsekvenser för resten av tekniklandskapet.
 
 Detta leder naturligt till nästa kapitel om tekniklivscykel.
 
 ## Ansvar på tre nivåer
 
-Bokens tredelade ansvarmodell fungerar även för standarder.
+Standardisering följer samma ansvarmodell som resten av boken. Den gemensamma arkitekturnivån definierar standardmodell, bindningsgrader, undantagsprinciper och tvärgående regler. Förmågenivån äger områdesspecifika standarder, exempelvis API-, identitets- eller CI/CD-standarder, och följer hur de fungerar i praktiken. Lösnings-/produktnivån tillämpar standarderna, dokumenterar lokala val och begär undantag när det finns sakliga skäl.
 
-### Gemensam arkitekturnivå
-
-Den gemensamma nivån bör definiera:
-
-- standardmodell och standardtyper,
-- hur bindningsgrad uttrycks,
-- regler för undantag,
-- principer för livscykel,
-- tvärgående standarder som påverkar flera förmågor,
-- hur standarder kopplas till referensarkitekturer och gemensamma kvalitetskrav.
-
-Den ska inte behöva äga varje detaljstandard.
-
-### Förmågenivå
-
-Förmågeområdet bör äga de standarder som hör till det egna området.
-
-Exempel:
-
-- *Integration och kommunikation* äger API- och messagingstandarder.
-- Identitet och tillit äger identitets- och tjänsteidentitetsstandarder.
-- *Programvaruutveckling och leverans* äger release-, repository- och CI/CD-relaterade standarder.
-
-Förmågeansvaret bör också följa hur standarderna fungerar i praktiken och identifiera behov av förändring.
-
-### Lösnings-/produktnivå
-
-Den lokala lösningen ska:
-
-- förstå vilka standarder som gäller,
-- använda rekommenderade vägar när de passar,
-- dokumentera lokala beslut som inte behöver standardiseras,
-- begära undantag när det finns verkliga skäl,
-- ge återkoppling när standarden skapar onödig friktion.
-
-Detta gör standardisering till ett federerat ansvar inom gemensamma ramar snarare än en central lista som en liten grupp försöker detaljförvalta.
+På så sätt blir standardisering ett federerat ansvar inom gemensamma ramar snarare än en central katalog som försöker detaljstyra alla tekniska beslut.
 
 ## En praktisk analysordning
 
 När organisationen överväger att skapa eller ändra en teknisk standard kan följande frågor användas:
 
-1. Vilken variation försöker vi kontrollera?
-2. Vilken gemensam konsekvens orsakar variationen?
-3. Behöver vi standardisera gränssnittet, produkten, versionen eller konfigurationen?
-4. Vilken bindningsgrad är proportionerlig?
-5. Kan standarden överleva ett produktbyte?
-6. Vilken plattform eller golden path hjälper konsumenten att följa den?
-7. Hur verifieras efterlevnad?
-8. Hur hanteras legitima undantag?
-9. Vem äger standarden?
-10. Vilken signal säger att den bör omprövas eller avvecklas?
+1. Vilken variation försöker vi kontrollera och vilken gemensam konsekvens orsakar den?
+2. Är det gränssnittet, produkten, versionen eller konfigurationen som behöver standardiseras?
+3. Vilken bindningsgrad är proportionerlig?
+4. Kan standarden överleva ett produktbyte?
+5. Vilken plattform, golden path eller automation hjälper konsumenten att följa den?
+6. Hur verifieras efterlevnad och hur hanteras legitima undantag?
+7. Vem äger standarden?
+8. Vilken signal säger att den bör omprövas eller avvecklas?
 
-Om dessa frågor inte går att besvara är det ofta för tidigt att kalla beslutet en gemensam standard.
+Om frågorna inte går att besvara är det ofta för tidigt att kalla beslutet en gemensam standard.
 
 ## Från standardkatalog till kontrollerad variation
 
