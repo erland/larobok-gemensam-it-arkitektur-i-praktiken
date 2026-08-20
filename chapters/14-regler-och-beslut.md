@@ -130,25 +130,11 @@ Det verksamhetsmässiga ägarskapet för respektive regelverk förblir däremot 
 
 Detta följer samma princip som för andra gemensamma IT-förmågor: gemensam mekanism behöver inte innebära centraliserad verksamhetslogik.
 
-## Regel eller processvillkor?
+## Gränsen mot processvillkor och domänlogik
 
-Kapitel 13 skilde mellan processens ansvar och domänens ansvar. Regler och beslut skapar ytterligare en gräns.
+Regler och beslut behöver avgränsas både mot processlogik och mot vanlig domänkod. En användbar fråga är om logiken har en egen verksamhetsmässig livscykel som motiverar att den kan förstås, testas och förändras separat från det som använder den.
 
-Anta ett workflow där ett ärende efter registrering antingen går till automatisk handläggning eller manuell granskning.
-
-Om villkoret endast är ett lokalt tekniskt vägval i just den processen kan det vara rimligt att uttrycka det direkt i processmodellen.
-
-Om samma klassificering däremot:
-
-- används i flera processer,
-- har en egen verksamhetsdefinition,
-- förändras oberoende av processflödet,
-- behöver testas separat,
-- eller måste kunna förklaras i efterhand,
-
-bör den snarare behandlas som ett eget beslut.
-
-Processen kan då fråga:
+Anta ett workflow där ett ärende efter registrering går till automatisk handläggning eller manuell granskning. Om villkoret bara är ett lokalt vägval i just processen kan det ligga i processmodellen. Om samma klassificering däremot används i flera processer, har en egen verksamhetsdefinition, förändras oberoende av flödet eller måste kunna förklaras i efterhand bör den behandlas som ett eget beslut.
 
 ```text
 Workflow
@@ -160,30 +146,11 @@ Beslutstjänst
 AUTOMATISK | MANUELL | SÄRSKILD_KONTROLL
 ```
 
-Processen äger *vad som händer efter resultatet*. Beslutstjänsten äger *hur kategorin avgörs*.
+Processen äger vad som händer efter resultatet. Beslutet äger hur kategorin avgörs. Det gör att process och beslutslogik kan förändras i olika takt.
 
-Detta gör att process och beslut kan förändras i olika takt.
+Vanlig domänkod är samtidigt ofta bäst när logiken bara används i en komponent, är nära kopplad till domänmodellens beteende och förändras tillsammans med övrig funktionalitet. Explicit regelhantering blir starkare när regelverket i sig är en förvaltningsvärd artefakt – exempelvis ett avgiftsregelverk med giltighetsperioder och historisk spårbarhet – snarare än ett enkelt villkor som skyddar ett lokalt domäninvariant.
 
-## Regel eller domänlogik?
-
-Gränsen mot vanlig domänlogik är svårare.
-
-Det finns ingen universell regel som säger att en viss sorts villkor alltid ska ligga i en regelmotor. En användbar fråga är i stället:
-
-> Har logiken en egen verksamhetsmässig livscykel som motiverar att den kan förstås och förändras separat från den kod som använder den?
-
-Vanlig kod är ofta bäst när:
-
-- logiken bara används i en komponent,
-- reglerna är nära kopplade till domänmodellens beteende,
-- förändringen sker tillsammans med övrig funktionalitet,
-- utvecklare är de naturliga förvaltarna,
-- separat regelrepresentation inte tillför begriplighet,
-- testning i kod ger tillräcklig säkerhet.
-
-Explicit regelhantering blir starkare när regelverket i sig är en förvaltningsvärd artefakt.
-
-Det är därför ofta bättre att externalisera ett komplext avgiftsregelverk med giltighetsperioder och historisk spårbarhet än ett enkelt villkor som säkerställer att en domänoperation inte kan utföras på ett redan avslutat objekt.
+Gränsen är alltså inte teknisk. Samma slags villkor kan ligga i vanlig kod i ett sammanhang och vara ett explicit beslut i ett annat. Avgörande är behovet av separat begriplighet, återanvändning, ändringstakt, spårbarhet och förvaltning.
 
 ## Beslutstabeller som verktyg för begriplighet
 
@@ -267,26 +234,15 @@ Om varje lokal beräkning måste göra ett synkront nätverksanrop till en centr
 - driftsättningsberoenden,
 - geografiska eller säkerhetsmässiga begränsningar.
 
-Återanvändning genom tjänsteanrop är alltså inte automatiskt bättre än återanvändning genom gemensam modell, bibliotek eller distribuerad regelartefakt.
+Återanvändning genom tjänsteanrop är alltså inte automatiskt bättre än återanvändning genom gemensam modell, bibliotek eller distribuerad regelartefakt. En central tjänst kan vara rätt när konsekvent exekvering och gemensam förvaltning väger tungt; lokal exekvering kan vara bättre när latens, robusthet eller isolering dominerar.
 
-Det rätta mönstret beror på kvalitetskraven.
+Det rätta mönstret beror på kvalitetskraven och på vilken nivå av återanvändning som faktiskt behövs.
 
-## Versionering är en del av beslutet
+## Versionering, förklarbarhet och testning
 
-För verksamhetskritiska eller rättsligt betydelsefulla beslut räcker det sällan att veta vilken applikationsversion som körde.
+För verksamhetskritiska eller rättsligt betydelsefulla beslut räcker det sällan att veta vilken applikationsversion som körde. Arkitekturen kan behöva skilja mellan modellversion, verksamhetsmässig giltighetsperiod, driftsättningstidpunkt och den tidpunkt då det konkreta beslutet fattades. Ett ärende som kom in före en regeländring men avgörs efter den kan exempelvis behöva bedömas enligt den äldre regeln. Ett beslut kan annars inte säkert reproduceras i efterhand.
 
-Anta att en avgiftsregel förändras den 1 januari. Ett ärende som inkom den 20 december men handläggs den 10 januari kanske ska bedömas enligt den äldre regeln. Ett annat beslut ska kanske använda den regel som gäller vid beslutstidpunkten.
-
-Då behöver arkitekturen skilja mellan exempelvis:
-
-- modellversion – vilken teknisk version av beslutsmodellen som används,
-- giltighetsperiod – när regeln verksamhetsmässigt gäller,
-- driftsättningstidpunkt – när versionen blev tekniskt tillgänglig,
-- beslutstidpunkt – när ett konkret beslut exekverades.
-
-Dessa är inte samma sak.
-
-En robust beslutsförmåga kan därför behöva lagra metadata som:
+Det är därför viktigt att inte låta teknisk versionshantering ensam representera verksamhetsmässig giltighet. En modellversion kan vara driftsatt men ännu inte gälla för alla typer av beslut, och en äldre version kan behöva finnas kvar för historiska eller pågående ärenden.
 
 ```text
 beslut_id
@@ -298,88 +254,17 @@ indata_referens = ...
 resultat = ...
 ```
 
-Vilken detaljnivå som krävs beror på verksamhetens krav på spårbarhet och reproducerbarhet.
+Förklarbarhet behöver samtidigt utgå från mottagaren. En utvecklare kan behöva en detaljerad exekveringslogg, en handläggare vilka kriterier som gav utfallet, en extern part en begriplig motivering och en revisor möjlighet att återskapa beslutet från historiska indata och regelversion. En teknisk trace är därför inte automatiskt en verksamhetsförklaring.
 
-## Förklarbarhet börjar med att veta vad som ska förklaras
+Det kan också vara viktigt att skilja mellan att förklara *vilken regel som slog till* och att förklara *varför regeln finns*. Den första frågan hör till exekveringsspåret, den andra till regelverkets verksamhetsmässiga källa och motivering. Båda kan behövas, men de kräver olika metadata.
 
-Ordet förklarbarhet används ofta brett, särskilt i AI-sammanhang. För regelbaserade beslut är frågan ofta mer konkret.
+När regler externaliseras bör de också kunna testas som egna artefakter. Det kan omfatta gränsvärden, kombinationer och överlapp, luckor där inget utfall blir giltigt, historiska regressionsfall och simulering mot representativa data. Testningen bör alltså inte bara visa att regelmotorn tekniskt fungerar, utan att regelverket ger rätt utfall för relevanta kombinationer och att oavsiktliga förändringar upptäcks.
 
-En förklaring kan innebära olika saker:
+Särskilt värdefullt är att kunna jämföra gammal och ny regelversion före driftsättning. Organisationen kan då fråga: hur många historiska beslut hade fått ett annat utfall, vilka grupper hade påverkats och beror skillnaden på en avsedd regeländring eller ett oväntat sidoresultat? Då blir beslutsförmågan också ett stöd för konsekvensanalys.
 
-- vilka fakta som användes,
-- vilka regler som var tillämpliga,
-- vilka villkor som uppfylldes,
-- varför ett visst utfall valdes,
-- vilken regelversion som gällde,
-- vilken verksamhetskälla regeln härleddes från.
+Externaliserade regler behöver dessutom tydligt sakägarskap och tekniskt förvaltningsansvar. Sakägaren ansvarar för verksamhetsmässig innebörd, tolkning av styrande regelverk, prioritering och godkännande av förändringar. Det tekniska ansvaret omfattar bland annat modellformat, implementation, testautomatisering, driftsättning, prestanda, audit och versionshantering.
 
-En teknisk trace med tusentals interna utvärderingssteg är inte nödvändigtvis en användbar verksamhetsförklaring.
-
-Förklarbarhet bör därför designas utifrån mottagaren.
-
-En utvecklare kan behöva en detaljerad exekveringslogg. En handläggare kan behöva se vilka kriterier som gav utfallet. En extern part kan behöva en begriplig motivering. En revisor kan behöva kunna reproducera beslutet från historiska indata och regelversion.
-
-Det är fyra olika behov.
-
-## Testning av regler som egna artefakter
-
-När regler externaliseras bör de också kunna testas som egna artefakter.
-
-Det innebär att teststrategin inte bara ska svara på om applikationen fungerar, utan om regelverket är korrekt för relevanta kombinationer.
-
-Ett regelverk kan exempelvis behöva:
-
-- exempelbaserade testfall,
-- gränsvärdestestning,
-- tester av kombinationer och överlapp,
-- tester för luckor där inget utfall blir giltigt,
-- regressionsfall baserade på historiska beslut,
-- simulering på representativa datamängder,
-- jämförelse mellan gammal och ny regelversion.
-
-Det sista kan vara särskilt värdefullt.
-
-Före en regeländring kan organisationen fråga:
-
-> Om den nya modellen hade använts på de senaste sex månadernas ärenden, hur många beslut hade fått ett annat utfall?
-
-Då blir regelplattformen inte bara en exekveringsmotor utan ett verktyg för konsekvensanalys.
-
-## Regler behöver sakägare och tekniskt ansvar
-
-Externaliserade regler hamnar lätt i ett organisatoriskt mellanrum.
-
-Verksamheten kan tänka att ”IT har implementerat reglerna”. IT kan tänka att ”verksamheten äger innehållet”. När regelverket förändras blir det oklart vem som får besluta, vem som ska testa och vem som ansvarar för konsekvenserna.
-
-Minst två ansvar behöver därför vara tydliga:
-
-### Sakägarskap
-
-Vem ansvarar för att regeln uttrycker rätt verksamhetsmässig innebörd?
-
-Detta omfattar exempelvis:
-
-- tolkning av styrande regelverk,
-- beslut om verksamhetsmässig förändring,
-- prioritering av ändringar,
-- godkännande av korrekthet.
-
-### Tekniskt förvaltningsansvar
-
-Vem ansvarar för att regeln kan realiseras säkert och hållbart?
-
-Det kan omfatta:
-
-- modellformat,
-- implementation,
-- testautomatisering,
-- driftsättning,
-- prestanda,
-- audit,
-- versionshantering,
-- plattformsberoenden.
-
-Dessa ansvar kan ligga i olika team men måste mötas i samma förändringsprocess.
+Det viktiga är inte att samma organisatoriska enhet äger båda perspektiven, utan att förändringsprocessen gör dem beroende av varandra på ett kontrollerat sätt. En tekniskt korrekt driftsättning av en verksamhetsmässigt felaktig regel är inte en lyckad förändring, och ett verksamhetsmässigt korrekt regelbeslut är inte produktionssäkert förrän det har testats och driftsatts kontrollerat.
 
 ## Deterministiska regler och AI är olika saker
 
@@ -482,46 +367,11 @@ Kvalitetsprofilen bör avgöra realiseringen – inte det faktum att organisatio
 
 ## Ansvar på tre nivåer
 
-Förmågan blir tydligare om bokens tredelade ansvarmodell används konsekvent.
+Bokens tredelade ansvarmodell kan här användas utan att introduceras på nytt. Den gemensamma arkitekturnivån bör definiera sådant som behöver vara konsekvent mellan regelområden – exempelvis principer för spårbarhet, versionshantering, audit, modell- eller API-format och gränsen mot process och AI. Den ska inte äga innehållet i varje verksamhetsregel.
 
-### Gemensam arkitektur
+Förmågeområdet kan erbjuda vägledning för externalisering, lösningsmönster, plattformstöd, test och simulering, versionshantering, beslutsmetadata och golden paths. Lösnings- eller produktnivån äger däremot de domänspecifika besluten, informationsmodellen, testfallen och hur resultatet används i den konkreta lösningen.
 
-Den gemensamma nivån bör främst definiera sådant som behöver vara konsekvent över flera regelområden, exempelvis:
-
-- vad organisationen menar med regel och beslut,
-- principer för spårbarhet och versionshantering,
-- när beslutslogik bör skiljas från process och AI,
-- gemensamma krav på audit och metadata,
-- eventuella standarder för modell- eller API-format,
-- principer för hur gemensamma beslutstjänster ska beskrivas.
-
-Den bör inte äga innehållet i varje verksamhetsregel.
-
-### Förmågeområde
-
-Förmågeansvaret för Regler och beslut kan utveckla:
-
-- vägledning för externalisering,
-- lösningsmönster,
-- gemensam regel-/beslutsplattform,
-- modellerings- och teststöd,
-- golden paths,
-- standarder för driftsättning och versionering,
-- stöd för simulering och beslutsmetadata,
-- integration mot process, data och observerbarhet.
-
-### Lösning eller produkt
-
-Det konkreta lösningsteamet ansvarar för:
-
-- vilka beslut den egna domänen behöver,
-- om de ska vara lokal kod eller explicita regelartefakter,
-- konkret informationsmodell och indata,
-- domänspecifika regler,
-- testfall och verksamhetsacceptans,
-- hur resultatet används i lösningen.
-
-Gemensamt stöd ska minska återkommande teknikarbete, inte flytta bort domänansvaret.
+Gemensamt stöd ska alltså minska återkommande teknikarbete utan att flytta bort domänansvaret.
 
 ## Vanliga anti-patterns
 
@@ -651,7 +501,7 @@ Den centrala gränsdragningen är:
 
 Externalisering ska därför vara ett medvetet arkitekturbeslut, inte en reflex. En regelmotor skapar värde först när den gör regelverket lättare att äga, förstå och förändra än motsvarande kodlösning.
 
-Nästa kapitel går vidare till Data- och informationshantering. Där flyttas fokus från *hur ett beslut uttrycks* till *hur tekniska mekanismer för lagring, konsistens, historik, retention, cache och kopior väljs utifrån informationens behov och kvalitetskrav*.
+Nästa kapitel flyttar fokus från hur beslut uttrycks till hur data och information lagras, historiseras, kopieras och görs tillgängliga utifrån sina kvalitetskrav.
 
 ## Källor och vidare läsning
 

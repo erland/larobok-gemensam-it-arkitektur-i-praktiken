@@ -65,7 +65,9 @@ Branchstrategin är däremot sällan ett självändamål. GitFlow, trunk-based d
 
 Det mer stabila kravet är att förändringar ska kunna granskas, integreras och spåras på ett kontrollerat sätt.
 
-## Reproducerbara builds minskar osäkerheten
+## Från build till versionerad artefakt
+
+### Reproducerbara builds minskar osäkerheten
 
 Ett bygge bör i möjligaste mån vara deterministiskt eller åtminstone reproducerbart nog för att organisationen ska kunna förstå hur en artefakt skapades.
 
@@ -86,7 +88,7 @@ En klassisk varningssignal är formuleringen:
 
 Det betyder inte bara att utvecklarupplevelsen är dålig. Det betyder att organisationen saknar en tillräckligt robust leveransförmåga.
 
-## Build once, promote many
+### Build once, promote many
 
 En av de viktigaste principerna i ett kontrollerat leveransflöde är att bygga artefakten en gång och föra samma artefakt vidare mellan miljöerna.
 
@@ -117,7 +119,7 @@ Det som promoveras är alltså det redan byggda objekt som har passerat kontroll
 
 Miljöspecifik information – exempelvis endpoint-adresser, skalningsparametrar och secrets – behöver därför normalt hållas separerad från själva byggartefakten. Annars tvingas organisationen bygga om för varje miljö och förlorar en del av spårbarheten.
 
-## Artefakten är leveransens kontrakt
+### Artefakten är leveransens kontrakt
 
 En deploybar artefakt kan vara exempelvis:
 
@@ -142,7 +144,9 @@ Ett artefaktregister är därför mer än lagringsplats. Det är en del av lever
 - spårbarhet,
 - sårbarhets- och livscykelhantering där det är relevant.
 
-## CI är snabb återkoppling – inte bara en byggserver
+## Pipeline som reproducerbar kontroll
+
+### CI är snabb återkoppling – inte bara en byggserver
 
 Continuous Integration handlar principiellt om att förändringar integreras ofta och verifieras snabbt. CI-plattformen är mekanismen som automatiserar delar av denna återkoppling.
 
@@ -172,7 +176,7 @@ Det viktiga är att pipeline inte bara blir en lång lista av obligatoriska kont
 
 En kontroll som alltid ignoreras eller rutinmässigt kringgås skapar inte säkerhet. Den skapar bara friktion.
 
-## CD kan betyda två olika saker
+### CD kan betyda två olika saker
 
 Förkortningen CD används både för continuous delivery och continuous driftsättning.
 
@@ -192,7 +196,7 @@ utan:
 
 > Vilken grad av automatisering och kontroll kräver denna förändringsrisk?
 
-## Pipeline as code gör leveranslogiken granskningsbar
+### Pipeline as code gör leveranslogiken granskningsbar
 
 Pipelines påverkar hur programvara byggs, testas och levereras. De är därför en del av den tekniska lösningen och bör behandlas med motsvarande förändringsdisciplin.
 
@@ -221,7 +225,7 @@ Projektunika tillägg där det behövs
 
 Det gör standardvägen enkel samtidigt som avvikande behov fortfarande kan hanteras explicit.
 
-## Automatisering är ett sätt att göra kontroll reproducerbar
+### Automatisering gör kontroll reproducerbar
 
 Manuell kontroll uppfattas ibland som säkrare eftersom en människa ”tittar på” förändringen. I praktiken är många manuella steg både svårgranskade och svårreproducerade.
 
@@ -241,7 +245,7 @@ Automatisering ersätter inte ansvar eller granskning. Den gör den beslutade pr
 
 Därför är målet inte ”automation till varje pris”, utan att automatisera återkommande mekanik och reservera mänskligt omdöme för de beslut där det faktiskt tillför värde.
 
-## Kvalitetssäkring behöver ligga längs hela flödet
+### Kvalitetssäkring längs hela flödet
 
 Kvalitet kan inte reduceras till ett stort teststeg precis före produktion. Ju senare ett problem upptäcks, desto större är normalt konsekvensytan och kostnaden för återkoppling.
 
@@ -269,9 +273,9 @@ Exempel på kontroller är:
 - policykontroll,
 - driftsättning smoke tests.
 
-Det avgörande är inte maximalt antal kontroller. En mogen pipeline använder rätt kontroller på rätt plats och ger snabb återkoppling när något misslyckas.
+Det avgörande är inte maximalt antal kontroller utan rätt kontroll på rätt plats, med snabb återkoppling när något misslyckas.
 
-## Software supply chain gör byggkedjan till en tillitskedja
+## Software supply chain som tillitskedja
 
 En modern applikation består sällan bara av den kod organisationen själv skriver. Den bygger på:
 
@@ -294,7 +298,7 @@ För bokens modell är den viktiga principen:
 
 > Tilliten till en release bör kunna härledas genom leveranskedjan, inte bara antas därför att artefakten ligger i ett internt register.
 
-## Beroenden är både produktivitet och risk
+### Beroenden är både produktivitet och risk
 
 Återanvändning av externa komponenter är en grundläggande del av modern utveckling. Att undvika alla externa beroenden skulle i de flesta fall vara både dyrt och riskfyllt.
 
@@ -314,23 +318,13 @@ Samtidigt är sårbarhetsskanning inte ett binärt sanningsmaskineri. En träff 
 
 Automatiska fynd är beslutsunderlag, inte färdiga riskbeslut.
 
-## SBOM gör innehållet synligare
+### SBOM gör innehållet synligare
 
 En Software Bill of Materials, SBOM, beskriver vilka programvarukomponenter som ingår i en produkt eller artefakt. Standardiserade format som SPDX[K3] gör sådan information maskinläsbar och möjlig att utbyta mellan verktyg och organisationer.
 
-En SBOM löser dock inte supply-chain-säkerheten på egen hand. Den ger synlighet.
+En SBOM löser inte supply-chain-säkerheten på egen hand; den ger synlighet. Värdet uppstår först när informationen används för exempelvis sårbarhets- och licensanalys, incidenter, leverantörsuppföljning och livscykelhantering. En SBOM som bara genereras är dokumentation, inte kontroll.
 
-För att skapa praktiskt värde behöver organisationen kunna använda informationen för exempelvis:
-
-- sårbarhetsanalys,
-- licenshantering,
-- incidentanalys,
-- leverantörsuppföljning,
-- livscykelhantering.
-
-En SBOM som genereras men aldrig konsumeras är i första hand dokumentation, inte kontroll.
-
-## Provenance beskriver hur artefakten kom till
+### Provenance beskriver hur artefakten kom till
 
 SBOM svarar i grova drag på frågan:
 
@@ -348,7 +342,7 @@ SLSA:s build track formaliserar delar av detta resonemang genom krav på hur bui
 
 Boken behöver dock inte göra en viss SLSA-nivå till universellt krav. Det relevanta är att supply-chain-kontrollerna anpassas efter konsekvens, hotbild och krav på verifierbarhet.
 
-## Signering stärker integritet – men bara om verifieringen fungerar
+### Signering kräver verifiering
 
 Digital signering av artefakter kan användas för att knyta en artefakt till en betrodd identitet eller byggprocess och upptäcka manipulation efter signering.
 
@@ -372,7 +366,7 @@ Om organisationen signerar alla containerimages men produktionsplattformen aldri
 
 Sigstore[K4]-ekosystemet är ett exempel på moderna mekanismer för signering och verifiering av programvaruarterfakter. Det viktiga arkitekturbegreppet är dock inte ett specifikt verktyg utan kedjan producera bevis → skydda beviset → verifiera beviset → verkställ policy.
 
-## Secrets hör inte hemma i pipelinekoden
+### Pipelineidentiteter och secrets
 
 Leveransflöden behöver ofta autentisera mot:
 
@@ -390,7 +384,9 @@ När plattformen stödjer kortlivade credentials eller workload identity kan det
 
 Detta är ett bra exempel på hur förmågorna samverkar: leveransförmågan konsumerar identitetsförmågan i stället för att uppfinna en egen säkerhetsmodell.
 
-## Promotion är ett beslut om samma artefakt
+## Från promotion till säker driftsättning
+
+### Promotion är ett beslut om samma artefakt
 
 En vanlig missuppfattning är att en release ”flyttas” mellan miljöer. Egentligen är det ofta bättre att tänka att samma artefakt får tillåtelse att användas i en ny miljö.
 
@@ -410,7 +406,7 @@ Promotion kan vara helt automatisk eller innehålla explicita beslutspunkter. De
 
 Miljöspecifik konfiguration behöver däremot fortfarande hanteras. ”Samma artefakt” betyder inte ”identisk miljö”.
 
-## Driftsättningstrategin är en del av förändringsrisken
+### Driftsättningsstrategin är en del av förändringsrisken
 
 Produktionssättning är inte bara ett kommando som startar en ny version. Strategin påverkar hur fel kan upptäckas och begränsas.
 
@@ -433,7 +429,7 @@ Vilken strategi som passar beror på bland annat:
 
 Det är alltså inte självklart att den mest avancerade driftsättningsstrategin är bäst. En liten intern batchtjänst kan behöva en mycket enklare modell än en publik tjänst med kontinuerlig trafik.
 
-## Rollback är inte alltid den säkraste vägen
+### Rollback och roll-forward
 
 Att kunna gå tillbaka till föregående version låter som en självklar säkerhetsmekanism. Men rollback kan vara komplicerat när releasen har förändrat:
 
@@ -449,9 +445,9 @@ Ett enkelt exempel är en bakåtkompatibel databasmigrering där den gamla och n
 
 Förmågan behöver alltså stödja säkra förändringsmönster, inte bara en ”rollback-knapp”.
 
-## funktionsflaggor separerar driftsättning från aktivering
+### Funktionsflaggor separerar driftsättning från aktivering
 
-funktionsflaggor kan göra det möjligt att sätta kod i produktion utan att omedelbart aktivera funktionen för alla användare.
+Funktionsflaggor kan göra det möjligt att sätta kod i produktion utan att omedelbart aktivera funktionen för alla användare.
 
 Det kan minska risk genom:
 
@@ -462,9 +458,11 @@ Det kan minska risk genom:
 
 Men flags skapar också tillstånd och kombinationer som behöver hanteras. Gamla flags som aldrig tas bort blir teknisk skuld och kan göra testmatrisen svår att förstå.
 
-funktionsflaggor bör därför ha ägarskap och livscykel, inte behandlas som permanent konfiguration.
+Funktionsflaggor bör därför ha ägarskap och livscykel, inte behandlas som permanent konfiguration.
 
-## Developer experience är en arkitekturfråga
+## Standardvägen som plattformserbjudande
+
+### Developer experience är en arkitekturfråga
 
 Om den gemensamma leveransvägen är svår att använda kommer team att skapa egna genvägar.
 
@@ -491,7 +489,7 @@ Exempel kan vara:
 
 Detta är en viktig gräns mot central detaljstyrning. En golden path bör göra rätt sak enkel, inte göra alla andra lösningar omöjliga.
 
-## Standardisering ska ske på rätt abstraktionsnivå
+### Standardisering på rätt abstraktionsnivå
 
 Det är lätt att standardisera för långt ner i verktygsstacken:
 
@@ -517,9 +515,9 @@ Tekniska byggblock
 Produkt och version
 ```
 
-## Gemensamma tjänster inom förmågan
+### Gemensamma tjänster inom förmågan
 
-### Source Code Management
+**Source Code Management.**
 
 En gemensam källkodstjänst kan ge:
 
@@ -532,7 +530,7 @@ En gemensam källkodstjänst kan ge:
 
 Den bör däremot inte kräva att alla produkter har identisk repositorystruktur eller branchmodell om behoven skiljer sig.
 
-### CI/CD Platform
+**CI/CD Platform.**
 
 En gemensam CI/CD-plattform kan erbjuda:
 
@@ -547,104 +545,34 @@ En gemensam CI/CD-plattform kan erbjuda:
 
 Plattformen bör leverera ett kontrakt och en standardväg snarare än bara en installerad byggserver.
 
-### Artifact Repository
+**Artifact Repository.**
 
 Artefakttjänsten bör kunna lagra och förvalta deploybara objekt och beroenden med tydlig identitet, åtkomstkontroll och livscykel.
 
-### Developer Tooling
+**Developer Tooling.**
 
 Developer tooling kan omfatta gemensamma IDE-standarder, plugins, lokala utvecklingsverktyg, projektskapande, SDK:er och diagnostik. Värdet ligger i reducerad friktion och kompatibilitet med den gemensamma leveransvägen.
 
 ## Ansvar på tre nivåer
 
-### Gemensam arkitekturnivå
+Den gemensamma arkitekturnivån bör ange de stabila kraven: spårbar och reproducerbar leverans, miniminivåer för supply-chain-integritet, artefaktidentitet, pipelineidentiteter och hur avsteg hanteras. Den bör inte göra varje teams pipeline identisk.
 
-Den gemensamma nivån bör framför allt fastställa sådant som behöver fungera över flera förmågor och produkter:
+Förmågenivån utvecklar den praktiska standardvägen genom exempelvis källkodstjänst, CI/CD-plattform, artefaktregister, gemensamma pipelinekomponenter, relevanta kontroller, dokumentation, självservice och support. Återkommande lokala workarounds är en signal om att det gemensamma erbjudandet behöver utvecklas.
 
-- principer för spårbar och reproducerbar leverans,
-- miniminivåer för supply-chain-integritet,
-- gemensamma krav på versionshantering och artefaktidentitet,
-- principer för pipeline-identiteter och secrets,
-- hur avsteg hanteras,
-- vilka delar som behöver gemensamma standarder eller plattformserbjudanden.
-
-Den bör undvika att göra varje teams pipeline identisk om det inte finns ett faktiskt gemensamt behov.
-
-### Förmågenivå
-
-Förmågeansvaret bör utveckla den praktiska standardvägen:
-
-- källkodstjänst,
-- CI/CD-plattform,
-- artefaktregister,
-- pipelinekomponenter,
-- starter projects,
-- gemensamma kontroller,
-- SBOM-/provenancefunktioner där det krävs,
-- signerings- och verifieringsmekanismer,
-- dokumentation och självservice,
-- supportmodell och livscykel.
-
-Det är också här återkommande lokala speciallösningar bör analyseras. Om många team bygger samma workaround saknas sannolikt något i det gemensamma erbjudandet.
-
-### Lösnings-/produktnivå
-
-Det enskilda produktteamet ansvarar fortfarande för:
-
-- sin källkod,
-- relevanta tester,
-- versionsstrategi,
-- vilka kvalitetskontroller som krävs utöver gemensam miniminivå,
-- kompatibla databas- och kontraktsförändringar,
-- driftsättningsstrategi,
-- funktionsflaggor,
-- verifiering efter produktionssättning,
-- underhåll av beroenden,
-- att produktens pipeline faktiskt fungerar.
-
-En central plattform kan automatisera mycket, men den kan inte avgöra om produktens verksamhetsbeteende är korrekt.
+Produktteamet ansvarar fortfarande för sin källkod, relevanta tester, kompatibla kontrakts- och databasförändringar, driftsättningsstrategi, beroenden och att den egna pipelinen faktiskt ger rätt produktbeteende. En central plattform kan automatisera mekaniken, men inte avgöra om verksamhetslogiken är korrekt.
 
 ## Vanliga anti-patterns
 
-### CI/CD reduceras till ett verktygsnamn
+Några återkommande felsätt är:
 
-Organisationen säger att den har en leveransförmåga därför att Jenkins eller motsvarande är installerat. Teamen får ändå själva lösa runners, secrets, artefakter, promotion, support och säkerhetskontroller.
-
-Det är en produktinstallation, inte en färdig plattformstjänst.
-
-### Pipeline-kopiering
-
-Varje nytt projekt kopierar hundratals rader pipelinekod från föregående projekt. Efter några år finns hundratals nästan lika men inkompatibla varianter.
-
-Återanvändning bör i stället ske genom versionerade gemensamma komponenter och tunna projektspecifika definitioner.
-
-### Bygg om per miljö
-
-Samma commit byggs på nytt för varje miljö. Organisationen testar därmed inte nödvändigtvis samma artefakt som senare sätts i produktion.
-
-### Manuell produktionsserver
-
-Driftsättning kräver att någon loggar in på servern och utför en lista manuella kommandon. Resultatet blir svårt att reproducera och auditera.
-
-### Personliga pipelinecredentials
-
-Produktionsleveranser använder en utvecklares personliga konto eller token. När personen byter roll eller slutar går flödet sönder – och ansvarsspårningen blir oklar.
-
-### Sårbarhetsskannern blir sanningsmaskin
-
-Varje fynd stoppar leveransen utan kontextuell riskbedömning, eller så ignoreras alla fynd därför att mängden är för stor. Båda ytterligheterna gör kontrollen ineffektiv.
-
-### SBOM som dokumenthylla
-
-SBOM genereras för att uppfylla ett krav men används aldrig för incidenter, sårbarhetsanalys eller livscykelhantering.
-
-### Signera utan att verifiera
-
-Artefakter signeras, men ingen policy kontrollerar signaturen vid promotion eller driftsättning.
-
-### Golden path blir golden cage
-
-Den gemensamma vägen är så låst att legitima behov inte kan hanteras. Teamen börjar därför bygga parallella leveransflöden utanför plattformen.
+- **CI/CD som verktygsnamn:** en installerad byggserver förväxlas med en faktisk leveransförmåga.
+- **Pipeline-kopiering:** projekt duplicerar stora pipelinefiler i stället för att återanvända versionerade komponenter.
+- **Bygg om per miljö:** test och produktion får inte nödvändigtvis samma artefakt.
+- **Manuell produktionssättning:** personberoende kommandon gör leveransen svår att reproducera och auditera.
+- **Personliga pipelinecredentials:** leveransflödet binds till en individs konto i stället för en avgränsad teknisk identitet.
+- **Kontroller utan beslutsmodell:** sårbarhetsfynd behandlas antingen som absoluta sanningar eller ignoreras helt.
+- **Bevis som aldrig används:** SBOM produceras utan att konsumeras, eller artefakter signeras utan att signaturen verifieras.
+- **Golden path som golden cage:** standardvägen gör legitima avsteg så svåra att team bygger parallella flöden utanför plattformen.
 
 ## En praktisk analysordning
 

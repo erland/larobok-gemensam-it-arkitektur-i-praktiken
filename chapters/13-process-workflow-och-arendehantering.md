@@ -24,52 +24,15 @@ Typiska behov är att:
 
 Förmågan ligger därmed i gränslandet mellan verksamhetslogik, mänskligt arbete, integration, data och driftbarhet. Just därför behöver dess ansvar avgränsas noggrant.
 
-## Process är inte samma sak som programflöde
+## När processen behöver bli explicit
 
-All programvara innehåller kontrollflöde. En metod anropar en annan metod, ett villkor avgör vilken gren som exekveras och en tjänst väntar kanske på ett svar innan den fortsätter.
+All programvara innehåller kontrollflöde, men det gör inte lösningen till ett workflow. Det är användbart att skilja mellan lokalt kontrollflöde i kod, domänens tillstånd och livscykel samt ett explicit verksamhetsflöde som koordinerar aktiviteter över tid.
 
-Det gör inte lösningen till ett workflow.
+En ansökan som registreras, valideras och accepteras eller avvisas inom samma domän kan ofta hanteras med vanlig applikationskod eller en enkel tillståndsmaskin. Om samma ansökan däremot ska kunna vänta på komplettering, tilldelas en handläggare, eskaleras efter en tidsfrist, återupptas efter flera releaser och följas av verksamheten har själva förloppet blivit ett arkitekturproblem.
 
-Det är användbart att skilja mellan åtminstone tre nivåer:
+Det avgörande är alltså inte antalet steg utan vilka egenskaper förloppet behöver ha. Processens tillstånd behöver bli explicit när verksamhet, support eller revision måste kunna svara på frågor som vilka ärenden som väntar, vilka deadlines som passerats, var ett flöde stannade eller vilken processversion en pågående instans använder.
 
-1. lokalt kontrollflöde i kod,  
-2. domänens tillstånd och livscykel,  
-3. ett explicit verksamhetsflöde som koordinerar aktiviteter över tid.
-
-Anta att en ansökan får statusen `INKOMMEN`, därefter valideras och sedan antingen accepteras eller avvisas. Om hela förloppet sker inom en och samma domän, snabbt och utan behov av särskild verksamhetsuppföljning, kan en enkel tillståndsmaskin eller vanlig applikationskod vara fullt tillräcklig.
-
-Om samma ansökan däremot kan behöva:
-
-- kompletteras av den sökande,
-- tilldelas en handläggare,
-- vänta tre veckor på ett externt yttrande,
-- eskaleras om en tidsfrist överskrids,
-- granskas av en andra roll,
-- återupptas efter flera releaser av systemet,
-- och samtidigt kunna följas av verksamheten,
-
-då har processen blivit ett eget arkitekturproblem.
-
-Skillnaden är alltså inte främst hur många steg som finns, utan vilka egenskaper själva förloppet behöver ha.
-
-## När processens tillstånd behöver bli explicit
-
-En processmotor eller workflowplattform blir ofta intressant när processens tillstånd inte längre är en intern implementeringsdetalj.
-
-Det kan vara viktigt att kunna svara på frågor som:
-
-- Vilka ärenden väntar just nu på extern komplettering?
-- Vilka arbetsuppgifter har passerat sin deadline?
-- Vilka processer är blockerade av en otillgänglig extern tjänst?
-- Vilket steg nådde ett visst ärende innan ett tekniskt fel inträffade?
-- Hur lång tid tar olika delar av processen?
-- Vilken version av processdefinitionen kör ett redan pågående ärende?
-
-När sådana frågor är centrala för verksamhet, support eller revision behöver processens status normalt representeras på ett medvetet sätt.
-
-Det betyder inte nödvändigtvis att statusen måste ligga i en särskild processmotor. Men det betyder att arkitekturen behöver behandla processens livscykel som något mer än dold kontrolllogik.
-
-En praktisk tumregel är:
+Statusen behöver inte ligga i en särskild processmotor, men arkitekturen måste behandla processens livscykel som något mer än dold kontrolllogik. En användbar tumregel är:
 
 > Ju viktigare det är att kunna observera, återuppta och förvalta själva förloppet oberoende av en enskild kodväg, desto starkare är skälet att modellera processen explicit.
 
@@ -202,72 +165,15 @@ Bättre är:
 
 > Vilka delar av verksamhetsförloppet tjänar på att vara explicita och exekverbara, och vilka delar bör ligga kvar i domäntjänster, regeltjänster eller mänsklig bedömning?
 
-## Processorkestrering ska inte absorbera domänlogiken
+## Två viktiga gränser för processplattformen
 
-En process behöver ofta fatta beslut om vad som ska hända härnäst.
+En process behöver ofta avgöra vad som ska hända härnäst, men den bör inte därför absorbera all verksamhetslogik. Flödet kan exempelvis uttrycka att ett godkänt resultat leder vidare till registrering, medan logiken som avgör *om* resultatet är godkänt hör hemma i en domäntjänst eller i förmågan *Regler och beslut*.
 
-Det innebär inte att den bör innehålla all logik för hur verksamheten fungerar.
+Processen bör främst äga ordning, väntan, koordinering, övergångar, deadlines, arbetsuppgifter och återupptagning. Domän- och regeltjänster bör äga verksamhetsinvarianter, beräkningar, beslutskriterier och auktoritativa förändringar av verksamhetsobjekt. Gränsen är inte absolut, men stora mängder skript och leverantörsspecifik kod i processmodellen gör den snabbt till en verksamhetsmonolit.
 
-Anta att en process ska avgöra om ett ärende får gå vidare. Själva flödet kan behöva uttrycka:
+På samma sätt ska processmotorn inte bli generell integrationsplattform. En process kan uttrycka *begär registerkontroll och vänta på resultat*, men autentisering, kontrakt, routing och teknisk övervakning av registerkontrollen hör främst hemma i *Integration och kommunikation*.
 
-> Om behörighetsprövningen är godkänd, fortsätt till registrering. Annars gå till manuell granskning.
-
-Men logiken som avgör *om behörighetsprövningen är godkänd* kan höra hemma i en domäntjänst eller i förmågan *Regler och beslut*.
-
-Denna separation ger flera fördelar:
-
-- verksamhetsregler kan återanvändas utanför processen,
-- regler kan testas och versionshanteras oberoende av flödet,
-- processdefinitionen blir lättare att förstå,
-- domänlogiken binds inte till processmotorns tekniska modell,
-- processmotorn blir mindre av en monolitisk verksamhetsplattform.
-
-En användbar ansvarsfördelning är:
-
-**Processen beskriver främst:**
-
-- ordning,
-- väntan,
-- koordinering,
-- övergångar,
-- deadlines,
-- arbetsuppgifter,
-- kompensation och återupptagning.
-
-**Domäntjänster och regeltjänster beskriver främst:**
-
-- verksamhetsinvarianter,
-- beräkningar,
-- beslutskriterier,
-- auktoritativ förändring av verksamhetsobjekt.
-
-Gränsen är inte absolut, men den är viktig. En processmodell som fylls med stora mängder skript, uttryck och leverantörsspecifik kod blir snabbt svårare att förstå än den kod den skulle ersätta.
-
-## Processmotorn ska inte bli integrationsplattform
-
-En process som koordinerar flera system behöver kommunicera med dem. Därför innehåller workflowlösningar ofta stöd för exempelvis:
-
-- HTTP-anrop,
-- meddelanden,
-- events,
-- köer,
-- externa workers eller connectors.
-
-Det gör det frestande att låta processmotorn bli navet för all integration.
-
-Det är sällan en bra generell modell.
-
-Orkestrering av ett verksamhetsförlopp och teknisk integration mellan system är närliggande men separata ansvar.
-
-Processen kan exempelvis uttrycka:
-
-> Begär registerkontroll och vänta på resultat.
-
-Men hur registerkontrollen tekniskt exponeras, autentiseras, kontrakteras, routas och övervakas hör främst hemma i integrationsförmågan.
-
-Det är särskilt viktigt när samma integration används av många andra konsumenter. Om dess tekniska kontrakt bara existerar som en intern detalj i en processmodell blir lösningen svår att återanvända och förvalta.
-
-Processen bör alltså konsumera standardiserade integrationsmekanismer snarare än ersätta dem.
+Processplattformen bör därför konsumera standardiserade integrationsmekanismer snarare än ersätta dem. Det gör både processen och integrationerna lättare att återanvända, testa och förvalta.
 
 ## Orkestrering och koreografi
 
@@ -349,77 +255,17 @@ Om svaret är ”bara inne i processmotorn” kan en teknisk stödplattform oavs
 
 Det är just den sammanblandningen kapitel 11 varnade för ur informationsperspektiv och som kapitel 15 senare fördjupar ur tekniskt datahanteringsperspektiv.
 
-## Versionshantering är särskilt svår för långlivade processer
+## Livscykel, versionering och återhämtning
 
-En vanlig applikationsrelease ersätter kod och nästa anrop kör den nya versionen.
+Långlivade processer kan överleva många applikationsreleaser. En instans som har pågått i månader kan därför fortfarande följa en äldre processdefinition när en ny version driftsätts. Organisationen behöver då ta ställning till om pågående instanser ska fortsätta på sin gamla version, migreras kontrollerat eller stödjas parallellt under en övergångstid. Valet beror på processens semantik, livslängd och risk; någon universell strategi finns inte.
 
-En process som redan har pågått i tre månader kan däremot vara halvvägs genom en äldre processdefinition när en ny version driftsätts.
+Samma långlivade karaktär gör att processen inte kan förlita sig på en enda ACID-transaktion över alla deltagande system. Om ett flöde har lyckats i system A och B men misslyckas i C kan återhämtningen behöva bestå av återförsök, väntan på manuell åtgärd, kompensation eller eskalering. En kompensation är dessutom ofta en ny verksamhetshändelse, till exempel en avbokning, snarare än en teknisk återställning som låtsas att det första steget aldrig skedde.
 
-Då uppstår frågor som:
+Processmotorn kan hålla reda på läget och koordinera återhämtningen, men den skapar inte atomiska transaktioner mellan självständiga verksamhetssystem.
 
-- Ska den gamla instansen fortsätta enligt den gamla modellen?
-- Ska den migreras till den nya?
-- Kan den nya modellen ens förstå det gamla tillståndet?
-- Vad händer om ett steg har tagits bort?
-- Hur länge måste äldre processversioner kunna exekveras?
-- Hur testas en migration av redan pågående ärenden?
+För ärendehantering tillkommer behovet av ett tydligt livscykelbegrepp. Ärendets verksamhetsstatus, processens exekveringsstatus, arbetsuppgifternas status, dokumentens status och beslutens status representerar olika saker. Ett ärende kan exempelvis vara *Under handläggning* samtidigt som processen väntar på en timer och en arbetsuppgift ännu inte är tilldelad.
 
-Detta är en av de tydligaste skillnaderna mellan vanlig applikationslogik och långlivad processhantering.
-
-En organisation som erbjuder en gemensam workflowplattform behöver därför inte bara erbjuda en motor som kan starta processer. Den behöver ha en modell för processdefinitionernas livscykel.
-
-Det kan exempelvis innebära att lösningar måste välja mellan:
-
-- låta befintliga instanser avslutas på sin ursprungliga version,
-- migrera vissa instanser kontrollerat,
-- stödja parallella versioner under en övergångstid,
-- avbryta och återskapa instanser i särskilda fall.
-
-Det finns ingen universell strategi. Valet beror på processens semantik, livslängd, regler och risk.
-
-## Fel, kompensation och återupptagning
-
-Långlivade processer kan inte förlita sig på en enda ACID-transaktion över alla deltagande system.
-
-Anta att ett flöde:
-
-1. reserverar en resurs i system A,
-2. registrerar information i system B,
-3. skickar en beställning till system C.
-
-Om steg 3 misslyckas går det inte alltid att göra en teknisk rollback av steg 1 och 2.
-
-I stället behöver verksamhetsflödet kunna hantera situationen explicit. Det kan innebära att:
-
-- försöka igen,
-- vänta på manuell åtgärd,
-- utföra en kompenserande aktivitet,
-- markera processen som avvikande,
-- eskalera till support eller verksamhet.
-
-En kompenserande aktivitet är inte nödvändigtvis en exakt återställning. Om en bokning redan har kommunicerats till en extern part kanske kompensationen består i att skapa en avbokning, inte i att låtsas som att bokningen aldrig fanns.
-
-Detta är viktigt eftersom workflow ibland säljs in med en alltför enkel bild av att motorn ”hanterar transaktionerna”. Den kan koordinera återhämtning och hålla reda på processens läge, men den kan inte magiskt skapa atomiska transaktioner över självständiga verksamhetssystem.
-
-## Ärendehantering kräver ett medvetet livscykelbegrepp
-
-Ett ärende är ofta både ett verksamhetsobjekt och en arbetskontext.
-
-Därför behöver man skilja mellan exempelvis:
-
-- ärendets verksamhetsstatus,
-- processens tekniska exekveringsstatus,
-- arbetsuppgifternas status,
-- dokumentens status,
-- beslutens status.
-
-Om alla dessa pressas in i ett enda statusfält uppstår snabbt oklarheter.
-
-Ett ärende kan exempelvis ha verksamhetsstatusen Under handläggning samtidigt som processmotorn tekniskt väntar på en timer och en specifik arbetsuppgift har status Ej tilldelad.
-
-Dessa statusar representerar olika saker och kan ha olika målgrupper.
-
-Det är därför värdefullt att definiera en tydlig ärendelivscykel som en del av domän- och informationsmodellen, samtidigt som workflowmotorns tekniska status hålls separat.
+Därför bör ärendelivscykeln definieras i domän- och informationsmodellen, medan workflowmotorns tekniska status hålls separat. Det minskar risken att ett enda statusfält får bära flera oförenliga betydelser.
 
 ## När räcker vanlig domänlogik?
 
@@ -481,49 +327,13 @@ Det senare är minst lika viktigt.
 
 ## Förmågan på de tre ansvarsnivåerna
 
-Bokens tredelade ansvarmodell hjälper även här.
+Den gemensamma arkitekturen bör ange gränserna mot integration, regler, data och identitet samt gemensamma krav på exempelvis säkerhet, spårbarhet och driftbarhet. Den bör däremot normalt inte modellera verksamhetens konkreta processer.
 
-### Gemensam arkitektur
+Förmågeområdet bör utveckla kriterier för när workflowplattform ska användas, återanvändbara process- och case management-mönster, plattformserbjudanden, stöd för human tasks, versionering, återupptagning och observerbarhet samt golden paths för robust användning.
 
-Den gemensamma nivån bör främst definiera sådant som behöver vara konsekvent över flera förmågor och lösningar, exempelvis:
+Lösnings- eller produktnivån äger den konkreta verksamhetsprocessen: domänens tillstånd och regler, vilka delar som behöver modelleras explicit, informationsbehovet och hur fel, deadlines, kompensation och processversioner hanteras i den aktuella kontexten.
 
-- hur processförmågan avgränsas från integration, regler, data och identitet,
-- gemensamma principer för långlivade flöden,
-- krav på säkerhet, spårbarhet och driftbarhet,
-- övergripande standarder för integrations- och identitetsmekanismer som processen konsumerar,
-- hur gemensamma processplattformar relaterar till övrig plattformsarkitektur.
-
-Den gemensamma nivån bör normalt inte modellera organisationens alla verksamhetsprocesser.
-
-### Förmågeområde
-
-De som ansvarar för Process, workflow och ärendehantering bör utveckla:
-
-- kriterier för när workflowplattform ska användas,
-- process- och case management-mönster,
-- gemensamma plattformserbjudanden,
-- rekommenderade modelleringskonventioner,
-- stöd för human tasks och arbetsköer,
-- principer för processversionering,
-- golden paths för robust återupptagning,
-- observerbarhet för processinstanser,
-- integrationsmönster mot andra förmågor.
-
-Det är också denna nivå som bör följa upp om plattformen faktiskt minskar lokal specialutveckling eller bara flyttar komplexiteten.
-
-### Lösning eller produkt
-
-Lösningsteamet ansvarar för:
-
-- den konkreta verksamhetsprocessen,
-- domänens tillstånd och regler,
-- vilka delar som modelleras explicit,
-- hur process och domäntjänster samspelar,
-- vilken verksamhetsinformation processen behöver,
-- hur fel, deadlines och kompensation hanteras i just denna kontext,
-- hur processdefinitioner versionshanteras vid förändring.
-
-Det är där den lokala verksamhetskunskapen finns och därför där processens faktiska innebörd måste ägas.
+Ansvarsfördelningen gör att den gemensamma förmågan kan minska lokal specialutveckling utan att flytta verksamhetskunskapen in i en central processplattform.
 
 ## Typiska kvalitetsattribut för förmågan
 

@@ -26,7 +26,7 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *CI/CD* — teknisk standard; kapitel **21**, 18, 8, 2, 30, 28
 - *CI/CD Platform* — plattform/tjänst; kapitel **21**, 28
 - *Collaboration and Workspace Services* — plattform/tjänst; kapitel **22**
-- *Container* — teknisk standard; kapitel **19**, 18, 8, 2, 30, 28
+- *Container* — teknisk standard; kapitel **19**, 8, 2, 30, 28, 4
 - *Container Application Platform* — plattform/tjänst; kapitel **19**, 2, 28, 32, 35, 31
 - *Containerbaserad tjänst* — referensarkitektur; kapitel **36**, 35, 34
 - *Containeriserad stateless tjänst* — lösningsmönster; kapitel **26**, 2, 23, 36
@@ -78,7 +78,7 @@ Registret samlar centrala objekt i bokens arkitekturmodell. Kursivering i löpte
 - *Relationell databastjänst* — plattform/tjänst; kapitel **15**, 8, 2, 28, 35, 29
 - *Relationella databaser* — teknisk standard; kapitel **15**
 - *Release- och versionsidentifiering* — teknisk standard; kapitel **21**
-- *Retrieval-Augmented Generation (RAG)* — lösningsmönster; kapitel **26**, 18, 8, 28, 12, 13
+- *Retrieval-Augmented Generation (RAG)* — lösningsmönster; kapitel **26**, 8, 28, 16
 - *Search and Indexing Service* — plattform/tjänst; kapitel **16**, 28
 - *Secrets* — teknisk standard; kapitel **18**, 30, 28, 4, 21, 19
 - *Secrets Management* — plattform/tjänst; kapitel **18**, 30, 28, 9, 36, 26

@@ -57,7 +57,7 @@ Mer relevanta frågor är:
 
 Ju fler av dessa frågor som besvaras med ja, desto mindre rimligt är det att behandla lösningen som enbart personlig eller informell produktivitet.
 
-## Från personlig fil till gemensam information
+## Informationsansvar i arbetsplatsen
 
 En stor del av arbetsplatsens informationsrisk uppstår därför att information byter roll över tid.
 
@@ -77,11 +77,7 @@ Arkiv-/bevarandeobjekt eller gallringsbar information
 
 Tekniskt kan samma filformat användas i alla fem stegen. Men informationens betydelse, ägarskap och livscykel har förändrats.
 
-Detta är ett viktigt skäl till att tekniska produktbegrepp inte räcker som informationsarkitektur. Frågan är inte bara om dokumentet finns i en personlig lagringsyta, en teamyta eller ett dokumentbibliotek. Organisationen behöver förstå vilken roll informationen spelar.
-
-Arbetsplatsförmågan bör därför stödja tydliga övergångar mellan olika användningssätt. Det kan exempelvis innebära att fastställda handlingar flyttas eller registreras i en mer auktoritativ informationsmiljö, medan arbetsytan fortsätter vara platsen för pågående samarbete.
-
-Samma resonemang gäller andra artefakter än dokument. Ett kalkylblad, en lista, en anteckningsbok eller en enkel databas kan börja som arbetsmaterial men senare få sådan verksamhetsbetydelse att dess roll måste omprövas.
+Tekniska produktbegrepp räcker därför inte som informationsarkitektur. Organisationen behöver förstå vilken roll informationen spelar och stödja tydliga övergångar mellan arbetsmaterial och mer auktoritativ information. Samma resonemang gäller kalkylblad, listor, anteckningar och enkla databaser som med tiden får större verksamhetsbetydelse.
 
 ## Samarbetsytan behöver ett syfte och en ägare
 
@@ -126,8 +122,6 @@ Förnya, arkivera, överföra eller avveckla
 
 Det är inte nödvändigt att varje steg kräver en manuell granskningsprocess. Tvärtom bör mycket kunna automatiseras. Men organisationen behöver veta vad som ska hända när en yta inte längre är aktiv eller när dess ägare försvinner.
 
-## Personliga ytor och gemensamma ytor har olika ansvar
-
 Personliga lagrings- och arbetsytor är användbara för utkast och individuellt arbete. Problemet uppstår när de blir beroendepunkter för organisationen.
 
 Om en verksamhetsviktig fil endast ligger i en enskild medarbetares personliga arbetsyta kan frågor uppstå när personen:
@@ -142,7 +136,7 @@ Den arkitekturella principen bör därför vara att gemensamt ansvar kräver gem
 
 Det betyder inte att personliga ytor ska förbjudas. Det betyder att information som andra behöver för att utföra sitt arbete bör kunna flytta från ett personligt sammanhang till ett organisatoriskt sammanhang innan personberoendet blir ett problem.
 
-## Delning gör informationsgränser synliga
+### Delning gör informationsgränser synliga
 
 Moderna samarbetsverktyg gör delning enkel. Det är en av deras största styrkor – och en av deras största arkitekturella utmaningar.
 
@@ -166,9 +160,9 @@ Men modellen kräver också tydlighet om:
 
 Här möts arbetsplatsförmågan och Identitet och tillit från kapitel 18. Arbetsplatsförmågan ansvarar för den konsumerbara samarbetsmodellen, medan identitetsförmågan tillhandahåller de mekanismer som gör mottagare och behörigheter möjliga att kontrollera.
 
-Det är därför missvisande att behandla extern delning som en ren knappinställning i ett produktivitetsverktyg. Det är en realisering av ett organisatoriskt beslut om informationsdelning och tillit.
+Extern delning är därför inte bara en knappinställning utan en realisering av ett organisatoriskt beslut om informationsdelning och tillit.
 
-## Versionshistorik är inte samma sak som informationsförvaltning
+### Versionshistorik är inte informationsförvaltning
 
 Samarbetsplattformar erbjuder ofta versionshistorik. Det är värdefullt eftersom användare kan se förändringar och återgå till tidigare versioner.
 
@@ -245,7 +239,7 @@ Det innebär inte att standardverktyget alltid är rätt. Principen från kapite
 
 Om ett specialiserat behov inte kan mötas utan orimliga kompromisser kan ett annat verktyg vara motiverat. Men avvikelsen bör då vara ett medvetet behovsdrivet val, inte resultatet av att någon råkade föredra ett annat verktyg.
 
-## Low-code sänker tröskeln – inte konsekvensen
+## Low-code och citizen development
 
 Low-code och no-code kan vara mycket effektiva delar av arbetsplatsförmågan.
 
@@ -294,21 +288,13 @@ Detta är en viktig princip:
 
 > Low-code är en utvecklings- och automatiseringsform, inte en riskklass.
 
-## Citizen development behöver guardrails
+### Citizen development behöver guardrails
 
 När verksamhetsnära användare själva kan skapa automationer och applikationer uppstår ofta begreppet *citizen development*.
 
 Det kan vara värdefullt, men en organisation behöver undvika två extremer.
 
-Den ena är total frihet:
-
-> ”Alla får bygga vad som helst eftersom verktyget är godkänt.”
-
-Den andra är total centralisering:
-
-> ”Ingen får skapa något utan att gå genom den ordinarie utvecklingsorganisationen.”
-
-En mer hållbar modell är att skapa olika banor beroende på lösningens konsekvens.
+Två extremer bör undvikas: total frihet därför att verktyget är godkänt och total centralisering där allt måste gå genom ordinarie utvecklingsorganisation. En mer hållbar modell är olika banor beroende på lösningens konsekvens.
 
 Exempelvis:
 
@@ -336,9 +322,9 @@ Guardrails kan exempelvis omfatta:
 - hur kritiska lösningar identifieras,
 - hur överlämning till professionell förvaltning sker.
 
-Målet är inte att göra low-code identiskt med traditionell systemutveckling. Då försvinner mycket av värdet. Målet är att kontrollnivån ska följa konsekvensen.
+Målet är inte att göra low-code identiskt med traditionell systemutveckling, utan att låta kontrollnivån följa konsekvensen.
 
-## Produktivitets-AI förändrar informationsåtkomsten
+## Produktivitets-AI och informationshygien
 
 AI-assistenter i arbetsplatsverktyg innebär en särskild förändring: information som tidigare var tekniskt tillgänglig men praktiskt svår att hitta kan bli omedelbart användbar.
 
@@ -348,7 +334,7 @@ Det innebär att:
 
 > AI kan förstärka effekten av befintliga behörigheter utan att någon behörighetsregel faktiskt ändras.
 
-Det är därför inte tillräckligt att fråga om AI-assistenten ”respekterar behörigheter”. Det måste den göra, men organisationen bör också fråga:
+Att AI-assistenten respekterar behörigheter är nödvändigt men inte tillräckligt. Organisationen bör också fråga:
 
 - Är de befintliga behörigheterna rimliga?
 - Finns gamla ytor med alltför bred åtkomst?
@@ -362,11 +348,11 @@ Här möts arbetsplatsförmågan med kapitel 16 om Analys, sökning och AI.
 
 AI-förmågan beskriver generella mekanismer, risker och kvalitetsfrågor. Arbetsplatsförmågan ansvarar för hur dessa konsumeras i den dagliga arbetsmiljön.
 
-En produktivitetsassistent bör alltså inte betraktas som en helt separat informationsvärld. Den är en ny konsumtionsyta ovanpå organisationens befintliga informations- och behörighetsstruktur.
+En produktivitetsassistent är alltså en ny konsumtionsyta ovanpå organisationens befintliga informations- och behörighetsstruktur.
 
-## AI gör informationshygien mer värdefull
+### Informationshygien blir viktigare
 
-En konsekvens av detta är att tidigare ”osynlig” informationsskuld blir mer synlig.
+Därmed blir tidigare ”osynlig” informationsskuld mer synlig.
 
 Exempel:
 
@@ -389,7 +375,7 @@ Produktivitets-AI ökar därför värdet av god:
 - ägarskap,
 - gallring.
 
-Det är ett bra exempel på hur en ny teknisk möjlighet inte bara skapar ett nytt teknikproblem. Den förstärker betydelsen av arkitektur som redan borde ha funnits.
+Ny teknik skapar alltså inte bara nya problem utan förstärker betydelsen av redan nödvändig informationsarkitektur.
 
 ## Den digitala arbetsplatsen behöver stödja mobilitet utan att förlora kontroll
 
@@ -608,7 +594,7 @@ Licenser, lagring och tilläggstjänster kan ge betydande kostnader när de mult
 
 ## Ansvar på tre nivåer
 
-Den tredelade ansvarmodellen från kapitel 7 fungerar väl även här.
+Ansvarsmodellen kan tillämpas direkt på arbetsplatsförmågan.
 
 ### Gemensam nivå
 
@@ -648,7 +634,7 @@ Ett team eller verksamhetsområde ansvarar för att:
 - eskalera lösningar när deras konsekvens växer,
 - dokumentera motiverade avsteg.
 
-Modellen gör att central arkitektur inte behöver styra varje teamyta, samtidigt som förmågan inte blir helt oreglerad.
+Det gör att varje teamyta inte behöver centralstyras, samtidigt som gemensamma risker och livscykler förblir hanterbara.
 
 ## Vanliga anti-patterns
 
@@ -718,7 +704,7 @@ Om den blivit ett kritiskt verksamhetssystem, en integrationslösning eller en l
 
 ## Förmågan är mer än ”kontors-IT”
 
-Arbetsplats, samarbete och produktivitet kan verka mindre arkitekturellt än containerplattformar, integrationsmönster eller identitetsprotokoll. I praktiken är det ett område där organisationens tekniska och informationsmässiga styrmodell möter varje medarbetares vardag.
+Arbetsplats, samarbete och produktivitet är området där organisationens tekniska och informationsmässiga styrmodell möter varje medarbetares vardag.
 
 En väl utformad förmåga gör det enkelt att:
 

@@ -33,7 +33,7 @@ För runtime innebär det att lösningen först behöver förstå sådant som:
 
 När dessa frågor är besvarade kan man börja bedöma vilken exekveringsmodell som passar bäst.
 
-Detta är viktigare än det först verkar. Om organisationen börjar i produktnamnet riskerar tekniska egenskaper att omvandlas till falska behov.
+Om organisationen börjar i produktnamnet riskerar tekniska egenskaper att omvandlas till falska behov.
 
 Exempel:
 
@@ -148,11 +148,11 @@ Det gör det viktigt att skilja mellan:
 
 En gemensam runtimeförmåga kan därför erbjuda standardiserade profiler, exempelvis en förvaltad Java-runtime, utan att varje applikation behöver bygga och förvalta hela kedjan själv.
 
-Det betyder inte att organisationen måste centralstyra vilket programmeringsspråk varje team använder. Men när ett språk eller en runtime får bred användning behöver dess operativa livscykel bli synlig som en gemensam fråga.
+Det innebär inte centralstyrning av programmeringsspråk, men en brett använd runtime behöver en synlig gemensam livscykel.
 
-## Stateless där det är ändamålsenligt
+## Stateless och förgängliga instanser
 
-Stateless har blivit ett vanligt designideal för backend-tjänster. Skälet är praktiskt: en instans som inte bär unik persistent verksamhetsdata är enklare att ersätta, skala och återstarta.
+Stateless är ett användbart designideal för många backend-tjänster eftersom en instans utan unik persistent verksamhetsdata är enklare att ersätta, skala och återstarta.
 
 Förenklat:
 
@@ -164,60 +164,25 @@ Valfri tjänsteinstans
 Gemensam persistent datatjänst
 ```
 
-Om en instans försvinner kan en annan ta över utan att viktig data sitter fast på den första.
+En tjänst kan samtidigt ha temporärt tillstånd i minne, cache eller tekniska buffertar. Det avgörande är om en viss instans bär unik information som måste bevaras för att verksamheten ska fungera. Stateful workloads som databaser och vissa kökomponenter är därför fullt legitima; deras tillstånd behöver bara behandlas som en medveten del av arkitekturen.
 
-Men ”stateless” behöver användas precist.
+I en automatiserad runtimeplattform måste applikationen dessutom kunna leva med att instanser försvinner vid exempelvis plattformsuppgradering, autoskalning, driftsättning eller maskinvarufel. En långlivad tjänst bör därför kunna signalera readiness och hälsa, hantera kontrollerad nedstängning och starta om utan manuell rekonstruktion av lokalt tillstånd.[K2]
 
-En tjänst kan ha temporärt tillstånd i minne under en request, cache eller teknisk buffert och ändå vara stateless i den mening som är viktig för runtime-plattformen. Det avgörande är om instansen innehåller unik information som måste bevaras för att verksamheten ska fungera.
+Arkitekturfrågorna blir då:
 
-Stateful workloads är samtidigt legitima. Databaser, vissa kökomponenter och andra system behöver persistent tillstånd. Även en applikation kan ha krav som gör lokal tillstånd nödvändig.
+- Vilket tillstånd finns och var är det auktoritativt?
+- Vad får vara lokalt och förgängligt?
+- Hur bevaras pågående arbete när en instans ersätts?
+- Hur påverkar tillståndet skalning och återställning?
+- Vilket ansvar ligger på runtimeplattformen respektive datatjänsten?
 
-Arkitekturfrågan blir då inte ”hur undviker vi tillstånd till varje pris?” utan:
+För vanliga verksamhetstjänster är en bra grundregel att persistent verksamhetsdata inte ska ligga på en lokal ephemeral disk som försvinner med instansen.
 
-- Vilket tillstånd finns?
-- Var är det auktoritativt?
-- Hur bevaras det när en instans flyttas eller ersätts?
-- Hur påverkar det skalning och återställning?
-- Vilket ansvar ligger på runtime-plattformen och vilket ligger på datatjänsten?
+## Resurser och skalning ska uttryckas som behov
 
-För vanliga verksamhetstjänster är en bra grundprincip ändå att persistent verksamhetsdata inte ska ligga på en lokal ephemeral disk som försvinner med instansen.
+CPU, minne, lagring och specialiserad hårdvara är begränsade resurser. Workloads behöver därför beskriva resursprofil och belastningsmönster i stället för att bara begära stora marginaler ”för säkerhets skull”. För stora reservationer ger låg nyttjandegrad; för små skapar instabilitet och oförutsägbara svarstider.
 
-## Förgängliga instanser förändrar applikationsdesignen
-
-I en automatiserad runtimeplattform måste applikationen kunna leva med att en instans ibland försvinner.
-
-Det kan bero på:
-
-- uppgradering av plattformen,
-- omplanering av workloads,
-- autoskalning,
-- maskinvarufel,
-- driftsättning av ny version,
-- operatörsåtgärd,
-- resursbrist eller policy.
-
-Det ställer krav på applikationen.
-
-En långlivad tjänst bör exempelvis kunna:
-
-1. signalera när den är redo att ta emot trafik,
-2. signalera när den inte längre fungerar korrekt,
-3. hantera kontrollerad nedstängning,
-4. sluta ta emot nytt arbete innan processen avslutas,
-5. avsluta eller lämna över pågående arbete på ett säkert sätt,
-6. starta igen utan manuell rekonstruktion av lokal tillstånd.
-
-Health checks och graceful shutdown är därför inte bara driftfunktioner. De är delar av kontraktet mellan workload och runtime.[K2]
-
-## Resurser ska uttryckas som behov
-
-CPU, minne, lagring och specialiserad hårdvara är begränsade resurser. Om workloads inte har dokumenterade resursprofiler blir både kapacitetsplanering och kostnadsstyrning svåra.
-
-Ett vanligt anti-pattern är att dimensionera med stor säkerhetsmarginal ”för att vara på den säkra sidan”. I en delad miljö leder det till låg nyttjandegrad och kan samtidigt blockera andra workloads.
-
-Motsatsen är lika problematisk: för snäva resursgränser kan skapa instabilitet och oförutsägbara svarstider.
-
-Runtimeförmågan behöver därför stödja en återkopplingsloop:
+Runtimeförmågan behöver stödja en återkopplingsloop:
 
 ```text
 Initial uppskattning
@@ -231,17 +196,9 @@ Mätning
 Justering
 ```
 
-Det är en viktig koppling till kapitel 20. Runtimeplattformen tillhandahåller mekanismer för resursallokering och skalning, medan observerbarhetsförmågan ger underlag för att förstå det faktiska beteendet.
+Skalningsmodellen är en del av samma fråga. Vertikal skalning ger en instans mer CPU eller minne. Horisontell skalning fördelar arbetet över flera instanser och fungerar bäst när workloaden kan parallelliseras utan konflikt.
 
-## Horisontell och vertikal skalning löser olika problem
-
-Skalning behandlas ibland som en generell funktion som plattformen ”har”. I praktiken behöver workloaden vara designad för den skalningsmodell som används.
-
-Vertikal skalning innebär att en instans får mer CPU eller minne.
-
-Horisontell skalning innebär att fler instanser körs parallellt.
-
-Horisontell skalning passar särskilt bra när arbetet kan fördelas mellan likvärdiga instanser. Men den skapar också nya frågor:
+Horisontell skalning kräver därför svar på frågor som:
 
 - Kan flera instanser arbeta samtidigt utan konflikt?
 - Finns sessionsstate som måste delas?
@@ -249,7 +206,7 @@ Horisontell skalning passar särskilt bra när arbetet kan fördelas mellan likv
 - Hur hanteras samtidighet mot databasen?
 - Finns externa beroenden som inte skalar lika snabbt?
 
-Autoskalning är därför inte ett substitut för kapacitetsdesign. Den är en mekanism som fungerar först när hela kedjan kan hantera förändrad belastning.
+Autoskalning är alltså inte ett substitut för kapacitetsdesign. Plattformen tillhandahåller mekanismer för resursallokering och skalning, medan observerbarheten i kapitel 20 ger underlag för att justera profilen utifrån verkligt beteende.
 
 ## Isolering är flerdimensionell
 
@@ -270,9 +227,9 @@ Olika workloads kan kräva olika nivåer beroende på risk, informationsklassnin
 
 Det betyder att ”delad plattform” inte behöver betyda ”allt delar allt”. En gemensam plattform kan erbjuda olika profiler eller zoner med olika isoleringsgrad.
 
-Men varje extra isoleringsnivå har en kostnad. Separata kluster, noder eller maskiner kan förbättra separationen men minska resurseffektiviteten och öka driftbördan.
+Isoleringskravet bör uttryckas som en konsekvens av risk och kvalitetsbehov, inte som ett direkt krav på ett visst tekniskt lager. Två workloads kan exempelvis få tillräcklig separation genom identitet, nätverkspolicy och resursgränser, medan en annan behöver egen nodpool eller separat miljö därför att konsekvensen av störning eller administrativ åtkomst är större.
 
-Precis som i kapitel 5 behöver beslutet därför baseras på avvägningar snarare än på generella slogans.
+Varje extra isoleringsnivå har samtidigt en kostnad. Separata kluster, noder eller maskiner kan förbättra separationen men minska resurseffektiviteten och öka driftbördan. Precis som i kapitel 5 behöver beslutet därför baseras på avvägningar snarare än på generella slogans.
 
 ## Konfiguration ska skiljas från artefakten
 
@@ -431,7 +388,7 @@ Det gör resursmodellen mer komplex eftersom sådan hårdvara ofta är:
 
 Ett gemensamt erbjudande behöver därför göra dessa beroenden explicita. Konsumenten bör uttrycka behov i termer av beräkningsprofil och kvalitetskrav snarare än att själv välja fysisk maskin eller intern infrastruktur.
 
-Det är ytterligare ett exempel på principen att plattformen ska abstrahera onödig infrastruktur men inte dölja de egenskaper som påverkar arkitekturen.
+Plattformen bör alltså abstrahera onödig infrastruktur utan att dölja egenskaper som påverkar arkitekturen.
 
 ## Runtimeplattformen ska inte bli en ny monolit
 
@@ -477,52 +434,19 @@ Varje erbjudande bör beskriva:
 - vilka standarder som gäller,
 - hur livscykel och support fungerar.
 
-Detta gör valet mer meningsfullt än ett rent produktval.
+Profilerna bör dessutom ha tydliga valkriterier. Om två erbjudanden kan köra samma typ av applikation behöver läsaren kunna förstå varför det ena är förstahandsval och vilka egenskaper som motiverar det andra. Annars flyttas bara produktvalet från teamet till en otydlig plattformskatalog.
+
+Detta gör valet mer meningsfullt än ett rent produktval och knyter runtimeerbjudandet tillbaka till workloadens faktiska behov.
 
 ## Ansvar på tre nivåer
 
-Precis som i tidigare förmågekapitel behöver runtimefrågorna delas mellan gemensam arkitektur, förmågeområde och konkret lösning.
+Runtimefrågorna följer samma ansvarmodell som övriga förmågor, men med olika fokus:
 
-### Gemensam arkitekturnivå
+- **Gemensam arkitekturnivå** sätter principer för produktberoenden, kvalitetskrav, livscykel och gränser mot identitet, integration, data och driftbarhet.
+- **Förmågenivån** utvecklar runtimeerbjudanden, konsumentkontrakt, standardprofiler, supportfönster, migreringsvägar och golden paths samt följer upp kapacitet, kostnad och användning.
+- **Lösnings-/produktnivån** beskriver workloadens egenskaper, väljer lämplig profil, anger resursbehov och uppfyller kontrakt för exempelvis health checks, graceful shutdown, konfiguration och kompatibilitet.
 
-På den gemensamma nivån bör organisationen exempelvis besluta:
-
-- vilka övergripande runtimeprinciper som gäller,
-- hur produktberoenden ska behandlas,
-- vilka kvalitetskrav som måste kunna uttryckas,
-- hur ansvar mellan runtime, identitet, integration, data och driftbarhet avgränsas,
-- vilka krav som gäller för support och livscykel,
-- när avsteg behöver hanteras gemensamt.
-
-Den gemensamma nivån bör däremot normalt inte bestämma exakt runtime för varje applikation.
-
-### Förmågenivå
-
-De som ansvarar för Applikationsexekvering och runtime bör exempelvis:
-
-- utveckla och förvalta runtimeerbjudanden,
-- definiera konsumentkontrakt,
-- erbjuda standardprofiler,
-- förvalta stöd för container, VM och andra exekveringsformer,
-- definiera supportfönster och migreringsvägar,
-- ta fram golden paths för vanliga workloads,
-- följa upp kapacitet, kostnad och faktisk användning,
-- identifiera återkommande behov som kräver nya profiler.
-
-### Lösnings-/produktnivå
-
-Det konkreta utvecklingsområdet behöver bland annat:
-
-- beskriva workloadens egenskaper,
-- välja lämpligt runtimeerbjudande,
-- ange resursbehov,
-- bygga applikationen för plattformens livscykelmodell,
-- hantera graceful shutdown och healthmekanismer,
-- undvika onödigt lokal persistent tillstånd,
-- dokumentera särskilda runtimeberoenden,
-- följa plattformens standarder och uppgraderingskrav.
-
-Denna uppdelning gör det möjligt att standardisera exekvering utan att göra plattformsteamet ansvarigt för applikationernas verksamhetsarkitektur.
+Det gör det möjligt att standardisera exekveringen utan att göra plattformsteamet ansvarigt för applikationernas verksamhetsarkitektur.
 
 ## Vanliga anti-patterns
 

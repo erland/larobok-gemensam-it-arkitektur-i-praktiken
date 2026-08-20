@@ -211,22 +211,11 @@ Det kan innebära att lösningen behöver:
 
 Det viktiga är att livscykeln gäller hela informationslandskapet. Om originalet gallras men samma information ligger kvar i cache, analyskopior och testmiljöer är livscykeln inte konsekvent hanterad.
 
-## Schemaförändringar är en del av systemets livscykel
+## Schemaevolution och migration är en del av livscykeln
 
-Persistent data överlever ofta många versioner av applikationskoden. Därför är schemaevolution en central arkitekturfråga.
+Persistent data överlever ofta många versioner av både applikationskod och lagringsplattform. Därför måste förändring av schema och teknik behandlas som normala livscykelfrågor, inte som engångsaktiviteter vid en release eller en framtida avveckling.
 
-En förändring kan exempelvis innebära att:
-
-- en kolumn läggs till,
-- ett fält byter betydelse,
-- data delas upp i nya strukturer,
-- ett kodverk ersätts,
-- ett gammalt fält tas bort,
-- stora datamängder måste migreras.
-
-Det är riskfyllt att behandla sådana förändringar som en engångsaktivitet vid driftsättning. I system med krav på hög tillgänglighet behöver schema och kod ibland kunna samexistera under en övergångsperiod.
-
-En robust strategi kan därför innehålla steg som:
+En schemaförändring kan exempelvis innebära att ett fält läggs till eller byter betydelse, att data delas upp, att ett kodverk ersätts eller att stora datamängder måste migreras. I system med höga tillgänglighetskrav behöver gammal och ny representation ibland samexistera under en övergångsperiod. En robust strategi kan då vara att:
 
 1. introducera en bakåtkompatibel struktur,
 2. driftsätta kod som kan hantera både gammal och ny representation,
@@ -235,52 +224,17 @@ En robust strategi kan därför innehålla steg som:
 5. börja använda den nya representationen fullt ut,
 6. ta bort den gamla först när beroendena är borta.
 
-Detta illustrerar att dataförvaltning och releasehantering hänger samman, även om CI/CD-förmågan behandlas senare i kapitel 21.
+Samma princip gäller när själva lagringsplattformen ska bytas. Information kan behöva leva längre än dagens databasprodukt, vilket gör portabilitet till en viktig kvalitet. Organisationen bör därför förstå hur data och metadata exporteras, vilka produktunika funktioner som används, hur relationer och binära objekt återskapas och hur lång tid en realistisk migrering tar.
 
-## Migration mellan plattformar måste planeras innan den behövs
+En standardiserad datatjänst kan vara mycket värdefull utan att arkitekturen för den skull accepterar onödig inlåsning. Dataförvaltning, releasehantering och tekniklivscykel behöver därför ses som delar av samma förändringsförmåga.
 
-Tekniska plattformar har kortare livslängd än många informationsmängder. Data som skapas idag kan behöva vara begriplig och åtkomlig långt efter att nuvarande databasprodukt eller lagringsplattform är avvecklad.
+## Backup, återställning och replikering har olika roller
 
-Därför är portabilitet en viktig men ofta förbisedd kvalitet.
+Backup bör inte börja med en teknisk checkruta som *databasen backas upp varje natt*, utan med verksamhetskonsekvensen. Man behöver veta hur mycket data som får gå förlorad, hur länge informationen får vara otillgänglig, vilken återställningsgranularitet som behövs och hur beroenden mellan flera datakällor hanteras. Framför allt måste återställningen verifieras i praktiken.
 
-Det innebär inte att all data alltid måste ligga i ett helt leverantörsneutralt format. Det betyder däremot att organisationen bör förstå:
+Replikering löser ett annat problem. Flera samtidiga kopior kan höja tillgängligheten vid komponent- eller platsfel, men skyddar inte automatiskt mot logiska fel, korruption eller oavsiktlig radering som sprids till samtliga repliker. En robust lösning kan därför behöva både replikering och backup.
 
-- hur data exporteras,
-- vilka metadata som krävs för att tolka exporten,
-- hur binära objekt och relationer återskapas,
-- vilka produktunika funktioner som används,
-- hur lång tid en migrering realistiskt kan ta,
-- vilka beroenden som måste brytas före teknikbyte.
-
-En standardiserad databastjänst kan alltså vara mycket värdefull samtidigt som arkitekturen undviker onödig inlåsning.
-
-## Backup och återställning börjar med dataförlustens konsekvens
-
-Backup nämns ofta som en teknisk checkruta: *databasen backas upp varje natt*. Det säger väldigt lite om verksamhetens faktiska återställningsförmåga.
-
-Frågan bör i stället börja med konsekvensen:
-
-- Hur mycket data får gå förlorad?
-- Hur länge får informationen vara otillgänglig?
-- Måste enskilda objekt kunna återställas?
-- Måste hela tjänsten återställas till en konsistent tidpunkt?
-- Hur hanteras beroenden mellan flera datakällor?
-- Hur verifieras att backupen faktiskt går att använda?
-
-Här möts dataförmågan och förmågan Driftbarhet och motståndskraft. Dataområdet behöver uttrycka vad informationen kräver. Den gemensamma driftförmågan kan sedan erbjuda backup-, replikerings- och återställningstjänster som uppfyller olika profiler.
-
-Detta är ett bra exempel på varför förmågekartan inte innebär isolerade silor. Ett informationskrav kan behöva realiseras av flera förmågor tillsammans.
-
-## Replikering är inte backup
-
-Replikering kan höja tillgängligheten genom att flera kopior finns samtidigt. Men om en felaktig ändring, korruption eller oavsiktlig radering replikeras till alla kopior har man fortfarande förlorat korrekt data.
-
-Backup och replikering har därför olika syften:
-
-- replikering hjälper främst vid komponent- eller platsfel och kan stödja tillgänglighet,
-- backup hjälper till att återgå till ett tidigare korrekt tillstånd efter förlust eller korruption.
-
-En robust lösning kan behöva båda.
+Här möts dataförmågan och förmågan Driftbarhet och motståndskraft. Dataområdet uttrycker vad informationen kräver; den gemensamma driftförmågan kan erbjuda backup-, replikerings- och återställningstjänster med olika profiler. Det visar också varför förmågekartan inte består av isolerade silor: ett informationskrav kan behöva realiseras av flera förmågor tillsammans.
 
 ## Kryptering och åtkomst ska följa informationens skyddsbehov
 
@@ -356,91 +310,24 @@ Detta är ett viktigt tjänstekontrakt. Plattformsteamet kan göra det enkelt at
 
 ## Kvalitetskrav för dataförmågan
 
-### Korrekthet och konsistens
+Dataförmågan behöver kunna uttrycka kvalitetskrav som varierar mellan informationsmängder och användningsfall. Viktiga dimensioner är bland annat:
 
-Data måste vara tillräckligt korrekt och konsistent för sitt verksamhetssyfte. Kravet varierar mellan informationsmängder och får inte reduceras till en generell produktinställning.
+- **Korrekthet och konsistens:** vilka tillstånd måste vara riktiga samtidigt och vilka kopior får släpa efter?
+- **Tillgänglighet och återställningsförmåga:** hur länge får informationen vara otillgänglig och hur stor dataförlust är acceptabel?
+- **Prestanda och skalbarhet:** hur ser läs-, skriv- och tillväxtmönstren ut, inklusive historik, index, repliker och backup?
+- **Säkerhet och informationsskydd:** hur ska klassning, åtkomst och skydd följa med till kopior, backup och testdata?
+- **Spårbarhet:** behöver tidigare tillstånd och förändringshistorik kunna visas på ett verksamhetsmässigt begripligt sätt?
+- **Förvaltningsbarhet, portabilitet och kostnad:** hur kan schema, data och teknik förändras över tid utan orimliga driftstopp, inlåsning eller kostnader?
 
-### Tillgänglighet
-
-Vissa data måste vara tillgängliga även när delar av infrastrukturen fallerar. Andra kan tåla längre avbrott. Tillgänglighetsprofilen bör därför härledas från verksamhetskonsekvensen.
-
-### Kontinuitet och återställningsförmåga
-
-Organisationen behöver förstå acceptabel dataförlust, återställningstid och hur återställning verifieras. Backup utan testad restore är en ofullständig förmåga.
-
-### Prestanda
-
-Åtkomstmönster påverkar datamodell, indexering, cache och ibland val av lagringsmekanism. Ett system med mycket skrivningar har andra behov än ett system med komplexa läsfrågor.
-
-### Skalbarhet och kapacitet
-
-Datamängder växer över tid. Kapacitetsplanering måste därför inkludera både primär data, historik, index, repliker och backup – inte bara dagens aktiva databas.
-
-### Säkerhet och informationsskydd
-
-Skyddsnivån ska följa informationens klassning och omfatta primärkällor, kopior, backup och testdata.
-
-### Spårbarhet
-
-Vissa verksamheter behöver kunna visa tidigare tillstånd, förändringshistorik och vem som utfört en förändring. Detta bör designas explicit i stället för att hoppas att tekniska loggar räcker.
-
-### Förvaltningsbarhet och förändringsbarhet
-
-Schema, migrering och teknikbyte är normala delar av livscykeln. Datadesign som bara fungerar för den första releasen är inte hållbar.
-
-### Portabilitet
-
-Data lever ofta längre än den produkt som lagrar den. Export- och migreringsförmåga kan därför vara en viktig kvalitet även när ett teknikbyte inte är nära förestående.
-
-### Kostnadseffektivitet
-
-All data behöver inte ligga på den dyraste och snabbaste lagringsnivån. Historik, backup och binära objekt kan ha andra profiler än aktiv transaktionell data.
+Poängen är inte att alla informationsmängder ska få högsta nivå på alla dimensioner. Kraven behöver härledas från verksamhetskonsekvensen och sedan översättas till en lämplig teknisk profil.
 
 ## Ansvar på tre nivåer
 
-### Gemensam arkitektur
+På gemensam arkitekturnivå behöver organisationen sätta principer för exempelvis auktoritativa källor, kopior och återuppbyggnad, informationsskydd, portabilitet och kvalitetsprofiler för backup och tillgänglighet. Den nivån bör normalt inte designa varje lösnings datamodell.
 
-På gemensam nivå bör organisationen definiera de principer som måste hålla ihop flera förmågor och lösningar. Det kan omfatta:
+Förmågeansvaret för Data- och informationshantering bör i stället utveckla konsumerbart stöd: databas- och lagringstjänster, mönster för cache och härledda kopior, backup-/restore-profiler tillsammans med driftförmågan, migreringsstöd och tydliga ansvarskontrakt mellan konsument och plattform. Återkommande lokala speciallösningar kan vara en signal om att ett gemensamt erbjudande saknas.
 
-- krav på tydlig auktoritativ källa,
-- principer för kopior och återuppbyggnad,
-- gemensamma kvalitetsprofiler för backup och tillgänglighet,
-- regler för informationsklassning och skydd,
-- principer för portabilitet och livscykel,
-- gränsen mellan datahantering, integration, analys och drift.
-
-Den gemensamma nivån bör däremot normalt inte designa varje lösnings datamodell.
-
-### Förmågeområde
-
-Förmågeansvaret för Data- och informationshantering bör utveckla konsumerbart stöd som:
-
-- databas- och lagringstjänster,
-- vägledning för transaktioner och konsistens,
-- mönster för cache och härledda kopior,
-- standardiserade backup-/restore-profiler tillsammans med driftförmågan,
-- migreringsstöd,
-- standarder för tekniska dataformat och persistence där det ger nytta,
-- tydliga ansvarskontrakt mellan konsument och plattform.
-
-Förmågeområdet bör också följa vilka lokala speciallösningar som återkommer. Om många team bygger samma typ av datatjänst kan det vara en signal om ett saknat gemensamt erbjudande.
-
-### Lösning eller produkt
-
-Den konkreta lösningen måste fortfarande fatta beslut om:
-
-- vilka data den äger,
-- vilken lagringsmodell som passar,
-- schema och index,
-- transaktionsgränser,
-- cachebehov,
-- historik,
-- retention,
-- migrationsstrategi,
-- vilka kopior som är tillåtna,
-- hur kvalitetskraven verifieras.
-
-Gemensamma plattformar kan minska mängden tekniskt arbete, men de kan inte ersätta domänspecifik datadesign.
+Den konkreta lösningen ansvarar fortfarande för vilka data den äger, datamodell och schema, transaktionsgränser, historik, retention, cache, migrationsstrategi och hur kvalitetskraven verifieras. Gemensamma plattformar kan minska mängden tekniskt arbete men ersätter inte domänspecifik datadesign.
 
 ## Vanliga anti-patterns
 
@@ -456,13 +343,9 @@ Flera oberoende system delar schema och skriver direkt i varandras tabeller. Den
 
 En cache börjar användas för unik verksamhetsdata eftersom den är snabb och enkel. Först vid fel upptäcks att återuppbyggnad saknas.
 
-### Backup som historik
+### Backup och replikering används för fel syfte
 
-Verksamheten behöver kunna se tidigare tillstånd men lösningen förlitar sig på backup. Återställningskopior blir då ett opraktiskt och riskfyllt sätt att uppfylla ett funktionellt historikbehov.
-
-### Replikering som backup
-
-Flera samtidiga kopior antas skydda mot all dataförlust, trots att logiska fel och raderingar kan replikeras till samtliga.
+Backup används som verksamhetshistorik eller replikering antas skydda mot all dataförlust. Båda sammanblandningarna gör att återställnings- och historikbehov upptäcks först när de faktiskt behövs.
 
 ### Kopior utan ägare
 
@@ -558,8 +441,7 @@ Några huvudprinciper är särskilt viktiga:
 - informationsbehov ska komma före lagringsteknik,
 - auktoritativ källa ska vara tydlig,
 - kopior ska ha definierat syfte och livscykel,
-- cache, repliker och backup har olika roller,
-- historik ska inte förväxlas med återställning,
+- cache, repliker, historik och backup har olika roller,
 - retention och gallring måste omfatta hela informationslandskapet,
 - schemaevolution och migrering är normala livscykelproblem,
 - verksamhetsdata bör normalt ägas nära sitt domänansvar,

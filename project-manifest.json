@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev80.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev93.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -14,17 +14,17 @@
       "chapters/09-nar-nagot-bor-vara-gemensamt.md": "23354f4bad7d0664cb8c35a14ef98997c5203bc79ab8d89cc62f01c0ac524272",
       "chapters/10-domaner-ansvar-och-granser.md": "f8934ad4d13464aeba20ee00a1658d1d4b46efa7870bb5b7e94893c427bc89c9",
       "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "bc1ff3da9e707d0379836f6c5bff77bbdff5e24ad45a1bf06602e689770d8aa8",
-      "chapters/12-interaktion-presentation-och-kanaler.md": "131dcab6823ab456f6b3acb649357ff896079916b6e944aa6d278a771d363d7a",
-      "chapters/13-process-workflow-och-arendehantering.md": "9f821d1b701851bb81b6dc48e8b658257c18b2e1ee58d2a54c058fe04dbdac50",
-      "chapters/14-regler-och-beslut.md": "611187fec5994eb4e34af9ba7f31648ccfce7eee250455d74c4b61f7f313f558",
-      "chapters/15-data-och-informationshantering.md": "8c5fc66544bb0740a6dd2d802115d1e14d457f52538f3683673ec84998bfd03e",
-      "chapters/16-analys-sokning-och-ai.md": "5ce4917711127220659d7540d94e81f54ec986733256a07cf37809db817ad06b",
-      "chapters/17-integration-och-kommunikation.md": "089e237b8b922a8a45aaf0f42402921195ffd2311a72647eb1fc9950b1f620e1",
-      "chapters/18-identitet-och-tillit.md": "6e38137df6cacac010cebfd41d694f487e99ae38ad56152320642799c05756a5",
-      "chapters/19-applikationsexekvering-och-runtime.md": "c3b2c24177a2e3e4d82653ba5d7d1b97a794b685882948815cd72395b0b31408",
-      "chapters/20-driftbarhet-och-motstandskraft.md": "6f3d3cb6858e2233b17d3c35de0a16b5eb7a664c1c1f9e2f3de796c04668acee",
-      "chapters/21-programvaruutveckling-och-leverans.md": "59a22ffa7416e80226b0b7ad950c8f367faddfbbb3e41744ee22848903c74eb2",
-      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "8b762dab11e8ad85e0193e7c5332e607b63a0befd63d278496abdaf498f85499",
+      "chapters/12-interaktion-presentation-och-kanaler.md": "e34bd8968a32b351fccfbf8dc6f43814e0b60d126b32e92dfa8174514e3ba32b",
+      "chapters/13-process-workflow-och-arendehantering.md": "2e0a01cf576063aa1ec6985b6e15d19dfbd50a700be1401acde167b767f000c4",
+      "chapters/14-regler-och-beslut.md": "f644e55df63fe0c1513db52c6c34a3a36aa179c4c2bec4391dc7f76d92da53c3",
+      "chapters/15-data-och-informationshantering.md": "972fc2c0a057ae1ee3ddb1b23c78fc40652f83fc4c3e04a8084b76692eaa6792",
+      "chapters/16-analys-sokning-och-ai.md": "8682f89aadc5561a095da3563acda025f9f6e40f257517188f865dbcaf12641b",
+      "chapters/17-integration-och-kommunikation.md": "7508132863c37cbc882e7be20dde38246d372a61c14a1babfb15d73972152600",
+      "chapters/18-identitet-och-tillit.md": "ec27f2047c8b162d9a138f1709215282efa6619f1439df5f203afa11c7aca0b5",
+      "chapters/19-applikationsexekvering-och-runtime.md": "05340a308ca03d926efdecfab03aaab618792916f5b0c2875e20d1ff58473b5b",
+      "chapters/20-driftbarhet-och-motstandskraft.md": "d609784d510475aec809ef3f531cf409976178c36cf4fabde891abf7329c0ce4",
+      "chapters/21-programvaruutveckling-och-leverans.md": "46e0511fd6c287e4bb639db47976fc7f3a6d1b5ea867f02ba46442e6617fc8f0",
+      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "040278979b792d0fc5086d0322c958339591af72a634233c1c77fd31f09629bf",
       "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "42753c5c3f3c21c3764647434bdc6fb8afb4ba9298c611eda6e3a9cddb8fe03a",
       "chapters/24-integrations-och-kommunikationsmonster.md": "b2f01fb2c200d8285b366c5562bd2f038f8e5366c88cfef125e08352f21625bc",
       "chapters/25-process-regel-och-datamonster.md": "382077fbf2752fefafa2340eeed1a3fdf5af2509c6a28014a6c210cec7c391d8",
@@ -46,16 +46,17 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "publishing/epub.css",
-      "publishing/pdf-template.tex"
+      "chapters/begreppsregister.md",
+      "docs/begreppsregister.yaml",
+      "docs/register-korsreferenssynk-pass-3.md"
     ],
-    "operation": "Förbättrad tabelläsbarhet i PDF och EPUB med diskret varannan-rad-toning och mjukare radavdelning",
-    "source_revision": 79
+    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del III",
+    "source_revision": 92
   },
-  "parent_revision": 79,
+  "parent_revision": 92,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 80,
+  "revision": 93,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -144,48 +145,48 @@
       "sha256": "bc1ff3da9e707d0379836f6c5bff77bbdff5e24ad45a1bf06602e689770d8aa8"
     },
     "chapters/12-interaktion-presentation-och-kanaler.md": {
-      "bytes": 28643,
-      "sha256": "131dcab6823ab456f6b3acb649357ff896079916b6e944aa6d278a771d363d7a"
+      "bytes": 27421,
+      "sha256": "e34bd8968a32b351fccfbf8dc6f43814e0b60d126b32e92dfa8174514e3ba32b"
     },
     "chapters/13-process-workflow-och-arendehantering.md": {
-      "bytes": 31010,
-      "sha256": "9f821d1b701851bb81b6dc48e8b658257c18b2e1ee58d2a54c058fe04dbdac50"
+      "bytes": 26268,
+      "sha256": "2e0a01cf576063aa1ec6985b6e15d19dfbd50a700be1401acde167b767f000c4"
     },
     "chapters/14-regler-och-beslut.md": {
-      "bytes": 26202,
-      "sha256": "611187fec5994eb4e34af9ba7f31648ccfce7eee250455d74c4b61f7f313f558"
+      "bytes": 24713,
+      "sha256": "f644e55df63fe0c1513db52c6c34a3a36aa179c4c2bec4391dc7f76d92da53c3"
     },
     "chapters/15-data-och-informationshantering.md": {
-      "bytes": 28406,
-      "sha256": "8c5fc66544bb0740a6dd2d802115d1e14d457f52538f3683673ec84998bfd03e"
+      "bytes": 25921,
+      "sha256": "972fc2c0a057ae1ee3ddb1b23c78fc40652f83fc4c3e04a8084b76692eaa6792"
     },
     "chapters/16-analys-sokning-och-ai.md": {
-      "bytes": 31174,
-      "sha256": "5ce4917711127220659d7540d94e81f54ec986733256a07cf37809db817ad06b"
+      "bytes": 29472,
+      "sha256": "8682f89aadc5561a095da3563acda025f9f6e40f257517188f865dbcaf12641b"
     },
     "chapters/17-integration-och-kommunikation.md": {
-      "bytes": 28110,
-      "sha256": "089e237b8b922a8a45aaf0f42402921195ffd2311a72647eb1fc9950b1f620e1"
+      "bytes": 25161,
+      "sha256": "7508132863c37cbc882e7be20dde38246d372a61c14a1babfb15d73972152600"
     },
     "chapters/18-identitet-och-tillit.md": {
-      "bytes": 30354,
-      "sha256": "6e38137df6cacac010cebfd41d694f487e99ae38ad56152320642799c05756a5"
+      "bytes": 27113,
+      "sha256": "ec27f2047c8b162d9a138f1709215282efa6619f1439df5f203afa11c7aca0b5"
     },
     "chapters/19-applikationsexekvering-och-runtime.md": {
-      "bytes": 27255,
-      "sha256": "c3b2c24177a2e3e4d82653ba5d7d1b97a794b685882948815cd72395b0b31408"
+      "bytes": 25541,
+      "sha256": "05340a308ca03d926efdecfab03aaab618792916f5b0c2875e20d1ff58473b5b"
     },
     "chapters/20-driftbarhet-och-motstandskraft.md": {
-      "bytes": 33101,
-      "sha256": "6f3d3cb6858e2233b17d3c35de0a16b5eb7a664c1c1f9e2f3de796c04668acee"
+      "bytes": 28346,
+      "sha256": "d609784d510475aec809ef3f531cf409976178c36cf4fabde891abf7329c0ce4"
     },
     "chapters/21-programvaruutveckling-och-leverans.md": {
-      "bytes": 29773,
-      "sha256": "59a22ffa7416e80226b0b7ad950c8f367faddfbbb3e41744ee22848903c74eb2"
+      "bytes": 28060,
+      "sha256": "46e0511fd6c287e4bb639db47976fc7f3a6d1b5ea867f02ba46442e6617fc8f0"
     },
     "chapters/22-arbetsplats-samarbete-och-produktivitet.md": {
-      "bytes": 28207,
-      "sha256": "8b762dab11e8ad85e0193e7c5332e607b63a0befd63d278496abdaf498f85499"
+      "bytes": 27175,
+      "sha256": "040278979b792d0fc5086d0322c958339591af72a634233c1c77fd31f09629bf"
     },
     "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": {
       "bytes": 27804,
@@ -248,8 +249,8 @@
       "sha256": "c7f1d7e7399ae4309ee15c5a02a2aca51c9d00851a31f3874a9865b6691738e4"
     },
     "chapters/begreppsregister.md": {
-      "bytes": 7363,
-      "sha256": "8326b03464c1035932e4ac6dad6ae0c71e6774b9f278919292be8bc36a05fed9"
+      "bytes": 7354,
+      "sha256": "ee43aa8e7d15bc756df7ad9f2c500618f2ac43d985402e104a79eaf5b2828fee"
     },
     "chapters/del-01.md": {
       "bytes": 50,
@@ -292,8 +293,8 @@
       "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
     },
     "docs/begreppsregister.yaml": {
-      "bytes": 24041,
-      "sha256": "47044a96ec9dc545b5e8a40e3b7bce49d1fa54dc2c420e4b2bd09720c00a0f64"
+      "bytes": 24422,
+      "sha256": "37662d39adef403d491f5fea05d2f140f7da8a5e82c48ede98daa4ddf90d27be"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
@@ -362,6 +363,10 @@
     "docs/register-korsreferenssynk-pass-2.md": {
       "bytes": 2516,
       "sha256": "e261bcdef6da9d2b1a01f1e200a588b2c54217ac2b15795bfc95d656eb0a98cf"
+    },
+    "docs/register-korsreferenssynk-pass-3.md": {
+      "bytes": 2378,
+      "sha256": "4532d13d1473e294ae50912230c427d52d2ad1be348906d9ef4c700f5e786244"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -876,8 +881,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 44082,
-      "sha256": "4e65971190d238e0a4bc151d1a1ecc7ef75bc02c8736acca0b61c998ca56ca41"
+      "bytes": 47959,
+      "sha256": "a493e37ed28d12c0451e8ca79f6cb449cec82e2a1278fa730908d6f46af66410"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -904,5 +909,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T04:15:24Z"
+  "updated_at": "2026-08-20T05:29:27Z"
 }
