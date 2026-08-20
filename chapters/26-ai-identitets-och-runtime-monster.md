@@ -402,7 +402,7 @@ Det behövs därför en genomtänkt skillnad mellan exempelvis:
 - readiness – instansen är redo att ta trafik,
 - tjänstefunktion – hela beroendekedjan kan leverera den avsedda funktionen.
 
-Den sista hör ofta hemma i monitorering och syntetiska tester snarare än i containerplattformens omstartslogik.
+Den sista hör ofta hemma i övervakning och syntetiska tester snarare än i containerplattformens omstartslogik.
 
 ## När de fyra mönstren kombineras
 

@@ -293,7 +293,7 @@ En förvaltad relationsdatabastjänst kan exempelvis ansvara för:
 - databasinstans,
 - patchning,
 - teknisk hög tillgänglighet,
-- monitorering,
+- övervakning,
 - backup enligt vald profil,
 - etablerade anslutningsmönster.
 

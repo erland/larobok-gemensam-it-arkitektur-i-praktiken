@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev113.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev114.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -11,34 +11,34 @@
       "chapters/06-arkitekturprinciper-som-beslutsstod.md": "a5260a064e481158917c9cd449fb39192abbddf14f960aac83bd6bfc90294baf",
       "chapters/07-att-etablera-modellen-ordning-ansvar-och-iteration.md": "6bccff8631d99a9bc397a667c43e31d0cc29b768a5770dd42511a8aaa54ff840",
       "chapters/08-vad-ar-en-it-formaga.md": "45ca664e82afac5f8645073de95e01ad181824c713029bd56584187367da0e0f",
-      "chapters/09-nar-nagot-bor-vara-gemensamt.md": "3e4d1350dcc8a71c04dd0193231a2f4e808affbedf97dbc1d22a6b69ca31c5c4",
+      "chapters/09-nar-nagot-bor-vara-gemensamt.md": "571f94b56e53d37eef3eabc7bc1ba3788bde5db40521951a3eba680f0ada6975",
       "chapters/10-domaner-ansvar-och-granser.md": "f8934ad4d13464aeba20ee00a1658d1d4b46efa7870bb5b7e94893c427bc89c9",
-      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "43e76c46789a02a14fb2d03a2280a5b0f77c0b294bdcdc945ea0846bdaeaf3eb",
+      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": "079f9f4b10e6c449f30c48bf6d52400f09054a2f654a133a324dd8408e5a4c82",
       "chapters/12-interaktion-presentation-och-kanaler.md": "720f0e92b4251e0fd503697064611eb8c68e08409d4d10cb205eb1716033f1d1",
       "chapters/13-process-workflow-och-arendehantering.md": "44e4fd60373d2384eecb36675bbbc2c1f9117fb3e48d9f7085ed1038b6df3f0b",
-      "chapters/14-regler-och-beslut.md": "742ab7dd1bf97967b8718251677518c47fe8597451280edf0c38a54a6c725ae0",
-      "chapters/15-data-och-informationshantering.md": "33361ed6dc551d9579b980df76676a9132e930a8fb3d2a28d80a8359d60f0d85",
+      "chapters/14-regler-och-beslut.md": "6e3cd59183162e5428d95ab541bdbac19399e32219f983f3ad04deda5929d272",
+      "chapters/15-data-och-informationshantering.md": "2c67d9f9037a1cbc2ec412ce87573dacae6e4b55588da5a12d789851fba89f7b",
       "chapters/16-analys-sokning-och-ai.md": "466af820c73651b59e2fa1c571924986bab55c670c02120c63d6e370ceb69ef2",
       "chapters/17-integration-och-kommunikation.md": "8aa7c4ede537bf1f9932c9fccf844ec05687665e99e7a50e47415f0e217beab5",
-      "chapters/18-identitet-och-tillit.md": "ec27f2047c8b162d9a138f1709215282efa6619f1439df5f203afa11c7aca0b5",
+      "chapters/18-identitet-och-tillit.md": "9eb4b9bb9f65cdbd4ee2c10ed59544fb27fe8923efd6630fd5767d135714ade5",
       "chapters/19-applikationsexekvering-och-runtime.md": "e858f35a2e61af4d17668c1401c3c37965672d492d09cae5066b433186867fc7",
-      "chapters/20-driftbarhet-och-motstandskraft.md": "7c026085b1605baa19e7473170f8203c16bdd0ae66e9f88a758bf6ae30467e79",
+      "chapters/20-driftbarhet-och-motstandskraft.md": "a6170565cf679c7138b44cbec04971da8102c57d4bb66accb2da95410b308df5",
       "chapters/21-programvaruutveckling-och-leverans.md": "c0053a7d007cd3e82c0ed58acfbaefcf1a7308fc4d6986d2f9f226057a1ea06d",
       "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "66f4d256918b5df25dda050786cc149a495dccadc7994f42357e00b001278694",
-      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "463a81c35f7ad1f96a097e16151153a835a782cf5c66b5f771aacd495651d512",
+      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "b35298ca3401d1790f04e5b3dd1ac66885539b1205b2b06a4567f9a9e549d0dd",
       "chapters/24-integrations-och-kommunikationsmonster.md": "739e055e4da7a131dfa2c2b00c53ca0947623d1054a8085c7a7948c8e2033a1a",
       "chapters/25-process-regel-och-datamonster.md": "70a08089bc53f4080c60f22a939f4961cca667ab71021ea3dd19840f8582bf89",
-      "chapters/26-ai-identitets-och-runtime-monster.md": "922c0e6a189ccd6c6988d839e5a4a0eeac4c6a3152a4b8391deca7ad0ae35be5",
-      "chapters/27-drift-och-leveransmonster.md": "919332d3cf20c8ad3f657669e7b3800249fc2bfef832933714c822e5ed692a05",
+      "chapters/26-ai-identitets-och-runtime-monster.md": "5da3903a873580ba8d5016f91de1aa9e1296cf9c4fffb750ad7c08bcdac74545",
+      "chapters/27-drift-och-leveransmonster.md": "3382f963e66655a84e51efe48c7b65912c8086ae48c55692616261a88d967327",
       "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "ac746453b6f442592a6519ec1e98e153f38b8e786924ab29e1e3cf22ee976c9a",
-      "chapters/29-platform-as-a-product.md": "4c917d50fd41801c9c54786032cadfb00cc1b0cde07dca898dfe7a955c2e3415",
-      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "51ed2804f03a8c3bc42da10930928fafa3fcfc00d066014876114884b574d224",
+      "chapters/29-platform-as-a-product.md": "7e12ec9b5c199058a84daafa41ee040a816acd3f4ee1c8975e1bd77a4695321c",
+      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "aa78b42f3dadcaaaafd0988f1e737cbfc944e37bb897d34f33dd457fdced81b4",
       "chapters/31-tekniska-standarder-och-deras-nivaer.md": "74eb4b2e8ed356b5b13d0f33e28874ef1711ccfe072bee6038d60ac9cac615aa",
-      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "50496ba1ba25e4785b80f5ff319ddf6c1653a3450b53fe44406ffc68a7c7f90a",
+      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": "4ef91f04225724a8f1401ec001d560339a328b1731894c1bc51b59b991067217",
       "chapters/33-ekonomi-kostnad-och-kapacitet.md": "16f51e45e9673005d2624f6c372be4a116bfc9c55564ba1957b399d704b387a3",
       "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md": "335a23eb0d50d046068f2d330883ee6ac497b103282dc01158fa4dcb6dec8313",
       "chapters/35-fran-behov-till-losningsarkitektur.md": "354a5d043d815b0c54ac558cbaf43fb0406fbb2c3659c1ee75fe5d5a0822d412",
-      "chapters/36-sju-aterkommande-losningsscenarier.md": "1d41b38b0419a03d261e55c3911c12b3cb1c09879c50ea766ed45e8b751e756b",
+      "chapters/36-sju-aterkommande-losningsscenarier.md": "0169d7fd0aa5b6a6db8ba28e7155c97bc2df8c668cd5f3fe664848f0cd11380a",
       "chapters/37-governance-forvaltning-och-evolution.md": "e2d8a9dc9656e050415cc62d19460554cae726494ec2d075e0456708d8d85798"
     },
     "latest": 37
@@ -46,21 +46,28 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/00-inledning.md",
-      "chapters/21-programvaruutveckling-och-leverans.md",
-      "chapters/22-arbetsplats-samarbete-och-produktivitet.md",
+      "chapters/09-nar-nagot-bor-vara-gemensamt.md",
+      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md",
+      "chapters/14-regler-och-beslut.md",
+      "chapters/15-data-och-informationshantering.md",
+      "chapters/18-identitet-och-tillit.md",
+      "chapters/20-driftbarhet-och-motstandskraft.md",
+      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md",
+      "chapters/26-ai-identitets-och-runtime-monster.md",
       "chapters/27-drift-och-leveransmonster.md",
-      "chapters/del-06.md",
-      "docs/helhetsrevision-pass-2.md",
-      "docs/kapitelplan.md"
+      "chapters/29-platform-as-a-product.md",
+      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md",
+      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md",
+      "chapters/36-sju-aterkommande-losningsscenarier.md",
+      "docs/sprak-stil-typografi-slutpass.md"
     ],
-    "operation": "Bokövergripande helhetsrevision pass 2: slutredigerat inledningen, synkat Del VI:s roll, komprimerat kvarvarande ansvarsdubblering och harmoniserat terminologi",
-    "source_revision": 112
+    "operation": "Slutlig språk-, stil- och typografikontroll av hela manuset",
+    "source_revision": 113
   },
-  "parent_revision": 112,
+  "parent_revision": 113,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 113,
+  "revision": 114,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -137,16 +144,16 @@
       "sha256": "45ca664e82afac5f8645073de95e01ad181824c713029bd56584187367da0e0f"
     },
     "chapters/09-nar-nagot-bor-vara-gemensamt.md": {
-      "bytes": 23946,
-      "sha256": "3e4d1350dcc8a71c04dd0193231a2f4e808affbedf97dbc1d22a6b69ca31c5c4"
+      "bytes": 23950,
+      "sha256": "571f94b56e53d37eef3eabc7bc1ba3788bde5db40521951a3eba680f0ada6975"
     },
     "chapters/10-domaner-ansvar-och-granser.md": {
       "bytes": 22858,
       "sha256": "f8934ad4d13464aeba20ee00a1658d1d4b46efa7870bb5b7e94893c427bc89c9"
     },
     "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md": {
-      "bytes": 22590,
-      "sha256": "43e76c46789a02a14fb2d03a2280a5b0f77c0b294bdcdc945ea0846bdaeaf3eb"
+      "bytes": 22594,
+      "sha256": "079f9f4b10e6c449f30c48bf6d52400f09054a2f654a133a324dd8408e5a4c82"
     },
     "chapters/12-interaktion-presentation-och-kanaler.md": {
       "bytes": 27401,
@@ -157,12 +164,12 @@
       "sha256": "44e4fd60373d2384eecb36675bbbc2c1f9117fb3e48d9f7085ed1038b6df3f0b"
     },
     "chapters/14-regler-och-beslut.md": {
-      "bytes": 24680,
-      "sha256": "742ab7dd1bf97967b8718251677518c47fe8597451280edf0c38a54a6c725ae0"
+      "bytes": 24684,
+      "sha256": "6e3cd59183162e5428d95ab541bdbac19399e32219f983f3ad04deda5929d272"
     },
     "chapters/15-data-och-informationshantering.md": {
       "bytes": 25842,
-      "sha256": "33361ed6dc551d9579b980df76676a9132e930a8fb3d2a28d80a8359d60f0d85"
+      "sha256": "2c67d9f9037a1cbc2ec412ce87573dacae6e4b55588da5a12d789851fba89f7b"
     },
     "chapters/16-analys-sokning-och-ai.md": {
       "bytes": 29386,
@@ -173,16 +180,16 @@
       "sha256": "8aa7c4ede537bf1f9932c9fccf844ec05687665e99e7a50e47415f0e217beab5"
     },
     "chapters/18-identitet-och-tillit.md": {
-      "bytes": 27113,
-      "sha256": "ec27f2047c8b162d9a138f1709215282efa6619f1439df5f203afa11c7aca0b5"
+      "bytes": 27119,
+      "sha256": "9eb4b9bb9f65cdbd4ee2c10ed59544fb27fe8923efd6630fd5767d135714ade5"
     },
     "chapters/19-applikationsexekvering-och-runtime.md": {
       "bytes": 25452,
       "sha256": "e858f35a2e61af4d17668c1401c3c37965672d492d09cae5066b433186867fc7"
     },
     "chapters/20-driftbarhet-och-motstandskraft.md": {
-      "bytes": 28322,
-      "sha256": "7c026085b1605baa19e7473170f8203c16bdd0ae66e9f88a758bf6ae30467e79"
+      "bytes": 28374,
+      "sha256": "a6170565cf679c7138b44cbec04971da8102c57d4bb66accb2da95410b308df5"
     },
     "chapters/21-programvaruutveckling-och-leverans.md": {
       "bytes": 28072,
@@ -193,8 +200,8 @@
       "sha256": "66f4d256918b5df25dda050786cc149a495dccadc7994f42357e00b001278694"
     },
     "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": {
-      "bytes": 24096,
-      "sha256": "463a81c35f7ad1f96a097e16151153a835a782cf5c66b5f771aacd495651d512"
+      "bytes": 24104,
+      "sha256": "b35298ca3401d1790f04e5b3dd1ac66885539b1205b2b06a4567f9a9e549d0dd"
     },
     "chapters/24-integrations-och-kommunikationsmonster.md": {
       "bytes": 24614,
@@ -206,31 +213,31 @@
     },
     "chapters/26-ai-identitets-och-runtime-monster.md": {
       "bytes": 26571,
-      "sha256": "922c0e6a189ccd6c6988d839e5a4a0eeac4c6a3152a4b8391deca7ad0ae35be5"
+      "sha256": "5da3903a873580ba8d5016f91de1aa9e1296cf9c4fffb750ad7c08bcdac74545"
     },
     "chapters/27-drift-och-leveransmonster.md": {
       "bytes": 26749,
-      "sha256": "919332d3cf20c8ad3f657669e7b3800249fc2bfef832933714c822e5ed692a05"
+      "sha256": "3382f963e66655a84e51efe48c7b65912c8086ae48c55692616261a88d967327"
     },
     "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": {
       "bytes": 20385,
       "sha256": "ac746453b6f442592a6519ec1e98e153f38b8e786924ab29e1e3cf22ee976c9a"
     },
     "chapters/29-platform-as-a-product.md": {
-      "bytes": 20691,
-      "sha256": "4c917d50fd41801c9c54786032cadfb00cc1b0cde07dca898dfe7a955c2e3415"
+      "bytes": 20699,
+      "sha256": "7e12ec9b5c199058a84daafa41ee040a816acd3f4ee1c8975e1bd77a4695321c"
     },
     "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": {
-      "bytes": 22585,
-      "sha256": "51ed2804f03a8c3bc42da10930928fafa3fcfc00d066014876114884b574d224"
+      "bytes": 22593,
+      "sha256": "aa78b42f3dadcaaaafd0988f1e737cbfc944e37bb897d34f33dd457fdced81b4"
     },
     "chapters/31-tekniska-standarder-och-deras-nivaer.md": {
       "bytes": 18884,
       "sha256": "74eb4b2e8ed356b5b13d0f33e28874ef1711ccfe072bee6038d60ac9cac615aa"
     },
     "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md": {
-      "bytes": 23519,
-      "sha256": "50496ba1ba25e4785b80f5ff319ddf6c1653a3450b53fe44406ffc68a7c7f90a"
+      "bytes": 23535,
+      "sha256": "4ef91f04225724a8f1401ec001d560339a328b1731894c1bc51b59b991067217"
     },
     "chapters/33-ekonomi-kostnad-och-kapacitet.md": {
       "bytes": 21469,
@@ -246,7 +253,7 @@
     },
     "chapters/36-sju-aterkommande-losningsscenarier.md": {
       "bytes": 15965,
-      "sha256": "1d41b38b0419a03d261e55c3911c12b3cb1c09879c50ea766ed45e8b751e756b"
+      "sha256": "0169d7fd0aa5b6a6db8ba28e7155c97bc2df8c668cd5f3fe664848f0cd11380a"
     },
     "chapters/37-governance-forvaltning-och-evolution.md": {
       "bytes": 13843,
@@ -391,6 +398,10 @@
     "docs/register-korsreferenssynk-pass-6.md": {
       "bytes": 2322,
       "sha256": "edf7e3a630580965a18e183610ce473a4eb916b45ef31b730016ac1b6a1f5a1d"
+    },
+    "docs/sprak-stil-typografi-slutpass.md": {
+      "bytes": 2172,
+      "sha256": "d597dea064ca8f6bbbd93dac724942f5c4e228adabedf30086a9207cab6432a6"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -905,8 +916,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 55393,
-      "sha256": "4907f12b8e5ce1cf95282ab0ff94e2afd22413c23cf5fb1ef063bae8ffeb869a"
+      "bytes": 56250,
+      "sha256": "1da1e75d01a9e52903e42418a5c3a7517e472b7b4e6aa8309f35df9bbd29e72d"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -933,5 +944,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T15:28:29Z"
+  "updated_at": "2026-08-20T15:43:56Z"
 }

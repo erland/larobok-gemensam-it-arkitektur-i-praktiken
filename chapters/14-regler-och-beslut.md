@@ -139,7 +139,7 @@ Anta ett workflow där ett ärende efter registrering går till automatisk handl
 ```text
 Workflow
    ↓
-"Vilken handläggningskategori gäller?"
+”Vilken handläggningskategori gäller?”
    ↓
 Beslutstjänst
    ↓
