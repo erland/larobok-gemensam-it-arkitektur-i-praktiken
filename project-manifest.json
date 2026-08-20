@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev112.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev113.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -23,13 +23,13 @@
       "chapters/18-identitet-och-tillit.md": "ec27f2047c8b162d9a138f1709215282efa6619f1439df5f203afa11c7aca0b5",
       "chapters/19-applikationsexekvering-och-runtime.md": "e858f35a2e61af4d17668c1401c3c37965672d492d09cae5066b433186867fc7",
       "chapters/20-driftbarhet-och-motstandskraft.md": "7c026085b1605baa19e7473170f8203c16bdd0ae66e9f88a758bf6ae30467e79",
-      "chapters/21-programvaruutveckling-och-leverans.md": "0c59cfc9fd9e3046f7d1932fd3f714b9d1b840c68dba404e3d102061a7b52cbc",
-      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "f5325b2880df94a60d6b4eddaf8560747bedd086d3f2ae451d729308331e3cbd",
+      "chapters/21-programvaruutveckling-och-leverans.md": "c0053a7d007cd3e82c0ed58acfbaefcf1a7308fc4d6986d2f9f226057a1ea06d",
+      "chapters/22-arbetsplats-samarbete-och-produktivitet.md": "66f4d256918b5df25dda050786cc149a495dccadc7994f42357e00b001278694",
       "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": "463a81c35f7ad1f96a097e16151153a835a782cf5c66b5f771aacd495651d512",
       "chapters/24-integrations-och-kommunikationsmonster.md": "739e055e4da7a131dfa2c2b00c53ca0947623d1054a8085c7a7948c8e2033a1a",
       "chapters/25-process-regel-och-datamonster.md": "70a08089bc53f4080c60f22a939f4961cca667ab71021ea3dd19840f8582bf89",
       "chapters/26-ai-identitets-och-runtime-monster.md": "922c0e6a189ccd6c6988d839e5a4a0eeac4c6a3152a4b8391deca7ad0ae35be5",
-      "chapters/27-drift-och-leveransmonster.md": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf",
+      "chapters/27-drift-och-leveransmonster.md": "919332d3cf20c8ad3f657669e7b3800249fc2bfef832933714c822e5ed692a05",
       "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": "ac746453b6f442592a6519ec1e98e153f38b8e786924ab29e1e3cf22ee976c9a",
       "chapters/29-platform-as-a-product.md": "4c917d50fd41801c9c54786032cadfb00cc1b0cde07dca898dfe7a955c2e3415",
       "chapters/30-golden-paths-paved-roads-och-sjalvservice.md": "51ed2804f03a8c3bc42da10930928fafa3fcfc00d066014876114884b574d224",
@@ -46,45 +46,21 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/02-en-arkitektur-av-flera-lager.md",
-      "chapters/03-behov-fore-teknik.md",
-      "chapters/05-arkitekturbeslut-och-trade-offs.md",
-      "chapters/08-vad-ar-en-it-formaga.md",
-      "chapters/09-nar-nagot-bor-vara-gemensamt.md",
-      "chapters/11-information-och-data-som-arkitekturella-ingangsvarden.md",
-      "chapters/12-interaktion-presentation-och-kanaler.md",
-      "chapters/13-process-workflow-och-arendehantering.md",
-      "chapters/14-regler-och-beslut.md",
-      "chapters/15-data-och-informationshantering.md",
-      "chapters/16-analys-sokning-och-ai.md",
-      "chapters/17-integration-och-kommunikation.md",
-      "chapters/19-applikationsexekvering-och-runtime.md",
-      "chapters/20-driftbarhet-och-motstandskraft.md",
+      "chapters/00-inledning.md",
       "chapters/21-programvaruutveckling-och-leverans.md",
       "chapters/22-arbetsplats-samarbete-och-produktivitet.md",
-      "chapters/23-losningsmonster-som-ateranvandbara-beslut.md",
-      "chapters/24-integrations-och-kommunikationsmonster.md",
-      "chapters/25-process-regel-och-datamonster.md",
-      "chapters/26-ai-identitets-och-runtime-monster.md",
-      "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md",
-      "chapters/29-platform-as-a-product.md",
-      "chapters/30-golden-paths-paved-roads-och-sjalvservice.md",
-      "chapters/31-tekniska-standarder-och-deras-nivaer.md",
-      "chapters/32-tekniklivscykel-och-kontrollerad-forandring.md",
-      "chapters/33-ekonomi-kostnad-och-kapacitet.md",
-      "chapters/34-vad-en-referensarkitektur-ar-och-inte-ar.md",
-      "chapters/35-fran-behov-till-losningsarkitektur.md",
-      "chapters/36-sju-aterkommande-losningsscenarier.md",
-      "chapters/37-governance-forvaltning-och-evolution.md",
-      "docs/kapitelhanvisningspass.md"
+      "chapters/27-drift-och-leveransmonster.md",
+      "chapters/del-06.md",
+      "docs/helhetsrevision-pass-2.md",
+      "docs/kapitelplan.md"
     ],
-    "operation": "Minskade explicita kapitelhänvisningar i löptexten och gjorde resonemangen mer självbärande",
-    "source_revision": 111
+    "operation": "Bokövergripande helhetsrevision pass 2: slutredigerat inledningen, synkat Del VI:s roll, komprimerat kvarvarande ansvarsdubblering och harmoniserat terminologi",
+    "source_revision": 112
   },
-  "parent_revision": 111,
+  "parent_revision": 112,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 112,
+  "revision": 113,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -125,8 +101,8 @@
       "sha256": "32d0a79ad9ed1f75e648f1089bd24eb6b7bc9fa9a39135985d7db92ce56c00fb"
     },
     "chapters/00-inledning.md": {
-      "bytes": 2031,
-      "sha256": "7c64c9c4941bf899780852622800b67c583563a02dd859daf48dc1e23707d817"
+      "bytes": 2975,
+      "sha256": "db4d2c167bf27c1e407242c4364d9e6f8ee212057b05bd0b93faa8de9d8f1906"
     },
     "chapters/01-varfor-gemensam-it-arkitektur.md": {
       "bytes": 21036,
@@ -209,12 +185,12 @@
       "sha256": "7c026085b1605baa19e7473170f8203c16bdd0ae66e9f88a758bf6ae30467e79"
     },
     "chapters/21-programvaruutveckling-och-leverans.md": {
-      "bytes": 28041,
-      "sha256": "0c59cfc9fd9e3046f7d1932fd3f714b9d1b840c68dba404e3d102061a7b52cbc"
+      "bytes": 28072,
+      "sha256": "c0053a7d007cd3e82c0ed58acfbaefcf1a7308fc4d6986d2f9f226057a1ea06d"
     },
     "chapters/22-arbetsplats-samarbete-och-produktivitet.md": {
-      "bytes": 27143,
-      "sha256": "f5325b2880df94a60d6b4eddaf8560747bedd086d3f2ae451d729308331e3cbd"
+      "bytes": 26838,
+      "sha256": "66f4d256918b5df25dda050786cc149a495dccadc7994f42357e00b001278694"
     },
     "chapters/23-losningsmonster-som-ateranvandbara-beslut.md": {
       "bytes": 24096,
@@ -233,8 +209,8 @@
       "sha256": "922c0e6a189ccd6c6988d839e5a4a0eeac4c6a3152a4b8391deca7ad0ae35be5"
     },
     "chapters/27-drift-och-leveransmonster.md": {
-      "bytes": 26741,
-      "sha256": "f5eaa810c37469179cc21cc30f1d78e5dcee065377e693de2891194579152fdf"
+      "bytes": 26749,
+      "sha256": "919332d3cf20c8ad3f657669e7b3800249fc2bfef832933714c822e5ed692a05"
     },
     "chapters/28-nar-ett-byggblock-blir-en-plattformstjanst.md": {
       "bytes": 20385,
@@ -302,7 +278,7 @@
     },
     "chapters/del-06.md": {
       "bytes": 60,
-      "sha256": "c3b3cb9d3cfcb340502764c51efe642b799dbaf28a43ef075a358d4e3264edf4"
+      "sha256": "491e94595344afe8239d5821bb56b44946094dc71e988b499933d22e062110a2"
     },
     "chapters/kallor-och-vidare-lasning.md": {
       "bytes": 4569,
@@ -348,6 +324,10 @@
       "bytes": 4144,
       "sha256": "048dbbfa2b87c97bdf84d5934ddd59462f39bce81268d9a37c0652fc6fc703c3"
     },
+    "docs/helhetsrevision-pass-2.md": {
+      "bytes": 2990,
+      "sha256": "4681de8bfb534ec03476d09d547a21ee7eb8692164abe5ca3d19a7b149596c71"
+    },
     "docs/illustration-plan.md": {
       "bytes": 525,
       "sha256": "56713ed54b475615319a55bb52c5fe5c86a51abab5b33bea6919658d0d407970"
@@ -374,7 +354,7 @@
     },
     "docs/kapitelplan.md": {
       "bytes": 23141,
-      "sha256": "72dce85dcbe1c4945fcd336f77672468e9cceec9568b4eed8ed75405124c01b5"
+      "sha256": "5956e2ad49b283584d863533a6f2f39041c73895071a8df237218b0eb7b3d4c6"
     },
     "docs/kapitelplansanalys.md": {
       "bytes": 4644,
@@ -925,8 +905,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 54878,
-      "sha256": "b35037b72409f693244c476a72d7e8a62359a72bfd0148991eeb6b8281010d29"
+      "bytes": 55393,
+      "sha256": "4907f12b8e5ce1cf95282ab0ff94e2afd22413c23cf5fb1ef063bae8ffeb869a"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -953,5 +933,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T15:18:57Z"
+  "updated_at": "2026-08-20T15:28:29Z"
 }

@@ -462,11 +462,11 @@ Funktionsflaggor bör därför ha ägarskap och livscykel, inte behandlas som pe
 
 ## Standardvägen som plattformserbjudande
 
-### Developer experience är en arkitekturfråga
+### Utvecklarupplevelse är en arkitekturfråga
 
 Om den gemensamma leveransvägen är svår att använda kommer team att skapa egna genvägar.
 
-Det betyder att utvecklarupplevelse inte bara är bekvämlighet. Den påverkar:
+Det betyder att utvecklarupplevelse (*Developer Experience*, DevEx) inte bara är bekvämlighet. Den påverkar:
 
 - följsamhet till standarder,
 - ledtid,

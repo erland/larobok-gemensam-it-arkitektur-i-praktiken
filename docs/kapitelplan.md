@@ -225,7 +225,7 @@ Förmågekapitlen följer en gemensam struktur: problem och behov → vad förm�
 - Avgränsning: behandlar ekonomisk transparens, kostnads- och kapacitetsstyrning som arkitekturella signaler; övergripande budgetgovernance och organisationsstyrning hör inte till kapitlet.
 - Status: helhetsreviderad – pass 1
 
-# Del VI – Referensarkitekturer och praktisk tillämpning
+# Del VI – Referensarkitektur, tillämpning och evolution
 
 ## Kapitel 34: Vad en referensarkitektur är – och inte är
 - Kärnfråga: Hur ger en referensarkitektur vägledning utan att bli en frusen lösningsdesign?

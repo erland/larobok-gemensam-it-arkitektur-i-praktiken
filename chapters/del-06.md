@@ -1,1 +1,1 @@
-# Del VI – Referensarkitekturer och praktisk tillämpning
+# Del VI – Referensarkitektur, tillämpning och evolution
