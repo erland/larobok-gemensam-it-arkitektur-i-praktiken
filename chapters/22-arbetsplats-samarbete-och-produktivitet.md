@@ -594,47 +594,13 @@ Licenser, lagring och tilläggstjänster kan ge betydande kostnader när de mult
 
 ## Ansvar på tre nivåer
 
-Ansvarsmodellen kan tillämpas direkt på arbetsplatsförmågan.
+Den gemensamma arkitekturen bör ange de ramar som behöver vara konsekventa i hela organisationen: gränsen mot verksamhetssystem, principer för informationsdelning och livscykel, extern samverkan samt övergripande guardrails för low-code och produktivitets-AI.
 
-### Gemensam nivå
+Förmågeområdet omsätter ramarna i konsumerbara erbjudanden genom standardkonfigurationer, onboarding, support, livscykelautomation, delningsmodeller, klassnings- och behörighetsstöd samt uppföljning av användning och adoption.
 
-Den gemensamma arkitekturen bör bland annat definiera:
+Lösnings-/produktnivån väljer rätt erbjudande för det konkreta behovet, klassificerar information, utser ägare och säkerställer att arbetsytor, automationer och appar inte växer till verksamhetskritiska system utan rätt styrning. När konsekvensen växer eller ett återkommande avsteg uppstår ska det återföras till förmågeansvaret.
 
-- förmågans gräns mot verksamhetssystem,
-- övergripande informations- och delningsprinciper,
-- godkända tjänstekategorier,
-- gemensamma krav på ägarskap och livscykel,
-- principer för extern samverkan,
-- ramar för low-code och produktivitets-AI,
-- när en arbetsplatslösning måste lyftas till annan styrmodell.
-
-### Förmågenivå
-
-Förmågeansvaret bör bland annat utveckla:
-
-- de konkreta tjänsteerbjudandena,
-- standardkonfigurationer,
-- onboarding och support,
-- livscykelautomation,
-- delningsmodeller,
-- klassnings- och behörighetsstöd,
-- low-code-guardrails,
-- AI-assistentens konsumtionsmodell,
-- mätning av användning, kvalitet och adoption.
-
-### Lösnings-/produktnivå
-
-Ett team eller verksamhetsområde ansvarar för att:
-
-- välja rätt gemensamt erbjudande för sitt behov,
-- klassificera informationen korrekt,
-- utse ägare,
-- följa beslutad livscykel,
-- inte använda en enkel arbetsyta som dolt system of record,
-- eskalera lösningar när deras konsekvens växer,
-- dokumentera motiverade avsteg.
-
-Det gör att varje teamyta inte behöver centralstyras, samtidigt som gemensamma risker och livscykler förblir hanterbara.
+Det gör att varje teamyta inte behöver centralstyras samtidigt som gemensamma risker, informationsgränser och livscykler förblir hanterbara.
 
 ## Vanliga anti-patterns
 

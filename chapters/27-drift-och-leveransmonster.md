@@ -622,7 +622,7 @@ Samarbetsplattformen är själv otillgänglig i incidenten
 
 Ansvarsfördelningen följer samma princip som i tidigare kapitel. Den gemensamma arkitekturnivån sätter spelregler där inkonsistens skapar organisationsövergripande risk, exempelvis krav på spårbar artefaktidentitet, miniminivå för telemetri och korrelation, backup-/recoveryprofiler och återställningstest för vissa riskklasser.
 
-Förmågenivån omsätter dessa krav i konsumerbara erbjudanden som CI/CD-plattform, artefaktregister, pipelinekomponenter, observability-tjänster, backup- och recoverytjänster samt standardprofiler och golden paths. Lösnings-/produktnivån avgör däremot vilka SLI:er som representerar tjänstens funktion, vilka data som är skyddsvärda, vilket RPO/RTO som gäller och vilka release-, rollback- och återställningsstrategier som är realistiska.
+Förmågenivån omsätter dessa krav i konsumerbara erbjudanden som CI/CD-plattform, artefaktregister, pipelinekomponenter, observerbarhetstjänster, backup- och recoverytjänster samt standardprofiler och golden paths. Lösnings-/produktnivån avgör däremot vilka SLI:er som representerar tjänstens funktion, vilka data som är skyddsvärda, vilket RPO/RTO som gäller och vilka release-, rollback- och återställningsstrategier som är realistiska.
 
 Det gemensamma stödet minskar mängden uppfinning, men kan inte avgöra lösningens verksamhetskonsekvens.
 
@@ -634,7 +634,7 @@ Några återkommande fel är särskilt värda att känna igen:
 - **Mutable latest:** samma versionsnamn pekar på olika innehåll över tid, vilket förstör spårbarheten.
 - **Miljökonfiguration i artefakten:** en ny build krävs för miljöspecifika värden som borde vara kontrollerad körkonfiguration.
 - **Telemetri utan frågor:** stora mängder signaler produceras utan att någon definierat vilka frågor de ska besvara.
-- **Instrumentpaneler eller larm som mål:** dashboards och tekniska tröskellarm blir ett självändamål i stället för stöd för tjänstens SLI:er och verksamhetskonsekvenser.
+- **Instrumentpaneler eller larm som mål:** instrumentpaneler och tekniska tröskellarm blir ett självändamål i stället för stöd för tjänstens SLI:er och verksamhetskonsekvenser.
 - **Backup equals done:** ett grönt backupjobb ses som bevis på återställningsförmåga utan verifierat restore-test.
 - **Replikering kallas backup:** hög tillgänglighet blandas ihop med skydd mot logisk korruption, radering eller angrepp.
 - **Ofullständig restorekedja:** data kan återställas men rätt applikationsversion, credentials, instruktioner eller kontrollverktyg saknas eller ligger i samma felgräns som den havererade miljön.
