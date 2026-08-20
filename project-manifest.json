@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev105.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev106.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,15 +46,16 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/33-ekonomi-kostnad-och-kapacitet.md"
+      "docs/begreppsregister.yaml",
+      "docs/register-korsreferenssynk-pass-5.md"
     ],
-    "operation": "Reviderat kapitel 33 enligt Del V-kartan: grupperat kostnadssynlighet och kapacitet samt kortat ansvar, anti-patterns och analysordning",
-    "source_revision": 104
+    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del V",
+    "source_revision": 105
   },
-  "parent_revision": 104,
+  "parent_revision": 105,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 105,
+  "revision": 106,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -291,8 +292,8 @@
       "sha256": "6e24dcdfa47615f15207b592e216103956f6511dcdb64c4be75c2c191dc3b5e7"
     },
     "docs/begreppsregister.yaml": {
-      "bytes": 24422,
-      "sha256": "bff8f5cf33a64494f3c22cad84cc52de903d306d1501adec4d53db6284d465fb"
+      "bytes": 24429,
+      "sha256": "735678528ce109b715b80513c0aa6292c9bbab554df7ac85999246b738632ce3"
     },
     "docs/bokspecifikation.md": {
       "bytes": 5332,
@@ -369,6 +370,10 @@
     "docs/register-korsreferenssynk-pass-4.md": {
       "bytes": 2531,
       "sha256": "57cdf41fdd53a691d510a1249676cd2ae745259c5aac67b4657ef9d2afdeee32"
+    },
+    "docs/register-korsreferenssynk-pass-5.md": {
+      "bytes": 2265,
+      "sha256": "7cae64e56cf99eaeffa4a3767b237d4537e886137cf8ab0273b5e41081d361d3"
     },
     "docs/sprak-stilrevision-pass-1.md": {
       "bytes": 2637,
@@ -883,8 +888,8 @@
       "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 51333,
-      "sha256": "29827ceffbd7fb09189062e1dc0c4a60dbb97c8b91ca9551d6cb544f3b6975d7"
+      "bytes": 51566,
+      "sha256": "f6b32961cd2d2206da97fbda166b3789a1e629078e6a76cd8477197dd222f677"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -911,5 +916,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-20T12:39:07Z"
+  "updated_at": "2026-08-20T13:54:42Z"
 }
