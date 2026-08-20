@@ -8,9 +8,13 @@ $else$
 $endif$
 \setmonofont{DejaVu Sans Mono}
 \usepackage[paperwidth=170mm,paperheight=240mm,inner=20mm,outer=18mm,top=20mm,bottom=22mm,headsep=5mm,footskip=9mm]{geometry}
-\usepackage{graphicx}\usepackage{eso-pic}\usepackage{microtype}\usepackage{mdframed}\usepackage{setspace}\usepackage{parskip}\usepackage{fancyhdr}\usepackage[hidelinks]{hyperref}\usepackage{bookmark}\usepackage{tocloft}\usepackage{ragged2e}\usepackage{xcolor}\usepackage{longtable}\usepackage{booktabs}\usepackage{array}\usepackage{calc}\usepackage{etoolbox}
+\usepackage{graphicx}\usepackage{eso-pic}\usepackage{microtype}\usepackage{mdframed}\usepackage{setspace}\usepackage{parskip}\usepackage{fancyhdr}\usepackage[hidelinks]{hyperref}\usepackage{bookmark}\usepackage{tocloft}\usepackage{ragged2e}\usepackage[table]{xcolor}\usepackage{longtable}\usepackage{booktabs}\usepackage{array}\usepackage{calc}\usepackage{etoolbox}
 \setstretch{1.24}\setlength{\parindent}{0pt}\setlength{\parskip}{0.5em plus 0.08em minus 0.04em}\setlength{\emergencystretch}{1.5em}\widowpenalty=10000\clubpenalty=10000\displaywidowpenalty=10000\raggedbottom
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\definecolor{tablealternate}{RGB}{247,247,247}
+\AtBeginEnvironment{longtable}{%
+  \rowcolors{2}{white}{tablealternate}%
+}
 $if(highlighting-macros)$
 $highlighting-macros$
 \definecolor{codeblockbg}{RGB}{246,246,246}
