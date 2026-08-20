@@ -1,5 +1,5 @@
 {
-  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev79.zip",
+  "canonical_zip_name": "gemensam-it-arkitektur-i-praktiken-projekt-rev80.zip",
   "chapters": {
     "count": 37,
     "hashes": {
@@ -46,17 +46,16 @@
   "created_at": "2026-08-18T15:51:17Z",
   "last_operation": {
     "changed_files": [
-      "chapters/begreppsregister.md",
-      "docs/begreppsregister.yaml",
-      "docs/register-korsreferenssynk-pass-2.md"
+      "publishing/epub.css",
+      "publishing/pdf-template.tex"
     ],
-    "operation": "Synkat begreppsregister och korsreferenser efter revision av Del II",
-    "source_revision": 78
+    "operation": "Förbättrad tabelläsbarhet i PDF och EPUB med diskret varannan-rad-toning och mjukare radavdelning",
+    "source_revision": 79
   },
-  "parent_revision": 78,
+  "parent_revision": 79,
   "project_id": "c9f8f383-f0bc-4fba-8270-629463a8398f",
   "project_slug": "gemensam-it-arkitektur-i-praktiken",
-  "revision": 79,
+  "revision": 80,
   "schema_version": 1,
   "template": false,
   "tracked_files": {
@@ -861,8 +860,8 @@
       "sha256": "41ea9b200a768f1f55a5fd86ee6a278907f994274ca548cf742225579e50202c"
     },
     "publishing/epub.css": {
-      "bytes": 1686,
-      "sha256": "53628304449efc97209b26abb0bc1e36c32843af8adac089ecc3aa881cd11907"
+      "bytes": 1908,
+      "sha256": "7bda740dda2fcb12705c8fba2e4cc8dea336beb2240a73de2b408bf29a9a1aa4"
     },
     "publishing/fix-epub-after-pandoc.py": {
       "bytes": 9659,
@@ -873,12 +872,12 @@
       "sha256": "4ccba6546bfab8a0985c905108d329509c4171e5e47a9133e3ca684a438f881c"
     },
     "publishing/pdf-template.tex": {
-      "bytes": 3782,
-      "sha256": "796df88f81d0b53d8434d5cd16d00448cfc4d79fd15f4086e4dbaaf8213e8aa8"
+      "bytes": 3911,
+      "sha256": "159384633a9cbec60719477de498a63ae46146a7141ff7138d766067e082febf"
     },
     "revision-log.md": {
-      "bytes": 43837,
-      "sha256": "91656ed08289e2029d7e4e21b60fc02981ab0bb44ebd36357094ab33fac7037b"
+      "bytes": 44082,
+      "sha256": "4e65971190d238e0a4bc151d1a1ecc7ef75bc02c8736acca0b61c998ca56ca41"
     },
     "scripts/build_book.py": {
       "bytes": 1314,
@@ -905,5 +904,5 @@
       "sha256": "1c60364217f6063d988c99835eca81ad168300ada630e3a9dd706f72a2156a27"
     }
   },
-  "updated_at": "2026-08-19T19:54:55Z"
+  "updated_at": "2026-08-20T04:15:24Z"
 }
