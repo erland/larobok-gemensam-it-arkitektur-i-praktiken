@@ -4,7 +4,7 @@ En arkitekturmodell blir inte särskilt värdefull om den bara fungerar som taxo
 
 Syftet är inte att presentera sju färdiga lösningar. Två publika e-tjänster kan behöva mycket olika arkitektur beroende på informationsklassning, transaktionsvolym, tillgänglighetskrav och integrationer. Två handläggningsstöd kan på motsvarande sätt skilja sig kraftigt i hur mycket explicit workflow, regelhantering och dokumenthantering de behöver.
 
-Scenarierna ska därför läsas som **arkitekturella startpunkter**. För varje scenario prövas samma sex frågor: vad som driver lösningen, vilka kvalitetsattribut som dominerar, vilka gemensamma IT-förmågor som blir centrala, vilka mönster och plattformstjänster som typiskt är relevanta, vilka val som måste förbli lokala och vilket felgrepp som är särskilt vanligt. Poängen är jämförbarhet — inte att varje scenario ska mynna ut i samma komponentlista.
+Scenarierna ska därför läsas som **arkitekturella startpunkter**. För varje scenario prövas samma sex frågor: vad som driver lösningen, vilka kvalitetsattribut som dominerar, vilka gemensamma IT-förmågor som blir centrala, vilka mönster och plattformstjänster som typiskt är relevanta, vilka val som måste förbli lokala och vilket felgrepp som är särskilt vanligt. Poängen är jämförbarhet – inte att varje scenario ska mynna ut i samma komponentlista.
 
 ## Scenario 1: Internt handläggningsstöd
 
@@ -78,7 +78,7 @@ De sju scenarierna delar många byggstenar men skiljer sig i **vad som driver ar
 
 Matrisen visar varför en gemensam arkitektur inte bör försöka eliminera variation. Den bör i stället göra **rätt typ av variation synlig och hanterbar**.
 
-## Vad som är gemensamt — och vad som varierar
+## Vad som är gemensamt – och vad som varierar
 
 Några slutsatser går igen i alla sju scenarier.
 
@@ -88,7 +88,7 @@ För det andra är **samma mönster olika viktigt i olika sammanhang**. Tjänste
 
 För det tredje är **kvalitetsprofilen den viktigaste differentieraren inom samma scenarioklass**. Två publika e-tjänster kan se lika ut funktionellt men behöva olika identitetsnivå, redundans och loggning. Två AI-stöd kan använda samma modell men kräva helt olika mänsklig kontroll beroende på konsekvensen av ett fel.
 
-För det fjärde finns det ett återkommande mönster i vad som bör standardiseras och vad som bör lämnas öppet. Gemensam arkitektur kan med fördel standardisera språk, kontrakt, guardrails, paved roads och återanvändbara startpunkter. Den konkreta lösningen måste däremot fortfarande äga sin kvalitetsprofil, sina domängränser och sina medvetna avsteg. Det är denna ansvarsfördelning — snarare än en gemensam komponentlista — som gör modellen skalbar över olika scenarier.
+För det fjärde finns det ett återkommande mönster i vad som bör standardiseras och vad som bör lämnas öppet. Gemensam arkitektur kan med fördel standardisera språk, kontrakt, guardrails, paved roads och återanvändbara startpunkter. Den konkreta lösningen måste däremot fortfarande äga sin kvalitetsprofil, sina domängränser och sina medvetna avsteg. Det är denna ansvarsfördelning – snarare än en gemensam komponentlista – som gör modellen skalbar över olika scenarier.
 
 ## Referensarkitektur som hypotes, inte facit
 

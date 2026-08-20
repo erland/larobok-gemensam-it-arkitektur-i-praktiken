@@ -138,7 +138,7 @@ Informationsägarskap betyder inte att ett visst system råkar lagra en uppgift.
 
 Ägarskapet behöver bland annat klargöra vem som får definiera informationen, ändra reglerna för hur den skapas, sätta krav på kvalitet och aktualitet samt besluta om klassning, åtkomst, gallring och kontrakt mot konsumenter. Det tekniska systemet kan samtidigt förvaltas av ett annat team.
 
-Två anti-patterns är särskilt vanliga: att den som driver databasen får verksamhetsmässigt tolkningsföreträde, och att "alla" sägs äga informationen. I båda fallen saknas i praktiken ett tydligt mandat när definitioner kolliderar.
+Två anti-patterns är särskilt vanliga: att den som driver databasen får verksamhetsmässigt tolkningsföreträde, och att ”alla” sägs äga informationen. I båda fallen saknas i praktiken ett tydligt mandat när definitioner kolliderar.
 
 ## System of record och auktoritativ källa
 

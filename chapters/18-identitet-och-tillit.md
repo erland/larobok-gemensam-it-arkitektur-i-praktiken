@@ -165,7 +165,7 @@ Det viktiga arkitekturperspektivet är att certifikatet inte bara är en fil uta
 Beställning → utfärdande → distribution → användning → förnyelse/rotation → avveckling
 ```
 
-En gemensam PKI- och certifikattjänst bör därför stödja kontrollerad identitet, ägarskap, automatisering, förnyelse och avveckling. Den behöver också göra det möjligt att förstå vilka certifikat som finns, var de används och vem som ansvarar för dem. Annars flyttas bara den manuella hanteringen till en central utfärdare. mTLS kan ge stark maskin-till-maskin-autentisering, men svarar fortfarande inte på vilka operationer den autentiserade tjänsten får utföra.
+En gemensam PKI- och certifikattjänst bör därför stödja kontrollerad identitet, ägarskap, automatisering, förnyelse och avveckling. Den behöver också göra det möjligt att förstå vilka certifikat som finns, var de används och vem som ansvarar för dem. Annars flyttas bara den manuella hanteringen till en central utfärdare. Med mTLS kan en tjänst autentiseras starkt mot en annan, men det avgör fortfarande inte vilka operationer den autentiserade tjänsten får utföra.
 
 ### Secrets är credentials – inte konfiguration
 

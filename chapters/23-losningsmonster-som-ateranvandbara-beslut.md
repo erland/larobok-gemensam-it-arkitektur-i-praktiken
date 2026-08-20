@@ -243,7 +243,7 @@ Ett lösningsmönster behöver kunna skiljas från andra arkitekturartefakter. A
 
 **Mönster och standard.** En teknisk standard minskar variation genom att ange vad som ska eller bör användas och under vilka villkor. Mönstret *Asynkron meddelandekommunikation* kan vara stabilt även när organisationens standard för protokoll, säkerhetsprofil eller produkt förändras.
 
-**Mönster och plattformstjänst.** Ett mönster är beslutsstöd, inte ett erbjudande som konsumeras. Mönstret *Tjänsteidentitet* kan beskriva struktur och ansvar, medan en Service Identity Platform realiserar delar av mönstret genom identitetsutfärdande, rotation, policyintegration och livscykelhantering. Frågan "vilket mönster passar?" bör därför hållas isär från frågan "vilket gemensamt erbjudande hjälper oss att realisera det?".
+**Mönster och plattformstjänst.** Ett mönster är beslutsstöd, inte ett erbjudande som konsumeras. Mönstret *Tjänsteidentitet* kan beskriva struktur och ansvar, medan en Service Identity Platform realiserar delar av mönstret genom identitetsutfärdande, rotation, policyintegration och livscykelhantering. Frågan ”vilket mönster passar?” bör därför hållas isär från frågan ”vilket gemensamt erbjudande hjälper oss att realisera det?”.
 
 **Mönster och referensarkitektur.** En referensarkitektur är bredare och kombinerar flera mönster, förmågor, kvalitetskrav och variationspunkter för en klass av lösningar. Mönstren är återanvändbara byggstenar i resonemanget; referensarkitekturen visar hur de kan samverka i en större struktur.
 

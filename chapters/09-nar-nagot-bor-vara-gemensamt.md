@@ -219,7 +219,7 @@ Detta är **inte en mognadstrappa**. Rätt nivå beror på vad organisationen f�
 
 Mer delad realisering kan ge större skalfördelar och central förbättring, men ökar ofta beroenden, gemensam konsekvensyta och behovet av samordnad livscykel.
 
-Det gör frågan mer precis än "ska detta vara gemensamt?":
+Det gör frågan mer precis än ”ska detta vara gemensamt?”:
 
 > Vilken del av problemet behöver vara gemensam – kunskapen, kraven, kontraktet, designen, implementationen eller runtimeinstansen?
 

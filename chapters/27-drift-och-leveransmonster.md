@@ -490,7 +490,7 @@ Build once, promote many gör gamla applikationsartefakter reproducerbart identi
 Det är lätt att implementera de tre mönstren i separata organisatoriska silor:
 
 - utvecklingsplattformen äger CI/CD,
-- driftteamet äger monitorering,
+- driftteamet äger övervakning,
 - infrastrukturteamet äger backup.
 
 Tekniskt kan allt då se korrekt ut samtidigt som den sammanhängande återställnings- och leveranskedjan är svag.

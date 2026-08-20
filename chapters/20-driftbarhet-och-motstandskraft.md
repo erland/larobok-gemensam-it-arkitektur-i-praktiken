@@ -10,7 +10,7 @@ Kärnfrågan i kapitlet är:
 
 Vi har sett hur tillgänglighet, kontinuitet, återställningstid och andra kvalitetskrav härleds från verksamhetskonsekvenser. Det här kapitlet tar nästa steg: vilka tekniska och operativa förmågor behövs för att realisera och verifiera sådana krav?
 
-Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer hör till applikationsexekvering och runtime. Bygg, test, release och driftsättning hör till programvaruutveckling och leverans. Fokus här ligger på observerbarhet, monitorering, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling.
+Runtimefrågor som exekveringsmiljö, scaling och healthmekanismer hör till applikationsexekvering och runtime. Bygg, test, release och driftsättning hör till programvaruutveckling och leverans. Fokus här ligger på observerbarhet, övervakning, larm, felisolering, återhämtning, backup, restore, disaster recovery, kapacitetsuppföljning och operativ återkoppling.
 
 ## Driftbarhet är en egenskap hos hela systemet
 
@@ -67,13 +67,13 @@ En gemensam plattform kan exempelvis erbjuda flera profiler för backup, retenti
 
 Begreppet *observability*, här observerbarhet, används ofta som synonym till övervakning, men det är mer användbart att skilja dem åt.
 
-Monitorering handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
+Övervakning handlar i första hand om att följa kända signaler och upptäcka att ett definierat villkor har inträffat.
 
 Observerbarhet handlar bredare om att kunna dra slutsatser om ett systems interna beteende utifrån den telemetri systemet exponerar.[K1]
 
 Skillnaden blir tydlig i en incident.
 
-Monitorering kan säga:
+Övervakning kan säga:
 
 > Felkvoten för API:t har passerat fem procent.
 
@@ -108,7 +108,7 @@ För mycket loggning skapar kostnad och brus och kan dessutom sprida information
 
 ### Mätvärden visar beteende över tid
 
-Loggar beskriver enskilda händelser. mätvärden gör det lättare att se mönster och förändring över tid.
+Loggar beskriver enskilda händelser. Mätvärden gör det lättare att se mönster och förändring över tid.
 
 Exempel på tekniska mätvärden är:
 
@@ -130,13 +130,13 @@ Tekniska resursmått räcker inte alltid. Ett system kan ha låg CPU-belastning 
 
 Syftet är inte full verksamhetsanalys, utan att förstå om tjänsten faktiskt levererar den funktion som behöver hållas i drift.
 
-### Tracing knyter ihop distribuerade flöden
+### Spårning knyter ihop distribuerade flöden
 
 När ett användarflöde passerar flera tjänster, gateways, databaser och meddelandekanaler blir lokala loggar snabbt otillräckliga.
 
-Distributed tracing kan då göra det möjligt att följa ett sammanhängande flöde över flera komponenter.
+Distribuerad spårning kan då göra det möjligt att följa ett sammanhängande flöde över flera komponenter.
 
-Alla system behöver inte full tracing, men organisationen bör ha en gemensam mekanism när behovet finns.
+Alla system behöver inte fullständig distribuerad spårning, men organisationen bör ha en gemensam mekanism när behovet finns.
 
 I ett flöde som passerar exempelvis gateway, flera tjänster och en meddelandekö blir incidentanalysen snabbt manuellt detektivarbete om varje komponent bara har lokala identifierare. Med gemensam korrelation kan samma logiska transaktion följas genom kedjan.
 
@@ -457,7 +457,7 @@ Förmågan kan realiseras genom flera separata gemensamma tjänster, exempelvis:
 
 Gemensam insamling, retention, sökning och åtkomstkontroll för tekniska loggar. Konsumenten ansvarar fortfarande för att logga meningsfullt och korrekt.
 
-### Monitoring and Tracing
+### Övervakning och spårning
 
 Gemensam insamling av mätvärden och spår samt stöd för instrumentpaneler och larm. Konsumenten definierar vilka signaler som representerar den egna tjänstens hälsa.
 
@@ -493,14 +493,14 @@ Standarden bör därför ange miniminivåer, gemensamma kontrakt och valbara kva
 Ansvarsfördelningen följer samma modell som i övriga boken:
 
 - **Gemensam arkitekturnivå:** definierar kvalitetsprofiler, gemensamma telemetri- och korrelationskontrakt samt övergripande krav på observerbarhet, backup, restore och DR.
-- **Förmågenivå:** utvecklar observerbarhets-, monitoring-, tracing- och recoverytjänster, standarder och golden paths samt samlar återkoppling från konsumenterna.
+- **Förmågenivå:** utvecklar observerbarhets-, övervaknings-, spårnings- och återställningstjänster, standarder och golden paths samt samlar återkoppling från konsumenterna.
 - **Lösnings-/produktnivå:** härleder egna kvalitetskrav, producerar användbar telemetri, väljer relevanta profiler, kartlägger felmoder och ansvarar för att återställning och driftinstruktioner faktiskt fungerar.
 
 Det gör det möjligt att standardisera mekanismer utan att centralisera den operativa förståelsen av varje system.
 
 ## Vanliga anti-patterns
 
-### Dashboarden blir målet
+### Instrumentpanelen blir målet
 
 En instrumentpanel finns, men hjälper ingen att förstå tjänstens verkliga tillstånd.
 
@@ -545,7 +545,7 @@ En praktisk analys kan följa denna ordning:
 7. Planera felisolering och återhämtning. Timeout, återförsök, redundans, failover och andra mekanismer där behovet motiverar dem.
 8. Identifiera vad som måste kunna återställas. Data, konfiguration och övriga beroenden.
 9. Välj backup- och recoveryprofil. Knyt den till RPO/RTO eller motsvarande behov.
-10. Dokumentera operativa procedurer. driftinstruktioner, mandat och eskalering.
+10. Dokumentera operativa procedurer, driftinstruktioner, mandat och eskalering.
 11. Verifiera återställningen. Testa restore och DR i proportion till konsekvensen.
 12. Lär från drift. Använd incidenter, kapacitetsdata och återkommande manuellt arbete som återkoppling till arkitekturen.
 

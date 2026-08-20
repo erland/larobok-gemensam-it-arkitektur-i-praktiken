@@ -211,10 +211,10 @@ Exempel är tillåtna runtime-profiler, obligatorisk ägarskapsmetadata, krypter
 
 ```text
 Gate:
-"Skicka in designen så granskar vi om den är okej."
+”Skicka in designen så granskar vi om den är okej.”
 
 Guardrail:
-"Om lösningen ligger inom dessa kontrollerade ramar kan den etableras direkt."
+”Om lösningen ligger inom dessa kontrollerade ramar kan den etableras direkt.”
 ```
 
 Policy-as-code gör delar av styrningen maskinläsbar och automatiskt verifierbar. Det kan omfatta konfiguration, metadata, infrastructure-as-code, driftsättningsmanifest, åtkomstregler och artefaktegenskaper. Fördelen är att samma kontroll kan versionshanteras, testas och köras varje gång med snabb återkoppling.

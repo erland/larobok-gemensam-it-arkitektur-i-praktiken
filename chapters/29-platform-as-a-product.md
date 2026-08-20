@@ -37,11 +37,11 @@ Skillnaden kan sammanfattas så här:
 ```text
 Teknisk förvaltning
     ↓
-"Håller plattformen?"
+”Håller plattformen?”
 
 Produktorientering
     ↓
-"Hjälper plattformen konsumenterna att lyckas?"
+”Hjälper plattformen konsumenterna att lyckas?”
 ```
 
 En fungerande plattform behöver båda perspektiven.

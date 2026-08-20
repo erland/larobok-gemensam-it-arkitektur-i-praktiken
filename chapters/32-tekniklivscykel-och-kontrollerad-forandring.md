@@ -203,7 +203,7 @@ Den kan kräva att organisationen:
 - avvecklar identiteter och certifikat,
 - hanterar kvarvarande data,
 - rensar dokumentation och golden paths,
-- tar bort monitoring och backupjobb,
+- tar bort övervakning och säkerhetskopieringsjobb,
 - uppdaterar referensarkitekturer och standardkatalog,
 - dokumenterar vad som ersatt tekniken.
 
